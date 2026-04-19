@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>Market Today, Explained</title>
+    <link>https://sakzgupzzz.github.io/explain-market-today/feed.xml</link>
+    <description>Daily AI-generated recap of US markets with the news that moved them.</description>
+    <atom:link href="https://sakzgupzzz.github.io/explain-market-today/feed.xml" rel="self"/>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>python-feedgen</generator>
+    <image>
+      <url>https://sakzgupzzz.github.io/explain-market-today/cover.jpg</url>
+      <title>Market Today, Explained</title>
+      <link>https://sakzgupzzz.github.io/explain-market-today</link>
+    </image>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Apr 2026 21:42:58 +0000</lastBuildDate>
+    <itunes:author>Saksham Gupta</itunes:author>
+    <itunes:category text="Business">
+      <itunes:category text="Investing"/>
+    </itunes:category>
+    <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/cover.jpg"/>
+    <itunes:explicit>no</itunes:explicit>
+    <itunes:owner>
+      <itunes:name>Saksham Gupta</itunes:name>
+      <itunes:email>gsaksham@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:summary>Daily AI-generated recap of US markets with the news that moved them.</itunes:summary>
+    <item>
+      <title>Market Today, Explained — 2026-04-19</title>
+      <description>Sunday, April 19, 2026. The US market saw another strong day of gains despite lingering geopolitical tensions and mixed macroeconomic signals. Let's dive into today’s action.
+
+The S&amp;P 500 closed at 7126.06, up 1.20%, the Dow Jones finished at 49447.43, a gain of 1.79%, while the Nasdaq ended at 24468.48, climbing 1.52%. The Russell 2000 also had an impressive day, closing up 2.11% to 2776.90. The VIX Index fell slightly by 2.56%, ending the day at 17.48.
+
+The market's strength today was driven largely by a mix of factors: easing geopolitical tensions and lower bond yields. Friday’s rally had m…</description>
+      <content:encoded><![CDATA[Sunday, April 19, 2026. The US market saw another strong day of gains despite lingering geopolitical tensions and mixed macroeconomic signals. Let's dive into today’s action.
+
+The S&P 500 closed at 7126.06, up 1.20%, the Dow Jones finished at 49447.43, a gain of 1.79%, while the Nasdaq ended at 24468.48, climbing 1.52%. The Russell 2000 also had an impressive day, closing up 2.11% to 2776.90. The VIX Index fell slightly by 2.56%, ending the day at 17.48.
+
+The market's strength today was driven largely by a mix of factors: easing geopolitical tensions and lower bond yields. Friday’s rally had much to do with the decline in bond yields, which made stocks more attractive relative to bonds. The recent Iran war developments have also started to fade from investors' minds as the market focuses on other catalysts.
+
+Sector-wise, consumer discretionary led the charge, up 2.36%, followed closely by industrials and real estate, both gaining over 1%. This was in stark contrast with energy, which dropped nearly 3% due to a significant decline in oil prices. Healthcare also saw solid gains of around 1.5%, while utilities lagged behind with a minor loss.
+
+On the macro front, the U.S. Treasury's 10-year yield fell by 1.46% to 4.25%, reflecting lower risk appetite and continued concerns over inflation. The dollar index dipped slightly by 0.12% to 98.10, while WTI crude oil plummeted nearly 13% to $82.59, contributing to the energy sector's underperformance.
+
+Gold prices surged by almost 2%, ending at $4879.60 per ounce as investors sought safe-haven assets amid geopolitical uncertainties. Bitcoin saw a slight decline of 1.21%, closing at $74810.01, indicating some risk-off sentiment in the crypto space.
+
+Among individual stocks, Home Depot (HD) and Merck (MRK) were standout performers, both gaining over 3% on strong earnings expectations and positive market sentiment. Tesla (TSLA), Apple (AAPL), and Procter & Gamble (PG) also saw solid gains of around 2-3%, driven by robust financials and optimistic outlooks.
+
+On the downside, Netflix (NFLX) was a major loser, falling nearly 10% after a series of negative news reports. Exxon Mobil (XOM) and Chevron (CVX), both heavily reliant on oil prices, saw significant declines as crude oil prices tumbled.
+
+News highlights from today include U.S. military operations in the Gulf of Oman against an Iranian-flagged ship, which has raised tensions but also signaled a potential shift in geopolitical dynamics. Additionally, AI startup Cursor is reportedly in talks to raise $2 billion at a valuation over $50 billion, highlighting continued interest and investment in artificial intelligence.
+
+Another notable development was Jim Cramer's commentary on several stocks including Procter & Gamble, which he believes is currently undervalued. He also advised caution with Intel until the company reports its earnings.
+
+In summary, today’s market performance reflects a mix of economic data points, geopolitical events, and individual stock news. The rally appears to be driven by easing tensions and lower bond yields, but investors remain cautious given ongoing uncertainties in oil markets and Iran developments.
+
+That's it for today's recap. Stay tuned for more updates as the week progresses.]]></content:encoded>
+      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-19.mp3</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-19.mp3" length="2559208" type="audio/mpeg"/>
+      <pubDate>Sun, 19 Apr 2026 21:00:00 +0000</pubDate>
+      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:duration>00:03:33</itunes:duration>
+    </item>
+  </channel>
+</rss>
