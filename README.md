@@ -34,14 +34,20 @@ Output: `docs/episodes/YYYY-MM-DD.mp3` + `docs/feed.xml`.
 
 ## Schedule daily
 
+**Primary: GitHub Actions (Mac-independent)**
+Workflow `.github/workflows/daily.yml` runs weekdays 21:30 UTC on `ubuntu-latest`:
+- Installs Ollama, pulls `qwen2.5:7b` (cached across runs)
+- Installs Piper voice `en_US-lessac-medium` (cached)
+- Runs `main.py`, commits episode, pushes back to `main`
+
+Manual trigger: **Actions tab → Daily Market Podcast → Run workflow**. Or `gh workflow run daily.yml`.
+
+**Optional local backup: launchd**
 ```bash
 cp com.user.marketpodcast.plist ~/Library/LaunchAgents/
 launchctl load ~/Library/LaunchAgents/com.user.marketpodcast.plist
 ```
-
-Default: weekdays 4:45pm local. Edit `Hour`/`Minute`/`Weekday` in the plist.
-
-Unload: `launchctl unload ~/Library/LaunchAgents/com.user.marketpodcast.plist`.
+Unload: `launchctl unload ~/Library/LaunchAgents/com.user.marketpodcast.plist`. Skip unless cloud runner fails — otherwise you get double episodes.
 
 ## Submit feed to podcast platforms
 

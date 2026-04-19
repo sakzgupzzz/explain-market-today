@@ -1,4 +1,5 @@
 """Central config. Edit tickers, feeds, hosting details here."""
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -54,18 +55,22 @@ RSS_FEEDS = [
 ]
 HEADLINE_LIMIT = 40  # cap total headlines sent to LLM
 
-# LLM (Ollama local)
-OLLAMA_URL = "http://localhost:11434/api/generate"
-OLLAMA_MODEL = "qwen2.5:14b"
-OLLAMA_TIMEOUT = 600
+# LLM (Ollama local or Actions runner). Override via env.
+OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen2.5:14b")
+OLLAMA_TIMEOUT = int(os.environ.get("OLLAMA_TIMEOUT", "1800"))
 
 # Script length: flexible. LLM picks based on news density.
 MIN_WORDS = 400   # floor ~2.5 min
 MAX_WORDS = 1800  # ceiling ~12 min
 
-# TTS
-TTS_VOICE = "Samantha"
-TTS_RATE = 185  # words per minute
+# TTS — macOS `say` on Darwin, Piper on Linux
+TTS_VOICE = os.environ.get("TTS_VOICE", "Samantha")
+TTS_RATE = int(os.environ.get("TTS_RATE", "185"))
+PIPER_VOICE_PATH = os.environ.get(
+    "PIPER_VOICE_PATH",
+    str(Path.home() / ".local/share/piper-voices/en_US-lessac-medium.onnx"),
+)
 
 # Podcast metadata (edit these)
 PODCAST_TITLE = "Market Today, Explained"
