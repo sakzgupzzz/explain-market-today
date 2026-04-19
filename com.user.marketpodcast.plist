@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- launchd agent: run daily at 4:45pm ET (21:45 UTC during EDT, 21:45 UTC = 5:45pm ET EST). Uses local time of the Mac; set HOUR/MINUTE to your local clock. -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.user.marketpodcast</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-lc</string>
+    <string>cd /Users/sakshamgupta/Documents/coding_projects/explain_market_today_project && source .venv/bin/activate && python main.py &gt;&gt; run.log 2&gt;&amp;1</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>16</integer>
+    <key>Minute</key>
+    <integer>45</integer>
+    <key>Weekday</key>
+    <array>
+      <integer>1</integer>
+      <integer>2</integer>
+      <integer>3</integer>
+      <integer>4</integer>
+      <integer>5</integer>
+    </array>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/Users/sakshamgupta/Documents/coding_projects/explain_market_today_project/launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/sakshamgupta/Documents/coding_projects/explain_market_today_project/launchd.err</string>
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>

@@ -1,0 +1,5 @@
+yfinance>=0.2.40
+feedparser>=6.0.11
+requests>=2.32.0
+feedgen>=1.0.0
+python-dateutil>=2.9.0
