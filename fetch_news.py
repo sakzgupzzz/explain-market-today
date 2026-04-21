@@ -1,9 +1,10 @@
-"""Aggregate RSS headlines from free finance sources."""
+"""Aggregate RSS headlines across beats (markets, business, tech, world, culture)."""
 from __future__ import annotations
 import time
+import re
 from datetime import datetime, timezone, timedelta
 import feedparser
-from config import RSS_FEEDS, HEADLINE_LIMIT
+from config import RSS_FEEDS_BY_CATEGORY, HEADLINES_PER_CATEGORY
 
 
 def _entry_dt(e) -> datetime | None:
@@ -14,39 +15,58 @@ def _entry_dt(e) -> datetime | None:
     return None
 
 
-def fetch_headlines(hours: int = 24) -> list[dict]:
+def _clean(s: str) -> str:
+    if not s:
+        return ""
+    s = re.sub(r"<[^>]+>", "", s)
+    return s.strip()
+
+
+def _fetch_category(category: str, feeds: list[str], hours: int, cap: int) -> list[dict]:
     cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
-    items = []
-    seen_titles = set()
-    for url in RSS_FEEDS:
+    items: list[dict] = []
+    seen: set[str] = set()
+    for url in feeds:
         try:
             feed = feedparser.parse(url)
         except Exception:
             continue
         source = feed.feed.get("title", url)
-        for e in feed.entries[:30]:
-            title = (e.get("title") or "").strip()
-            if not title or title.lower() in seen_titles:
+        for e in feed.entries[:25]:
+            title = _clean(e.get("title", ""))
+            key = title.lower()
+            if not title or key in seen:
                 continue
-            seen_titles.add(title.lower())
+            seen.add(key)
             dt = _entry_dt(e)
             if dt and dt < cutoff:
                 continue
-            summary = (e.get("summary") or "").strip()
-            # strip html crudely
-            if "<" in summary:
-                import re
-                summary = re.sub(r"<[^>]+>", "", summary)
             items.append({
+                "category": category,
                 "title": title,
-                "summary": summary[:400],
+                "summary": _clean(e.get("summary", ""))[:400],
                 "source": source,
                 "published": dt.isoformat() if dt else None,
                 "link": e.get("link", ""),
             })
-    # newest first, keep top N
     items.sort(key=lambda x: x["published"] or "", reverse=True)
-    return items[:HEADLINE_LIMIT]
+    return items[:cap]
+
+
+def fetch_headlines(hours: int = 24) -> dict[str, list[dict]]:
+    """Return headlines grouped by category."""
+    out: dict[str, list[dict]] = {}
+    for cat, feeds in RSS_FEEDS_BY_CATEGORY.items():
+        cap = HEADLINES_PER_CATEGORY.get(cat, 10)
+        out[cat] = _fetch_category(cat, feeds, hours, cap)
+    return out
+
+
+def flatten(headlines: dict[str, list[dict]]) -> list[dict]:
+    flat: list[dict] = []
+    for cat, items in headlines.items():
+        flat.extend(items)
+    return flat
 
 
 if __name__ == "__main__":

@@ -43,17 +43,46 @@ MOVERS_UNIVERSE = [
     "TMO", "CVX", "ABBV", "KO", "MRK", "CSCO", "ACN", "MCD", "DIS",
 ]
 
-# News RSS (free, no key)
-RSS_FEEDS = [
-    "https://finance.yahoo.com/news/rssindex",
-    "https://www.marketwatch.com/rss/topstories",
-    "https://feeds.content.dowjones.io/public/rss/mw_topstories",
-    "https://seekingalpha.com/market_currents.xml",
-    "https://www.cnbc.com/id/100003114/device/rss/rss.html",  # top news
-    "https://www.cnbc.com/id/10001147/device/rss/rss.html",   # markets
-    "https://www.federalreserve.gov/feeds/press_all.xml",
-]
-HEADLINE_LIMIT = 40  # cap total headlines sent to LLM
+# News RSS grouped by beat. Morning-Brew style: markets core + tech + business + world + culture.
+RSS_FEEDS_BY_CATEGORY: dict[str, list[str]] = {
+    "markets": [
+        "https://finance.yahoo.com/news/rssindex",
+        "https://www.marketwatch.com/rss/topstories",
+        "https://feeds.content.dowjones.io/public/rss/mw_topstories",
+        "https://seekingalpha.com/market_currents.xml",
+        "https://www.cnbc.com/id/10001147/device/rss/rss.html",   # markets
+        "https://feeds.reuters.com/reuters/businessNews",
+        "https://www.federalreserve.gov/feeds/press_all.xml",
+    ],
+    "business": [
+        "https://www.cnbc.com/id/100003114/device/rss/rss.html",
+        "https://feeds.reuters.com/reuters/companyNews",
+        "https://feeds.apnews.com/ApBusiness",
+        "https://api.axios.com/feed/",
+    ],
+    "tech": [
+        "https://techcrunch.com/feed/",
+        "https://www.theverge.com/rss/index.xml",
+        "https://feeds.arstechnica.com/arstechnica/index",
+        "https://hnrss.org/frontpage?points=300",
+    ],
+    "world": [
+        "https://feeds.reuters.com/reuters/topNews",
+        "https://feeds.apnews.com/ApTopHeadlines",
+        "https://feeds.bbci.co.uk/news/rss.xml",
+    ],
+    "culture": [
+        "https://www.theatlantic.com/feed/all/",
+        "https://feeds.npr.org/1001/rss.xml",
+    ],
+}
+HEADLINES_PER_CATEGORY = {
+    "markets": 20,
+    "business": 10,
+    "tech": 10,
+    "world": 8,
+    "culture": 5,
+}
 
 # LLM (Ollama local or Actions runner). Override via env.
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
@@ -84,7 +113,7 @@ INTER_LINE_SILENCE_MS = 160  # natural breath between speaker swaps
 PODCAST_TITLE = "Market Today, Explained"
 PODCAST_AUTHOR = "Saksham Gupta"
 PODCAST_EMAIL = "gsaksham@gmail.com"
-PODCAST_DESCRIPTION = "Daily AI-generated recap of US markets with the news that moved them."
+PODCAST_DESCRIPTION = "Daily fast-paced brief on US markets, business, tech, and one weird thing — Morning-Brew style, AI-generated each afternoon."
 PODCAST_LANGUAGE = "en-us"
 # Set after GitHub Pages is live. Example: https://<user>.github.io/<repo>
 PODCAST_BASE_URL = "https://sakzgupzzz.github.io/explain-market-today"

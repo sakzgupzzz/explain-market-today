@@ -18,9 +18,11 @@ def run(push: bool = True) -> Path:
     print(f"[{today}] fetching market data…")
     market = fetch_all()
     print(f"[{today}] fetching headlines…")
-    headlines = fetch_headlines()
+    headlines_by_cat = fetch_headlines()
+    total = sum(len(v) for v in headlines_by_cat.values())
+    print(f"[{today}] {total} headlines across {len(headlines_by_cat)} beats")
     print(f"[{today}] generating script with local LLM…")
-    script = generate(market, headlines, date_pretty)
+    script = generate(market, headlines_by_cat, date_pretty)
 
     EPISODES_DIR.mkdir(parents=True, exist_ok=True)
     txt_path = EPISODES_DIR / f"{today}.txt"
