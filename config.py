@@ -69,8 +69,16 @@ TTS_VOICE = os.environ.get("TTS_VOICE", "Samantha")
 TTS_RATE = int(os.environ.get("TTS_RATE", "185"))
 PIPER_VOICE_PATH = os.environ.get(
     "PIPER_VOICE_PATH",
-    str(Path.home() / ".local/share/piper-voices/en_US-lessac-medium.onnx"),
+    str(Path.home() / ".local/share/piper-voices/en_US-libritts_r-medium.onnx"),
 )
+# Multi-speaker character mapping. Speaker IDs are indexes into the libritts_r model.
+# Tuned picks that sound distinct: 79 (bright female), 13 (warm male).
+CHARACTERS = {
+    "JAMIE": {"speaker": 79, "description": "upbeat host, grabs attention, asks sharp questions"},
+    "ALEX":  {"speaker": 13, "description": "dry analyst, explains mechanics, occasional deadpan humor"},
+}
+DEFAULT_CHARACTER = "JAMIE"
+INTER_LINE_SILENCE_MS = 160  # natural breath between speaker swaps
 
 # Podcast metadata (edit these)
 PODCAST_TITLE = "Market Today, Explained"

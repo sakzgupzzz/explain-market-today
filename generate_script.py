@@ -1,9 +1,10 @@
-"""Turn market data + headlines into podcast script via local Ollama."""
+"""Turn market data + headlines into 2-host podcast dialogue via local Ollama."""
 from __future__ import annotations
-import json
 import requests
 from datetime import datetime
-from config import OLLAMA_URL, OLLAMA_MODEL, OLLAMA_TIMEOUT, MIN_WORDS, MAX_WORDS
+from config import (
+    OLLAMA_URL, OLLAMA_MODEL, OLLAMA_TIMEOUT, MIN_WORDS, MAX_WORDS, CHARACTERS,
+)
 
 
 def _fmt_row(r: dict) -> str:
@@ -24,39 +25,52 @@ def build_prompt(market: dict, headlines: list[dict], date_str: str) -> str:
         f"- [{h['source']}] {h['title']}" + (f" — {h['summary'][:200]}" if h['summary'] else "")
         for h in headlines
     )
-    return f"""You are a sharp financial journalist writing a daily US market recap podcast episode.
+    char_lines = "\n".join(
+        f"- {name}: {meta['description']}" for name, meta in CHARACTERS.items()
+    )
+    names = " and ".join(CHARACTERS.keys())
+    return f"""You write a fast-paced, entertaining daily US-market recap podcast as a DIALOGUE between two co-hosts.
 Date: {date_str}
 
-TODAY'S INDEX CLOSES:
+CO-HOSTS:
+{char_lines}
+
+MARKET DATA — INDICES:
 {indices}
 
-SECTOR ETFS:
+SECTORS:
 {sectors}
 
 MACRO:
 {macro}
 
-TOP MEGA-CAP GAINERS:
+TOP GAINERS:
 {gainers}
 
-TOP MEGA-CAP LOSERS:
+TOP LOSERS:
 {losers}
 
-NEWS HEADLINES (last 24h):
+HEADLINES (last 24h):
 {news}
 
-Write a single spoken-word podcast script. Requirements:
-- Length: however long the news warrants. Quiet day → short ({MIN_WORDS}+ words). Busy day with lots of catalysts → longer (up to {MAX_WORDS} words). Never pad. Never rush past important news.
-- Open with the date and a one-sentence headline of the day.
-- Cover index moves and WHY — tie specific headlines to the moves. Name the causes.
-- Call out which sectors led and lagged and why.
-- Mention macro context (rates, dollar, oil) where it explains the tape.
-- Cover notable single-stock movers with reasons when the news supports it.
-- Conversational tone. No bullet points, no headers, no markdown, no stage directions, no music cues.
-- Never invent facts. If the news doesn't explain a move, say the move was unexplained or technical.
-- Do not include a title line. Start directly with the spoken content.
-- End with a one-line sign-off.
-Return ONLY the script text, nothing else."""
+Write the episode as a two-person dialogue between {names}. Hard rules:
+
+- Format EVERY line as `NAME: spoken text` on its own line. Example:
+  JAMIE: Alright, we are back, and wow, the Dow ripped today.
+  ALEX: Yeah, up almost two percent, and I will tell you exactly why.
+- Only the two names above, in caps, followed by a colon.
+- Short exchanges. Most turns 1-3 sentences. Ping-pong feel, not monologues.
+- Open with a HOOK: a punchy, specific, curiosity-grabbing first line from JAMIE. Never "Hello and welcome."
+- JAMIE drives and reacts. ALEX delivers the substance and the "why."
+- Cover: index moves + why, sector leaders/laggards, macro context (rates, dollar, oil), 2-3 notable single-stock movers with the actual reason from headlines.
+- Inject personality: quick reactions ("oh that's wild"), light jokes, skepticism, genuine surprise — tied to real data, never forced.
+- Write NUMBERS AS WORDS for the tape ("up one point two percent", "seventy-one twenty-six" for 7126). Spell tickers as letters with spaces ("S P Y", "N V D A").
+- Length adapts to news: quiet day → {MIN_WORDS}+ words, wild day → up to {MAX_WORDS} words. Never pad. Never rush past real news.
+- No bullet points, headers, markdown, stage directions, music cues, or sound effects. Just `NAME: line` lines.
+- Never invent facts. If the tape moved without a clear catalyst, ALEX should say so plainly.
+- End with a quick banter sign-off (one line each, max).
+
+Return ONLY the dialogue lines. No intro, no outro, no commentary. First line must start with `JAMIE:`."""
 
 
 def generate(market: dict, headlines: list[dict], date_str: str) -> str:
@@ -67,7 +81,7 @@ def generate(market: dict, headlines: list[dict], date_str: str) -> str:
             "model": OLLAMA_MODEL,
             "prompt": prompt,
             "stream": False,
-            "options": {"temperature": 0.4, "num_ctx": 8192},
+            "options": {"temperature": 0.7, "num_ctx": 8192},
         },
         timeout=OLLAMA_TIMEOUT,
     )
