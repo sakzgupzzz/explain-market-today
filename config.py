@@ -100,11 +100,14 @@ PIPER_VOICE_PATH = os.environ.get(
     "PIPER_VOICE_PATH",
     str(Path.home() / ".local/share/piper-voices/en_US-libritts_r-medium.onnx"),
 )
-# Multi-speaker character mapping. Speaker IDs are indexes into the libritts_r model.
-# Tuned picks that sound distinct: 79 (bright female), 13 (warm male).
+# Multi-speaker cast. Speaker IDs index into the libritts_r model (900+ speakers).
+# Spread across the range so voices are distinct.
 CHARACTERS = {
-    "JAMIE": {"speaker": 79, "description": "upbeat host, grabs attention, asks sharp questions"},
-    "ALEX":  {"speaker": 13, "description": "dry analyst, explains mechanics, occasional deadpan humor"},
+    "JAMIE": {"speaker": 79,  "description": "main host — upbeat, drives the show, asks sharp questions, reacts with personality"},
+    "ALEX":  {"speaker": 13,  "description": "markets analyst — dry, precise, explains the WHY behind moves, deadpan humor"},
+    "MAYA":  {"speaker": 411, "description": "tech correspondent — fast-talker, hype-aware but skeptical, loves a good product-launch story"},
+    "RIO":   {"speaker": 218, "description": "world/culture correspondent — warm, storyteller voice, brings human texture to big stories"},
+    "KAI":   {"speaker": 635, "description": "quick-hits floater — punchy one-liners, delivers the odd-thing closer, trivia energy"},
 }
 DEFAULT_CHARACTER = "JAMIE"
 INTER_LINE_SILENCE_MS = 160  # natural breath between speaker swaps
@@ -113,7 +116,7 @@ INTER_LINE_SILENCE_MS = 160  # natural breath between speaker swaps
 PODCAST_TITLE = "Market Today, Explained"
 PODCAST_AUTHOR = "Saksham Gupta"
 PODCAST_EMAIL = "gsaksham@gmail.com"
-PODCAST_DESCRIPTION = "Daily fast-paced brief on US markets, business, tech, and one weird thing — Morning-Brew style, AI-generated each afternoon."
+PODCAST_DESCRIPTION = "Daily fast, funny roundtable on US markets, business, tech, and one weird thing — AI-generated each afternoon."
 PODCAST_LANGUAGE = "en-us"
 # Set after GitHub Pages is live. Example: https://<user>.github.io/<repo>
 PODCAST_BASE_URL = "https://sakzgupzzz.github.io/explain-market-today"

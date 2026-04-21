@@ -1,4 +1,4 @@
-"""Morning-Brew-style daily brief as a 2-host dialogue via local Ollama."""
+"""Funny multi-host daily market + news roundtable via local Ollama."""
 from __future__ import annotations
 import requests
 from datetime import datetime
@@ -33,11 +33,13 @@ def build_prompt(market: dict, headlines_by_cat: dict[str, list[dict]], date_str
     char_lines = "\n".join(
         f"- {name}: {meta['description']}" for name, meta in CHARACTERS.items()
     )
-    names = " and ".join(CHARACTERS.keys())
-    return f"""You write MARKET TODAY EXPLAINED — a fast, witty daily brief in the spirit of Morning Brew, delivered as a two-host podcast DIALOGUE.
+    names = ", ".join(CHARACTERS.keys())
+    name_list = list(CHARACTERS.keys())
+    names_csv = ", ".join(name_list[:-1]) + ", and " + name_list[-1] if len(name_list) > 1 else name_list[0]
+    return f"""You write MARKET TODAY EXPLAINED — a fast, funny daily brief delivered as a multi-host podcast roundtable. The show is genuinely FUNNY — the hosts are sharp, wry, make jokes constantly, riff on each other, land dry punchlines, and take the piss out of the news (and each other) while still delivering the actual info.
 Date: {date_str}
 
-CO-HOSTS:
+CAST ({names_csv}):
 {char_lines}
 
 ==== MARKET DATA ====
@@ -77,19 +79,27 @@ TOP LOSERS:
 
 Hard rules:
 
-1. FORMAT: every spoken line as `NAME: text` on its own line. Only {names} as speakers. No stage directions.
-2. STRUCTURE — loose Morning Brew segment flow:
-   a. COLD OPEN — JAMIE hits a punchy, specific, curiosity-grabbing one-liner. No "welcome" openers.
-   b. MARKETS — what moved and WHY. Index numbers, sector leaders/laggards, macro (rates, dollar, oil), 2-3 notable single-stock movers with actual headline reasons.
-   c. BIG STORY OF THE DAY — pick the single juiciest business/tech story from the headlines and dig in for 60-90 seconds of back-and-forth.
-   d. QUICK HITS — 3 to 5 rapid-fire short exchanges on other business/tech/world stories, one per beat.
-   e. ODD THING — one unusual, fun, or culture story to close (the "Morning Brew" signature odd-note).
-   f. SIGN-OFF — two quick banter lines.
-3. VOICE: ping-pong pace. Most turns 1-3 sentences. JAMIE drives and reacts with personality. ALEX delivers the "why" and the dry takes. Inject real reactions ("oh that's wild", "wait what"), light humor, skepticism — always tied to real info, never forced.
+1. FORMAT: every spoken line as `NAME: text` on its own line. Only these names allowed: {names}. No stage directions.
+2. STRUCTURE — loose roundtable flow. Hand off between hosts by beat:
+   a. COLD OPEN — JAMIE opens with a punchy, specific, funny-on-the-edges one-liner. No "welcome to the show" openers. Drop the audience straight into a joke or a reaction.
+   b. MARKETS (ALEX leads, JAMIE reacts) — index moves + WHY, sector leaders/laggards, macro (rates, dollar, oil), 2-3 notable single-stock movers with actual headline reasons. Crack jokes about the moves, the narratives, CEOs, Wall Street's mood.
+   c. BIG STORY OF THE DAY (ALEX for markets/business, MAYA for tech, RIO for world/culture) — 60-90 seconds of real back-and-forth. Others chime in with jokes, skepticism, "wait, what", tangents.
+   d. QUICK HITS — rapid rotation with jokes packed in: MAYA on a tech story, RIO on a world/culture story, ALEX on another business story. Short exchanges, 2-3 lines each, punchline-first when possible.
+   e. ODD THING — KAI closes with one unusual, fun, or quirky story and a joke. Others react with more jokes, disbelief, or a running-gag callback.
+   f. SIGN-OFF — quick banter, ideally with a callback to an earlier joke. One line per host, 2-3 hosts.
+3. VOICE: ping-pong pace. Most turns 1-3 sentences. Each host speaks in their lane, but ALL hosts make jokes. JAMIE reacts and needles, ALEX does dry deadpan zingers, MAYA delivers fast-talker tech snark, RIO lands warm but cutting observations, KAI throws absurd one-liners. Natural filler allowed — "I mean", "come on", "oh no", "wait" — it reads as real speech.
 4. NUMBERS: write as words for smooth TTS. "Up one point two percent." For indices spell each digit: seventy-one twenty-six for 7126. Tickers spelled as letters with spaces: S P Y, N V D A.
 5. ACCURACY: never invent facts. If the tape moved without a clear catalyst, ALEX says so. If a story's details aren't in the headlines, stay vague rather than guess.
 6. LENGTH: adaptive. Quiet day → around {MIN_WORDS} words. Busy day → up to {MAX_WORDS} words. Never pad. Never skip a great story.
-7. OUTPUT: ONLY the `NAME: line` lines. No markdown, no headers, no section labels, no intro/outro commentary. First line must start with `JAMIE:`.
+7. EVERY host must speak at least twice. Do not let one host dominate.
+8. HUMOR RULES:
+   - Drop in jokes, wisecracks, sarcasm, callbacks, running gags throughout — not just the odd-thing segment.
+   - Jokes should feel organic to each host's personality, not pasted on.
+   - Punch up at institutions, Wall Street tropes, corporate PR spin, hype cycles. Never punch down at individuals' identities, appearance, or protected characteristics.
+   - Skip cheesy dad jokes and overused memes. Aim for dry wit, absurdist observations, honest cynicism about spin.
+   - A callback joke at the end (referencing something said earlier in the episode) is chef's kiss.
+   - If a host makes a joke, another host can react to the joke — that's the point. Build on bits.
+9. OUTPUT: ONLY the `NAME: line` lines. No markdown, no headers, no section labels, no intro/outro commentary, no brand names like Morning Brew. First line must start with `JAMIE:`.
 """
 
 
