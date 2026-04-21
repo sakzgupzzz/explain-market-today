@@ -69,21 +69,27 @@ def build_feed() -> None:
 
 
 def git_push(commit_msg: str) -> None:
-    """Commit + push docs/ to origin. Idempotent on a no-op."""
+    """Commit + push docs/ to origin. Rebase on remote first to survive concurrent pushes.
+    Retries once if push races another writer."""
     if not (ROOT / ".git").exists():
         print("No git repo yet. Run setup.sh first.")
         return
     subprocess.run(["git", "-C", str(ROOT), "add", "docs"], check=True)
-    res = subprocess.run(
-        ["git", "-C", str(ROOT), "diff", "--cached", "--quiet"],
-    )
+    res = subprocess.run(["git", "-C", str(ROOT), "diff", "--cached", "--quiet"])
     if res.returncode == 0:
         print("Nothing to commit.")
         return
-    subprocess.run(
-        ["git", "-C", str(ROOT), "commit", "-m", commit_msg], check=True
-    )
-    subprocess.run(["git", "-C", str(ROOT), "push"], check=True)
+    subprocess.run(["git", "-C", str(ROOT), "commit", "-m", commit_msg], check=True)
+    for attempt in range(3):
+        subprocess.run(
+            ["git", "-C", str(ROOT), "pull", "--rebase", "--autostash", "origin", "main"],
+            check=True,
+        )
+        push = subprocess.run(["git", "-C", str(ROOT), "push", "origin", "main"])
+        if push.returncode == 0:
+            return
+        print(f"push attempt {attempt + 1} raced. retrying after rebase…")
+    raise RuntimeError("git push failed after 3 rebase attempts")
 
 
 def build_index_html() -> None:

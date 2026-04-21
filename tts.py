@@ -19,7 +19,10 @@ LINE_RE = re.compile(r"^([A-Z][A-Z0-9_]{0,15}):\s*(.+)$")
 # Mac `say` voice per character (best-effort). User can remap via env.
 MAC_CHARACTER_VOICES = {
     "JAMIE": os.environ.get("MAC_VOICE_JAMIE", "Samantha"),
-    "ALEX":  os.environ.get("MAC_VOICE_ALEX",  "Tom"),
+    "ALEX":  os.environ.get("MAC_VOICE_ALEX",  "Daniel"),
+    "MAYA":  os.environ.get("MAC_VOICE_MAYA",  "Karen"),
+    "RIO":   os.environ.get("MAC_VOICE_RIO",   "Moira"),
+    "KAI":   os.environ.get("MAC_VOICE_KAI",   "Eddy (English (US))"),
 }
 
 
