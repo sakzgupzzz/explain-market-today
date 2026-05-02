@@ -18,9 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      OLLAMA_MODEL: qwen3:14b
+      # qwen3:8b on CI — qwen3:14b is too slow on CPU-only ubuntu-latest
+      # (saw 30-min OLLAMA_TIMEOUT firing during prompt processing alone).
+      # 8b finishes both the generate + critique pass within budget.
+      # Local Mac runs override OLLAMA_MODEL=qwen3:14b for higher quality
+      # when there's GPU / M-series silicon to back it.
+      OLLAMA_MODEL: qwen3:8b
       OLLAMA_URL: http://localhost:11434/api/generate
-      OLLAMA_TIMEOUT: "1800"
+      OLLAMA_TIMEOUT: "1500"
       PIPER_VOICE: en_US-libritts_r-medium
       PIPER_VOICE_PATH: /home/runner/.local/share/piper-voices/en_US-libritts_r-medium.onnx
       TTS_BACKEND: eleven
