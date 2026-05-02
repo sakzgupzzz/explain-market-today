@@ -86,7 +86,8 @@ HEADLINES_PER_CATEGORY = {
 
 # LLM (Ollama local or Actions runner). Override via env.
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen2.5:14b")
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen3:14b")
+OLLAMA_CRITIC_MODEL = os.environ.get("OLLAMA_CRITIC_MODEL", OLLAMA_MODEL)
 OLLAMA_TIMEOUT = int(os.environ.get("OLLAMA_TIMEOUT", "1800"))
 
 # Script length: flexible. LLM picks based on news density.
@@ -103,22 +104,143 @@ PIPER_VOICE_PATH = os.environ.get(
 # Multi-speaker cast. Speaker IDs index into the libritts_r model (900+ speakers).
 # Spread across the range so voices are distinct.
 CHARACTERS = {
-    "JAMIE": {"speaker": 79,  "description": "main host — upbeat, drives the show, asks sharp questions, reacts with personality"},
-    "ALEX":  {"speaker": 13,  "description": "markets analyst — dry, precise, explains the WHY behind moves, deadpan humor"},
-    "MAYA":  {"speaker": 411, "description": "tech correspondent — fast-talker, hype-aware but skeptical, loves a good product-launch story"},
-    "RIO":   {"speaker": 218, "description": "world/culture correspondent — warm, storyteller voice, brings human texture to big stories"},
-    "KAI":   {"speaker": 635, "description": "quick-hits floater — punchy one-liners, delivers the odd-thing closer, trivia energy"},
+    "JAMIE": {
+        "speaker": 79,
+        "description": "main host — upbeat, drives the show, asks sharp questions, reacts with personality",
+        "tags": ["[curious]", "[excited]", "[laughs]"],
+    },
+    "ALEX": {
+        "speaker": 13,
+        "description": "markets analyst — dry, precise, explains the WHY behind index and stock moves, deadpan humor",
+        "tags": ["[deadpan]", "[sarcastic]", "[sighs]"],
+    },
+    "MAYA": {
+        "speaker": 411,
+        "description": "tech correspondent — fast-talker, hype-aware but skeptical, loves a product-launch story",
+        "tags": ["[rushed]", "[excited]", "[mischievously]"],
+    },
+    "RIO": {
+        "speaker": 218,
+        "description": "world/culture correspondent — warm storyteller, brings human texture to big stories",
+        "tags": ["[speaking softly]", "[curious]"],
+    },
+    "KAI": {
+        "speaker": 635,
+        "description": "odd-thing closer — punchy one-liners, absurdist observations, trivia energy",
+        "tags": ["[mischievously]", "[laughs]", "[gasps]"],
+    },
+    "CAM": {
+        "speaker": 892,
+        "description": "macro / Fed correspondent — rates, dollar, bonds, geopolitics; calm, measured, occasionally biting",
+        "tags": ["[deadpan]", "[sighs]"],
+    },
+    "TESS": {
+        "speaker": 347,
+        "description": "consumer and retail desk — brands, earnings calls, CEOs, shopping habits; sharp eye for hype",
+        "tags": ["[sarcastic]", "[laughs]"],
+    },
+    "DEV": {
+        "speaker": 52,
+        "description": "crypto and fintech desk — skeptical, numbers-driven, loves pointing out when narratives collapse",
+        "tags": ["[deadpan]", "[snorts]"],
+    },
 }
 DEFAULT_CHARACTER = "JAMIE"
 INTER_LINE_SILENCE_MS = 160  # natural breath between speaker swaps
 
+# TTS backend selection. "eleven" | "mac" | "piper" | "auto" (default).
+# auto = eleven if ELEVENLABS_API_KEY set, else mac on Darwin, else piper.
+TTS_BACKEND = os.environ.get("TTS_BACKEND", "auto").lower()
+
+# ElevenLabs config. Creator plan = 100k chars/mo (~10 hours of audio).
+ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
+ELEVENLABS_MODEL = os.environ.get("ELEVENLABS_MODEL", "eleven_multilingual_v2")
+ELEVENLABS_OUTPUT_FORMAT = os.environ.get("ELEVENLABS_OUTPUT_FORMAT", "mp3_44100_128")
+# Per-character ElevenLabs voice IDs. Defaults are public premade voices on the
+# ElevenLabs platform. Override per host via env: ELEVEN_VOICE_<NAME>.
+# Browse voices at https://elevenlabs.io/app/voice-library to pick custom IDs.
+ELEVEN_CHARACTER_VOICES = {
+    "JAMIE": os.environ.get("ELEVEN_VOICE_JAMIE", "21m00Tcm4TlvDq8ikWAM"),  # Rachel — warm host
+    "ALEX":  os.environ.get("ELEVEN_VOICE_ALEX",  "pNInz6obpgDQGcFmaJgB"),  # Adam — deadpan analyst
+    "MAYA":  os.environ.get("ELEVEN_VOICE_MAYA",  "EXAVITQu4vr4xnSDxMaL"),  # Bella — fast tech
+    "RIO":   os.environ.get("ELEVEN_VOICE_RIO",   "AZnzlk1HvdDDOPRwxGdj"),  # Domi — storyteller
+    "KAI":   os.environ.get("ELEVEN_VOICE_KAI",   "TxGEqnHWrfWFTfGW9XjX"),  # Josh — punchy
+    "CAM":   os.environ.get("ELEVEN_VOICE_CAM",   "ErXwobaYiN019PkySvjV"),  # Antoni — measured
+    "TESS":  os.environ.get("ELEVEN_VOICE_TESS",  "MF3mGyEYCl7XYWbV9V6O"),  # Elli — sharp retail
+    "DEV":   os.environ.get("ELEVEN_VOICE_DEV",   "yoZ06aMxZJJ28mfd3POQ"),  # Sam — skeptical numbers
+}
+
 # Podcast metadata (edit these)
-PODCAST_TITLE = "Market Today, Explained"
-PODCAST_AUTHOR = "Saksham Gupta"
+PODCAST_TITLE = "Market Today, Explained — Daily Markets & Tech News"
+PODCAST_AUTHOR = "Saksham Gupta | Daily Markets Podcast"
 PODCAST_EMAIL = "gsaksham@gmail.com"
-PODCAST_DESCRIPTION = "Daily fast, funny roundtable on US markets, business, tech, and one weird thing — AI-generated each afternoon."
+PODCAST_DESCRIPTION = (
+    "Daily fast, funny roundtable on US markets, business, tech, world, and culture. "
+    "Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. "
+    "Not investment advice — see disclaimer."
+)
 PODCAST_LANGUAGE = "en-us"
 # Set after GitHub Pages is live. Example: https://<user>.github.io/<repo>
 PODCAST_BASE_URL = "https://sakzgupzzz.github.io/explain-market-today"
 PODCAST_CATEGORY = "Business"
 PODCAST_SUBCATEGORY = "Investing"
+# Stable show identity for Podcasting 2.0. Random UUID generated once; never change.
+PODCAST_GUID = os.environ.get("PODCAST_GUID", "0d3b1a8e-3e8d-4f7a-a4b2-9e6d1f4a2c5b")
+
+# Legal disclaimer. Short version is read aloud in the outro by the LLM;
+# full version goes in feed + episode descriptions.
+DISCLAIMER_SHORT = (
+    "This show is for entertainment and education only — nothing here is investment advice."
+)
+DISCLAIMER_FULL = (
+    "Market Today, Explained is for entertainment and educational purposes only. "
+    "Nothing in this podcast is investment, financial, legal, or tax advice. "
+    "Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary "
+    "relationship with listeners. Market data may be delayed or inaccurate. "
+    "Some segments are dramatized for comedic effect; references to real companies and "
+    "people are made for commentary and satire. Always consult a licensed professional "
+    "before making investment decisions."
+)
+
+# Phrases the LLM tends to over-use. Banned in the prompt; sanitizer scrubs leftovers.
+BANNED_PHRASES = [
+    "buckle up",
+    "let's dive in",
+    "let's dive into",
+    "in today's fast-paced world",
+    "fascinating",
+    "welcome to the show",
+    "welcome back",
+    "welcome to your daily",
+    "good morning everyone",
+    "good morning folks",
+    "hey everyone",
+    "hello listeners",
+    "well folks",
+    "as always",
+    "stay tuned",
+    "without further ado",
+    "ready for some laughs",
+    "ready for some insights",
+    "without a doubt",
+    "needless to say",
+    "at the end of the day",
+]
+
+# Show structure beats — used for chapter generation + critique pass.
+BEATS = [
+    "cold_open",
+    "markets",
+    "big_story",
+    "quick_hits",
+    "odd_thing",
+    "sign_off",
+]
+BEAT_TITLES = {
+    "cold_open": "Cold open",
+    "markets": "Markets",
+    "big_story": "Big story",
+    "quick_hits": "Quick hits",
+    "odd_thing": "Odd thing of the day",
+    "sign_off": "Sign-off",
+}
