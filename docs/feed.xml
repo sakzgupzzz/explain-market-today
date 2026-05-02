@@ -1,42 +1,46 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:ns0="http://www.w3.org/2005/Atom" xmlns:ns2="http://purl.org/rss/1.0/modules/content/" xmlns:podcast="https://podcastindex.org/namespace/1.0" version="2.0">
   <channel>
-    <title>Market Today, Explained</title>
+    <title>Market Today, Explained — Daily Markets &amp; Tech News</title>
     <link>https://sakzgupzzz.github.io/explain-market-today/feed.xml</link>
-    <description>Daily fast, funny roundtable on US markets, business, tech, and one weird thing — AI-generated each afternoon.</description>
-    <atom:link href="https://sakzgupzzz.github.io/explain-market-today/feed.xml" rel="self"/>
+    <description>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. Not investment advice — see disclaimer.
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+    <ns0:link href="https://sakzgupzzz.github.io/explain-market-today/feed.xml" rel="self" />
     <docs>http://www.rssboard.org/rss-specification</docs>
     <generator>python-feedgen</generator>
     <image>
       <url>https://sakzgupzzz.github.io/explain-market-today/cover.jpg</url>
-      <title>Market Today, Explained</title>
+      <title>Market Today, Explained — Daily Markets &amp; Tech News</title>
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Fri, 01 May 2026 22:31:37 +0000</lastBuildDate>
-    <itunes:author>Saksham Gupta</itunes:author>
+    <lastBuildDate>Sat, 02 May 2026 19:07:51 +0000</lastBuildDate>
+    <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
     <itunes:category text="Business">
-      <itunes:category text="Investing"/>
+      <itunes:category text="Investing" />
     </itunes:category>
-    <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/cover.jpg"/>
+    <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/cover.jpg" />
     <itunes:explicit>no</itunes:explicit>
     <itunes:owner>
-      <itunes:name>Saksham Gupta</itunes:name>
+      <itunes:name>Saksham Gupta | Daily Markets Podcast</itunes:name>
       <itunes:email>gsaksham@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, and one weird thing — AI-generated each afternoon.</itunes:summary>
+    <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. Not investment advice — see disclaimer.</itunes:summary>
     <item>
-      <title>Market Today, Explained — 2026-05-01</title>
+      <title>May 1: Welcome to Market Today Explained, because…</title>
       <description>JAMIE: Welcome to Market Today Explained, because today's news is funnier than your ex's breakup text, and we’re not just saying that for drama.
 
 ALEX: Let’s get right into it. The S&amp;P 7-2-3-0 is up a mere dinky 0.29%. Now, I have no idea why anyone cares about this.
 
 JAMIE: Yeah, but look at TSLA! Up 2.41% to 3-9-0.8-2. Maybe it’s because Elon’s got a new car named after him in the works? Or maybe it’s just because everyone’s buying crypto again and confusing the two.
 
-ALEX: Exactly, and that brings us to our top movers. Tech is up 1.49% on ORCL’s 6.5-7% gains. You know, those gains are so im…</description>
-      <content:encoded><![CDATA[JAMIE: Welcome to Market Today Explained, because today's news is funnier than your ex's breakup text, and we’re not just saying that for drama.
+ALEX: Exactly, and that b…
 
-ALEX: Let’s get right into it. The S&P 7-2-3-0 is up a mere dinky 0.29%. Now, I have no idea why anyone cares about this.
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: Welcome to Market Today Explained, because today's news is funnier than your ex's breakup text, and we’re not just saying that for drama.
+
+ALEX: Let’s get right into it. The S&amp;P 7-2-3-0 is up a mere dinky 0.29%. Now, I have no idea why anyone cares about this.
 
 JAMIE: Yeah, but look at TSLA! Up 2.41% to 3-9-0.8-2. Maybe it’s because Elon’s got a new car named after him in the works? Or maybe it’s just because everyone’s buying crypto again and confusing the two.
 
@@ -80,29 +84,29 @@ RIO: And stay skeptical of everything you see, especially on the news.
 
 KAI: And if all else fails, just buy a new phone from Dreame—it’s never too late to start over. 
 
-JAMIE: Stay tuned!]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-01.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-01.mp3" length="2428492" type="audio/mpeg"/>
+JAMIE: Stay tuned!</ns2:encoded>
+      <guid isPermaLink="false">33f68cbf-9f48-2659-1baa-cfcf52a0a69d</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-01.mp3" length="2428492" type="audio/mpeg" />
       <pubDate>Fri, 01 May 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:03:22</itunes:duration>
-    </item>
+    <podcast:season>2026</podcast:season><podcast:episode>20260501</podcast:episode></item>
     <item>
-      <title>Market Today, Explained — 2026-04-30</title>
+      <title>Apr 30: Welcome to Market Today Explained, where we…</title>
       <description>JAMIE: Welcome to Market Today Explained, where we break down the boring and make it hilariously interesting. I'm Jamie, your upbeat host today, and I have a one-liner that's so good, even the market can't ignore it. "If you're not laughing at the VIX, you're not trying."
+
+ALEX: *Dryly* Yeah, well, the VIX is down 10%, so maybe we should try harder.
+
+MAYA: Oh my gosh, Alex, your deadpan could be its own financial market. And speaking of markets, the S&amp;P 500 just hit a new high. I bet they're all…
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: Welcome to Market Today Explained, where we break down the boring and make it hilariously interesting. I'm Jamie, your upbeat host today, and I have a one-liner that's so good, even the market can't ignore it. "If you're not laughing at the VIX, you're not trying."
 
 ALEX: *Dryly* Yeah, well, the VIX is down 10%, so maybe we should try harder.
 
 MAYA: Oh my gosh, Alex, your deadpan could be its own financial market. And speaking of markets, the S&amp;P 500 just hit a new high. I bet they're all like, "Hooray! We got it, we made it to 7209!"
 
-ALEX: *Dry* More like, "Yay, another day where the …</description>
-      <content:encoded><![CDATA[JAMIE: Welcome to Market Today Explained, where we break down the boring and make it hilariously interesting. I'm Jamie, your upbeat host today, and I have a one-liner that's so good, even the market can't ignore it. "If you're not laughing at the VIX, you're not trying."
-
-ALEX: *Dryly* Yeah, well, the VIX is down 10%, so maybe we should try harder.
-
-MAYA: Oh my gosh, Alex, your deadpan could be its own financial market. And speaking of markets, the S&P 500 just hit a new high. I bet they're all like, "Hooray! We got it, we made it to 7209!"
-
-ALEX: *Dry* More like, "Yay, another day where the S&P barely moves, but we still get to call it a new high."
+ALEX: *Dry* More like, "Yay, another day where the S&amp;P barely moves, but we still get to call it a new high."
 
 RIO: On the bright side, at least the market isn't as gloomy as those TikTok videos of cats being dramatic. Wait, no, maybe that's a good sign?
 
@@ -158,27 +162,27 @@ MAYA: I mean, if you can make the market as exciting as these stories, why not?
 
 RIO: And remember, folks, in life and in markets, always expect the unexpected.
 
-KAI: *Quickly* And don't forget to laugh at the VIX. It's a good sign for your retirement fund!]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-30.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-30.mp3" length="2727542" type="audio/mpeg"/>
+KAI: *Quickly* And don't forget to laugh at the VIX. It's a good sign for your retirement fund!</ns2:encoded>
+      <guid isPermaLink="false">d0a5ec9e-1484-a151-66b0-ada1e2ceb5ba</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-30.mp3" length="2727542" type="audio/mpeg" />
       <pubDate>Thu, 30 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:03:47</itunes:duration>
-    </item>
+    <podcast:season>2026</podcast:season><podcast:episode>20260430</podcast:episode></item>
     <item>
-      <title>Market Today, Explained — 2026-04-29</title>
+      <title>Apr 29: Why do you think God made us work on Wednesday?…</title>
       <description>JAMIE: Why do you think God made us work on Wednesday? Because He knew we'd use it to explain market moves.
 
 ALEX: (dryly) Or maybe because the S&amp;P 500 needed a breather from its record high.
 
 MAYA: (fast-talking) And here I was, thinking maybe this would be an easy day. Turns out, the tech sector is up 0.8%—that’s like finding a $20 bill in your couch cushion, but in a trillion-dollar market.
 
-RIO: Warmly, "If you're feeling chilly today, just remember, the Dow is down 0.57%. It's like being a snowflake."
+RIO: Warmly, "If you're feeling chilly today, just remember, the Dow is down 0.57%. It's like being a …
 
-KAI: A quick hit for you: V (V) jumped 8.26%! Like, I saw a rat in my apartment and sud…</description>
-      <content:encoded><![CDATA[JAMIE: Why do you think God made us work on Wednesday? Because He knew we'd use it to explain market moves.
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: Why do you think God made us work on Wednesday? Because He knew we'd use it to explain market moves.
 
-ALEX: (dryly) Or maybe because the S&P 500 needed a breather from its record high.
+ALEX: (dryly) Or maybe because the S&amp;P 500 needed a breather from its record high.
 
 MAYA: (fast-talking) And here I was, thinking maybe this would be an easy day. Turns out, the tech sector is up 0.8%—that’s like finding a $20 bill in your couch cushion, but in a trillion-dollar market.
 
@@ -218,15 +222,15 @@ RIO: Warmly, "Well, back to reality. Thanks for the ride today!"
 
 KAI: And don’t forget to check out the odd thing—a chicken-wing trade collapse. Executives say higher gasoline prices hurt first-quarter sales. I guess if you can't afford gas, you can't afford wings.
 
-JAMIE: And with that, we sign off—until next time, keep your spreadsheets in order and your wallets tight!]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-29.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-29.mp3" length="1779297" type="audio/mpeg"/>
+JAMIE: And with that, we sign off—until next time, keep your spreadsheets in order and your wallets tight!</ns2:encoded>
+      <guid isPermaLink="false">b2a5c659-858c-cfeb-0074-4d16601b7c0e</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-29.mp3" length="1779297" type="audio/mpeg" />
       <pubDate>Wed, 29 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:02:28</itunes:duration>
-    </item>
+    <podcast:season>2026</podcast:season><podcast:episode>20260429</podcast:episode></item>
     <item>
-      <title>Market Today, Explained — 2026-04-28</title>
+      <title>Apr 28: So today we’re diving headfirst into the markets…</title>
       <description>JAMIE: So today we’re diving headfirst into the markets and seeing why Robinhood traders are suddenly trading their own pets for AI stocks. Let’s get started.
 
 ALEX: (dry) Yes, because nothing says “bear market” like a 40% dip in AMD.
@@ -235,10 +239,10 @@ MAYA: And speaking of dips, Microsoft just had its first reset since Windows Vis
 
 RIO: (warmly) It’s like they’re finally cleaning up the mess they left after 20 years of dominating tech.
 
-KAI: (one-liner) I bet now that cloud storage is down, they’ll offer free local hard drives to make up for it. #FreeSpaceForProfit
+KAI: (one-liner) I bet now that cloud storage is down, they’ll offer fre…
 
-JAMIE: (reacting) And don’t forget, Micr…</description>
-      <content:encoded><![CDATA[JAMIE: So today we’re diving headfirst into the markets and seeing why Robinhood traders are suddenly trading their own pets for AI stocks. Let’s get started.
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: So today we’re diving headfirst into the markets and seeing why Robinhood traders are suddenly trading their own pets for AI stocks. Let’s get started.
 
 ALEX: (dry) Yes, because nothing says “bear market” like a 40% dip in AMD.
 
@@ -318,15 +322,15 @@ RIO: (warmly) And remember, if all else fails, you can always fall back on old-f
 
 KAI: (one-liner) Or maybe just stick to the stocks that aren’t trying so hard. #NoPressure
 
-JAMIE: Thanks for tuning in, and we’ll see you tomorrow with another dose of Market Today!]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-28.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-28.mp3" length="2678014" type="audio/mpeg"/>
+JAMIE: Thanks for tuning in, and we’ll see you tomorrow with another dose of Market Today!</ns2:encoded>
+      <guid isPermaLink="false">6a341920-44ef-705e-ed92-ff85adbd5889</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-28.mp3" length="2678014" type="audio/mpeg" />
       <pubDate>Tue, 28 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:03:43</itunes:duration>
-    </item>
+    <podcast:season>2026</podcast:season><podcast:episode>20260428</podcast:episode></item>
     <item>
-      <title>Market Today, Explained — 2026-04-27</title>
+      <title>Apr 27: So, you guys ready for this? Because today's…</title>
       <description>JAMIE: So, you guys ready for this? Because today's market data is as juicy as a sour patch sky before the sun comes up.
 
 ALEX: (dryly) I hope you're not referring to that new flavor because it tastes like they forgot to put in the sugar.
@@ -335,10 +339,10 @@ MAYA: Oh, come on, we can't all be tech-nerds who only care about growth. Some o
 
 RIO: Sophisticated? You mean sophisticated enough to spot the irony in a world where AI's future depends on its past failures?
 
-KAI: (laughs) Or where pizza delivery drones start with a crash landing and end up as a joke. Pizza, I'm looking at you.
+KAI: (laughs) Or where…
 
-…</description>
-      <content:encoded><![CDATA[JAMIE: So, you guys ready for this? Because today's market data is as juicy as a sour patch sky before the sun comes up.
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: So, you guys ready for this? Because today's market data is as juicy as a sour patch sky before the sun comes up.
 
 ALEX: (dryly) I hope you're not referring to that new flavor because it tastes like they forgot to put in the sugar.
 
@@ -348,7 +352,7 @@ RIO: Sophisticated? You mean sophisticated enough to spot the irony in a world w
 
 KAI: (laughs) Or where pizza delivery drones start with a crash landing and end up as a joke. Pizza, I'm looking at you.
 
-JAMIE: Alright, let's dive into today’s data. S&P 500 is at seventy-one seven thirty-nine point one one. That’s like being stuck in a really long elevator—seven floors above the ground level but not quite to the sky.
+JAMIE: Alright, let's dive into today’s data. S&amp;P 500 is at seventy-one seven thirty-nine point one one. That’s like being stuck in a really long elevator—seven floors above the ground level but not quite to the sky.
 
 ALEX: Precisely. And while you're on that metaphor, the Nasdaq is doing better, up two hundred eighty-eight seven point ten percent. But let's remember why: because tech stocks are the only ones who know how to keep their cool in a hot market.
 
@@ -404,23 +408,23 @@ RIO: And until we meet again, stay skeptical but hopeful.
 
 KAI: And maybe keep an eye on your AI assistants; they might just turn against you one day.
 
-JAMIE: Goodnight, everyone!]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-27.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-27.mp3" length="2768920" type="audio/mpeg"/>
+JAMIE: Goodnight, everyone!</ns2:encoded>
+      <guid isPermaLink="false">2d945981-e5a6-974f-6ae2-1695ba729160</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-27.mp3" length="2768920" type="audio/mpeg" />
       <pubDate>Mon, 27 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:03:50</itunes:duration>
-    </item>
+    <podcast:season>2026</podcast:season><podcast:episode>20260427</podcast:episode></item>
     <item>
-      <title>Market Today, Explained — 2026-04-24</title>
+      <title>Apr 24: Alright gang, what do you say we kick this off…</title>
       <description>JAMIE: Alright gang, what do you say we kick this off with a little inside joke? What's the deal with my new tie today? Is it... a Bitcoin-themed NFT?
 
 ALEX: Oh yeah, Jamie, I mean, that's a good one. But honestly, I think it’s just a really bad replica of the old tech analyst cliché. You know, because you're trying to be so trendy.
 
-MAYA: Jamie, I love how your tie is now an altcoin, but we all know it's just a regular polyester job. And speaking of trendy, did you see that X-Energy stock popped 27% today? It’s like they’re the Silicon Valley of nuclear power.
+MAYA: Jamie, I love how your tie is now an altcoin, but we all know it's just a regular polyester job. And speaking of trendy, did you see that X-Energy stock poppe…
 
-RIO: I’m not sure if I should b…</description>
-      <content:encoded><![CDATA[JAMIE: Alright gang, what do you say we kick this off with a little inside joke? What's the deal with my new tie today? Is it... a Bitcoin-themed NFT?
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: Alright gang, what do you say we kick this off with a little inside joke? What's the deal with my new tie today? Is it... a Bitcoin-themed NFT?
 
 ALEX: Oh yeah, Jamie, I mean, that's a good one. But honestly, I think it’s just a really bad replica of the old tech analyst cliché. You know, because you're trying to be so trendy.
 
@@ -484,27 +488,25 @@ ALEX: Yeah, and remember, when the markets are down, that’s when you should bu
 
 MAYA: And don’t forget, Jamie, if you ever need a new tie, just reach for your old tech analyst one. You know it works.
 
-RIO: Hey, at least we have a theme today. Maybe next time it’ll be something less predictable.]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-24.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-24.mp3" length="3231287" type="audio/mpeg"/>
+RIO: Hey, at least we have a theme today. Maybe next time it’ll be something less predictable.</ns2:encoded>
+      <guid isPermaLink="false">9eefc6a4-9293-aa21-4133-4e19b723a049</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-24.mp3" length="3231287" type="audio/mpeg" />
       <pubDate>Fri, 24 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:04:29</itunes:duration>
-    </item>
+    <podcast:season>2026</podcast:season><podcast:episode>20260424</podcast:episode></item>
     <item>
-      <title>Market Today, Explained — 2026-04-23</title>
+      <title>Apr 23: You're not going to believe this, but I just had…</title>
       <description>JAMIE: You're not going to believe this, but I just had a dream about trading Bitcoin futures and somehow ended up winning $100 million. Wish I could say it was real.
 
 ALEX: *dryly* And here I thought you were just dreaming of being on Jeopardy!
 
 MAYA: Jamie's got the moves! But in real life, her portfolio might just need a few more sectors to balance out. Like maybe a little bit of tech?
 
-RIO: Speaking of tech, did anyone notice how many people are suddenly obsessed with axolotls? I mean, come on.
+RIO: Speaking of tech, did anyone notice how many people are suddenly obsessed with axolotls? I mean, come …
 
-KAI: *punchy* Because nothing says "tech trend" like finding a salamander in Wales!
-
-JAMIE: Kai…</description>
-      <content:encoded><![CDATA[JAMIE: You're not going to believe this, but I just had a dream about trading Bitcoin futures and somehow ended up winning $100 million. Wish I could say it was real.
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: You're not going to believe this, but I just had a dream about trading Bitcoin futures and somehow ended up winning $100 million. Wish I could say it was real.
 
 ALEX: *dryly* And here I thought you were just dreaming of being on Jeopardy!
 
@@ -570,25 +572,27 @@ ALEX: And if you ever find a salamander in Wales, make sure it’s not one of th
 
 MAYA: And while you’re at it, maybe just don’t name it Dippy.
 
-RIO: *warm* And until next time, stay skeptical and keep scrolling.]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-23.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-23.mp3" length="2842585" type="audio/mpeg"/>
+RIO: *warm* And until next time, stay skeptical and keep scrolling.</ns2:encoded>
+      <guid isPermaLink="false">0e78ea79-5ca5-740f-ebf9-86d19599e0de</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-23.mp3" length="2842585" type="audio/mpeg" />
       <pubDate>Thu, 23 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:03:56</itunes:duration>
-    </item>
+    <podcast:season>2026</podcast:season><podcast:episode>20260423</podcast:episode></item>
     <item>
-      <title>Market Today, Explained — 2026-04-22</title>
+      <title>Apr 22: And here we are, folks! The S&amp;P is looking like…</title>
       <description>JAMIE: Welcome to Market Today Explained—because who needs a boring financial brief when you can have a genuinely funny one? So let's dive in.
 
 ALEX: And here we are, folks! The S&amp;P is looking like it’s just had its first cup of coffee. Up a smidge at 7138, which means it’s now 7138. That’s what I call a morning pick-me-up!
 
 MAYA: Speaking of pick-me-ups, I’m sipping my tech juice. The NASDAQ is up like my hopes for the next iPhone release—just, you know, in a good way.
 
-RIO: And speaking of good ways, it looks like summer travel could get more expensive, thanks to surging fuel costs. Come on,…</description>
-      <content:encoded><![CDATA[JAMIE: Welcome to Market Today Explained—because who needs a boring financial brief when you can have a genuinely funny one? So let's dive in.
+RIO: And speaking of goo…
 
-ALEX: And here we are, folks! The S&P is looking like it’s just had its first cup of coffee. Up a smidge at 7138, which means it’s now 7138. That’s what I call a morning pick-me-up!
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: Welcome to Market Today Explained—because who needs a boring financial brief when you can have a genuinely funny one? So let's dive in.
+
+ALEX: And here we are, folks! The S&amp;P is looking like it’s just had its first cup of coffee. Up a smidge at 7138, which means it’s now 7138. That’s what I call a morning pick-me-up!
 
 MAYA: Speaking of pick-me-ups, I’m sipping my tech juice. The NASDAQ is up like my hopes for the next iPhone release—just, you know, in a good way.
 
@@ -630,16 +634,25 @@ MAYA: Until next time, keep scrolling through those stock tickers and dreaming o
 
 RIO: And until then, stay grounded—and maybe even hopeful about some peace.
 
-JAMIE: See you all tomorrow, and don’t forget—be the change!]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-22.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-22.mp3" length="2334765" type="audio/mpeg"/>
+JAMIE: See you all tomorrow, and don’t forget—be the change!</ns2:encoded>
+      <guid isPermaLink="false">08405254-727c-4ddc-7d66-3f089ddcdeb8</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-22.mp3" length="2334765" type="audio/mpeg" />
       <pubDate>Wed, 22 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:03:14</itunes:duration>
-    </item>
+    <podcast:season>2026</podcast:season><podcast:episode>20260422</podcast:episode></item>
     <item>
-      <title>Market Today, Explained — 2026-04-21</title>
+      <title>Apr 21: I mean, the S&amp;P 500 dipped just enough to make…</title>
       <description>JAMIE: Oh boy, good morning everyone! Today's market is so wild, it’s like watching a cat chase its own tail—and that tail happens to be a rocket ship.
+
+ALEX: I mean, the S&amp;P 500 dipped just enough to make us all feel slightly less wealthy. That's gotta hurt, right?
+
+JAMIE: Right? It's like someone threw a bucket of cold water on our portfolios. But hey, at least we can say we're still swimming in a sea of volatility.
+
+ALEX: Precisely. The tech sector is showing some resilience with XLK up 0.08%…
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: Oh boy, good morning everyone! Today's market is so wild, it’s like watching a cat chase its own tail—and that tail happens to be a rocket ship.
 
 ALEX: I mean, the S&amp;P 500 dipped just enough to make us all feel slightly less wealthy. That's gotta hurt, right?
 
@@ -647,18 +660,9 @@ JAMIE: Right? It's like someone threw a bucket of cold water on our portfolios. 
 
 ALEX: Precisely. The tech sector is showing some resilience with XLK up 0.08%, but that could be because we're all just so desperate for anything to go up right now.
 
-MAYA: Yeah…</description>
-      <content:encoded><![CDATA[JAMIE: Oh boy, good morning everyone! Today's market is so wild, it’s like watching a cat chase its own tail—and that tail happens to be a rocket ship.
-
-ALEX: I mean, the S&P 500 dipped just enough to make us all feel slightly less wealthy. That's gotta hurt, right?
-
-JAMIE: Right? It's like someone threw a bucket of cold water on our portfolios. But hey, at least we can say we're still swimming in a sea of volatility.
-
-ALEX: Precisely. The tech sector is showing some resilience with XLK up 0.08%, but that could be because we're all just so desperate for anything to go up right now.
-
 MAYA: Yeah, and it's not like AMD and UNH are the only ones cheering. You know, they say you can't judge a book by its cover, but you can definitely judge a stock by its ticker—like MSFT, which looks like someone took a chunk out of a fancy leather wallet.
 
-RIO: And then there's the real kicker in the world of finance: WMT. Who knew Walmart was so popular that even the S&P 500 couldn't ignore it? But hey, maybe they're just selling everything under the sun and making us all so broke we can’t afford to care about market dips.
+RIO: And then there's the real kicker in the world of finance: WMT. Who knew Walmart was so popular that even the S&amp;P 500 couldn't ignore it? But hey, maybe they're just selling everything under the sun and making us all so broke we can’t afford to care about market dips.
 
 KAI: Oh, speaking of which, did you hear about Amazon’s new GLP-1 weight loss program through their pharmacy? Because apparently, you can now access medications like Wegovy while browsing for toilet paper. I mean, who would’ve thought the future was so... predictable?
 
@@ -690,23 +694,23 @@ MAYA: Ha! And don’t forget to keep an eye on your portfolio. It might just sav
 
 RIO: Cheers everyone, and may the odds be ever in your favor—except for those pesky market dips.
 
-KAI: Amen to that.]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-21.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-21.mp3" length="2297148" type="audio/mpeg"/>
+KAI: Amen to that.</ns2:encoded>
+      <guid isPermaLink="false">e0780c77-eaef-661f-9ee1-e79f6cf39785</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-21.mp3" length="2297148" type="audio/mpeg" />
       <pubDate>Tue, 21 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:03:11</itunes:duration>
-    </item>
+    <podcast:season>2026</podcast:season><podcast:episode>20260421</podcast:episode></item>
     <item>
-      <title>Market Today, Explained — 2026-04-20</title>
+      <title>Apr 20: Daily markets and tech news</title>
       <description>Good morning and welcome to your daily US market recap on April 20, 2026. Today’s headline? A mixed day on Wall Street as tech and financials lead the charge while healthcare and consumer discretionary lag behind.
 
+Starting with our major indices: The S&amp;P 500 closed at 7109.14, down 0.24%. The Dow Jones finished at 49442.56, up just 0.01%, while the Nasdaq dropped to 24404.39, down 0.26%. Meanwhile, the Russell 2000 gained 0.58% to close at 2792.96. The VIX spiked by 7.95% to 18.87, signaling in…
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>Good morning and welcome to your daily US market recap on April 20, 2026. Today’s headline? A mixed day on Wall Street as tech and financials lead the charge while healthcare and consumer discretionary lag behind.
+
 Starting with our major indices: The S&amp;P 500 closed at 7109.14, down 0.24%. The Dow Jones finished at 49442.56, up just 0.01%, while the Nasdaq dropped to 24404.39, down 0.26%. Meanwhile, the Russell 2000 gained 0.58% to close at 2792.96. The VIX spiked by 7.95% to 18.87, signaling increased market volatility.
-
-Let’s break it down sector-wise. Tech (XLK) was up 0.14%, led by CRM and…</description>
-      <content:encoded><![CDATA[Good morning and welcome to your daily US market recap on April 20, 2026. Today’s headline? A mixed day on Wall Street as tech and financials lead the charge while healthcare and consumer discretionary lag behind.
-
-Starting with our major indices: The S&P 500 closed at 7109.14, down 0.24%. The Dow Jones finished at 49442.56, up just 0.01%, while the Nasdaq dropped to 24404.39, down 0.26%. Meanwhile, the Russell 2000 gained 0.58% to close at 2792.96. The VIX spiked by 7.95% to 18.87, signaling increased market volatility.
 
 Let’s break it down sector-wise. Tech (XLK) was up 0.14%, led by CRM and JPM. Financials (XLF) gained 0.38%, driven by JPM and XOM. Energy (XLE) moved up a mere 0.09% due to WTI crude’s 2.71% increase, which supports the sector's resilience in oil prices. Healthcare (XLV) was down 0.93%, with ABBV leading the losses, followed by TSLA and AVGO. Consumer discretionary (XLY) fell 0.45%, with META and PG taking the brunt of the drop.
 
@@ -726,23 +730,23 @@ Lastly, let's touch on some of the breaking news that hit the headlines today. U
 
 As we wrap up today's recap, it’s clear that while markets showed some volatility, they managed to close relatively steady. The day was marked by earnings reports, strategic partnerships, and geopolitical tensions. Investors will be watching closely as the situation around the Strait of Hormuz continues to develop.
 
-That’s all for today. Stay tuned for more updates and have a great rest of your trading day!]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-20.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-20.mp3" length="3029099" type="audio/mpeg"/>
+That’s all for today. Stay tuned for more updates and have a great rest of your trading day!</ns2:encoded>
+      <guid isPermaLink="false">bbacb103-88ef-0b58-5487-a2cd560ddbd6</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-20.mp3" length="3029099" type="audio/mpeg" />
       <pubDate>Mon, 20 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:04:12</itunes:duration>
-    </item>
+    <podcast:season>2026</podcast:season><podcast:episode>20260420</podcast:episode></item>
     <item>
-      <title>Market Today, Explained — 2026-04-19</title>
+      <title>Apr 19: Daily markets and tech news</title>
       <description>Good evening and welcome to your daily US market recap on April 19, 2026. Today's headline? A robust rally across the board as investors shrug off renewed tensions in the Strait of Hormuz.
 
+First up, let’s take a look at our major indices. The S&amp;P 500 closed at 7,126.06, up by 1.20%. The Dow Jones surged to 49,447.43, gaining 1.79%, while the Nasdaq climbed to 24,468.48, a gain of 1.52%. Meanwhile, the Russell 2000, a gauge for small-cap stocks, saw gains too, closing at 2,776.90, up by 2.11%. T…
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>Good evening and welcome to your daily US market recap on April 19, 2026. Today's headline? A robust rally across the board as investors shrug off renewed tensions in the Strait of Hormuz.
+
 First up, let’s take a look at our major indices. The S&amp;P 500 closed at 7,126.06, up by 1.20%. The Dow Jones surged to 49,447.43, gaining 1.79%, while the Nasdaq climbed to 24,468.48, a gain of 1.52%. Meanwhile, the Russell 2000, a gauge for small-cap stocks, saw gains too, closing at 2,776.90, up by 2.11%. The VIX, measuring market volatility, dropped to 17.48, down 2.56%, indicating a calmer sentiment.
-
-N…</description>
-      <content:encoded><![CDATA[Good evening and welcome to your daily US market recap on April 19, 2026. Today's headline? A robust rally across the board as investors shrug off renewed tensions in the Strait of Hormuz.
-
-First up, let’s take a look at our major indices. The S&P 500 closed at 7,126.06, up by 1.20%. The Dow Jones surged to 49,447.43, gaining 1.79%, while the Nasdaq climbed to 24,468.48, a gain of 1.52%. Meanwhile, the Russell 2000, a gauge for small-cap stocks, saw gains too, closing at 2,776.90, up by 2.11%. The VIX, measuring market volatility, dropped to 17.48, down 2.56%, indicating a calmer sentiment.
 
 Now, let's break it down sector-wise. Tech stocks led the charge today with the XLK ETF gaining 1.53%. This was driven by strong performances from mega-cap tech giants like Apple (AAPL) and Tesla (TSLA), both up over 2% on positive earnings reports and product launches. Healthcare also saw gains, particularly in healthcare-focused ETFs like XLV, which rose 1.49%, thanks to news around Eli Lilly's ($LLY) potential blockbuster deal for cancer pipeline expansion.
 
@@ -758,12 +762,12 @@ On a lighter note, let's touch base with some of the macroeconomic indicators. T
 
 In summary, despite geopolitical tensions flaring up in the Strait of Hormuz, investors seemed optimistic about earnings reports and potential economic growth. The market's resilience is a testament to its ability to quickly pivot on new information. As we move forward, keep an eye on how these events play out over the next few days.
 
-That’s all for today’s recap. Stay tuned for more updates. Goodnight!]]></content:encoded>
-      <guid isPermaLink="false">https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-19.mp3</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-19.mp3" length="2625037" type="audio/mpeg"/>
+That’s all for today’s recap. Stay tuned for more updates. Goodnight!</ns2:encoded>
+      <guid isPermaLink="false">1f44fde7-c40e-b627-1637-00e16fbb48c4</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-19.mp3" length="2625037" type="audio/mpeg" />
       <pubDate>Sun, 19 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta</itunes:author>
+      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
       <itunes:duration>00:03:38</itunes:duration>
-    </item>
-  </channel>
+    <podcast:season>2026</podcast:season><podcast:episode>20260419</podcast:episode></item>
+  <podcast:guid>0d3b1a8e-3e8d-4f7a-a4b2-9e6d1f4a2c5b</podcast:guid><podcast:locked owner="gsaksham@gmail.com">yes</podcast:locked><itunes:type>episodic</itunes:type><podcast:person role="host">Jamie</podcast:person><podcast:person role="host">Alex</podcast:person><podcast:person role="host">Maya</podcast:person><podcast:person role="host">Rio</podcast:person><podcast:person role="host">Kai</podcast:person><podcast:person role="host">Cam</podcast:person><podcast:person role="host">Tess</podcast:person><podcast:person role="host">Dev</podcast:person></channel>
 </rss>
