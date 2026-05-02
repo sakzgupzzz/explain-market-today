@@ -18,11 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      OLLAMA_MODEL: qwen2.5:7b
+      OLLAMA_MODEL: qwen3:14b
       OLLAMA_URL: http://localhost:11434/api/generate
       OLLAMA_TIMEOUT: "1800"
       PIPER_VOICE: en_US-libritts_r-medium
       PIPER_VOICE_PATH: /home/runner/.local/share/piper-voices/en_US-libritts_r-medium.onnx
+      TTS_BACKEND: eleven
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
 
     steps:
       - uses: actions/checkout@v4
