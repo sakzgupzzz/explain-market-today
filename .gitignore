@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 .state.json
 .DS_Store
+.env
+.env.*
+!.env.example
