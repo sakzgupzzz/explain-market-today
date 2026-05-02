@@ -4,12 +4,21 @@ import sys
 import traceback
 from datetime import datetime
 from pathlib import Path
+
+# Load .env before any other module reads os.environ
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 from config import EPISODES_DIR
 from fetch_market import fetch_all
 from fetch_news import fetch_headlines
-from generate_script import generate
+from generate_script import generate, critique_revise
+from sanitize import sanitize_script
 from tts import synth
-from publish import build_feed, build_index_html, git_push
+from publish import build_feed, build_index_html, git_push, write_transcripts, write_chapters
 
 
 def run(push: bool = True) -> Path:
@@ -24,12 +33,24 @@ def run(push: bool = True) -> Path:
     print(f"[{today}] generating script with local LLM…")
     script = generate(market, headlines_by_cat, date_pretty)
 
+    print(f"[{today}] critique pass…")
+    script = critique_revise(script, market, headlines_by_cat)
+
+    print(f"[{today}] sanitizing…")
+    script = sanitize_script(script)
+
     EPISODES_DIR.mkdir(parents=True, exist_ok=True)
     txt_path = EPISODES_DIR / f"{today}.txt"
     mp3_path = EPISODES_DIR / f"{today}.mp3"
     txt_path.write_text(script)
     print(f"[{today}] synthesizing audio…")
-    synth(script, mp3_path)
+    synth_result = synth(script, mp3_path)
+    # synth() may return (mp3_path, chunk_timings) for v3 dialogue path
+    chunk_timings = synth_result[1] if isinstance(synth_result, tuple) else None
+
+    print(f"[{today}] writing transcripts + chapters…")
+    write_transcripts(script, mp3_path, chunk_timings)
+    write_chapters(script, mp3_path, chunk_timings)
 
     print(f"[{today}] building feed…")
     build_feed()
