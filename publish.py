@@ -393,28 +393,486 @@ def git_push(commit_msg: str) -> None:
 
 # ─── index.html ─────────────────────────────────────────────────────────────
 
+_HOST_ROLES = {
+    "JAMIE": "host",
+    "ALEX": "markets",
+    "MAYA": "tech",
+    "RIO": "world",
+    "KAI": "odd-thing",
+    "CAM": "macro",
+    "TESS": "retail",
+    "DEV": "crypto",
+}
+
+
+def _wire_code(date_str: str, idx: int) -> str:
+    """Three-letter newsroom slug derived from date + sequence index."""
+    try:
+        d = datetime.strptime(date_str, "%Y-%m-%d")
+        m = d.strftime("%b").upper()  # JAN, FEB…
+        return f"{m[:1]}{idx:02d}"
+    except ValueError:
+        return f"X{idx:02d}"
+
+
+def _short_date(date_str: str) -> str:
+    try:
+        d = datetime.strptime(date_str, "%Y-%m-%d")
+        return d.strftime("%b %-d, %Y").upper()
+    except ValueError:
+        return date_str
+
+
+def _runtime_compact(seconds: float) -> str:
+    if seconds <= 0:
+        return "—"
+    m, s = divmod(int(seconds), 60)
+    return f"{m:02d}:{s:02d}"
+
+
+def _word_count(script: str) -> int:
+    if not script:
+        return 0
+    # rough — strips audio tags + name labels
+    cleaned = re.sub(r"^[A-Z][A-Z0-9_]{0,15}:", "", script, flags=re.M)
+    cleaned = re.sub(r"\[[^\]]+\]", "", cleaned)
+    return len(cleaned.split())
+
+
 def build_index_html() -> None:
+    """Render docs/index.html as a financial-newspaper × terminal hybrid.
+    No bundlers, no JS. Pure static HTML + inline CSS rendered server-side."""
     DOCS.mkdir(parents=True, exist_ok=True)
     eps = sorted(EPISODES_DIR.glob("*.mp3"), reverse=True)
-    items = []
-    for mp3 in eps:
+
+    transmissions: list[str] = []
+    ticker_items: list[str] = []
+    total = len(eps)
+
+    for i, mp3 in enumerate(eps):
+        seq = total - i  # newest = highest number
         meta_txt = mp3.with_suffix(".txt")
         script = meta_txt.read_text() if meta_txt.exists() else ""
         title = _episode_title(script, mp3.stem)
-        items.append(f'<li><a href="episodes/{mp3.name}">{title}</a></li>')
+        # strip the "Mmm D: " prefix added by _episode_title for body display
+        body_title = re.sub(r"^[A-Z][a-z]{2}\s\d{1,2}:\s*", "", title)
+        try:
+            dur = audio_duration_seconds(mp3)
+        except Exception:
+            dur = 0.0
+        runtime = _runtime_compact(dur)
+        date_str = mp3.stem
+        words = _word_count(script)
+        wire = _wire_code(date_str, seq)
+
+        transmissions.append(f"""
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">{seq:03d}</span>
+            <span class="wire">WIRE / {wire}</span>
+            <span class="date">{_short_date(date_str)}</span>
+            <span class="runtime" aria-label="runtime">{runtime}</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/{mp3.name}">{body_title}</a></h2>
+          <div class="dispatch-meta">
+            <span>{words} words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/{date_str}.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/{mp3.name}">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/{mp3.name}" type="audio/mpeg">
+          </audio>
+        </article>""")
+
+        ticker_items.append(
+            f'<span class="tk"><b>{wire}</b> '
+            f'<span class="tk-arrow">▲</span> '
+            f'{runtime} <span class="tk-sep">·</span> '
+            f'{words}w <span class="tk-sep">·</span> '
+            f'{_short_date(date_str).split(",")[0]}</span>'
+        )
+
+    # ticker repeated 3x for seamless loop
+    ticker_html = "".join(ticker_items) * 3
+
+    desk_rows = "".join(
+        f'<tr><td class="desk-name">{name}</td><td class="desk-role">{_HOST_ROLES.get(name, "")}</td></tr>'
+        for name in CHARACTERS.keys()
+    )
+
+    issue_no = f"NO. {total:03d}"
+    today_str = datetime.now().strftime("%a %-d %b %Y").upper()
+    last_update = datetime.now(timezone.utc).strftime("%H:%MZ")
+
     html = f"""<!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{PODCAST_TITLE}</title>
-<style>body{{font-family:system-ui;max-width:680px;margin:4em auto;padding:0 1em;line-height:1.5}}</style>
-<h1>{PODCAST_TITLE}</h1>
-<p>{PODCAST_DESCRIPTION}</p>
-<p><a href="feed.xml">RSS feed</a></p>
-<h2>Episodes</h2>
-<ul>
-{chr(10).join(items)}
-</ul>
-<hr>
-<p style="color:#666;font-size:0.85em">{DISCLAIMER_FULL}</p>
+<meta name="description" content="{PODCAST_DESCRIPTION}">
+<link rel="alternate" type="application/rss+xml" title="{PODCAST_TITLE}" href="feed.xml">
+<style>
+:root {{
+  --paper: #f4f1e8;
+  --paper-deep: #ece6d3;
+  --ink: #14110d;
+  --rule: #14110d;
+  --muted: #635a4d;
+  --accent: #9c2b1b;
+  --terminal-bg: #0e1015;
+  --terminal-fg: #d8c8a3;
+  --terminal-dim: #7a6f56;
+  --terminal-accent: #d9482a;
+  --serif: "Iowan Old Style", "Source Serif 4", "Charter", "Georgia", "Cambria", serif;
+  --mono: ui-monospace, "JetBrains Mono", "SF Mono", "Cascadia Code", Menlo, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", sans-serif;
+}}
+
+* {{ box-sizing: border-box; }}
+
+html {{
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga", "kern", "tnum";
+}}
+
+body {{
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.55;
+}}
+
+a {{ color: var(--ink); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }}
+a:hover {{ color: var(--accent); }}
+a.plain {{ text-decoration: none; border-bottom: 1px dotted var(--muted); padding-bottom: 1px; }}
+a.plain:hover {{ border-bottom-color: var(--accent); }}
+
+/* ── Masthead (newspaper top) ──────────────────────────────── */
+.masthead {{
+  border-bottom: 4px double var(--rule);
+  padding: 32px 40px 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 24px;
+}}
+.brand h1 {{
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 52px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}}
+.brand .tag {{
+  font-family: var(--mono);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-top: 10px;
+}}
+.issue {{
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.7;
+}}
+.issue b {{ color: var(--ink); font-weight: 700; }}
+.issue .price {{ display: inline-block; padding: 2px 8px; border: 1px solid var(--ink); margin-left: 8px; }}
+
+/* ── Ticker tape ───────────────────────────────────────────── */
+.ticker {{
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 9px 0;
+  position: relative;
+}}
+.ticker::before, .ticker::after {{
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}}
+.ticker::before {{ left: 0; background: linear-gradient(to right, var(--terminal-bg), transparent); }}
+.ticker::after  {{ right: 0; background: linear-gradient(to left,  var(--terminal-bg), transparent); }}
+.ticker-track {{
+  display: inline-block;
+  padding-left: 100%;
+  animation: tape 60s linear infinite;
+}}
+.ticker .tk {{ display: inline-block; padding: 0 28px; }}
+.ticker .tk b {{ color: var(--terminal-accent); font-weight: 700; }}
+.ticker .tk-arrow {{ color: var(--terminal-accent); }}
+.ticker .tk-sep {{ color: var(--terminal-dim); padding: 0 6px; }}
+@keyframes tape {{
+  0%   {{ transform: translate3d(0,0,0); }}
+  100% {{ transform: translate3d(-100%,0,0); }}
+}}
+@media (prefers-reduced-motion: reduce) {{
+  .ticker-track {{ animation: none; padding-left: 0; }}
+}}
+
+/* ── Lead / blurb ──────────────────────────────────────────── */
+.lead {{
+  padding: 28px 40px 8px;
+  max-width: 760px;
+  font-size: 19px;
+  line-height: 1.5;
+}}
+.lead::first-letter {{
+  font-weight: 900;
+  font-size: 4.2em;
+  float: left;
+  line-height: 0.85;
+  margin: 6px 10px 0 0;
+  color: var(--accent);
+  font-family: var(--serif);
+}}
+
+/* ── Two-column body: desk + transmissions ─────────────────── */
+.body {{
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  margin-top: 18px;
+}}
+@media (max-width: 820px) {{
+  .body {{ grid-template-columns: 1fr; }}
+  .desk {{ border-right: none !important; border-bottom: 1px solid var(--rule); }}
+}}
+
+.desk {{
+  padding: 24px 28px;
+  border-right: 1px solid var(--rule);
+  background: var(--paper-deep);
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow: auto;
+}}
+.desk h3 {{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 12px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}}
+.desk table {{ border-collapse: collapse; width: 100%; font-family: var(--mono); font-size: 12px; }}
+.desk td {{ padding: 4px 0; vertical-align: baseline; }}
+.desk-name {{ color: var(--ink); font-weight: 700; letter-spacing: 0.05em; }}
+.desk-role {{ color: var(--muted); text-align: right; text-transform: lowercase; }}
+
+.subscribe {{ margin-top: 20px; }}
+.subscribe a {{
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--muted);
+  text-decoration: none;
+}}
+.subscribe a::before {{ content: "→ "; color: var(--accent); }}
+
+/* ── Transmissions ─────────────────────────────────────────── */
+.transmissions {{ padding: 0; }}
+.dispatch {{
+  padding: 26px 40px;
+  border-bottom: 1px solid var(--rule);
+}}
+.dispatch:nth-child(odd) {{ background: var(--paper); }}
+.dispatch:nth-child(even) {{ background: var(--paper-deep); }}
+.dispatch:hover {{ background: #f9f7ed; }}
+
+.dispatch-head {{
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 14px;
+  align-items: baseline;
+  padding-bottom: 8px;
+  border-bottom: 1px dotted var(--muted);
+}}
+.dispatch-head .seq {{
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3px 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}}
+.dispatch-head .wire {{ color: var(--accent); font-weight: 700; }}
+.dispatch-head .runtime {{ color: var(--ink); font-weight: 700; }}
+
+.dispatch-title {{
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.2;
+  margin: 14px 0 8px;
+  letter-spacing: -0.01em;
+}}
+.dispatch-title a {{ text-decoration: none; }}
+.dispatch-title a:hover {{ color: var(--accent); text-decoration: underline; text-decoration-thickness: 2px; }}
+
+.dispatch-meta {{
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}}
+.dispatch-meta .sep {{ padding: 0 8px; color: var(--muted); }}
+
+.dispatch-audio {{
+  width: 100%;
+  height: 36px;
+  filter: grayscale(0.6) contrast(0.95);
+}}
+
+/* ── Status bar ────────────────────────────────────────────── */
+.statusbar {{
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 12px 40px;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--rule);
+}}
+.statusbar .pulse {{
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--terminal-accent);
+  margin-right: 8px;
+  vertical-align: middle;
+  animation: pulse 1.6s ease-in-out infinite;
+}}
+@keyframes pulse {{
+  0%, 100% {{ opacity: 1; }}
+  50%      {{ opacity: 0.25; }}
+}}
+@media (prefers-reduced-motion: reduce) {{
+  .pulse {{ animation: none; }}
+}}
+.statusbar .seg {{ color: var(--terminal-fg); }}
+.statusbar .seg b {{ color: var(--terminal-accent); font-weight: 700; }}
+.statusbar .seg .dim {{ color: var(--terminal-dim); }}
+
+/* ── Disclaimer footer ─────────────────────────────────────── */
+.disclaimer {{
+  padding: 24px 40px 60px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+  font-family: var(--sans);
+  max-width: 820px;
+  border-top: 1px solid var(--rule);
+}}
+.disclaimer h4 {{
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 8px;
+}}
+
+/* responsive padding */
+@media (max-width: 600px) {{
+  .masthead, .lead, .dispatch, .statusbar, .disclaimer {{ padding-left: 20px; padding-right: 20px; }}
+  .masthead {{ grid-template-columns: 1fr; gap: 14px; }}
+  .issue {{ text-align: left; }}
+}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand">
+    <h1>Market Today, Explained</h1>
+    <div class="tag">Daily · Markets · Tech · World · Culture</div>
+  </div>
+  <div class="issue">
+    <b>{issue_no}</b><br>
+    {today_str}<br>
+    <span class="price">FREE</span>
+  </div>
+</header>
+
+<div class="ticker" aria-label="recent transmissions">
+  <div class="ticker-track">{ticker_html}</div>
+</div>
+
+<section class="lead">
+  Eight AI-generated hosts riff on US markets, business, tech, world, and one weird thing. Five to ten minutes, every weekday afternoon, mastered to broadcast loudness. Underneath the jokes: a strict grounding pipeline that refuses to invent a story it can't cite.
+</section>
+
+<div class="body">
+  <aside class="desk">
+    <h3>The Desk</h3>
+    <table>{desk_rows}</table>
+    <div class="subscribe">
+      <h3 style="margin-top:24px">Subscribe</h3>
+      <a href="feed.xml">RSS feed</a>
+      <a href="https://podcasts.apple.com/" rel="nofollow">Apple Podcasts</a>
+      <a href="https://open.spotify.com/" rel="nofollow">Spotify</a>
+    </div>
+  </aside>
+
+  <main class="transmissions">
+    {''.join(transmissions)}
+  </main>
+</div>
+
+<div class="statusbar">
+  <span class="seg"><span class="pulse"></span>FEED ACTIVE</span>
+  <span class="seg"><span class="dim">EPISODES</span> <b>{total:03d}</b></span>
+  <span class="seg"><span class="dim">LAST UPDATE</span> <b>{last_update}</b></span>
+  <span class="seg"><span class="dim">FORMAT</span> <b>MP3 / 44.1KHZ / -16 LUFS</b></span>
+  <span class="seg"><span class="dim">SOURCE</span> <b>OLLAMA + ELEVENLABS V3</b></span>
+</div>
+
+<footer class="disclaimer">
+  <h4>Disclaimer</h4>
+  <p>{DISCLAIMER_FULL}</p>
+</footer>
+
+</body>
+</html>
 """
     (DOCS / "index.html").write_text(html)
 

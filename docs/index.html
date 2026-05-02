@@ -1,23 +1,576 @@
 <!doctype html>
+<html lang="en">
+<head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Market Today, Explained — Daily Markets & Tech News</title>
-<style>body{font-family:system-ui;max-width:680px;margin:4em auto;padding:0 1em;line-height:1.5}</style>
-<h1>Market Today, Explained — Daily Markets & Tech News</h1>
-<p>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. Not investment advice — see disclaimer.</p>
-<p><a href="feed.xml">RSS feed</a></p>
-<h2>Episodes</h2>
-<ul>
-<li><a href="episodes/2026-05-01.mp3">May 1: Welcome to Market Today Explained, because…</a></li>
-<li><a href="episodes/2026-04-30.mp3">Apr 30: Welcome to Market Today Explained, where we…</a></li>
-<li><a href="episodes/2026-04-29.mp3">Apr 29: Why do you think God made us work on Wednesday?…</a></li>
-<li><a href="episodes/2026-04-28.mp3">Apr 28: So today we’re diving headfirst into the markets…</a></li>
-<li><a href="episodes/2026-04-27.mp3">Apr 27: So, you guys ready for this? Because today's…</a></li>
-<li><a href="episodes/2026-04-24.mp3">Apr 24: Alright gang, what do you say we kick this off…</a></li>
-<li><a href="episodes/2026-04-23.mp3">Apr 23: You're not going to believe this, but I just had…</a></li>
-<li><a href="episodes/2026-04-22.mp3">Apr 22: And here we are, folks! The S&P is looking like…</a></li>
-<li><a href="episodes/2026-04-21.mp3">Apr 21: I mean, the S&P 500 dipped just enough to make…</a></li>
-<li><a href="episodes/2026-04-20.mp3">Apr 20: Daily markets and tech news</a></li>
-<li><a href="episodes/2026-04-19.mp3">Apr 19: Daily markets and tech news</a></li>
-</ul>
-<hr>
-<p style="color:#666;font-size:0.85em">Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</p>
+<meta name="description" content="Daily fast, funny roundtable on US markets, business, tech, world, and culture. Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. Not investment advice — see disclaimer.">
+<link rel="alternate" type="application/rss+xml" title="Market Today, Explained — Daily Markets & Tech News" href="feed.xml">
+<style>
+:root {
+  --paper: #f4f1e8;
+  --paper-deep: #ece6d3;
+  --ink: #14110d;
+  --rule: #14110d;
+  --muted: #635a4d;
+  --accent: #9c2b1b;
+  --terminal-bg: #0e1015;
+  --terminal-fg: #d8c8a3;
+  --terminal-dim: #7a6f56;
+  --terminal-accent: #d9482a;
+  --serif: "Iowan Old Style", "Source Serif 4", "Charter", "Georgia", "Cambria", serif;
+  --mono: ui-monospace, "JetBrains Mono", "SF Mono", "Cascadia Code", Menlo, monospace;
+  --sans: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "liga", "kern", "tnum";
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; }
+a:hover { color: var(--accent); }
+a.plain { text-decoration: none; border-bottom: 1px dotted var(--muted); padding-bottom: 1px; }
+a.plain:hover { border-bottom-color: var(--accent); }
+
+/* ── Masthead (newspaper top) ──────────────────────────────── */
+.masthead {
+  border-bottom: 4px double var(--rule);
+  padding: 32px 40px 18px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 24px;
+}
+.brand h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: clamp(28px, 5vw, 52px);
+  line-height: 0.98;
+  letter-spacing: -0.01em;
+}
+.brand .tag {
+  font-family: var(--mono);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  margin-top: 10px;
+}
+.issue {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: right;
+  line-height: 1.7;
+}
+.issue b { color: var(--ink); font-weight: 700; }
+.issue .price { display: inline-block; padding: 2px 8px; border: 1px solid var(--ink); margin-left: 8px; }
+
+/* ── Ticker tape ───────────────────────────────────────────── */
+.ticker {
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 9px 0;
+  position: relative;
+}
+.ticker::before, .ticker::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+.ticker::before { left: 0; background: linear-gradient(to right, var(--terminal-bg), transparent); }
+.ticker::after  { right: 0; background: linear-gradient(to left,  var(--terminal-bg), transparent); }
+.ticker-track {
+  display: inline-block;
+  padding-left: 100%;
+  animation: tape 60s linear infinite;
+}
+.ticker .tk { display: inline-block; padding: 0 28px; }
+.ticker .tk b { color: var(--terminal-accent); font-weight: 700; }
+.ticker .tk-arrow { color: var(--terminal-accent); }
+.ticker .tk-sep { color: var(--terminal-dim); padding: 0 6px; }
+@keyframes tape {
+  0%   { transform: translate3d(0,0,0); }
+  100% { transform: translate3d(-100%,0,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; padding-left: 0; }
+}
+
+/* ── Lead / blurb ──────────────────────────────────────────── */
+.lead {
+  padding: 28px 40px 8px;
+  max-width: 760px;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.lead::first-letter {
+  font-weight: 900;
+  font-size: 4.2em;
+  float: left;
+  line-height: 0.85;
+  margin: 6px 10px 0 0;
+  color: var(--accent);
+  font-family: var(--serif);
+}
+
+/* ── Two-column body: desk + transmissions ─────────────────── */
+.body {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  margin-top: 18px;
+}
+@media (max-width: 820px) {
+  .body { grid-template-columns: 1fr; }
+  .desk { border-right: none !important; border-bottom: 1px solid var(--rule); }
+}
+
+.desk {
+  padding: 24px 28px;
+  border-right: 1px solid var(--rule);
+  background: var(--paper-deep);
+  position: sticky;
+  top: 0;
+  align-self: start;
+  max-height: 100vh;
+  overflow: auto;
+}
+.desk h3 {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 12px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 8px;
+}
+.desk table { border-collapse: collapse; width: 100%; font-family: var(--mono); font-size: 12px; }
+.desk td { padding: 4px 0; vertical-align: baseline; }
+.desk-name { color: var(--ink); font-weight: 700; letter-spacing: 0.05em; }
+.desk-role { color: var(--muted); text-align: right; text-transform: lowercase; }
+
+.subscribe { margin-top: 20px; }
+.subscribe a {
+  display: block;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 0;
+  border-bottom: 1px dotted var(--muted);
+  text-decoration: none;
+}
+.subscribe a::before { content: "→ "; color: var(--accent); }
+
+/* ── Transmissions ─────────────────────────────────────────── */
+.transmissions { padding: 0; }
+.dispatch {
+  padding: 26px 40px;
+  border-bottom: 1px solid var(--rule);
+}
+.dispatch:nth-child(odd) { background: var(--paper); }
+.dispatch:nth-child(even) { background: var(--paper-deep); }
+.dispatch:hover { background: #f9f7ed; }
+
+.dispatch-head {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  gap: 14px;
+  align-items: baseline;
+  padding-bottom: 8px;
+  border-bottom: 1px dotted var(--muted);
+}
+.dispatch-head .seq {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 3px 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.dispatch-head .wire { color: var(--accent); font-weight: 700; }
+.dispatch-head .runtime { color: var(--ink); font-weight: 700; }
+
+.dispatch-title {
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.2;
+  margin: 14px 0 8px;
+  letter-spacing: -0.01em;
+}
+.dispatch-title a { text-decoration: none; }
+.dispatch-title a:hover { color: var(--accent); text-decoration: underline; text-decoration-thickness: 2px; }
+
+.dispatch-meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+.dispatch-meta .sep { padding: 0 8px; color: var(--muted); }
+
+.dispatch-audio {
+  width: 100%;
+  height: 36px;
+  filter: grayscale(0.6) contrast(0.95);
+}
+
+/* ── Status bar ────────────────────────────────────────────── */
+.statusbar {
+  background: var(--terminal-bg);
+  color: var(--terminal-fg);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 12px 40px;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--rule);
+}
+.statusbar .pulse {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--terminal-accent);
+  margin-right: 8px;
+  vertical-align: middle;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse { animation: none; }
+}
+.statusbar .seg { color: var(--terminal-fg); }
+.statusbar .seg b { color: var(--terminal-accent); font-weight: 700; }
+.statusbar .seg .dim { color: var(--terminal-dim); }
+
+/* ── Disclaimer footer ─────────────────────────────────────── */
+.disclaimer {
+  padding: 24px 40px 60px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+  font-family: var(--sans);
+  max-width: 820px;
+  border-top: 1px solid var(--rule);
+}
+.disclaimer h4 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+/* responsive padding */
+@media (max-width: 600px) {
+  .masthead, .lead, .dispatch, .statusbar, .disclaimer { padding-left: 20px; padding-right: 20px; }
+  .masthead { grid-template-columns: 1fr; gap: 14px; }
+  .issue { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand">
+    <h1>Market Today, Explained</h1>
+    <div class="tag">Daily · Markets · Tech · World · Culture</div>
+  </div>
+  <div class="issue">
+    <b>NO. 011</b><br>
+    SAT 2 MAY 2026<br>
+    <span class="price">FREE</span>
+  </div>
+</header>
+
+<div class="ticker" aria-label="recent transmissions">
+  <div class="ticker-track"><span class="tk"><b>M11</b> <span class="tk-arrow">▲</span> 03:22 <span class="tk-sep">·</span> 707w <span class="tk-sep">·</span> MAY 1</span><span class="tk"><b>A10</b> <span class="tk-arrow">▲</span> 03:47 <span class="tk-sep">·</span> 766w <span class="tk-sep">·</span> APR 30</span><span class="tk"><b>A09</b> <span class="tk-arrow">▲</span> 02:28 <span class="tk-sep">·</span> 502w <span class="tk-sep">·</span> APR 29</span><span class="tk"><b>A08</b> <span class="tk-arrow">▲</span> 03:43 <span class="tk-sep">·</span> 794w <span class="tk-sep">·</span> APR 28</span><span class="tk"><b>A07</b> <span class="tk-arrow">▲</span> 03:50 <span class="tk-sep">·</span> 830w <span class="tk-sep">·</span> APR 27</span><span class="tk"><b>A06</b> <span class="tk-arrow">▲</span> 04:29 <span class="tk-sep">·</span> 1049w <span class="tk-sep">·</span> APR 24</span><span class="tk"><b>A05</b> <span class="tk-arrow">▲</span> 03:56 <span class="tk-sep">·</span> 791w <span class="tk-sep">·</span> APR 23</span><span class="tk"><b>A04</b> <span class="tk-arrow">▲</span> 03:14 <span class="tk-sep">·</span> 708w <span class="tk-sep">·</span> APR 22</span><span class="tk"><b>A03</b> <span class="tk-arrow">▲</span> 03:11 <span class="tk-sep">·</span> 669w <span class="tk-sep">·</span> APR 21</span><span class="tk"><b>A02</b> <span class="tk-arrow">▲</span> 04:12 <span class="tk-sep">·</span> 558w <span class="tk-sep">·</span> APR 20</span><span class="tk"><b>A01</b> <span class="tk-arrow">▲</span> 03:38 <span class="tk-sep">·</span> 489w <span class="tk-sep">·</span> APR 19</span><span class="tk"><b>M11</b> <span class="tk-arrow">▲</span> 03:22 <span class="tk-sep">·</span> 707w <span class="tk-sep">·</span> MAY 1</span><span class="tk"><b>A10</b> <span class="tk-arrow">▲</span> 03:47 <span class="tk-sep">·</span> 766w <span class="tk-sep">·</span> APR 30</span><span class="tk"><b>A09</b> <span class="tk-arrow">▲</span> 02:28 <span class="tk-sep">·</span> 502w <span class="tk-sep">·</span> APR 29</span><span class="tk"><b>A08</b> <span class="tk-arrow">▲</span> 03:43 <span class="tk-sep">·</span> 794w <span class="tk-sep">·</span> APR 28</span><span class="tk"><b>A07</b> <span class="tk-arrow">▲</span> 03:50 <span class="tk-sep">·</span> 830w <span class="tk-sep">·</span> APR 27</span><span class="tk"><b>A06</b> <span class="tk-arrow">▲</span> 04:29 <span class="tk-sep">·</span> 1049w <span class="tk-sep">·</span> APR 24</span><span class="tk"><b>A05</b> <span class="tk-arrow">▲</span> 03:56 <span class="tk-sep">·</span> 791w <span class="tk-sep">·</span> APR 23</span><span class="tk"><b>A04</b> <span class="tk-arrow">▲</span> 03:14 <span class="tk-sep">·</span> 708w <span class="tk-sep">·</span> APR 22</span><span class="tk"><b>A03</b> <span class="tk-arrow">▲</span> 03:11 <span class="tk-sep">·</span> 669w <span class="tk-sep">·</span> APR 21</span><span class="tk"><b>A02</b> <span class="tk-arrow">▲</span> 04:12 <span class="tk-sep">·</span> 558w <span class="tk-sep">·</span> APR 20</span><span class="tk"><b>A01</b> <span class="tk-arrow">▲</span> 03:38 <span class="tk-sep">·</span> 489w <span class="tk-sep">·</span> APR 19</span><span class="tk"><b>M11</b> <span class="tk-arrow">▲</span> 03:22 <span class="tk-sep">·</span> 707w <span class="tk-sep">·</span> MAY 1</span><span class="tk"><b>A10</b> <span class="tk-arrow">▲</span> 03:47 <span class="tk-sep">·</span> 766w <span class="tk-sep">·</span> APR 30</span><span class="tk"><b>A09</b> <span class="tk-arrow">▲</span> 02:28 <span class="tk-sep">·</span> 502w <span class="tk-sep">·</span> APR 29</span><span class="tk"><b>A08</b> <span class="tk-arrow">▲</span> 03:43 <span class="tk-sep">·</span> 794w <span class="tk-sep">·</span> APR 28</span><span class="tk"><b>A07</b> <span class="tk-arrow">▲</span> 03:50 <span class="tk-sep">·</span> 830w <span class="tk-sep">·</span> APR 27</span><span class="tk"><b>A06</b> <span class="tk-arrow">▲</span> 04:29 <span class="tk-sep">·</span> 1049w <span class="tk-sep">·</span> APR 24</span><span class="tk"><b>A05</b> <span class="tk-arrow">▲</span> 03:56 <span class="tk-sep">·</span> 791w <span class="tk-sep">·</span> APR 23</span><span class="tk"><b>A04</b> <span class="tk-arrow">▲</span> 03:14 <span class="tk-sep">·</span> 708w <span class="tk-sep">·</span> APR 22</span><span class="tk"><b>A03</b> <span class="tk-arrow">▲</span> 03:11 <span class="tk-sep">·</span> 669w <span class="tk-sep">·</span> APR 21</span><span class="tk"><b>A02</b> <span class="tk-arrow">▲</span> 04:12 <span class="tk-sep">·</span> 558w <span class="tk-sep">·</span> APR 20</span><span class="tk"><b>A01</b> <span class="tk-arrow">▲</span> 03:38 <span class="tk-sep">·</span> 489w <span class="tk-sep">·</span> APR 19</span></div>
+</div>
+
+<section class="lead">
+  Eight AI-generated hosts riff on US markets, business, tech, world, and one weird thing. Five to ten minutes, every weekday afternoon, mastered to broadcast loudness. Underneath the jokes: a strict grounding pipeline that refuses to invent a story it can't cite.
+</section>
+
+<div class="body">
+  <aside class="desk">
+    <h3>The Desk</h3>
+    <table><tr><td class="desk-name">JAMIE</td><td class="desk-role">host</td></tr><tr><td class="desk-name">ALEX</td><td class="desk-role">markets</td></tr><tr><td class="desk-name">MAYA</td><td class="desk-role">tech</td></tr><tr><td class="desk-name">RIO</td><td class="desk-role">world</td></tr><tr><td class="desk-name">KAI</td><td class="desk-role">odd-thing</td></tr><tr><td class="desk-name">CAM</td><td class="desk-role">macro</td></tr><tr><td class="desk-name">TESS</td><td class="desk-role">retail</td></tr><tr><td class="desk-name">DEV</td><td class="desk-role">crypto</td></tr></table>
+    <div class="subscribe">
+      <h3 style="margin-top:24px">Subscribe</h3>
+      <a href="feed.xml">RSS feed</a>
+      <a href="https://podcasts.apple.com/" rel="nofollow">Apple Podcasts</a>
+      <a href="https://open.spotify.com/" rel="nofollow">Spotify</a>
+    </div>
+  </aside>
+
+  <main class="transmissions">
+    
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">011</span>
+            <span class="wire">WIRE / M11</span>
+            <span class="date">MAY 1, 2026</span>
+            <span class="runtime" aria-label="runtime">03:22</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-05-01.mp3">Welcome to Market Today Explained, because…</a></h2>
+          <div class="dispatch-meta">
+            <span>707 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-05-01.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-05-01.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-05-01.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">010</span>
+            <span class="wire">WIRE / A10</span>
+            <span class="date">APR 30, 2026</span>
+            <span class="runtime" aria-label="runtime">03:47</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-04-30.mp3">Welcome to Market Today Explained, where we…</a></h2>
+          <div class="dispatch-meta">
+            <span>766 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-30.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-30.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-04-30.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">009</span>
+            <span class="wire">WIRE / A09</span>
+            <span class="date">APR 29, 2026</span>
+            <span class="runtime" aria-label="runtime">02:28</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-04-29.mp3">Why do you think God made us work on Wednesday?…</a></h2>
+          <div class="dispatch-meta">
+            <span>502 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-29.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-29.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-04-29.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">008</span>
+            <span class="wire">WIRE / A08</span>
+            <span class="date">APR 28, 2026</span>
+            <span class="runtime" aria-label="runtime">03:43</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-04-28.mp3">So today we’re diving headfirst into the markets…</a></h2>
+          <div class="dispatch-meta">
+            <span>794 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-28.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-28.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-04-28.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">007</span>
+            <span class="wire">WIRE / A07</span>
+            <span class="date">APR 27, 2026</span>
+            <span class="runtime" aria-label="runtime">03:50</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-04-27.mp3">So, you guys ready for this? Because today's…</a></h2>
+          <div class="dispatch-meta">
+            <span>830 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-27.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-27.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-04-27.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">006</span>
+            <span class="wire">WIRE / A06</span>
+            <span class="date">APR 24, 2026</span>
+            <span class="runtime" aria-label="runtime">04:29</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-04-24.mp3">Alright gang, what do you say we kick this off…</a></h2>
+          <div class="dispatch-meta">
+            <span>1049 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-24.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-24.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-04-24.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">005</span>
+            <span class="wire">WIRE / A05</span>
+            <span class="date">APR 23, 2026</span>
+            <span class="runtime" aria-label="runtime">03:56</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-04-23.mp3">You're not going to believe this, but I just had…</a></h2>
+          <div class="dispatch-meta">
+            <span>791 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-23.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-23.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-04-23.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">004</span>
+            <span class="wire">WIRE / A04</span>
+            <span class="date">APR 22, 2026</span>
+            <span class="runtime" aria-label="runtime">03:14</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-04-22.mp3">And here we are, folks! The S&P is looking like…</a></h2>
+          <div class="dispatch-meta">
+            <span>708 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-22.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-22.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-04-22.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">003</span>
+            <span class="wire">WIRE / A03</span>
+            <span class="date">APR 21, 2026</span>
+            <span class="runtime" aria-label="runtime">03:11</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-04-21.mp3">I mean, the S&P 500 dipped just enough to make…</a></h2>
+          <div class="dispatch-meta">
+            <span>669 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-21.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-21.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-04-21.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">002</span>
+            <span class="wire">WIRE / A02</span>
+            <span class="date">APR 20, 2026</span>
+            <span class="runtime" aria-label="runtime">04:12</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-04-20.mp3">Daily markets and tech news</a></h2>
+          <div class="dispatch-meta">
+            <span>558 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-20.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-20.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-04-20.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+        <article class="dispatch">
+          <header class="dispatch-head">
+            <span class="seq">001</span>
+            <span class="wire">WIRE / A01</span>
+            <span class="date">APR 19, 2026</span>
+            <span class="runtime" aria-label="runtime">03:38</span>
+          </header>
+          <h2 class="dispatch-title"><a href="episodes/2026-04-19.mp3">Daily markets and tech news</a></h2>
+          <div class="dispatch-meta">
+            <span>489 words</span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-19.txt">transcript</a></span>
+            <span class="sep">·</span>
+            <span><a class="plain" href="episodes/2026-04-19.mp3">download</a></span>
+          </div>
+          <audio class="dispatch-audio" preload="none" controls>
+            <source src="episodes/2026-04-19.mp3" type="audio/mpeg">
+          </audio>
+        </article>
+  </main>
+</div>
+
+<div class="statusbar">
+  <span class="seg"><span class="pulse"></span>FEED ACTIVE</span>
+  <span class="seg"><span class="dim">EPISODES</span> <b>011</b></span>
+  <span class="seg"><span class="dim">LAST UPDATE</span> <b>19:21Z</b></span>
+  <span class="seg"><span class="dim">FORMAT</span> <b>MP3 / 44.1KHZ / -16 LUFS</b></span>
+  <span class="seg"><span class="dim">SOURCE</span> <b>OLLAMA + ELEVENLABS V3</b></span>
+</div>
+
+<footer class="disclaimer">
+  <h4>Disclaimer</h4>
+  <p>Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</p>
+</footer>
+
+</body>
+</html>
