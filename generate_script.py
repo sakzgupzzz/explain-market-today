@@ -11,6 +11,7 @@ import requests
 from datetime import datetime
 from config import (
     OLLAMA_URL, OLLAMA_MODEL, OLLAMA_CRITIC_MODEL, OLLAMA_TIMEOUT,
+    GROQ_API_KEY, GROQ_URL, GROQ_MODEL, GROQ_CRITIC_MODEL,
     MIN_WORDS, MAX_WORDS, CHARACTERS, PODCAST_TITLE,
     BANNED_PHRASES, DISCLAIMER_SHORT,
 )
@@ -180,9 +181,38 @@ def _ollama_call(prompt: str, model: str, temperature: float = 0.75) -> str:
     return resp.json()["response"].strip()
 
 
+def _groq_call(prompt: str, model: str, temperature: float = 0.75) -> str:
+    """Groq's OpenAI-compatible chat-completions endpoint. Sub-second inference
+    for open-weight models on their custom LPU hardware."""
+    resp = requests.post(
+        GROQ_URL,
+        headers={
+            "Authorization": f"Bearer {GROQ_API_KEY}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "temperature": temperature,
+            "max_tokens": 4096,
+        },
+        timeout=120,
+    )
+    resp.raise_for_status()
+    return resp.json()["choices"][0]["message"]["content"].strip()
+
+
+def _llm_call(prompt: str, ollama_model: str, groq_model: str, temperature: float = 0.75) -> str:
+    """Dispatch to Groq when GROQ_API_KEY is present, else Ollama. Local dev
+    stays on Ollama unless the env var is exported."""
+    if GROQ_API_KEY:
+        return _groq_call(prompt, groq_model, temperature)
+    return _ollama_call(prompt, ollama_model, temperature)
+
+
 def generate(market: dict, headlines_by_cat: dict[str, list[dict]], date_str: str) -> str:
     prompt = build_prompt(market, headlines_by_cat, date_str)
-    return _ollama_call(prompt, OLLAMA_MODEL, temperature=0.75)
+    return _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.75)
 
 
 def _critique_prompt(script: str, market: dict, headlines_by_cat: dict[str, list[dict]]) -> str:
@@ -236,7 +266,7 @@ def critique_revise(script: str, market: dict, headlines_by_cat: dict[str, list[
     """Run a critic LLM pass to fix fabrications, banned phrases, monologues."""
     prompt = _critique_prompt(script, market, headlines_by_cat)
     try:
-        return _ollama_call(prompt, OLLAMA_CRITIC_MODEL, temperature=0.2)
+        return _llm_call(prompt, OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL, temperature=0.2)
     except Exception as e:
         print(f"[critique] failed, returning unrevised script: {e}")
         return script

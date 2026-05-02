@@ -18,11 +18,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     env:
-      # qwen3:8b on CI — qwen3:14b is too slow on CPU-only ubuntu-latest
-      # (saw 30-min OLLAMA_TIMEOUT firing during prompt processing alone).
-      # 8b finishes both the generate + critique pass within budget.
-      # Local Mac runs override OLLAMA_MODEL=qwen3:14b for higher quality
-      # when there's GPU / M-series silicon to back it.
+      # LLM dispatch: when GROQ_API_KEY is set, generate_script._llm_call
+      # routes both the generate and critique passes through Groq's
+      # OpenAI-compatible endpoint (sub-second on their LPU hardware).
+      # Falls through to Ollama on the runner if the secret isn't set —
+      # see the Ollama install + pull steps below, which still execute as
+      # a safety net but are effectively no-ops when Groq is configured.
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GROQ_MODEL: llama-3.3-70b-versatile
       OLLAMA_MODEL: qwen3:8b
       OLLAMA_URL: http://localhost:11434/api/generate
       OLLAMA_TIMEOUT: "1500"

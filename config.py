@@ -88,6 +88,15 @@ HEADLINES_PER_CATEGORY = {
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
 OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen3:14b")
 OLLAMA_CRITIC_MODEL = os.environ.get("OLLAMA_CRITIC_MODEL", OLLAMA_MODEL)
+
+# Groq — fast hosted inference of open-weight models. Free tier covers
+# daily-podcast workload comfortably (30k tokens/min limit, we burn ~20k/run).
+# When GROQ_API_KEY is set, generate_script._llm_call uses Groq instead of
+# Ollama. Keeps Ollama as the local default.
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+GROQ_URL = os.environ.get("GROQ_URL", "https://api.groq.com/openai/v1/chat/completions")
+GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_CRITIC_MODEL = os.environ.get("GROQ_CRITIC_MODEL", GROQ_MODEL)
 OLLAMA_TIMEOUT = int(os.environ.get("OLLAMA_TIMEOUT", "1800"))
 
 # Script length: flexible. LLM picks based on news density.
