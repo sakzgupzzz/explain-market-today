@@ -1,16 +1,20 @@
-JAMIE: Jamie here — and the Nasdaq is up zero point eight nine percent, with tech stocks like Oracle and Adobe leading the charge, after a day of muted market moves.
-ALEX: Alex on equities — so the S and P five hundred is up a measly zero point two nine percent, with seventy one twenty-six being the number to beat, and the real story is in the top gainers, where Oracle is up six point four seven percent, and CRM is up four point one three percent, likely due to their recent earnings calls.
-CAM: Cam on macro — rates are down, with the ten year Treasury yield at four point three eight percent, a drop of zero point two seven percent, which is a welcome respite for investors, but the real question is what the Fed will do next.
-JAMIE: [laughs] Yeah, because the Fed always makes it easy for us to predict — said no one ever.
-MAYA: Maya from tech — there's a new study out that says AI can diagnose medical conditions more accurately than human doctors, which is both amazing and terrifying, and it's got me wondering what other industries AI will disrupt next.
-RIO: Rio checking in — I was reading about this story, and it's not just about the tech itself, but how it's going to change the way we think about healthcare and medicine, and the human side of it is really interesting.
-KAI: Kai with a tangent — have you guys seen those reusable digital Polaroids that are like a cross between a Polaroid camera and a fridge magnet? They're actually kind of cool, and it's a great way to display your favorite memories.
-CAM: [sighs] Cam on macro — anyway, back to the economy, and the dollar index is up zero point one three percent, which is a small move, but it's still a move, and we'll see how it plays out.
-TESS: Tess at retail — I saw that Spirit Airlines ceased operations overnight, which is a big deal for the airline industry, and it's got me wondering what other companies might be at risk.
-DEV: Dev on crypto — Bitcoin is up zero point zero two percent, which is basically flat, but the real story is in the fintech space, where companies like Doximity are making big moves.
-MAYA: [excited] Maya from tech — and have you guys seen the new e-reader from Xteink? It's tiny, magnetic, and attaches to the back of your phone like a Pop Socket — it's a game-changer for book lovers.
-KAI: Kai with the weird thing — a police officer in the UK had to be lowered into a crocodile-infested river to recover human remains, which is just a normal day on the job, right?
-JAMIE: [laughs] Yeah, just another day at the office — unless you're a police officer in the UK, apparently.
-ALEX: [deadpan] Alex again — and in other news, the VIX is up zero point five nine percent, which is a small move, but it's still a move, and we'll see how it plays out.
-CAM: Cam on macro — and the ten year Treasury yield is still at four point three eight percent, which is a good thing for investors, but we'll see how long it lasts.
-JAMIE: Jamie — and that's a wrap — this show is for entertainment and education only — nothing here is investment advice.
+JAMIE: Jamie here — and it looks like Spirit Airlines is shutting down after failing to reach a bailout deal, because who needs discount travel anyway?
+ALEX: Alex on equities — the market is seeing some gains today, with the S and P five hundred up zero point two nine percent, and the Nasdaq up zero point eight nine percent, but let's not get too excited, it's not like the fundamentals have changed or anything.
+CAM: Cam on macro — rates are down, with the ten year Treasury yield at four point three eight percent, and the dollar is up slightly, but it's all just a big shrug from me.
+MAYA: Maya from tech — have you seen the news about Anthropic's new Claude four point seven release? The benchmark numbers are absurd, with software engineering tasks at ninety-four percent accuracy, but I'm still waiting for the bear case to show up.
+KAI: Kai with a question — does anyone actually understand what's going on with the market right now, or are we all just making it up as we go along?
+ALEX: [deadpan] Well, Kai, it's not like we have a crystal ball or anything, but it seems like the market is just reacting to whatever headline comes out next.
+JAMIE: [laughs] Yeah, and it's not like we're just a bunch of monkeys throwing darts at a board or anything.
+MAYA: [excited] Oh, but speaking of tech, have you seen the news about Shokz's new OpenRun Pro two headphones? They're on sale for forty dollars off, and they're supposed to be amazing.
+RIO: Rio checking in — I saw a story about a couple who lost one hundred eighty-five thousand dollars in retirement savings because no advisor was actually managing their account, and I just can't even.
+TESS: Tess at retail — it looks like used EV sales are surging, and the ownership costs are actually pretty comparable to gas-powered cars, but don't tell anyone I said that.
+DEV: Dev on crypto — Bitcoin is up zero point zero four percent, but who's really paying attention to that right now?
+KAI: Kai with the weird thing — did you hear about the guy who won the Powerball and his first call was to his ex-wife to gloat? And now she's suing him for the lottery ticket because he bought it on a joint credit card.
+JAMIE: [laughs] Of course she is — because that's just how these things always go.
+CAM: [sighs] Cam on macro — it's just another day, another dollar, another chance for the market to do something crazy.
+MAYA: Maya from tech — I'm just waiting for the other shoe to drop, or in this case, the other algorithm to kick in.
+ALEX: [sarcastic] Oh, don't worry, Maya, I'm sure it'll all make sense in the end — or not.
+JAMIE: [laughs] Alright, alright, let's wrap it up — Tess, what's the last word?
+TESS: [laughs] Just that I'm still trying to figure out what's going on with the market, but hey, at least it's entertaining.
+KAI: [mischievously] And I'm just here for the free snacks.
+JAMIE: [laughs] This show is for entertainment and education only — nothing here is investment advice.
