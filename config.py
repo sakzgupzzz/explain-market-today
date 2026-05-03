@@ -96,7 +96,11 @@ OLLAMA_CRITIC_MODEL = os.environ.get("OLLAMA_CRITIC_MODEL", OLLAMA_MODEL)
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 GROQ_URL = os.environ.get("GROQ_URL", "https://api.groq.com/openai/v1/chat/completions")
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
-GROQ_CRITIC_MODEL = os.environ.get("GROQ_CRITIC_MODEL", GROQ_MODEL)
+# Use a smaller/faster model for the critique pass so two calls back-to-back
+# don't blow Groq's free-tier 12k tokens-per-minute cap on the 70b model.
+# 8b-instant has a much higher TPM ceiling and the structured critique task
+# (flag fabrications, banned phrases, etc.) doesn't need 70b reasoning.
+GROQ_CRITIC_MODEL = os.environ.get("GROQ_CRITIC_MODEL", "llama-3.1-8b-instant")
 OLLAMA_TIMEOUT = int(os.environ.get("OLLAMA_TIMEOUT", "1800"))
 
 # Script length: flexible. LLM picks based on news density.
@@ -169,14 +173,17 @@ ELEVENLABS_OUTPUT_FORMAT = os.environ.get("ELEVENLABS_OUTPUT_FORMAT", "mp3_44100
 # ElevenLabs platform. Override per host via env: ELEVEN_VOICE_<NAME>.
 # Browse voices at https://elevenlabs.io/app/voice-library to pick custom IDs.
 ELEVEN_CHARACTER_VOICES = {
-    "JAMIE": os.environ.get("ELEVEN_VOICE_JAMIE", "21m00Tcm4TlvDq8ikWAM"),  # Rachel — warm host
-    "ALEX":  os.environ.get("ELEVEN_VOICE_ALEX",  "pNInz6obpgDQGcFmaJgB"),  # Adam — deadpan analyst
-    "MAYA":  os.environ.get("ELEVEN_VOICE_MAYA",  "EXAVITQu4vr4xnSDxMaL"),  # Bella — fast tech
-    "RIO":   os.environ.get("ELEVEN_VOICE_RIO",   "AZnzlk1HvdDDOPRwxGdj"),  # Domi — storyteller
-    "KAI":   os.environ.get("ELEVEN_VOICE_KAI",   "TxGEqnHWrfWFTfGW9XjX"),  # Josh — punchy
-    "CAM":   os.environ.get("ELEVEN_VOICE_CAM",   "ErXwobaYiN019PkySvjV"),  # Antoni — measured
-    "TESS":  os.environ.get("ELEVEN_VOICE_TESS",  "MF3mGyEYCl7XYWbV9V6O"),  # Elli — sharp retail
-    "DEV":   os.environ.get("ELEVEN_VOICE_DEV",   "yoZ06aMxZJJ28mfd3POQ"),  # Sam — skeptical numbers
+    # All IDs below are from the current ElevenLabs default voice catalogue —
+    # auto-loaded into every new account, no add-from-library step required.
+    # Mapping prioritizes personality match over gender balance.
+    "JAMIE": os.environ.get("ELEVEN_VOICE_JAMIE", "EXAVITQu4vr4xnSDxMaL"),  # Sarah — confident, warm, professional host
+    "ALEX":  os.environ.get("ELEVEN_VOICE_ALEX",  "nPczCjzI2devNBz1zQrb"),  # Brian — deep, resonant analyst
+    "MAYA":  os.environ.get("ELEVEN_VOICE_MAYA",  "cgSgspJ2msm6clMCkdW9"),  # Jessica — playful, bright tech reporter
+    "RIO":   os.environ.get("ELEVEN_VOICE_RIO",   "JBFqnCBsd6RMkjVDRZzb"),  # George — warm British storyteller
+    "KAI":   os.environ.get("ELEVEN_VOICE_KAI",   "N2lVS1w4EtoT3dr4eOWO"),  # Callum — husky trickster, absurdist
+    "CAM":   os.environ.get("ELEVEN_VOICE_CAM",   "onwK4e9ZLuTAKqWW03F9"),  # Daniel — steady British broadcaster, macro
+    "TESS":  os.environ.get("ELEVEN_VOICE_TESS",  "FGY2WhTYpPnrIDTdsKH5"),  # Laura — quirky enthusiast, retail
+    "DEV":   os.environ.get("ELEVEN_VOICE_DEV",   "cjVigY5qzO86Huf0OWal"),  # Eric — smooth, trustworthy, numbers
 }
 
 # Podcast metadata (edit these)
