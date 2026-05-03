@@ -250,8 +250,9 @@ def generate(
     max_retries: int = 1,
 ) -> str:
     """Generate the dialogue. If the result has fewer than MIN_TURNS turns,
-    retry once with a stronger 'more turns, more reactions' addendum
-    appended to the prompt."""
+    retry once with a stronger 'more turns, more reactions' addendum.
+    Sleeps before retry to clear Groq's per-minute TPM window."""
+    import time
     prompt = build_prompt(market, headlines_by_cat, date_str)
     script = _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.75)
     turns = _count_turns(script)
@@ -260,6 +261,9 @@ def generate(
     attempts = 0
     while turns < MIN_TURNS and attempts < max_retries:
         attempts += 1
+        if GROQ_API_KEY:
+            print("[generate] sleeping 35s to clear Groq TPM window before retry…")
+            time.sleep(35)
         addendum = (
             f"\n\nYour previous draft had only {turns} turns. The minimum is "
             f"{MIN_TURNS}. Rewrite the episode with MORE turns — break monologues "
@@ -267,9 +271,16 @@ def generate(
             f"between every substantive turn, and use more hosts. Aim for 30-40 turns."
         )
         retry_prompt = prompt + addendum
-        script = _llm_call(retry_prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.85)
-        turns = _count_turns(script)
-        print(f"[generate] retry {attempts}: {turns} turns")
+        try:
+            retried = _llm_call(retry_prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.85)
+            new_turns = _count_turns(retried)
+            print(f"[generate] retry {attempts}: {new_turns} turns")
+            if new_turns > turns:
+                script = retried
+                turns = new_turns
+        except Exception as e:
+            print(f"[generate] retry {attempts} failed ({e}); keeping first-pass script")
+            break
     return script
 
 

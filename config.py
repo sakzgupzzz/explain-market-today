@@ -110,7 +110,10 @@ OLLAMA_TIMEOUT = int(os.environ.get("OLLAMA_TIMEOUT", "1800"))
 # turn count in the prompt gets the conversational density back.
 MIN_WORDS = 800
 MAX_WORDS = 2200
-MIN_TURNS = 28   # at least this many NAME:line turns per episode
+# Hard floor for retry trigger. Anything under this regenerates with a
+# stronger 'more turns' prompt. 24 is forgiving — first-pass scripts
+# at 25-27 turns are good enough to ship, only the truly thin ones retry.
+MIN_TURNS = 24
 
 # ElevenLabs v3 default delivery is podcast-narration paced — about 15-20%
 # slower than what old Piper/macOS-say episodes felt like. Post-process
