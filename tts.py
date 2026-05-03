@@ -25,7 +25,7 @@ import shutil
 from pathlib import Path
 from config import (
     TTS_VOICE, TTS_RATE, PIPER_VOICE_PATH, CHARACTERS, DEFAULT_CHARACTER,
-    INTER_LINE_SILENCE_MS,
+    INTER_LINE_SILENCE_MS, AUDIO_SPEEDUP,
     TTS_BACKEND, ELEVENLABS_API_KEY, ELEVENLABS_MODEL, ELEVENLABS_OUTPUT_FORMAT,
     ELEVEN_CHARACTER_VOICES,
 )
@@ -442,8 +442,10 @@ def _silence_wav(ms: int, sample_rate: int, path: Path) -> None:
 
 
 def _master_audio(in_wav: Path, out_mp3: Path) -> None:
-    """Two-pass loudnorm + highpass + compressor + brick-wall limiter to -16 LUFS.
-    Falls back to plain encode if loudnorm measurement fails."""
+    """Two-pass loudnorm + highpass + compressor + brick-wall limiter to -16 LUFS,
+    then atempo speedup. Falls back to plain encode if loudnorm fails."""
+    speedup = max(0.5, min(2.0, AUDIO_SPEEDUP))
+    speedup_filter = f",atempo={speedup}" if abs(speedup - 1.0) > 0.01 else ""
     try:
         proc = subprocess.run(
             ["ffmpeg", "-i", str(in_wav), "-af",
@@ -466,6 +468,7 @@ def _master_audio(in_wav: Path, out_mp3: Path) -> None:
             f"offset={data['target_offset']}:"
             "linear=true,"
             "alimiter=limit=0.95"
+            f"{speedup_filter}"
         )
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error", "-i", str(in_wav),
@@ -473,11 +476,13 @@ def _master_audio(in_wav: Path, out_mp3: Path) -> None:
              "-codec:a", "libmp3lame", "-b:a", "128k", str(out_mp3)],
             check=True,
         )
-        print(f"[master] applied 2-pass loudnorm: input_i={data['input_i']} → -16 LUFS")
+        print(f"[master] applied 2-pass loudnorm + atempo={speedup}: input_i={data['input_i']} → -16 LUFS")
     except Exception as e:
-        print(f"[master] loudnorm failed ({e}), falling back to plain encode")
+        print(f"[master] loudnorm failed ({e}), falling back to plain encode + atempo")
+        chain = f"atempo={speedup}" if speedup_filter else "anull"
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error", "-i", str(in_wav),
+             "-af", chain,
              "-codec:a", "libmp3lame", "-b:a", "128k",
              "-ar", "44100", "-ac", "1", str(out_mp3)],
             check=True,

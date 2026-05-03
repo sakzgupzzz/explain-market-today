@@ -12,7 +12,7 @@ from datetime import datetime
 from config import (
     OLLAMA_URL, OLLAMA_MODEL, OLLAMA_CRITIC_MODEL, OLLAMA_TIMEOUT,
     GROQ_API_KEY, GROQ_URL, GROQ_MODEL, GROQ_CRITIC_MODEL,
-    MIN_WORDS, MAX_WORDS, CHARACTERS, PODCAST_TITLE,
+    MIN_WORDS, MAX_WORDS, MIN_TURNS, CHARACTERS, PODCAST_TITLE,
     BANNED_PHRASES, DISCLAIMER_SHORT,
 )
 
@@ -155,14 +155,19 @@ Hard rules:
    d. QUICK HITS — rapid rotation across 3-4 hosts on their beats, each covering one real headline. 2-3 lines each, punchline-first when possible.
    e. ODD THING — KAI closes with ONE unusual story from [CULTURE] or [WORLD] and a joke. Others react. Underlying fact must come from headlines.
    f. SIGN-OFF — quick banter from 2-3 hosts, callback to an earlier joke if possible, then JAMIE reads a one-line disclaimer: "{DISCLAIMER_SHORT}" (verbatim). One line each before the disclaimer.
-5. VOICE: ping-pong pace. Most turns 1-3 sentences. Use contractions. Em-dashes and ellipses suggest natural pauses.
-6. NUMBERS: write as words for smooth TTS. "Up one point two percent." For indices spell digit-pairs: "seventy-one twenty-six" for 7126. Tickers as letters with spaces: "S P Y", "N V D A". Dollar amounts: "one hundred billion dollars", not "$100B".
-7. ACCURACY (HARD): you may ONLY discuss companies, stories, prices, percentages, and events that appear verbatim in MARKET DATA or HEADLINES above. Do NOT invent stock moves, headlines, deals, endorsements, shutdowns, or quotes. If a beat has no source material, skip the beat. If the tape moved without a clear catalyst, ALEX says exactly that.
-8. LENGTH: adaptive. Quiet day → around {MIN_WORDS} words. Busy day → up to {MAX_WORDS} words. Never pad. Never skip a great story that's actually in the headlines.
-9. CAST USAGE: at least {min_hosts} of {total_hosts} hosts must speak. JAMIE bookends but speaks AT MOST 1 in every 3 turns overall. No single host gets more than a third of total airtime.
-10. HUMOR: jokes throughout, organic to each host's personality. Punch up at institutions/Wall Street/PR spin. Never punch down at protected characteristics. No dad jokes. Late callback to an earlier joke = chef's kiss.
-11. BANNED_PHRASES — do NOT use any of these (case-insensitive): {banned}.
-12. OUTPUT: ONLY `NAME: line` lines. No markdown, no headers, no section labels, no intro/outro commentary, no sponsors, no fictional podcast brand names. Real company/product names are fine and expected. First line must start with `JAMIE:`. Last line must contain the disclaimer verbatim.
+5. PING-PONG RHYTHM (HARD): the show is a CONVERSATION, not a series of monologues. Hosts INTERRUPT, REACT, RIFF on each other constantly. Concretely:
+   - Most turns 1-2 sentences (≤30 words). A long turn (3-4 sentences) MUST be followed by a short reaction from a different host (5-15 words: "Wait, what?", "Come on.", "Hold on, that's not right.", "Oh no.", "Yeah but —", "Right, exactly.", "[laughs] Sure.").
+   - After every substantive segment from one host, AT LEAST ONE other host reacts before moving on to the next substantive turn.
+   - No host speaks 2 turns in a row unless the line is genuinely continuous.
+6. SPECIFICS (HARD): every substantive turn must contain a CONCRETE FACT from the SOURCE DATA — a company name, a price, a percentage, a dollar amount, a person's name, a place, a date. Vague observations like "the market is wild today" without a specific number are banned. Cite the data, then react to it.
+7. VOICE: contractions, em-dashes, ellipses for natural pauses. Hosts cut each other off, finish each other's sentences, push back.
+8. NUMBERS: write as words for smooth TTS. "Up one point two percent." For indices spell digit-pairs: "seventy-one twenty-six" for 7126. Tickers as letters with spaces: "S P Y", "N V D A", "C R M". Dollar amounts: "one hundred billion dollars", not "$100B".
+9. ACCURACY (HARD): you may ONLY discuss companies, stories, prices, percentages, and events that appear verbatim in MARKET DATA or HEADLINES above. Do NOT invent stock moves, headlines, deals, endorsements, shutdowns, or quotes. If a beat has no source material, skip the beat. If the tape moved without a clear catalyst, ALEX says exactly that.
+10. LENGTH: adaptive but DENSE. Quiet day → around {MIN_WORDS} words across AT LEAST {MIN_TURNS} turns. Busy day → up to {MAX_WORDS} words across 40+ turns. Never pad. Never skip a great story that's in the headlines. If you produce fewer than {MIN_TURNS} turns the episode is rejected.
+11. CAST USAGE: ALL {total_hosts} hosts SHOULD appear; minimum {min_hosts}. JAMIE bookends but speaks AT MOST 1 in every 4 turns. No single host gets more than 25% of total turns.
+12. HUMOR: jokes throughout, organic to each host's personality. Punch up at institutions/Wall Street/PR spin. Never punch down at protected characteristics. No dad jokes. Late callback to an earlier joke = chef's kiss.
+13. BANNED_PHRASES — do NOT use any of these (case-insensitive): {banned}.
+14. OUTPUT: ONLY `NAME: line` lines. No markdown, no headers, no section labels, no intro/outro commentary, no sponsors, no fictional podcast brand names. Real company/product names are fine and expected. First line must start with `JAMIE:`. Last line must contain the disclaimer verbatim.
 """
 
 

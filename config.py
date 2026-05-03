@@ -77,11 +77,11 @@ RSS_FEEDS_BY_CATEGORY: dict[str, list[str]] = {
     ],
 }
 HEADLINES_PER_CATEGORY = {
-    "markets": 20,
-    "business": 10,
-    "tech": 10,
-    "world": 8,
-    "culture": 5,
+    "markets": 30,
+    "business": 18,
+    "tech": 18,
+    "world": 12,
+    "culture": 8,
 }
 
 # LLM (Ollama local or Actions runner). Override via env.
@@ -105,8 +105,19 @@ GROQ_CRITIC_MODEL = os.environ.get("GROQ_CRITIC_MODEL", "llama-3.3-70b-versatile
 OLLAMA_TIMEOUT = int(os.environ.get("OLLAMA_TIMEOUT", "1800"))
 
 # Script length: flexible. LLM picks based on news density.
-MIN_WORDS = 400   # floor ~2.5 min
-MAX_WORDS = 1800  # ceiling ~12 min
+# Bumped from 400/1800 → 800/2200 after early v3-pipeline episodes felt
+# under-baked (16 turns ~60 words each). Higher floor + explicit minimum
+# turn count in the prompt gets the conversational density back.
+MIN_WORDS = 800
+MAX_WORDS = 2200
+MIN_TURNS = 28   # at least this many NAME:line turns per episode
+
+# ElevenLabs v3 default delivery is podcast-narration paced — about 15-20%
+# slower than what old Piper/macOS-say episodes felt like. Post-process
+# the mastered audio with ffmpeg atempo for a tighter feel without
+# pitch-shifting. 1.08 = 8% faster. Tune in [1.0, 1.20]; >1.15 starts
+# to sound rushed.
+AUDIO_SPEEDUP = float(os.environ.get("AUDIO_SPEEDUP", "1.10"))
 
 # TTS — macOS `say` on Darwin, Piper on Linux
 TTS_VOICE = os.environ.get("TTS_VOICE", "Samantha")
