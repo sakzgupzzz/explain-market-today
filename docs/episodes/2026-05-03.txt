@@ -1,20 +1,32 @@
-JAMIE: Jamie here — and it looks like Spirit Airlines is shutting down after failing to reach a bailout deal, because who needs discount travel anyway?
-ALEX: Alex on equities — the market is seeing some gains today, with the S and P five hundred up zero point two nine percent, and the Nasdaq up zero point eight nine percent, but let's not get too excited, it's not like the fundamentals have changed or anything.
-CAM: Cam on macro — rates are down, with the ten year Treasury yield at four point three eight percent, and the dollar is up slightly, but it's all just a big shrug from me.
-MAYA: Maya from tech — have you seen the news about Anthropic's new Claude four point seven release? The benchmark numbers are absurd, with software engineering tasks at ninety-four percent accuracy, but I'm still waiting for the bear case to show up.
-KAI: Kai with a question — does anyone actually understand what's going on with the market right now, or are we all just making it up as we go along?
-ALEX: [deadpan] Well, Kai, it's not like we have a crystal ball or anything, but it seems like the market is just reacting to whatever headline comes out next.
-JAMIE: [laughs] Yeah, and it's not like we're just a bunch of monkeys throwing darts at a board or anything.
-MAYA: [excited] Oh, but speaking of tech, have you seen the news about Shokz's new OpenRun Pro two headphones? They're on sale for forty dollars off, and they're supposed to be amazing.
-RIO: Rio checking in — I saw a story about a couple who lost one hundred eighty-five thousand dollars in retirement savings because no advisor was actually managing their account, and I just can't even.
-TESS: Tess at retail — it looks like used EV sales are surging, and the ownership costs are actually pretty comparable to gas-powered cars, but don't tell anyone I said that.
-DEV: Dev on crypto — Bitcoin is up zero point zero four percent, but who's really paying attention to that right now?
-KAI: Kai with the weird thing — did you hear about the guy who won the Powerball and his first call was to his ex-wife to gloat? And now she's suing him for the lottery ticket because he bought it on a joint credit card.
-JAMIE: [laughs] Of course she is — because that's just how these things always go.
-CAM: [sighs] Cam on macro — it's just another day, another dollar, another chance for the market to do something crazy.
-MAYA: Maya from tech — I'm just waiting for the other shoe to drop, or in this case, the other algorithm to kick in.
-ALEX: [sarcastic] Oh, don't worry, Maya, I'm sure it'll all make sense in the end — or not.
-JAMIE: [laughs] Alright, alright, let's wrap it up — Tess, what's the last word?
-TESS: [laughs] Just that I'm still trying to figure out what's going on with the market, but hey, at least it's entertaining.
-KAI: [mischievously] And I'm just here for the free snacks.
+JAMIE: Jamie here, and Oracle just jumped six point four seven percent on their earnings beat, what's behind this move, Alex?
+ALEX: Alex on equities, the earnings report showed a significant increase in cloud revenue, which is driving the stock price up, but let's not forget that the company still has a lot of work to do to catch up with its competitors.
+JAMIE: Right, exactly, and what about the broader market, Cam, any reactions to the earnings reports?
+CAM: Cam on macro, the market seems to be shrugging off the earnings reports for now, but we're seeing some movement in the bond market, with the ten-year treasury yield down twenty-seven basis points.
+MAYA: Maya from tech, and I think the real story here is the growth in cloud revenue, we're seeing a huge shift towards cloud computing, and Oracle is benefiting from that.
+KAI: Kai with a question, doesn't this mean that Oracle is finally catching up with the likes of Amazon and Microsoft?
+MAYA: [excited] Yes, exactly, and it's not just Oracle, we're seeing a lot of other companies making big moves in the cloud space.
+JAMIE: [laughs] Okay, let's not get ahead of ourselves, but what about the other big earners, Alex, any surprises?
+ALEX: [deadpan] Well, Salesforce is up four point one three percent, and Apple is up three point two four percent, but the real surprise is Gildan, which is up seventy-seven percent after UBS upgraded the stock.
+TESS: Tess at retail, and I think this is a great example of how a strong earnings report can really move the needle for a company, but we also need to look at the bigger picture, what's driving consumer spending?
+CAM: [sighs] Consumer spending is still a big question mark, with the dollar index up thirteen basis points, it's hard to say what's going to happen next.
+DEV: Dev on crypto, and I think it's interesting to note that Bitcoin is only up sixteen basis points, despite all the excitement around the earnings reports.
+KAI: [mischievously] Yeah, because nothing says excitement like a sixteen basis point move, right?
+MAYA: [laughs] Hey, don't knock it, Kai, every little bit counts in crypto.
+RIO: Rio checking in, and I think we need to look at the global picture, what's happening in other markets, and how that's affecting the US market.
+JAMIE: Right, exactly, and what about the Iran peace proposal, Rio, any updates on that?
+RIO: [speaking softly] Yes, it seems like the US has responded to the proposal, but we're still waiting for confirmation, and the situation is still very fluid.
+ALEX: [deadpan] Because nothing says fluid situation like a peace proposal, right?
+KAI: [gasps] Oh, burn, Alex.
+MAYA: [excited] Okay, okay, let's not get too distracted, what about the other big news, like the Foxconn satellite launch?
+JAMIE: [curious] Yeah, what's the deal with that, Maya?
+MAYA: [rushed] Well, Foxconn just launched two new satellites, and it's a big deal for the company, they're trying to expand their reach into the space industry.
+TESS: [sarcastic] Because what every company needs is a side hustle in space, right?
+CAM: [deadpan] Hey, don't knock it, Tess, space is the new frontier.
+KAI: [laughs] Yeah, and who knows, maybe we'll see a space-based Oracle cloud soon.
+DEV: [snorts] Yeah, because that's exactly what we need, a cloud in space.
+JAMIE: [laughs] Okay, okay, let's wrap it up, what's the one thing you're watching this week, Alex?
+ALEX: [deadpan] I'm watching the bond market, Jamie, it's going to be a wild ride.
+MAYA: [excited] And I'm watching the tech space, there are so many exciting developments happening right now.
+RIO: [speaking softly] I'm watching the global situation, Jamie, it's a complex and fluid situation.
+KAI: [mischievously] And I'm watching for any more satellite launches, maybe we'll see a space-based pizza delivery service next.
 JAMIE: [laughs] This show is for entertainment and education only — nothing here is investment advice.
