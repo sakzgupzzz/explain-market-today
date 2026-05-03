@@ -215,6 +215,9 @@ def generate(market: dict, headlines_by_cat: dict[str, list[dict]], date_str: st
     return _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.75)
 
 
+CRITIQUE_HEADLINES_PER_BEAT = 12  # cap to keep request well under 32k ctx
+
+
 def _critique_prompt(script: str, market: dict, headlines_by_cat: dict[str, list[dict]]) -> str:
     """Build a prompt that asks the LLM to critique + revise the draft script."""
     indices = _fmt_section(market.get("indices", []))
@@ -223,7 +226,7 @@ def _critique_prompt(script: str, market: dict, headlines_by_cat: dict[str, list
     gainers = _fmt_section(market.get("gainers", []))
     losers = _fmt_section(market.get("losers", []))
     headlines_block = "\n\n".join(
-        f"[{cat.upper()}]\n{_fmt_headlines(items)}"
+        f"[{cat.upper()}]\n{_fmt_headlines(items[:CRITIQUE_HEADLINES_PER_BEAT])}"
         for cat, items in headlines_by_cat.items()
     )
     banned = ", ".join(f'"{p}"' for p in BANNED_PHRASES)
