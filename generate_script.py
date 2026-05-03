@@ -64,18 +64,36 @@ def _fmt_char_block() -> str:
     return "\n".join(out)
 
 
-# Few-shot exchange. Demonstrates: name-first intros (each host their own name),
-# audio tags (sparingly, in-character), short turns, callback at sign-off,
-# real company names, ban-list compliance, ticker spelled with spaces.
+# Few-shot exchange. Demonstrates: name-first intros (each host uses their own
+# name), audio tags (sparingly, in-character), VARIED turn lengths (short
+# reactions interleaved with substantive turns), ping-pong rhythm, real
+# company names, ban-list compliance, ticker spelled with spaces.
+#
+# IMPORTANT: every concrete fact in this example is FABRICATED — none of
+# these companies, prices, or events exist or happened. The example is here
+# to teach STRUCTURE only. The model must use stories from the HEADLINES
+# block, NEVER from this example. The placeholder names below are obviously
+# fake (FabriCo, Quanto, Thrune Bank) so any leak is easy to catch in review.
 _FEW_SHOT = """<example_episode>
-JAMIE: Jamie here — and the only thing redder than the tape today is my eyes after staring at a Bloomberg terminal for nine hours. N V D A down four percent because someone in Singapore tweeted about export rules. ALEX, save us.
-ALEX: [deadpan] Alex on equities. So Nvidia gave back a hundred and twelve billion in market cap before lunch. The official catalyst was a single Reuters headline that a midwit hedge fund desk read as bearish. The actual move was algorithmic. Nothing happened. We are at the everything-means-something-until-it-doesn't part of the cycle.
-CAM: [sighs] Cam on macro. Rates barely moved, the dollar is flat. This is a positioning unwind, not a fundamentals story.
-MAYA: [excited] Maya from tech — Anthropic just dropped Claude four point seven and the benchmark numbers are absurd. Software engineering tasks at ninety-four percent. The bear case is gone. The bull case is also gone. Nothing makes sense.
-KAI: [mischievously] Kai with the weird thing — a man in Iowa won the Powerball and his first call was to his ex-wife to gloat. She's now suing him for the lottery ticket because he bought it on a joint credit card. America.
-JAMIE: [laughs] Of course she is. Speaking of nothing making sense, ALEX, back to you on that fake Reuters tweet — has the desk that fell for it been fired yet?
-ALEX: [sarcastic] No, but they've been promoted.
-</example_episode>"""
+JAMIE: Jamie here — and FabriCo just announced a forty-eight billion dollar buyback while their warehouse workers are on strike. ALEX, untangle this for us.
+ALEX: [deadpan] Alex on equities. F A B R is up six point two percent on the announcement. The buyback is roughly nine times last year's R and D budget. Make of that what you will.
+CAM: Cam on macro — and the dollar index is up one tenth of a percent overnight, which is to say nothing happened.
+JAMIE: Right, exactly.
+MAYA: [excited] Maya from tech. Quanto Robotics shipped their household model and the Wall Street Journal review is brutal — quote, "less useful than a blender."
+KAI: A blender does one thing well, though.
+MAYA: That's the point.
+RIO: Rio checking in — the strike at FabriCo's Memphis plant is into day six. That's the human side here. Forty-two hundred workers.
+TESS: Tess at retail — and the buyback is a tell. Companies announce buybacks in week two of strikes. It's a pressure move.
+DEV: [snorts] Dev on crypto — meanwhile Bitcoin did absolutely nothing today. Refreshing.
+JAMIE: [laughs] Sure.
+ALEX: Final note on F A B R — the CEO sold one point three million dollars of stock yesterday afternoon. That's in the eight K filing.
+JAMIE: Wait, what?
+ALEX: [sarcastic] You heard me.
+KAI: [mischievously] Kai with the weird thing. A man in Vermont broke into Thrune Bank — to deposit money. Said he didn't trust ATMs. They arrested him.
+JAMIE: [laughs] That's it. Wrap it. This show is for entertainment and education only — nothing here is investment advice.
+</example_episode>
+
+NOTICE: the example above used FAKE companies (FabriCo, Quanto Robotics, Thrune Bank). Your output must use REAL companies and events from the HEADLINES block above. Do NOT mention FabriCo, Quanto, Thrune Bank, the Memphis strike, the Vermont bank-deposit story, or any other story shown in the example. Mimic the rhythm — varied turn lengths, ping-pong reactions, audio tags — not the content."""
 
 
 def build_prompt(market: dict, headlines_by_cat: dict[str, list[dict]], date_str: str) -> str:
@@ -155,10 +173,13 @@ Hard rules:
    d. QUICK HITS — rapid rotation across 3-4 hosts on their beats, each covering one real headline. 2-3 lines each, punchline-first when possible.
    e. ODD THING — KAI closes with ONE unusual story from [CULTURE] or [WORLD] and a joke. Others react. Underlying fact must come from headlines.
    f. SIGN-OFF — quick banter from 2-3 hosts, callback to an earlier joke if possible, then JAMIE reads a one-line disclaimer: "{DISCLAIMER_SHORT}" (verbatim). One line each before the disclaimer.
-5. PING-PONG RHYTHM (HARD): the show is a CONVERSATION, not a series of monologues. Hosts INTERRUPT, REACT, RIFF on each other constantly. Concretely:
-   - Most turns 1-2 sentences (≤30 words). A long turn (3-4 sentences) MUST be followed by a short reaction from a different host (5-15 words: "Wait, what?", "Come on.", "Hold on, that's not right.", "Oh no.", "Yeah but —", "Right, exactly.", "[laughs] Sure.").
-   - After every substantive segment from one host, AT LEAST ONE other host reacts before moving on to the next substantive turn.
+5. PING-PONG RHYTHM (HARD): the show is a CONVERSATION, not a series of monologues. Hosts INTERRUPT, REACT, RIFF on each other constantly. Vary turn lengths deliberately:
+   - ~60% of turns are SHORT reactions (5-15 words): "Wait, what?", "Come on.", "Hold on, that's not right.", "Oh no.", "Yeah but —", "Right, exactly.", "[laughs] Sure.", "That's it?", "No way.", "Of course it is."
+   - ~30% are MEDIUM substantive turns (15-40 words): one fact + one reaction.
+   - ~10% are LONG explainers (40-80 words) — the BIG STORY beat lead, mostly.
+   - After every substantive turn (medium or long), AT LEAST ONE other host MUST react with a short turn before the next substantive turn.
    - No host speaks 2 turns in a row unless the line is genuinely continuous.
+   - Episodes that read as a sequence of equal-length monologues will be rejected and regenerated.
 6. SPECIFICS (HARD): every substantive turn must contain a CONCRETE FACT from the SOURCE DATA — a company name, a price, a percentage, a dollar amount, a person's name, a place, a date. Vague observations like "the market is wild today" without a specific number are banned. Cite the data, then react to it.
 7. VOICE: contractions, em-dashes, ellipses for natural pauses. Hosts cut each other off, finish each other's sentences, push back.
 8. NUMBERS: write as words for smooth TTS. "Up one point two percent." For indices spell digit-pairs: "seventy-one twenty-six" for 7126. Tickers as letters with spaces: "S P Y", "N V D A", "C R M". Dollar amounts: "one hundred billion dollars", not "$100B".
@@ -215,9 +236,41 @@ def _llm_call(prompt: str, ollama_model: str, groq_model: str, temperature: floa
     return _ollama_call(prompt, ollama_model, temperature)
 
 
-def generate(market: dict, headlines_by_cat: dict[str, list[dict]], date_str: str) -> str:
+_TURN_LINE_RE = __import__("re").compile(r"^[A-Z][A-Z0-9_]{0,15}:\s*\S")
+
+
+def _count_turns(script: str) -> int:
+    return sum(1 for line in script.splitlines() if _TURN_LINE_RE.match(line))
+
+
+def generate(
+    market: dict,
+    headlines_by_cat: dict[str, list[dict]],
+    date_str: str,
+    max_retries: int = 1,
+) -> str:
+    """Generate the dialogue. If the result has fewer than MIN_TURNS turns,
+    retry once with a stronger 'more turns, more reactions' addendum
+    appended to the prompt."""
     prompt = build_prompt(market, headlines_by_cat, date_str)
-    return _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.75)
+    script = _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.75)
+    turns = _count_turns(script)
+    print(f"[generate] first pass: {turns} turns")
+
+    attempts = 0
+    while turns < MIN_TURNS and attempts < max_retries:
+        attempts += 1
+        addendum = (
+            f"\n\nYour previous draft had only {turns} turns. The minimum is "
+            f"{MIN_TURNS}. Rewrite the episode with MORE turns — break monologues "
+            f"into a long-turn-followed-by-short-reaction pattern, add reactions "
+            f"between every substantive turn, and use more hosts. Aim for 30-40 turns."
+        )
+        retry_prompt = prompt + addendum
+        script = _llm_call(retry_prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.85)
+        turns = _count_turns(script)
+        print(f"[generate] retry {attempts}: {turns} turns")
+    return script
 
 
 CRITIQUE_HEADLINES_PER_BEAT = 12  # cap to keep request well under 32k ctx
