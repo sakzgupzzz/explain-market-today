@@ -16,21 +16,19 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # Groq + ElevenLabs path is fast — typical run is ~3-5 min. The 20-min
+    # ceiling catches anything pathological (network stalls, ElevenLabs API
+    # outages dragging on retries, etc.) without burning a full hour.
+    timeout-minutes: 20
     env:
-      # LLM dispatch: when GROQ_API_KEY is set, generate_script._llm_call
-      # routes both the generate and critique passes through Groq's
-      # OpenAI-compatible endpoint (sub-second on their LPU hardware).
-      # Falls through to Ollama on the runner if the secret isn't set —
-      # see the Ollama install + pull steps below, which still execute as
-      # a safety net but are effectively no-ops when Groq is configured.
+      # LLM via Groq's OpenAI-compatible endpoint. Sub-second inference for
+      # both passes; the local Ollama path is preserved in code for Mac dev
+      # but isn't installed on this runner — Ollama on CPU-only ubuntu can't
+      # finish the dialogue prompt within budget (proved across 2 runs).
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       GROQ_MODEL: llama-3.3-70b-versatile
-      OLLAMA_MODEL: qwen3:8b
-      OLLAMA_URL: http://localhost:11434/api/generate
-      OLLAMA_TIMEOUT: "1500"
-      PIPER_VOICE: en_US-libritts_r-medium
-      PIPER_VOICE_PATH: /home/runner/.local/share/piper-voices/en_US-libritts_r-medium.onnx
+      GROQ_CRITIC_MODEL: llama-3.1-8b-instant
+      # TTS via ElevenLabs v3 text_to_dialogue API.
       TTS_BACKEND: eleven
       ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
 
@@ -50,43 +48,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Install Ollama
-        run: curl -fsSL https://ollama.com/install.sh | sh
-
-      - name: Cache Ollama model blobs
-        uses: actions/cache@v4
-        with:
-          path: /usr/share/ollama/.ollama/models
-          key: ollama-${{ env.OLLAMA_MODEL }}-v1
-
-      - name: Start Ollama
-        run: |
-          sudo systemctl enable --now ollama 2>/dev/null || \
-            (nohup ollama serve > /tmp/ollama.log 2>&1 & disown)
-          for i in {1..60}; do
-            curl -sf http://localhost:11434/api/tags >/dev/null && break
-            sleep 1
-          done
-          curl -sf http://localhost:11434/api/tags >/dev/null || (echo "ollama not up"; cat /tmp/ollama.log 2>/dev/null; exit 1)
-
-      - name: Pull LLM model
-        run: ollama pull "$OLLAMA_MODEL"
-
-      - name: Cache Piper voice
-        id: piper-cache
-        uses: actions/cache@v4
-        with:
-          path: /home/runner/.local/share/piper-voices
-          key: piper-${{ env.PIPER_VOICE }}-v1
-
-      - name: Download Piper voice
-        if: steps.piper-cache.outputs.cache-hit != 'true'
-        run: |
-          mkdir -p "$(dirname "$PIPER_VOICE_PATH")"
-          BASE="https://huggingface.co/rhasspy/piper-voices/resolve/main/en/en_US/libritts_r/medium"
-          curl -sSL -o "$PIPER_VOICE_PATH" "$BASE/en_US-libritts_r-medium.onnx"
-          curl -sSL -o "$PIPER_VOICE_PATH.json" "$BASE/en_US-libritts_r-medium.onnx.json"
-
       - name: Git identity
         run: |
           git config user.name "github-actions[bot]"
@@ -101,6 +62,5 @@ jobs:
         with:
           name: debug-logs
           path: |
-            /tmp/ollama.log
             run.log
           if-no-files-found: ignore
