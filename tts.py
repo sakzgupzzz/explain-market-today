@@ -24,11 +24,15 @@ import tempfile
 import shutil
 from pathlib import Path
 from config import (
-    TTS_VOICE, TTS_RATE, PIPER_VOICE_PATH, CHARACTERS, DEFAULT_CHARACTER,
+    ROOT, TTS_VOICE, TTS_RATE, PIPER_VOICE_PATH, CHARACTERS, DEFAULT_CHARACTER,
     INTER_LINE_SILENCE_MS, AUDIO_SPEEDUP,
     TTS_BACKEND, ELEVENLABS_API_KEY, ELEVENLABS_MODEL, ELEVENLABS_OUTPUT_FORMAT,
     ELEVEN_CHARACTER_VOICES,
 )
+
+INTRO_STING = ROOT / "assets" / "intro.mp3"
+OUTRO_STING = ROOT / "assets" / "outro.mp3"
+STING_GAP_MS = 350  # silence between sting and dialogue
 
 LINE_RE = re.compile(r"^([A-Z][A-Z0-9_]{0,15}):\s*(.+)$")
 
@@ -88,7 +92,9 @@ def _resolve_backend() -> str:
 
 
 def synth(text: str, out_mp3: Path) -> tuple[Path, list[dict]]:
-    """Synthesize the script to out_mp3. Returns (mp3_path, chunk_timings)."""
+    """Synthesize the script to out_mp3. Returns (mp3_path, chunk_timings).
+    After backend renders the dialogue, wraps with intro/outro stings if
+    assets/intro.mp3 and assets/outro.mp3 exist."""
     out_mp3.parent.mkdir(parents=True, exist_ok=True)
     turns = parse_dialogue(text)
     if not turns:
@@ -96,12 +102,49 @@ def synth(text: str, out_mp3: Path) -> tuple[Path, list[dict]]:
     backend = _resolve_backend()
     print(f"[tts] backend={backend} turns={len(turns)}")
     if backend in ("eleven", "eleven_v3"):
-        return _synth_eleven_v3(turns, out_mp3)
-    if backend == "eleven_v2":
-        return _synth_eleven_v2(turns, out_mp3)
-    if backend == "mac":
-        return _synth_mac_dialogue(turns, out_mp3)
-    return _synth_piper_dialogue(turns, out_mp3)
+        result = _synth_eleven_v3(turns, out_mp3)
+    elif backend == "eleven_v2":
+        result = _synth_eleven_v2(turns, out_mp3)
+    elif backend == "mac":
+        result = _synth_mac_dialogue(turns, out_mp3)
+    else:
+        result = _synth_piper_dialogue(turns, out_mp3)
+
+    # Wrap with intro + outro stings if assets are present.
+    _wrap_with_stings(out_mp3)
+    return result
+
+
+def _wrap_with_stings(in_out_mp3: Path) -> None:
+    """Prepend intro.mp3 + small silence + dialogue + small silence + outro.mp3.
+    Edits in_out_mp3 in place via a temp file. No-op if assets are missing."""
+    if not (INTRO_STING.exists() and OUTRO_STING.exists()):
+        return
+    tmpdir = Path(tempfile.mkdtemp(prefix="stings_"))
+    try:
+        intro_wav = tmpdir / "intro.wav"
+        dlg_wav = tmpdir / "dlg.wav"
+        outro_wav = tmpdir / "outro.wav"
+        sil_wav = tmpdir / "silence.wav"
+        for src, dst in [(INTRO_STING, intro_wav), (in_out_mp3, dlg_wav), (OUTRO_STING, outro_wav)]:
+            subprocess.run(
+                ["ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
+                 "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(dst)],
+                check=True,
+            )
+        _silence_wav(STING_GAP_MS, 44100, sil_wav)
+        combined = tmpdir / "combined.wav"
+        _concat_wavs([intro_wav, sil_wav, dlg_wav, sil_wav, outro_wav], combined)
+        # encode straight back into the original mp3 path (overwrite)
+        subprocess.run(
+            ["ffmpeg", "-y", "-loglevel", "error", "-i", str(combined),
+             "-c:a", "libmp3lame", "-b:a", "128k", "-ar", "44100", "-ac", "1",
+             str(in_out_mp3)],
+            check=True,
+        )
+        print(f"[stings] wrapped with intro + outro from {INTRO_STING.parent}/")
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
 
 
 # ─── ElevenLabs v3 — Text-to-Dialogue API ──────────────────────────────────
