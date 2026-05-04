@@ -21,9 +21,16 @@ from tts import synth
 from publish import build_feed, build_index_html, git_push, write_transcripts, write_chapters
 
 
-def run(push: bool = True) -> Path:
+def run(push: bool = True, force: bool = False) -> Path:
     today = datetime.now().strftime("%Y-%m-%d")
     date_pretty = datetime.now().strftime("%A, %B %d, %Y")
+    mp3_path = EPISODES_DIR / f"{today}.mp3"
+    if mp3_path.exists() and not force:
+        # Backup-cron / re-trigger guard. The 22:30 UTC backup schedule and any
+        # external cron-job.org dispatch will skip here when the primary
+        # already produced today's episode. --force bypasses for manual reruns.
+        print(f"[{today}] episode already published at {mp3_path} — skipping (use --force to regenerate)")
+        return mp3_path
     print(f"[{today}] fetching market data…")
     market = fetch_all()
     print(f"[{today}] fetching headlines…")
@@ -65,8 +72,9 @@ def run(push: bool = True) -> Path:
 
 if __name__ == "__main__":
     push = "--no-push" not in sys.argv
+    force = "--force" in sys.argv
     try:
-        run(push=push)
+        run(push=push, force=force)
     except Exception:
         traceback.print_exc()
         sys.exit(1)

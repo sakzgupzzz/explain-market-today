@@ -2,8 +2,22 @@ name: Daily Market Podcast
 
 on:
   schedule:
-    # 21:30 UTC weekdays (~5:30pm ET EDT / 4:30pm ET EST — safely after US close year-round)
-    - cron: '30 21 * * 1-5'
+    # GitHub Actions cron is best-effort. Documented behavior: schedules can
+    # be delayed or skipped entirely during peak load. Two strategies stack
+    # here for resilience:
+    #
+    # 1. Primary slot at 21:15 UTC (off the :30 peak, less queue contention).
+    # 2. Backup slot at 22:30 UTC, one hour later. The concurrency group
+    #    'daily-podcast' prevents double-execution: if the primary already
+    #    succeeded, the backup queues briefly, sees an in-flight or recent
+    #    run, and exits via the concurrency lock. If the primary skipped,
+    #    the backup runs as the actual generation.
+    #
+    # External scheduler (cron-job.org or similar) optionally triggers a
+    # third dispatch via the workflow_dispatch API — see README's
+    # 'External cron fallback' section. Same concurrency lock applies.
+    - cron: '15 21 * * 1-5'
+    - cron: '30 22 * * 1-5'
   workflow_dispatch: {}
 
 permissions:
