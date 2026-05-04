@@ -40,6 +40,88 @@ _SELF_INTRO_RE = re.compile(
 # Parenthesized ticker e.g. (AAPL), (MSFT), (V).
 _PAREN_TICKER_RE = re.compile(r"\(([A-Z]{1,5})\)")
 
+# Standalone ticker — 2-5 caps as a whole word, not preceded by `[` (audio tag)
+# or another cap (avoids splitting acronyms inside larger words). Common
+# false-positives are filtered against an explicit allowlist below.
+_STANDALONE_TICKER_RE = re.compile(r"(?<![A-Z])(?<![\[\(])\b([A-Z]{2,5})\b(?![A-Z])")
+
+# Acronyms / words that look like tickers but aren't — never spell these out.
+_TICKER_FALSE_POSITIVES = {
+    "CEO", "CFO", "COO", "CTO", "CIO", "IPO", "ETF", "API", "AI", "GDP",
+    "PR", "OK", "USA", "US", "UK", "EU", "UN", "FDA", "FBI", "CIA", "NSA",
+    "SEC", "FTC", "DOJ", "EPA", "IRS", "FAA", "CDC", "NIH",
+    "CES", "CEO", "ESG", "VPN", "SaaS", "B2B", "B2C", "FYI", "TBD", "TLDR",
+    "USD", "EUR", "GBP", "JPY", "CNY", "GMT", "UTC", "EST", "EDT", "PST",
+    "GPU", "CPU", "RAM", "SSD", "HDD", "USB", "URL", "HTTP", "HTTPS",
+    "JSON", "XML", "HTML", "CSS", "SQL", "iOS", "macOS", "BBQ", "DIY",
+    "NEW", "OLD", "BIG", "TOP", "PER", "PRO", "AND", "FOR", "BUT", "NOT",
+    "ALL", "ANY", "ONE", "TWO", "OUR", "WAS", "ARE", "WHO", "HOW", "WHY",
+}
+
+# Dollar amount patterns: $5B, $5 billion, $5.2M, $100, etc.
+_DOLLAR_AMOUNT_RE = re.compile(
+    r"\$\s*(\d+(?:\.\d+)?)\s*(billion|million|trillion|B|M|T|K)?\b",
+    re.I,
+)
+_PERCENT_RE = re.compile(r"(\d+(?:\.\d+)?)\s*%")
+
+
+def _spell_number(n: str) -> str:
+    """Spell '5.2' as 'five point two'. Keeps it simple — defers to TTS for
+    big numbers like '4200', which ElevenLabs handles fine."""
+    digits = {"0": "zero", "1": "one", "2": "two", "3": "three", "4": "four",
+              "5": "five", "6": "six", "7": "seven", "8": "eight", "9": "nine"}
+    if "." not in n:
+        return n  # let TTS handle whole numbers
+    whole, _, frac = n.partition(".")
+    return f"{whole} point {' '.join(digits.get(d, d) for d in frac)}"
+
+
+def _normalize_dollars(text: str) -> tuple[str, int]:
+    """$5.2B → 'five point two billion dollars', $100 → '100 dollars'."""
+    fixes = 0
+    SUFFIX = {
+        "b": "billion", "billion": "billion",
+        "m": "million", "million": "million",
+        "t": "trillion", "trillion": "trillion",
+        "k": "thousand",
+    }
+    def repl(m: re.Match) -> str:
+        nonlocal fixes
+        fixes += 1
+        num, suffix = m.group(1), (m.group(2) or "").lower()
+        spelled = _spell_number(num)
+        if suffix:
+            return f"{spelled} {SUFFIX.get(suffix, suffix)} dollars"
+        return f"{spelled} dollars"
+    return _DOLLAR_AMOUNT_RE.sub(repl, text), fixes
+
+
+def _normalize_percents(text: str) -> tuple[str, int]:
+    """5.2% → 'five point two percent'. 5% → '5 percent' (TTS handles)."""
+    fixes = 0
+    def repl(m: re.Match) -> str:
+        nonlocal fixes
+        fixes += 1
+        return f"{_spell_number(m.group(1))} percent"
+    return _PERCENT_RE.sub(repl, text), fixes
+
+
+def _space_standalone_tickers(text: str) -> tuple[str, int]:
+    """Standalone NVDA / AAPL / MSFT etc → 'N V D A'. Skips known acronyms."""
+    fixes = 0
+    def repl(m: re.Match) -> str:
+        nonlocal fixes
+        tk = m.group(1)
+        if tk in _TICKER_FALSE_POSITIVES:
+            return tk
+        # also skip if it's all the same letter (e.g. "II", "III")
+        if len(set(tk)) == 1:
+            return tk
+        fixes += 1
+        return " ".join(tk)
+    return _STANDALONE_TICKER_RE.sub(repl, text), fixes
+
 
 def _strip_banned_openers(text: str) -> tuple[str, list[str]]:
     """Iteratively strip banned cold-open phrases from the start of text."""
@@ -155,28 +237,37 @@ def sanitize_script(text: str, verbose: bool = True) -> str:
     if not turns:
         return text
 
-    stats = {"opener_strips": 0, "name_fixes": 0, "ticker_fixes": 0, "jamie_drops": 0}
+    stats = {
+        "opener_strips": 0, "name_fixes": 0, "ticker_fixes": 0,
+        "standalone_ticker_fixes": 0, "dollar_fixes": 0, "percent_fixes": 0,
+        "jamie_drops": 0,
+    }
 
     # 1) strip banned openers from first turn only
     first_name, first_text = turns[0]
     cleaned, removed = _strip_banned_openers(first_text)
     if removed:
         stats["opener_strips"] = len(removed)
-        # If stripping left the line empty or trivially short, drop the turn.
         if len(cleaned.split()) < 3 and len(turns) > 1:
             turns = turns[1:]
         else:
             turns[0] = (first_name, cleaned)
 
-    # 2) fix wrong-name intros + 3) space tickers, per turn
+    # 2) per-turn text fixes
     for i, (name, text_) in enumerate(turns):
         text_, n_fixes = _fix_wrong_name_intros(name, text_)
         stats["name_fixes"] += n_fixes
         text_, t_fixes = _space_tickers(text_)
         stats["ticker_fixes"] += t_fixes
+        text_, st_fixes = _space_standalone_tickers(text_)
+        stats["standalone_ticker_fixes"] += st_fixes
+        text_, d_fixes = _normalize_dollars(text_)
+        stats["dollar_fixes"] += d_fixes
+        text_, p_fixes = _normalize_percents(text_)
+        stats["percent_fixes"] += p_fixes
         turns[i] = (name, text_)
 
-    # 4) cap JAMIE airtime
+    # 3) cap JAMIE airtime
     turns, dropped = _enforce_jamie_cap(turns)
     stats["jamie_drops"] = dropped
 
@@ -184,7 +275,10 @@ def sanitize_script(text: str, verbose: bool = True) -> str:
         print(
             f"[sanitize] openers={stats['opener_strips']} "
             f"name_fixes={stats['name_fixes']} "
-            f"ticker_fixes={stats['ticker_fixes']} "
+            f"tickers_paren={stats['ticker_fixes']} "
+            f"tickers_standalone={stats['standalone_ticker_fixes']} "
+            f"dollars={stats['dollar_fixes']} "
+            f"percents={stats['percent_fixes']} "
             f"jamie_drops={stats['jamie_drops']}"
         )
     return _format(turns)

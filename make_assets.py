@@ -48,6 +48,15 @@ PROMPTS = [
         "and fades out, gentle bell tone at the start, no voice, no melody, "
         "feels like an end card.",
     ),
+    (
+        "bed",
+        22.0,
+        "Looping ambient music bed for a financial news podcast: very quiet, "
+        "minimal, sparse rhodes piano with soft synth pad underneath, slow "
+        "tempo around eighty BPM, no drums, no melody, no voice — just texture "
+        "that will sit under spoken dialogue without distracting from it. "
+        "Should loop seamlessly. Mood: focused, professional, calm.",
+    ),
 ]
 
 

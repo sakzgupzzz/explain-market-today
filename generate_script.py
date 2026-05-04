@@ -96,7 +96,41 @@ JAMIE: [laughs] That's it. Wrap it. This show is for entertainment and education
 NOTICE: the example above used FAKE companies (FabriCo, Quanto Robotics, Thrune Bank). Your output must use REAL companies and events from the HEADLINES block above. Do NOT mention FabriCo, Quanto, Thrune Bank, the Memphis strike, the Vermont bank-deposit story, or any other story shown in the example. Mimic the rhythm — varied turn lengths, ping-pong reactions, audio tags — not the content."""
 
 
-def build_prompt(market: dict, headlines_by_cat: dict[str, list[dict]], date_str: str) -> str:
+def _fmt_ranked_stories(ranked: list[dict], top_n: int = 15) -> str:
+    """Render a pre-ranked story list. Each story shows its score, sources,
+    title, and clipped summary. Stories are tagged with category for
+    LLM-side beat routing."""
+    if not ranked:
+        return "(no stories ranked above the floor)"
+    out = []
+    for c in ranked[:top_n]:
+        cats = "/".join(c.get("categories") or [])
+        srcs = ", ".join((c.get("sources") or [])[:3])
+        title = c.get("title") or ""
+        summary = c.get("summary") or ""
+        score = c.get("score", 0)
+        line = f"- [score {score:>5.1f} · {cats} · {srcs}] {title}"
+        if summary:
+            line += f"\n    {_clip_summary(summary, 200)}"
+        out.append(line)
+    return "\n".join(out)
+
+
+def _fmt_followups(seen_recently: list[dict]) -> str:
+    if not seen_recently:
+        return ""
+    lines = ["RECENTLY COVERED (mention only with a fresh follow-up; do NOT re-explain):"]
+    for c in seen_recently:
+        lines.append(f"- {c.get('title','')}")
+    return "\n".join(lines)
+
+
+def build_prompt(
+    market: dict,
+    ranked_stories: list[dict],
+    date_str: str,
+    follow_ups: list[dict] | None = None,
+) -> str:
     indices = _fmt_section(market["indices"])
     sectors = _fmt_section(market["sectors"])
     macro = _fmt_section(market["macro"])
@@ -110,6 +144,7 @@ def build_prompt(market: dict, headlines_by_cat: dict[str, list[dict]], date_str
     min_hosts = max(2, total_hosts - 2)
     title_upper = PODCAST_TITLE.upper()
     banned = ", ".join(f'"{p}"' for p in BANNED_PHRASES)
+    followups_block = _fmt_followups(follow_ups or [])
 
     return f"""You write {title_upper} — a fast, funny daily brief delivered as a multi-host podcast roundtable. Hosts are sharp, wry, joke constantly, riff on each other, land dry punchlines, and take the piss out of the news while still delivering real info.
 Date: {date_str}
@@ -139,22 +174,10 @@ TOP GAINERS:
 TOP LOSERS:
 {losers}
 
-==== HEADLINES (last 24h) ====
+==== TOP STORIES (pre-ranked by importance — pick from these in score order) ====
+{_fmt_ranked_stories(ranked_stories)}
 
-[MARKETS]
-{_fmt_headlines(headlines_by_cat.get("markets", []))}
-
-[BUSINESS]
-{_fmt_headlines(headlines_by_cat.get("business", []))}
-
-[TECH]
-{_fmt_headlines(headlines_by_cat.get("tech", []))}
-
-[WORLD]
-{_fmt_headlines(headlines_by_cat.get("world", []))}
-
-[CULTURE]
-{_fmt_headlines(headlines_by_cat.get("culture", []))}
+{followups_block}
 
 ==== STYLE EXAMPLE (DO NOT COPY CONTENT, ONLY MIMIC STRUCTURE/TONE) ====
 {_FEW_SHOT}
@@ -245,15 +268,16 @@ def _count_turns(script: str) -> int:
 
 def generate(
     market: dict,
-    headlines_by_cat: dict[str, list[dict]],
+    ranked_stories: list[dict],
     date_str: str,
+    follow_ups: list[dict] | None = None,
     max_retries: int = 1,
 ) -> str:
-    """Generate the dialogue. If the result has fewer than MIN_TURNS turns,
-    retry once with a stronger 'more turns, more reactions' addendum.
-    Sleeps before retry to clear Groq's per-minute TPM window."""
+    """Generate the dialogue from a pre-ranked story list. If the result has
+    fewer than MIN_TURNS turns, retry once with a stronger 'more turns'
+    addendum. Sleeps before retry to clear Groq's per-minute TPM window."""
     import time
-    prompt = build_prompt(market, headlines_by_cat, date_str)
+    prompt = build_prompt(market, ranked_stories, date_str, follow_ups=follow_ups)
     script = _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.75)
     turns = _count_turns(script)
     print(f"[generate] first pass: {turns} turns")
@@ -284,20 +308,14 @@ def generate(
     return script
 
 
-CRITIQUE_HEADLINES_PER_BEAT = 12  # cap to keep request well under 32k ctx
-
-
-def _critique_prompt(script: str, market: dict, headlines_by_cat: dict[str, list[dict]]) -> str:
+def _critique_prompt(script: str, market: dict, ranked_stories: list[dict]) -> str:
     """Build a prompt that asks the LLM to critique + revise the draft script."""
     indices = _fmt_section(market.get("indices", []))
     sectors = _fmt_section(market.get("sectors", []))
     macro = _fmt_section(market.get("macro", []))
     gainers = _fmt_section(market.get("gainers", []))
     losers = _fmt_section(market.get("losers", []))
-    headlines_block = "\n\n".join(
-        f"[{cat.upper()}]\n{_fmt_headlines(items[:CRITIQUE_HEADLINES_PER_BEAT])}"
-        for cat, items in headlines_by_cat.items()
-    )
+    stories_block = _fmt_ranked_stories(ranked_stories, top_n=20)
     banned = ", ".join(f'"{p}"' for p in BANNED_PHRASES)
     name_list = ", ".join(CHARACTERS.keys())
     return f"""You are a strict podcast script editor. Below is a DRAFT script and the SOURCE FACTS it was based on. Revise the draft to fix any of these problems:
@@ -305,7 +323,7 @@ def _critique_prompt(script: str, market: dict, headlines_by_cat: dict[str, list
 1. FABRICATION: any company, price, percentage, deal, quote, or event NOT present in the SOURCE FACTS below. Remove or rewrite.
 2. BANNED PHRASES (case-insensitive): {banned}. Replace with a punchy, specific alternative.
 3. WRONG-NAME INTROS: a turn where the speaker introduces themselves with another host's name (e.g. ALEX line saying "Jamie here"). Fix to use the speaker's own name.
-4. JAMIE OVER-USE: count JAMIE's turns; if more than one in three of the total turns, drop the shortest filler JAMIE turns until under the cap.
+4. JAMIE OVER-USE: count JAMIE's turns; if more than one in four of the total turns, drop the shortest filler JAMIE turns until under the cap.
 5. NUMBER FORMAT: any digit, "$", "%", or unspaced ticker (like "AAPL") in spoken text. Rewrite as words ("one hundred billion dollars", "A A P L", "two point three percent").
 6. MISSING DISCLAIMER: ensure the very last JAMIE line contains: "{DISCLAIMER_SHORT}".
 7. FORMAT INTEGRITY: every line must match `NAME: text` with NAME in {name_list}. Drop any narration, stage directions, or non-conforming lines.
@@ -324,8 +342,8 @@ TOP GAINERS:
 TOP LOSERS:
 {losers}
 
-HEADLINES:
-{headlines_block}
+TOP STORIES (the only ones the script may reference):
+{stories_block}
 
 ==== DRAFT SCRIPT ====
 {script}
@@ -334,9 +352,9 @@ HEADLINES:
 """
 
 
-def critique_revise(script: str, market: dict, headlines_by_cat: dict[str, list[dict]]) -> str:
+def critique_revise(script: str, market: dict, ranked_stories: list[dict]) -> str:
     """Run a critic LLM pass to fix fabrications, banned phrases, monologues."""
-    prompt = _critique_prompt(script, market, headlines_by_cat)
+    prompt = _critique_prompt(script, market, ranked_stories)
     try:
         return _llm_call(prompt, OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL, temperature=0.2)
     except Exception as e:
@@ -346,7 +364,12 @@ def critique_revise(script: str, market: dict, headlines_by_cat: dict[str, list[
 
 if __name__ == "__main__":
     from fetch_market import fetch_all
-    from fetch_news import fetch_headlines
+    from fetch_news import fetch_headlines, flatten
+    from cluster import cluster_headlines
+    from score import score_clusters
+    from interests_loader import load_interests
     m = fetch_all()
     h = fetch_headlines()
-    print(generate(m, h, datetime.now().strftime("%A, %B %d, %Y")))
+    clusters = cluster_headlines(flatten(h))
+    ranked = score_clusters(clusters, m, load_interests())
+    print(generate(m, ranked, datetime.now().strftime("%A, %B %d, %Y")))

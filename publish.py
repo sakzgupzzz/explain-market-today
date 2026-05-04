@@ -111,10 +111,30 @@ def _strip_audio_tags(text: str) -> str:
     return re.sub(r"\[[^\]]+\]\s*", "", text).strip()
 
 
+def _attach_citations(text: str, ranked: list[dict] | None) -> str:
+    """If a turn references a story title from `ranked`, append the source
+    link in a NOTE comment so VTT viewers (and grep) can find it. SRT-safe
+    too — the NOTE syntax is harmless to render in plain SRT players."""
+    if not ranked:
+        return text
+    lower = text.lower()
+    for c in ranked[:15]:
+        title = c.get("title", "")
+        link = c.get("link", "")
+        if not title or not link:
+            continue
+        # cheap match — first 2 substantive words of the title in the turn
+        toks = [w for w in re.split(r"\W+", title) if len(w) > 3]
+        if len(toks) >= 2 and all(t.lower() in lower for t in toks[:2]):
+            return f"{text}\n  ↳ source: {link}"
+    return text
+
+
 def write_transcripts(
     script: str,
     mp3_path: Path,
     chunk_timings: list[dict] | None = None,
+    ranked_stories: list[dict] | None = None,
 ) -> tuple[Path, Path]:
     """Write .srt and .vtt next to the mp3. Returns (srt_path, vtt_path)."""
     turns = parse_dialogue(script)
@@ -130,14 +150,15 @@ def write_transcripts(
         start, end = cum, cum + dur
         cum = end
         clean = _strip_audio_tags(text)
+        cited = _attach_citations(clean, ranked_stories)
         # SRT
         srt_lines.append(f"{idx}")
         srt_lines.append(f"{_format_srt_time(start)} --> {_format_srt_time(end)}")
-        srt_lines.append(f"{name}: {clean}")
+        srt_lines.append(f"{name}: {cited}")
         srt_lines.append("")
         # VTT (with speaker tag)
         vtt_lines.append(f"{_format_vtt_time(start)} --> {_format_vtt_time(end)}")
-        vtt_lines.append(f"<v {name.title()}>{clean}")
+        vtt_lines.append(f"<v {name.title()}>{cited}")
         vtt_lines.append("")
 
     srt_path = mp3_path.with_suffix(".srt")
@@ -439,11 +460,36 @@ def _word_count(script: str) -> int:
     return len(cleaned.split())
 
 
+def _aggregate_health() -> dict:
+    """Walk meta.json sidecars to compute monthly char usage + recent run health."""
+    metas = []
+    for p in sorted(EPISODES_DIR.glob("*.meta.json")):
+        try:
+            metas.append(json.loads(p.read_text()))
+        except Exception:
+            continue
+    # last 30 days
+    from datetime import datetime as _dt, timedelta as _td
+    cutoff = (_dt.utcnow() - _td(days=30)).isoformat()
+    recent = [m for m in metas if (m.get("generated_at") or "") >= cutoff]
+    char_total = sum(m.get("char_usage_estimate", 0) for m in recent)
+    avg_dur = (sum(m.get("duration_sec", 0) for m in recent) / len(recent)) if recent else 0
+    avg_turns = (sum(m.get("turns", 0) for m in recent) / len(recent)) if recent else 0
+    return {
+        "episodes_30d": len(recent),
+        "chars_30d": char_total,
+        "avg_duration_sec": avg_dur,
+        "avg_turns": avg_turns,
+        "total_episodes": len(metas),
+    }
+
+
 def build_index_html() -> None:
     """Render docs/index.html as a financial-newspaper × terminal hybrid.
     No bundlers, no JS. Pure static HTML + inline CSS rendered server-side."""
     DOCS.mkdir(parents=True, exist_ok=True)
     eps = sorted(EPISODES_DIR.glob("*.mp3"), reverse=True)
+    health = _aggregate_health()
 
     transmissions: list[str] = []
     ticker_items: list[str] = []
@@ -861,9 +907,13 @@ a.plain:hover {{ border-bottom-color: var(--accent); }}
 <div class="statusbar">
   <span class="seg"><span class="pulse"></span>FEED ACTIVE</span>
   <span class="seg"><span class="dim">EPISODES</span> <b>{total:03d}</b></span>
+  <span class="seg"><span class="dim">30D EPISODES</span> <b>{health['episodes_30d']}</b></span>
+  <span class="seg"><span class="dim">30D CHARS</span> <b>{health['chars_30d']:,}</b></span>
+  <span class="seg"><span class="dim">AVG DUR</span> <b>{int(health['avg_duration_sec']//60):02d}:{int(health['avg_duration_sec']%60):02d}</b></span>
+  <span class="seg"><span class="dim">AVG TURNS</span> <b>{int(health['avg_turns'])}</b></span>
   <span class="seg"><span class="dim">LAST UPDATE</span> <b>{last_update}</b></span>
   <span class="seg"><span class="dim">FORMAT</span> <b>MP3 / 44.1KHZ / -16 LUFS</b></span>
-  <span class="seg"><span class="dim">SOURCE</span> <b>OLLAMA + ELEVENLABS V3</b></span>
+  <span class="seg"><span class="dim">SOURCE</span> <b>GROQ + ELEVENLABS V3</b></span>
 </div>
 
 <footer class="disclaimer">

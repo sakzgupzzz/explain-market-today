@@ -1,0 +1,47 @@
+# Personalization for explain-market-today story ranking.
+#
+# All sections are optional. Edit freely — the score.py module reloads this
+# file on each run. Empty/absent sections are no-ops.
+#
+# How the layers compose (see score.py):
+#   - watchlist.tickers     → +3.0 to score for any cluster mentioning the symbol
+#   - watchlist.keywords    → +2.0 per keyword present in title or summary
+#   - watchlist.sectors     → +1.5 per sector mention
+#   - blocked.topics        → cluster dropped entirely if any topic substring matches
+#   - blocked.sources       → cluster dropped if any of its RSS sources is blocked
+#
+# Tickers are matched case-insensitively as whole-word tokens. Keywords are
+# matched as case-insensitive substrings — keep them specific to avoid
+# spurious matches.
+
+watchlist:
+  tickers:
+    - AAPL
+    - NVDA
+    - GOOGL
+    - MSFT
+    - META
+    - AMZN
+    - TSLA
+    - ANTH
+  sectors:
+    - artificial intelligence
+    - semiconductors
+    - cloud computing
+    - biotech
+    - cybersecurity
+  keywords:
+    - LLM benchmark
+    - foundation model
+    - FDA approval
+    - Fed policy
+    - earnings beat
+    - earnings miss
+    - rate decision
+
+blocked:
+  topics:
+    - sports betting
+    - celebrity gossip
+    - horoscope
+  sources: []

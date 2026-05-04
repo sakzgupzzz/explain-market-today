@@ -32,7 +32,11 @@ from config import (
 
 INTRO_STING = ROOT / "assets" / "intro.mp3"
 OUTRO_STING = ROOT / "assets" / "outro.mp3"
+MUSIC_BED = ROOT / "assets" / "bed.mp3"
 STING_GAP_MS = 350  # silence between sting and dialogue
+# Bed gain in dB applied before sidechain duck. -16 dB sits the bed well below
+# voice without making it inaudible in pauses.
+BED_GAIN_DB = float(os.environ.get("BED_GAIN_DB", "-16"))
 
 LINE_RE = re.compile(r"^([A-Z][A-Z0-9_]{0,15}):\s*(.+)$")
 
@@ -110,9 +114,58 @@ def synth(text: str, out_mp3: Path) -> tuple[Path, list[dict]]:
     else:
         result = _synth_piper_dialogue(turns, out_mp3)
 
+    # Mix music bed under dialogue (sidechain-ducked) — runs before sting
+    # wrap so the intro/outro chimes don't have bed underneath them.
+    _mix_music_bed(out_mp3)
     # Wrap with intro + outro stings if assets are present.
     _wrap_with_stings(out_mp3)
     return result
+
+
+def _mix_music_bed(in_out_mp3: Path) -> None:
+    """Mix MUSIC_BED under in_out_mp3 with sidechain ducking. Edits in place
+    via a temp file. No-op if assets/bed.mp3 missing."""
+    if not MUSIC_BED.exists():
+        return
+    tmpdir = Path(tempfile.mkdtemp(prefix="bed_"))
+    try:
+        # complex filtergraph:
+        # [0] = dialogue mp3 (in_out_mp3)
+        # [1] = bed.mp3 looped, trimmed to dialogue duration, attenuated
+        # ducked = bed sidechain-compressed by dialogue (drops bed when voice plays)
+        # mixed  = dialogue + ducked bed, summed
+        dlg_dur = _file_duration_seconds(in_out_mp3)
+        chain = (
+            f"[1:a]aloop=loop=-1:size=2147483647,atrim=duration={dlg_dur:.3f},"
+            f"volume={BED_GAIN_DB}dB[bedlow];"
+            f"[bedlow][0:a]sidechaincompress="
+            f"threshold=0.05:ratio=8:attack=20:release=400:makeup=1:level_sc=1.5[ducked];"
+            f"[0:a][ducked]amix=inputs=2:duration=first:dropout_transition=0,"
+            f"alimiter=limit=0.97[out]"
+        )
+        out_tmp = tmpdir / "bedded.mp3"
+        subprocess.run(
+            ["ffmpeg", "-y", "-loglevel", "error",
+             "-i", str(in_out_mp3), "-i", str(MUSIC_BED),
+             "-filter_complex", chain, "-map", "[out]",
+             "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "128k",
+             str(out_tmp)],
+            check=True,
+        )
+        shutil.copy(out_tmp, in_out_mp3)
+        print(f"[bed] mixed bed under dialogue ({dlg_dur:.1f}s, gain {BED_GAIN_DB}dB)")
+    except Exception as e:
+        print(f"[bed] mix failed ({e}); shipping dialogue without bed")
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
+
+
+def _file_duration_seconds(p: Path) -> float:
+    out = subprocess.check_output(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", str(p)]
+    )
+    return float(out.strip())
 
 
 def _wrap_with_stings(in_out_mp3: Path) -> None:

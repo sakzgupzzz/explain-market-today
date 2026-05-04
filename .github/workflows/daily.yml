@@ -2,23 +2,27 @@ name: Daily Market Podcast
 
 on:
   schedule:
-    # GitHub Actions cron is best-effort. Documented behavior: schedules can
-    # be delayed or skipped entirely during peak load. Two strategies stack
-    # here for resilience:
+    # GitHub Actions cron is best-effort. Three slots stack for resilience:
     #
-    # 1. Primary slot at 21:15 UTC (off the :30 peak, less queue contention).
-    # 2. Backup slot at 22:30 UTC, one hour later. The concurrency group
-    #    'daily-podcast' prevents double-execution: if the primary already
-    #    succeeded, the backup queues briefly, sees an in-flight or recent
-    #    run, and exits via the concurrency lock. If the primary skipped,
-    #    the backup runs as the actual generation.
+    # 1. Primary 21:15 UTC weekdays — main daily run after US close.
+    # 2. Backup 22:30 UTC weekdays — runs only if 21:15 missed (mp3 guard).
+    # 3. Pre-market 12:00 UTC weekdays (~7-8am ET) — express-only, covers
+    #    overnight + Asia close + EU open + US futures.
     #
     # External scheduler (cron-job.org or similar) optionally triggers a
-    # third dispatch via the workflow_dispatch API — see README's
-    # 'External cron fallback' section. Same concurrency lock applies.
+    # fourth dispatch via the workflow_dispatch API. The mp3-already-exists
+    # guard in main.py makes all of these safe to fire redundantly.
     - cron: '15 21 * * 1-5'
     - cron: '30 22 * * 1-5'
-  workflow_dispatch: {}
+    - cron: '0 12 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "show, express, or both"
+        required: false
+        default: "both"
+        type: choice
+        options: [both, show, express]
 
 permissions:
   contents: write
@@ -68,7 +72,21 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Generate episode
-        run: python main.py
+        # Pre-market 12:00 UTC slot runs express-only. All other triggers
+        # run both formats. The mp3-exists guard prevents double-execution
+        # within the same UTC day.
+        run: |
+          MODE="${{ inputs.mode }}"
+          if [ -z "$MODE" ]; then
+            HOUR=$(date -u +%H)
+            if [ "$HOUR" = "12" ]; then
+              MODE="express"
+            else
+              MODE="both"
+            fi
+          fi
+          echo "Running with mode=$MODE"
+          python main.py --$MODE
 
       - name: Upload artifact on failure
         if: failure()
