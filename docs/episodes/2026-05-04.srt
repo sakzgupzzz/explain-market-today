@@ -1,0 +1,127 @@
+1
+00:00:00,000 --> 00:00:08,687
+JAMIE: Jamie here — and Tesla just hit a 'symbolic' self-driving milestone, whatever that means, with Elon Musk saying it's a major step towards safe unsupervised self-driving.
+
+2
+00:00:08,687 --> 00:00:19,045
+ALEX: Alex on markets — and the S&P five hundred is down zero point four one percent, not exactly a thrilling day, with the Dow Jones down one point one three percent.
+
+3
+00:00:19,045 --> 00:00:29,069
+MAYA: Maya from tech — and Palantir is having a great day, posting its fastest revenue growth ever, which is pretty impressive, and they're calling out 'AI slop', whatever that means.
+
+4
+00:00:29,069 --> 00:00:32,411
+JAMIE: Right, exactly, because who doesn't love a good AI controversy?
+
+5
+00:00:32,411 --> 00:00:38,425
+ALEX: Well, the Nasdaq is only down zero point one nine percent, so I guess that's a win.
+
+6
+00:00:38,425 --> 00:00:45,442
+MAYA: And Oracle is up four point nine two percent, which is a big move, after they announced their quarterly earnings.
+
+7
+00:00:45,442 --> 00:00:50,120
+ALEX: Oh, just the usual — beats on earnings and revenue, nothing too exciting.
+
+8
+00:00:50,120 --> 00:00:59,810
+MAYA: And Micron has risen up the ranks of the top U.S companies, which is a big deal, and they weren't even in the top one hundred last year.
+
+9
+00:00:59,810 --> 00:01:02,483
+JAMIE: That's a huge jump — what's driving that?
+
+10
+00:01:02,483 --> 00:01:07,495
+ALEX: Well, their fortunes have changed dramatically, mostly due to their recent investments and partnerships.
+
+11
+00:01:07,495 --> 00:01:14,846
+MAYA: And I heard Spirit Airlines just shut down, which is kind of sad, but also not surprising, given their financial struggles.
+
+12
+00:01:14,846 --> 00:01:19,189
+JAMIE: Yeah, I guess you could say they just ran out of runway.
+
+13
+00:01:19,189 --> 00:01:21,194
+ALEX: Oh, great, a aviation pun.
+
+14
+00:01:21,194 --> 00:01:28,545
+MAYA: And GameStop just made a surprise bid for eBay, which is a huge deal, and could potentially change the retail landscape.
+
+15
+00:01:28,545 --> 00:01:31,218
+JAMIE: That's a big move — what's behind it?
+
+16
+00:01:31,218 --> 00:01:37,901
+ALEX: Well, GameStop is trying to expand its business, but it's not clear how they plan to pay for it.
+
+17
+00:01:37,901 --> 00:01:45,586
+MAYA: And the creator of Roomba is back with a new robot companion, which is kind of cool, but also a bit weird.
+
+18
+00:01:45,586 --> 00:01:48,927
+JAMIE: Yeah, because what everyone needs is a robot friend.
+
+19
+00:01:48,927 --> 00:01:54,942
+ALEX: Anyway, the ten-year Treasury yield is up one point five five percent, which is a big move.
+
+20
+00:01:54,942 --> 00:02:01,959
+MAYA: And the dollar index is up zero point two seven percent, which is not too exciting, but still a move.
+
+21
+00:02:01,959 --> 00:02:05,300
+JAMIE: Right, exactly — it's all about the small moves today.
+
+22
+00:02:05,300 --> 00:02:13,319
+MAYA: And I heard the US government is warning of a severe CopyFail bug affecting major versions of Linux, which is kind of scary.
+
+23
+00:02:13,319 --> 00:02:16,661
+JAMIE: Yeah, because who doesn't love a good cyber threat?
+
+24
+00:02:16,661 --> 00:02:20,336
+ALEX: Well, at least it's not a boring day in tech.
+
+25
+00:02:20,336 --> 00:02:25,014
+MAYA: And the Met Gala just happened, and the fashion is insane, as always.
+
+26
+00:02:25,014 --> 00:02:28,355
+JAMIE: Yeah, because who doesn't love a good fashion disaster?
+
+27
+00:02:28,355 --> 00:02:32,365
+ALEX: Anyway, that's all for today — it's been a wild ride.
+
+28
+00:02:32,365 --> 00:02:37,377
+MAYA: And don't forget to check out the Pulitzer Prize winners, which were just announced.
+
+29
+00:02:37,377 --> 00:02:40,384
+JAMIE: Yeah, because who doesn't love a good book?
+
+30
+00:02:40,384 --> 00:02:44,060
+ALEX: Well, that's all for now — thanks for tuning in.
+
+31
+00:02:44,060 --> 00:02:48,069
+MAYA: And we'll be back tomorrow, with more news and more jokes.
+
+32
+00:02:48,069 --> 00:02:52,747
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
