@@ -108,12 +108,12 @@ OLLAMA_TIMEOUT = int(os.environ.get("OLLAMA_TIMEOUT", "1800"))
 # Bumped from 400/1800 → 800/2200 after early v3-pipeline episodes felt
 # under-baked (16 turns ~60 words each). Higher floor + explicit minimum
 # turn count in the prompt gets the conversational density back.
-MIN_WORDS = 800
-MAX_WORDS = 2200
+MIN_WORDS = 1000
+MAX_WORDS = 2700
 # Hard floor for retry trigger. Anything under this regenerates with a
-# stronger 'more turns' prompt. 24 is forgiving — first-pass scripts
-# at 25-27 turns are good enough to ship, only the truly thin ones retry.
-MIN_TURNS = 24
+# stronger 'more turns' prompt. 30 leaves slack — first-pass scripts at
+# 32+ turns ship without retry; only the truly thin ones regenerate.
+MIN_TURNS = 30
 
 # ElevenLabs v3 default delivery is podcast-narration paced — about 15-20%
 # slower than what old Piper/macOS-say episodes felt like. Post-process
@@ -131,46 +131,25 @@ PIPER_VOICE_PATH = os.environ.get(
 )
 # Multi-speaker cast. Speaker IDs index into the libritts_r model (900+ speakers).
 # Spread across the range so voices are distinct.
+# Three hosts — listener feedback was that 8 voices is hard to track. Trimmed
+# to a host + 2 specialists who together cover markets/business/macro and
+# tech/culture/odd-thing. Listeners can tell who's talking from voice alone
+# instead of having to remember an 8-person org chart.
 CHARACTERS = {
     "JAMIE": {
         "speaker": 79,
-        "description": "main host — upbeat, drives the show, asks sharp questions, reacts with personality",
+        "description": "main host — drives the show, asks sharp questions, reacts with personality, bookends every episode",
         "tags": ["[curious]", "[excited]", "[laughs]"],
     },
     "ALEX": {
         "speaker": 13,
-        "description": "markets analyst — dry, precise, explains the WHY behind index and stock moves, deadpan humor",
+        "description": "markets + business + macro desk — dry, precise, explains the WHY behind moves; covers equities, gainers/losers, rates, the Fed, the dollar, big corporate stories; deadpan humor",
         "tags": ["[deadpan]", "[sarcastic]", "[sighs]"],
     },
     "MAYA": {
         "speaker": 411,
-        "description": "tech correspondent — fast-talker, hype-aware but skeptical, loves a product-launch story",
-        "tags": ["[rushed]", "[excited]", "[mischievously]"],
-    },
-    "RIO": {
-        "speaker": 218,
-        "description": "world/culture correspondent — warm storyteller, brings human texture to big stories",
-        "tags": ["[speaking softly]", "[curious]"],
-    },
-    "KAI": {
-        "speaker": 635,
-        "description": "odd-thing closer — punchy one-liners, absurdist observations, trivia energy",
-        "tags": ["[mischievously]", "[laughs]", "[gasps]"],
-    },
-    "CAM": {
-        "speaker": 892,
-        "description": "macro / Fed correspondent — rates, dollar, bonds, geopolitics; calm, measured, occasionally biting",
-        "tags": ["[deadpan]", "[sighs]"],
-    },
-    "TESS": {
-        "speaker": 347,
-        "description": "consumer and retail desk — brands, earnings calls, CEOs, shopping habits; sharp eye for hype",
-        "tags": ["[sarcastic]", "[laughs]"],
-    },
-    "DEV": {
-        "speaker": 52,
-        "description": "crypto and fintech desk — skeptical, numbers-driven, loves pointing out when narratives collapse",
-        "tags": ["[deadpan]", "[snorts]"],
+        "description": "tech + culture + odd-thing desk — fast-talker, hype-aware but skeptical; covers product launches, AI/crypto, world stories with human angles, and the absurdist closer",
+        "tags": ["[rushed]", "[excited]", "[mischievously]", "[laughs]"],
     },
 }
 DEFAULT_CHARACTER = "JAMIE"
@@ -188,17 +167,11 @@ ELEVENLABS_OUTPUT_FORMAT = os.environ.get("ELEVENLABS_OUTPUT_FORMAT", "mp3_44100
 # ElevenLabs platform. Override per host via env: ELEVEN_VOICE_<NAME>.
 # Browse voices at https://elevenlabs.io/app/voice-library to pick custom IDs.
 ELEVEN_CHARACTER_VOICES = {
-    # All IDs below are from the current ElevenLabs default voice catalogue —
-    # auto-loaded into every new account, no add-from-library step required.
-    # Mapping prioritizes personality match over gender balance.
+    # 3-host cast: warm female host, deep male analyst, bright female tech.
+    # Three distinct timbres listeners can identify within one syllable.
     "JAMIE": os.environ.get("ELEVEN_VOICE_JAMIE", "EXAVITQu4vr4xnSDxMaL"),  # Sarah — confident, warm, professional host
     "ALEX":  os.environ.get("ELEVEN_VOICE_ALEX",  "nPczCjzI2devNBz1zQrb"),  # Brian — deep, resonant analyst
     "MAYA":  os.environ.get("ELEVEN_VOICE_MAYA",  "cgSgspJ2msm6clMCkdW9"),  # Jessica — playful, bright tech reporter
-    "RIO":   os.environ.get("ELEVEN_VOICE_RIO",   "JBFqnCBsd6RMkjVDRZzb"),  # George — warm British storyteller
-    "KAI":   os.environ.get("ELEVEN_VOICE_KAI",   "N2lVS1w4EtoT3dr4eOWO"),  # Callum — husky trickster, absurdist
-    "CAM":   os.environ.get("ELEVEN_VOICE_CAM",   "onwK4e9ZLuTAKqWW03F9"),  # Daniel — steady British broadcaster, macro
-    "TESS":  os.environ.get("ELEVEN_VOICE_TESS",  "FGY2WhTYpPnrIDTdsKH5"),  # Laura — quirky enthusiast, retail
-    "DEV":   os.environ.get("ELEVEN_VOICE_DEV",   "cjVigY5qzO86Huf0OWal"),  # Eric — smooth, trustworthy, numbers
 }
 
 # Podcast metadata (edit these)
