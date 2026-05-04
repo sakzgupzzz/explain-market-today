@@ -1,0 +1,151 @@
+1
+00:00:00,000 --> 00:00:07,974
+JAMIE: Jamie here, and Spirit Airlines just shut down, ending its run as the most famous US discount airline - what's the fallout, Alex?
+
+2
+00:00:07,974 --> 00:00:18,376
+ALEX: Alex on equities - Spirit Airlines' collapse will likely give some carriers more pricing power as they race to capture Spirit's customers, which is already being reflected in the market.
+
+3
+00:00:18,376 --> 00:00:21,843
+JAMIE: Right, exactly - so who's going to benefit from this?
+
+4
+00:00:21,843 --> 00:00:27,737
+ALEX: Well, the big airlines, of course - they'll have less competition and can charge higher prices.
+
+5
+00:00:27,737 --> 00:00:36,405
+CAM: Cam on macro - and the dollar index is up zero point two seven percent overnight, which is a relatively calm reaction to the news.
+
+6
+00:00:36,405 --> 00:00:47,153
+MAYA: Maya from tech - and speaking of calm reactions, Palantir just posted its fastest revenue growth ever, with eighty-five percent revenue growth - that's a huge win for the company.
+
+7
+00:00:47,153 --> 00:00:52,354
+KAI: Yeah, and I'm sure their "AI slop" comment had nothing to do with it.
+
+8
+00:00:52,354 --> 00:00:56,168
+MAYA: Oh, definitely not - they're just calling out the competition.
+
+9
+00:00:56,168 --> 00:01:06,916
+RIO: Rio checking in - the human side of the Spirit Airlines story is that forty-two hundred workers are now out of a job, which is a huge blow to the community.
+
+10
+00:01:06,916 --> 00:01:17,665
+TESS: Tess at retail - and it's not just the workers who are affected - the airline's collapse will also impact the travel industry as a whole, with many customers left stranded.
+
+11
+00:01:17,665 --> 00:01:27,373
+DEV: Dev on crypto - meanwhile, Bitcoin is up two point two three percent today, which is a relatively small move compared to the rest of the market.
+
+12
+00:01:27,373 --> 00:01:32,574
+JAMIE: Yeah, it's like the crypto world is just over here, doing its own thing.
+
+13
+00:01:32,574 --> 00:01:37,428
+KAI: Hey, at least they're consistent - unlike some airlines, which shall remain nameless.
+
+14
+00:01:37,428 --> 00:01:46,442
+MAYA: Oh, and have you seen the news about Anthropic teaming up with Goldman, Blackstone, and others on a one point five billion dollar AI venture?
+
+15
+00:01:46,442 --> 00:01:50,256
+ALEX: Oh, great, because what we really need is more AI.
+
+16
+00:01:50,256 --> 00:01:55,110
+MAYA: Hey, it's a growing market - and someone's got to capitalize on it.
+
+17
+00:01:55,110 --> 00:02:02,391
+CAM: Cam on macro - and the ten-year Treasury yield is up one point five five percent, which is a significant move.
+
+18
+00:02:02,391 --> 00:02:04,125
+JAMIE: What's driving that, Cam?
+
+19
+00:02:04,125 --> 00:02:10,019
+CAM: Well, it's likely a combination of factors, including the Fed's actions and the overall economic outlook.
+
+20
+00:02:10,019 --> 00:02:16,607
+KAI: Oh, and have you seen the news about the UAE accusing Iran of renewed drone and missile attacks?
+
+21
+00:02:16,607 --> 00:02:25,275
+RIO: Yes, it's a very concerning situation - and the US is trying to open the Strait of Hormuz, which is a critical waterway.
+
+22
+00:02:25,275 --> 00:02:30,129
+JAMIE: Okay, let's switch gears - what's the big story of the day, Alex?
+
+23
+00:02:30,129 --> 00:02:38,450
+ALEX: Alex on equities - well, Palantir's earnings were a huge win for the company, and their "AI slop" comment was definitely a talking point.
+
+24
+00:02:38,450 --> 00:02:46,772
+MAYA: Yeah, and it's not just Palantir - the whole AI industry is heating up, with companies like Anthropic and Cerebras making big moves.
+
+25
+00:02:46,772 --> 00:02:53,013
+KAI: And let's not forget about the "AI slop" - I mean, who comes up with this stuff?
+
+26
+00:02:53,013 --> 00:02:55,440
+MAYA: Oh, it's just Palantir being Palantir.
+
+27
+00:02:55,440 --> 00:02:58,907
+JAMIE: Alright, alright - let's move on to quick hits.
+
+28
+00:02:58,907 --> 00:03:04,108
+TESS: Tess at retail - and Pinterest just surged fifteen percent after earnings, with strong guidance.
+
+29
+00:03:04,108 --> 00:03:11,389
+DEV: Dev on crypto - and Circle just jumped nearly twenty percent on the Clarity Act compromise, which preserves stablecoin rewards.
+
+30
+00:03:11,389 --> 00:03:15,203
+KAI: Yeah, and I'm sure the stablecoin enthusiasts are just thrilled.
+
+31
+00:03:15,203 --> 00:03:22,830
+RIO: Rio checking in - and the UK is discussing participating in a seventy-eight billion dollar European Union loan scheme to support Ukraine.
+
+32
+00:03:22,830 --> 00:03:31,498
+CAM: Cam on macro - and the dollar index is still up zero point two seven percent, which is a relatively calm reaction to the news.
+
+33
+00:03:31,498 --> 00:03:34,619
+JAMIE: What's the odd thing of the day, Kai?
+
+34
+00:03:34,619 --> 00:03:43,287
+KAI: Well, it's not every day you see a company like GameStop offering fifty-six billion dollars for eBay - I mean, what's the plan there?
+
+35
+00:03:43,287 --> 00:03:51,608
+MAYA: Yeah, and it's not just the price - it's the fact that GameStop is even trying to buy eBay in the first place.
+
+36
+00:03:51,608 --> 00:03:55,422
+JAMIE: Alright, that's a wrap - thanks for tuning in, everyone.
+
+37
+00:03:55,422 --> 00:04:01,316
+ALEX: And don't forget to do your own research - this show is for entertainment purposes only.
+
+38
+00:04:01,316 --> 00:04:06,517
+JAMIE: This show is for entertainment and education only - nothing here is investment advice.
