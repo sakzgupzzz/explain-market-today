@@ -1,15 +1,17 @@
-"""One-off: generate intro and outro stings via ElevenLabs Sound Effects API.
+"""One-off: generate audio assets used to wrap every episode.
 
 Run once locally:
     python make_assets.py
 
-Outputs assets/intro.mp3 and assets/outro.mp3, then commits them. After that,
-tts.py wraps every episode with these stings — no per-episode regeneration,
-no recurring credit cost.
+Outputs:
+    assets/intro.mp3       — 2s news bumper sting (Sound Effects API)
+    assets/outro.mp3       — 2s closing sting     (Sound Effects API)
+    assets/bed.mp3         — 22s ambient music bed (Sound Effects API)
+    assets/host_intro.mp3  — JAMIE voice saying the show's tagline (Text to Speech)
 
-Pricing: ElevenLabs Sound Effects bills at 40 credits/sec when duration is
-set. Two 2-second clips = 160 credits total, ~0.16% of the Creator monthly
-budget. Run once.
+Cost: ~880 credits one-time for sound effects + ~50 credits for the host
+intro line. <1% of monthly Creator budget. Re-run when you want to change
+the show tagline or refresh the music bed vibe.
 """
 from __future__ import annotations
 import os
@@ -60,21 +62,52 @@ PROMPTS = [
 ]
 
 
+HOST_INTRO_TEXT = "Hey, this is Markets Explained, Daily."
+HOST_INTRO_VOICE = "EXAVITQu4vr4xnSDxMaL"  # Sarah — same voice as JAMIE in tts.py
+
+
+def _gen_sound_effect(name: str, dur: float, prompt: str) -> None:
+    out = ASSETS / f"{name}.mp3"
+    print(f"generating {name} ({dur}s) → {out}")
+    audio_iter = client.text_to_sound_effects.convert(
+        text=prompt,
+        duration_seconds=dur,
+        prompt_influence=0.5,
+    )
+    with open(out, "wb") as f:
+        for chunk in audio_iter:
+            if chunk:
+                f.write(chunk)
+    print(f"  wrote {out.stat().st_size // 1024} KB")
+
+
+def _gen_host_intro() -> None:
+    out = ASSETS / "host_intro.mp3"
+    print(f"generating host_intro (\"{HOST_INTRO_TEXT}\") → {out}")
+    # Try v3 first; fall back to multilingual_v2 if v3 isn't available.
+    for model in ("eleven_v3", "eleven_multilingual_v2"):
+        try:
+            audio_iter = client.text_to_speech.convert(
+                voice_id=HOST_INTRO_VOICE,
+                model_id=model,
+                text=HOST_INTRO_TEXT,
+                output_format="mp3_44100_128",
+            )
+            with open(out, "wb") as f:
+                for chunk in audio_iter:
+                    if chunk:
+                        f.write(chunk)
+            print(f"  wrote {out.stat().st_size // 1024} KB (model={model})")
+            return
+        except Exception as e:
+            print(f"  {model} failed: {e}")
+    raise RuntimeError("both v3 and multilingual_v2 failed — check API key")
+
+
 def main() -> None:
     for name, dur, prompt in PROMPTS:
-        out = ASSETS / f"{name}.mp3"
-        print(f"generating {name} ({dur}s) → {out}")
-        audio_iter = client.text_to_sound_effects.convert(
-            text=prompt,
-            duration_seconds=dur,
-            prompt_influence=0.5,
-        )
-        with open(out, "wb") as f:
-            for chunk in audio_iter:
-                if chunk:
-                    f.write(chunk)
-        size_kb = out.stat().st_size // 1024
-        print(f"  wrote {size_kb} KB")
+        _gen_sound_effect(name, dur, prompt)
+    _gen_host_intro()
     print("done — commit assets/ to repo")
 
 

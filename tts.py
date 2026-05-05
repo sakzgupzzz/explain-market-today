@@ -32,8 +32,10 @@ from config import (
 
 INTRO_STING = ROOT / "assets" / "intro.mp3"
 OUTRO_STING = ROOT / "assets" / "outro.mp3"
+HOST_INTRO = ROOT / "assets" / "host_intro.mp3"
 MUSIC_BED = ROOT / "assets" / "bed.mp3"
-STING_GAP_MS = 350  # silence between sting and dialogue
+STING_GAP_MS = 350    # silence between sting and the next element
+HOST_INTRO_GAP_MS = 250  # tighter gap between host intro and first dialogue line
 # Bed gain in dB applied before sidechain duck. -16 dB sits the bed well below
 # voice without making it inaudible in pauses.
 BED_GAIN_DB = float(os.environ.get("BED_GAIN_DB", "-16"))
@@ -169,33 +171,52 @@ def _file_duration_seconds(p: Path) -> float:
 
 
 def _wrap_with_stings(in_out_mp3: Path) -> None:
-    """Prepend intro.mp3 + small silence + dialogue + small silence + outro.mp3.
-    Edits in_out_mp3 in place via a temp file. No-op if assets are missing."""
+    """Wrap dialogue with sting + host intro + dialogue + sting.
+    Final order in the output mp3:
+        intro_sting → gap → host_intro_voice → tight_gap → dialogue → gap → outro_sting
+
+    Edits in_out_mp3 in place via a temp file. Each asset is optional —
+    missing assets are skipped without breaking the chain."""
     if not (INTRO_STING.exists() and OUTRO_STING.exists()):
         return
     tmpdir = Path(tempfile.mkdtemp(prefix="stings_"))
     try:
-        intro_wav = tmpdir / "intro.wav"
-        dlg_wav = tmpdir / "dlg.wav"
-        outro_wav = tmpdir / "outro.wav"
-        sil_wav = tmpdir / "silence.wav"
-        for src, dst in [(INTRO_STING, intro_wav), (in_out_mp3, dlg_wav), (OUTRO_STING, outro_wav)]:
+        sources: list[tuple[Path, int]] = []  # (mp3-or-wav-source, gap-after-ms)
+        # intro sting
+        sources.append((INTRO_STING, STING_GAP_MS))
+        # optional host-voice intro right after the bumper
+        if HOST_INTRO.exists():
+            sources.append((HOST_INTRO, HOST_INTRO_GAP_MS))
+        # the dialogue itself (in_out_mp3)
+        sources.append((in_out_mp3, STING_GAP_MS))
+        # outro sting (no trailing gap)
+        sources.append((OUTRO_STING, 0))
+
+        # Decode each to 44.1kHz mono PCM wav for clean concat
+        wavs: list[Path] = []
+        for i, (src, gap_ms) in enumerate(sources):
+            wav = tmpdir / f"part_{i:02d}.wav"
             subprocess.run(
                 ["ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
-                 "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(dst)],
+                 "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(wav)],
                 check=True,
             )
-        _silence_wav(STING_GAP_MS, 44100, sil_wav)
+            wavs.append(wav)
+            if gap_ms > 0 and i < len(sources) - 1:
+                gap_wav = tmpdir / f"gap_{i:02d}.wav"
+                _silence_wav(gap_ms, 44100, gap_wav)
+                wavs.append(gap_wav)
+
         combined = tmpdir / "combined.wav"
-        _concat_wavs([intro_wav, sil_wav, dlg_wav, sil_wav, outro_wav], combined)
-        # encode straight back into the original mp3 path (overwrite)
+        _concat_wavs(wavs, combined)
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error", "-i", str(combined),
              "-c:a", "libmp3lame", "-b:a", "128k", "-ar", "44100", "-ac", "1",
              str(in_out_mp3)],
             check=True,
         )
-        print(f"[stings] wrapped with intro + outro from {INTRO_STING.parent}/")
+        host_note = " + host_intro" if HOST_INTRO.exists() else ""
+        print(f"[stings] wrapped: intro_sting{host_note} + dialogue + outro_sting")
     finally:
         shutil.rmtree(tmpdir, ignore_errors=True)
 
