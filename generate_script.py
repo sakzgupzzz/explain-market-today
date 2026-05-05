@@ -408,9 +408,17 @@ def _critique_prompt(script: str, market: dict, ranked_stories: list[dict]) -> s
     Groq's ~7KB request size cap. Source facts deliberately omitted:
     fabrication checks happen in verify_facts."""
     name_list = ", ".join(CHARACTERS.keys())
-    return f"""You are a strict podcast script editor. Revise the DRAFT below to fix these structural issues. Keep every fact intact — content fixes happen elsewhere.
+    return f"""You are a strict podcast script editor. Revise the DRAFT below to fix the listed structural issues ONLY. Surgical cuts only — do not restructure or trim aggressively.
 
 Hosts: {name_list}. Disclaimer: "{DISCLAIMER_SHORT}".
+
+PRESERVE (do NOT remove these):
+- Audio tags like [deadpan], [laughs], [excited], [sarcastic], [sighs], [mischievously], [rushed], [curious] — keep them ALL.
+- Specific numbers: even if you spell them as words, the SCRIPT must still mention 'A M D up four point six four percent' not just 'A M D up'. Spell digits, never delete them.
+- All real company / product / person names from the draft.
+- Every distinct story the draft references — do not drop a story to satisfy any rule.
+- Banter and jokes that are NOT on the banned-template list.
+- Turn count: keep within 80% of the original. If draft has 31 turns, the revised script has at least 25.
 
 Fix:
 - Wrong-name intro: ALEX saying "Jamie here" → "Alex here". Same for all hosts.
