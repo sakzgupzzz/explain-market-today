@@ -59,6 +59,13 @@ PROMPTS = [
         "that will sit under spoken dialogue without distracting from it. "
         "Should loop seamlessly. Mood: focused, professional, calm.",
     ),
+    (
+        "transition",
+        1.2,
+        "Short news segment transition cue: quick rising synth swell with a "
+        "soft percussive hit at the end, modern broadcast style, no voice, "
+        "no melody, signals a topic change.",
+    ),
 ]
 
 

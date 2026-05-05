@@ -66,6 +66,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Run unit tests + count gate
+        # Fail fast if test count drops below baseline. 55 tests as of
+        # 2026-05-05; bump the baseline when adding tests intentionally.
+        run: |
+          python -m pytest tests/ -q
+          BASELINE=55
+          COUNT=$(python -m pytest tests/ --collect-only -q 2>/dev/null | grep -c "::test_")
+          echo "test count: $COUNT (baseline: $BASELINE)"
+          if [ "$COUNT" -lt "$BASELINE" ]; then
+            echo "::error::test count $COUNT dropped below baseline $BASELINE"
+            exit 1
+          fi
+
       - name: Git identity
         run: |
           git config user.name "github-actions[bot]"

@@ -45,3 +45,12 @@ blocked:
     - celebrity gossip
     - horoscope
   sources: []
+
+# Show vibe knobs:
+#   tone:   neutral | dry | snarky    — modulates HUMOR rule in the prompt
+#   length: short | standard | long   — overrides MIN_WORDS/MAX_WORDS targets
+#                                       short ≈ 600/1500, standard ≈ 1000/2700,
+#                                       long ≈ 1400/3500
+preferences:
+  tone: dry
+  length: standard

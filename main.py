@@ -32,13 +32,19 @@ from cluster import cluster_headlines
 from score import score_clusters
 from state import load_state, save_state, mark_covered, annotate_clusters
 from interests_loader import load_interests
+from calendar_events import gather as gather_calendar_events
 from generate_script import generate, critique_revise
+from verify_facts import verify as verify_facts
 from render_express import render_express
 from render_email import write_digest
 from render_thread import write_thread
 from sanitize import sanitize_script
 from tts import synth, audio_duration_seconds
 from publish import build_feed, build_index_html, git_push, write_transcripts, write_chapters
+from cover_art import write_episode_cover
+from lock import acquire_lock
+from eleven_usage import check_budget
+from notify import notify_success, notify_failure
 
 EXPRESS_DIR = Path(EPISODES_DIR).parent / "express"
 
@@ -75,6 +81,10 @@ def _write_meta(mp3_path: Path, script: str, char_usage: int | None = None) -> N
         dur = audio_duration_seconds(mp3_path)
     except Exception:
         dur = 0.0
+    try:
+        from generate_script import PROMPT_VERSION, PROMPT_VARIANT
+    except Exception:
+        PROMPT_VERSION, PROMPT_VARIANT = "?", "?"
     meta = {
         "date": mp3_path.stem,
         "mp3": mp3_path.name,
@@ -83,6 +93,8 @@ def _write_meta(mp3_path: Path, script: str, char_usage: int | None = None) -> N
         "turns": _turn_count(script),
         "words": _word_count(script),
         "char_usage_estimate": char_usage if char_usage is not None else len(script),
+        "prompt_version": PROMPT_VERSION,
+        "prompt_variant": PROMPT_VARIANT,
         "generated_at": datetime.utcnow().isoformat() + "Z",
     }
     mp3_path.with_suffix(".meta.json").write_text(json.dumps(meta, indent=2))
@@ -97,6 +109,13 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
     if mp3_path.exists() and not force and mode != "express":
         print(f"[{today}] show episode already published at {mp3_path} — skipping (use --force to regenerate)")
         return mp3_path
+
+    # ── ElevenLabs char-usage guard ────────────────────────────────────────
+    ok, msg = check_budget(threshold=0.95)
+    print(msg)
+    if not ok:
+        notify_failure(today, "budget_check", msg)
+        raise RuntimeError(msg)
 
     print(f"[{today}] fetching market data…")
     market = fetch_all()
@@ -115,6 +134,12 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
     follow_ups = [c for c in annotated if c.get("seen_recently")][:5]
     print(f"[{today}] {len(clusters)} clusters → {len(fresh)} fresh, {len(follow_ups)} follow-ups")
 
+    # ── upcoming-events context (earnings + macro calendar) ────────────────
+    watchlist = (interests.get("watchlist") or {}).get("tickers") or []
+    upcoming_events = gather_calendar_events(watchlist)
+    if upcoming_events:
+        print(f"[{today}] injected upcoming-events block ({len(upcoming_events.splitlines())} lines)")
+
     EPISODES_DIR.mkdir(parents=True, exist_ok=True)
 
     # ── show render ────────────────────────────────────────────────────────
@@ -123,9 +148,15 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
             print(f"[{today}] show already published — skipping show render")
         else:
             print(f"[{today}] generating show script…")
-            script = generate(market, fresh, date_pretty, follow_ups=follow_ups)
+            script = generate(
+                market, fresh, date_pretty,
+                follow_ups=follow_ups, upcoming_events=upcoming_events,
+                interests=interests,
+            )
             print(f"[{today}] critique pass…")
             script = critique_revise(script, market, fresh)
+            print(f"[{today}] fact verification pass…")
+            script = verify_facts(script, market, fresh)
             print(f"[{today}] sanitizing…")
             script = sanitize_script(script)
             txt_path = EPISODES_DIR / f"{today}.txt"
@@ -136,6 +167,10 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
             print(f"[{today}] writing transcripts + chapters…")
             write_transcripts(script, mp3_path, chunk_timings, ranked_stories=fresh)
             write_chapters(script, mp3_path, chunk_timings)
+            lead_title = (fresh[0].get("title") if fresh else "Daily roundup")
+            cover = write_episode_cover(today, lead_title)
+            if cover:
+                print(f"[{today}] wrote per-episode cover → {cover.name}")
             _write_meta(mp3_path, script)
 
     # ── express render ─────────────────────────────────────────────────────
@@ -181,6 +216,16 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
         print(f"[{today}] pushing…")
         git_push(f"episode {today}")
     print(f"[{today}] done → {mp3_path}")
+
+    # ── notify ─────────────────────────────────────────────────────────────
+    if mode in ("show", "both") and mp3_path.exists():
+        try:
+            dur = audio_duration_seconds(mp3_path)
+            words = _word_count((EPISODES_DIR / f"{today}.txt").read_text())
+            turns = _turn_count((EPISODES_DIR / f"{today}.txt").read_text())
+            notify_success(today, mode, turns, words, dur)
+        except Exception:
+            pass
     return mp3_path
 
 
@@ -191,8 +236,11 @@ if __name__ == "__main__":
     for flag, name in [("--show", "show"), ("--express", "express"), ("--both", "both")]:
         if flag in sys.argv:
             mode = name
+    today_str = datetime.now().strftime("%Y-%m-%d")
     try:
-        run(push=push, force=force, mode=mode)
-    except Exception:
+        with acquire_lock():
+            run(push=push, force=force, mode=mode)
+    except Exception as e:
         traceback.print_exc()
+        notify_failure(today_str, "main", f"{type(e).__name__}: {e}")
         sys.exit(1)

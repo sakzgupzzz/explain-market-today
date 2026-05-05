@@ -125,11 +125,45 @@ def _fmt_followups(seen_recently: list[dict]) -> str:
     return "\n".join(lines)
 
 
+_TONE_FRAGMENTS = {
+    "neutral": "Hosts are professional, lightly witty, accurate-first.",
+    "dry": "Hosts are dry, deadpan, sardonic. Punchlines land late and quiet, not loud. Skepticism over enthusiasm.",
+    "snarky": "Hosts are sharp, snarky, and openly take the piss out of corporate spin and Wall Street narrative. Punchier, more confrontational than dry.",
+}
+
+# Prompt-template versioning. PROMPT_VARIANT env override lets you A/B
+# test prompts: tag the meta sidecar with the variant, then aggregate
+# .meta.json to compare turn count / word count / banned-phrase rate /
+# topic diversity per variant. Default 'A'. Add 'B' / 'C' branches inside
+# build_prompt as needed.
+import os as _os
+PROMPT_VERSION = "v1.4"
+PROMPT_VARIANT = _os.environ.get("PROMPT_VARIANT", "A").upper()
+
+_LENGTH_PRESETS = {
+    "short": {"min_words": 600, "max_words": 1500, "min_turns": 22},
+    "standard": {"min_words": 1000, "max_words": 2700, "min_turns": 30},
+    "long": {"min_words": 1400, "max_words": 3500, "min_turns": 38},
+}
+
+
+def _resolve_prefs(interests: dict | None) -> tuple[str, dict]:
+    prefs = (interests or {}).get("preferences") or {}
+    tone = (prefs.get("tone") or "dry").lower()
+    if tone not in _TONE_FRAGMENTS:
+        tone = "dry"
+    length = (prefs.get("length") or "standard").lower()
+    length_preset = _LENGTH_PRESETS.get(length, _LENGTH_PRESETS["standard"])
+    return tone, length_preset
+
+
 def build_prompt(
     market: dict,
     ranked_stories: list[dict],
     date_str: str,
     follow_ups: list[dict] | None = None,
+    upcoming_events: str = "",
+    interests: dict | None = None,
 ) -> str:
     indices = _fmt_section(market["indices"])
     sectors = _fmt_section(market["sectors"])
@@ -145,8 +179,13 @@ def build_prompt(
     title_upper = PODCAST_TITLE.upper()
     banned = ", ".join(f'"{p}"' for p in BANNED_PHRASES)
     followups_block = _fmt_followups(follow_ups or [])
+    tone, length_preset = _resolve_prefs(interests)
+    tone_line = _TONE_FRAGMENTS[tone]
+    pref_min_words = length_preset["min_words"]
+    pref_max_words = length_preset["max_words"]
+    pref_min_turns = length_preset["min_turns"]
 
-    return f"""You write {title_upper} — a fast, funny daily brief delivered as a multi-host podcast roundtable. Hosts are sharp, wry, joke constantly, riff on each other, land dry punchlines, and take the piss out of the news while still delivering real info.
+    return f"""You write {title_upper} — a fast, daily brief delivered as a multi-host podcast roundtable. {tone_line} Hosts joke, riff, push back on each other.
 Date: {date_str}
 
 <cast_metadata>
@@ -179,6 +218,8 @@ TOP LOSERS:
 
 {followups_block}
 
+{upcoming_events}
+
 ==== STYLE EXAMPLE (DO NOT COPY CONTENT, ONLY MIMIC STRUCTURE/TONE) ====
 {_FEW_SHOT}
 
@@ -208,7 +249,7 @@ Hard rules:
 7. VOICE: contractions, em-dashes, ellipses for natural pauses. Hosts cut each other off, finish each other's sentences, push back.
 8. NUMBERS: write as words for smooth TTS. "Up one point two percent." For indices spell digit-pairs: "seventy-one twenty-six" for 7126. Tickers as letters with spaces: "S P Y", "N V D A", "C R M". Dollar amounts: "one hundred billion dollars", not "$100B".
 9. ACCURACY (HARD): you may ONLY discuss companies, stories, prices, percentages, and events that appear verbatim in MARKET DATA or HEADLINES above. Do NOT invent stock moves, headlines, deals, endorsements, shutdowns, or quotes. If a beat has no source material, skip the beat. If the tape moved without a clear catalyst, ALEX says exactly that.
-10. LENGTH: adaptive but DENSE. Quiet day → around {MIN_WORDS} words across AT LEAST {MIN_TURNS} turns. Busy day → up to {MAX_WORDS} words across 40+ turns. Never pad. Never skip a great story that's in the headlines. If you produce fewer than {MIN_TURNS} turns the episode is rejected.
+10. LENGTH: adaptive but DENSE. Quiet day → around {pref_min_words} words across AT LEAST {pref_min_turns} turns. Busy day → up to {pref_max_words} words across 40+ turns. Never pad. Never skip a great story that's in the headlines. If you produce fewer than {pref_min_turns} turns the episode is rejected.
 11. CAST USAGE: ALL {total_hosts} hosts SHOULD appear; minimum {min_hosts}. JAMIE bookends but speaks AT MOST 1 in every 4 turns. No single host gets more than 25% of total turns.
 12. HUMOR: jokes throughout, organic to each host's personality. Punch up at institutions/Wall Street/PR spin. Never punch down at protected characteristics. No dad jokes. Late callback to an earlier joke = chef's kiss.
 13. BANNED_PHRASES — do NOT use any of these (case-insensitive): {banned}.
@@ -231,25 +272,46 @@ def _ollama_call(prompt: str, model: str, temperature: float = 0.75) -> str:
     return resp.json()["response"].strip()
 
 
-def _groq_call(prompt: str, model: str, temperature: float = 0.75) -> str:
-    """Groq's OpenAI-compatible chat-completions endpoint. Sub-second inference
-    for open-weight models on their custom LPU hardware."""
-    resp = requests.post(
-        GROQ_URL,
-        headers={
-            "Authorization": f"Bearer {GROQ_API_KEY}",
-            "Content-Type": "application/json",
-        },
-        json={
-            "model": model,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": temperature,
-            "max_tokens": 4096,
-        },
-        timeout=120,
-    )
-    resp.raise_for_status()
-    return resp.json()["choices"][0]["message"]["content"].strip()
+def _groq_call(prompt: str, model: str, temperature: float = 0.75, retries: int = 3) -> str:
+    """Groq's OpenAI-compatible chat-completions endpoint with retry on
+    transient 5xx + 429 (Groq's rate-limit signal). Backoff is exponential
+    with jitter; 429 honors Retry-After header if present."""
+    import random, time as _time
+    last_err: Exception | None = None
+    for attempt in range(retries):
+        try:
+            resp = requests.post(
+                GROQ_URL,
+                headers={
+                    "Authorization": f"Bearer {GROQ_API_KEY}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": model,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "temperature": temperature,
+                    "max_tokens": 4096,
+                },
+                timeout=120,
+            )
+            if resp.status_code == 429:
+                wait = float(resp.headers.get("Retry-After", "5"))
+                print(f"[groq] 429 rate-limited, waiting {wait}s (attempt {attempt+1}/{retries})")
+                _time.sleep(wait + random.random())
+                continue
+            if 500 <= resp.status_code < 600:
+                wait = (2 ** attempt) + random.random()
+                print(f"[groq] {resp.status_code} server error, retrying in {wait:.1f}s (attempt {attempt+1}/{retries})")
+                _time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            return resp.json()["choices"][0]["message"]["content"].strip()
+        except requests.RequestException as e:
+            last_err = e
+            wait = (2 ** attempt) + random.random()
+            print(f"[groq] request failed ({e}), retrying in {wait:.1f}s (attempt {attempt+1}/{retries})")
+            _time.sleep(wait)
+    raise RuntimeError(f"groq exhausted {retries} retries: {last_err}")
 
 
 def _llm_call(prompt: str, ollama_model: str, groq_model: str, temperature: float = 0.75) -> str:
@@ -272,28 +334,37 @@ def generate(
     ranked_stories: list[dict],
     date_str: str,
     follow_ups: list[dict] | None = None,
+    upcoming_events: str = "",
+    interests: dict | None = None,
     max_retries: int = 1,
 ) -> str:
     """Generate the dialogue from a pre-ranked story list. If the result has
-    fewer than MIN_TURNS turns, retry once with a stronger 'more turns'
-    addendum. Sleeps before retry to clear Groq's per-minute TPM window."""
+    fewer than the length preset's min_turns, retry once with a stronger
+    'more turns' addendum. Sleeps before retry to clear Groq's per-minute
+    TPM window."""
     import time
-    prompt = build_prompt(market, ranked_stories, date_str, follow_ups=follow_ups)
+    _, length_preset = _resolve_prefs(interests)
+    target_min_turns = length_preset["min_turns"]
+    prompt = build_prompt(
+        market, ranked_stories, date_str,
+        follow_ups=follow_ups, upcoming_events=upcoming_events,
+        interests=interests,
+    )
     script = _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.75)
     turns = _count_turns(script)
     print(f"[generate] first pass: {turns} turns")
 
     attempts = 0
-    while turns < MIN_TURNS and attempts < max_retries:
+    while turns < target_min_turns and attempts < max_retries:
         attempts += 1
         if GROQ_API_KEY:
             print("[generate] sleeping 35s to clear Groq TPM window before retry…")
             time.sleep(35)
         addendum = (
             f"\n\nYour previous draft had only {turns} turns. The minimum is "
-            f"{MIN_TURNS}. Rewrite the episode with MORE turns — break monologues "
+            f"{target_min_turns}. Rewrite the episode with MORE turns — break monologues "
             f"into a long-turn-followed-by-short-reaction pattern, add reactions "
-            f"between every substantive turn, and use more hosts. Aim for 30-40 turns."
+            f"between every substantive turn, and use more hosts. Aim for {target_min_turns + 6}-{target_min_turns + 12} turns."
         )
         retry_prompt = prompt + addendum
         try:

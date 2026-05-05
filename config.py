@@ -176,8 +176,13 @@ ELEVEN_CHARACTER_VOICES = {
 
 # Podcast metadata (edit these)
 PODCAST_TITLE = "Market Today, Explained — Daily Markets & Tech News"
-PODCAST_AUTHOR = "Saksham Gupta | Daily Markets Podcast"
-PODCAST_EMAIL = "gsaksham@gmail.com"
+# Visible in RSS feed, Apple Podcasts directory, on the index page.
+# Set to a neutral show identity to avoid attaching the show to a personal name.
+PODCAST_AUTHOR = "Markets Explained"
+# Email is required by Apple/Spotify for ownership verification AND appears in
+# the public RSS source. Anyone can curl the feed and see this. Use a neutral
+# inbox you control — a free Gmail/Proton alias works. Substitute below.
+PODCAST_EMAIL = os.environ.get("PODCAST_EMAIL", "hello@markets-explained.example")
 PODCAST_DESCRIPTION = (
     "Daily fast, funny roundtable on US markets, business, tech, world, and culture. "
     "Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. "

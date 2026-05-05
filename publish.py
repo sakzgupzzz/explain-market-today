@@ -227,7 +227,9 @@ def write_chapters(
     mp3_path: Path,
     chunk_timings: list[dict] | None = None,
 ) -> Path:
-    """Write Podcasting 2.0 JSON chapters next to the mp3."""
+    """Write Podcasting 2.0 JSON chapters next to the mp3 AND embed ID3
+    chapter frames into the mp3 itself for older players (Overcast, Castro)
+    that don't read JSON sidecars."""
     turns = parse_dialogue(script)
     if not turns:
         out = mp3_path.with_suffix(".chapters.json")
@@ -253,7 +255,54 @@ def write_chapters(
         })
     out = mp3_path.with_suffix(".chapters.json")
     out.write_text(json.dumps({"version": "1.2.0", "chapters": chapters}, indent=2))
+    _embed_id3_chapters(mp3_path, chapters, total)
     return out
+
+
+def _embed_id3_chapters(mp3_path: Path, chapters: list[dict], total_sec: float) -> None:
+    """Embed ID3 CHAP frames into the mp3 so players that ignore the JSON
+    sidecar (Overcast, Castro, older Apple Podcasts) still render chapters.
+    Silently no-op if mutagen isn't installed or the file can't be tagged."""
+    if not chapters:
+        return
+    try:
+        from mutagen.id3 import ID3, ID3NoHeaderError, CHAP, CTOC, TIT2, CTOCFlags
+    except ImportError:
+        return
+    try:
+        try:
+            tags = ID3(mp3_path)
+        except ID3NoHeaderError:
+            tags = ID3()
+        # Drop existing CHAP/CTOC frames so we don't accumulate duplicates
+        tags.delall("CHAP")
+        tags.delall("CTOC")
+        chapter_ids: list[str] = []
+        for i, ch in enumerate(chapters):
+            start_ms = int(ch["startTime"] * 1000)
+            if i + 1 < len(chapters):
+                end_ms = int(chapters[i + 1]["startTime"] * 1000)
+            else:
+                end_ms = int(total_sec * 1000)
+            element_id = f"chp{i}"
+            chapter_ids.append(element_id)
+            tags.add(CHAP(
+                element_id=element_id,
+                start_time=start_ms,
+                end_time=end_ms,
+                start_offset=0xFFFFFFFF,
+                end_offset=0xFFFFFFFF,
+                sub_frames=[TIT2(encoding=3, text=[ch["title"]])],
+            ))
+        tags.add(CTOC(
+            element_id="toc",
+            flags=CTOCFlags.TOP_LEVEL | CTOCFlags.ORDERED,
+            child_element_ids=chapter_ids,
+            sub_frames=[TIT2(encoding=3, text=["Episode chapters"])],
+        ))
+        tags.save(mp3_path, v2_version=3)
+    except Exception as e:
+        print(f"[chapters] ID3 embed skipped ({e})")
 
 
 # ─── RSS feed (Podcasting 2.0 namespace) ───────────────────────────────────
@@ -320,6 +369,10 @@ def build_feed() -> None:
         fe.published(_episode_pub(date_str))
         fe.podcast.itunes_duration(_mmss(dur))
         fe.podcast.itunes_author(PODCAST_AUTHOR)
+        # per-episode cover, if generated
+        ep_cover = mp3.with_suffix(".jpg")
+        if ep_cover.exists():
+            fe.podcast.itunes_image(f"{PODCAST_BASE_URL}/episodes/{ep_cover.name}")
 
         episode_meta.append({
             "guid": guid,
@@ -527,9 +580,10 @@ def build_index_html() -> None:
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/{mp3.name}">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="{date_str}">
             <source src="episodes/{mp3.name}" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="{date_str}">— · —:—</div>
         </article>""")
 
         ticker_items.append(
@@ -804,6 +858,16 @@ a.plain:hover {{ border-bottom-color: var(--accent); }}
   filter: grayscale(0.6) contrast(0.95);
 }}
 
+.dispatch-progress {{
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  margin-top: 6px;
+  text-transform: uppercase;
+}}
+.dispatch-progress[data-finished="1"] {{ color: var(--accent); }}
+
 /* ── Status bar ────────────────────────────────────────────── */
 .statusbar {{
   background: var(--terminal-bg);
@@ -920,6 +984,66 @@ a.plain:hover {{ border-bottom-color: var(--accent); }}
   <h4>Disclaimer</h4>
   <p>{DISCLAIMER_FULL}</p>
 </footer>
+
+<script>
+// Listen tracking — purely client-side, localStorage only, no server.
+// Stores per-episode {{position, duration, finished}} so users can resume,
+// and surfaces a small "listened: X%" hint under each player.
+(function() {{
+  const KEY_PREFIX = 'mtex.ep.';
+  function fmtTime(s) {{
+    s = Math.floor(s);
+    return Math.floor(s/60).toString().padStart(2,'0') + ':' + (s%60).toString().padStart(2,'0');
+  }}
+  function pct(p) {{ return p > 99 ? 'finished' : p.toFixed(0) + '% played'; }}
+  document.querySelectorAll('audio.dispatch-audio').forEach(el => {{
+    const ep = el.dataset.ep;
+    if (!ep) return;
+    const key = KEY_PREFIX + ep;
+    const progressEl = document.querySelector('[data-ep-progress="' + ep + '"]');
+    // restore position
+    try {{
+      const saved = JSON.parse(localStorage.getItem(key) || 'null');
+      if (saved && saved.position && saved.position > 5) {{
+        el.addEventListener('loadedmetadata', () => {{ el.currentTime = saved.position; }}, {{ once: true }});
+      }}
+      if (saved && progressEl) {{
+        const p = saved.duration ? (saved.position / saved.duration) * 100 : 0;
+        progressEl.textContent = pct(p) + ' · ' + fmtTime(saved.position);
+        if (p >= 95) progressEl.dataset.finished = '1';
+      }}
+    }} catch (e) {{}}
+    let lastSave = 0;
+    el.addEventListener('timeupdate', () => {{
+      const now = Date.now();
+      if (now - lastSave < 5000) return;
+      lastSave = now;
+      const p = el.duration ? (el.currentTime / el.duration) * 100 : 0;
+      const data = {{
+        position: el.currentTime,
+        duration: el.duration || 0,
+        finished: p >= 95,
+        updated: new Date().toISOString(),
+      }};
+      try {{ localStorage.setItem(key, JSON.stringify(data)); }} catch (e) {{}}
+      if (progressEl) {{
+        progressEl.textContent = pct(p) + ' · ' + fmtTime(el.currentTime);
+        if (p >= 95) progressEl.dataset.finished = '1';
+      }}
+    }});
+    el.addEventListener('ended', () => {{
+      try {{ localStorage.setItem(key, JSON.stringify({{
+        position: el.duration, duration: el.duration, finished: true,
+        updated: new Date().toISOString(),
+      }})); }} catch (e) {{}}
+      if (progressEl) {{
+        progressEl.textContent = 'finished';
+        progressEl.dataset.finished = '1';
+      }}
+    }});
+  }});
+}})();
+</script>
 
 </body>
 </html>

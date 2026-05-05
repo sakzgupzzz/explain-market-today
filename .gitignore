@@ -2,6 +2,9 @@
 __pycache__/
 *.pyc
 .state.json
+.state.json.broken
+.run.lock
+.feed_health.json
 .DS_Store
 .env
 .env.*

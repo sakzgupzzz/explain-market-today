@@ -15,13 +15,37 @@ def _now_iso() -> str:
 
 
 def load_state() -> dict:
+    """Load state with schema validation. On corruption, rotate the bad file
+    to .state.json.broken and return a fresh state. Caller can detect via
+    the 'recovered_from_corruption' flag."""
     p = Path(STATE_PATH)
     if not p.exists():
         return {"covered": []}
     try:
-        return json.loads(p.read_text())
-    except Exception:
-        return {"covered": []}
+        data = json.loads(p.read_text())
+    except (json.JSONDecodeError, OSError) as e:
+        broken = p.with_suffix(".json.broken")
+        try:
+            p.rename(broken)
+            print(f"[state] {STATE_PATH} corrupt ({e}); rotated to {broken}")
+        except OSError:
+            print(f"[state] {STATE_PATH} corrupt ({e}); could not rotate")
+        return {"covered": [], "recovered_from_corruption": True}
+    if not isinstance(data, dict) or not isinstance(data.get("covered", []), list):
+        broken = p.with_suffix(".json.broken")
+        try:
+            p.rename(broken)
+        except OSError:
+            pass
+        print(f"[state] schema invalid; rotated to {broken}")
+        return {"covered": [], "recovered_from_corruption": True}
+    # filter out any malformed entries
+    data["covered"] = [
+        c for c in data.get("covered", [])
+        if isinstance(c, dict) and isinstance(c.get("cluster_id"), str)
+        and isinstance(c.get("first_covered"), str)
+    ]
+    return data
 
 
 def save_state(state: dict) -> None:
