@@ -15,16 +15,16 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 May 2026 17:28:32 +0000</lastBuildDate>
-    <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+    <lastBuildDate>Tue, 05 May 2026 17:51:51 +0000</lastBuildDate>
+    <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
     </itunes:category>
     <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/cover.jpg" />
     <itunes:explicit>no</itunes:explicit>
     <itunes:owner>
-      <itunes:name>Saksham Gupta | Daily Markets Podcast</itunes:name>
-      <itunes:email>gsaksham@gmail.com</itunes:email>
+      <itunes:name>Markets Explained</itunes:name>
+      <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. Not investment advice — see disclaimer.</itunes:summary>
     <item>
@@ -86,8 +86,8 @@ ALEX: [sighs] I'm out of here.
 JAMIE: [laughs] Later, Jamie — and remember, this show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
       <guid isPermaLink="false">d6712cff-70a7-b959-07b4-88f69caad4da</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-05.mp3" length="4171694" type="audio/mpeg" />
-      <pubDate>Tue, 05 May 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <pubDate>Tue, 05 May 2026 17:28:05 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:04:20</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260505</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-05.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-05.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-05.chapters.json" type="application/json+chapters" /></item>
     <item>
@@ -132,7 +132,7 @@ JAMIE: This show is for entertainment and education only — nothing here is inv
       <guid isPermaLink="false">4e0e3dbe-cafe-758f-8d25-3705b2520e0a</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-04.mp3" length="2764426" type="audio/mpeg" />
       <pubDate>Mon, 04 May 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:02:52</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260504</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-04.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-04.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-04.chapters.json" type="application/json+chapters" /></item>
     <item>
@@ -178,7 +178,7 @@ JAMIE: [laughs] This show is for entertainment and education only — nothing he
       <guid isPermaLink="false">5476b36c-f0d0-d288-4c36-5e86a3644d8b</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-03.mp3" length="3432742" type="audio/mpeg" />
       <pubDate>Sun, 03 May 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:03:34</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260503</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-03.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-03.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-03.chapters.json" type="application/json+chapters" /></item>
     <item>
@@ -242,7 +242,7 @@ JAMIE: Stay tuned!</ns2:encoded>
       <guid isPermaLink="false">33f68cbf-9f48-2659-1baa-cfcf52a0a69d</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-01.mp3" length="2428492" type="audio/mpeg" />
       <pubDate>Fri, 01 May 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:03:22</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260501</podcast:episode></item>
     <item>
@@ -320,7 +320,7 @@ KAI: *Quickly* And don't forget to laugh at the VIX. It's a good sign for your r
       <guid isPermaLink="false">d0a5ec9e-1484-a151-66b0-ada1e2ceb5ba</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-30.mp3" length="2727542" type="audio/mpeg" />
       <pubDate>Thu, 30 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:03:47</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260430</podcast:episode></item>
     <item>
@@ -380,7 +380,7 @@ JAMIE: And with that, we sign off—until next time, keep your spreadsheets in o
       <guid isPermaLink="false">b2a5c659-858c-cfeb-0074-4d16601b7c0e</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-29.mp3" length="1779297" type="audio/mpeg" />
       <pubDate>Wed, 29 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:02:28</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260429</podcast:episode></item>
     <item>
@@ -480,7 +480,7 @@ JAMIE: Thanks for tuning in, and we’ll see you tomorrow with another dose of M
       <guid isPermaLink="false">6a341920-44ef-705e-ed92-ff85adbd5889</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-28.mp3" length="2678014" type="audio/mpeg" />
       <pubDate>Tue, 28 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:03:43</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260428</podcast:episode></item>
     <item>
@@ -566,7 +566,7 @@ JAMIE: Goodnight, everyone!</ns2:encoded>
       <guid isPermaLink="false">2d945981-e5a6-974f-6ae2-1695ba729160</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-27.mp3" length="2768920" type="audio/mpeg" />
       <pubDate>Mon, 27 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:03:50</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260427</podcast:episode></item>
     <item>
@@ -646,7 +646,7 @@ RIO: Hey, at least we have a theme today. Maybe next time it’ll be something l
       <guid isPermaLink="false">9eefc6a4-9293-aa21-4133-4e19b723a049</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-24.mp3" length="3231287" type="audio/mpeg" />
       <pubDate>Fri, 24 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:04:29</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260424</podcast:episode></item>
     <item>
@@ -730,7 +730,7 @@ RIO: *warm* And until next time, stay skeptical and keep scrolling.</ns2:encoded
       <guid isPermaLink="false">0e78ea79-5ca5-740f-ebf9-86d19599e0de</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-23.mp3" length="2842585" type="audio/mpeg" />
       <pubDate>Thu, 23 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:03:56</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260423</podcast:episode></item>
     <item>
@@ -792,7 +792,7 @@ JAMIE: See you all tomorrow, and don’t forget—be the change!</ns2:encoded>
       <guid isPermaLink="false">08405254-727c-4ddc-7d66-3f089ddcdeb8</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-22.mp3" length="2334765" type="audio/mpeg" />
       <pubDate>Wed, 22 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:03:14</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260422</podcast:episode></item>
     <item>
@@ -852,7 +852,7 @@ KAI: Amen to that.</ns2:encoded>
       <guid isPermaLink="false">e0780c77-eaef-661f-9ee1-e79f6cf39785</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-21.mp3" length="2297148" type="audio/mpeg" />
       <pubDate>Tue, 21 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:03:11</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260421</podcast:episode></item>
     <item>
@@ -888,7 +888,7 @@ That’s all for today. Stay tuned for more updates and have a great rest of you
       <guid isPermaLink="false">bbacb103-88ef-0b58-5487-a2cd560ddbd6</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-20.mp3" length="3029099" type="audio/mpeg" />
       <pubDate>Mon, 20 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:04:12</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260420</podcast:episode></item>
     <item>
@@ -920,8 +920,8 @@ That’s all for today’s recap. Stay tuned for more updates. Goodnight!</ns2:e
       <guid isPermaLink="false">1f44fde7-c40e-b627-1637-00e16fbb48c4</guid>
       <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-04-19.mp3" length="2625037" type="audio/mpeg" />
       <pubDate>Sun, 19 Apr 2026 21:00:00 +0000</pubDate>
-      <itunes:author>Saksham Gupta | Daily Markets Podcast</itunes:author>
+      <itunes:author>Markets Explained</itunes:author>
       <itunes:duration>00:03:38</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260419</podcast:episode></item>
-  <podcast:guid>0d3b1a8e-3e8d-4f7a-a4b2-9e6d1f4a2c5b</podcast:guid><podcast:locked owner="gsaksham@gmail.com">yes</podcast:locked><itunes:type>episodic</itunes:type><podcast:person role="host">Jamie</podcast:person><podcast:person role="host">Alex</podcast:person><podcast:person role="host">Maya</podcast:person></channel>
+  <podcast:guid>0d3b1a8e-3e8d-4f7a-a4b2-9e6d1f4a2c5b</podcast:guid><podcast:locked owner="hello@markets-explained.example">yes</podcast:locked><itunes:type>episodic</itunes:type><podcast:person role="host">Jamie</podcast:person><podcast:person role="host">Alex</podcast:person><podcast:person role="host">Maya</podcast:person></channel>
 </rss>

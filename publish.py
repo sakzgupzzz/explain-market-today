@@ -314,9 +314,35 @@ def _make_episode_guid(date_str: str) -> str:
     return f"{h[0:8]}-{h[8:12]}-{h[12:16]}-{h[16:20]}-{h[20:32]}"
 
 
-def _episode_pub(date_str: str) -> datetime:
+def _episode_pub(date_str: str, mp3: Path | None = None) -> datetime:
+    """Resolve the episode pubDate.
+
+    Order of preference:
+      1. .meta.json `generated_at` — the actual moment the episode was
+         rendered. Stable across re-runs (written once at first render).
+      2. Hardcoded 21:00 UTC of the episode date — only used for legacy
+         episodes that pre-date the meta sidecar.
+
+    The hardcoded-21:00 fallback used to fire for ALL episodes, which
+    produced future-dated pubDate when the workflow ran before 21:00 UTC.
+    Spotify / Overcast / some Apple variants hide future-dated episodes
+    until the pubDate passes — caused 'where's my episode?' bugs."""
+    if mp3 is not None:
+        meta_path = mp3.with_suffix(".meta.json")
+        if meta_path.exists():
+            try:
+                m = json.loads(meta_path.read_text())
+                gen = m.get("generated_at", "")
+                if gen.endswith("Z"):
+                    gen = gen[:-1] + "+00:00"
+                if gen:
+                    return datetime.fromisoformat(gen)
+            except Exception:
+                pass
+    # Legacy fallback. Cap at "now" so we never emit a future pubDate.
     try:
-        return datetime.strptime(date_str, "%Y-%m-%d").replace(hour=21, tzinfo=timezone.utc)
+        scheduled = datetime.strptime(date_str, "%Y-%m-%d").replace(hour=21, tzinfo=timezone.utc)
+        return min(scheduled, datetime.now(timezone.utc))
     except ValueError:
         return datetime.now(timezone.utc)
 
@@ -366,7 +392,7 @@ def build_feed() -> None:
         fe.description(desc_head + "\n\n" + DISCLAIMER_FULL)
         fe.content(script, type="CDATA")
         fe.enclosure(f"{PODCAST_BASE_URL}/episodes/{mp3.name}", str(size), "audio/mpeg")
-        fe.published(_episode_pub(date_str))
+        fe.published(_episode_pub(date_str, mp3))
         fe.podcast.itunes_duration(_mmss(dur))
         fe.podcast.itunes_author(PODCAST_AUTHOR)
         # per-episode cover, if generated
