@@ -7,7 +7,7 @@ JAMIE airtime cap. Idempotent — running twice yields the same output.
 from __future__ import annotations
 import re
 from collections import Counter
-from config import CHARACTERS, DEFAULT_CHARACTER
+from config import CHARACTERS, DEFAULT_CHARACTER, DISCLAIMER_SHORT
 
 LINE_RE = re.compile(r"^([A-Z][A-Z0-9_]{0,15}):\s*(.+)$")
 
@@ -108,12 +108,14 @@ def _normalize_percents(text: str) -> tuple[str, int]:
 
 
 def _space_standalone_tickers(text: str) -> tuple[str, int]:
-    """Standalone NVDA / AAPL / MSFT etc → 'N V D A'. Skips known acronyms."""
+    """Standalone NVDA / AAPL / MSFT etc → 'N V D A'. Skips known acronyms
+    AND host names (JAMIE / ALEX / MAYA / etc.) so we don't mangle dialogue."""
     fixes = 0
+    char_names = {n.upper() for n in CHARACTERS.keys()}
     def repl(m: re.Match) -> str:
         nonlocal fixes
         tk = m.group(1)
-        if tk in _TICKER_FALSE_POSITIVES:
+        if tk in _TICKER_FALSE_POSITIVES or tk in char_names:
             return tk
         # also skip if it's all the same letter (e.g. "II", "III")
         if len(set(tk)) == 1:
@@ -171,6 +173,82 @@ def _space_tickers(text: str) -> tuple[str, int]:
         return " ".join(ticker)
 
     return _PAREN_TICKER_RE.sub(repl, text), fixes
+
+
+# --- post-process passes for newer rules ---
+
+
+def _disclaimer_signature(text: str) -> bool:
+    """Detect any turn that's a disclaimer (verbatim or paraphrase). Looks for
+    the canonical short fragment 'entertainment and education only'."""
+    return "entertainment and education only" in text.lower() or "investment advice" in text.lower()
+
+
+def _dedup_disclaimer(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str]], int]:
+    """Keep AT MOST ONE disclaimer turn, and only at the very end. Drop any
+    earlier disclaimer turns and any non-disclaimer turns that follow the
+    last disclaimer (so the disclaimer is genuinely the closing line)."""
+    if not turns:
+        return turns, 0
+    # Find indices of all disclaimer-flavored turns
+    discl_idxs = [i for i, (_, t) in enumerate(turns) if _disclaimer_signature(t)]
+    if not discl_idxs:
+        return turns, 0
+    keep_idx = discl_idxs[-1]
+    # Replace the kept turn with the canonical short disclaimer line under JAMIE
+    speaker = turns[keep_idx][0] if turns[keep_idx][0] in CHARACTERS else DEFAULT_CHARACTER
+    canonical_turn = (speaker, DISCLAIMER_SHORT)
+    # Strip any disclaimer-flavored turns that came BEFORE keep_idx,
+    # and drop everything AFTER keep_idx so the disclaimer is the last line.
+    out: list[tuple[str, str]] = []
+    drops = 0
+    for i, t in enumerate(turns):
+        if i in discl_idxs and i != keep_idx:
+            drops += 1
+            continue
+        if i > keep_idx:
+            drops += 1
+            continue
+        if i == keep_idx:
+            out.append(canonical_turn)
+            continue
+        out.append(t)
+    return out, drops
+
+
+def _drop_self_reference(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str]], int]:
+    """If a host's turn includes their own name in a sign-off pattern (e.g.
+    JAMIE saying 'Later, Jamie —'), strip that fragment. Conservative: only
+    matches sign-off phrases."""
+    fixes = 0
+    out: list[tuple[str, str]] = []
+    for name, text in turns:
+        new = re.sub(
+            rf"\b(later|out|see ya|catch you|thanks),?\s+{re.escape(name.title())}\b[,.\s—-]*",
+            "",
+            text,
+            flags=re.I,
+        )
+        new = re.sub(rf"\b{re.escape(name.title())},\s+(out|signing off)\b[.,!]*", "", new, flags=re.I)
+        if new != text:
+            fixes += 1
+        out.append((name, new.strip() or text))  # never produce empty turn
+    return out, fixes
+
+
+def _collapse_same_speaker_streaks(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str]], int]:
+    """Two consecutive turns by the same speaker → merge into one."""
+    if not turns:
+        return turns, 0
+    out: list[tuple[str, str]] = [turns[0]]
+    merges = 0
+    for name, text in turns[1:]:
+        if out and out[-1][0] == name:
+            out[-1] = (name, (out[-1][1] + " " + text).strip())
+            merges += 1
+        else:
+            out.append((name, text))
+    return out, merges
 
 
 def _enforce_jamie_cap(turns: list[tuple[str, str]], cap_ratio: float = 1 / 3) -> tuple[list[tuple[str, str]], int]:
@@ -271,6 +349,24 @@ def sanitize_script(text: str, verbose: bool = True) -> str:
     turns, dropped = _enforce_jamie_cap(turns)
     stats["jamie_drops"] = dropped
 
+    # 4) collapse same-speaker streaks (two consecutive NAME: lines → merge)
+    turns, merges = _collapse_same_speaker_streaks(turns)
+    stats["streak_merges"] = merges
+
+    # 5) drop self-reference patterns ("Later, Jamie" from JAMIE)
+    turns, self_ref_fixes = _drop_self_reference(turns)
+    stats["self_ref_fixes"] = self_ref_fixes
+
+    # 6) dedup disclaimer (keep only the final one; drop anything after)
+    turns, discl_drops = _dedup_disclaimer(turns)
+    stats["disclaimer_drops"] = discl_drops
+
+    # ensure the script ENDS with the disclaimer; if model never produced
+    # one, append a JAMIE turn with the canonical short version.
+    if turns and not _disclaimer_signature(turns[-1][1]):
+        turns.append((DEFAULT_CHARACTER, DISCLAIMER_SHORT))
+        stats["disclaimer_appended"] = 1
+
     if verbose:
         print(
             f"[sanitize] openers={stats['opener_strips']} "
@@ -279,7 +375,11 @@ def sanitize_script(text: str, verbose: bool = True) -> str:
             f"tickers_standalone={stats['standalone_ticker_fixes']} "
             f"dollars={stats['dollar_fixes']} "
             f"percents={stats['percent_fixes']} "
-            f"jamie_drops={stats['jamie_drops']}"
+            f"jamie_drops={stats['jamie_drops']} "
+            f"streak_merges={stats.get('streak_merges',0)} "
+            f"self_ref={stats.get('self_ref_fixes',0)} "
+            f"disclaimer_drops={stats.get('disclaimer_drops',0)}"
+            + (f" disclaimer_appended=1" if stats.get('disclaimer_appended') else "")
         )
     return _format(turns)
 

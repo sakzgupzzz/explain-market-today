@@ -253,7 +253,12 @@ Hard rules:
 11. CAST USAGE: ALL {total_hosts} hosts SHOULD appear; minimum {min_hosts}. JAMIE bookends but speaks AT MOST 1 in every 4 turns. No single host gets more than 25% of total turns.
 12. HUMOR: jokes throughout, organic to each host's personality. Punch up at institutions/Wall Street/PR spin. Never punch down at protected characteristics. No dad jokes. Late callback to an earlier joke = chef's kiss.
 13. BANNED_PHRASES — do NOT use any of these (case-insensitive): {banned}.
-14. OUTPUT: ONLY `NAME: line` lines. No markdown, no headers, no section labels, no intro/outro commentary, no sponsors, no fictional podcast brand names. Real company/product names are fine and expected. First line must start with `JAMIE:`. Last line must contain the disclaimer verbatim.
+14. OUTPUT: ONLY `NAME: line` lines. No markdown, no headers, no section labels, no intro/outro commentary, no sponsors, no fictional podcast brand names. Real company/product names are fine and expected. First line must start with `JAMIE:`.
+15. DISCLAIMER (HARD): EXACTLY ONE turn in the entire episode contains the disclaimer "{DISCLAIMER_SHORT}". It MUST be the very last line of the script. ZERO other turns may contain that line or paraphrases of it. No banter, jokes, or sign-off chatter after the disclaimer — the disclaimer turn ends the episode. If you find yourself writing more than one disclaimer line, delete all but the final one.
+16. SELF-REFERENCE: no host ever addresses themselves by name. JAMIE never says "Later, Jamie" or "Jamie out". Hosts pass the mic to OTHER hosts. Sign-off pattern: each host says ONE short closing line in their own voice (callback to an earlier joke), then JAMIE reads the disclaimer once.
+17. NO TWO REACTIONS BACK-TO-BACK: a "reaction" is a turn with no concrete fact — just an emotional response ("Right, exactly", "Yeah, sure", "[laughs] Of course it is", "Wait, what?", "Come on"). After ANY reaction turn the next turn MUST be substantive (contain a specific number, name, place, or new fact from the source data). Two reaction turns in a row is banned.
+18. NO REPEATED JOKE TEMPLATES: each sentence frame appears AT MOST TWICE per episode. Banned-after-second-use frames include: "what every X needs is Y", "because that's exactly what we need, more X", "right, exactly", "of course it is", "who doesn't love a good X". Use varied syntax for sarcasm — DIFFERENT structure each time.
+19. NO HOST SPEAKS TWO TURNS IN A ROW. If two consecutive `NAME:` lines have the same NAME, you must either merge them or insert a turn from a different host between them.
 """
 
 
@@ -402,6 +407,11 @@ def _critique_prompt(script: str, market: dict, ranked_stories: list[dict]) -> s
 8. TOPIC OVER-CONCENTRATION: if any single company/story occupies more than 7 turns, cut the weakest of those turns and replace them with content from other ranked stories until the cap is met. The episode must reference at least 6 distinct stories.
 9. STRUCTURE ORDER: the second turn through ~5th turn must be MARKETS coverage (indices, biggest mover). If markets data exists in SOURCE FACTS but the script buries it past turn 5, restructure so it appears immediately after the cold open.
 10. WEAK SIGNOFF: the closing turns before the disclaimer must contain a CALLBACK to something specific said earlier in the episode (a joke, a specific company name, a host's wisecrack). If absent, add one.
+11. DISCLAIMER DUPLICATION: if the disclaimer "{DISCLAIMER_SHORT}" appears in MORE than one turn, delete every occurrence except the final one. The disclaimer turn must be the very last line of the script. Drop any banter / jokes / sign-off chatter that comes after it.
+12. SELF-REFERENCE: if any turn has a host addressing themselves by name (e.g. JAMIE saying "Later, Jamie" or "Thanks, Jamie" when JAMIE is the speaker), rewrite to either drop the self-reference or pass to a different host.
+13. BACK-TO-BACK REACTIONS: a "reaction" is a turn with no concrete fact, just an emotional response. If two consecutive turns are both reactions, drop the weaker one OR rewrite the second to add a substantive fact from the source data.
+14. REPEATED JOKE TEMPLATES: scan the script for repeated sentence frames ("what every X needs is Y", "right, exactly", "because that's exactly what we need", "who doesn't love a good X"). If any frame appears more than twice, rewrite the third+ occurrences with different syntax.
+15. SAME-SPEAKER STREAK: if two consecutive `NAME:` lines have the same speaker, merge them or insert a turn from a different host between them.
 
 Output ONLY the revised script in `NAME: line` format. No commentary, no diff, no explanation.
 

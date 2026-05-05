@@ -255,6 +255,20 @@ BANNED_PHRASES = [
     "elephant in the room",
     "moving the needle",
     "boil the ocean",
+    # over-used joke templates (observed in production episodes)
+    "right, exactly",
+    "of course it is",
+    "who doesn't love a good",
+    "because that's exactly what we need",
+    "what every conversation needs",
+    "what every ai needs",
+    "what every company needs",
+    "later, jamie",
+    "later, alex",
+    "later, maya",
+    "thanks for tuning in",
+    "catch you on the flip side",
+    "i'm out of here",
 ]
 
 # Show structure beats — used for chapter generation + critique pass.
