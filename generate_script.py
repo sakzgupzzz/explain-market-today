@@ -286,7 +286,7 @@ def _ollama_call(prompt: str, model: str, temperature: float = 0.75) -> str:
     return resp.json()["response"].strip()
 
 
-def _groq_call(prompt: str, model: str, temperature: float = 0.75, retries: int = 3) -> str:
+def _groq_call(prompt: str, model: str, temperature: float = 0.75, retries: int = 2) -> str:
     """Groq's OpenAI-compatible chat-completions endpoint with retry on
     transient 5xx + 429 (Groq's rate-limit signal). Backoff is exponential
     with jitter; 429 honors Retry-After header if present."""
