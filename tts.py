@@ -36,9 +36,11 @@ HOST_INTRO = ROOT / "assets" / "host_intro.mp3"
 MUSIC_BED = ROOT / "assets" / "bed.mp3"
 STING_GAP_MS = 350    # silence between sting and the next element
 HOST_INTRO_GAP_MS = 250  # tighter gap between host intro and first dialogue line
-# Bed gain in dB applied before sidechain duck. -16 dB sits the bed well below
-# voice without making it inaudible in pauses.
-BED_GAIN_DB = float(os.environ.get("BED_GAIN_DB", "-16"))
+# Bed gain in dB applied before sidechain duck. -12 dB is audible in
+# voice pauses/transitions while still ducking under speech via the
+# sidechain compressor in _mix_music_bed. Bump to -10 for more presence,
+# drop to -16 for just-barely-there. Tunable via BED_GAIN_DB env var.
+BED_GAIN_DB = float(os.environ.get("BED_GAIN_DB", "-12"))
 
 LINE_RE = re.compile(r"^([A-Z][A-Z0-9_]{0,15}):\s*(.+)$")
 
