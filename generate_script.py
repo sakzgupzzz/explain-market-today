@@ -404,38 +404,33 @@ def generate(
 
 
 def _critique_prompt(script: str, market: dict, ranked_stories: list[dict]) -> str:
-    """Critique prompt — STRUCTURAL fixes only.
-
-    Source facts are deliberately omitted: that's verify_facts' job, and
-    keeping critique focused on structure means a leaner prompt that fits
-    Groq's free-tier ~8KB request size cap. The market and ranked_stories
-    args are kept in the signature for API stability."""
-    banned = ", ".join(f'"{p}"' for p in BANNED_PHRASES)
+    """Critique prompt — STRUCTURAL fixes only. Tight ruleset to stay under
+    Groq's ~7KB request size cap. Source facts deliberately omitted:
+    fabrication checks happen in verify_facts."""
     name_list = ", ".join(CHARACTERS.keys())
-    return f"""You are a strict podcast script editor. Below is a DRAFT script and the SOURCE FACTS it was based on. Revise the draft to fix any of these problems:
+    return f"""You are a strict podcast script editor. Revise the DRAFT below to fix these structural issues. Keep every fact intact — content fixes happen elsewhere.
 
-1. FABRICATION: any company, price, percentage, deal, quote, or event NOT present in the SOURCE FACTS below. Remove or rewrite.
-2. BANNED PHRASES (case-insensitive): {banned}. Replace with a punchy, specific alternative.
-3. WRONG-NAME INTROS: a turn where the speaker introduces themselves with another host's name (e.g. ALEX line saying "Jamie here"). Fix to use the speaker's own name.
-4. JAMIE OVER-USE: count JAMIE's turns; if more than one in four of the total turns, drop the shortest filler JAMIE turns until under the cap.
-5. NUMBER FORMAT: any digit, "$", "%", or unspaced ticker (like "AAPL") in spoken text. Rewrite as words ("one hundred billion dollars", "A A P L", "two point three percent").
-6. MISSING DISCLAIMER: ensure the very last JAMIE line contains: "{DISCLAIMER_SHORT}".
-7. FORMAT INTEGRITY: every line must match `NAME: text` with NAME in {name_list}. Drop any narration, stage directions, or non-conforming lines.
-8. TOPIC OVER-CONCENTRATION: if any single company/story occupies more than 7 turns, cut the weakest of those turns and replace them with content from other ranked stories until the cap is met. The episode must reference at least 6 distinct stories.
-9. STRUCTURE ORDER: the second turn through ~5th turn must be MARKETS coverage (indices, biggest mover). If markets data exists in SOURCE FACTS but the script buries it past turn 5, restructure so it appears immediately after the cold open.
-10. WEAK SIGNOFF: the closing turns before the disclaimer must contain a CALLBACK to something specific said earlier in the episode (a joke, a specific company name, a host's wisecrack). If absent, add one.
-11. DISCLAIMER DUPLICATION: if the disclaimer "{DISCLAIMER_SHORT}" appears in MORE than one turn, delete every occurrence except the final one. The disclaimer turn must be the very last line of the script. Drop any banter / jokes / sign-off chatter that comes after it.
-12. SELF-REFERENCE: if any turn has a host addressing themselves by name (e.g. JAMIE saying "Later, Jamie" or "Thanks, Jamie" when JAMIE is the speaker), rewrite to either drop the self-reference or pass to a different host.
-13. BACK-TO-BACK REACTIONS: a "reaction" is a turn with no concrete fact, just an emotional response. If two consecutive turns are both reactions, drop the weaker one OR rewrite the second to add a substantive fact from the source data.
-14. REPEATED JOKE TEMPLATES: scan the script for repeated sentence frames ("what every X needs is Y", "right, exactly", "because that's exactly what we need", "who doesn't love a good X"). If any frame appears more than twice, rewrite the third+ occurrences with different syntax.
-15. SAME-SPEAKER STREAK: if two consecutive `NAME:` lines have the same speaker, merge them or insert a turn from a different host between them.
+Hosts: {name_list}. Disclaimer: "{DISCLAIMER_SHORT}".
 
-Output ONLY the revised script in `NAME: line` format. No commentary, no diff, no explanation.
+Fix:
+- Wrong-name intro: ALEX saying "Jamie here" → "Alex here". Same for all hosts.
+- Mid-turn vocative: a host addressing themselves like "What's the story, Jamie?" from JAMIE → drop ", Jamie". Same for ALEX and MAYA.
+- Same speaker twice in a row → merge into one turn OR insert a different host between.
+- JAMIE > 1 in every 4 turns → drop short filler JAMIE turns until at cap.
+- Numbers/tickers in spoken text: $5B / 5% / NVDA / AAPL → spelled words ("five billion dollars", "five percent", "N V D A", "A A P L").
+- Banned cold-open phrases: "welcome to the show", "let's dive in", "good morning everyone", "buckle up", "well folks", "stay tuned".
+- Banned mid-script templates (each may appear AT MOST twice): "right, exactly", "of course it is", "okay, okay let's move on", "because that's exactly what we need", "what every X needs is Y", "who doesn't love a good X", "what we really need is more X". On 3rd+ occurrence rewrite with different syntax.
+- Disclaimer dedup: if the disclaimer line appears more than once, delete every occurrence except the final one. The disclaimer must be the very last line. Drop any banter that comes after.
+- Disclaimer missing: add as last JAMIE line.
+- Two pure-reaction turns ("Right, exactly" + "[laughs] Sure" with no fact between) → drop the weaker or rewrite the second with a substantive fact.
+- Format integrity: every line must be `NAME: text` with NAME in [{name_list}]. Drop narration, stage directions, headers.
 
-==== DRAFT SCRIPT ====
+Output ONLY the revised script in `NAME: line` format. No commentary, no diff.
+
+==== DRAFT ====
 {script}
 
-==== REVISED SCRIPT ====
+==== REVISED ====
 """
 
 
