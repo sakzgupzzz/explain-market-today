@@ -185,7 +185,8 @@ PODCAST_AUTHOR = "Markets Explained"
 PODCAST_EMAIL = os.environ.get("PODCAST_EMAIL", "hello@markets-explained.example")
 PODCAST_DESCRIPTION = (
     "Daily fast, funny roundtable on US markets, business, tech, world, and culture. "
-    "Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. "
+    "Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing "
+    "pre-market. AI-generated, four-stage grounding pipeline. "
     "Not investment advice — see disclaimer."
 )
 PODCAST_LANGUAGE = "en-us"

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Market Today, Explained — Daily Markets & Tech News</title>
-<meta name="description" content="Daily fast, funny roundtable on US markets, business, tech, world, and culture. Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. Not investment advice — see disclaimer.">
+<meta name="description" content="Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.">
 <link rel="alternate" type="application/rss+xml" title="Market Today, Explained — Daily Markets & Tech News" href="feed.xml">
 <style>
 :root {
@@ -250,6 +250,16 @@ a.plain:hover { border-bottom-color: var(--accent); }
   filter: grayscale(0.6) contrast(0.95);
 }
 
+.dispatch-progress {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+.dispatch-progress[data-finished="1"] { color: var(--accent); }
+
 /* ── Status bar ────────────────────────────────────────────── */
 .statusbar {
   background: var(--terminal-bg);
@@ -330,7 +340,7 @@ a.plain:hover { border-bottom-color: var(--accent); }
 </div>
 
 <section class="lead">
-  Eight AI-generated hosts riff on US markets, business, tech, world, and one weird thing. Five to ten minutes, every weekday afternoon, mastered to broadcast loudness. Underneath the jokes: a strict grounding pipeline that refuses to invent a story it can't cite.
+  Three AI-generated hosts riff on US markets, business, tech, world, and one weird thing. Five to nine minutes, every weekday afternoon, plus a 90-second express briefing pre-market. Mastered to broadcast loudness with a music bed and host bookends. Underneath the jokes: a four-stage grounding pipeline (cluster → score → critique → fact-verify) that refuses to invent a story it can't cite.
 </section>
 
 <div class="body">
@@ -362,9 +372,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-05-05.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-05-05">
             <source src="episodes/2026-05-05.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-05-05">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -381,9 +392,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-05-04.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-05-04">
             <source src="episodes/2026-05-04.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-05-04">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -400,9 +412,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-05-03.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-05-03">
             <source src="episodes/2026-05-03.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-05-03">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -419,9 +432,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-05-01.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-05-01">
             <source src="episodes/2026-05-01.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-05-01">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -438,9 +452,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-04-30.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-04-30">
             <source src="episodes/2026-04-30.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-04-30">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -457,9 +472,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-04-29.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-04-29">
             <source src="episodes/2026-04-29.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-04-29">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -476,9 +492,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-04-28.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-04-28">
             <source src="episodes/2026-04-28.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-04-28">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -495,9 +512,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-04-27.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-04-27">
             <source src="episodes/2026-04-27.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-04-27">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -514,9 +532,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-04-24.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-04-24">
             <source src="episodes/2026-04-24.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-04-24">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -533,9 +552,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-04-23.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-04-23">
             <source src="episodes/2026-04-23.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-04-23">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -552,9 +572,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-04-22.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-04-22">
             <source src="episodes/2026-04-22.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-04-22">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -571,9 +592,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-04-21.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-04-21">
             <source src="episodes/2026-04-21.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-04-21">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -590,9 +612,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-04-20.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-04-20">
             <source src="episodes/2026-04-20.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-04-20">— · —:—</div>
         </article>
         <article class="dispatch">
           <header class="dispatch-head">
@@ -609,9 +632,10 @@ a.plain:hover { border-bottom-color: var(--accent); }
             <span class="sep">·</span>
             <span><a class="plain" href="episodes/2026-04-19.mp3">download</a></span>
           </div>
-          <audio class="dispatch-audio" preload="none" controls>
+          <audio class="dispatch-audio" preload="none" controls data-ep="2026-04-19">
             <source src="episodes/2026-04-19.mp3" type="audio/mpeg">
           </audio>
+          <div class="dispatch-progress" data-ep-progress="2026-04-19">— · —:—</div>
         </article>
   </main>
 </div>
@@ -623,7 +647,7 @@ a.plain:hover { border-bottom-color: var(--accent); }
   <span class="seg"><span class="dim">30D CHARS</span> <b>4,556</b></span>
   <span class="seg"><span class="dim">AVG DUR</span> <b>04:20</b></span>
   <span class="seg"><span class="dim">AVG TURNS</span> <b>49</b></span>
-  <span class="seg"><span class="dim">LAST UPDATE</span> <b>17:28Z</b></span>
+  <span class="seg"><span class="dim">LAST UPDATE</span> <b>17:53Z</b></span>
   <span class="seg"><span class="dim">FORMAT</span> <b>MP3 / 44.1KHZ / -16 LUFS</b></span>
   <span class="seg"><span class="dim">SOURCE</span> <b>GROQ + ELEVENLABS V3</b></span>
 </div>
@@ -632,6 +656,66 @@ a.plain:hover { border-bottom-color: var(--accent); }
   <h4>Disclaimer</h4>
   <p>Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</p>
 </footer>
+
+<script>
+// Listen tracking — purely client-side, localStorage only, no server.
+// Stores per-episode {position, duration, finished} so users can resume,
+// and surfaces a small "listened: X%" hint under each player.
+(function() {
+  const KEY_PREFIX = 'mtex.ep.';
+  function fmtTime(s) {
+    s = Math.floor(s);
+    return Math.floor(s/60).toString().padStart(2,'0') + ':' + (s%60).toString().padStart(2,'0');
+  }
+  function pct(p) { return p > 99 ? 'finished' : p.toFixed(0) + '% played'; }
+  document.querySelectorAll('audio.dispatch-audio').forEach(el => {
+    const ep = el.dataset.ep;
+    if (!ep) return;
+    const key = KEY_PREFIX + ep;
+    const progressEl = document.querySelector('[data-ep-progress="' + ep + '"]');
+    // restore position
+    try {
+      const saved = JSON.parse(localStorage.getItem(key) || 'null');
+      if (saved && saved.position && saved.position > 5) {
+        el.addEventListener('loadedmetadata', () => { el.currentTime = saved.position; }, { once: true });
+      }
+      if (saved && progressEl) {
+        const p = saved.duration ? (saved.position / saved.duration) * 100 : 0;
+        progressEl.textContent = pct(p) + ' · ' + fmtTime(saved.position);
+        if (p >= 95) progressEl.dataset.finished = '1';
+      }
+    } catch (e) {}
+    let lastSave = 0;
+    el.addEventListener('timeupdate', () => {
+      const now = Date.now();
+      if (now - lastSave < 5000) return;
+      lastSave = now;
+      const p = el.duration ? (el.currentTime / el.duration) * 100 : 0;
+      const data = {
+        position: el.currentTime,
+        duration: el.duration || 0,
+        finished: p >= 95,
+        updated: new Date().toISOString(),
+      };
+      try { localStorage.setItem(key, JSON.stringify(data)); } catch (e) {}
+      if (progressEl) {
+        progressEl.textContent = pct(p) + ' · ' + fmtTime(el.currentTime);
+        if (p >= 95) progressEl.dataset.finished = '1';
+      }
+    });
+    el.addEventListener('ended', () => {
+      try { localStorage.setItem(key, JSON.stringify({
+        position: el.duration, duration: el.duration, finished: true,
+        updated: new Date().toISOString(),
+      })); } catch (e) {}
+      if (progressEl) {
+        progressEl.textContent = 'finished';
+        progressEl.dataset.finished = '1';
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>

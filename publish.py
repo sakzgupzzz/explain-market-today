@@ -974,7 +974,7 @@ a.plain:hover {{ border-bottom-color: var(--accent); }}
 </div>
 
 <section class="lead">
-  Eight AI-generated hosts riff on US markets, business, tech, world, and one weird thing. Five to ten minutes, every weekday afternoon, mastered to broadcast loudness. Underneath the jokes: a strict grounding pipeline that refuses to invent a story it can't cite.
+  Three AI-generated hosts riff on US markets, business, tech, world, and one weird thing. Five to nine minutes, every weekday afternoon, plus a 90-second express briefing pre-market. Mastered to broadcast loudness with a music bed and host bookends. Underneath the jokes: a four-stage grounding pipeline (cluster → score → critique → fact-verify) that refuses to invent a story it can't cite.
 </section>
 
 <div class="body">

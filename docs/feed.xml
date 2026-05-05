@@ -3,7 +3,7 @@
   <channel>
     <title>Market Today, Explained — Daily Markets &amp; Tech News</title>
     <link>https://sakzgupzzz.github.io/explain-market-today/feed.xml</link>
-    <description>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. Not investment advice — see disclaimer.
+    <description>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.
 
 Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
     <ns0:link href="https://sakzgupzzz.github.io/explain-market-today/feed.xml" rel="self" />
@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Tue, 05 May 2026 17:51:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2026 17:53:27 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -26,7 +26,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:name>Markets Explained</itunes:name>
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
-    <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Eight hosts riff on the day's news in 5–10 minutes. AI-generated each afternoon. Not investment advice — see disclaimer.</itunes:summary>
+    <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
     <item>
       <title>May 5: — and Meta's using AI to analyze height and bone…</title>
       <description>JAMIE: Jamie here — and Meta's using AI to analyze height and bone structure to identify if users are underage, which is either genius or super creepy.
