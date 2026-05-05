@@ -404,13 +404,12 @@ def generate(
 
 
 def _critique_prompt(script: str, market: dict, ranked_stories: list[dict]) -> str:
-    """Build a prompt that asks the LLM to critique + revise the draft script."""
-    indices = _fmt_section(market.get("indices", []))
-    sectors = _fmt_section(market.get("sectors", []))
-    macro = _fmt_section(market.get("macro", []))
-    gainers = _fmt_section(market.get("gainers", []))
-    losers = _fmt_section(market.get("losers", []))
-    stories_block = _fmt_ranked_stories(ranked_stories, top_n=12, compact=True)
+    """Critique prompt — STRUCTURAL fixes only.
+
+    Source facts are deliberately omitted: that's verify_facts' job, and
+    keeping critique focused on structure means a leaner prompt that fits
+    Groq's free-tier ~8KB request size cap. The market and ranked_stories
+    args are kept in the signature for API stability."""
     banned = ", ".join(f'"{p}"' for p in BANNED_PHRASES)
     name_list = ", ".join(CHARACTERS.keys())
     return f"""You are a strict podcast script editor. Below is a DRAFT script and the SOURCE FACTS it was based on. Revise the draft to fix any of these problems:
@@ -432,21 +431,6 @@ def _critique_prompt(script: str, market: dict, ranked_stories: list[dict]) -> s
 15. SAME-SPEAKER STREAK: if two consecutive `NAME:` lines have the same speaker, merge them or insert a turn from a different host between them.
 
 Output ONLY the revised script in `NAME: line` format. No commentary, no diff, no explanation.
-
-==== SOURCE FACTS ====
-INDICES:
-{indices}
-SECTORS:
-{sectors}
-MACRO:
-{macro}
-TOP GAINERS:
-{gainers}
-TOP LOSERS:
-{losers}
-
-TOP STORIES (the only ones the script may reference):
-{stories_block}
 
 ==== DRAFT SCRIPT ====
 {script}
