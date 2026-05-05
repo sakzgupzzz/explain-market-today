@@ -313,6 +313,14 @@ def _groq_call(prompt: str, model: str, temperature: float = 0.75, retries: int 
                 print(f"[groq] 429 rate-limited, waiting {wait}s (attempt {attempt+1}/{retries})")
                 _time.sleep(wait + random.random())
                 continue
+            if resp.status_code == 413:
+                # Empirically, Groq returns 413 when free-tier TPM is
+                # exhausted (not just for genuinely-oversized payloads).
+                # Wait a full minute to clear the per-minute window.
+                wait = 62 + random.random() * 3
+                print(f"[groq] 413 (likely TPM exhausted), waiting {wait:.0f}s (attempt {attempt+1}/{retries})")
+                _time.sleep(wait)
+                continue
             if 500 <= resp.status_code < 600:
                 wait = (2 ** attempt) + random.random()
                 print(f"[groq] {resp.status_code} server error, retrying in {wait:.1f}s (attempt {attempt+1}/{retries})")

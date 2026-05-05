@@ -96,12 +96,12 @@ OLLAMA_CRITIC_MODEL = os.environ.get("OLLAMA_CRITIC_MODEL", OLLAMA_MODEL)
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 GROQ_URL = os.environ.get("GROQ_URL", "https://api.groq.com/openai/v1/chat/completions")
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
-# Critique pass needs a 32k-context model: prompt = system + market data +
-# all headlines + full draft script, which can exceed the 8k window on
-# llama-3.1-8b-instant (caused HTTP 413 on 53-headline days). 70b-versatile
-# has 32k context. We also cap headlines-per-beat in the critique prompt as
-# belt-and-suspenders (see CRITIQUE_HEADLINES_PER_BEAT in generate_script).
-GROQ_CRITIC_MODEL = os.environ.get("GROQ_CRITIC_MODEL", "llama-3.3-70b-versatile")
+# Critique runs on llama-3.1-8b-instant (separate TPM bucket from the 70b
+# generate model — 30k TPM vs 70b's 12k). Earlier we used 70b for critique
+# but ran into 413s when both calls fired within a 60-second window after
+# generate consumed most of the 70b budget. The compact source-facts block
+# (top_n=12, summaries dropped) fits 8b's 8k context comfortably.
+GROQ_CRITIC_MODEL = os.environ.get("GROQ_CRITIC_MODEL", "llama-3.1-8b-instant")
 OLLAMA_TIMEOUT = int(os.environ.get("OLLAMA_TIMEOUT", "1800"))
 
 # Script length: flexible. LLM picks based on news density.
