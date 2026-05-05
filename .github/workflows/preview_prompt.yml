@@ -1,0 +1,150 @@
+name: Preview Prompt Output
+
+# Manual-only. Generates a script using the current prompt code on the
+# default branch, runs the full LLM chain (generate → critique → verify →
+# sanitize) but SKIPS the ElevenLabs synth step and SKIPS git push. Output
+# lands as a downloadable artifact + rendered into the run's job summary
+# so you can read it directly on the GitHub Actions page.
+#
+# Use this to validate prompt edits before they ship to a real episode.
+
+on:
+  workflow_dispatch:
+    inputs:
+      tone:
+        description: "Tone override (neutral / dry / snarky) — leave blank for interests.yaml default"
+        required: false
+        type: choice
+        default: ""
+        options:
+          - ""
+          - neutral
+          - dry
+          - snarky
+      length:
+        description: "Length override (short / standard / long)"
+        required: false
+        type: choice
+        default: ""
+        options:
+          - ""
+          - short
+          - standard
+          - long
+      prompt_variant:
+        description: "PROMPT_VARIANT tag (free-form, A/B/C/etc.) — only affects the meta tag, not generation"
+        required: false
+        default: "preview"
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GROQ_MODEL: llama-3.3-70b-versatile
+      GROQ_CRITIC_MODEL: llama-3.1-8b-instant
+      PROMPT_VARIANT: ${{ inputs.prompt_variant }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Apply tone/length overrides
+        run: |
+          python - <<'PY'
+          import os, yaml
+          from pathlib import Path
+          path = Path("interests.yaml")
+          data = yaml.safe_load(path.read_text()) or {}
+          prefs = data.setdefault("preferences", {})
+          tone = os.environ.get("INPUT_TONE", "").strip()
+          length = os.environ.get("INPUT_LENGTH", "").strip()
+          if tone:
+              prefs["tone"] = tone
+          if length:
+              prefs["length"] = length
+          path.write_text(yaml.safe_dump(data, sort_keys=False))
+          print(f"applied prefs: {prefs}")
+          PY
+        env:
+          INPUT_TONE: ${{ inputs.tone }}
+          INPUT_LENGTH: ${{ inputs.length }}
+
+      - name: Generate preview script
+        id: gen
+        run: |
+          python - <<'PY' | tee preview_output.txt
+          import json, re, sys
+          from datetime import datetime
+          from fetch_market import fetch_all
+          from fetch_news import fetch_headlines, flatten
+          from cluster import cluster_headlines
+          from score import score_clusters
+          from interests_loader import load_interests
+          from calendar_events import gather as gather_calendar_events
+          from generate_script import generate, critique_revise
+          from verify_facts import verify
+          from sanitize import sanitize_script
+
+          print("[preview] fetching market…", file=sys.stderr)
+          market = fetch_all()
+          print("[preview] fetching headlines…", file=sys.stderr)
+          h = fetch_headlines()
+          flat = flatten(h)
+          print(f"[preview] {len(flat)} headlines", file=sys.stderr)
+          clusters = cluster_headlines(flat)
+          interests = load_interests()
+          ranked = score_clusters(clusters, market, interests)
+          watchlist = (interests.get("watchlist") or {}).get("tickers") or []
+          upcoming = gather_calendar_events(watchlist)
+          fresh = ranked  # no memory annotation in preview
+
+          date_pretty = datetime.now().strftime("%A, %B %d, %Y")
+          print("[preview] generate…", file=sys.stderr)
+          script = generate(market, fresh, date_pretty,
+                            upcoming_events=upcoming, interests=interests)
+          print("[preview] critique…", file=sys.stderr)
+          script = critique_revise(script, market, fresh)
+          print("[preview] verify…", file=sys.stderr)
+          script = verify(script, market, fresh)
+          print("[preview] sanitize…", file=sys.stderr)
+          script = sanitize_script(script)
+
+          turns = [l for l in script.splitlines() if re.match(r"^[A-Z][A-Z0-9_]{0,15}:\s*\S", l)]
+          cleaned = re.sub(r"^[A-Z][A-Z0-9_]{0,15}:|\[[^\]]+\]", "", script, flags=re.M)
+          print(f"[preview] {len(turns)} turns · {len(cleaned.split())} words", file=sys.stderr)
+          print(script)
+          PY
+
+      - name: Render job summary
+        if: always()
+        run: |
+          {
+            echo "# Preview script — $(date -u +'%Y-%m-%d %H:%M UTC')"
+            echo
+            echo "**Tone:** \`${{ inputs.tone || 'default' }}\` · **Length:** \`${{ inputs.length || 'default' }}\` · **Variant:** \`${{ inputs.prompt_variant }}\`"
+            echo
+            echo "## Output"
+            echo
+            echo '```'
+            cat preview_output.txt 2>/dev/null || echo "(no output)"
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload script as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-script-${{ github.run_id }}
+          path: preview_output.txt
+          if-no-files-found: warn
