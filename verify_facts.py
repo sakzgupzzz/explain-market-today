@@ -26,7 +26,7 @@ VERIFY_MODEL = "llama-3.1-8b-instant"
 def _verify_prompt(script: str, market: dict, ranked: list[dict]) -> str:
     indices = _fmt_section(market.get("indices", []))
     movers = _fmt_section((market.get("gainers") or [])[:5] + (market.get("losers") or [])[:5])
-    stories = _fmt_ranked_stories(ranked, top_n=20)
+    stories = _fmt_ranked_stories(ranked, top_n=12, compact=True)
     name_list = ", ".join(CHARACTERS.keys())
     return f"""You are a fact-verification editor. Your only job is to ensure every concrete claim in the SCRIPT below appears in the SOURCE FACTS. You may NOT add new content, restructure beats, or improve writing — only neutralize unverifiable claims.
 

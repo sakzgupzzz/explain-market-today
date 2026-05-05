@@ -96,22 +96,31 @@ JAMIE: [laughs] That's it. Wrap it. This show is for entertainment and education
 NOTICE: the example above used FAKE companies (FabriCo, Quanto Robotics, Thrune Bank). Your output must use REAL companies and events from the HEADLINES block above. Do NOT mention FabriCo, Quanto, Thrune Bank, the Memphis strike, the Vermont bank-deposit story, or any other story shown in the example. Mimic the rhythm — varied turn lengths, ping-pong reactions, audio tags — not the content."""
 
 
-def _fmt_ranked_stories(ranked: list[dict], top_n: int = 15) -> str:
+def _fmt_ranked_stories(ranked: list[dict], top_n: int = 15, compact: bool = False) -> str:
     """Render a pre-ranked story list. Each story shows its score, sources,
     title, and clipped summary. Stories are tagged with category for
-    LLM-side beat routing."""
+    LLM-side beat routing.
+
+    `compact=True` drops summaries and trims sources — used by the
+    critique + verify passes so their request payloads stay under Groq's
+    per-message size cap (40-story summaries blew past 413 Payload Too
+    Large)."""
     if not ranked:
         return "(no stories ranked above the floor)"
     out = []
     for c in ranked[:top_n]:
         cats = "/".join(c.get("categories") or [])
-        srcs = ", ".join((c.get("sources") or [])[:3])
+        srcs_list = (c.get("sources") or [])[: 1 if compact else 3]
+        srcs = ", ".join(srcs_list)
         title = c.get("title") or ""
         summary = c.get("summary") or ""
         score = c.get("score", 0)
-        line = f"- [score {score:>5.1f} · {cats} · {srcs}] {title}"
-        if summary:
-            line += f"\n    {_clip_summary(summary, 200)}"
+        if compact:
+            line = f"- [{score:>4.1f} · {cats} · {srcs}] {title[:120]}"
+        else:
+            line = f"- [score {score:>5.1f} · {cats} · {srcs}] {title}"
+            if summary:
+                line += f"\n    {_clip_summary(summary, 200)}"
         out.append(line)
     return "\n".join(out)
 
@@ -392,7 +401,7 @@ def _critique_prompt(script: str, market: dict, ranked_stories: list[dict]) -> s
     macro = _fmt_section(market.get("macro", []))
     gainers = _fmt_section(market.get("gainers", []))
     losers = _fmt_section(market.get("losers", []))
-    stories_block = _fmt_ranked_stories(ranked_stories, top_n=20)
+    stories_block = _fmt_ranked_stories(ranked_stories, top_n=12, compact=True)
     banned = ", ".join(f'"{p}"' for p in BANNED_PHRASES)
     name_list = ", ".join(CHARACTERS.keys())
     return f"""You are a strict podcast script editor. Below is a DRAFT script and the SOURCE FACTS it was based on. Revise the draft to fix any of these problems:
