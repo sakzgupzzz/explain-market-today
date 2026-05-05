@@ -217,19 +217,33 @@ def _dedup_disclaimer(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str
 
 
 def _drop_self_reference(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str]], int]:
-    """If a host's turn includes their own name in a sign-off pattern (e.g.
-    JAMIE saying 'Later, Jamie —'), strip that fragment. Conservative: only
-    matches sign-off phrases."""
+    """If a host's turn includes their own name in a sign-off pattern OR a
+    mid-turn vocative (e.g. JAMIE saying 'What's the story, Jamie?'), strip
+    that fragment. Conservative — only matches the patterns where the
+    self-name is being USED as direct address, never narrative ('I told
+    Jamie earlier' is preserved)."""
     fixes = 0
     out: list[tuple[str, str]] = []
     for name, text in turns:
+        title = name.title()
+        # 1) Sign-off forms: "Later, Jamie —", "See ya, Jamie", "Thanks, Jamie"
         new = re.sub(
-            rf"\b(later|out|see ya|catch you|thanks),?\s+{re.escape(name.title())}\b[,.\s—-]*",
+            rf"\b(later|out|see ya|catch you|thanks),?\s+{re.escape(title)}\b[,.\s—-]*",
             "",
             text,
             flags=re.I,
         )
-        new = re.sub(rf"\b{re.escape(name.title())},\s+(out|signing off)\b[.,!]*", "", new, flags=re.I)
+        new = re.sub(rf"\b{re.escape(title)},\s+(out|signing off)\b[.,!]*", "", new, flags=re.I)
+        # 2) Mid-turn vocative — ", Jamie?" / ", Jamie." / ", Jamie!" / ", Jamie —"
+        # at the end of a clause/sentence where speaker is JAMIE.
+        new = re.sub(
+            rf",\s+{re.escape(title)}(?=[?!.\s—\-]|$)",
+            "",
+            new,
+            flags=re.I,
+        )
+        # 3) Trailing exclamation like "Sure, Jamie!" — handled by #2 because
+        # the comma+name pattern matches before the punctuation.
         if new != text:
             fixes += 1
         out.append((name, new.strip() or text))  # never produce empty turn

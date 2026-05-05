@@ -292,6 +292,7 @@ def _groq_call(prompt: str, model: str, temperature: float = 0.75, retries: int 
     with jitter; 429 honors Retry-After header if present."""
     import random, time as _time
     last_err: Exception | None = None
+    print(f"[groq] {model} prompt={len(prompt)} chars (~{len(prompt)//4} tokens)")
     for attempt in range(retries):
         try:
             resp = requests.post(
@@ -455,7 +456,12 @@ TOP STORIES (the only ones the script may reference):
 
 
 def critique_revise(script: str, market: dict, ranked_stories: list[dict]) -> str:
-    """Run a critic LLM pass to fix fabrications, banned phrases, monologues."""
+    """Run a critic LLM pass to fix fabrications, banned phrases, monologues.
+    Pre-sleeps 8 sec when Groq is in use so the per-message-burst limit
+    (manifests as 413) has time to clear after the generate call."""
+    import time as _time
+    if GROQ_API_KEY:
+        _time.sleep(8)
     prompt = _critique_prompt(script, market, ranked_stories)
     try:
         return _llm_call(prompt, OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL, temperature=0.2)

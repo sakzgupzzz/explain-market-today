@@ -60,6 +60,9 @@ TOP STORIES:
 def verify(script: str, market: dict, ranked: list[dict]) -> str:
     if not script.strip():
         return script
+    import time as _time
+    if GROQ_API_KEY:
+        _time.sleep(8)
     prompt = _verify_prompt(script, market, ranked)
     try:
         return _llm_call(prompt, OLLAMA_CRITIC_MODEL, VERIFY_MODEL, temperature=0.1)
