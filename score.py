@@ -47,8 +47,12 @@ _SOURCE_WEIGHTS = {
 
 
 def _keyword_score(text: str) -> float:
+    """Sum of keyword weights, capped at 6.0 so one story can't dominate the
+    ranking just by hitting many news-pattern words (earnings + beat + miss
+    + guidance + CEO would otherwise stack to 12+)."""
     text_l = text.lower()
-    return sum(w for kw, w in _KEYWORD_WEIGHTS.items() if kw in text_l)
+    raw = sum(w for kw, w in _KEYWORD_WEIGHTS.items() if kw in text_l)
+    return min(raw, 6.0)
 
 
 def _source_score(sources: list[str]) -> float:

@@ -189,13 +189,14 @@ Hard rules:
 1. FORMAT: every spoken line as `NAME: text` on its own line. Only these names allowed: {names}. No stage directions outside audio tags. No markdown, no section labels.
 2. AUDIO TAGS: optional in-line tags from each host's allowed list (e.g. `[deadpan]`, `[laughs]`, `[excited]`). Use AT MOST ONE per turn, ONLY when it adds emotion not already obvious from the words. Do NOT write "um", "uh", "mm-hmm" — let the audio model add disfluencies. Do NOT write `[pause]` between turns; turn-taking already creates pauses.
 3. NAME-FIRST INTROS: when a host takes the mic, the FIRST sentence names THE HOST WHO IS NOW SPEAKING — never another host. ALEX says "Alex here" or "Alex on the desk", never "Jamie here". Vary phrasings: "Alex again,", "Maya here,", "Maya from tech,", "Alex on markets —", "Jamie back —". Never repeat the exact same phrase twice. If continuing your own turn uninterrupted, no need to reannounce.
-4. STRUCTURE — three-host roundtable. JAMIE drives, ALEX covers markets/business/macro, MAYA covers tech/culture/odd-thing. Skip any beat whose data is empty — do NOT invent content:
-   a. COLD OPEN — JAMIE opens with a punchy specific one-liner referencing an ACTUAL story from today's data. Banned: any phrase from the BANNED_PHRASES list below. Drop straight in. Say "Jamie" in the first sentence.
-   b. MARKETS — ALEX leads on equities, single-stock moves (gainers/losers with real reasons from headlines), and macro (rates, dollar, Fed). JAMIE and MAYA react and ask follow-ups. If MARKET DATA is empty, SKIP this beat entirely.
-   c. BIG STORY — whichever host owns the beat leads (ALEX for markets/business/macro, MAYA for tech/culture). ~150–220 words of back-and-forth on ONE story that actually appears in the headlines. The other two chime in with jokes, skepticism, tangents.
-   d. QUICK HITS — rapid rotation across all three hosts. ALEX takes business/macro headlines, MAYA takes tech/culture headlines, JAMIE moderates and reacts. 2-3 lines each, punchline-first when possible.
-   e. ODD THING — MAYA closes with ONE unusual story from [CULTURE] or [WORLD] and a joke. JAMIE and ALEX react. Underlying fact must come from headlines.
-   f. SIGN-OFF — quick banter from all three, callback to an earlier joke if possible, then JAMIE reads a one-line disclaimer: "{DISCLAIMER_SHORT}" (verbatim). One line each before the disclaimer.
+4. STRUCTURE — three-host roundtable. The order below is mandatory. Skip any beat whose data is empty:
+   a. COLD OPEN (1 turn) — JAMIE one punchy specific line referencing an ACTUAL story. Banned phrases below.
+   b. MARKETS (3-5 turns) — ALEX leads with INDEX moves (S&P, Nasdaq, Dow, VIX) + biggest gainer + biggest loser + macro (rates, dollar). MUST come second, right after cold open. JAMIE/MAYA add ONE reaction each. If MARKET DATA empty, skip beat.
+   c. BIG STORY (5-7 turns MAX) — pick ONE story from the top 3 ranked. Beat lead is whichever host's desk it falls under. The other two chime in with jokes, skepticism, push-back. Then move on. Do NOT over-cover one story.
+   d. QUICK HITS (8-12 turns total, 1-3 turns per story) — rapid rotation across at least 4 DIFFERENT stories. Each story gets one substantive turn + one reaction. Move on. No story gets more than 3 quick-hits turns. Mix beat ownership.
+   e. ODD THING (2-3 turns) — MAYA closes with ONE unusual story from culture/world. JAMIE or ALEX reacts once. Move on quickly.
+   f. SIGN-OFF (3-4 turns) — callback to a joke earlier in the episode, then JAMIE reads disclaimer verbatim: "{DISCLAIMER_SHORT}". The callback is REQUIRED — reference something specific said earlier (a host's joke, an absurd company name, etc.).
+4a. TOPIC BUDGET (HARD): NO single story gets more than 7 turns total across the entire episode. If you find yourself writing a 5th turn about the same company/event, MOVE ON. Use AT LEAST 6 different stories from the TOP STORIES list — episodes that focus on 1-2 stories get rejected.
 5. PING-PONG RHYTHM (HARD): the show is a CONVERSATION, not a series of monologues. Hosts INTERRUPT, REACT, RIFF on each other constantly. Vary turn lengths deliberately:
    - ~60% of turns are SHORT reactions (5-15 words): "Wait, what?", "Come on.", "Hold on, that's not right.", "Oh no.", "Yeah but —", "Right, exactly.", "[laughs] Sure.", "That's it?", "No way.", "Of course it is."
    - ~30% are MEDIUM substantive turns (15-40 words): one fact + one reaction.
@@ -327,6 +328,9 @@ def _critique_prompt(script: str, market: dict, ranked_stories: list[dict]) -> s
 5. NUMBER FORMAT: any digit, "$", "%", or unspaced ticker (like "AAPL") in spoken text. Rewrite as words ("one hundred billion dollars", "A A P L", "two point three percent").
 6. MISSING DISCLAIMER: ensure the very last JAMIE line contains: "{DISCLAIMER_SHORT}".
 7. FORMAT INTEGRITY: every line must match `NAME: text` with NAME in {name_list}. Drop any narration, stage directions, or non-conforming lines.
+8. TOPIC OVER-CONCENTRATION: if any single company/story occupies more than 7 turns, cut the weakest of those turns and replace them with content from other ranked stories until the cap is met. The episode must reference at least 6 distinct stories.
+9. STRUCTURE ORDER: the second turn through ~5th turn must be MARKETS coverage (indices, biggest mover). If markets data exists in SOURCE FACTS but the script buries it past turn 5, restructure so it appears immediately after the cold open.
+10. WEAK SIGNOFF: the closing turns before the disclaimer must contain a CALLBACK to something specific said earlier in the episode (a joke, a specific company name, a host's wisecrack). If absent, add one.
 
 Output ONLY the revised script in `NAME: line` format. No commentary, no diff, no explanation.
 

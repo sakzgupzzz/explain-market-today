@@ -208,6 +208,7 @@ DISCLAIMER_FULL = (
 
 # Phrases the LLM tends to over-use. Banned in the prompt; sanitizer scrubs leftovers.
 BANNED_PHRASES = [
+    # cold-open clichés
     "buckle up",
     "let's dive in",
     "let's dive into",
@@ -229,6 +230,25 @@ BANNED_PHRASES = [
     "without a doubt",
     "needless to say",
     "at the end of the day",
+    # repetitive filler patterns observed in production episodes
+    "okay okay",
+    "okay, okay",
+    "alright alright",
+    "let's move on",
+    "let's not fight about it",
+    "what we really need is more",
+    "what every company needs is",
+    "what's going on in the world of",
+    "stranger things have happened",
+    "don't knock it",
+    "side hustle in space",
+    "cool kid on the block",
+    # tired metaphors
+    "double-edged sword",
+    "tip of the iceberg",
+    "elephant in the room",
+    "moving the needle",
+    "boil the ocean",
 ]
 
 # Show structure beats — used for chapter generation + critique pass.
