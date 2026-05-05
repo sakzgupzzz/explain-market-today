@@ -1,0 +1,198 @@
+1
+00:00:00,000 --> 00:00:09,272
+JAMIE: Jamie here — and Meta's using AI to analyze height and bone structure to identify if users are underage, which is either genius or super creepy.
+
+2
+00:00:09,272 --> 00:00:23,538
+ALEX: Alex on markets — the S and P five hundred is up zero point eight percent, with the Nasdaq leading the charge at zero point nine two percent, and the V I X is down four point seven six percent.
+
+3
+00:00:23,538 --> 00:00:28,531
+MAYA: Maya from tech — that's a pretty wild way to verify age, right?
+
+4
+00:00:28,531 --> 00:00:34,237
+JAMIE: Right, exactly — I mean, who needs a simple checkbox when you can use bone structure?
+
+5
+00:00:34,237 --> 00:00:43,866
+ALEX: The biggest gainer today is A M D, up three point six one percent, while the biggest loser is Netflix, down three point three six percent.
+
+6
+00:00:43,866 --> 00:00:50,999
+MAYA: And the ten-year Treasury yield is down zero point seven two percent — what's the story behind that, Alex?
+
+7
+00:00:50,999 --> 00:00:57,775
+ALEX: The yield curve is still pretty flat, but the drop in the ten-year yield could indicate some market uncertainty.
+
+8
+00:00:57,775 --> 00:01:03,481
+ALEX: That's the million-dollar question — maybe it's just a reaction to the recent market moves.
+
+9
+00:01:03,481 --> 00:01:11,327
+MAYA: Maya here — and Kaspersky suspects Chinese hackers planted a backdoor into Daemon Tools, which is just great news for cybersecurity.
+  ↳ source: https://techcrunch.com/2026/05/05/kaspersky-suspects-chinese-hackers-planted-a-backdoor-into-daemon-tools-in-widespread-attack/
+
+10
+00:01:11,327 --> 00:01:15,607
+JAMIE: Of course it is — because who doesn't love a good backdoor?
+
+11
+00:01:15,607 --> 00:01:19,886
+MAYA: Right? So, Alex, what's the market impact of this potential hack?
+
+12
+00:01:19,886 --> 00:01:26,662
+ALEX: Well, the cybersecurity sector is probably going to see some movement, but it's hard to say how much.
+
+13
+00:01:26,662 --> 00:01:29,516
+JAMIE: That's it? No dramatic warnings about the apocalypse?
+
+14
+00:01:29,516 --> 00:01:32,369
+ALEX: Oh, no, I save those for Fridays.
+
+15
+00:01:32,369 --> 00:01:37,718
+MAYA: And Ferrari beat Wall Street's first-quarter expectations — who wouldn't want a fancy car?
+
+16
+00:01:37,718 --> 00:01:44,138
+JAMIE: Yeah, because that's exactly what I need — a two-hundred-thousand-dollar car to go with my student loans.
+
+17
+00:01:44,138 --> 00:01:49,131
+ALEX: Ferrari's stock is up, but it's not like they're giving away free cars.
+
+18
+00:01:49,131 --> 00:01:53,054
+MAYA: Maybe they should — it'd be a great marketing move.
+
+19
+00:01:53,054 --> 00:01:57,333
+JAMIE: Right, exactly — who needs profits when you can give away cars?
+
+20
+00:01:57,333 --> 00:01:59,116
+ALEX: You two are impossible.
+
+21
+00:01:59,116 --> 00:02:05,893
+MAYA: And OpenAI is reportedly launching a phone for ChatGPT — because what every AI needs is a phone.
+  ↳ source: https://www.theverge.com/ai-artificial-intelligence/924063/openai-phone-rumors-2027-ming-chi-kuo
+
+22
+00:02:05,893 --> 00:02:09,459
+JAMIE: Yeah, because ChatGPT wasn't already taking over the world.
+
+23
+00:02:09,459 --> 00:02:13,382
+MAYA: But seriously, this could be a game-changer for AI accessibility.
+
+24
+00:02:13,382 --> 00:02:19,801
+JAMIE: Wait, what? Accessibility? You mean like how I can access my phone from the comfort of my couch?
+
+25
+00:02:19,801 --> 00:02:21,585
+MAYA: No, Jamie, not exactly.
+
+26
+00:02:21,585 --> 00:02:26,578
+ALEX: The real question is — will this phone be able to order pizza?
+
+27
+00:02:26,578 --> 00:02:29,787
+JAMIE: Now that's a feature I can get behind.
+
+28
+00:02:29,787 --> 00:02:34,424
+MAYA: And Etsy's launching its app within ChatGPT — because why not, right?
+
+29
+00:02:34,424 --> 00:02:39,060
+JAMIE: Yeah, because what every conversation needs is a little bit of Etsy.
+
+30
+00:02:39,060 --> 00:02:43,339
+MAYA: But seriously, this could be a great move for Etsy sellers.
+
+31
+00:02:43,339 --> 00:02:47,263
+ALEX: As long as they don't try to sell AI-generated crafts.
+
+32
+00:02:47,263 --> 00:02:50,472
+JAMIE: Oh, that's a great idea — AI-generated crafts.
+
+33
+00:02:50,472 --> 00:02:54,752
+MAYA: Maybe we can get ChatGPT to make us some AI art.
+
+34
+00:02:54,752 --> 00:02:59,388
+JAMIE: Sure, because that's exactly what the world needs — more AI art.
+
+35
+00:02:59,388 --> 00:03:02,955
+ALEX: You two are going to get us in trouble.
+
+36
+00:03:02,955 --> 00:03:12,227
+JAMIE: That's it — and speaking of trouble, let's close with something weird — Lidl's new loyalty scheme is less generous, and shoppers are not happy.
+  ↳ source: https://www.bbc.com/news/articles/ckgp7y5jg59o?at_medium=RSS&at_campaign=rss
+
+37
+00:03:12,227 --> 00:03:15,437
+MAYA: Yeah, who doesn't love a good loyalty scheme?
+
+38
+00:03:15,437 --> 00:03:21,500
+JAMIE: Right, exactly — I mean, what's the point of shopping if you can't get some rewards?
+
+39
+00:03:21,500 --> 00:03:24,709
+ALEX: Maybe they should just give away free cars.
+
+40
+00:03:24,709 --> 00:03:32,199
+MAYA: And that's a wrap — remember, this show is for entertainment and education only — nothing here is investment advice.
+
+41
+00:03:32,199 --> 00:03:38,262
+JAMIE: Yeah, because we're definitely not investment advisors — I mean, have you seen our student loans?
+
+42
+00:03:38,262 --> 00:03:43,611
+MAYA: This show is for entertainment and education only — nothing here is investment advice.
+
+43
+00:03:43,611 --> 00:03:49,317
+JAMIE: Got it — no investment advice here, just a bunch of jokes and weird stories.
+
+44
+00:03:49,317 --> 00:03:54,310
+ALEX: And if you take investment advice from us, you deserve what you get.
+
+45
+00:03:54,310 --> 00:04:00,017
+JAMIE: That's it — thanks for tuning in, and we'll catch you on the flip side.
+
+46
+00:04:00,017 --> 00:04:05,366
+MAYA: This show is for entertainment and education only — nothing here is investment advice.
+
+47
+00:04:05,366 --> 00:04:11,786
+JAMIE: Yeah, we got it — no investment advice, just a bunch of weirdos talking about the market.
+
+48
+00:04:11,786 --> 00:04:13,569
+ALEX: I'm out of here.
+
+49
+00:04:13,569 --> 00:04:20,702
+JAMIE: Later, Jamie — and remember, this show is for entertainment and education only — nothing here is investment advice.
