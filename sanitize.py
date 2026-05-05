@@ -64,6 +64,14 @@ _DOLLAR_AMOUNT_RE = re.compile(
     re.I,
 )
 _PERCENT_RE = re.compile(r"(\d+(?:\.\d+)?)\s*%")
+# Catches "1.11 percent", "5.2 percent" etc. — digit + word "percent" without
+# the % symbol. Critique sometimes leaves these because it focuses on % and
+# misses the spelled-out variant.
+_PERCENT_WORD_RE = re.compile(r"(\d+(?:\.\d+)?)\s+percent\b", re.I)
+_DOLLAR_WORD_RE = re.compile(
+    r"(\d+(?:\.\d+)?)\s+(billion|million|trillion|thousand)\s+dollars?\b",
+    re.I,
+)
 
 
 def _spell_number(n: str) -> str:
@@ -98,13 +106,41 @@ def _normalize_dollars(text: str) -> tuple[str, int]:
 
 
 def _normalize_percents(text: str) -> tuple[str, int]:
-    """5.2% → 'five point two percent'. 5% → '5 percent' (TTS handles)."""
+    """5.2% → 'five point two percent'. Also catches '1.11 percent' (digit
+    followed by spelled 'percent') so we get both variants the LLM can emit."""
     fixes = 0
-    def repl(m: re.Match) -> str:
+    def repl_pct(m: re.Match) -> str:
         nonlocal fixes
         fixes += 1
         return f"{_spell_number(m.group(1))} percent"
-    return _PERCENT_RE.sub(repl, text), fixes
+    text, _ = _PERCENT_RE.subn(repl_pct, text)
+    # Now handle "digit + space + 'percent'" — e.g. "1.11 percent"
+    def repl_word(m: re.Match) -> str:
+        nonlocal fixes
+        n = m.group(1)
+        # only normalize fractional numbers; whole numbers like "5 percent"
+        # are fine for TTS to read.
+        if "." in n:
+            fixes += 1
+            return f"{_spell_number(n)} percent"
+        return m.group(0)
+    text = _PERCENT_WORD_RE.sub(repl_word, text)
+    return text, fixes
+
+
+def _normalize_dollars_word(text: str) -> tuple[str, int]:
+    """'5.2 billion dollars' → 'five point two billion dollars'. Like the
+    percent variant — catches the digit+spelled-suffix form when LLM
+    didn't fully spell out a fractional amount."""
+    fixes = 0
+    def repl(m: re.Match) -> str:
+        nonlocal fixes
+        n, suffix = m.group(1), m.group(2).lower()
+        if "." in n:
+            fixes += 1
+            return f"{_spell_number(n)} {suffix} dollars"
+        return m.group(0)
+    return _DOLLAR_WORD_RE.sub(repl, text), fixes
 
 
 def _space_standalone_tickers(text: str) -> tuple[str, int]:
@@ -355,6 +391,8 @@ def sanitize_script(text: str, verbose: bool = True) -> str:
         stats["standalone_ticker_fixes"] += st_fixes
         text_, d_fixes = _normalize_dollars(text_)
         stats["dollar_fixes"] += d_fixes
+        text_, dw_fixes = _normalize_dollars_word(text_)
+        stats["dollar_fixes"] += dw_fixes
         text_, p_fixes = _normalize_percents(text_)
         stats["percent_fixes"] += p_fixes
         turns[i] = (name, text_)
