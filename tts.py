@@ -33,14 +33,16 @@ from config import (
 INTRO_STING = ROOT / "assets" / "intro.mp3"
 OUTRO_STING = ROOT / "assets" / "outro.mp3"
 HOST_INTRO = ROOT / "assets" / "host_intro.mp3"
+HOST_OUTRO = ROOT / "assets" / "host_outro.mp3"
 MUSIC_BED = ROOT / "assets" / "bed.mp3"
-STING_GAP_MS = 350    # silence between sting and the next element
-HOST_INTRO_GAP_MS = 250  # tighter gap between host intro and first dialogue line
+STING_GAP_MS = 350         # silence between sting and the next element
+HOST_INTRO_GAP_MS = 250    # gap between host intro/outro and dialogue
+BED_TAIL_SEC = 1.6         # bed continues this long after host outro before fading out
 # Bed gain in dB applied before sidechain duck. -12 dB is audible in
 # voice pauses/transitions while still ducking under speech via the
 # sidechain compressor in _mix_music_bed. Bump to -10 for more presence,
 # drop to -16 for just-barely-there. Tunable via BED_GAIN_DB env var.
-BED_GAIN_DB = float(os.environ.get("BED_GAIN_DB", "-12"))
+BED_GAIN_DB = float(os.environ.get("BED_GAIN_DB", "-8"))
 
 LINE_RE = re.compile(r"^([A-Z][A-Z0-9_]{0,15}):\s*(.+)$")
 
@@ -118,12 +120,95 @@ def synth(text: str, out_mp3: Path) -> tuple[Path, list[dict]]:
     else:
         result = _synth_piper_dialogue(turns, out_mp3)
 
-    # Mix music bed under dialogue (sidechain-ducked) — runs before sting
-    # wrap so the intro/outro chimes don't have bed underneath them.
-    _mix_music_bed(out_mp3)
-    # Wrap with intro + outro stings if assets are present.
+    # Build [2s_bed_lead + host_intro + 0.25s_bed_gap + dialogue] with bed
+    # sidechain-ducked underneath the whole thing. Falls back to plain
+    # bed-under-dialogue mix if host_intro asset is missing.
+    _add_host_intro_with_bed(out_mp3)
+    # Outer wrap: intro_sting + (bedded segment) + outro_sting. No bed under
+    # the chimes themselves.
     _wrap_with_stings(out_mp3)
     return result
+
+
+def _add_host_intro_with_bed(in_out_mp3: Path) -> None:
+    """Wrap dialogue with bed-mixed host bookends:
+
+      [2s bed-only lead-in] → [JAMIE host_intro] → [0.25s] → [dialogue] →
+      [0.25s] → [MAYA host_outro] → [BED_TAIL_SEC bed-only tail with fade-out]
+
+    Bed plays continuously underneath the entire span and sidechain-ducks
+    under any voice. Single continuous bed loop — no audible discontinuity
+    between intro / dialogue / outro. Each host clip is optional; missing
+    assets are skipped. If no bed is present, this is a no-op."""
+    if not MUSIC_BED.exists():
+        return
+    if not HOST_INTRO.exists():
+        _mix_music_bed(in_out_mp3)
+        return
+    tmpdir = Path(tempfile.mkdtemp(prefix="hostbookend_"))
+    try:
+        host_intro_wav = tmpdir / "host_intro.wav"
+        dlg_wav = tmpdir / "dlg.wav"
+        for src, dst in [(HOST_INTRO, host_intro_wav), (in_out_mp3, dlg_wav)]:
+            subprocess.run(
+                ["ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
+                 "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(dst)],
+                check=True,
+            )
+        lead_sil = tmpdir / "lead.wav"
+        gap_sil = tmpdir / "gap.wav"
+        tail_sil = tmpdir / "tail.wav"
+        _silence_wav(2000, 44100, lead_sil)
+        _silence_wav(HOST_INTRO_GAP_MS, 44100, gap_sil)
+        _silence_wav(int(BED_TAIL_SEC * 1000), 44100, tail_sil)
+
+        parts = [lead_sil, host_intro_wav, gap_sil, dlg_wav]
+
+        if HOST_OUTRO.exists():
+            host_outro_wav = tmpdir / "host_outro.wav"
+            subprocess.run(
+                ["ffmpeg", "-y", "-loglevel", "error", "-i", str(HOST_OUTRO),
+                 "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(host_outro_wav)],
+                check=True,
+            )
+            parts.extend([gap_sil, host_outro_wav, tail_sil])
+        else:
+            parts.append(tail_sil)
+
+        voice_track = tmpdir / "voice.wav"
+        _concat_wavs(parts, voice_track)
+        voice_dur = _file_duration_seconds(voice_track)
+        # bed fades in over 0.5s at the start; fades out over BED_TAIL_SEC
+        # at the end so the music gracefully resolves.
+        fade_out_start = max(0.0, voice_dur - BED_TAIL_SEC)
+        chain = (
+            f"[1:a]aloop=loop=-1:size=2147483647,atrim=duration={voice_dur:.3f},"
+            f"afade=t=in:d=0.5,"
+            f"afade=t=out:st={fade_out_start:.3f}:d={BED_TAIL_SEC},"
+            f"volume={BED_GAIN_DB}dB[bedlow];"
+            f"[bedlow][0:a]sidechaincompress="
+            f"threshold=0.05:ratio=8:attack=20:release=400:makeup=1:level_sc=1.5[ducked];"
+            f"[0:a][ducked]amix=inputs=2:duration=first:dropout_transition=0,"
+            f"alimiter=limit=0.97[out]"
+        )
+        out_tmp = tmpdir / "bedded.mp3"
+        subprocess.run(
+            ["ffmpeg", "-y", "-loglevel", "error",
+             "-i", str(voice_track), "-i", str(MUSIC_BED),
+             "-filter_complex", chain, "-map", "[out]",
+             "-ar", "44100", "-ac", "1", "-c:a", "libmp3lame", "-b:a", "128k",
+             str(out_tmp)],
+            check=True,
+        )
+        shutil.copy(out_tmp, in_out_mp3)
+        outro_note = " + host_outro" if HOST_OUTRO.exists() else ""
+        print(f"[bed+host] 2s lead + host_intro + dialogue{outro_note} + {BED_TAIL_SEC}s tail "
+              f"({voice_dur:.1f}s, gain {BED_GAIN_DB}dB)")
+    except Exception as e:
+        print(f"[bed+host] failed ({e}); falling back to bed-under-dialogue only")
+        _mix_music_bed(in_out_mp3)
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
 
 
 def _mix_music_bed(in_out_mp3: Path) -> None:
@@ -173,52 +258,34 @@ def _file_duration_seconds(p: Path) -> float:
 
 
 def _wrap_with_stings(in_out_mp3: Path) -> None:
-    """Wrap dialogue with sting + host intro + dialogue + sting.
-    Final order in the output mp3:
-        intro_sting → gap → host_intro_voice → tight_gap → dialogue → gap → outro_sting
-
-    Edits in_out_mp3 in place via a temp file. Each asset is optional —
-    missing assets are skipped without breaking the chain."""
+    """Wrap content with intro + outro stings (no bed under the stings).
+    Order: intro_sting → gap → content → gap → outro_sting.
+    Host intro and bed are already baked into in_out_mp3 by
+    _add_host_intro_with_bed before this runs."""
     if not (INTRO_STING.exists() and OUTRO_STING.exists()):
         return
     tmpdir = Path(tempfile.mkdtemp(prefix="stings_"))
     try:
-        sources: list[tuple[Path, int]] = []  # (mp3-or-wav-source, gap-after-ms)
-        # intro sting
-        sources.append((INTRO_STING, STING_GAP_MS))
-        # optional host-voice intro right after the bumper
-        if HOST_INTRO.exists():
-            sources.append((HOST_INTRO, HOST_INTRO_GAP_MS))
-        # the dialogue itself (in_out_mp3)
-        sources.append((in_out_mp3, STING_GAP_MS))
-        # outro sting (no trailing gap)
-        sources.append((OUTRO_STING, 0))
-
-        # Decode each to 44.1kHz mono PCM wav for clean concat
-        wavs: list[Path] = []
-        for i, (src, gap_ms) in enumerate(sources):
-            wav = tmpdir / f"part_{i:02d}.wav"
+        intro_wav = tmpdir / "intro.wav"
+        content_wav = tmpdir / "content.wav"
+        outro_wav = tmpdir / "outro.wav"
+        gap_wav = tmpdir / "gap.wav"
+        for src, dst in [(INTRO_STING, intro_wav), (in_out_mp3, content_wav), (OUTRO_STING, outro_wav)]:
             subprocess.run(
                 ["ffmpeg", "-y", "-loglevel", "error", "-i", str(src),
-                 "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(wav)],
+                 "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(dst)],
                 check=True,
             )
-            wavs.append(wav)
-            if gap_ms > 0 and i < len(sources) - 1:
-                gap_wav = tmpdir / f"gap_{i:02d}.wav"
-                _silence_wav(gap_ms, 44100, gap_wav)
-                wavs.append(gap_wav)
-
+        _silence_wav(STING_GAP_MS, 44100, gap_wav)
         combined = tmpdir / "combined.wav"
-        _concat_wavs(wavs, combined)
+        _concat_wavs([intro_wav, gap_wav, content_wav, gap_wav, outro_wav], combined)
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error", "-i", str(combined),
              "-c:a", "libmp3lame", "-b:a", "128k", "-ar", "44100", "-ac", "1",
              str(in_out_mp3)],
             check=True,
         )
-        host_note = " + host_intro" if HOST_INTRO.exists() else ""
-        print(f"[stings] wrapped: intro_sting{host_note} + dialogue + outro_sting")
+        print(f"[stings] wrapped intro_sting + content + outro_sting")
     finally:
         shutil.rmtree(tmpdir, ignore_errors=True)
 

@@ -65,6 +65,12 @@ PROMPTS = [
 HOST_INTRO_TEXT = "Hey, this is Markets Explained, Daily."
 HOST_INTRO_VOICE = "EXAVITQu4vr4xnSDxMaL"  # Sarah — same voice as JAMIE in tts.py
 
+HOST_OUTRO_TEXT = (
+    "And that's all for today folks! Make sure to stay curious and keep "
+    "asking about the Markets Explained, Daily."
+)
+HOST_OUTRO_VOICE = "cgSgspJ2msm6clMCkdW9"  # Jessica — same voice as MAYA in tts.py
+
 
 def _gen_sound_effect(name: str, dur: float, prompt: str) -> None:
     out = ASSETS / f"{name}.mp3"
@@ -81,16 +87,15 @@ def _gen_sound_effect(name: str, dur: float, prompt: str) -> None:
     print(f"  wrote {out.stat().st_size // 1024} KB")
 
 
-def _gen_host_intro() -> None:
-    out = ASSETS / "host_intro.mp3"
-    print(f"generating host_intro (\"{HOST_INTRO_TEXT}\") → {out}")
-    # Try v3 first; fall back to multilingual_v2 if v3 isn't available.
+def _gen_voice_clip(filename: str, text: str, voice_id: str) -> None:
+    out = ASSETS / filename
+    print(f"generating {filename} (\"{text[:60]}{'…' if len(text) > 60 else ''}\") → {out}")
     for model in ("eleven_v3", "eleven_multilingual_v2"):
         try:
             audio_iter = client.text_to_speech.convert(
-                voice_id=HOST_INTRO_VOICE,
+                voice_id=voice_id,
                 model_id=model,
-                text=HOST_INTRO_TEXT,
+                text=text,
                 output_format="mp3_44100_128",
             )
             with open(out, "wb") as f:
@@ -101,13 +106,14 @@ def _gen_host_intro() -> None:
             return
         except Exception as e:
             print(f"  {model} failed: {e}")
-    raise RuntimeError("both v3 and multilingual_v2 failed — check API key")
+    raise RuntimeError(f"both v3 and multilingual_v2 failed for {filename}")
 
 
 def main() -> None:
     for name, dur, prompt in PROMPTS:
         _gen_sound_effect(name, dur, prompt)
-    _gen_host_intro()
+    _gen_voice_clip("host_intro.mp3", HOST_INTRO_TEXT, HOST_INTRO_VOICE)
+    _gen_voice_clip("host_outro.mp3", HOST_OUTRO_TEXT, HOST_OUTRO_VOICE)
     print("done — commit assets/ to repo")
 
 
