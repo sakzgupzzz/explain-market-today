@@ -245,7 +245,14 @@ Hard rules:
    c. BIG STORY (5-7 turns MAX) — pick ONE story from the top 3 ranked. Beat lead is whichever host's desk it falls under. The other two chime in with jokes, skepticism, push-back. Then move on. Do NOT over-cover one story.
    d. QUICK HITS (8-12 turns total, 1-3 turns per story) — rapid rotation across at least 4 DIFFERENT stories. Each story gets one substantive turn + one reaction. Move on. No story gets more than 3 quick-hits turns. Mix beat ownership.
    e. ODD THING (2-3 turns) — MAYA closes with ONE unusual story from culture/world. JAMIE or ALEX reacts once. Move on quickly.
-   f. SIGN-OFF (3-4 turns) — callback to a joke earlier in the episode, then JAMIE reads disclaimer verbatim: "{DISCLAIMER_SHORT}". The callback is REQUIRED — reference something specific said earlier (a host's joke, an absurd company name, etc.).
+   f. SIGN-OFF (exactly 3 turns) — REQUIRED structure:
+      Turn 1 (ALEX or MAYA): a SPECIFIC callback to something said earlier in the episode. Name a company that came up, repeat a punchline, riff on a host's wisecrack. Format examples:
+        "ALEX: [deadpan] Final note on Disney — eight point two two percent in one day. Streaming actually printed money for once."
+        "MAYA: We'll be checking back on QyTw0 next week — twenty-nine million for an angel round still feels surreal."
+        "JAMIE: [laughs] Something tells me Vermont's bank-deposit guy is on the same flight as the cruise-ship hantavirus passengers."
+      Turn 2 (a different host): a short reaction or final color line that riffs on the callback.
+      Turn 3 (JAMIE): the disclaimer verbatim "{DISCLAIMER_SHORT}". No other content. End of script.
+      Generic outros ("we'll catch you tomorrow", "have a great day", "another company missed estimates", "stay tuned") are banned.
 4a. TOPIC BUDGET (HARD): NO single story gets more than 7 turns total across the entire episode. If you find yourself writing a 5th turn about the same company/event, MOVE ON. Use AT LEAST 6 different stories from the TOP STORIES list — episodes that focus on 1-2 stories get rejected.
 5. PING-PONG RHYTHM (HARD): the show is a CONVERSATION, not a series of monologues. Hosts INTERRUPT, REACT, RIFF on each other constantly. Vary turn lengths deliberately:
    - ~60% of turns are SHORT reactions (5-15 words): "Wait, what?", "Come on.", "Hold on, that's not right.", "Oh no.", "Yeah but —", "Right, exactly.", "[laughs] Sure.", "That's it?", "No way.", "Of course it is."
@@ -254,7 +261,7 @@ Hard rules:
    - After every substantive turn (medium or long), AT LEAST ONE other host MUST react with a short turn before the next substantive turn.
    - No host speaks 2 turns in a row unless the line is genuinely continuous.
    - Episodes that read as a sequence of equal-length monologues will be rejected and regenerated.
-6. SPECIFICS (HARD): every substantive turn must contain a CONCRETE FACT from the SOURCE DATA — a company name, a price, a percentage, a dollar amount, a person's name, a place, a date. Vague observations like "the market is wild today" without a specific number are banned. Cite the data, then react to it.
+6. SPECIFICS (HARD): every substantive turn must contain a CONCRETE FACT from the SOURCE DATA — a company name, a price, a percentage, a dollar amount, a person's name, a place, a date. Vague observations like "the market is wild today", "that's just wild", "this is interesting", "what a story", "that's a big deal" without a specific number/name/place are BANNED. If you can't add a specific fact to a turn, drop the turn entirely. "Robot wars in Ukraine" needs at least the country, the type of unit (drones vs robots), or what changed.
 7. VOICE: contractions, em-dashes, ellipses for natural pauses. Hosts cut each other off, finish each other's sentences, push back.
 8. NUMBERS: write as words for smooth TTS. "Up one point two percent." For indices spell digit-pairs: "seventy-one twenty-six" for 7126. Tickers as letters with spaces: "S P Y", "N V D A", "C R M". Dollar amounts: "one hundred billion dollars", not "$100B".
 9. ACCURACY (HARD): you may ONLY discuss companies, stories, prices, percentages, and events that appear verbatim in MARKET DATA or HEADLINES above. Do NOT invent stock moves, headlines, deals, endorsements, shutdowns, or quotes. If a beat has no source material, skip the beat. If the tape moved without a clear catalyst, ALEX says exactly that.
@@ -422,7 +429,7 @@ PRESERVE (do NOT remove these):
 - All real company / product / person names from the draft.
 - Every distinct story the draft references — do not drop a story to satisfy any rule.
 - Banter and jokes that are NOT on the banned-template list.
-- Turn count: keep within 80% of the original. If draft has 31 turns, the revised script has at least 25.
+- Turn count: keep at least 90% of the original. If draft has 25 turns, revised has at least 23. NEVER drop more than 2 turns from a 24-turn draft. Surgical edits, not pruning.
 
 Fix:
 - Wrong-name intro: ALEX saying "Jamie here" → "Alex here". Same for all hosts.
