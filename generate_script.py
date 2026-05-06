@@ -150,9 +150,9 @@ PROMPT_VERSION = "v1.4"
 PROMPT_VARIANT = _os.environ.get("PROMPT_VARIANT", "A").upper()
 
 _LENGTH_PRESETS = {
-    "short": {"min_words": 600, "max_words": 1500, "min_turns": 22},
-    "standard": {"min_words": 1000, "max_words": 2700, "min_turns": 30},
-    "long": {"min_words": 1400, "max_words": 3500, "min_turns": 38},
+    "short": {"min_words": 600, "max_words": 1500, "min_turns": 18},
+    "standard": {"min_words": 1000, "max_words": 2700, "min_turns": 24},
+    "long": {"min_words": 1400, "max_words": 3500, "min_turns": 30},
 }
 
 
@@ -363,7 +363,7 @@ def generate(
     follow_ups: list[dict] | None = None,
     upcoming_events: str = "",
     interests: dict | None = None,
-    max_retries: int = 1,
+    max_retries: int = 0,
 ) -> str:
     """Generate the dialogue from a pre-ranked story list. If the result has
     fewer than the length preset's min_turns, retry once with a stronger
