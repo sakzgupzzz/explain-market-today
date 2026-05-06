@@ -271,6 +271,7 @@ Hard rules:
 20. NO TEASER TURNS: every story-introducing turn must INCLUDE the substantive content in the same turn. Banned: "Did you hear about X?" / "Speaking of X..." with no fact in the same turn or the next. If you can't deliver the substance, cut the story entirely. Vague-question-followed-by-vague-non-answer pairs are banned.
 21. SIGN-OFF CALLBACK (HARD): the final 2-3 turns before the disclaimer MUST contain a SPECIFIC callback — repeat a line another host said, name a company from earlier, riff on a specific joke from the body of the episode. Generic outros ("we'll catch you tomorrow", "have a great day") are banned.
 22. KEEP NUMBERS WHEN PRESENT: every fact about a company, index, ticker, or move includes the SPECIFIC number from the source data. "S and P is up" without a percent is banned. "Treasury yield is down" without basis points is banned. Cite the data, then react to it.
+23. NO REPEATED TURN-STARTERS: the opening 1-3 words of consecutive turns must vary. Banned starter patterns when used MORE THAN TWICE: "And in other news...", "What about...", "Yeah, and...", "[curious] What...", "Oh, and...", "Speaking of...". After their second use, the third+ instance MUST start with different words.
 """
 
 
@@ -448,7 +449,8 @@ Output ONLY the revised script in `NAME: line` format. No commentary, no diff.
 """
 
 
-CRITIQUE_MAX_PROMPT_CHARS = 7000  # Groq free-tier per-message cap is ~7-8KB
+CRITIQUE_MAX_PROMPT_CHARS = 7800  # Groq free-tier per-message cap is ~7.8-8KB
+                                  # (empirical: 6795 worked, 8241 failed)
 
 
 def critique_revise(script: str, market: dict, ranked_stories: list[dict]) -> str:
