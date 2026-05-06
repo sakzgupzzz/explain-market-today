@@ -229,18 +229,64 @@ def _scrub_banned_sentences(text: str) -> tuple[str, int]:
     return re.sub(r"\s+", " ", text).strip(), fixes
 
 
+def _drop_repeated_openers(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str]], int]:
+    """If a 1-3 word turn-opener appears in 3+ turns, rewrite the 3rd+
+    occurrence to drop the opener (keep the substance). Detection on
+    the first 5 word-tokens, normalized."""
+    counts: dict[str, int] = {}
+    drops = 0
+    out: list[tuple[str, str]] = []
+    for name, text in turns:
+        # strip leading audio tag for detection
+        body = re.sub(r"^\[[^\]]+\]\s*", "", text)
+        first_words = re.split(r"\s+", body, maxsplit=4)
+        if len(first_words) < 2:
+            out.append((name, text))
+            continue
+        key = " ".join(w.lower().strip(",.;:!?-—") for w in first_words[:3] if w)
+        # only consider meaningful openers (not just one common word)
+        if len(key) < 8:
+            out.append((name, text))
+            continue
+        counts[key] = counts.get(key, 0) + 1
+        if counts[key] > 2:
+            # rewrite turn: drop the opening clause up to first comma or em-dash
+            stripped = re.sub(r"^\[[^\]]+\]\s*", "", text)
+            # drop everything up to and including first comma/em-dash + space
+            new_body = re.sub(r"^[^,.—\-]{1,40}[,—\-]\s*", "", stripped, count=1)
+            if not new_body or new_body == stripped:
+                # nothing reasonable to strip — just drop the turn entirely
+                drops += 1
+                continue
+            # preserve audio tag prefix if it existed
+            tag_match = re.match(r"^(\[[^\]]+\]\s*)", text)
+            new_text = (tag_match.group(1) if tag_match else "") + new_body
+            new_text = new_text[0].upper() + new_text[1:] if new_text else new_text
+            out.append((name, new_text))
+            drops += 1
+        else:
+            out.append((name, text))
+    return out, drops
+
+
 def _scrub_banned_in_turns(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str]], int]:
-    """Per-turn: scrub sentences containing banned phrases. Drop turns that
-    become empty or trivially short (<5 words)."""
+    """Per-turn: scrub sentences containing banned phrases. Only drop a turn
+    if the scrub MADE it too short (i.e. the original had a banned phrase
+    AND removing that phrase left <3 words). Naturally-short clean turns
+    like 'Wow.' or 'Apple beat earnings.' are preserved unchanged."""
     fixes = 0
     out: list[tuple[str, str]] = []
     for name, text in turns:
         new, _ = _scrub_banned_sentences(text)
-        if new != text:
-            fixes += 1
-        if len(new.split()) >= 5:
+        if new == text:
+            # No banned phrase found — keep the turn untouched, even if short
+            out.append((name, text))
+            continue
+        # Scrub did fire. Drop the turn only if scrubbing made it useless.
+        fixes += 1
+        if len(new.split()) >= 3:
             out.append((name, new))
-        # else: drop the turn entirely
+        # else: drop entirely
     return out, fixes
 
 
@@ -432,6 +478,10 @@ def sanitize_script(text: str, verbose: bool = True) -> str:
     turns, banned_drops = _scrub_banned_in_turns(turns)
     stats["banned_scrubs"] = banned_drops
 
+    # 2.6) drop / rewrite repeated turn-openers (3rd+ "And in other news…")
+    turns, opener_repeats = _drop_repeated_openers(turns)
+    stats["opener_repeats"] = opener_repeats
+
     # 3) cap JAMIE airtime
     turns, dropped = _enforce_jamie_cap(turns)
     stats["jamie_drops"] = dropped
@@ -463,6 +513,7 @@ def sanitize_script(text: str, verbose: bool = True) -> str:
             f"dollars={stats['dollar_fixes']} "
             f"percents={stats['percent_fixes']} "
             f"banned_scrubs={stats.get('banned_scrubs',0)} "
+            f"opener_repeats={stats.get('opener_repeats',0)} "
             f"jamie_drops={stats['jamie_drops']} "
             f"streak_merges={stats.get('streak_merges',0)} "
             f"self_ref={stats.get('self_ref_fixes',0)} "
