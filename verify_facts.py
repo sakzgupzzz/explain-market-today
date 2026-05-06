@@ -57,13 +57,19 @@ TOP STORIES:
 """
 
 
+VERIFY_MAX_PROMPT_CHARS = 7000
+
+
 def verify(script: str, market: dict, ranked: list[dict]) -> str:
     if not script.strip():
         return script
     import time as _time
+    prompt = _verify_prompt(script, market, ranked)
+    if GROQ_API_KEY and len(prompt) > VERIFY_MAX_PROMPT_CHARS:
+        print(f"[verify] script too large ({len(prompt)} chars > {VERIFY_MAX_PROMPT_CHARS} cap); skipping verify pass")
+        return script
     if GROQ_API_KEY:
         _time.sleep(8)
-    prompt = _verify_prompt(script, market, ranked)
     try:
         return _llm_call(prompt, OLLAMA_CRITIC_MODEL, VERIFY_MODEL, temperature=0.1)
     except Exception as e:

@@ -7,7 +7,7 @@ JAMIE airtime cap. Idempotent — running twice yields the same output.
 from __future__ import annotations
 import re
 from collections import Counter
-from config import CHARACTERS, DEFAULT_CHARACTER, DISCLAIMER_SHORT
+from config import CHARACTERS, DEFAULT_CHARACTER, DISCLAIMER_SHORT, BANNED_PHRASES
 
 LINE_RE = re.compile(r"^([A-Z][A-Z0-9_]{0,15}):\s*(.+)$")
 
@@ -214,6 +214,36 @@ def _space_tickers(text: str) -> tuple[str, int]:
 # --- post-process passes for newer rules ---
 
 
+_BANNED_RE_LIST = [re.compile(rf"[^.!?]*\b{re.escape(p)}\b[^.!?]*[.!?]?", re.I) for p in BANNED_PHRASES]
+
+
+def _scrub_banned_sentences(text: str) -> tuple[str, int]:
+    """Strip any sentence containing a banned phrase. If the turn is empty
+    after scrubbing, callers drop the turn."""
+    fixes = 0
+    for rx in _BANNED_RE_LIST:
+        new = rx.sub("", text)
+        if new != text:
+            fixes += text.lower().count("") - new.lower().count("")  # crude
+            text = new
+    return re.sub(r"\s+", " ", text).strip(), fixes
+
+
+def _scrub_banned_in_turns(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str]], int]:
+    """Per-turn: scrub sentences containing banned phrases. Drop turns that
+    become empty or trivially short (<5 words)."""
+    fixes = 0
+    out: list[tuple[str, str]] = []
+    for name, text in turns:
+        new, _ = _scrub_banned_sentences(text)
+        if new != text:
+            fixes += 1
+        if len(new.split()) >= 5:
+            out.append((name, new))
+        # else: drop the turn entirely
+    return out, fixes
+
+
 def _disclaimer_signature(text: str) -> bool:
     """Detect any turn that's a disclaimer (verbatim or paraphrase). Looks for
     the canonical short fragment 'entertainment and education only'."""
@@ -397,6 +427,11 @@ def sanitize_script(text: str, verbose: bool = True) -> str:
         stats["percent_fixes"] += p_fixes
         turns[i] = (name, text_)
 
+    # 2.5) scrub mid-script banned phrases (drops sentences containing them;
+    # drops the whole turn if it becomes too short to be useful)
+    turns, banned_drops = _scrub_banned_in_turns(turns)
+    stats["banned_scrubs"] = banned_drops
+
     # 3) cap JAMIE airtime
     turns, dropped = _enforce_jamie_cap(turns)
     stats["jamie_drops"] = dropped
@@ -427,6 +462,7 @@ def sanitize_script(text: str, verbose: bool = True) -> str:
             f"tickers_standalone={stats['standalone_ticker_fixes']} "
             f"dollars={stats['dollar_fixes']} "
             f"percents={stats['percent_fixes']} "
+            f"banned_scrubs={stats.get('banned_scrubs',0)} "
             f"jamie_drops={stats['jamie_drops']} "
             f"streak_merges={stats.get('streak_merges',0)} "
             f"self_ref={stats.get('self_ref_fixes',0)} "

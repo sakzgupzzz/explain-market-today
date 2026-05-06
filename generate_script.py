@@ -258,7 +258,7 @@ Hard rules:
 7. VOICE: contractions, em-dashes, ellipses for natural pauses. Hosts cut each other off, finish each other's sentences, push back.
 8. NUMBERS: write as words for smooth TTS. "Up one point two percent." For indices spell digit-pairs: "seventy-one twenty-six" for 7126. Tickers as letters with spaces: "S P Y", "N V D A", "C R M". Dollar amounts: "one hundred billion dollars", not "$100B".
 9. ACCURACY (HARD): you may ONLY discuss companies, stories, prices, percentages, and events that appear verbatim in MARKET DATA or HEADLINES above. Do NOT invent stock moves, headlines, deals, endorsements, shutdowns, or quotes. If a beat has no source material, skip the beat. If the tape moved without a clear catalyst, ALEX says exactly that.
-10. LENGTH: adaptive but DENSE. Quiet day → around {pref_min_words} words across AT LEAST {pref_min_turns} turns. Busy day → up to {pref_max_words} words across 40+ turns. Never pad. Never skip a great story that's in the headlines. If you produce fewer than {pref_min_turns} turns the episode is rejected.
+10. LENGTH: adaptive but DENSE. Quiet day → around {pref_min_words} words across AT LEAST {pref_min_turns} turns. Busy day → up to {pref_max_words} words. HARD MAX: 40 turns. If you produce fewer than {pref_min_turns} turns the episode is rejected. If you produce more than 40 turns the excess gets cut so consolidate — pack two reactions into one substantive turn rather than spreading thin.
 11. CAST USAGE: ALL {total_hosts} hosts SHOULD appear; minimum {min_hosts}. JAMIE bookends but speaks AT MOST 1 in every 4 turns. No single host gets more than 25% of total turns.
 12. HUMOR: jokes throughout, organic to each host's personality. Punch up at institutions/Wall Street/PR spin. Never punch down at protected characteristics. No dad jokes. Late callback to an earlier joke = chef's kiss.
 13. BANNED_PHRASES — do NOT use any of these (case-insensitive): {banned}.
@@ -448,14 +448,24 @@ Output ONLY the revised script in `NAME: line` format. No commentary, no diff.
 """
 
 
+CRITIQUE_MAX_PROMPT_CHARS = 7000  # Groq free-tier per-message cap is ~7-8KB
+
+
 def critique_revise(script: str, market: dict, ranked_stories: list[dict]) -> str:
     """Run a critic LLM pass to fix fabrications, banned phrases, monologues.
     Pre-sleeps 8 sec when Groq is in use so the per-message-burst limit
-    (manifests as 413) has time to clear after the generate call."""
+    (manifests as 413) has time to clear after the generate call.
+
+    Skips entirely if the resulting prompt would exceed Groq's per-message
+    size cap — better to ship the unrevised script (sanitize still runs)
+    than burn 2-3 min waiting for retries that always fail at that size."""
     import time as _time
+    prompt = _critique_prompt(script, market, ranked_stories)
+    if GROQ_API_KEY and len(prompt) > CRITIQUE_MAX_PROMPT_CHARS:
+        print(f"[critique] script too large ({len(prompt)} chars > {CRITIQUE_MAX_PROMPT_CHARS} cap); skipping critique pass")
+        return script
     if GROQ_API_KEY:
         _time.sleep(8)
-    prompt = _critique_prompt(script, market, ranked_stories)
     try:
         return _llm_call(prompt, OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL, temperature=0.2)
     except Exception as e:
