@@ -268,6 +268,9 @@ Hard rules:
 17. NO TWO REACTIONS BACK-TO-BACK: a "reaction" is a turn with no concrete fact — just an emotional response ("Right, exactly", "Yeah, sure", "[laughs] Of course it is", "Wait, what?", "Come on"). After ANY reaction turn the next turn MUST be substantive (contain a specific number, name, place, or new fact from the source data). Two reaction turns in a row is banned.
 18. NO REPEATED JOKE TEMPLATES: each sentence frame appears AT MOST TWICE per episode. Banned-after-second-use frames include: "what every X needs is Y", "because that's exactly what we need, more X", "right, exactly", "of course it is", "who doesn't love a good X". Use varied syntax for sarcasm — DIFFERENT structure each time.
 19. NO HOST SPEAKS TWO TURNS IN A ROW. If two consecutive `NAME:` lines have the same NAME, you must either merge them or insert a turn from a different host between them.
+20. NO TEASER TURNS: every story-introducing turn must INCLUDE the substantive content in the same turn. Banned: "Did you hear about X?" / "Speaking of X..." with no fact in the same turn or the next. If you can't deliver the substance, cut the story entirely. Vague-question-followed-by-vague-non-answer pairs are banned.
+21. SIGN-OFF CALLBACK (HARD): the final 2-3 turns before the disclaimer MUST contain a SPECIFIC callback — repeat a line another host said, name a company from earlier, riff on a specific joke from the body of the episode. Generic outros ("we'll catch you tomorrow", "have a great day") are banned.
+22. KEEP NUMBERS WHEN PRESENT: every fact about a company, index, ticker, or move includes the SPECIFIC number from the source data. "S and P is up" without a percent is banned. "Treasury yield is down" without basis points is banned. Cite the data, then react to it.
 """
 
 
@@ -432,6 +435,9 @@ Fix:
 - Disclaimer missing: add as last JAMIE line.
 - Two pure-reaction turns ("Right, exactly" + "[laughs] Sure" with no fact between) → drop the weaker or rewrite the second with a substantive fact.
 - Format integrity: every line must be `NAME: text` with NAME in [{name_list}]. Drop narration, stage directions, headers.
+- Teaser turns: any "Did you hear about X?" / "Speaking of X" turn that's NOT immediately followed by a turn delivering the substantive fact → drop the teaser turn entirely. Don't keep both halves of a vague-question-followed-by-vague-non-answer pair.
+- Missing numbers: if a turn mentions a market/index/ticker/move WITHOUT the specific number from the data (e.g. "S and P is up" with no percent), and the original draft had the number, restore the number. Do NOT delete numbers.
+- Sign-off callback: if the final 2-3 turns before the disclaimer have NO specific callback (no reference to a host's earlier line, no company named earlier in the episode), add one specific callback to the second-to-last turn before the disclaimer.
 
 Output ONLY the revised script in `NAME: line` format. No commentary, no diff.
 
