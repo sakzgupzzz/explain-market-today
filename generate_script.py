@@ -12,6 +12,8 @@ from datetime import datetime
 from config import (
     OLLAMA_URL, OLLAMA_MODEL, OLLAMA_CRITIC_MODEL, OLLAMA_TIMEOUT,
     GROQ_API_KEY, GROQ_URL, GROQ_MODEL, GROQ_CRITIC_MODEL,
+    ANTHROPIC_API_KEY, ANTHROPIC_URL, ANTHROPIC_MODEL,
+    ANTHROPIC_CRITIC_MODEL, ANTHROPIC_VERSION,
     MIN_WORDS, MAX_WORDS, MIN_TURNS, CHARACTERS, PODCAST_TITLE,
     BANNED_PHRASES, DISCLAIMER_SHORT,
 )
@@ -348,9 +350,63 @@ def _groq_call(prompt: str, model: str, temperature: float = 0.75, retries: int 
     raise RuntimeError(f"groq exhausted {retries} retries: {last_err}")
 
 
+def _anthropic_call(prompt: str, model: str, temperature: float = 0.75, retries: int = 2) -> str:
+    """Anthropic Messages API. Best instruction-following at our scale.
+    200k context — never hits payload size caps, no rate-limit dance."""
+    import random, time as _time
+    print(f"[anthropic] {model} prompt={len(prompt)} chars (~{len(prompt)//4} tokens)")
+    last_err: Exception | None = None
+    for attempt in range(retries):
+        try:
+            resp = requests.post(
+                ANTHROPIC_URL,
+                headers={
+                    "x-api-key": ANTHROPIC_API_KEY,
+                    "anthropic-version": ANTHROPIC_VERSION,
+                    "content-type": "application/json",
+                },
+                json={
+                    "model": model,
+                    "max_tokens": 4096,
+                    "temperature": temperature,
+                    "messages": [{"role": "user", "content": prompt}],
+                },
+                timeout=120,
+            )
+            if resp.status_code == 429:
+                wait = float(resp.headers.get("retry-after", "5"))
+                print(f"[anthropic] 429, waiting {wait}s")
+                _time.sleep(wait + random.random())
+                continue
+            if 500 <= resp.status_code < 600:
+                wait = (2 ** attempt) + random.random()
+                print(f"[anthropic] {resp.status_code}, retrying in {wait:.1f}s")
+                _time.sleep(wait)
+                continue
+            resp.raise_for_status()
+            data = resp.json()
+            # content is a list of blocks; concatenate text blocks
+            return "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text").strip()
+        except requests.RequestException as e:
+            last_err = e
+            wait = (2 ** attempt) + random.random()
+            print(f"[anthropic] request failed ({e}), retrying in {wait:.1f}s")
+            _time.sleep(wait)
+    raise RuntimeError(f"anthropic exhausted {retries} retries: {last_err}")
+
+
 def _llm_call(prompt: str, ollama_model: str, groq_model: str, temperature: float = 0.75) -> str:
-    """Dispatch to Groq when GROQ_API_KEY is present, else Ollama. Local dev
-    stays on Ollama unless the env var is exported."""
+    """Dispatch order: Anthropic > Groq > Ollama. Anthropic preferred for
+    quality + reliability when ANTHROPIC_API_KEY is set.
+
+    When dispatching to Anthropic we always use ANTHROPIC_MODEL for both
+    gen and critic passes — Haiku 4.5 is consistent enough that splitting
+    isn't needed. Override per-pass via ANTHROPIC_CRITIC_MODEL env if
+    desired (e.g. Sonnet for gen, Haiku for critic)."""
+    if ANTHROPIC_API_KEY:
+        # critic-pass detection: critic runs use temperature ≤ 0.2
+        model = ANTHROPIC_CRITIC_MODEL if temperature <= 0.21 else ANTHROPIC_MODEL
+        return _anthropic_call(prompt, model, temperature)
     if GROQ_API_KEY:
         return _groq_call(prompt, groq_model, temperature)
     return _ollama_call(prompt, ollama_model, temperature)
@@ -470,10 +526,12 @@ def critique_revise(script: str, market: dict, ranked_stories: list[dict]) -> st
     than burn 2-3 min waiting for retries that always fail at that size."""
     import time as _time
     prompt = _critique_prompt(script, market, ranked_stories)
-    if GROQ_API_KEY and len(prompt) > CRITIQUE_MAX_PROMPT_CHARS:
+    # Size-guard only matters when routing to Groq (8KB cap on free tier).
+    # Anthropic has 200k context, Ollama has whatever fits in RAM.
+    if GROQ_API_KEY and not ANTHROPIC_API_KEY and len(prompt) > CRITIQUE_MAX_PROMPT_CHARS:
         print(f"[critique] script too large ({len(prompt)} chars > {CRITIQUE_MAX_PROMPT_CHARS} cap); skipping critique pass")
         return script
-    if GROQ_API_KEY:
+    if GROQ_API_KEY and not ANTHROPIC_API_KEY:
         _time.sleep(8)
     try:
         return _llm_call(prompt, OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL, temperature=0.2)

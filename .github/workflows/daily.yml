@@ -43,6 +43,8 @@ jobs:
       # both passes; the local Ollama path is preserved in code for Mac dev
       # but isn't installed on this runner — Ollama on CPU-only ubuntu can't
       # finish the dialogue prompt within budget (proved across 2 runs).
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      ANTHROPIC_MODEL: claude-haiku-4-5-20251001
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       GROQ_MODEL: llama-3.3-70b-versatile
       GROQ_CRITIC_MODEL: llama-3.1-8b-instant

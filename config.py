@@ -93,6 +93,14 @@ OLLAMA_CRITIC_MODEL = os.environ.get("OLLAMA_CRITIC_MODEL", OLLAMA_MODEL)
 # daily-podcast workload comfortably (30k tokens/min limit, we burn ~20k/run).
 # When GROQ_API_KEY is set, generate_script._llm_call uses Groq instead of
 # Ollama. Keeps Ollama as the local default.
+# Anthropic Claude — best instruction-following at our scale (~$1/mo for
+# Haiku 4.5 over 22 weekday episodes). Preferred backend when key is set.
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+ANTHROPIC_URL = os.environ.get("ANTHROPIC_URL", "https://api.anthropic.com/v1/messages")
+ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-haiku-4-5-20251001")
+ANTHROPIC_CRITIC_MODEL = os.environ.get("ANTHROPIC_CRITIC_MODEL", "claude-haiku-4-5-20251001")
+ANTHROPIC_VERSION = os.environ.get("ANTHROPIC_VERSION", "2023-06-01")
+
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 GROQ_URL = os.environ.get("GROQ_URL", "https://api.groq.com/openai/v1/chat/completions")
 GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")

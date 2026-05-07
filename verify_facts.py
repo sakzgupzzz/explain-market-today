@@ -12,6 +12,7 @@ from __future__ import annotations
 import re
 from config import (
     GROQ_API_KEY, GROQ_URL, GROQ_MODEL, GROQ_CRITIC_MODEL,
+    ANTHROPIC_API_KEY,
     OLLAMA_MODEL, OLLAMA_CRITIC_MODEL, BANNED_PHRASES, DISCLAIMER_SHORT, CHARACTERS,
 )
 from generate_script import (
@@ -65,10 +66,10 @@ def verify(script: str, market: dict, ranked: list[dict]) -> str:
         return script
     import time as _time
     prompt = _verify_prompt(script, market, ranked)
-    if GROQ_API_KEY and len(prompt) > VERIFY_MAX_PROMPT_CHARS:
+    if GROQ_API_KEY and not ANTHROPIC_API_KEY and len(prompt) > VERIFY_MAX_PROMPT_CHARS:
         print(f"[verify] script too large ({len(prompt)} chars > {VERIFY_MAX_PROMPT_CHARS} cap); skipping verify pass")
         return script
-    if GROQ_API_KEY:
+    if GROQ_API_KEY and not ANTHROPIC_API_KEY:
         _time.sleep(8)
     try:
         return _llm_call(prompt, OLLAMA_CRITIC_MODEL, VERIFY_MODEL, temperature=0.1)
