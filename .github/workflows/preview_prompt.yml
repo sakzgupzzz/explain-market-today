@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
     inputs:
       tone:
-        description: "Tone override (neutral / dry / snarky) — leave blank for interests.yaml default"
+        description: "Tone override (neutral / dry / snarky / funny) — leave blank for interests.yaml default"
         required: false
         type: choice
         default: ""
@@ -21,6 +21,7 @@ on:
           - neutral
           - dry
           - snarky
+          - funny
       length:
         description: "Length override (short / standard / long)"
         required: false
