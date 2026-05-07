@@ -45,6 +45,11 @@ jobs:
       # finish the dialogue prompt within budget (proved across 2 runs).
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       ANTHROPIC_MODEL: claude-haiku-4-5-20251001
+      # Set ELEVENLABS_REMAINING_CHARS as a repo VARIABLE (not secret) and
+      # update from elevenlabs.io/app/usage weekly. eleven_budget.py uses
+      # this to size episodes accurately. Falls back to .meta.json estimate
+      # when unset (will undercount by ~5-10k chars due to audio-tag billing).
+      ELEVENLABS_REMAINING_CHARS: ${{ vars.ELEVENLABS_REMAINING_CHARS }}
       GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       GROQ_MODEL: llama-3.3-70b-versatile
       GROQ_CRITIC_MODEL: llama-3.1-8b-instant
