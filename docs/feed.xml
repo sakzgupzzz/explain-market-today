@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Thu, 07 May 2026 14:17:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 18:31:08 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -28,37 +28,52 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
     <item>
-      <title>May 7: — and there's a surprise deal making waves</title>
-      <description>JAMIE: Jamie here — and there's a surprise deal making waves.
-ALEX: Alex on markets — the S and P five hundred is up zero point zero seven percent, while the Nasdaq is up zero point four seven percent, and the Dow is down zero point one nine percent.
-MAYA: [excited] Maya from tech — that deal is a big move.
-ALEX: [deadpan] The biggest gainer today is a company up three point two seven percent, and the biggest loser is a company down two point five two percent.
-JAMIE: Right, and what about the ma…
+      <title>May 7: Shake Shack just reported its first operating…</title>
+      <description>JAMIE: Shake Shack just reported its first operating loss in years — and because apparently beef prices are a factor — the burger business is facing headwinds.
+ALEX: Alex on markets. The broad tape is mostly flat — S and P down point three eight percent, Nasdaq down point one four — but the Russell two thousand got hit harder at down one point five percent. V I X ticked down to seventeen point two five, so nobody's panicking yet.
+MAYA: [excited] And the gainers are all mega-cap tech — C R M up t…
 
 Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
-      <ns2:encoded>JAMIE: Jamie here — and there's a surprise deal making waves.
-ALEX: Alex on markets — the S and P five hundred is up zero point zero seven percent, while the Nasdaq is up zero point four seven percent, and the Dow is down zero point one nine percent.
-MAYA: [excited] Maya from tech — that deal is a big move.
-ALEX: [deadpan] The biggest gainer today is a company up three point two seven percent, and the biggest loser is a company down two point five two percent.
-JAMIE: Right, and what about the macro side of things — any notable moves?
-ALEX: The ten-year Treasury yield is down zero point four one percent, and the dollar index is down zero point one percent.
-MAYA: [rushed] And in the world of AI, there are early signs of AI not just coding its own products but building itself — that's a big deal.
-JAMIE: Hold on, that's not right — isn't that company warning about AI risks?
-MAYA: [mischievously] Yeah, that's the same company — it's like they're trying to have it both ways. [laughs] Oh, come on — it's not all hype, there are some real breakthroughs happening.
-JAMIE: What about the gas prices story — any updates on that?
-ALEX: [deadpan] Yeah, gas prices won't be returning to pre-war levels anytime soon, according to a news source — that's a big hit for consumers.
-MAYA: [excited] And a company just posted stronger-than-expected quarterly profit, thanks to a war sending fossil fuel prices soaring.
-JAMIE: Wait, what — doesn't that mean they're profiting from the war?
-MAYA: [rushed] Yeah, that's one way to look at it — but they're also cutting back on share buybacks.
-ALEX: [deadpan] Because nothing says "good corporate citizen" like profiting from war and cutting back on shareholder returns.
-MAYA: [mischievously] Hey, at least they're being consistent — and a stock just surged thirty percent post-earnings.
+      <ns2:encoded>JAMIE: Shake Shack just reported its first operating loss in years — and because apparently beef prices are a factor — the burger business is facing headwinds.
+ALEX: Alex on markets. The broad tape is mostly flat — S and P down point three eight percent, Nasdaq down point one four — but the Russell two thousand got hit harder at down one point five percent. V I X ticked down to seventeen point two five, so nobody's panicking yet.
+MAYA: [excited] And the gainers are all mega-cap tech — C R M up three point three three, A C N up three point zero six, A D B E up two point six five. N V D A, M S F T all in the green. But the losers are brutal. A V G O down four point two three, A M D down three point seven four. Chip stocks getting absolutely wrecked.
+JAMIE: Why are chips down when the big A I names are up?
+ALEX: [deadpan] Because A V G O and A M D supply the infrastructure that nobody's ordering yet. Broadcom's down four point two three on no specific news — the tape just decided it hates them today. Meanwhile M S F T and N V D A keep printing because the narrative is they're the ones making the money from A I, not the people selling them the shovels.
+MAYA: So we're back to the "picks and shovels guy is always the loser" thing.
+ALEX: Always.
+MAYA: [mischievously] Meta's calling the regulator's fee calculations disproportionate. Ofcom says they'll defend their position. So basically two sides yelling "we're right" at each other in a room. This is what British regulatory theater looks like.
+ALEX: It's a tell though. Meta's fighting fees instead of paying them. That means the number actually stings.
+JAMIE: Planet Fitness just slashed guidance and canceled price hikes — stock down thirty percent.
+MAYA: Yeah, Planet Fitness said the guidance cut was because of consumer pushback. So you have companies that tried to squeeze their customers and got punished immediately. That's not usually how the market works.
+ALEX: It's not. Usually companies raise prices and the stock holds. This is different. Consumer discretionary is down on the day, but the individual names that tried to get greedy got smoked.
+MAYA: [rushed] Whitney Wolfe Herd announced on the Axios show that the swipe — the core mechanic of the entire dating app ecosystem — is getting axed. No word on what replaces it yet, just that it's dying.
+ALEX: So the feature responsible for countless connections is being retired because some founder decided it was time.
+MAYA: It's bold. It's also terrifying if you're a user because you don't know what the product becomes.
+JAMIE: Elon and Sam Altman are in court right now over OpenAI.
+ALEX: Musk filed accusing OpenAI of abandoning its nonprofit mission. They're facing off in a high-stakes trial that could alter the future of the company and ChatGPT. No stock impact because neither company is public, but culturally this is the biggest tech legal battle happening right now.
+MAYA: It's messy. Musk co-founded it, left, and now he's suing to force it back to its original structure. Altman's defending the for-profit pivot. This is going to run for months.
+JAMIE: Boeing and Citigroup CEOs are heading to China with Trump next week.
+ALEX: Trump's taking C-suite with him — Boeing, Citigroup — which is the standard corporate delegation play. Nothing unusual here except the timing is tense.
+MAYA: It's a signal that business is still trying to normalize relations even if the geopolitical backdrop is challenging. [excited] B M W just launched an electric model in the U S and the starting price undercuts the comparable gas-powered version. That's not supposed to happen. E V usually costs more. B M W just inverted that equation.
+ALEX: So either the gas car is overpriced or the E V is subsidized into oblivion. Either way, it's a flex.
+MAYA: It's a flex that might not last if the credits go away.
+JAMIE: Datadog's stock is soaring because A I is making corporate systems more complex.
+MAYA: Datadog monitors security and outages across corporate infrastructure. A I is adding so much complexity to systems that demand for visibility tools is exploding. The stock is soaring because the problem it solves just got worse.
+ALEX: That's a real tailwind. Not a hype tailwind. An actual problem that got bigger.
+MAYA: And I C E is in talks to buy turnkey immigration detention facilities from vendors after local backlash killed the mega-jails plan.
+JAMIE: What does turnkey mean in this context?
+MAYA: Pre-built, ready to operate. I C E wanted to renovate warehouses into large-scale detention centers but got hammered by communities. Now they're buying finished facilities from private vendors instead. It's the same outcome, quieter execution.
+ALEX: Regulatory arbitrage. Do it faster, do it quieter, do it through back channels.
+JAMIE: Alright, final note — jobs report hits tomorrow.
+ALEX: [deadpan] The labor report drops tomorrow. Consensus is the market's cooling but stable — which is the sweet spot. Not so hot that the Fed panics, not so cold that we're in trouble. The tape will price in whatever the number is within the first ninety seconds. And A V G O down four point two three percent on no news is exactly the kind of move that makes you question whether the market knows anything at all.
+MAYA: [laughs] Broadcom just woke up and chose violence against its own stock price.
 JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
       <guid isPermaLink="false">815db626-451a-a755-1d5d-4354caaea1c5</guid>
-      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-07.mp3" length="1889704" type="audio/mpeg" />
-      <pubDate>Thu, 07 May 2026 14:17:14 +0000</pubDate>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-07.mp3" length="5600709" type="audio/mpeg" />
+      <pubDate>Thu, 07 May 2026 18:30:59 +0000</pubDate>
       <itunes:author>Markets Explained</itunes:author>
       <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-07.jpg" />
-      <itunes:duration>00:01:57</itunes:duration>
+      <itunes:duration>00:05:49</itunes:duration>
     <podcast:season>2026</podcast:season><podcast:episode>20260507</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-07.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-07.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-07.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>May 6: A M D's stock surged today, what's behind that…</title>

@@ -1,0 +1,12 @@
+{
+  "date": "2026-05-07",
+  "mp3": "2026-05-07.mp3",
+  "size_bytes": 5600709,
+  "duration_sec": 349.57,
+  "turns": 34,
+  "words": 905,
+  "char_usage_estimate": 5416,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-05-07T18:30:59.699792Z"
+}
