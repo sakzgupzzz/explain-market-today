@@ -78,6 +78,14 @@ HOST_OUTRO_TEXT = (
 )
 HOST_OUTRO_VOICE = "cgSgspJ2msm6clMCkdW9"  # Jessica — same voice as MAYA in tts.py
 
+# Pre-recorded disclaimer — read once, appended to every episode.
+# Saves ~95 chars × 22 weekdays = ~2,100 chars/mo of Eleven budget.
+HOST_DISCLAIMER_TEXT = (
+    "This show is for entertainment and education only — "
+    "nothing here is investment advice."
+)
+HOST_DISCLAIMER_VOICE = "cgSgspJ2msm6clMCkdW9"  # Jessica / MAYA — matches script attribution
+
 
 def _gen_sound_effect(name: str, dur: float, prompt: str) -> None:
     out = ASSETS / f"{name}.mp3"
@@ -121,6 +129,7 @@ def main() -> None:
         _gen_sound_effect(name, dur, prompt)
     _gen_voice_clip("host_intro.mp3", HOST_INTRO_TEXT, HOST_INTRO_VOICE)
     _gen_voice_clip("host_outro.mp3", HOST_OUTRO_TEXT, HOST_OUTRO_VOICE)
+    _gen_voice_clip("host_disclaimer.mp3", HOST_DISCLAIMER_TEXT, HOST_DISCLAIMER_VOICE)
     print("done — commit assets/ to repo")
 
 

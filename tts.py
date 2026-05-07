@@ -34,6 +34,7 @@ INTRO_STING = ROOT / "assets" / "intro.mp3"
 OUTRO_STING = ROOT / "assets" / "outro.mp3"
 HOST_INTRO = ROOT / "assets" / "host_intro.mp3"
 HOST_OUTRO = ROOT / "assets" / "host_outro.mp3"
+HOST_DISCLAIMER = ROOT / "assets" / "host_disclaimer.mp3"
 MUSIC_BED = ROOT / "assets" / "bed.mp3"
 STING_GAP_MS = 350         # silence between sting and the next element
 HOST_INTRO_GAP_MS = 250    # gap between host intro/outro and dialogue
@@ -104,11 +105,22 @@ def _resolve_backend() -> str:
 def synth(text: str, out_mp3: Path) -> tuple[Path, list[dict]]:
     """Synthesize the script to out_mp3. Returns (mp3_path, chunk_timings).
     After backend renders the dialogue, wraps with intro/outro stings if
-    assets/intro.mp3 and assets/outro.mp3 exist."""
+    assets/intro.mp3 and assets/outro.mp3 exist.
+
+    The pre-recorded disclaimer (assets/host_disclaimer.mp3) replaces any
+    disclaimer-flavored turn in the dialogue — saves Eleven char budget
+    by not re-synthesizing the same legal line every episode."""
     out_mp3.parent.mkdir(parents=True, exist_ok=True)
     turns = parse_dialogue(text)
     if not turns:
         turns = [(DEFAULT_CHARACTER, text)]
+    # Drop any disclaimer-flavored turn(s) from synthesis input — we'll
+    # append the pre-recorded clip in _add_host_intro_with_bed instead.
+    if HOST_DISCLAIMER.exists():
+        before = len(turns)
+        turns = [(n, t) for n, t in turns if "entertainment and education only" not in t.lower()]
+        if len(turns) < before:
+            print(f"[tts] stripped {before - len(turns)} disclaimer turn(s) from synth — using pre-recorded clip")
     backend = _resolve_backend()
     print(f"[tts] backend={backend} turns={len(turns)}")
     if backend in ("eleven", "eleven_v3"):
@@ -171,9 +183,18 @@ def _add_host_intro_with_bed(in_out_mp3: Path) -> None:
                  "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(host_outro_wav)],
                 check=True,
             )
-            parts.extend([gap_sil, host_outro_wav, tail_sil])
-        else:
-            parts.append(tail_sil)
+            parts.extend([gap_sil, host_outro_wav])
+        # Pre-recorded disclaimer: appended right before the bed tail so it
+        # rides under the same fading-out music.
+        if HOST_DISCLAIMER.exists():
+            host_disclaimer_wav = tmpdir / "host_disclaimer.wav"
+            subprocess.run(
+                ["ffmpeg", "-y", "-loglevel", "error", "-i", str(HOST_DISCLAIMER),
+                 "-ar", "44100", "-ac", "1", "-c:a", "pcm_s16le", str(host_disclaimer_wav)],
+                check=True,
+            )
+            parts.extend([gap_sil, host_disclaimer_wav])
+        parts.append(tail_sil)
 
         voice_track = tmpdir / "voice.wav"
         _concat_wavs(parts, voice_track)
