@@ -95,6 +95,11 @@ OLLAMA_CRITIC_MODEL = os.environ.get("OLLAMA_CRITIC_MODEL", OLLAMA_MODEL)
 # Ollama. Keeps Ollama as the local default.
 # Anthropic Claude — best instruction-following at our scale (~$1/mo for
 # Haiku 4.5 over 22 weekday episodes). Preferred backend when key is set.
+# Monthly character budget on ElevenLabs (Creator+ tier = 130k by default).
+# Used by eleven_budget.py to size episodes dynamically when the API's
+# /v1/user/subscription endpoint isn't accessible (TTS-only key scope).
+ELEVENLABS_CHAR_BUDGET_MONTHLY = int(os.environ.get("ELEVENLABS_CHAR_BUDGET_MONTHLY", "130000"))
+
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 ANTHROPIC_URL = os.environ.get("ANTHROPIC_URL", "https://api.anthropic.com/v1/messages")
 ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-haiku-4-5-20251001")

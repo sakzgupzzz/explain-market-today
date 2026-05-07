@@ -33,6 +33,7 @@ from score import score_clusters
 from state import load_state, save_state, mark_covered, annotate_clusters
 from interests_loader import load_interests
 from calendar_events import gather as gather_calendar_events
+from eleven_budget import compute_dynamic_preset, format_log_line as fmt_budget_log
 from generate_script import generate, critique_revise
 from verify_facts import verify as verify_facts
 from render_express import render_express
@@ -139,6 +140,15 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
     upcoming_events = gather_calendar_events(watchlist)
     if upcoming_events:
         print(f"[{today}] injected upcoming-events block ({len(upcoming_events.splitlines())} lines)")
+
+    # ── dynamic length sizing from ElevenLabs char budget ──────────────────
+    # Stretches remaining month-budget evenly across remaining weekday runs
+    # so episode length scales with available headroom. Falls back to
+    # interests.yaml preferences.length when budget data is unavailable.
+    budget_preset = compute_dynamic_preset()
+    if budget_preset:
+        print(fmt_budget_log(budget_preset))
+        interests.setdefault("preferences", {})["_dynamic_preset"] = budget_preset
 
     EPISODES_DIR.mkdir(parents=True, exist_ok=True)
 

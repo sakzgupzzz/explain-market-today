@@ -163,6 +163,12 @@ def _resolve_prefs(interests: dict | None) -> tuple[str, dict]:
     tone = (prefs.get("tone") or "dry").lower()
     if tone not in _TONE_FRAGMENTS:
         tone = "dry"
+    # Dynamic budget preset wins over the static length preset when supplied.
+    # eleven_budget.compute_dynamic_preset() injects this via the
+    # `_dynamic_preset` key so the existing API surface is unchanged.
+    dynamic = prefs.get("_dynamic_preset")
+    if isinstance(dynamic, dict) and dynamic.get("min_words"):
+        return tone, dynamic
     length = (prefs.get("length") or "standard").lower()
     length_preset = _LENGTH_PRESETS.get(length, _LENGTH_PRESETS["standard"])
     return tone, length_preset
