@@ -47,10 +47,13 @@ blocked:
   sources: []
 
 # Show vibe knobs:
-#   tone:   neutral | dry | snarky    — modulates HUMOR rule in the prompt
-#   length: short | standard | long   — overrides MIN_WORDS/MAX_WORDS targets
-#                                       short ≈ 600/1500, standard ≈ 1000/2700,
-#                                       long ≈ 1400/3500
+#   tone:   neutral | dry | snarky | funny  — modulates HUMOR rule in prompt
+#                                              funny pushes for ≥1 real joke
+#                                              per substantive turn
+#   length: short | standard | long         — overrides MIN_WORDS/MAX_WORDS
+#                                              (dynamic budget overrides this
+#                                              when ELEVENLABS_REMAINING_CHARS
+#                                              is available)
 preferences:
-  tone: dry
+  tone: funny
   length: standard

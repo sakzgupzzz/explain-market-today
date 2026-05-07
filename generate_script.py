@@ -140,6 +140,20 @@ _TONE_FRAGMENTS = {
     "neutral": "Hosts are professional, lightly witty, accurate-first.",
     "dry": "Hosts are dry, deadpan, sardonic. Punchlines land late and quiet, not loud. Skepticism over enthusiasm.",
     "snarky": "Hosts are sharp, snarky, and openly take the piss out of corporate spin and Wall Street narrative. Punchier, more confrontational than dry.",
+    "funny": (
+        "Hosts are GENUINELY FUNNY. Real jokes — not just wry observations. "
+        "Aim for at least ONE actual punchline per substantive turn that earns "
+        "a laugh, not just a smirk. Use callback humor (joke that lands now, "
+        "referenced again three turns later for the second laugh). Use specific "
+        "absurd analogies ('this is the Crocs IPO of corporate governance'). "
+        "Use deadpan reactions where the surprise is the lack of surprise. "
+        "Memetic phrasing is allowed when it fits ('chose violence today', "
+        "'this stock has commitment issues'). Hosts CAN punch up at "
+        "institutions, hype cycles, CEO ego, regulator theater — never punch "
+        "down at protected characteristics. NO dad jokes, NO 'why did the "
+        "investor cross the road' setups, NO forced wordplay. Earn the laugh "
+        "off the actual story or skip the joke."
+    ),
 }
 
 # Prompt-template versioning. PROMPT_VARIANT env override lets you A/B
