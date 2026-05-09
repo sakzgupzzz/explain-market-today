@@ -7,6 +7,7 @@ Two-stage pipeline:
      phrases, monologues, wrong-name intros, then returns a revised script.
 """
 from __future__ import annotations
+import os
 import requests
 from datetime import datetime
 from config import (
