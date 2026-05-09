@@ -1,7 +1,7 @@
 {
   "cold_open": {
     "story_id": "3cdbbcd98dbe",
-    "hook": "Parker, the fintech startup that was supposed to disrupt banking, just filed for bankruptcy\u2014proving once again that a slick app and a Series C don't cure bad unit economics."
+    "hook": "Parker, the fintech startup that was supposed to kill traditional banking, just filed for bankruptcy\u2014proving disruption is a lot harder when you actually have to make money."
   },
   "markets": {
     "lead_host": "ALEX",
@@ -9,53 +9,53 @@
       "S&P 500: 7398.93 (+0.84%)",
       "Nasdaq: 26247.08 (+1.71%)",
       "AMD: +11.44% (biggest gainer)",
-      "MCD: -2.80% (biggest loser)"
+      "McDonald's: -2.80% (biggest loser)"
     ],
-    "macro_note": "Chip stocks flying, defensive names stumbling\u2014the market's still pricing in a soft landing, but Paul Tudor Jones is literally buying puts while warning of a 35% crash."
+    "macro_note": "Chip stocks ripping, consumer discretionary stumbling\u2014the market's choosing violence on burger margins today."
   },
   "big_story": {
     "story_id": "25d887ea163c",
     "lead_host": "ALEX",
     "story_title": "Paul Tudor Jones Warns Trump-Era Market Boom Could End in a 35% Crash. Here's Why He's Still Buying",
-    "angle": "A legendary macro investor is simultaneously calling for a historic crash AND buying the dip\u2014which is either the most honest hedge fund positioning ever or the financial equivalent of 'I'm not mad, I'm just disappointed.'",
+    "angle": "A legendary macro trader is simultaneously predicting a third of the market's value vanishes AND buying\u2014the cognitive dissonance is the story, not the crash prediction itself.",
     "depth_turns": 6
   },
   "quick_hits": [
     {
       "story_id": "d7e38cdb199f",
       "lead_host": "ALEX",
-      "angle": "NRG Energy missed Q1 but reaffirmed guidance anyway\u2014this stock has commitment issues and the market knows it.",
-      "conviction": "noise"
+      "angle": "NRG Energy missed earnings but reaffirmed guidance anyway\u2014this is the corporate equivalent of saying 'I'm fine' while bleeding.",
+      "conviction": "real"
     },
     {
       "story_id": "73234aa76217",
       "lead_host": "MAYA",
-      "angle": "Cathie Wood is still hopeful about Tesla despite the stock's erratic behavior\u2014at this point 'hopeful' is just a euphemism for 'bag holder with conviction.'",
+      "angle": "Cathie Wood's still hopeful on Tesla while the stock's up 4%\u2014her conviction is either unshakeable or she's contractually obligated to say this.",
       "conviction": "hype"
     },
     {
-      "story_id": "ef452679ecb2",
+      "story_id": "ae324ee38a99",
       "lead_host": "JAMIE",
-      "angle": "Israeli strikes kill 39 in Lebanon\u2014escalation continues with no off-ramp visible, and the U.S. is quietly trying to mediate while publicly saying nothing.",
+      "angle": "Rubio and Witkoff are in Miami meeting a Qatari mediator on Iran\u2014this is either diplomacy or the world's most expensive real estate transaction.",
       "conviction": "real"
     },
     {
       "story_id": "54a2989ca379",
       "lead_host": "JAMIE",
-      "angle": "A Labour MP just gave Starmer a Monday ultimatum to step down or face a challenge\u2014UK politics chose violence today.",
-      "conviction": "real"
+      "angle": "A Labour MP just gave Starmer's cabinet a Monday ultimatum\u2014British politics is now operating on Slack deadlines.",
+      "conviction": "noise"
     }
   ],
   "odd_thing": {
     "story_id": "4d2e4eb4eb34",
-    "joke_angle": "Iran is demanding guarantees for World Cup participation like they're a kid worried about getting picked last for dodgeball\u2014geopolitics meets sports bureaucracy."
+    "joke_angle": "Iran demanding guarantees for World Cup participation is the most Iran thing ever\u2014'we'll play if you promise not to sanction us mid-tournament.'"
   },
   "yesterday_callback": {
-    "use": false,
-    "topic": "",
-    "fresh_take": ""
+    "use": true,
+    "topic": "Parker, the fintech startup that was supposed to disrupt banking, just filed for bankruptcy",
+    "fresh_take": "Yesterday we said Parker proved disruption requires actual revenue\u2014today we're watching the entire fintech thesis get stress-tested as rates stay elevated and venture capital remembers what profitability means."
   },
   "sign_off": {
-    "callback_target": "Parker's bankruptcy\u2014the fintech that proved you can't disrupt your way out of a broken business model"
+    "callback_target": "NRG Energy's commitment issues"
   }
 }

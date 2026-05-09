@@ -1,133 +1,146 @@
 1
-00:00:00,000 --> 00:00:09,853
-JAMIE: Parker, the fintech startup that was supposed to disrupt banking, just filed for bankruptcy—and somehow this is still less embarrassing than their Series C pitch deck.
+00:00:00,000 --> 00:00:12,807
+JAMIE: Parker, the fintech startup that was supposed to kill traditional banking, just filed for bankruptcy—and Jamie's here to tell you that disruption is a lot harder when you actually have to make money.
   ↳ source: https://techcrunch.com/2026/05/09/fintech-startup-parker-files-for-bankruptcy/
 
 2
-00:00:09,853 --> 00:01:01,677
-ALEX: Unit economics so bad they make a failing airline look like a hedge fund. A M D up eleven point four four percent though, so at least the chip market is choosing violence today. S&P 500 up zero point eight four percent, Nasdaq flying at one point seven one percent—but here's the actual story: A M D just rocketed eleven point four four percent. Broadcom up four point two three. Cisco up four point seven nine. The entire chip complex is choosing violence, and it's because the market is still absolutely convinced we're landing this plane softly. Meanwhile, McDonald's down two point eight percent, Bank of America down two point seven three, Eli Lilly down two point seven two—so defensive names are getting hammered. The market's basically saying "I believe in the soft landing so much I'm selling the parachute."
+00:00:12,807 --> 00:01:02,531
+ALEX: Parker filed for bankruptcy. Meanwhile, A M D is up eleven point four four percent because apparently the market decided to reward literally anyone who isn't on fire today. So Parker's bankruptcy is basically the fintech thesis getting margin-called in real time. We've got the entire sector learning what venture capitalists apparently forgot: you cannot disrupt your way out of unit economics. S&P up zero point eight four percent, Nasdaq up one point seven one—chip stocks are having a day. A M D is up eleven point four four percent, Broadcom up four point two three, Cisco up four point seven nine. The market is choosing violence on burger margins today because McDonald's dropped two point eight zero percent while the semiconductor complex is basically printing money.
 
 3
-00:01:01,677 --> 00:01:20,290
-JAMIE: Wait—so the V I X is only at seventeen point one nine. That's not panic pricing. That's brunch-on-a-Sunday pricing. Are we actually in a world where Paul Tudor Jones is out here buying puts and warning about a crash, and the market's response is to buy more chip stocks?
-  ↳ source: https://finance.yahoo.com/markets/stocks/articles/paul-tudor-jones-warns-trump-221057648.html
+00:01:02,531 --> 00:01:10,442
+JAMIE: Wait, McDonald's is down two point eight zero percent? What happened—did they announce fries are now priced like Bitcoin?
 
 4
-00:01:20,290 --> 00:01:39,267
-MAYA: A M D up eleven point four four percent on what, exactly? Because I need to know if this is "AI is real and we're all getting rich" or if it's just "we sold everything else and now we're cramming it into the one thing that sounds like a robot."
+00:01:10,442 --> 00:01:26,263
+ALEX: Consumer discretionary is getting margin-called while chip stocks are acting like they just discovered a new element on the periodic table. This is the market's way of saying "I trust Tesla more than I trust you to afford a Big Mac."
 
 5
-00:01:39,267 --> 00:02:04,084
-ALEX: The chip thesis is real—data center demand, AI infrastructure, all of it. But the positioning is the Crocs IPO of market dynamics: everyone's wearing them, everyone's convinced they're comfortable, and nobody wants to be the first person to admit they look insane. That's all soft-landing pricing. If we actually get a hard landing, A M D's not up eleven percent. It's down significantly and the market reprices.
+00:01:26,263 --> 00:01:40,578
+MAYA: So we're in a world where chip stocks are on fire and McDonald's is getting punished because apparently people have finally decided to stop eating? That's—wait, is this the fintech bankruptcy energy but for fast food?
 
 6
-00:02:04,084 --> 00:02:11,748
-JAMIE: So what you're saying is this stock has commitment issues—it's pricing in "everything's fine" while simultaneously hedging against "everything's catastrophic."
+00:01:40,578 --> 00:02:10,713
+ALEX: It's worse. At least fintech had the excuse of being fundamentally broken. McDonald's just exists. Bank of America is down two point seven three percent, Eli Lilly down two point seven two, Thermo Fisher down one point nine nine—the entire "things that cost money" sector is getting demolished while A M D is up eleven point four four percent on pure vibes and the hope that someone, somewhere, will finally build a data center that doesn't immediately catch fire.
 
 7
-00:02:11,748 --> 00:02:19,777
-MAYA: Even the "chaos assets" are like, "Yeah, soft landing, sure, whatever." This is the most boring crash-prevention market I've ever seen.
+00:02:10,713 --> 00:02:18,247
+JAMIE: So this is just a pure "we're rotating out of everything that requires actual revenue and into silicon" day?
 
 8
-00:02:19,777 --> 00:02:37,295
-ALEX: So Paul Tudor Jones—legendary macro guy—just went on the record saying we're headed for a crash. Which is fine. Except he's also actively buying the dip right now. It's the financial equivalent of your dad saying the house is on fire while he's installing new kitchen cabinets.
+00:02:18,247 --> 00:03:01,191
+ALEX: It's the Crocs IPO callback—comfortable for the market, inexplicable to everyone else. Broadcom and A M D are up because people have convinced themselves that artificial intelligence will solve the problem of artificial intelligence, so we need more chips to build the chips that build the chips. The Nasdaq is up one point seven one percent because tech doesn't need to make money anymore—it just needs to exist and promise it will eventually. Paul Tudor Jones just published a note saying the Trump-era market rally could end in a thirty-five percent crash. He's been calling for volatility spikes since November. And then—this is the part that matters—he said he's still buying.
   ↳ source: https://finance.yahoo.com/markets/stocks/articles/paul-tudor-jones-warns-trump-221057648.html
 
 9
-00:02:37,295 --> 00:02:48,609
-JAMIE: Wait, hold on. He's genuinely warning about a crash AND buying? That's not hedging, that's just—what's the play here? Is he actually convinced it's coming or is this performance art?
+00:03:01,191 --> 00:03:12,868
+JAMIE: Wait. He's predicting a third of the market evaporates and his response is to deploy capital? That's not macro analysis, that's just a cry for help with a Bloomberg terminal.
 
 10
-00:02:48,609 --> 00:03:11,601
-MAYA: No no no, this is actually genius if you think about it. He's saying "the market's going to crater" but he's buying because he knows when it does crater, he's going to own the dip at better prices. It's the most honest thing a billionaire can do, which is admit they have no idea what happens next but they're buying anyway.
+00:03:12,868 --> 00:03:26,429
+MAYA: No, no—I think I actually get this. He's saying the crash is coming but the timing is wrong, so you buy the dip before the dip crashes? That's—that's just day trading with a PhD.
 
 11
-00:03:11,601 --> 00:03:35,323
-ALEX: Exactly. Jones has been warning about this for months. He's saying the positioning is unsustainable. But here's the thing: if you actually believe your own thesis, you can't just sit in cash. You have to buy. Because if you're right about the crash, being down significantly for a period and then up substantially over the next couple years beats being in money market funds.
+00:03:26,429 --> 00:03:47,148
+ALEX: Worse. He's saying the fundamentals are broken—elevated valuations, concentration risk in Magnificent Seven stocks, geopolitical tension—but the Fed's rate cuts and Trump's tax policy are creating a short-term bid that's too strong to fight. So you buy now knowing you'll sell before October. It's the intellectual equivalent of "this stock has commitment issues."
 
 12
-00:03:35,323 --> 00:03:48,096
-JAMIE: So he's essentially saying "I think you're all insane, and I'm going to profit from your insanity while also warning you about it." That's not a market call, that's a hostage negotiation with himself.
+00:03:47,148 --> 00:03:58,072
+JAMIE: So he's essentially saying the market is a beautiful lie and he's going to ride it until it isn't? That's the most honest thing I've heard all week.
 
 13
-00:03:48,096 --> 00:04:18,753
-MAYA: The thing that kills me is—he's one of the only guys with the credibility to say this out loud. Like, if some startup founder on LinkedIn posted "market crash incoming, here's my portfolio," everyone would rightfully ignore them. But when Paul Tudor Jones says it, C N B C has a full panel discussion, and the market goes up another zero point eight four percent anyway. The market's response to a legendary investor warning about a crash is to buy more Broadcom.
+00:03:58,072 --> 00:04:08,620
+MAYA: But here's the thing—Paul Tudor Jones has been warning about crashes since, like, 2021. How many times has he cried wolf before the wolf actually shows up?
   ↳ source: https://finance.yahoo.com/markets/stocks/articles/paul-tudor-jones-warns-trump-221057648.html
 
 14
-00:04:18,753 --> 00:04:49,044
-ALEX: Because the market's operating under the assumption that if Paul Tudor Jones is warning about this, then by definition it's already priced in. Which means buying. It's circular logic dressed up as market efficiency. He's basically playing four-dimensional chess while everyone else is checking checkers. N R G Energy missed Q1 earnings but reaffirmed full-year guidance anyway—which is the financial equivalent of your car's check engine light coming on and the mechanic saying, "Don't worry, I'm still confident about the transmission."
-  ↳ source: https://finance.yahoo.com/markets/stocks/articles/paul-tudor-jones-warns-trump-221057648.html
+00:04:08,620 --> 00:04:38,379
+ALEX: He called the nineteen eighty-seven crash in real time, so he's earned exactly one lifetime pass to sound insane. But you're right—his crash calls since then have been timing disasters. He's basically the market's Cassandra, except people actually listen to him and lose money anyway. The cognitive dissonance isn't between his prediction and his action—it's that the market rewards people for being right about direction but wrong about timing, and he's just accepted that as his business model.
 
 15
-00:04:49,044 --> 00:05:04,007
-MAYA: Wait, they missed Q1 and just went "nah, we're good for the rest of the year"? That's not confidence, that's delusion with a press release. What happened in Q1, did they just forget to turn the power plants on?
+00:04:38,379 --> 00:04:53,070
+JAMIE: So buying into a market he thinks will crater thirty-five percent is just Paul Tudor Jones admitting he has no idea when the crash happens, only that it will, and he's decided to get paid in the meantime.
+  ↳ source: https://finance.yahoo.com/markets/stocks/articles/paul-tudor-jones-warns-trump-221057648.html
 
 16
-00:05:04,007 --> 00:05:14,956
-ALEX: The market's response was to ignore it completely because nobody cares about N R G anymore. Stock's basically treading water while the entire energy sector's having an identity crisis.
+00:04:53,070 --> 00:05:04,747
+ALEX: N R G Energy missed earnings in the first quarter but reaffirmed full-year guidance anyway—which is corporate speak for "we have no idea what's happening but we're pretending we do."
 
 17
-00:05:14,956 --> 00:05:26,999
-MAYA: Cathie Wood is still hopeful about Tesla despite the stock bouncing around like it has commitment issues—and at this point "hopeful" is just a euphemism for "bag holder with a Bloomberg terminal."
-  ↳ source: https://finance.yahoo.com/markets/stocks/articles/cathie-wood-still-hopeful-tesla-220601937.html
+00:05:04,747 --> 00:05:11,905
+JAMIE: Wait, they missed and then said the year's still on track? That's not guidance, that's a hostage video.
 
 18
-00:05:26,999 --> 00:05:35,028
-JAMIE: How hopeful are we talking? Like, "Tesla's going to hit significant highs" hopeful, or "maybe I'll break even by 2027" hopeful?
+00:05:11,905 --> 00:05:26,219
+MAYA: No, no—this is the energy sector's way of saying "trust us, the second half will be fine" while the first half is actively on fire. N R G's basically playing financial Russian roulette with shareholder confidence.
 
 19
-00:05:35,028 --> 00:05:53,276
-MAYA: She's literally on record saying Tesla's still a core holding in her A R K Innovation ETF, which is the most Cathie Wood move possible—the stock's down from its highs, she's underwater, and she's still convinced about the company's future. It's not investing, it's fan fiction with a portfolio.
-  ↳ source: https://finance.yahoo.com/markets/stocks/articles/cathie-wood-still-hopeful-tesla-220601937.html
+00:05:26,219 --> 00:05:45,431
+ALEX: They missed on earnings but the underlying business—power generation, retail energy—is supposedly still solid. So either their Q one was a statistical anomaly or they're sandbagging Q two through Q four projections. Either way, reaffirming guidance after a miss is the corporate equivalent of saying "I'm fine" while bleeding.
 
 20
-00:05:53,276 --> 00:06:03,130
-JAMIE: Israeli strikes killed 39 people in Lebanon—this is escalation with no visible off-ramp, and the U.S. is quietly trying to mediate while publicly saying absolutely nothing.
+00:05:45,431 --> 00:06:04,266
+MAYA: Cathie Wood just doubled down on Tesla being a buy, and the stock's already up four point zero two percent today. So either her conviction is actually unshakeable or Ark Invest is contractually obligated to say bullish things about Tesla no matter what happens to the stock price.
+  ↳ source: https://finance.yahoo.com/markets/stocks/articles/cathie-wood-still-hopeful-tesla-220601937.html
 
 21
-00:06:03,130 --> 00:06:18,458
-ALEX: There was supposedly a ceasefire deal. Apparently it was more of a ceasefire suggestion. Israel and Hezbollah are trading fire like two guys who agreed to stop fighting but neither one wants to be the first to put down their gun.
+00:06:04,266 --> 00:06:13,683
+JAMIE: She's been saying Tesla is a generational opportunity since it was trading at eighteen dollars. At what point does conviction become a legal liability?
 
 22
-00:06:18,458 --> 00:06:45,099
-JAMIE: The White House is doing that thing where they issue a statement saying they're "deeply concerned" and "monitoring the situation," which translates to "we have no idea how to stop this and we're hoping it resolves itself." Meanwhile, the region's getting more unstable by the day. A Labour M P just told Keir Starmer he has until Monday to step down or she'll trigger a leadership challenge—UK politics chose violence today.
-  ↳ source: https://www.bbc.com/news/articles/cx210w87l4do?at_medium=RSS&at_campaign=rss
+00:06:13,683 --> 00:06:28,374
+ALEX: When your fund's entire thesis depends on one stock outperforming by three hundred percent and it's already done it twice. Cathie Wood saying she's still hopeful on Tesla is like a casino saying they're still optimistic about roulette.
+  ↳ source: https://finance.yahoo.com/markets/stocks/articles/cathie-wood-still-hopeful-tesla-220601937.html
 
 23
-00:06:45,099 --> 00:06:59,698
-MAYA: A Labour M P basically said "resign by Monday or I'm coming for you," which is the most British way possible to stage a coup. It's not even a threat, it's a calendar invitation to a hostile takeover.
+00:06:28,374 --> 00:06:37,415
+JAMIE: Secretary of State Marco Rubio and White House envoy Steve Witkoff just met with a Qatari mediator in Miami on an Iran deal.
 
 24
-00:06:59,698 --> 00:07:15,756
-ALEX: Labour's been in power for a short time and they're already dealing with internal revolts. Starmer's got a Monday deadline. If he makes it past Monday, he's either a genius or everyone else in Labour is too disorganized to actually pull the trigger.
+00:06:37,415 --> 00:06:48,339
+MAYA: So we're doing Middle East diplomacy in Miami? That's either the most serious geopolitical negotiation or the world's most expensive real estate transaction disguised as foreign policy.
 
 25
-00:07:15,756 --> 00:07:30,354
-MAYA: Iran submitted conditions for World Cup participation. They're treating this like a hostage negotiation, not a soccer tournament. "We will play football, but only if you guarantee we won't get sanctioned mid-tournament and also please respect our sovereignty."
+00:06:48,339 --> 00:07:07,174
+ALEX: Qatar's been the mediator in every Iran negotiation since the Obama administration. If Rubio and Witkoff are flying to Miami to meet with them instead of going to Doha, that either means the talks are serious enough to hide or they're serious enough to fail before they start.
 
 26
-00:07:30,354 --> 00:07:38,748
-JAMIE: Wait, what are the actual conditions? Are we talking security guarantees, or is one of them "we need a really good hotel"?
+00:07:07,174 --> 00:07:22,995
+JAMIE: A Labour M P just told the B B C she'll challenge Keir Starmer for the party leadership by Monday if no one else does. This is essentially giving Starmer's cabinet a deadline to produce a challenger or she's running herself.
+  ↳ source: https://www.bbc.com/news/articles/cx210w87l4do?at_medium=RSS&at_campaign=rss
 
 27
-00:07:38,748 --> 00:08:07,214
-ALEX: The Iranian Football Federation is basically saying "yes we'll send our team, but only if F I F A promises certain things." Which is fair, actually—Iran's been banned from competitions before over political stuff. But the optics here are incredible. Iran's demanding guarantees like they're a kid worried about getting picked last for dodgeball. Geopolitics meets youth soccer anxiety. F I F A's probably going to ignore all conditions and just tell them to show up.
+00:07:22,995 --> 00:07:35,049
+MAYA: British politics is now operating on corporate project management timelines. Next thing you know they'll be asking for a synergy meeting to align on the vision for the party's north star.
 
 28
-00:08:07,214 --> 00:08:25,462
-MAYA: The best part is F I F A's entire operating principle is "we don't care about your problems, just send your team and pay your fees." Iran's out here with a manifesto and F I F A's response is going to be a shrug emoji and a fine.
+00:07:35,049 --> 00:07:47,480
+ALEX: This is noise. A backbencher threatening to trigger a leadership contest that won't happen because the party's not going to fracture over a Monday ultimatum. It's political theater dressed up as urgency.
 
 29
-00:08:25,462 --> 00:08:56,483
-ALEX: So we've got Paul Tudor Jones warning about a crash while buying equities, N R G Energy missing Q1 and pretending the rest of the year's locked in, Cathie Wood underwater on Tesla and still calling it a core holding—basically the entire market's operating on the assumption that if you say something confident enough, it becomes true. Which tracks with Iran submitting conditions to F I F A like that's how negotiations work. Everyone's just choosing their own reality and hoping the market agrees.
-  ↳ source: https://finance.yahoo.com/markets/stocks/articles/paul-tudor-jones-warns-trump-221057648.html
+00:07:47,480 --> 00:08:04,432
+MAYA: Iran's Football Federation just submitted conditions to F I F A for World Cup participation in the US, Mexico, and Canada. They're basically saying "we'll show up if you promise not to sanction us mid-tournament or freeze our bank accounts while we're playing."
 
 30
-00:08:56,483 --> 00:09:19,840
-MAYA: The beautiful part is they're all getting away with it because nobody's paying attention—Paul Tudor Jones gets rich either way, N R G stock treads water, Cathie's got a Bloomberg terminal and a dream, and Iran's going to show up to the World Cup anyway because F I F A doesn't care about conditions, they care about broadcast rights and sponsorship money.
-  ↳ source: https://finance.yahoo.com/markets/stocks/articles/paul-tudor-jones-warns-trump-221057648.html
+00:08:04,432 --> 00:08:14,979
+JAMIE: Wait, so Iran's negotiating World Cup attendance like it's a hostage release? What are the conditions—"no travel bans during halftime" and "our goalkeeper gets diplomatic immunity"?
 
 31
-00:09:19,840 --> 00:09:24,950
+00:08:14,979 --> 00:08:42,478
+ALEX: This is what happens when you're a nation under sanctions trying to participate in an international sporting event. F I F A doesn't actually have the authority to guarantee Iran won't get hit with new restrictions mid-tournament, so Iran's essentially asking F I F A to do something F I F A can't do. It's like asking your bank to guarantee the government won't freeze your account—the bank's not the government.
+
+32
+00:08:42,478 --> 00:09:03,950
+MAYA: So Iran's demanding guarantees that F I F A literally cannot provide, which means either Iran doesn't participate or F I F A admits it has zero actual power over geopolitical enforcement. This is the most Iran thing ever—"we'll play if you promise the laws of international sanctions don't apply to us for three weeks."
+
+33
+00:09:03,950 --> 00:09:20,901
+ALEX: So N R G Energy reaffirmed full-year guidance after missing Q one earnings, and now we're supposed to believe the second half will magically fix what the first half broke. That stock has commitment issues—it's basically saying "I promise I'll change" while actively bleeding.
+
+34
+00:09:20,901 --> 00:09:29,942
+MAYA: N R G's the guy who shows up late to dinner, says "trust me, dessert will be incredible," and then orders takeout.
+
+35
+00:09:29,942 --> 00:09:35,216
 JAMIE: This show is for entertainment and education only — nothing here is investment advice.
