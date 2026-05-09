@@ -23,6 +23,11 @@ on:
         default: "both"
         type: choice
         options: [both, show, express]
+      force:
+        description: "Pass --force to regenerate even if today's mp3 exists"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -117,7 +122,8 @@ jobs:
       - name: Generate episode
         # Pre-market 12:00 UTC slot runs express-only. All other triggers
         # run both formats. The mp3-exists guard prevents double-execution
-        # within the same UTC day.
+        # within the same UTC day; pass force=true on workflow_dispatch to
+        # bypass it (useful when validating a code change against today).
         run: |
           MODE="${{ inputs.mode }}"
           if [ -z "$MODE" ]; then
@@ -128,8 +134,12 @@ jobs:
               MODE="both"
             fi
           fi
-          echo "Running with mode=$MODE"
-          python main.py --$MODE
+          FORCE=""
+          if [ "${{ inputs.force }}" = "true" ]; then
+            FORCE="--force"
+          fi
+          echo "Running with mode=$MODE force=${FORCE:-no}"
+          python main.py --$MODE $FORCE
 
       - name: Upload artifact on failure
         if: failure()
