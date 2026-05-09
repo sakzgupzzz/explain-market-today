@@ -257,25 +257,35 @@ def _fix_wrong_name_intros(speaker: str, text: str) -> tuple[str, int]:
 
 
 def _space_tickers(text: str) -> tuple[str, int]:
-    """Convert (AAPL) → 'Apple' when the ticker maps to a known company
-    (since the LLM almost always writes 'Apple (AAPL)' — the paren is
-    redundant). Falls back to letter-spaced form for unknown tickers."""
+    """Replace parenthesized tickers with the company name when known.
+    If the name already appears in the 30 chars immediately before the
+    paren ('Apple (AAPL)' case), drop the paren to avoid duplication.
+    Otherwise substitute the name. Unknown tickers fall back to spaced
+    letters."""
     fixes = 0
-
-    def repl(m: re.Match) -> str:
-        nonlocal fixes
+    matches: list[tuple[re.Match, str]] = []
+    for m in _PAREN_TICKER_RE.finditer(text):
         ticker = m.group(1)
-        # skip very common all-caps non-tickers
         if ticker in {"CEO", "CFO", "COO", "CTO", "IPO", "ETF", "API", "AI", "GDP", "PR", "OK"}:
-            return m.group(0)
-        fixes += 1
-        if ticker in _TICKER_TO_NAME:
-            # The LLM likely just wrote "Apple (AAPL)" — drop the paren
-            # entirely since the company name is already there.
-            return ""
-        return " ".join(ticker)
-
-    return _PAREN_TICKER_RE.sub(repl, text), fixes
+            replacement = m.group(0)
+        elif ticker in _TICKER_TO_NAME:
+            name = _TICKER_TO_NAME[ticker]
+            prefix = text[:m.start()][-50:].lower()
+            replacement = "" if name.lower() in prefix else name
+            fixes += 1
+        else:
+            replacement = " ".join(ticker)
+            fixes += 1
+        matches.append((m, replacement))
+    if not matches:
+        return text, 0
+    # Apply in reverse so spans stay valid
+    out = text
+    for m, replacement in reversed(matches):
+        out = out[:m.start()] + replacement + out[m.end():]
+    # Clean up double-spaces from drops
+    out = re.sub(r"\s{2,}", " ", out)
+    return out, fixes
 
 
 # --- post-process passes for newer rules ---
