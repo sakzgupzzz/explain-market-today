@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "3cdbbcd98dbe",
+    "hook": "Parker, the fintech startup that was supposed to disrupt banking, just filed for bankruptcy\u2014proving once again that a slick app and a Series C don't cure bad unit economics."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7398.93 (+0.84%)",
+      "Nasdaq: 26247.08 (+1.71%)",
+      "AMD: +11.44% (biggest gainer)",
+      "MCD: -2.80% (biggest loser)"
+    ],
+    "macro_note": "Chip stocks flying, defensive names stumbling\u2014the market's still pricing in a soft landing, but Paul Tudor Jones is literally buying puts while warning of a 35% crash."
+  },
+  "big_story": {
+    "story_id": "25d887ea163c",
+    "lead_host": "ALEX",
+    "story_title": "Paul Tudor Jones Warns Trump-Era Market Boom Could End in a 35% Crash. Here's Why He's Still Buying",
+    "angle": "A legendary macro investor is simultaneously calling for a historic crash AND buying the dip\u2014which is either the most honest hedge fund positioning ever or the financial equivalent of 'I'm not mad, I'm just disappointed.'",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "d7e38cdb199f",
+      "lead_host": "ALEX",
+      "angle": "NRG Energy missed Q1 but reaffirmed guidance anyway\u2014this stock has commitment issues and the market knows it.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "73234aa76217",
+      "lead_host": "MAYA",
+      "angle": "Cathie Wood is still hopeful about Tesla despite the stock's erratic behavior\u2014at this point 'hopeful' is just a euphemism for 'bag holder with conviction.'",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "ef452679ecb2",
+      "lead_host": "JAMIE",
+      "angle": "Israeli strikes kill 39 in Lebanon\u2014escalation continues with no off-ramp visible, and the U.S. is quietly trying to mediate while publicly saying nothing.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "54a2989ca379",
+      "lead_host": "JAMIE",
+      "angle": "A Labour MP just gave Starmer a Monday ultimatum to step down or face a challenge\u2014UK politics chose violence today.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "4d2e4eb4eb34",
+    "joke_angle": "Iran is demanding guarantees for World Cup participation like they're a kid worried about getting picked last for dodgeball\u2014geopolitics meets sports bureaucracy."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Parker's bankruptcy\u2014the fintech that proved you can't disrupt your way out of a broken business model"
+  }
+}
