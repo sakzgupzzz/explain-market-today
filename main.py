@@ -266,20 +266,15 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
             print(f"[{today}] writing transcripts + chapters…")
             write_transcripts(script, mp3_path, chunk_timings, ranked_stories=fresh)
             write_chapters(script, mp3_path, chunk_timings)
-            try:
-                page = write_episode_html(mp3_path, ranked=fresh)
-                if page:
-                    print(f"[{today}] wrote episode page → {page.name}")
-            except Exception as e:
-                print(f"[{today}] episode page skipped: {e}")
             lead_title = (fresh[0].get("title") if fresh else "Daily roundup")
             cover = write_episode_cover(today, lead_title)
             if cover:
                 print(f"[{today}] wrote per-episode cover → {cover.name}")
-            # Persist plan + market snapshot in meta for publish.py to
-            # consume (SEO title, description, JSON-LD episode page).
+            # Persist plan + market snapshot in meta BEFORE write_episode_html.
+            # The HTML generator reads both sidecars for the new SEO title +
+            # rich description; without this order, it falls back to the
+            # legacy sentence-extract title.
             try:
-                import generate_script as _gs
                 from stage_pipeline import _LAST_OUTLINE
                 if _LAST_OUTLINE:
                     plan_path = EPISODES_DIR / f"{today}.plan.json"
@@ -287,6 +282,12 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
             except Exception as e:
                 print(f"[{today}] plan sidecar skipped: {e}")
             _write_meta(mp3_path, script, market=market)
+            try:
+                page = write_episode_html(mp3_path, ranked=fresh)
+                if page:
+                    print(f"[{today}] wrote episode page → {page.name}")
+            except Exception as e:
+                print(f"[{today}] episode page skipped: {e}")
 
     # ── express render ─────────────────────────────────────────────────────
     # Wrapped in try/except so an express failure can't kill the show
