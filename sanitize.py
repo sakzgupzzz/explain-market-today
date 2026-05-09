@@ -45,6 +45,63 @@ _PAREN_TICKER_RE = re.compile(r"\(([A-Z]{1,5})\)")
 # false-positives are filtered against an explicit allowlist below.
 _STANDALONE_TICKER_RE = re.compile(r"(?<![A-Z])(?<![\[\(])\b([A-Z]{2,5})\b(?![A-Z])")
 
+# Map of mega-cap tickers to their colloquial company name. Used to replace
+# standalone tickers in the script with names that read naturally aloud.
+# Add entries here as needed; if a ticker isn't in this map and isn't in
+# _TICKER_FALSE_POSITIVES, it falls through to the spaced-letter path.
+_TICKER_TO_NAME = {
+    "AAPL": "Apple",
+    "MSFT": "Microsoft",
+    "NVDA": "Nvidia",
+    "GOOGL": "Google",
+    "GOOG": "Google",
+    "AMZN": "Amazon",
+    "META": "Meta",
+    "TSLA": "Tesla",
+    "AVGO": "Broadcom",
+    "BRK": "Berkshire",
+    "LLY": "Eli Lilly",
+    "JPM": "JPMorgan",
+    "UNH": "UnitedHealth",
+    "XOM": "Exxon",
+    "WMT": "Walmart",
+    "MA": "Mastercard",
+    "PG": "Procter and Gamble",
+    "JNJ": "Johnson and Johnson",
+    "HD": "Home Depot",
+    "COST": "Costco",
+    "NFLX": "Netflix",
+    "BAC": "Bank of America",
+    "CRM": "Salesforce",
+    "ORCL": "Oracle",
+    "ADBE": "Adobe",
+    "PEP": "PepsiCo",
+    "TMO": "Thermo Fisher",
+    "CVX": "Chevron",
+    "ABBV": "AbbVie",
+    "KO": "Coca-Cola",
+    "MRK": "Merck",
+    "CSCO": "Cisco",
+    "ACN": "Accenture",
+    "MCD": "McDonald's",
+    "DIS": "Disney",
+    "CRWD": "CrowdStrike",
+    "DDOG": "Datadog",
+    "NOW": "ServiceNow",
+    "INTC": "Intel",
+    "QCOM": "Qualcomm",
+    "TXN": "Texas Instruments",
+    "AMAT": "Applied Materials",
+    "MU": "Micron",
+    "PYPL": "PayPal",
+    "SHOP": "Shopify",
+    "UBER": "Uber",
+    "ABNB": "Airbnb",
+    "PLTR": "Palantir",
+    "SNOW": "Snowflake",
+    "ANTH": "Anthropic",
+}
+
 # Acronyms / words that look like tickers but aren't — never spell these out.
 _TICKER_FALSE_POSITIVES = {
     "CEO", "CFO", "COO", "CTO", "CIO", "IPO", "ETF", "API", "AI", "GDP",
@@ -144,8 +201,10 @@ def _normalize_dollars_word(text: str) -> tuple[str, int]:
 
 
 def _space_standalone_tickers(text: str) -> tuple[str, int]:
-    """Standalone NVDA / AAPL / MSFT etc → 'N V D A'. Skips known acronyms
-    AND host names (JAMIE / ALEX / MAYA / etc.) so we don't mangle dialogue."""
+    """Standalone tickers get replaced with the company name when known
+    (NVDA → Nvidia, AVGO → Broadcom). Falls back to letter-spaced form
+    (AAPL → 'A A P L') for unknown tickers so TTS reads them clearly.
+    Skips known acronyms AND host names so dialogue isn't mangled."""
     fixes = 0
     char_names = {n.upper() for n in CHARACTERS.keys()}
     def repl(m: re.Match) -> str:
@@ -153,9 +212,11 @@ def _space_standalone_tickers(text: str) -> tuple[str, int]:
         tk = m.group(1)
         if tk in _TICKER_FALSE_POSITIVES or tk in char_names:
             return tk
-        # also skip if it's all the same letter (e.g. "II", "III")
-        if len(set(tk)) == 1:
+        if len(set(tk)) == 1:  # "II", "III", etc.
             return tk
+        if tk in _TICKER_TO_NAME:
+            fixes += 1
+            return _TICKER_TO_NAME[tk]
         fixes += 1
         return " ".join(tk)
     return _STANDALONE_TICKER_RE.sub(repl, text), fixes
@@ -196,7 +257,9 @@ def _fix_wrong_name_intros(speaker: str, text: str) -> tuple[str, int]:
 
 
 def _space_tickers(text: str) -> tuple[str, int]:
-    """Convert (AAPL) → A A P L for cleaner TTS pronunciation."""
+    """Convert (AAPL) → 'Apple' when the ticker maps to a known company
+    (since the LLM almost always writes 'Apple (AAPL)' — the paren is
+    redundant). Falls back to letter-spaced form for unknown tickers."""
     fixes = 0
 
     def repl(m: re.Match) -> str:
@@ -206,6 +269,10 @@ def _space_tickers(text: str) -> tuple[str, int]:
         if ticker in {"CEO", "CFO", "COO", "CTO", "IPO", "ETF", "API", "AI", "GDP", "PR", "OK"}:
             return m.group(0)
         fixes += 1
+        if ticker in _TICKER_TO_NAME:
+            # The LLM likely just wrote "Apple (AAPL)" — drop the paren
+            # entirely since the company name is already there.
+            return ""
         return " ".join(ticker)
 
     return _PAREN_TICKER_RE.sub(repl, text), fixes

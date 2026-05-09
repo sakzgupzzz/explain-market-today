@@ -54,11 +54,23 @@ def test_fix_wrong_name_intros_mid_sentence_unchanged():
 
 
 def test_space_tickers_basic():
+    """Known tickers in parens get DROPPED (the LLM almost always writes the
+    company name immediately before, making the paren redundant)."""
     fixed, count = _space_tickers("Apple (AAPL) and Microsoft (MSFT) ripped today.")
-    assert "A A P L" in fixed
-    assert "M S F T" in fixed
     assert "(AAPL)" not in fixed
+    assert "(MSFT)" not in fixed
+    # Company names already present in the input — final string mentions them
+    assert "Apple" in fixed
+    assert "Microsoft" in fixed
     assert count == 2
+
+
+def test_space_tickers_unknown_ticker_falls_back_to_letters():
+    """Tickers not in _TICKER_TO_NAME still get letter-spaced for TTS."""
+    fixed, count = _space_tickers("New IPO trading as (XYZA) today.")
+    assert "X Y Z A" in fixed
+    assert "(XYZA)" not in fixed
+    assert count == 1
 
 
 def test_space_tickers_skips_common_acronyms():
@@ -137,8 +149,10 @@ def test_sanitize_script_full_pipeline():
     out = sanitize_script(raw, verbose=False)
     assert "Well folks" not in out
     assert "welcome to the show" not in out.lower()
-    assert "A A P L" in out
-    assert "N V D A" in out
+    # Known tickers now resolve to company names instead of letter-spacing
+    assert "(AAPL)" not in out
+    assert "(NVDA)" not in out
+    assert "Nvidia" in out
     # ALEX line shouldn't say "Jamie here"
     alex_line = next(line for line in out.splitlines() if line.startswith("ALEX:"))
     assert "Jamie here" not in alex_line
