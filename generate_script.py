@@ -448,11 +448,19 @@ def generate(
     interests: dict | None = None,
     max_retries: int = 0,
 ) -> str:
-    """Generate the dialogue from a pre-ranked story list. If the result has
-    fewer than the length preset's min_turns, retry once with a stronger
-    'more turns' addendum. Sleeps before retry to clear Groq's per-minute
-    TPM window."""
+    """Generate the dialogue. Default path is multi-stage when Anthropic is
+    available (better coherence, callbacks, beat budgets); single-shot legacy
+    path otherwise. Override either way via USE_MULTISTAGE=0 / =1 env."""
     import time
+    use_multistage_env = os.environ.get("USE_MULTISTAGE", "").strip()
+    if use_multistage_env == "1" or (use_multistage_env != "0" and ANTHROPIC_API_KEY):
+        try:
+            from stage_pipeline import generate_multistage
+            script = generate_multistage(market, ranked_stories, interests=interests)
+            print(f"[generate] multistage: {_count_turns(script)} turns")
+            return script
+        except Exception as e:
+            print(f"[generate] multistage failed ({e}); falling back to single-shot")
     _, length_preset = _resolve_prefs(interests)
     target_min_turns = length_preset["min_turns"]
     prompt = build_prompt(
@@ -462,7 +470,7 @@ def generate(
     )
     script = _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.75)
     turns = _count_turns(script)
-    print(f"[generate] first pass: {turns} turns")
+    print(f"[generate] first pass (single-shot): {turns} turns")
 
     attempts = 0
     while turns < target_min_turns and attempts < max_retries:
