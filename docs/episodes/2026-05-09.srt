@@ -1,0 +1,180 @@
+1
+00:00:00,000 --> 00:00:09,434
+JAMIE: A M D just went full throttle — up eleven point four four percent — while the chip sector chose violence today across the board.
+
+2
+00:00:09,434 --> 00:00:37,739
+ALEX: Alex on markets. S and P five hundred up zero point eight four percent, Nasdaq up one point seven one — tech is carrying this thing. A M D at four fifty-five, A V G O at four thirty, C S C O up four point seven nine. Meanwhile the Dow basically flatlined at plus zero point zero two percent, which is the market equivalent of showing up to work and standing very still.
+
+3
+00:00:37,739 --> 00:00:46,419
+MAYA: Treasury yield down sixty-four basis points, dollar index fell forty-two basis points — that's real movement. Gold up zero point four four percent.
+
+4
+00:00:46,419 --> 00:00:53,966
+JAMIE: So what's driving the chip rally? Is there actual news or are we just riding the A I wave again?
+
+5
+00:00:53,966 --> 00:01:07,552
+ALEX: There's no tape catalyst I can see. C S C O earnings are coming Wednesday, but A M D moved before any new announcement. This is pure sector momentum — semiconductor strength on nothing but vibes.
+
+6
+00:01:07,552 --> 00:01:12,459
+MAYA: Vibes is the Crocs I P O of market explanations, by the way.
+
+7
+00:01:12,459 --> 00:01:16,232
+JAMIE: That's going on the board. What about the losers?
+
+8
+00:01:16,232 --> 00:01:35,102
+ALEX: M C D down two point eight percent, L I L Y down two point seven two, C R M down two point four three. Financial sector got dinged — B A C down two point seven three. The Fed rate-cut delay that Goldman just forecasted is probably the pressure.
+  ↳ source: https://seekingalpha.com/news/4590241-goldman-forecast-fed-rate-cuts-delayed?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news
+
+9
+00:01:35,102 --> 00:01:37,744
+MAYA: Wait, Goldman said rate cuts are delayed?
+
+10
+00:01:37,744 --> 00:01:49,443
+ALEX: Goldman pushed their cut forecast back on inflation. No specific new data yet — C P I drops Wednesday. But the market's pricing in fewer cuts than it was last week.
+  ↳ source: https://seekingalpha.com/news/4590241-goldman-forecast-fed-rate-cuts-delayed?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news
+
+11
+00:01:49,443 --> 00:01:55,104
+JAMIE: So we're tech-heavy, financials are sad, and nobody knows what inflation actually is. Got it.
+
+12
+00:01:55,104 --> 00:02:08,690
+MAYA: Apollo's C E O just said there's a thirty-five percent chance of a major market shock from A I-driven upheaval. Thirty-five percent! That's oddly specific. That's the confidence level of a weather forecast for Tuesday.
+
+13
+00:02:08,690 --> 00:02:13,596
+ALEX: Nothing says "I have no idea what's coming" like a specific percentage.
+
+14
+00:02:13,596 --> 00:02:24,918
+MAYA: He's warning. But also — if your entire job is to manage money through chaos, saying "chaos is coming" is job security. It's not a prediction, it's a business model.
+
+15
+00:02:24,918 --> 00:02:29,824
+JAMIE: Okay, different angle — CrowdStrike expanded their cybersecurity coalition. What's the play there?
+
+16
+00:02:29,824 --> 00:02:41,523
+MAYA: C R W D is just adding partners to their ecosystem. It's not a revenue driver, it's a P R move dressed up as strategy. "We have friends" is not earnings.
+
+17
+00:02:41,523 --> 00:02:49,448
+ALEX: The market has spoken. C R W D didn't move on the news, which means the market agrees with you.
+
+18
+00:02:49,448 --> 00:02:54,731
+JAMIE: N V D A partnered with Corning on optical connectivity. That one actually matters?
+
+19
+00:02:54,731 --> 00:03:01,524
+MAYA: That's real — supply chain muscle. But this isn't today's move. The chip sector rally is just momentum.
+
+20
+00:03:01,524 --> 00:03:15,111
+ALEX: T S L A up four point zero two percent, U N H up two point seven seven. Consumer healthcare and electric vehicles are both happy. Nothing coherent about the day — it's a grab bag.
+
+21
+00:03:15,111 --> 00:03:22,658
+JAMIE: So we've got tech ripping, financials bleeding, rates falling, and the dollar getting softer. That's actually a pretty clean picture.
+
+22
+00:03:22,658 --> 00:03:33,980
+MAYA: It's the "Fed might pause cuts" picture. Inflation isn't dead yet, but people are betting it rolls over before Wednesday's C P I. If they're wrong, Tuesday gets ugly.
+
+23
+00:03:33,980 --> 00:03:40,396
+ALEX: V I X up zero point six four to seventeen point one nine. Not panicky. Just watching.
+
+24
+00:03:40,396 --> 00:04:02,284
+MAYA: It means he's seeing A I concentration risk everywhere. The Mag Seven are carrying the market, and if A I spending doesn't pay off, valuations unwind hard. That's not crazy — that's real. But saying "thirty-five percent" is insane. He could've said "it's possible" and been equally honest. The number is just marketing for "pay us to hedge."
+
+25
+00:04:02,284 --> 00:04:03,794
+JAMIE: Is he wrong though?
+
+26
+00:04:03,794 --> 00:04:14,361
+ALEX: Not wrong. Overspecific. The market is priced for A I to print money forever. If it doesn't, we have a problem. But that's been true for eighteen months.
+
+27
+00:04:14,361 --> 00:04:27,192
+MAYA: Right, and the market keeps going up anyway. So either he's right and we're ignoring the risk, or he's wrong and the risk is priced in. Thirty-five percent doesn't help us figure out which.
+
+28
+00:04:27,192 --> 00:04:34,740
+JAMIE: Okay, moving on. Goldman's Fed forecast just got pushed back on inflation. What's the C P I risk for Wednesday?
+  ↳ source: https://seekingalpha.com/news/4590241-goldman-forecast-fed-rate-cuts-delayed?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news
+
+29
+00:04:34,740 --> 00:04:43,797
+ALEX: If inflation is hotter than expected, the market gets a reality check. If it's cooler, we rally into the weekend. Basically, we're guessing.
+
+30
+00:04:43,797 --> 00:05:01,535
+MAYA: But the bond market is already pricing in a pause. Treasury yields are down sixty-four basis points. That's a bet that the Fed doesn't cut as much as people thought. If C P I confirms that, we're fine. If C P I is hot, we gap down.
+
+31
+00:05:01,535 --> 00:05:03,422
+JAMIE: So Wednesday is actually dangerous.
+
+32
+00:05:03,422 --> 00:05:10,215
+ALEX: Wednesday is dangerous. But that's why the Dow is flat today — nobody's taking risk before the number.
+
+33
+00:05:10,215 --> 00:05:14,366
+MAYA: Meanwhile, the Humanities scored a victory against Trump's cost-cutting efforts.
+  ↳ source: https://www.theatlantic.com/culture/2026/05/neh-grants-doge-trump-ruling/687126/?utm_source=feed
+
+34
+00:05:14,366 --> 00:05:17,763
+ALEX: That's not a market story, that's a culture story.
+
+35
+00:05:17,763 --> 00:05:29,084
+MAYA: But it's funny. They tried to automate something with A I, a judge said no, and now they have to actually do the work. It's the most bureaucratic possible outcome.
+
+36
+00:05:29,084 --> 00:05:37,009
+JAMIE: Okay, quick hits. Lebanon says an Israeli strike killed seven people including a child. The ceasefire is holding in name only.
+  ↳ source: https://www.bbc.com/news/articles/cn4pjegk358o?at_medium=RSS&at_campaign=rss
+
+37
+00:05:37,009 --> 00:05:40,029
+ALEX: That's a geopolitical risk, not a market move.
+
+38
+00:05:40,029 --> 00:05:52,860
+MAYA: The real story is that the Middle East is still on fire, and H M S Dragon is heading to the Strait of Hormuz. If that escalates, oil spikes. If it doesn't, we're fine.
+
+39
+00:05:52,860 --> 00:05:56,256
+JAMIE: How much does oil have to move to matter?
+
+40
+00:05:56,256 --> 00:06:02,672
+ALEX: Honestly? Not much. Energy sector is down today. If Brent hits one hundred ten, equities get nervous.
+
+41
+00:06:02,672 --> 00:06:05,314
+MAYA: That's not odd, that's just bureaucracy.
+
+42
+00:06:05,314 --> 00:06:24,183
+JAMIE: So A M D is still up eleven point four four percent on pure momentum, Goldman pushed back rate cuts, and Wednesday's C P I is the real event. If inflation is hotter than expected, we're gonna look back at today as the calm before the tape got messy.
+
+43
+00:06:24,183 --> 00:06:29,844
+ALEX: Thirty-five percent chance of a major shock, remember? Apollo's C E O called it.
+
+44
+00:06:29,844 --> 00:06:35,128
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
