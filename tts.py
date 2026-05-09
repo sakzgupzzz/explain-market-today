@@ -56,11 +56,6 @@ MAC_CHARACTER_VOICES = {
     "JAMIE": os.environ.get("MAC_VOICE_JAMIE", "Samantha"),
     "ALEX":  os.environ.get("MAC_VOICE_ALEX",  "Daniel"),
     "MAYA":  os.environ.get("MAC_VOICE_MAYA",  "Karen"),
-    "RIO":   os.environ.get("MAC_VOICE_RIO",   "Moira"),
-    "KAI":   os.environ.get("MAC_VOICE_KAI",   "Eddy (English (US))"),
-    "CAM":   os.environ.get("MAC_VOICE_CAM",   "Flo (English (US))"),
-    "TESS":  os.environ.get("MAC_VOICE_TESS",  "Karen"),
-    "DEV":   os.environ.get("MAC_VOICE_DEV",   "Daniel"),
 }
 
 
@@ -403,8 +398,10 @@ def _synth_eleven_v3(turns: list[tuple[str, str]], out_mp3: Path) -> tuple[Path,
                     output_format="mp3_44100_128",
                     apply_text_normalization="auto",
                 )
-            except (AttributeError, Exception) as e:
+            except AttributeError as e:
                 # SDK doesn't have text_to_dialogue — fall back to per-turn v2.
+                # Narrowly only AttributeError: auth/quota errors must propagate
+                # so we don't double-bill by re-synthing the same chunk on v2.
                 print(f"[tts] v3 dialogue API unavailable ({e}); falling back to v2 per-turn for chunk {idx}")
                 _synth_chunk_v2_fallback(chunk, chunk_mp3, client)
             else:

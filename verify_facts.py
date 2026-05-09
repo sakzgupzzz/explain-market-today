@@ -24,11 +24,20 @@ from generate_script import (
 VERIFY_MODEL = "llama-3.1-8b-instant"
 
 
-def _verify_prompt(script: str, market: dict, ranked: list[dict]) -> str:
+def _verify_prompt(script: str, market: dict, ranked: list[dict], civic: dict | None = None) -> str:
     indices = _fmt_section(market.get("indices", []))
     movers = _fmt_section((market.get("gainers") or [])[:5] + (market.get("losers") or [])[:5])
     stories = _fmt_ranked_stories(ranked, top_n=12, compact=True)
     name_list = ", ".join(CHARACTERS.keys())
+    civic_block = ""
+    if civic:
+        try:
+            from civic_intel import format_for_prompt as _civ_block
+            cb = _civ_block(civic)
+            if cb:
+                civic_block = "\n\nCIVIC INTEL (FRED + EDGAR + Congress, public-domain ground truth):\n" + cb
+        except Exception:
+            civic_block = ""
     return f"""You are a fact-verification editor. Your only job is to ensure every concrete claim in the SCRIPT below appears in the SOURCE FACTS. You may NOT add new content, restructure beats, or improve writing — only neutralize unverifiable claims.
 
 For each turn:
@@ -49,7 +58,7 @@ MOVERS:
 {movers}
 
 TOP STORIES:
-{stories}
+{stories}{civic_block}
 
 ==== SCRIPT TO VERIFY ====
 {script}
@@ -61,11 +70,49 @@ TOP STORIES:
 VERIFY_MAX_PROMPT_CHARS = 7000
 
 
-def verify(script: str, market: dict, ranked: list[dict]) -> str:
+_FRED_SERIES_KEYWORDS = {
+    "cpi", "consumer price index", "ppi", "producer price index",
+    "nfp", "non-farm payroll", "nonfarm payroll", "jobs report",
+    "unemployment rate", "fomc", "fed funds rate", "federal funds rate",
+    "gdp", "retail sales", "ism manufacturing", "ism services",
+}
+
+
+def _flag_unscheduled_macro_claims(script: str, civic: dict | None) -> None:
+    """Soft check: if the script claims a macro print 'today' but civic
+    says no such release is scheduled today, ping ntfy for review.
+    This is a heuristic — false positives are OK because it's a warning."""
+    if not civic:
+        return
+    macro_today = civic.get("macro_today") or []
+    if macro_today:
+        return  # something IS scheduled — trust the LLM
+    text_l = script.lower()
+    today_proximity = any(p in text_l for p in ("today", "this morning", "just released", "just out"))
+    if not today_proximity:
+        return
+    hits = [k for k in _FRED_SERIES_KEYWORDS if k in text_l]
+    if not hits:
+        return
+    try:
+        from datetime import datetime as _dt
+        from notify import notify_warn
+        notify_warn(
+            _dt.now().strftime("%Y-%m-%d"),
+            "verify_facts.fred",
+            f"Script references macro release(s) {hits[:3]} as today's, but FRED calendar shows nothing scheduled.",
+        )
+        print(f"[verify] flagged unscheduled macro claim(s): {hits[:3]}")
+    except Exception:
+        pass
+
+
+def verify(script: str, market: dict, ranked: list[dict], civic: dict | None = None) -> str:
     if not script.strip():
         return script
+    _flag_unscheduled_macro_claims(script, civic)
     import time as _time
-    prompt = _verify_prompt(script, market, ranked)
+    prompt = _verify_prompt(script, market, ranked, civic)
     if GROQ_API_KEY and not ANTHROPIC_API_KEY and len(prompt) > VERIFY_MAX_PROMPT_CHARS:
         print(f"[verify] script too large ({len(prompt)} chars > {VERIFY_MAX_PROMPT_CHARS} cap); skipping verify pass")
         return script
@@ -75,4 +122,14 @@ def verify(script: str, market: dict, ranked: list[dict]) -> str:
         return _llm_call(prompt, OLLAMA_CRITIC_MODEL, VERIFY_MODEL, temperature=0.1)
     except Exception as e:
         print(f"[verify] failed, returning unverified script: {e}")
+        try:
+            from datetime import datetime as _dt
+            from notify import notify_warn
+            notify_warn(
+                _dt.now().strftime("%Y-%m-%d"),
+                "verify_facts",
+                f"verify pass failed open: {type(e).__name__}: {e}",
+            )
+        except Exception:
+            pass
         return script

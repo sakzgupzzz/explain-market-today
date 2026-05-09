@@ -33,6 +33,7 @@ from score import score_clusters
 from state import load_state, save_state, mark_covered, annotate_clusters
 from interests_loader import load_interests
 from calendar_events import gather as gather_calendar_events
+from civic_intel import fetch_civic_today, format_for_prompt as civic_prompt_block
 from eleven_budget import compute_dynamic_preset, format_log_line as fmt_budget_log
 from generate_script import generate, critique_revise
 from verify_facts import verify as verify_facts
@@ -41,7 +42,7 @@ from render_email import write_digest
 from render_thread import write_thread
 from sanitize import sanitize_script
 from tts import synth, audio_duration_seconds
-from publish import build_feed, build_index_html, git_push, write_transcripts, write_chapters
+from publish import build_feed, build_index_html, git_push, write_transcripts, write_chapters, write_episode_html
 from cover_art import write_episode_cover
 from lock import acquire_lock
 from eleven_usage import check_budget
@@ -76,7 +77,20 @@ def _turn_count(text: str) -> int:
     return sum(1 for line in text.splitlines() if re.match(r"^[A-Z][A-Z0-9_]{0,15}:\s*\S", line))
 
 
-def _write_meta(mp3_path: Path, script: str, char_usage: int | None = None) -> None:
+def _top_mover(market: dict) -> dict | None:
+    movers = (market.get("gainers") or []) + (market.get("losers") or [])
+    if not movers:
+        return None
+    top = max(movers, key=lambda m: abs(m.get("pct", 0)))
+    return {
+        "symbol": top.get("symbol"),
+        "name": top.get("name") or top.get("symbol"),
+        "pct": round(top.get("pct", 0.0), 2),
+    }
+
+
+def _write_meta(mp3_path: Path, script: str, char_usage: int | None = None,
+                market: dict | None = None) -> None:
     """Sidecar episode metadata for analytics + cost dashboard."""
     try:
         dur = audio_duration_seconds(mp3_path)
@@ -98,7 +112,53 @@ def _write_meta(mp3_path: Path, script: str, char_usage: int | None = None) -> N
         "prompt_variant": PROMPT_VARIANT,
         "generated_at": datetime.utcnow().isoformat() + "Z",
     }
+    if market is not None:
+        tm = _top_mover(market)
+        if tm:
+            meta["top_mover"] = tm
+        # Persist a compact market snapshot so publish.py can build SEO
+        # titles + descriptions deterministically without re-fetching.
+        meta["market_snapshot"] = {
+            "indices": [
+                {"symbol": r.get("symbol"), "name": r.get("name"),
+                 "close": r.get("close"), "pct": round(r.get("pct", 0.0), 2)}
+                for r in (market.get("indices") or [])[:5]
+            ],
+        }
     mp3_path.with_suffix(".meta.json").write_text(json.dumps(meta, indent=2))
+
+
+def _extract_yesterday_topics() -> list[str]:
+    """Read the most recent plan.json sidecar (if any) and pull 1-3 short
+    topic strings suitable for the planner's yesterday-callback prompt.
+    Returns empty list when no prior plan exists or it's older than 4 days."""
+    plans = sorted(EPISODES_DIR.glob("*.plan.json"))
+    if not plans:
+        return []
+    latest = plans[-1]
+    try:
+        d = datetime.strptime(latest.stem.replace(".plan", ""), "%Y-%m-%d")
+        if (datetime.now() - d).days > 4:
+            return []
+    except ValueError:
+        return []
+    try:
+        outline = json.loads(latest.read_text())
+    except Exception:
+        return []
+    topics: list[str] = []
+    co = (outline.get("cold_open") or {}).get("hook")
+    if co:
+        topics.append(co)
+    bs = (outline.get("big_story") or {}).get("story_title")
+    if bs:
+        topics.append(bs)
+    qhs = outline.get("quick_hits") or []
+    if qhs:
+        first = (qhs[0].get("angle") or "").strip()
+        if first:
+            topics.append(first)
+    return topics[:3]
 
 
 def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
@@ -125,10 +185,25 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
     flat = flatten(headlines_by_cat)
     print(f"[{today}] {len(flat)} headlines across {len(headlines_by_cat)} beats")
 
+    interests = load_interests()
+    watchlist = (interests.get("watchlist") or {}).get("tickers") or []
+
+    # ── civic intelligence (FRED + EDGAR + Congress via civicledger) ───────
+    # Live macro releases, earnings calendar, insider Form 4, 8-K material
+    # events, and congressional trades. Fed into score (signal boost),
+    # critique (FRED ground-truth), and the lookahead beat. Best-effort —
+    # falls open to empty dict if civicledger or APIs are unreachable.
+    try:
+        civic = fetch_civic_today(watchlist=watchlist)
+        civic_summary = ", ".join(f"{k}={len(v)}" for k, v in civic.items())
+        print(f"[{today}] civic: {civic_summary}")
+    except Exception as e:
+        print(f"[{today}] civic fetch failed (non-fatal): {type(e).__name__}: {e}")
+        civic = {}
+
     print(f"[{today}] clustering + ranking…")
     clusters = cluster_headlines(flat)
-    interests = load_interests()
-    ranked = score_clusters(clusters, market, interests)
+    ranked = score_clusters(clusters, market, interests, civic=civic)
     state = load_state()
     annotated = annotate_clusters(ranked, state, suppress_days=2)
     fresh = [c for c in annotated if not c.get("seen_recently")]
@@ -136,10 +211,12 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
     print(f"[{today}] {len(clusters)} clusters → {len(fresh)} fresh, {len(follow_ups)} follow-ups")
 
     # ── upcoming-events context (earnings + macro calendar) ────────────────
-    watchlist = (interests.get("watchlist") or {}).get("tickers") or []
     upcoming_events = gather_calendar_events(watchlist)
     if upcoming_events:
         print(f"[{today}] injected upcoming-events block ({len(upcoming_events.splitlines())} lines)")
+    civic_block = civic_prompt_block(civic) if civic else ""
+    if civic_block:
+        upcoming_events = (upcoming_events + "\n\n" + civic_block) if upcoming_events else civic_block
 
     # ── dynamic length sizing from ElevenLabs char budget ──────────────────
     # Stretches remaining month-budget evenly across remaining weekday runs
@@ -148,9 +225,16 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
     budget_preset = compute_dynamic_preset()
     if budget_preset:
         print(fmt_budget_log(budget_preset))
+        from eleven_budget import warn_if_undercount
+        warn_if_undercount(budget_preset)
         interests.setdefault("preferences", {})["_dynamic_preset"] = budget_preset
 
     EPISODES_DIR.mkdir(parents=True, exist_ok=True)
+
+    # ── yesterday-callback context (read previous plan.json sidecar) ───────
+    yesterday_topics = _extract_yesterday_topics()
+    if yesterday_topics:
+        print(f"[{today}] yesterday topics for callback: {yesterday_topics}")
 
     # ── show render ────────────────────────────────────────────────────────
     if mode in ("show", "both"):
@@ -161,12 +245,17 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
             script = generate(
                 market, fresh, date_pretty,
                 follow_ups=follow_ups, upcoming_events=upcoming_events,
-                interests=interests,
+                interests=interests, civic=civic,
+                yesterday_topics=yesterday_topics,
             )
-            print(f"[{today}] critique pass…")
-            script = critique_revise(script, market, fresh)
+            import generate_script as _gs
+            if _gs._LAST_USED_MULTISTAGE:
+                print(f"[{today}] critique pass skipped — multistage already prunes per beat")
+            else:
+                print(f"[{today}] critique pass…")
+                script = critique_revise(script, market, fresh)
             print(f"[{today}] fact verification pass…")
-            script = verify_facts(script, market, fresh)
+            script = verify_facts(script, market, fresh, civic=civic)
             print(f"[{today}] sanitizing…")
             script = sanitize_script(script)
             txt_path = EPISODES_DIR / f"{today}.txt"
@@ -177,11 +266,27 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
             print(f"[{today}] writing transcripts + chapters…")
             write_transcripts(script, mp3_path, chunk_timings, ranked_stories=fresh)
             write_chapters(script, mp3_path, chunk_timings)
+            try:
+                page = write_episode_html(mp3_path, ranked=fresh)
+                if page:
+                    print(f"[{today}] wrote episode page → {page.name}")
+            except Exception as e:
+                print(f"[{today}] episode page skipped: {e}")
             lead_title = (fresh[0].get("title") if fresh else "Daily roundup")
             cover = write_episode_cover(today, lead_title)
             if cover:
                 print(f"[{today}] wrote per-episode cover → {cover.name}")
-            _write_meta(mp3_path, script)
+            # Persist plan + market snapshot in meta for publish.py to
+            # consume (SEO title, description, JSON-LD episode page).
+            try:
+                import generate_script as _gs
+                from stage_pipeline import _LAST_OUTLINE
+                if _LAST_OUTLINE:
+                    plan_path = EPISODES_DIR / f"{today}.plan.json"
+                    plan_path.write_text(json.dumps(_LAST_OUTLINE, indent=2))
+            except Exception as e:
+                print(f"[{today}] plan sidecar skipped: {e}")
+            _write_meta(mp3_path, script, market=market)
 
     # ── express render ─────────────────────────────────────────────────────
     # Wrapped in try/except so an express failure can't kill the show
@@ -210,7 +315,7 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
                     ex_txt.write_text(ex_script)
                     print(f"[{today}] synthesizing express audio…")
                     synth(ex_script, ex_mp3)
-                    _write_meta(ex_mp3, ex_script)
+                    _write_meta(ex_mp3, ex_script, market=market)
             except Exception as e:
                 import traceback
                 print(f"[{today}] express render failed (non-fatal): {type(e).__name__}: {e}")

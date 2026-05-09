@@ -56,6 +56,13 @@ jobs:
       # TTS via ElevenLabs v3 text_to_dialogue API.
       TTS_BACKEND: eleven
       ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      # ntfy.sh push notifications. Set NTFY_TOPIC repo variable (or secret)
+      # to a unique topic name; subscribe on phone via the ntfy app to get
+      # success + failure pings. Without this, all CI failures are silent.
+      NTFY_TOPIC: ${{ vars.NTFY_TOPIC }}
+      # FRED API key — used by civicledger for the economic calendar
+      # (CPI/NFP/FOMC/GDP release dates). Free at fred.stlouisfed.org.
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
 
     steps:
       - uses: actions/checkout@v4
@@ -74,17 +81,33 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run unit tests + count gate
-        # Fail fast if test count drops below baseline. 55 tests as of
-        # 2026-05-05; bump the baseline when adding tests intentionally.
+        # Fail fast if test count drops below baseline. Count derives from
+        # pytest's authoritative summary line ("N tests collected") rather
+        # than greppable per-test output, so it survives pytest-version
+        # format drift. Bump baseline when adding tests intentionally.
         run: |
           python -m pytest tests/ -q
-          BASELINE=55
-          COUNT=$(python -m pytest tests/ --collect-only -q 2>/dev/null | grep -c "::test_")
+          BASELINE=70
+          COUNT=$(python -m pytest tests/ --collect-only -q 2>/dev/null \
+                   | tail -n 5 \
+                   | grep -oE '[0-9]+ tests? collected' \
+                   | grep -oE '^[0-9]+' || echo 0)
           echo "test count: $COUNT (baseline: $BASELINE)"
           if [ "$COUNT" -lt "$BASELINE" ]; then
             echo "::error::test count $COUNT dropped below baseline $BASELINE"
             exit 1
           fi
+
+      - name: Restore feed_health cache
+        # .feed_health.json tracks per-feed fail streaks so chronically-down
+        # RSS feeds get auto-skipped. Without this cache, each runner starts
+        # with a fresh empty file and the auto-skip never activates in CI.
+        uses: actions/cache@v4
+        with:
+          path: .feed_health.json
+          key: feed-health-${{ github.run_id }}
+          restore-keys: |
+            feed-health-
 
       - name: Git identity
         run: |
@@ -116,3 +139,20 @@ jobs:
           path: |
             run.log
           if-no-files-found: ignore
+
+      - name: Notify on failure
+        # Catch-all: if any earlier step crashed before main.py could ping
+        # ntfy itself, send a workflow-level failure notification so the
+        # silent-Friday gap can't repeat.
+        if: failure()
+        env:
+          NTFY_TOPIC: ${{ vars.NTFY_TOPIC }}
+        run: |
+          if [ -n "$NTFY_TOPIC" ]; then
+            curl -fsS -X POST \
+              -H "Title: ✗ workflow ${{ github.run_id }} failed" \
+              -H "Priority: high" \
+              -H "Tags: x,warning" \
+              -d "Workflow: ${{ github.workflow }}\nRun: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" \
+              "https://ntfy.sh/$NTFY_TOPIC" || true
+          fi

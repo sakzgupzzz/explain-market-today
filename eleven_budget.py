@@ -169,6 +169,28 @@ def format_log_line(preset: dict) -> str:
     )
 
 
+def warn_if_undercount(preset: dict | None) -> None:
+    """Ping ntfy when the budget source falls back to meta_sidecars — that
+    path undercounts (audio-tag overhead, bed-mix, failed-call billing)
+    and the user should refresh ELEVENLABS_REMAINING_CHARS from the
+    dashboard to keep length sizing correct."""
+    if not preset or preset.get("_source") != "meta_sidecars":
+        return
+    try:
+        from notify import notify_warn
+        notify_warn(
+            datetime.now().strftime("%Y-%m-%d"),
+            "eleven_budget",
+            (
+                "ElevenLabs budget falling back to meta_sidecars (UNDERCOUNTS). "
+                "Refresh ELEVENLABS_REMAINING_CHARS secret from "
+                "https://elevenlabs.io/app/usage."
+            ),
+        )
+    except Exception:
+        pass
+
+
 if __name__ == "__main__":
     p = compute_dynamic_preset()
     if p:

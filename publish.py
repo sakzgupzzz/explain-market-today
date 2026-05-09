@@ -26,6 +26,26 @@ def _mmss(seconds: float) -> str:
     return f"{h:02d}:{m:02d}:{s:02d}"
 
 
+def _cached_duration(mp3_path: Path) -> float:
+    """Read duration from .meta.json sidecar (populated at write time).
+    Falls back to ffprobe if meta is missing or stale. Avoids spawning
+    ffprobe for every episode on every feed/index rebuild — at ~250
+    eps/year that's ~250 forks per build."""
+    meta_path = mp3_path.with_suffix(".meta.json")
+    if meta_path.exists():
+        try:
+            meta = json.loads(meta_path.read_text())
+            dur = float(meta.get("duration_sec") or 0.0)
+            if dur > 0:
+                return dur
+        except Exception:
+            pass
+    try:
+        return audio_duration_seconds(mp3_path)
+    except Exception:
+        return 0.0
+
+
 # ─── Episode title (SEO) ────────────────────────────────────────────────────
 
 _TICKER_INTRO_PATTERNS = [
@@ -50,10 +70,72 @@ def _has_banned(s: str) -> bool:
     return any(p in low for p in _BANNED_LOWER)
 
 
+def _read_plan(date_str: str) -> dict | None:
+    p = EPISODES_DIR / f"{date_str}.plan.json"
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text())
+    except Exception:
+        return None
+
+
+def _read_meta(date_str: str) -> dict | None:
+    p = EPISODES_DIR / f"{date_str}.meta.json"
+    if not p.exists():
+        return None
+    try:
+        return json.loads(p.read_text())
+    except Exception:
+        return None
+
+
+def _short_pct(v: float) -> str:
+    sign = "+" if v >= 0 else "-"
+    return f"{sign}{abs(v):.1f}%"
+
+
+def _title_from_plan(plan: dict, meta: dict | None, date_str: str) -> str:
+    """SEO-optimized title: 'TICKER ±X%, macro hook — Mmm D'.
+    Front-loads searchable terms (ticker symbols, macro events) that
+    Spotify/Apple actually index. Falls back to plan.cold_open.hook,
+    then to a generic date-keyed title."""
+    try:
+        d = datetime.strptime(date_str, "%Y-%m-%d")
+        date_short = d.strftime("%b %-d")
+    except (ValueError, TypeError):
+        date_short = date_str
+    parts: list[str] = []
+    tm = (meta or {}).get("top_mover") or {}
+    if tm.get("symbol") and tm.get("pct") is not None:
+        parts.append(f"{tm['symbol']} {_short_pct(float(tm['pct']))}")
+    big = (plan.get("big_story") or {}).get("story_title", "").strip()
+    if big:
+        # Use first 5-6 words of big story title as the macro hook
+        words = big.split()
+        macro = " ".join(words[:6]).rstrip(",.;:")
+        if macro:
+            parts.append(macro)
+    if not parts:
+        hook = (plan.get("cold_open") or {}).get("hook", "").strip()
+        if hook:
+            parts.append(hook[:60])
+    body = ", ".join(parts) if parts else "Daily markets and tech recap"
+    full = f"{body} — {date_short}"
+    if len(full) > 80:
+        full = full[:77].rsplit(" ", 1)[0] + "…"
+    return full
+
+
 def _episode_title(script: str, date_str: str) -> str:
-    """SEO format: 'MMM D: <lead substantive sentence, ≤60 chars total>'.
-    Skips lines containing banned phrases so legacy 'Welcome to your daily'
-    leads don't surface as Apple/Spotify titles."""
+    """SEO format. Prefer plan-derived title (ticker + macro + date) when
+    plan.json sidecar exists; fall back to legacy sentence-extract."""
+    plan = _read_plan(date_str)
+    meta = _read_meta(date_str)
+    if plan:
+        return _title_from_plan(plan, meta, date_str)
+
+    # Legacy fallback: 'MMM D: <lead substantive sentence>'
     try:
         d = datetime.strptime(date_str, "%Y-%m-%d")
         prefix = d.strftime("%b %-d")
@@ -66,9 +148,7 @@ def _episode_title(script: str, date_str: str) -> str:
         for _, text in turns:
             candidates.append(_strip_intro(text))
     else:
-        # legacy single-narrator script — split on sentences
         candidates = [s.strip() for s in re.split(r"(?<=[.!?])\s+", script.strip())]
-
     for candidate in candidates:
         first_sentence = candidate.split(".")[0].strip()
         if len(first_sentence.split()) < 6:
@@ -83,6 +163,74 @@ def _episode_title(script: str, date_str: str) -> str:
     if len(full) > 60:
         full = full[:57].rsplit(" ", 1)[0] + "…"
     return full
+
+
+def _episode_description(script: str, date_str: str, mp3_path: Path,
+                         ranked: list[dict] | None = None) -> str:
+    """Rich description: 2-sentence summary + chapter TOC with timestamps
+    + source links. Fed by plan.json + chapters.json sidecars when available;
+    falls back to truncated-script when not."""
+    plan = _read_plan(date_str)
+    chapters_path = mp3_path.with_suffix(".chapters.json")
+    chapters: list[dict] = []
+    if chapters_path.exists():
+        try:
+            chapters = json.loads(chapters_path.read_text()).get("chapters", [])
+        except Exception:
+            chapters = []
+
+    if not plan:
+        head = (script[:500] + ("…" if len(script) > 500 else "")) if script else ""
+        return head + "\n\n" + DISCLAIMER_FULL
+
+    big = (plan.get("big_story") or {}).get("story_title", "").strip()
+    big_angle = (plan.get("big_story") or {}).get("angle", "").strip()
+    cold = (plan.get("cold_open") or {}).get("hook", "").strip()
+    summary_lines: list[str] = []
+    if cold:
+        summary_lines.append(cold.rstrip(".") + ".")
+    if big and big_angle:
+        summary_lines.append(f"Today's lead: {big}. {big_angle.rstrip('.')}.")
+    elif big:
+        summary_lines.append(f"Today's lead: {big}.")
+    summary = " ".join(summary_lines) or "Daily markets and tech news roundtable."
+
+    parts = [summary, ""]
+
+    if chapters:
+        parts.append("Chapters:")
+        for ch in chapters:
+            parts.append(f"  {_mmss(float(ch.get('startTime', 0)))}  {ch.get('title','')}")
+        parts.append("")
+
+    qhs = plan.get("quick_hits") or []
+    if qhs:
+        parts.append("Stories covered:")
+        for q in qhs[:6]:
+            tag = (q.get("conviction") or "").strip().lower()
+            tag_str = f" [{tag}]" if tag in ("real", "hype", "noise") else ""
+            angle = (q.get("angle") or "").strip()
+            if angle:
+                parts.append(f"  • {angle}{tag_str}")
+        parts.append("")
+
+    if ranked:
+        seen_links: set[str] = set()
+        link_lines: list[str] = []
+        for c in ranked[:8]:
+            link = c.get("link") or ""
+            title = c.get("title") or ""
+            if not link or link in seen_links or not title:
+                continue
+            seen_links.add(link)
+            link_lines.append(f"  - {title[:90]} — {link}")
+        if link_lines:
+            parts.append("Sources:")
+            parts.extend(link_lines)
+            parts.append("")
+
+    parts.append(DISCLAIMER_FULL)
+    return "\n".join(parts)
 
 
 # ─── Transcripts: SRT + VTT ─────────────────────────────────────────────────
@@ -181,10 +329,10 @@ def _detect_beats(turns: list[tuple[str, str]]) -> dict[str, int]:
         r"\b(s ?&? ?p|nasdaq|dow|russell|vix|sector|equities|index|gainers|losers|tape|rates|treasury|dollar|fed|macro)\b",
         re.I,
     )
-    odd_kw = re.compile(r"\b(odd|weird|kai)\b", re.I)
+    odd_kw = re.compile(r"\b(odd|weird|maya)\b", re.I)
     signoff_kw = re.compile(r"\b(disclaimer|sign[- ]off|that's it|that's all|see you tomorrow|until next time)\b", re.I)
 
-    # markets: first turn after cold open mentioning market keywords (typically ALEX or CAM)
+    # markets: first turn after cold open mentioning market keywords (typically ALEX)
     for i in range(1, n):
         if market_kw.search(turns[i][1]):
             boundaries["markets"] = i
@@ -197,11 +345,11 @@ def _detect_beats(turns: list[tuple[str, str]]) -> dict[str, int]:
     # quick_hits: ~60% mark
     boundaries["quick_hits"] = max(boundaries.get("big_story", 0) + 1, int(n * 0.60))
 
-    # odd_thing: first KAI turn after halfway, or odd-keyword match
+    # odd_thing: first MAYA turn after halfway with odd-keyword match
     half = n // 2
     for i in range(half, n):
         name, text = turns[i]
-        if name == "KAI" or odd_kw.search(text):
+        if name == "MAYA" and odd_kw.search(text):
             boundaries["odd_thing"] = i
             break
     boundaries.setdefault("odd_thing", max(boundaries.get("quick_hits", 0) + 1, int(n * 0.80)))
@@ -374,10 +522,7 @@ def build_feed() -> None:
         script = meta_txt.read_text() if meta_txt.exists() else ""
         date_str = mp3.stem  # YYYY-MM-DD
         size = mp3.stat().st_size
-        try:
-            dur = audio_duration_seconds(mp3)
-        except Exception:
-            dur = 0.0
+        dur = _cached_duration(mp3)
         title = _episode_title(script, date_str)
         guid = _make_episode_guid(date_str)
         srt = mp3.with_suffix(".srt")
@@ -387,9 +532,7 @@ def build_feed() -> None:
         fe = fg.add_entry()
         fe.id(guid)
         fe.title(title)
-        # Description: first 600 chars of script + disclaimer
-        desc_head = (script[:500] + ("…" if len(script) > 500 else "")) if script else ""
-        fe.description(desc_head + "\n\n" + DISCLAIMER_FULL)
+        fe.description(_episode_description(script, date_str, mp3))
         fe.content(script, type="CDATA")
         fe.enclosure(f"{PODCAST_BASE_URL}/episodes/{mp3.name}", str(size), "audio/mpeg")
         fe.published(_episode_pub(date_str, mp3))
@@ -466,6 +609,206 @@ def _inject_podcasting_2_tags(feed_path: Path, episode_meta: list[dict]) -> None
     tree.write(feed_path, encoding="utf-8", xml_declaration=True)
 
 
+# ─── per-episode HTML (SEO + JSON-LD PodcastEpisode) ────────────────────────
+
+import html as _html
+
+
+def _ld_json_episode(date_str: str, title: str, mp3_path: Path, dur: float,
+                     description: str, plan: dict | None) -> str:
+    """schema.org PodcastEpisode JSON-LD. Helps Google index episode pages
+    as podcast results (vs. generic web pages)."""
+    audio_url = f"{PODCAST_BASE_URL}/episodes/{mp3_path.name}"
+    page_url = f"{PODCAST_BASE_URL}/episodes/{date_str}.html"
+    iso_date = ""
+    try:
+        iso_date = datetime.strptime(date_str, "%Y-%m-%d").strftime("%Y-%m-%dT00:00:00Z")
+    except ValueError:
+        pass
+    keywords: list[str] = []
+    if plan:
+        cold = (plan.get("cold_open") or {}).get("hook", "")
+        big = (plan.get("big_story") or {}).get("story_title", "")
+        if cold:
+            keywords.append(cold[:80])
+        if big:
+            keywords.append(big[:80])
+    ld = {
+        "@context": "https://schema.org",
+        "@type": "PodcastEpisode",
+        "url": page_url,
+        "name": title,
+        "datePublished": iso_date,
+        "duration": f"PT{int(dur//60)}M{int(dur%60):02d}S",
+        "description": description[:500],
+        "associatedMedia": {
+            "@type": "MediaObject",
+            "contentUrl": audio_url,
+            "encodingFormat": "audio/mpeg",
+        },
+        "partOfSeries": {
+            "@type": "PodcastSeries",
+            "name": PODCAST_TITLE,
+            "url": PODCAST_BASE_URL,
+        },
+        "keywords": ", ".join(keywords),
+    }
+    return json.dumps(ld, indent=2)
+
+
+def _read_transcript_html(script: str) -> str:
+    """Render transcript as readable HTML (one paragraph per turn,
+    speaker names bolded, audio tags muted)."""
+    if not script:
+        return "<p class='transcript-empty'>(transcript not available)</p>"
+    parts: list[str] = []
+    for line in script.splitlines():
+        m = re.match(r"^([A-Z][A-Z0-9_]{0,15}):\s*(.+)$", line)
+        if not m:
+            continue
+        speaker, text = m.group(1), m.group(2)
+        # mute audio tags as small italic notes
+        text = re.sub(
+            r"\[([^\]]+)\]",
+            r"<span class='tag'>[\1]</span>",
+            text,
+        )
+        parts.append(
+            f"<p class='turn'><span class='speaker'>{_html.escape(speaker)}</span>"
+            f"<span class='line'>{text}</span></p>"
+        )
+    return "\n".join(parts) if parts else "<p class='transcript-empty'>(transcript not available)</p>"
+
+
+def write_episode_html(mp3_path: Path, ranked: list[dict] | None = None) -> Path | None:
+    """Emit a single docs/episodes/{date}.html page with embedded player,
+    transcript, chapter TOC, source links, OG tags, and JSON-LD.
+    Returns the path written, or None if there's nothing to render."""
+    date_str = mp3_path.stem
+    txt_path = mp3_path.with_suffix(".txt")
+    if not txt_path.exists():
+        return None
+    script = txt_path.read_text()
+    title = _episode_title(script, date_str)
+    body_title = re.sub(r"^[A-Z][a-z]{2}\s\d{1,2}:\s*", "", title)
+    dur = _cached_duration(mp3_path)
+    runtime = _runtime_compact(dur)
+
+    plan = _read_plan(date_str)
+    chapters_path = mp3_path.with_suffix(".chapters.json")
+    chapters: list[dict] = []
+    if chapters_path.exists():
+        try:
+            chapters = json.loads(chapters_path.read_text()).get("chapters", [])
+        except Exception:
+            chapters = []
+
+    description = _episode_description(script, date_str, mp3_path, ranked)
+    description_short = description.split("\n\n", 1)[0]
+    ld_json = _ld_json_episode(date_str, title, mp3_path, dur, description_short, plan)
+
+    audio_url = f"../episodes/{mp3_path.name}"
+    transcript_html = _read_transcript_html(script)
+    chapters_html = ""
+    if chapters:
+        rows = "".join(
+            f"<li><a href=\"#\" data-seek=\"{ch.get('startTime',0)}\">"
+            f"<span class='ch-time'>{_mmss(float(ch.get('startTime',0)))}</span>"
+            f"<span class='ch-title'>{_html.escape(ch.get('title',''))}</span>"
+            f"</a></li>"
+            for ch in chapters
+        )
+        chapters_html = f"<nav class='chapters'><h3>Chapters</h3><ol>{rows}</ol></nav>"
+
+    sources_html = ""
+    if ranked:
+        seen: set[str] = set()
+        items: list[str] = []
+        for c in (ranked or [])[:10]:
+            link = c.get("link") or ""
+            ttl = c.get("title") or ""
+            if not link or link in seen or not ttl:
+                continue
+            seen.add(link)
+            items.append(
+                f"<li><a href='{_html.escape(link)}' rel='noopener nofollow'>"
+                f"{_html.escape(ttl[:120])}</a></li>"
+            )
+        if items:
+            sources_html = f"<section class='sources'><h3>Sources</h3><ul>{''.join(items)}</ul></section>"
+
+    canonical = f"{PODCAST_BASE_URL}/episodes/{date_str}.html"
+    og_image = f"{PODCAST_BASE_URL}/cover.jpg"
+    ep_cover = mp3_path.with_suffix(".jpg")
+    if ep_cover.exists():
+        og_image = f"{PODCAST_BASE_URL}/episodes/{ep_cover.name}"
+
+    page = f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{_html.escape(title)} — {_html.escape(PODCAST_TITLE)}</title>
+<meta name="description" content="{_html.escape(description_short[:300])}">
+<link rel="canonical" href="{canonical}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{_html.escape(title)}">
+<meta property="og:description" content="{_html.escape(description_short[:300])}">
+<meta property="og:url" content="{canonical}">
+<meta property="og:image" content="{og_image}">
+<meta property="og:site_name" content="{_html.escape(PODCAST_TITLE)}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{_html.escape(title)}">
+<meta name="twitter:description" content="{_html.escape(description_short[:300])}">
+<meta name="twitter:image" content="{og_image}">
+<script type="application/ld+json">
+{ld_json}
+</script>
+<style>
+  :root {{ color-scheme: light dark; }}
+  body {{ font: 16px/1.5 system-ui, -apple-system, sans-serif; max-width: 760px; margin: 0 auto; padding: 1.5rem; }}
+  h1 {{ font-size: 1.5rem; margin: 0 0 .25rem; }}
+  .meta {{ color: #666; font-size: .9rem; margin-bottom: 1rem; }}
+  audio {{ width: 100%; margin: 1rem 0; }}
+  .chapters ol {{ list-style: none; padding: 0; }}
+  .chapters li a {{ display: flex; gap: 1rem; padding: .25rem 0; text-decoration: none; }}
+  .ch-time {{ font-variant-numeric: tabular-nums; color: #888; min-width: 4rem; }}
+  .turn {{ margin: .5rem 0; }}
+  .speaker {{ font-weight: 600; margin-right: .5rem; font-variant: small-caps; }}
+  .tag {{ color: #888; font-style: italic; font-size: .85rem; margin-right: .25rem; }}
+  .sources li {{ margin: .25rem 0; }}
+  .nav-back {{ display: inline-block; margin-bottom: 1rem; }}
+</style>
+</head>
+<body>
+<a class="nav-back" href="../index.html">← All episodes</a>
+<h1>{_html.escape(body_title)}</h1>
+<div class="meta">{runtime} · {date_str} · <a href="{audio_url}">download mp3</a> · <a href="../episodes/{date_str}.txt">transcript (txt)</a></div>
+<audio id="player" preload="metadata" controls>
+  <source src="{audio_url}" type="audio/mpeg">
+</audio>
+{chapters_html}
+{sources_html}
+<section class="transcript">
+  <h3>Transcript</h3>
+  {transcript_html}
+</section>
+<script>
+document.querySelectorAll('a[data-seek]').forEach(a => {{
+  a.addEventListener('click', e => {{
+    e.preventDefault();
+    var p = document.getElementById('player');
+    p.currentTime = parseFloat(a.dataset.seek) || 0;
+    p.play();
+  }});
+}});
+</script>
+</body>
+</html>"""
+    out = mp3_path.with_suffix(".html")
+    out.write_text(page)
+    return out
+
+
 # ─── git push ───────────────────────────────────────────────────────────────
 
 def git_push(commit_msg: str) -> None:
@@ -480,10 +823,16 @@ def git_push(commit_msg: str) -> None:
         return
     subprocess.run(["git", "-C", str(ROOT), "commit", "-m", commit_msg], check=True)
     for attempt in range(3):
-        subprocess.run(
+        rebase = subprocess.run(
             ["git", "-C", str(ROOT), "pull", "--rebase", "--autostash", "origin", "main"],
-            check=True,
         )
+        if rebase.returncode != 0:
+            # Conflict / autostash failure — abort cleanly so next attempt
+            # starts from a sane state instead of half-rebased.
+            print(f"rebase attempt {attempt + 1} failed; aborting…")
+            subprocess.run(["git", "-C", str(ROOT), "rebase", "--abort"])
+            subprocess.run(["git", "-C", str(ROOT), "stash", "pop"])
+            continue
         push = subprocess.run(["git", "-C", str(ROOT), "push", "origin", "main"])
         if push.returncode == 0:
             return
@@ -497,11 +846,6 @@ _HOST_ROLES = {
     "JAMIE": "host",
     "ALEX": "markets",
     "MAYA": "tech",
-    "RIO": "world",
-    "KAI": "odd-thing",
-    "CAM": "macro",
-    "TESS": "retail",
-    "DEV": "crypto",
 }
 
 
@@ -581,10 +925,7 @@ def build_index_html() -> None:
         title = _episode_title(script, mp3.stem)
         # strip the "Mmm D: " prefix added by _episode_title for body display
         body_title = re.sub(r"^[A-Z][a-z]{2}\s\d{1,2}:\s*", "", title)
-        try:
-            dur = audio_duration_seconds(mp3)
-        except Exception:
-            dur = 0.0
+        dur = _cached_duration(mp3)
         runtime = _runtime_compact(dur)
         date_str = mp3.stem
         words = _word_count(script)

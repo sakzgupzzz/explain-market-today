@@ -11,3 +11,8 @@ Pillow>=10.0.0
 pytest>=8.0.0
 PyYAML>=6.0
 mutagen>=1.47.0
+# CivicLedger — public-domain US financial intelligence (SEC EDGAR + FRED +
+# Congress disclosures). Used by civic_intel.py for macro calendar, earnings,
+# insider trades, congressional trades, and 8-K material events. Pinned to a
+# git ref since not on PyPI yet.
+civicledger @ git+https://github.com/sakzgupzzz/civicledger@main

@@ -80,7 +80,21 @@ def _recency_decay(published: str) -> float:
         return 0.5
 
 
+# Single/double-letter tickers (V, MA, T, F, …) match too aggressively as
+# bare words ("Section V", "Massachusetts", "Mr. T"). Require finance-context
+# nearby — $-prefix, parenthesized, or "shares/stock" within ~3 tokens.
+_SHORT_TICKER_CONTEXT_RE_TPL = (
+    r"(?:\$\s*{s}\b"
+    r"|\(\s*{s}\s*\)"
+    r"|\b{s}\b\s+(?:stock|shares|share|equity|equities)\b"
+    r"|\b(?:shares?|stock|ticker)\s+of\s+{s}\b)"
+)
+
+
 def _ticker_match(text: str, sym: str) -> bool:
+    if len(sym) <= 2:
+        pat = _SHORT_TICKER_CONTEXT_RE_TPL.format(s=re.escape(sym))
+        return bool(re.search(pat, text, re.I))
     return bool(re.search(rf"\b{re.escape(sym)}\b", text))
 
 
@@ -95,10 +109,33 @@ def _ticker_mover_boost(cluster: dict, market: dict) -> float:
     return boost
 
 
+def _civic_signal_tickers(civic: dict | None) -> dict[str, float]:
+    """Build a {ticker: boost} map from civic intel: insider trade in last
+    24h or 8-K material event = +1.5; congressional trade in last 7d = +1.2.
+    Surfaces stories the news clusters might bury."""
+    if not civic:
+        return {}
+    boosts: dict[str, float] = {}
+    for it in civic.get("insider_trades") or []:
+        sym = (it.get("ticker") or "").upper()
+        if sym:
+            boosts[sym] = max(boosts.get(sym, 0.0), 1.5)
+    for it in civic.get("material_events") or []:
+        sym = (it.get("ticker") or "").upper()
+        if sym:
+            boosts[sym] = max(boosts.get(sym, 0.0), 1.5)
+    for it in civic.get("congress_trades") or []:
+        sym = (it.get("ticker") or "").upper()
+        if sym:
+            boosts[sym] = max(boosts.get(sym, 0.0), 1.2)
+    return boosts
+
+
 def score_clusters(
     clusters: list[dict],
     market: dict,
     interests: dict | None = None,
+    civic: dict | None = None,
 ) -> list[dict]:
     """Score and sort. Drops blocked clusters. Returns clusters with `score`."""
     interests = interests or {}
@@ -109,6 +146,7 @@ def score_clusters(
     wl_sectors = [s.lower() for s in (watchlist.get("sectors") or [])]
     bl_topics = [t.lower() for t in (blocked.get("topics") or [])]
     bl_sources = {s.lower() for s in (blocked.get("sources") or [])}
+    civic_boosts = _civic_signal_tickers(civic)
 
     out: list[dict] = []
     for c in clusters:
@@ -128,8 +166,9 @@ def score_clusters(
         wl_ticker_w = sum(3.0 for t in wl_tickers if _ticker_match(text_u, t))
         wl_kw_w = sum(2.0 for k in wl_keywords if k in text_l)
         wl_sec_w = sum(1.5 for s in wl_sectors if s in text_l)
+        civic_w = sum(b for sym, b in civic_boosts.items() if _ticker_match(text_u, sym))
 
-        raw = kw + cluster_w + mover_w + wl_ticker_w + wl_kw_w + wl_sec_w
+        raw = kw + cluster_w + mover_w + wl_ticker_w + wl_kw_w + wl_sec_w + civic_w
         modifier = _source_score(c.get("sources") or []) * _recency_decay(c.get("published", ""))
         score = round(raw * modifier, 3)
 
@@ -143,6 +182,7 @@ def score_clusters(
             "watchlist_ticker": round(wl_ticker_w, 2),
             "watchlist_keyword": round(wl_kw_w, 2),
             "watchlist_sector": round(wl_sec_w, 2),
+            "civic_signal": round(civic_w, 2),
             "source_quality": round(_source_score(c.get("sources") or []), 2),
             "recency": round(_recency_decay(c.get("published", "")), 2),
         }

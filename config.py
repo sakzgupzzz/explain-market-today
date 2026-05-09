@@ -293,6 +293,7 @@ BEATS = [
     "big_story",
     "quick_hits",
     "odd_thing",
+    "lookahead",
     "sign_off",
 ]
 BEAT_TITLES = {
@@ -301,5 +302,6 @@ BEAT_TITLES = {
     "big_story": "Big story",
     "quick_hits": "Quick hits",
     "odd_thing": "Odd thing of the day",
+    "lookahead": "On the tape tomorrow",
     "sign_off": "Sign-off",
 }

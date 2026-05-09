@@ -5,6 +5,8 @@ __pycache__/
 .state.json.broken
 .run.lock
 .feed_health.json
+.dev_loop_cache.json
+.dev_loop_output.txt
 .DS_Store
 .env
 .env.*

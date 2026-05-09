@@ -13,6 +13,11 @@ import urllib.error
 NTFY_TOPIC = os.environ.get("NTFY_TOPIC", "")
 NTFY_URL = os.environ.get("NTFY_URL", "https://ntfy.sh")
 
+# Dedup guard. main.py can call notify_failure inside check_budget AND from
+# the outer except — without this, the same incident pings twice. Cleared on
+# any notify_success since a successful run resets the failure window.
+_NOTIFIED_FAILURES: set[tuple[str, str]] = set()
+
 
 def notify(title: str, body: str, priority: str = "default", tags: list[str] | None = None) -> None:
     """Fire-and-forget POST to ntfy. Silently no-op if NTFY_TOPIC is unset
@@ -39,6 +44,7 @@ def notify(title: str, body: str, priority: str = "default", tags: list[str] | N
 
 
 def notify_success(date_str: str, mode: str, turns: int, words: int, dur_sec: float) -> None:
+    _NOTIFIED_FAILURES.discard((date_str, "any"))
     notify(
         title=f"✓ episode {date_str} published",
         body=f"mode={mode} · {turns} turns · {words} words · {int(dur_sec//60)}:{int(dur_sec%60):02d}",
@@ -47,9 +53,32 @@ def notify_success(date_str: str, mode: str, turns: int, words: int, dur_sec: fl
 
 
 def notify_failure(date_str: str, where: str, err: str) -> None:
+    key = (date_str, where)
+    if key in _NOTIFIED_FAILURES:
+        return
+    _NOTIFIED_FAILURES.add(key)
+    # Also dedup any second notify on the same day no matter what stage —
+    # check_budget → main re-raise → outer except is the common double-ping.
+    if (date_str, "any") in _NOTIFIED_FAILURES:
+        return
+    _NOTIFIED_FAILURES.add((date_str, "any"))
     notify(
         title=f"✗ episode {date_str} failed",
         body=f"stage: {where}\n{err[:400]}",
         priority="high",
         tags=["x", "warning"],
+    )
+
+
+def notify_warn(date_str: str, where: str, msg: str) -> None:
+    """Non-fatal warning ping. Same dedup as failure but lower priority."""
+    key = (date_str, f"warn:{where}")
+    if key in _NOTIFIED_FAILURES:
+        return
+    _NOTIFIED_FAILURES.add(key)
+    notify(
+        title=f"⚠ episode {date_str} warning",
+        body=f"stage: {where}\n{msg[:400]}",
+        priority="default",
+        tags=["warning"],
     )

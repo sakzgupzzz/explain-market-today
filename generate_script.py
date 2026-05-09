@@ -80,23 +80,17 @@ def _fmt_char_block() -> str:
 _FEW_SHOT = """<example_episode>
 JAMIE: Jamie here — and FabriCo just announced a forty-eight billion dollar buyback while their warehouse workers are on strike. ALEX, untangle this for us.
 ALEX: [deadpan] Alex on equities. F A B R is up six point two percent on the announcement. The buyback is roughly nine times last year's R and D budget. Make of that what you will.
-CAM: Cam on macro — and the dollar index is up one tenth of a percent overnight, which is to say nothing happened.
-JAMIE: Right, exactly.
 MAYA: [excited] Maya from tech. Quanto Robotics shipped their household model and the Wall Street Journal review is brutal — quote, "less useful than a blender."
-KAI: A blender does one thing well, though.
+JAMIE: A blender does one thing well, though.
 MAYA: That's the point.
-RIO: Rio checking in — the strike at FabriCo's Memphis plant is into day six. That's the human side here. Forty-two hundred workers.
-TESS: Tess at retail — and the buyback is a tell. Companies announce buybacks in week two of strikes. It's a pressure move.
-DEV: [snorts] Dev on crypto — meanwhile Bitcoin did absolutely nothing today. Refreshing.
-JAMIE: [laughs] Sure.
-ALEX: Final note on F A B R — the CEO sold one point three million dollars of stock yesterday afternoon. That's in the eight K filing.
+ALEX: One more on F A B R — the CEO sold one point three million dollars of stock yesterday afternoon. That's in the eight K filing.
 JAMIE: Wait, what?
 ALEX: [sarcastic] You heard me.
-KAI: [mischievously] Kai with the weird thing. A man in Vermont broke into Thrune Bank — to deposit money. Said he didn't trust ATMs. They arrested him.
+MAYA: [mischievously] Closer — a man in Vermont broke into Thrune Bank to deposit money. Said he didn't trust ATMs. They arrested him.
 JAMIE: [laughs] That's it. Wrap it. This show is for entertainment and education only — nothing here is investment advice.
 </example_episode>
 
-NOTICE: the example above used FAKE companies (FabriCo, Quanto Robotics, Thrune Bank). Your output must use REAL companies and events from the HEADLINES block above. Do NOT mention FabriCo, Quanto, Thrune Bank, the Memphis strike, the Vermont bank-deposit story, or any other story shown in the example. Mimic the rhythm — varied turn lengths, ping-pong reactions, audio tags — not the content."""
+NOTICE: the example above used FAKE companies (FabriCo, Quanto Robotics, Thrune Bank). Your output must use REAL companies and events from the HEADLINES block above. Do NOT mention FabriCo, Quanto, Thrune Bank, the Vermont bank-deposit story, or any other story shown in the example. Mimic the rhythm — varied turn lengths, ping-pong reactions, audio tags — not the content."""
 
 
 def _fmt_ranked_stories(ranked: list[dict], top_n: int = 15, compact: bool = False) -> str:
@@ -162,9 +156,13 @@ _TONE_FRAGMENTS = {
 # .meta.json to compare turn count / word count / banned-phrase rate /
 # topic diversity per variant. Default 'A'. Add 'B' / 'C' branches inside
 # build_prompt as needed.
-import os as _os
 PROMPT_VERSION = "v1.4"
-PROMPT_VARIANT = _os.environ.get("PROMPT_VARIANT", "A").upper()
+PROMPT_VARIANT = os.environ.get("PROMPT_VARIANT", "A").upper()
+
+# Set by generate() so main.py can decide whether to run critique afterwards.
+# Multistage scripts have already been pruned per beat — running critique on
+# top can violate its own 90% turn-preserve rule on short episodes.
+_LAST_USED_MULTISTAGE = False
 
 _LENGTH_PRESETS = {
     "short": {"min_words": 600, "max_words": 1500, "min_turns": 18},
@@ -448,17 +446,25 @@ def generate(
     upcoming_events: str = "",
     interests: dict | None = None,
     max_retries: int = 0,
+    civic: dict | None = None,
+    yesterday_topics: list[str] | None = None,
 ) -> str:
     """Generate the dialogue. Default path is multi-stage when Anthropic is
     available (better coherence, callbacks, beat budgets); single-shot legacy
     path otherwise. Override either way via USE_MULTISTAGE=0 / =1 env."""
     import time
+    global _LAST_USED_MULTISTAGE
+    _LAST_USED_MULTISTAGE = False
     use_multistage_env = os.environ.get("USE_MULTISTAGE", "").strip()
     if use_multistage_env == "1" or (use_multistage_env != "0" and ANTHROPIC_API_KEY):
         try:
             from stage_pipeline import generate_multistage
-            script = generate_multistage(market, ranked_stories, interests=interests)
+            script = generate_multistage(
+                market, ranked_stories, interests=interests, civic=civic,
+                yesterday_topics=yesterday_topics,
+            )
             print(f"[generate] multistage: {_count_turns(script)} turns")
+            _LAST_USED_MULTISTAGE = True
             return script
         except Exception as e:
             print(f"[generate] multistage failed ({e}); falling back to single-shot")

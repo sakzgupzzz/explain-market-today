@@ -113,6 +113,11 @@ _TICKER_FALSE_POSITIVES = {
     "JSON", "XML", "HTML", "CSS", "SQL", "iOS", "macOS", "BBQ", "DIY",
     "NEW", "OLD", "BIG", "TOP", "PER", "PRO", "AND", "FOR", "BUT", "NOT",
     "ALL", "ANY", "ONE", "TWO", "OUR", "WAS", "ARE", "WHO", "HOW", "WHY",
+    # Geopolitical / org acronyms that read naturally and never need spacing
+    "OPEC", "NATO", "BRICS", "ASEAN", "G7", "G20", "WHO", "WTO", "IMF",
+    "OECD", "EBC", "ECB", "BOE", "BOJ", "PBOC",
+    # Commonly-mentioned non-listed names that look like tickers
+    "BYD", "SBNY", "DOGE", "XRP", "SOL", "ETH", "BTC",
 }
 
 # Dollar amount patterns: $5B, $5 billion, $5.2M, $100, etc.
