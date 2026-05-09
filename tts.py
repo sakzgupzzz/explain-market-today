@@ -116,11 +116,29 @@ def synth(text: str, out_mp3: Path) -> tuple[Path, list[dict]]:
         turns = [(DEFAULT_CHARACTER, text)]
     # Drop any disclaimer-flavored turn(s) from synthesis input — we'll
     # append the pre-recorded clip in _add_host_intro_with_bed instead.
+    # Guard: if stripping would leave us with 0 turns, keep the disclaimer
+    # in the dialogue (better to "double-disclaim" than synth empty input).
     if HOST_DISCLAIMER.exists():
         before = len(turns)
-        turns = [(n, t) for n, t in turns if "entertainment and education only" not in t.lower()]
-        if len(turns) < before:
-            print(f"[tts] stripped {before - len(turns)} disclaimer turn(s) from synth — using pre-recorded clip")
+        stripped = [(n, t) for n, t in turns if "entertainment and education only" not in t.lower()]
+        if stripped:
+            turns = stripped
+            if len(turns) < before:
+                print(f"[tts] stripped {before - len(turns)} disclaimer turn(s) from synth — using pre-recorded clip")
+        else:
+            print(f"[tts] script was only disclaimer ({before} turn(s)); keeping in dialogue path to avoid empty synth")
+    if not turns:
+        # Defensive — shouldn't reach here after the guard above, but if a
+        # caller passes an empty script, log and return without erroring.
+        print(f"[tts] WARN: empty turn list after parse — skipping synth, writing 1-sec silence to {out_mp3}")
+        _silence_wav(1000, 44100, out_mp3.with_suffix(".tmp.wav"))
+        subprocess.run(
+            ["ffmpeg", "-y", "-loglevel", "error", "-i", str(out_mp3.with_suffix(".tmp.wav")),
+             "-c:a", "libmp3lame", "-b:a", "128k", str(out_mp3)],
+            check=True,
+        )
+        out_mp3.with_suffix(".tmp.wav").unlink(missing_ok=True)
+        return out_mp3, []
     backend = _resolve_backend()
     print(f"[tts] backend={backend} turns={len(turns)}")
     if backend in ("eleven", "eleven_v3"):

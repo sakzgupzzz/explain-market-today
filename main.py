@@ -184,6 +184,8 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
             _write_meta(mp3_path, script)
 
     # ── express render ─────────────────────────────────────────────────────
+    # Wrapped in try/except so an express failure can't kill the show
+    # publish — show is the load-bearing artifact; express is a bonus.
     if mode in ("express", "both"):
         EXPRESS_DIR.mkdir(parents=True, exist_ok=True)
         ex_mp3 = EXPRESS_DIR / f"{today}.mp3"
@@ -191,13 +193,28 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
         if ex_mp3.exists() and not force:
             print(f"[{today}] express already published — skipping express render")
         else:
-            print(f"[{today}] generating express script…")
-            ex_script = render_express(market, fresh, date_pretty)
-            ex_script = sanitize_script(ex_script, verbose=False)
-            ex_txt.write_text(ex_script)
-            print(f"[{today}] synthesizing express audio…")
-            synth(ex_script, ex_mp3)
-            _write_meta(ex_mp3, ex_script)
+            try:
+                print(f"[{today}] generating express script…")
+                ex_script = render_express(market, fresh, date_pretty)
+                ex_script = sanitize_script(ex_script, verbose=False)
+                # Guard: don't synth a script that's just the disclaimer.
+                # parse_dialogue would return ≤1 turn → synth'd to silence.
+                substantive_lines = [
+                    l for l in ex_script.splitlines()
+                    if re.match(r"^[A-Z][A-Z0-9_]{0,15}:\s*\S", l)
+                    and "entertainment and education only" not in l.lower()
+                ]
+                if len(substantive_lines) < 3:
+                    print(f"[{today}] express script too thin ({len(substantive_lines)} substantive turns); skipping express")
+                else:
+                    ex_txt.write_text(ex_script)
+                    print(f"[{today}] synthesizing express audio…")
+                    synth(ex_script, ex_mp3)
+                    _write_meta(ex_mp3, ex_script)
+            except Exception as e:
+                import traceback
+                print(f"[{today}] express render failed (non-fatal): {type(e).__name__}: {e}")
+                traceback.print_exc()
 
     # ── memory ─────────────────────────────────────────────────────────────
     if mode in ("show", "both"):
