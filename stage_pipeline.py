@@ -153,7 +153,7 @@ Output ONLY a JSON object with this exact shape (no commentary, no markdown):
     "joke_angle": "<one-line on what's funny or weird about it>"
   }},
   "yesterday_callback": {{
-    "use": <true | false — true ONLY if a story below directly continues a YESTERDAY topic listed above and is genuinely worth referencing>,
+    "use": <true | false — true ONLY if a story below directly continues a YESTERDAY topic listed above AND that yesterday topic is NOT the same story you picked for cold_open / big_story / quick_hits / odd_thing today (a callback that repeats today's lead is filler — set use=false)>,
     "topic": "<the specific yesterday topic to call back, or empty string>",
     "fresh_take": "<one-line on what's NEW today vs. what we said yesterday — must add something, not just restate>"
   }},
@@ -248,6 +248,36 @@ def plan(ranked: list[dict], market: dict, interests: dict | None = None,
                 outline["quick_hits"][idx_n]["story_id"] = new_id
             else:
                 outline.setdefault(label, {})["story_id"] = new_id
+    # Drop yesterday_callback if its topic re-covers a story already on today's
+    # run-of-show. Otherwise the callback turn parrots the cold open or a quick
+    # hit, producing duplicate beats (see 2026-05-09: Parker bankruptcy was both
+    # cold_open AND yesterday_callback → the callback collapsed into markets).
+    yc = outline.get("yesterday_callback") or {}
+    if yc.get("use") and yc.get("topic"):
+        today_text_parts = []
+        for beat in ("cold_open", "big_story", "odd_thing"):
+            b = outline.get(beat) or {}
+            sid = b.get("story_id")
+            today_text_parts.append(b.get("hook") or b.get("angle") or b.get("joke_angle") or "")
+            if sid and sid in idx:
+                today_text_parts.append(idx[sid].get("title", ""))
+        for qh in outline.get("quick_hits") or []:
+            today_text_parts.append(qh.get("angle", ""))
+            sid = qh.get("story_id")
+            if sid and sid in idx:
+                today_text_parts.append(idx[sid].get("title", ""))
+        today_tokens = set(re.findall(r"[A-Za-z]{5,}", " ".join(today_text_parts).lower()))
+        yc_tokens = set(re.findall(r"[A-Za-z]{5,}", yc["topic"].lower()))
+        _STOP = {"about", "after", "again", "their", "there", "these", "those",
+                 "today", "yesterday", "would", "could", "should", "where",
+                 "while", "every", "still", "really", "stock", "stocks",
+                 "company", "market", "markets", "earnings", "report"}
+        overlap = (today_tokens & yc_tokens) - _STOP
+        if overlap:
+            print(f"[plan] yesterday_callback overlaps today's beats on {sorted(overlap)}; "
+                  f"setting use=false")
+            yc["use"] = False
+            outline["yesterday_callback"] = yc
     return outline
 
 
@@ -360,12 +390,14 @@ def render_cold_open(plan_d: dict, interests: dict | None = None, market: dict |
             print(f"[stage] cold_open hook generic ('{hook[:40]}…'); injecting top-mover fallback")
             hook = f"{hook} ({fallback})" if hook else fallback
     instruction = (
-        f'JAMIE delivers a punchy 1-line cold open. Use this hook as the substance: "{hook}". '
-        f"Say the name 'Jamie' in the first sentence. No greeting, no welcome, no 'good morning', "
-        f"no 'today on the show'. Drop straight into the news with a specific number/name. "
-        f"The first turn MUST contain a specific number, dollar amount, or proper noun + fact."
+        f'JAMIE delivers a punchy 1-line cold open in FIRST PERSON. Use this hook as the '
+        f'substance: "{hook}". JAMIE may identify himself with "I\'m Jamie" or "Jamie here" '
+        f"— NEVER refer to Jamie in the third person (no \"Jamie's here to tell you\", no "
+        f'"Jamie will explain"). No greeting, no welcome, no "good morning", no "today on '
+        f'the show". Drop straight into the news with a specific number/name. EXACTLY 1 '
+        f"turn, ≤45 words. MUST contain a specific number, dollar amount, or proper noun + fact."
     )
-    return _render_beat("COLD OPEN", instruction, [], 1, 2, interests=interests)
+    return _render_beat("COLD OPEN", instruction, [], 1, 1, interests=interests)
 
 
 def render_markets(plan_d: dict, prev_turns: list[str], market: dict, interests: dict | None = None) -> str:
@@ -487,10 +519,12 @@ def render_sign_off(plan_d: dict, prev_turns: list[str], interests: dict | None 
     callback = so.get("callback_target", "")
     instruction = (
         f'EXACTLY 3 turns: '
-        f'(1) ALEX or MAYA opens with a SPECIFIC callback to "{callback}" — repeat the line, '
-        f'name the company, build on the joke. Must reference something concretely said in the '
-        f'PREVIOUS TURNS above. '
-        f'(2) The other host adds a one-line riff. '
+        f'(1) ALEX or MAYA opens with a SPECIFIC callback to "{callback}" — name the company '
+        f'or subject and ADD A NEW ANGLE (a fresh metaphor, a follow-up zinger, a forward-looking '
+        f'jab). Do NOT restate any line verbatim from the PREVIOUS TURNS above; if the earlier '
+        f'joke was "X has commitment issues", do not repeat that phrase — escalate it or twist it. '
+        f'(2) The other host adds a one-line riff that builds on turn 1, also without recycling '
+        f'an earlier punchline. '
         f'(3) JAMIE: "{DISCLAIMER_SHORT}" (verbatim, exactly this line, nothing else). End.'
     )
     return _render_beat("SIGN OFF", instruction, prev_turns, 3, 3,
