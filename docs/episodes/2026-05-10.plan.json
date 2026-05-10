@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "f83471b24b0c",
+    "hook": "Morgan Stanley just told CVS shareholders one thing after earnings beat\u2014and it's not what the stock price thinks."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7398.93 (+0.84%)",
+      "Nasdaq: 26247.08 (+1.71%)",
+      "AMD: +11.44% (biggest gainer)",
+      "MCD: -2.80% (biggest loser)"
+    ],
+    "macro_note": "Chip stocks flying, defensive names stumbling\u2014the market is choosing violence on consumer staples today."
+  },
+  "big_story": {
+    "story_id": "83a566226da0",
+    "lead_host": "JAMIE",
+    "story_title": "Marty Makary Set the Conditions for His Own Downfall",
+    "angle": "A public health figure's credibility collapse is a masterclass in how being right about one thing doesn't inoculate you against being dangerously wrong about the next\u2014and how the internet remembers both.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "9f0e2c444146",
+      "lead_host": "ALEX",
+      "angle": "NVIDIA is 'unstoppable' in 2026 according to analysts who said the same thing in 2024, 2023, and 2022\u2014this stock has commitment issues with the word 'correction.'",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "7a5701ee0ba9",
+      "lead_host": "MAYA",
+      "angle": "Lime is IPO-ing after years of being the scooter company that made cities hate scooters\u2014this is the Crocs IPO of micro-mobility: everyone said it was dumb, then it worked anyway.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "da34405e2560",
+      "lead_host": "ALEX",
+      "angle": "Trump official floating a gas tax suspension is peak 'borrow from tomorrow to feel good today'\u2014fiscal policy as a TikTok trend.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "34142a66f654",
+      "lead_host": "MAYA",
+      "angle": "SEC delays prediction market ETFs while Bitcoin funds wait in the same line\u2014regulators are doing theater, and everyone knows it.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "ada5b345994f",
+    "joke_angle": "A dress made from 500 loaves of bread at an African film awards show is either the most sustainable fashion moment ever or a very expensive carb-loading strategy."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Parker, the fintech startup that was supposed to kill traditional banking, just filed for bankruptcy\u2014proving disruption",
+    "fresh_take": "Parker's corpse is still warm and Lime is already IPO-ing\u2014turns out the graveyard of failed disruption is just a pipeline to the public markets."
+  },
+  "sign_off": {
+    "callback_target": "NVIDIA's 'unstoppable' streak\u2014because nothing says 'unstoppable' like being stopped every 18 months and then rebranded as inevitable."
+  }
+}

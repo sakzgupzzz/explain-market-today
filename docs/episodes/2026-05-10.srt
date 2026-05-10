@@ -1,0 +1,168 @@
+1
+00:00:00,000 --> 00:00:07,553
+JAMIE: Morgan Stanley just told C V S shareholders their stock beat earnings but the price action says nobody bought it.
+  ↳ source: https://finance.yahoo.com/sectors/healthcare/articles/morgan-stanley-drops-one-big-174700195.html
+
+2
+00:00:07,553 --> 00:00:55,895
+ALEX: So Parker filed for bankruptcy after burning through venture capital, and the bankruptcy trustee's literally still processing paperwork while Lime just announced an IPO and is eyeing a Nasdaq listing—turns out the only thing faster than a fintech collapse is another startup's ability to ignore it completely. S&P up zero point eight four percent, Nasdaq up one point seven one—and here's the split: chip stocks chose violence today. A M D jumped eleven point four four percent, Broadcom up four point two three, Cisco up four point seven nine. Meanwhile McDonald's down two point eight, Bank of America down two point seven three, Eli Lilly down two point seven two. The market is literally saying "we want semiconductors and we do not want your Big Mac."
+  ↳ source: https://techcrunch.com/2026/05/09/fintech-startup-parker-files-for-bankruptcy/
+
+3
+00:00:55,895 --> 00:01:04,582
+JAMIE: Wait, A M D up eleven percent in one day? What happened—did they announce they invented a chip that also makes coffee?
+
+4
+00:01:04,582 --> 00:01:20,822
+ALEX: Earnings beat and guidance raised. The thing is, they didn't invent anything new yesterday. The stock just decided today was the day to price in that they're actually competent. It's like finding out your car works and immediately paying double for it.
+
+5
+00:01:20,822 --> 00:01:34,418
+MAYA: Okay but the real story is McDonald's getting demolished while the entire semiconductor complex is ripping—this is what happens when growth stocks don't need to apologize for existing anymore. Defensive names are getting murdered.
+
+6
+00:01:34,418 --> 00:01:46,126
+JAMIE: So if you own McDonald's right now you're basically holding the Crocs IPO of consumer discretionary—everyone's moving on and you're just standing there wondering why nobody wants your thing anymore.
+
+7
+00:01:46,126 --> 00:01:59,723
+ALEX: That's unfair to Crocs. Crocs at least knew what they were. McDonald's is down two point eight percent because the entire category is broken and nobody's going to fix it by adding a spicy sauce.
+
+8
+00:01:59,723 --> 00:02:18,984
+JAMIE: The Atlantic just published a piece on Marty Makary and the headline is basically about credibility and consequences. And I think this is actually the most important story nobody's paying attention to right now because it's about how being right once doesn't mean you get to be wrong forever without consequences.
+  ↳ source: https://www.theatlantic.com/health/2026/05/marty-makary-fda/687124/?utm_source=feed
+
+9
+00:02:18,984 --> 00:02:37,113
+ALEX: Marty Makary spent time saying lockdowns were overblown and the lab-leak theory was worth investigating, and he was right on both counts. Then he became FDA commissioner and immediately started making decisions that look like he's working from a political checklist instead of food safety data.
+  ↳ source: https://www.theatlantic.com/health/2026/05/marty-makary-fda/687124/?utm_source=feed
+
+10
+00:02:37,113 --> 00:02:47,310
+MAYA: Wait, what did he actually do? Like specifically—because there's a difference between having a take on Twitter and using regulatory authority to enforce your personal ideology.
+
+11
+00:02:47,310 --> 00:03:09,970
+JAMIE: The Atlantic piece walks through his pattern: he fast-tracked approval for a chronic kidney disease drug based on surrogate markers instead of actual patient outcomes, he's been dismissive of vaccine safety reviews in ways that contradict FDA's own precedent, and he's been running the agency like it's a platform for his pre-existing opinions rather than an institution with standards.
+
+12
+00:03:09,970 --> 00:03:29,987
+ALEX: The thing that kills me is the setup. Makary built credibility by being skeptical of institutional overreach. That skepticism was warranted. But then he got the job and discovered that skepticism of institutions is only useful if you're not running one—because now he's the institution and his skepticism just looks like chaos.
+
+13
+00:03:29,987 --> 00:03:50,004
+MAYA: This is the trap though, right? He became famous for being the guy who asked hard questions about regulatory agencies, and now he's running the FDA like it's a personal grievance against the entire regulatory apparatus. The kidney disease drug approval—that wasn't about cutting red tape, that was about proving a point.
+
+14
+00:03:50,004 --> 00:04:04,356
+JAMIE: So he's basically the crypto bro of federal health policy. "Trust me, I know better than the system," and then the system is literally him now and he's still acting like he's fighting it from the outside.
+
+15
+00:04:04,356 --> 00:04:30,793
+ALEX: The internet's already connecting the dots. Every decision he makes gets cross-referenced against every interview he gave where he said the FDA was too cautious. He chose to build his entire public identity on institutional skepticism and then took a job where institutional credibility is the only thing that matters. This is what happens when you optimize for being right on cable news instead of being right over time.
+
+16
+00:04:30,793 --> 00:04:56,097
+MAYA: And the best part is the vaccine safety stuff because—look, he can argue about lockdowns forever, that's policy debate. But when you're the FDA commissioner and you're downplaying vaccine monitoring data, you're not being a contrarian anymore, you're being dangerous. And people remember. The Atlantic piece literally shows how his old takes are now being used as evidence that he shouldn't be trusted with new decisions.
+
+17
+00:04:56,097 --> 00:05:10,071
+JAMIE: He's trapped. If he reverses course he looks weak. If he doubles down he looks ideological. And every move he makes now gets filtered through "is this based on evidence or is this based on Marty's brand?"
+
+18
+00:05:10,071 --> 00:05:25,178
+ALEX: The FDA is supposed to be boring. That's the whole job. You want the most boring possible regulatory environment because boring means nobody's dying from unapproved drugs or contaminated food. Makary wanted to be interesting. He got his wish.
+
+19
+00:05:25,178 --> 00:05:30,088
+JAMIE: Analysts just dropped their 2026 outlook and Nvidia is, once again, unstoppable.
+
+20
+00:05:30,088 --> 00:05:51,238
+ALEX: This stock has commitment issues with the word "correction." Every analyst report reads like a hostage video where they're contractually obligated to say Nvidia will keep going up even though they've said it multiple years in a row and the stock's already priced in every conceivable scenario where artificial intelligence doesn't immediately stop working.
+  ↳ source: https://finance.yahoo.com/markets/stocks/articles/reddit-rddt-one-unstoppable-stocks-155358836.html
+
+21
+00:05:51,238 --> 00:06:12,765
+MAYA: But here's the thing—it keeps working. Like, yes, the narrative is exhausted, yes, everyone's saying the same thing, but the earnings actually justify the valuation in ways that most hyped stocks don't. So either we're in the longest bubble in market history or Nvidia actually is different and the analysts are just bad at explaining why.
+  ↳ source: https://finance.yahoo.com/markets/stocks/articles/reddit-rddt-one-unstoppable-stocks-155358836.html
+
+22
+00:06:12,765 --> 00:06:19,941
+JAMIE: So the consensus is right but for the wrong reasons and nobody's actually sure which one it is.
+
+23
+00:06:19,941 --> 00:06:22,963
+ALEX: That's the entire market in twenty twenty-six.
+
+24
+00:06:22,963 --> 00:06:30,894
+MAYA: Lime just filed for its IPO after spending years being the scooter company that made city council members hate scooters.
+
+25
+00:06:30,894 --> 00:06:32,782
+JAMIE: Wait—Lime's actually going public?
+
+26
+00:06:32,782 --> 00:06:41,846
+MAYA: Yes. But here's what's wild: they actually fixed the problem. Parking enforcement, geofencing, user behavior—they solved it. And now they're going to Nasdaq.
+
+27
+00:06:41,846 --> 00:06:50,155
+ALEX: The scooter company won by just making it less annoying to use scooters. Turns out that was the entire competitive advantage.
+
+28
+00:06:50,155 --> 00:06:53,932
+JAMIE: That's actually the least hype story we've covered all week.
+
+29
+00:06:53,932 --> 00:07:00,730
+ALEX: Trump administration just opened the door to suspending the federal gasoline tax to keep pump prices down.
+
+30
+00:07:00,730 --> 00:07:02,619
+JAMIE: Is that actually possible?
+
+31
+00:07:02,619 --> 00:07:19,236
+ALEX: Technically yes. Fiscally insane. This is peak borrow-from-tomorrow-to-feel-good-today. You're suspending tax revenue that funds highway maintenance and infrastructure so people feel better at the pump for three months, and then what—you just leave the roads broken? It's fiscal policy as a TikTok trend.
+
+32
+00:07:19,236 --> 00:07:31,700
+MAYA: Energy officials said they're "open" to it, which in government-speak means they've already calculated how many votes it costs versus how many they gain and they're waiting for the focus group data.
+
+33
+00:07:31,700 --> 00:07:32,833
+ALEX: It's all theater.
+
+34
+00:07:32,833 --> 00:07:59,648
+MAYA: A designer at the Africa Movie Academy Awards in Lagos just sent a model down the runway in a dress made from five hundred loaves of bread. And look, I know that sounds like a fever dream, but the craftsmanship was actually insane—hand-stitched, structured, the bread was treated so it wouldn't decompose mid-show. This is either the most sustainable fashion moment ever or the most expensive carb-loading strategy in history.
+  ↳ source: https://www.bbc.com/news/articles/c4g0d3d5zn4o?at_medium=RSS&at_campaign=rss
+
+35
+00:07:59,648 --> 00:08:06,823
+JAMIE: Wait, five hundred loaves? That's not a dress, that's a structural engineering problem. How much does that weigh?
+
+36
+00:08:06,823 --> 00:08:30,995
+MAYA: The designer said it was around forty kilograms, which means the model was basically wearing a small human being made of sourdough. And the thing is, it actually worked visually—it was this gorgeous golden texture, caught the light, very haute couture. But every fashion critic in the room was probably doing the math on how many people that dress could have fed instead.
+  ↳ source: https://www.bbc.com/news/articles/c4g0d3d5zn4o?at_medium=RSS&at_campaign=rss
+
+37
+00:08:30,995 --> 00:09:00,076
+ALEX: So we've reached the point where African fashion is literally outpacing Western sustainability theater. Lagos just made a statement about waste and resource use by making the waste into wearable art, and New York Fashion Week is still doing the same recycled polyester monologue they've been doing for years. The bread dress is the most honest thing anyone's worn to an awards show because at least you know exactly what it is and what it cost.
+  ↳ source: https://www.bbc.com/news/articles/c4g0d3d5zn4o?at_medium=RSS&at_campaign=rss
+
+38
+00:09:00,076 --> 00:09:18,582
+MAYA: Nvidia's been the market's emotional support animal for years straight—every time it dips, analysts file reports explaining why that dip is actually bullish, and somehow they're right every single time, which means either Jensen Huang discovered perpetual motion or we're all just Stockholm syndrome victims with brokerage accounts.
+
+39
+00:09:18,582 --> 00:09:28,779
+ALEX: The stock's priced in artificial intelligence working perfectly forever, which is a bold bet from people who've never met a software update that didn't break something.
+
+40
+00:09:28,779 --> 00:09:34,066
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
