@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "a6a234fa29c4",
+    "hook": "Kevin Hassett says AI isn't costing jobs right now\u2014meanwhile tech companies have laid off 262,000 people since 2022."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7418.49 (+0.26%)",
+      "Nasdaq: 26294.92 (+0.18%)",
+      "LLY: +4.19% (biggest gainer)",
+      "PG: -2.52% (biggest loser)"
+    ],
+    "macro_note": "VIX spiked 5.76% despite flat indices\u2014volatility creeping in while the Fed watches inflation expectations jump to 3.7%."
+  },
+  "big_story": {
+    "story_id": "a6a234fa29c4",
+    "lead_host": "JAMIE",
+    "story_title": "Hassett says AI isn't costing anybody their job right now \u2014 but tech layoffs keep coming",
+    "angle": "The White House's chief economist is gaslighting the room while Discord, Adobe, and Accenture are actively cutting headcount\u2014this is the Crocs IPO of economic messaging: nobody asked for it, it makes no sense, but they're committed.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "fabc5eb358fe",
+      "lead_host": "ALEX",
+      "angle": "Babcock & Wilcox beats revenue and books a surge\u2014nuclear energy stocks are having their 'we told you so' moment while the market sleeps.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "78f83c5fa47e",
+      "lead_host": "ALEX",
+      "angle": "April home sales disappoint as mortgage rates stay elevated\u2014the housing market has commitment issues, and nobody's buying the rebound narrative.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "2e3949841a00",
+      "lead_host": "MAYA",
+      "angle": "Discord bundling Xbox Game Pass into Nitro\u2014this is what happens when a platform realizes it can't monetize on vibes alone and chose violence against subscription fatigue.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "dabd95da16a1",
+      "lead_host": "MAYA",
+      "angle": "Sony's piracy lawsuit failure may doom other copyright cases\u2014the internet won, and Hollywood's legal team is still printing cease-and-desist letters to ghosts.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "d25f0e3c0ecb",
+    "joke_angle": "Ships rerouting around the Middle East are now hitting whales\u2014we've successfully created a geopolitical game of bumper cars with marine life."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "NVIDIA is 'unstoppable' in 2026 according to analysts who said the same thing in 2024, 2023, and 2022\u2014this stock has commitment issues",
+    "fresh_take": "LLY just jumped 4.19% today while NVDA only gained 3.07%\u2014the AI narrative is finally diversifying, and the Mag 7 's stranglehold is loosening."
+  },
+  "sign_off": {
+    "callback_target": "Kevin Hassett's 'AI isn't costing jobs' claim\u2014circle back to the 262,000 layoffs as the final word."
+  }
+}

@@ -1,0 +1,185 @@
+1
+00:00:00,000 --> 00:00:10,464
+JAMIE: Kevin Hassett says AI isn't killing jobs right now—but tech companies have laid off people since twenty twenty-two, so either the math is broken or Kevin is .
+  ↳ source: https://www.cnbc.com/2026/05/11/trump-white-house-hassett-ai-jobs.html
+
+2
+00:00:10,464 --> 00:00:34,758
+ALEX: S&P five hundred up zero point two six percent to seven thousand four hundred eighteen, Nasdaq basically flat at twenty-six thousand two hundred ninety-four—but here's the thing: the V I X spiked five point seven six percent while the market was napping, which is like your house alarm going off while you're eating cereal. Tells you something's wrong with the door, not the cereal.
+
+3
+00:00:34,758 --> 00:00:37,374
+JAMIE: What's the door in this metaphor?
+
+4
+00:00:37,374 --> 00:00:49,334
+ALEX: Inflation expectations just jumped to three point seven percent. The Fed's watching that like a parent who found a vape in the garage—they're not yelling yet, but they're *thinking* about yelling.
+
+5
+00:00:49,334 --> 00:00:51,950
+MAYA: Okay but who actually won today?
+
+6
+00:00:51,950 --> 00:01:09,142
+ALEX: Eli Lilly up four point nineteen percent—biggest gainer by a mile. Nvidia up three point zero seven. Oil stocks are flying. Meanwhile Procter & Gamble down two point five two percent, PepsiCo down two point four seven—the consumer staples are getting absolutely chosen violence today.
+
+7
+00:01:09,142 --> 00:01:16,243
+JAMIE: So the market's saying "I don't need your toothpaste, I need your diabetes medication and your semiconductor chips."
+
+8
+00:01:16,243 --> 00:01:37,173
+MAYA: This is the Crocs IPO of portfolio rebalancing—nobody asked for it, everyone's confused about who it's for, but somehow it's working. Adobe down two point two six percent, Accenture down two point zero nine—the entire "we'll help you use AI" industry is getting dunked on while the actual AI companies print money. It's beautiful.
+
+9
+00:01:37,173 --> 00:01:40,163
+ALEX: Crypto chose to have commitment issues today.
+
+10
+00:01:40,163 --> 00:01:55,486
+JAMIE: Kevin Hassett, White House chief economist, went on television and said AI isn't costing anybody their job right now—and I want to be very clear about what just happened: he said that while tech companies are actively laying people off.
+
+11
+00:01:55,486 --> 00:02:12,679
+ALEX: Tech companies have been doing rolling cuts all quarter—so either Kevin's definition of "job" is something very specific we don't understand, or he's doing what I call the Crocs IPO of economic messaging: nobody asked for it, it makes no sense, but he's absolutely committed.
+
+12
+00:02:12,679 --> 00:02:23,891
+MAYA: Tech companies have announced they're shifting to AI-first operations. That's not a rumor, that's a press release. Kevin Hassett read that press release and chose to ignore it.
+
+13
+00:02:23,891 --> 00:02:33,608
+JAMIE: So the White House position is: if you get fired by a bot, you didn't actually lose your job, you just became unavailable for work.
+
+14
+00:02:33,608 --> 00:02:57,902
+ALEX: Here's the thing that actually matters—and this is why his statement is so dangerous: the Fed's watching labor data to decide whether to cut rates. If Kevin's telling them "AI layoffs aren't real," and then unemployment stays lower than it should be, the Fed keeps rates higher, and suddenly we've got a policy error built on a lie. This is the Crocs IPO of—
+
+15
+00:02:57,902 --> 00:03:01,265
+MAYA: Wait, you already did the Crocs IPO joke!
+
+16
+00:03:01,265 --> 00:03:04,255
+ALEX: I know. That's how committed it is.
+
+17
+00:03:04,255 --> 00:03:16,962
+MAYA: The mental gymnastics required to say "AI isn't costing jobs" while watching the exact companies building AI announce headcount reductions is genuinely Olympic-level. Like, you have to actively choose to not see it.
+
+18
+00:03:16,962 --> 00:03:26,306
+JAMIE: He didn't choose not to see it—he chose violence today. He looked at the data and said "not my problem" out loud on national television.
+
+19
+00:03:26,306 --> 00:03:37,518
+ALEX: Babcock & Wilcox beat revenue expectations and booked a massive surge in orders—nuclear energy stocks are up across the board while the broader market's still pretending this isn't happening.
+  ↳ source: https://seekingalpha.com/news/4590609-babcock-wilcox-stock-gains-after-revenue-beat-booking-surge?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news
+
+20
+00:03:37,518 --> 00:03:41,630
+JAMIE: Wait, the company that makes nuclear reactors is actually winning?
+
+21
+00:03:41,630 --> 00:04:01,812
+ALEX: They just posted strong revenue numbers, up year-over-year, and their backlog is substantial. The market's been sleeping on nuclear for years while saying "renewables are the future," and now that inflation expectations just spiked to three point seven percent and nobody wants blackouts, suddenly small modular reactors look like a hedge against reality.
+  ↳ source: https://seekingalpha.com/news/4590533-one-year-inflation-expectation-jumps-to-37-in-latest-reading-cleveland-fed?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news
+
+22
+00:04:01,812 --> 00:04:12,277
+MAYA: This is the inverse of the Crocs IPO—everyone asked for it, nobody believed it would work, and now it's actually working and everyone's mad they missed it.
+
+23
+00:04:12,277 --> 00:04:21,246
+JAMIE: Home sales disappointed in April—mortgage rates stayed elevated, and the housing market's basically ghosting anybody who wants to buy a house right now.
+  ↳ source: https://www.cnbc.com/2026/05/11/april-home-sales-disappoint-higher-mortgage-rates.html
+
+24
+00:04:21,246 --> 00:04:39,560
+ALEX: April home sales came in below expectations because mortgage rates stayed elevated and buyers are uncertain. The market's pricing in rate cuts that haven't happened yet, but the actual people trying to buy a home in reality are just sitting on the sidelines. This stock has commitment issues.
+  ↳ source: https://www.cnbc.com/2026/05/11/april-home-sales-disappoint-higher-mortgage-rates.html
+
+25
+00:04:39,560 --> 00:04:51,520
+MAYA: It's the ultimate "we're waiting for a deal that's never coming" energy—rates aren't dropping, inventory's tight, and buyers are just scrolling Zillow like it's a dating app they've given up on.
+
+26
+00:04:51,520 --> 00:04:59,742
+JAMIE: Discord is bundling Xbox Game Pass into Nitro now—their subscription tier is basically saying "vibes alone aren't paying the bills anymore."
+
+27
+00:04:59,742 --> 00:05:21,419
+MAYA: Discord Nitro Rewards gives subscribers access to the base tier of Xbox Game Pass for no extra cost. This is what happens when a platform realizes that a community built on "we're not like other apps" still needs to actually make money. They chose violence against subscription fatigue by just... adding another subscription to your subscription.
+
+28
+00:05:21,419 --> 00:05:31,510
+ALEX: It's the tech equivalent of a restaurant realizing nobody tips anymore so they start bundling in a free appetizer that costs them three dollars to make.
+
+29
+00:05:31,510 --> 00:05:38,985
+JAMIE: Sony's piracy lawsuit failed—and it might have just killed the entire legal strategy that Hollywood's been using for years.
+  ↳ source: https://arstechnica.com/tech-policy/2026/05/sonys-failed-war-against-internet-piracy-may-doom-other-copyright-lawsuits/
+
+30
+00:05:38,985 --> 00:05:59,541
+MAYA: Internet service providers won a major court decision, which means they can't be held liable for what their users do on the network. Sony's been suing everybody, and now the legal foundation for all of it just collapsed. The internet won, and Hollywood's still printing cease-and-desist letters to I P addresses that don't exist.
+
+31
+00:05:59,541 --> 00:06:14,865
+ALEX: This is real because it's not about whether piracy is happening—it's that the court just said the people selling you the internet connection aren't responsible for policing what flows through it. That changes everything about how copyright enforcement actually works.
+
+32
+00:06:14,865 --> 00:06:23,087
+JAMIE: So the takeaway is: nuclear's real, housing's stuck, Discord's desperate, and Hollywood's lawyers just got their lunch money taken on live television.
+
+33
+00:06:23,087 --> 00:06:39,532
+MAYA: Ships have been rerouting around the Cape of Good Hope to avoid the Middle East conflict, and now marine biologists are saying the whales in that region are getting absolutely demolished—we've successfully created a geopolitical game of bumper cars with marine life.
+
+34
+00:06:39,532 --> 00:06:45,138
+JAMIE: Wait, so the solution to avoiding one crisis is just hitting endangered whales instead?
+
+35
+00:06:45,138 --> 00:07:09,805
+ALEX: The Cape of Good Hope route adds time to shipping timelines and costs companies millions in extra fuel, so the math was simple: take the hit on time and money, or risk attacks. What nobody calculated was that you're now funneling massive container ships through one of the densest whale migration corridors on the planet. The whales didn't sign up for this geopolitical realignment.
+
+36
+00:07:09,805 --> 00:07:18,775
+MAYA: Scientists are literally saying "we solved shipping piracy by creating shipping whale-icide," and somehow that's the trade-off nobody mentioned in the earnings calls.
+
+37
+00:07:18,775 --> 00:07:21,391
+JAMIE: On the tape tomorrow—what are we watching?
+
+38
+00:07:21,391 --> 00:07:37,836
+ALEX: C P I data drops on May twelfth, and if inflation's still sitting above three percent like the market's pricing it, we're going to get another round of "the Fed isn't cutting rates anytime soon" panic. That's the macro event that actually matters.
+
+39
+00:07:37,836 --> 00:07:56,897
+MAYA: But also—Agenus and Apogee Therapeutics are both reporting on May eleventh, which means we get biotech earnings right before the inflation print, so if those stocks tank, investors are going to blame C P I even if the companies just had bad quarters. It's the perfect setup for misattribution.
+
+40
+00:07:56,897 --> 00:08:06,240
+JAMIE: So the whales didn't sign up for geopolitical realignment, and biotech companies didn't sign up for getting blamed for the Fed's mistakes. What else?
+
+41
+00:08:06,240 --> 00:08:24,180
+ALEX: Arko Petroleum reports the same day—May eleventh—and oil's been choppy because nobody knows if the Fed's actually cutting or just pretending. Energy stocks move on rate expectations, not fundamentals, so Arko could post solid numbers and still get hammered if the market decides inflation's stickier than expected.
+
+42
+00:08:24,180 --> 00:08:40,251
+MAYA: We're basically watching three different markets try to price the same Fed signal at the same time, and one of them is going to be wrong, and it's probably going to be the one that matters least but gets the most coverage.
+
+43
+00:08:40,251 --> 00:08:51,837
+ALEX: Kevin Hassett said AI isn't destroying jobs while tech companies announced layoffs—he's basically the guy who insisted the Titanic was fine while standing in the gift shop buying postcards.
+
+44
+00:08:51,837 --> 00:09:06,787
+MAYA: The White House economic advisor's entire job is to say "everything's great" while the actual data is screaming "we have no idea what's happening," and somehow that's still the most honest thing anybody in government said all week.
+
+45
+00:09:06,787 --> 00:09:12,019
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

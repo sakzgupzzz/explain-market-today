@@ -1,0 +1,51 @@
+{
+  "date": "2026-05-11",
+  "mp3": "2026-05-11.mp3",
+  "size_bytes": 8843132,
+  "duration_sec": 552.02,
+  "turns": 45,
+  "words": 1429,
+  "char_usage_estimate": 9604,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-05-11T15:02:30.864589Z",
+  "top_mover": {
+    "symbol": "LLY",
+    "name": "LLY",
+    "pct": 4.19
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7418.490234375,
+        "pct": 0.26
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 49625.94140625,
+        "pct": 0.03
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26294.916015625,
+        "pct": 0.18
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2882.8369140625,
+        "pct": 0.76
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 18.18000030517578,
+        "pct": 5.76
+      }
+    ]
+  }
+}
