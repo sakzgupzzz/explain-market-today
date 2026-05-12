@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 May 2026 15:02:33 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 May 2026 22:44:31 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,83 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>ORCL -3.6%, Chip stocks suffer rare selloff on — May 12</title>
+      <description>FDA commissioner Marty Makary just resigned after the White House forced him to approve fruity e-cigs—regulatory capture, but make it *flavored*. Today's lead: Chip stocks suffer rare selloff on bearish 'key reversal' chart pattern. This isn't just technical noise—it's the first real crack in the AI-everything narrative; what's actually broken under the hood of semiconductor demand?.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:09  Markets
+  00:03:18  Big story
+  00:05:56  Quick hits
+  00:05:57  Odd thing of the day
+  00:10:27  Sign-off
+
+Stories covered:
+  • Companies are getting tariff refunds after the Supreme Court decision—this is the market finally pricing in that Trump's trade war has an expiration date. [real]
+  • Waymo recalled 3,800 robotaxis because they drove into standing water—the future of autonomous vehicles is apparently 'don't go outside when it rains.' [hype]
+  • Nonprofits are in crisis mode—turns out relying on billionaire whims and grant cycles is not a sustainable business model; who knew. [real]
+  • Anthropic is warning investors away from secondary share platforms—the company that lectures everyone about AI safety is choosing violence against its own cap table. [noise]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: FDA Commissioner Marty Makary just resigned after the White House pressured him to approve fruity vaping products—regulatory capture, but the flavor is literally strawberry.
+ALEX: S&amp;P down zero point one six percent to seven thousand four hundred, but the real story is the Russell two thousand getting absolutely demolished—down zero point nine seven percent. Small caps are choosing violence today. Meanwhile, the Nasdaq dropped zero point seven one percent, which tells you the chip sector is finally eating it. Oracle down three point six two percent, A M D both red—this is what happens when the market realizes AI server buildout isn't infinite.
+JAMIE: [curious] Wait, but we had some massive winners today, right? I saw UnitedHealth up over three percent.
+ALEX: [deadpan] Yes, UnitedHealth up three point one one percent—healthcare is doing fine because apparently the market has decided that people will always get sick, which is a solid thesis. You also had Netflix up two point five nine percent, Eli Lilly up two point three seven percent. The pattern is: anything that prints money reliably is up, anything that requires the Fed to keep rates at zero forever is down.
+MAYA: [excited] [rushed] Okay but Oracle down three point six two percent is huge—that's the biggest loser of the day and it's a cloud company that's supposed to be, like, the enterprise AI play? What happened there?
+ALEX: [sighs] Earnings miss, guidance miss, the usual. But the real issue is that Oracle's entire pitch right now is "we're the database for AI," and the market just decided that maybe profitability matters again.
+JAMIE: [laughs] So what's the macro read here—is this a rotation out of tech, or is this just, like, "rates are real"?
+ALEX: [deadpan] Rates are real and tech has commitment issues. The V I X is down two point one two percent to seventeen point nine nine, so fear is actually falling—this isn't a panic. It's a recalibration.
+MAYA: [mischievously] [laughs] So you're saying the AI bubble is fine, it's just, like, slightly less infinite than it was yesterday?
+ALEX: [deadpan] Exactly.
+JAMIE: [curious] Wait, is this actual technical analysis working, or is this just pattern-matching on a chart that happens to be down? Because I feel like every time a chart does something weird, someone calls it a "key reversal" and sells everything.
+ALEX: [sighs] Fair. But here's what makes this different—the chip sector is down significantly in recent trading days, and that's not noise. That's real signals about demand softening.
+MAYA: [excited] [rushed] So wait, are you saying that all those companies that were like "we're gonna make infinite AI chips forever" are actually just gonna make, like, a normal amount of chips? Because that would explain why A M D got demolished today—they're not growing at light speed, they're growing at regular speed, which is basically bankruptcy in the current market.
+JAMIE: [laughs] That's the real story, right? It's not the chart pattern, it's that demand forecasts were built on the assumption that every company on Earth would immediately need a dedicated AI cluster.
+ALEX: [deadpan] Exactly. The installed base of servers is not infinite, and the capex budgets of hyperscalers are not infinite, even though their CEO presentations suggest otherwise.
+MAYA: [mischievously] So this is the moment where the market realizes that "AI-driven growth" doesn't actually mean growth is infinite, it just means growth is tied to a specific, exhaustible thing?
+ALEX: [sarcastic] Yes.
+JAMIE: [curious] But wait—hasn't this exact cycle happened before? Like, 2017, 2018, everyone said memory chips were oversupplied, and then demand came roaring back?
+ALEX: [deadpan] Yes, but that was before every CEO in America promised their board that AI would solve the profit problem. Back then, oversupply just meant lower margins. Now it means admitting that the narrative you've been selling for nine months is broken. That's a different kind of pain.
+MAYA: [laughs] So the semiconductor sector just chose violence against the entire U.S. semiconductor sector's business model.
+ALEX: The Supreme Court just ruled that some of Trump's tariffs were unconstitutional, and companies have started receiving refunds—we're talking about the first wave hitting bank accounts this week after months of these levies sitting in limbo.
+JAMIE: [curious] Wait, so the market is actually pricing in that the trade war has an expiration date now?
+ALEX: [deadpan] Yes. The tariff refunds are real money flowing back to importers, which means the cost of goods doesn't have to stay permanently elevated. This is the market finally accepting that tariff policy is not a permanent feature of the economy, just a temporary tax on supply chains. Companies that had built higher prices into their margins now have to decide whether to pass those savings to consumers or keep them.
+MAYA: [excited] So this is the moment where companies realize they can't just blame tariffs forever for why their margins got worse?
+ALEX: [sarcastic] Correct. The excuse has an expiration date now.
+JAMIE: [laughs] Okay, moving on. Maya, you've got something about Waymo that sounds absolutely unhinged.
+MAYA: [rushed] [mischievously] Waymo just recalled thirty-eight hundred robotaxis because they could drive into standing water—not floods, not hurricanes, just regular puddles. The future of autonomous vehicles apparently has a weakness that a six-year-old on a tricycle could navigate.
+JAMIE: [curious] Wait, they recalled three thousand eight hundred cars because of rain?
+MAYA: The software glitch allowed some vehicles to drive into flooded roadways, which, yes, is a thing that happens when it rains. Waymo's autonomous system couldn't distinguish between a wet road and a road that's actually impassable. This is the company that's supposed to replace human drivers, and it turns out humans have this one weird trick called "looking at water and deciding not to drive through it."
+ALEX: [deadpan] So the robotaxi revolution is contingent on weather that doesn't exist. Got it.
+MAYA: [laughs] Basically, yes.
+JAMIE: [sighs] Okay, Alex, what's the real story today that actually matters?
+ALEX: Nonprofits across the country are in crisis mode—food banks, homeless shelters, immigrant aid groups—because federal funding cuts have decimated their budgets and they've got no runway. The sector that's supposed to catch people when government safety nets fail is discovering that it was built on the assumption that government funding would never actually fail. Bad enough that organizations are closing programs and laying off staff mid-year. Nonprofits don't have the balance sheet depth of corporations—they operate on grant cycles and donor whims, which means when federal money stops, they don't have six quarters of runway. They have six weeks. The math was never sustainable; it was just subsidized by the assumption that political will would continue. [deadpan] Not theater. Just structural fragility that nobody wanted to admit existed because it would require admitting that government funding matters.
+JAMIE: Last one, Maya—Anthropic is doing what now?
+MAYA: [rushed] Anthropic is warning investors away from secondary share platforms and basically saying any stock sold on those platforms is void—the company that won't stop lecturing everyone about AI safety and responsible business practices is choosing violence against its own cap table.
+JAMIE: [laughs] So Anthropic is saying "we care deeply about ethics, also your shares are fake if you try to sell them"?
+MAYA: [mischievously] Exactly. They posted that any sale of Anthropic stock on secondary platforms will not be recognized on their books and records, which is a very polite way of saying "we don't care if you bought these shares, they're not real and we're not honoring them."
+ALEX: [sarcastic] The company built on preventing AI from causing harm has decided that shareholder harm is fine as long as it's on their terms.
+MAYA: [laughs] It's not even a contradiction to them, which is somehow worse.
+JAMIE: That's the show. We'll be back tomorrow. [curious] But here's what I don't get—if most Americans think tariffs are hurting both sides, why hasn't that shifted actual policy? Like, shouldn't a consensus move the needle on anything?
+MAYA: [mischievously] Because the people who benefit from tariffs—domestic manufacturers, certain unions, anyone who got a factory reopened in Ohio—they're louder than poll respondents. Also, admitting tariffs don't work means admitting the last two years of economic policy was theater.
+JAMIE: On the tape tomorrow—Alex, what's the macro calendar looking like?
+ALEX: [deadpan] We're in the quiet period before the May jobs report, so the Fed is basically in a soundproof room right now. Nothing scheduled until Thursday, which means the market gets to spend two days inventing reasons to move on its own. It's like watching someone refresh their email every thirty seconds because they're bored.
+MAYA: [rushed] [excited] But earnings start dropping tomorrow—A.K.A. Brands is reporting on May twelfth, which is the fashion and lifestyle company that's been trying to convince Gen Z that it's still relevant. If their numbers are weak, we're getting another signal that consumer discretionary is finally cracking under the weight of higher rates and people realizing they don't need seven different loungewear brands.
+JAMIE: [curious] A.K.A. Brands specifically—what's the bar for them tomorrow?
+MAYA: [mischievously] They need to show that their direct-to-consumer model is actually working and not just a way to pretend inventory problems don't exist. If margins are compressed or guidance drops, it's another data point that the "we're just like Glossier but for clothes" thesis was always more marketing than math. Also reporting May twelfth—American Integrity Insurance, which is a Florida homeowner insurer, and if their loss ratios are exploding because hurricane season is getting worse, that's the climate crisis finally showing up in quarterly earnings instead of just op-eds.
+JAMIE: [laughs] So we're getting consumer weakness and climate risk in the same earnings day. That's the vibe we're starting the week with.
+ALEX: [sarcastic] Welcome to May earnings season, where every company has to explain why their business model didn't account for the world actually changing.
+MAYA: [deadpan, but rushed] Waymo's water-detection problem is basically what happens when you build a system that can navigate traffic but can't handle the one thing that's been falling from the sky for four billion years—and meanwhile the Federal Reserve is out here pretending it can predict inflation six quarters out when it can't even predict whether June gets a rate cut. At least the robotaxis know when to stop.
+ALEX: [sarcastic] The difference being Waymo will eventually admit their system has limits, whereas Jerome Powell will spend the next F O M C meeting explaining why last month's hawkish pivot was actually dovish if you squint.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">1a13fcd8-4895-162a-0f44-3f756bb0b819</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-12.mp3" length="10351382" type="audio/mpeg" />
+      <pubDate>Tue, 12 May 2026 22:44:27 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-12.jpg" />
+      <itunes:duration>00:10:46</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260512</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-12.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-12.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-12.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>LLY +4.2%, Hassett says AI isn't costing anybody — May 11</title>
       <description>Kevin Hassett says AI isn't costing jobs right now—meanwhile tech companies have laid off 262,000 people since 2022. Today's lead: Hassett says AI isn't costing anybody their job right now — but tech layoffs keep coming. The White House's chief economist is gaslighting the room while Discord, Adobe, and Accenture are actively cutting headcount—this is the Crocs IPO of economic messaging: nobody asked for it, it makes no sense, but they're committed.

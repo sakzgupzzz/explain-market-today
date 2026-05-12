@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "0da5ac6faeed",
+    "hook": "FDA commissioner Marty Makary just resigned after the White House forced him to approve fruity e-cigs\u2014regulatory capture, but make it *flavored*."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7400.96 (-0.16%)",
+      "Nasdaq: 26088.20 (-0.71%)",
+      "UNH +3.11% (biggest gainer)",
+      "ORCL -3.62% (biggest loser)"
+    ],
+    "macro_note": "Small caps getting hammered (-0.97% Russell), VIX cooling, but chip stocks rolling over\u2014the reversal pattern is real."
+  },
+  "big_story": {
+    "story_id": "db6104e0b759",
+    "lead_host": "ALEX",
+    "story_title": "Chip stocks suffer rare selloff on bearish 'key reversal' chart pattern",
+    "angle": "This isn't just technical noise\u2014it's the first real crack in the AI-everything narrative; what's actually broken under the hood of semiconductor demand?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "a1aa70a342d0",
+      "lead_host": "ALEX",
+      "angle": "Companies are getting tariff refunds after the Supreme Court decision\u2014this is the market finally pricing in that Trump's trade war has an expiration date.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "0590a39c6d3a",
+      "lead_host": "MAYA",
+      "angle": "Waymo recalled 3,800 robotaxis because they drove into standing water\u2014the future of autonomous vehicles is apparently 'don't go outside when it rains.'",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "f2003aa5d90d",
+      "lead_host": "ALEX",
+      "angle": "Nonprofits are in crisis mode\u2014turns out relying on billionaire whims and grant cycles is not a sustainable business model; who knew.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "63404a458d8c",
+      "lead_host": "MAYA",
+      "angle": "Anthropic is warning investors away from secondary share platforms\u2014the company that lectures everyone about AI safety is choosing violence against its own cap table.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "7b1ce3fa4aaa",
+    "joke_angle": "Americans' views on China are shifting\u2014turns out geopolitical tension is a better brand repositioner than any Super Bowl ad."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "Kevin Hassett says AI isn't costing jobs right now\u2014meanwhile tech companies have laid off 262,000 people since 2022.",
+    "fresh_take": "Waymo's water-phobic robotaxis just recalled 3,800 units\u2014so AI is simultaneously not killing jobs AND apparently can't handle a puddle; the narrative is collapsing faster than the chip chart."
+  },
+  "sign_off": {
+    "callback_target": "Waymo's standing water problem\u2014close the show with 'at least the robotaxis know their limits, unlike the Fed.'"
+  }
+}

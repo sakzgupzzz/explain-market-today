@@ -1,0 +1,207 @@
+1
+00:00:00,000 --> 00:00:09,058
+JAMIE: FDA Commissioner Marty Makary just resigned after the White House pressured him to approve fruity vaping products—regulatory capture, but the flavor is literally strawberry.
+  ↳ source: https://www.cnbc.com/2026/05/12/trump-fda-commissioner-marty-makary-out.html
+
+2
+00:00:09,058 --> 00:00:38,499
+ALEX: S&P down zero point one six percent to seven thousand four hundred, but the real story is the Russell two thousand getting absolutely demolished—down zero point nine seven percent. Small caps are choosing violence today. Meanwhile, the Nasdaq dropped zero point seven one percent, which tells you the chip sector is finally eating it. Oracle down three point six two percent, A M D both red—this is what happens when the market realizes AI server buildout isn't infinite.
+
+3
+00:00:38,499 --> 00:00:44,916
+JAMIE: Wait, but we had some massive winners today, right? I saw UnitedHealth up over three percent.
+
+4
+00:00:44,916 --> 00:01:11,337
+ALEX: Yes, UnitedHealth up three point one one percent—healthcare is doing fine because apparently the market has decided that people will always get sick, which is a solid thesis. You also had Netflix up two point five nine percent, Eli Lilly up two point three seven percent. The pattern is: anything that prints money reliably is up, anything that requires the Fed to keep rates at zero forever is down.
+
+5
+00:01:11,337 --> 00:01:24,925
+MAYA: Okay but Oracle down three point six two percent is huge—that's the biggest loser of the day and it's a cloud company that's supposed to be, like, the enterprise AI play? What happened there?
+
+6
+00:01:24,925 --> 00:01:37,759
+ALEX: Earnings miss, guidance miss, the usual. But the real issue is that Oracle's entire pitch right now is "we're the database for AI," and the market just decided that maybe profitability matters again.
+
+7
+00:01:37,759 --> 00:01:45,685
+JAMIE: So what's the macro read here—is this a rotation out of tech, or is this just, like, "rates are real"?
+
+8
+00:01:45,685 --> 00:01:59,273
+ALEX: Rates are real and tech has commitment issues. The V I X is down two point one two percent to seventeen point nine nine, so fear is actually falling—this isn't a panic. It's a recalibration.
+
+9
+00:01:59,273 --> 00:02:06,822
+MAYA: So you're saying the AI bubble is fine, it's just, like, slightly less infinite than it was yesterday?
+
+10
+00:02:06,822 --> 00:02:07,577
+ALEX: Exactly.
+
+11
+00:02:07,577 --> 00:02:23,052
+JAMIE: Wait, is this actual technical analysis working, or is this just pattern-matching on a chart that happens to be down? Because I feel like every time a chart does something weird, someone calls it a "key reversal" and sells everything.
+
+12
+00:02:23,052 --> 00:02:33,243
+ALEX: Fair. But here's what makes this different—the chip sector is down significantly in recent trading days, and that's not noise. That's real signals about demand softening.
+
+13
+00:02:33,243 --> 00:02:56,268
+MAYA: So wait, are you saying that all those companies that were like "we're gonna make infinite AI chips forever" are actually just gonna make, like, a normal amount of chips? Because that would explain why A M D got demolished today—they're not growing at light speed, they're growing at regular speed, which is basically bankruptcy in the current market.
+
+14
+00:02:56,268 --> 00:03:08,346
+JAMIE: That's the real story, right? It's not the chart pattern, it's that demand forecasts were built on the assumption that every company on Earth would immediately need a dedicated AI cluster.
+
+15
+00:03:08,346 --> 00:03:18,160
+ALEX: Exactly. The installed base of servers is not infinite, and the capex budgets of hyperscalers are not infinite, even though their CEO presentations suggest otherwise.
+
+16
+00:03:18,160 --> 00:03:29,483
+MAYA: So this is the moment where the market realizes that "AI-driven growth" doesn't actually mean growth is infinite, it just means growth is tied to a specific, exhaustible thing?
+
+17
+00:03:29,483 --> 00:03:30,238
+ALEX: Yes.
+
+18
+00:03:30,238 --> 00:03:38,919
+JAMIE: But wait—hasn't this exact cycle happened before? Like, 2017, 2018, everyone said memory chips were oversupplied, and then demand came roaring back?
+
+19
+00:03:38,919 --> 00:03:57,037
+ALEX: Yes, but that was before every CEO in America promised their board that AI would solve the profit problem. Back then, oversupply just meant lower margins. Now it means admitting that the narrative you've been selling for nine months is broken. That's a different kind of pain.
+
+20
+00:03:57,037 --> 00:04:03,076
+MAYA: So the semiconductor sector just chose violence against the entire U.S. semiconductor sector's business model.
+
+21
+00:04:03,076 --> 00:04:16,664
+ALEX: The Supreme Court just ruled that some of Trump's tariffs were unconstitutional, and companies have started receiving refunds—we're talking about the first wave hitting bank accounts this week after months of these levies sitting in limbo.
+  ↳ source: https://www.cnbc.com/2026/05/12/trump-tariff-refunds.html
+
+22
+00:04:16,664 --> 00:04:23,458
+JAMIE: Wait, so the market is actually pricing in that the trade war has an expiration date now?
+
+23
+00:04:23,458 --> 00:04:50,257
+ALEX: Yes. The tariff refunds are real money flowing back to importers, which means the cost of goods doesn't have to stay permanently elevated. This is the market finally accepting that tariff policy is not a permanent feature of the economy, just a temporary tax on supply chains. Companies that had built higher prices into their margins now have to decide whether to pass those savings to consumers or keep them.
+
+24
+00:04:50,257 --> 00:04:58,183
+MAYA: So this is the moment where companies realize they can't just blame tariffs forever for why their margins got worse?
+
+25
+00:04:58,183 --> 00:05:01,580
+ALEX: Correct. The excuse has an expiration date now.
+
+26
+00:05:01,580 --> 00:05:06,865
+JAMIE: Okay, moving on. Maya, you've got something about Waymo that sounds absolutely unhinged.
+
+27
+00:05:06,865 --> 00:05:21,208
+MAYA: Waymo just recalled thirty-eight hundred robotaxis because they could drive into standing water—not floods, not hurricanes, just regular puddles. The future of autonomous vehicles apparently has a weakness that a six-year-old on a tricycle could navigate.
+
+28
+00:05:21,208 --> 00:05:25,737
+JAMIE: Wait, they recalled three thousand eight hundred cars because of rain?
+
+29
+00:05:25,737 --> 00:05:51,026
+MAYA: The software glitch allowed some vehicles to drive into flooded roadways, which, yes, is a thing that happens when it rains. Waymo's autonomous system couldn't distinguish between a wet road and a road that's actually impassable. This is the company that's supposed to replace human drivers, and it turns out humans have this one weird trick called "looking at water and deciding not to drive through it."
+
+30
+00:05:51,026 --> 00:05:56,310
+ALEX: So the robotaxi revolution is contingent on weather that doesn't exist. Got it.
+
+31
+00:05:56,310 --> 00:05:57,443
+MAYA: Basically, yes.
+
+32
+00:05:57,443 --> 00:06:01,595
+JAMIE: Okay, Alex, what's the real story today that actually matters?
+
+33
+00:06:01,595 --> 00:06:53,305
+ALEX: Nonprofits across the country are in crisis mode—food banks, homeless shelters, immigrant aid groups—because federal funding cuts have decimated their budgets and they've got no runway. The sector that's supposed to catch people when government safety nets fail is discovering that it was built on the assumption that government funding would never actually fail. Bad enough that organizations are closing programs and laying off staff mid-year. Nonprofits don't have the balance sheet depth of corporations—they operate on grant cycles and donor whims, which means when federal money stops, they don't have six quarters of runway. They have six weeks. The math was never sustainable; it was just subsidized by the assumption that political will would continue. Not theater. Just structural fragility that nobody wanted to admit existed because it would require admitting that government funding matters.
+  ↳ source: https://www.axios.com/2026/05/12/nonprofits-federal-funding-survey
+
+34
+00:06:53,305 --> 00:06:55,947
+JAMIE: Last one, Maya—Anthropic is doing what now?
+
+35
+00:06:55,947 --> 00:07:11,800
+MAYA: Anthropic is warning investors away from secondary share platforms and basically saying any stock sold on those platforms is void—the company that won't stop lecturing everyone about AI safety and responsible business practices is choosing violence against its own cap table.
+
+36
+00:07:11,800 --> 00:07:19,726
+JAMIE: So Anthropic is saying "we care deeply about ethics, also your shares are fake if you try to sell them"?
+
+37
+00:07:19,726 --> 00:07:37,089
+MAYA: Exactly. They posted that any sale of Anthropic stock on secondary platforms will not be recognized on their books and records, which is a very polite way of saying "we don't care if you bought these shares, they're not real and we're not honoring them."
+
+38
+00:07:37,089 --> 00:07:46,148
+ALEX: The company built on preventing AI from causing harm has decided that shareholder harm is fine as long as it's on their terms.
+
+39
+00:07:46,148 --> 00:07:50,677
+MAYA: It's not even a contradiction to them, which is somehow worse.
+
+40
+00:07:50,677 --> 00:08:04,643
+JAMIE: That's the show. We'll be back tomorrow. But here's what I don't get—if most Americans think tariffs are hurting both sides, why hasn't that shifted actual policy? Like, shouldn't a consensus move the needle on anything?
+
+41
+00:08:04,643 --> 00:08:19,363
+MAYA: Because the people who benefit from tariffs—domestic manufacturers, certain unions, anyone who got a factory reopened in Ohio—they're louder than poll respondents. Also, admitting tariffs don't work means admitting the last two years of economic policy was theater.
+
+42
+00:08:19,363 --> 00:08:23,138
+JAMIE: On the tape tomorrow—Alex, what's the macro calendar looking like?
+
+43
+00:08:23,138 --> 00:08:43,897
+ALEX: We're in the quiet period before the May jobs report, so the Fed is basically in a soundproof room right now. Nothing scheduled until Thursday, which means the market gets to spend two days inventing reasons to move on its own. It's like watching someone refresh their email every thirty seconds because they're bored.
+
+44
+00:08:43,897 --> 00:09:07,299
+MAYA: But earnings start dropping tomorrow—A.K.A. Brands is reporting on May twelfth, which is the fashion and lifestyle company that's been trying to convince Gen Z that it's still relevant. If their numbers are weak, we're getting another signal that consumer discretionary is finally cracking under the weight of higher rates and people realizing they don't need seven different loungewear brands.
+
+45
+00:09:07,299 --> 00:09:10,696
+JAMIE: A.K.A. Brands specifically—what's the bar for them tomorrow?
+
+46
+00:09:10,696 --> 00:09:44,289
+MAYA: They need to show that their direct-to-consumer model is actually working and not just a way to pretend inventory problems don't exist. If margins are compressed or guidance drops, it's another data point that the "we're just like Glossier but for clothes" thesis was always more marketing than math. Also reporting May twelfth—American Integrity Insurance, which is a Florida homeowner insurer, and if their loss ratios are exploding because hurricane season is getting worse, that's the climate crisis finally showing up in quarterly earnings instead of just op-eds.
+
+47
+00:09:44,289 --> 00:09:52,593
+JAMIE: So we're getting consumer weakness and climate risk in the same earnings day. That's the vibe we're starting the week with.
+
+48
+00:09:52,593 --> 00:10:01,274
+ALEX: Welcome to May earnings season, where every company has to explain why their business model didn't account for the world actually changing.
+
+49
+00:10:01,274 --> 00:10:27,318
+MAYA: Waymo's water-detection problem is basically what happens when you build a system that can navigate traffic but can't handle the one thing that's been falling from the sky for four billion years—and meanwhile the Federal Reserve is out here pretending it can predict inflation six quarters out when it can't even predict whether June gets a rate cut. At least the robotaxis know when to stop.
+  ↳ source: https://www.federalreserve.gov/newsevents/pressreleases/enforcement20260512a.htm
+
+50
+00:10:27,318 --> 00:10:40,906
+ALEX: The difference being Waymo will eventually admit their system has limits, whereas Jerome Powell will spend the next F O M C meeting explaining why last month's hawkish pivot was actually dovish if you squint.
+
+51
+00:10:40,906 --> 00:10:46,191
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
