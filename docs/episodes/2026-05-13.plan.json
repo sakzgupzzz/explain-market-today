@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "dd487b71d932",
+    "hook": "Canvas data breach hits 3.7 million students\u2014Instructure's security is the Crocs IPO of edtech governance."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7404.80 (+0.05%)",
+      "Nasdaq: 26183.19 (+0.36%)",
+      "Biggest gainer: Tesla +2.68%",
+      "Biggest loser: Accenture -5.66%"
+    ],
+    "macro_note": "Dollar up on hot inflation; Dow dragging while mega-cap tech holds the line."
+  },
+  "big_story": {
+    "story_id": "22b1a771b48b",
+    "lead_host": "ALEX",
+    "story_title": "Alibaba's core profit plunges 84% as CEO claims AI ROI is 'extremely clear'",
+    "angle": "When your profit collapses 84% but you're still confident about AI returns, you've either seen the future or you're choosing violence with the definition of 'clear.'",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "a1aa70a342d0",
+      "lead_host": "ALEX",
+      "angle": "Companies cashing tariff refunds after Supreme Court win\u2014this is the market finally pricing in that Trump's tariff theater has an expiration date.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "f4790218136d",
+      "lead_host": "MAYA",
+      "angle": "Trump phone shipping this week; CEO's confidence level suggests he's never heard of supply chain reality.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "5eecc5eb7c60",
+      "lead_host": "MAYA",
+      "angle": "Alexa moving into Amazon.com\u2014this stock has commitment issues and now it's moving in with itself.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "18b255daf9c3",
+      "lead_host": "JAMIE",
+      "angle": "Philippine Senate lockdown after gunshots\u2014geopolitical volatility creeping into markets' peripheral vision.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "06c10782bded",
+    "joke_angle": "Putin hails new ballistic missile test while inflation eats Social Security\u2014competing for 'worst news of the day' is a race nobody wins."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "Companies are getting tariff refunds after the Supreme Court decision\u2014this is the market finally pricing in that Trump's tariff theater has limits",
+    "fresh_take": "Today's refund wave proves the Supreme Court ruling wasn't theater\u2014it's actual money moving; the tariff bluff is being called in real time."
+  },
+  "sign_off": {
+    "callback_target": "Alibaba's 84% profit collapse vs. CEO's 'extremely clear' AI confidence\u2014the most honest thing said all week was the gap between those two numbers."
+  }
+}
