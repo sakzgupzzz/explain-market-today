@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "7dc41cf0b0cc",
+    "hook": "Cisco just posted record quarterly revenue while firing 3,900 people\u2014the most profitable layoff in corporate theater history."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7476.28 (+0.43%)",
+      "Nasdaq: 26505.14 (+0.39%)",
+      "Cisco (CSCO): +13.17% on job cuts",
+      "Google (GOOGL): -1.17%"
+    ],
+    "macro_note": "Broad rally on AI-spending narrative; mega-cap tech softening while infrastructure plays surge."
+  },
+  "big_story": {
+    "story_id": "b4157563aa96",
+    "lead_host": "MAYA",
+    "story_title": "Russian government hackers exposed trying to hijack Signal accounts",
+    "angle": "A spyware investigator just caught Russia's FSB red-handed attempting to compromise Signal\u2014the encrypted app everyone trusts. This is the moment the security theater meets actual theater: the tool designed to defeat state surveillance is now the prize state actors are actively hunting.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "e7e892d56047",
+      "lead_host": "MAYA",
+      "angle": "Dell's Alienware brand is getting watered down by a RAM shortage rebrand\u2014this is what happens when you let supply chain dictate your identity.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "261d71e0cc62",
+      "lead_host": "ALEX",
+      "angle": "UK economy grew faster than expected\u2014the one place where inflation theater actually produced a plot twist.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "2d0742d129e7",
+      "lead_host": "JAMIE",
+      "angle": "Kevin Warsh confirmed as Fed leader while Trump tries to make deals in China\u2014two parallel universes of economic policy colliding in real time.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "45f9460b75d5",
+      "lead_host": "ALEX",
+      "angle": "Honda posts its first annual loss in 70 years\u2014a company that survived the 1970s oil crisis just got taken down by the EV transition it saw coming.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "ac5f4665f948",
+    "joke_angle": "You can make an app for that\u2014the most millennial headline ever written, now true for literally everything including your own obsolescence."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Cisco's 'record revenue while firing 3,900 people' \u2014 the most profitable layoff in corporate theater history"
+  }
+}

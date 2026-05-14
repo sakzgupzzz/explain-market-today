@@ -1,0 +1,51 @@
+{
+  "date": "2026-05-14",
+  "mp3": "2026-05-14.mp3",
+  "size_bytes": 8300497,
+  "duration_sec": 518.14,
+  "turns": 32,
+  "words": 1389,
+  "char_usage_estimate": 9025,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-05-14T14:21:18.153273Z",
+  "top_mover": {
+    "symbol": "CSCO",
+    "name": "CSCO",
+    "pct": 13.17
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7476.27978515625,
+        "pct": 0.43
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 49979.12890625,
+        "pct": 0.58
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26505.140625,
+        "pct": 0.39
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2839.75390625,
+        "pct": -0.15
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 17.920000076293945,
+        "pct": 0.28
+      }
+    ]
+  }
+}
