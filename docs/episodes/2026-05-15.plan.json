@@ -1,0 +1,62 @@
+{
+  "cold_open": {
+    "story_id": "bc67a7370509",
+    "hook": "Warren Buffett's absence is so loud that Berkshire Hathaway's team is basically playing Weekend at Bernie's with a $773 billion portfolio."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7420.61 (-1.07%)",
+      "Nasdaq: 26244.03 (-1.47%)",
+      "Russell 2000: 2803.70 (-2.07%)",
+      "VIX: 18.55 (+7.47%)",
+      "NVDA: -3.85%, AMD: -3.85%"
+    ],
+    "macro_note": "Chip stocks cratering, small caps getting hammered, VIX spiking\u2014this is what happens when the AI hype machine needs a service."
+  },
+  "big_story": {
+    "story_id": "57e10fbe7041",
+    "lead_host": "ALEX",
+    "story_title": "Powell's legacy as Fed chair is fighting inflation and Trump. He may lose the battle against both.",
+    "angle": "Powell built his credibility on inflation-fighting, but Trump's tariff threats and fiscal chaos are about to make the Fed look like it's trying to bail out a sinking ship with a teaspoon\u2014and the market knows it.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "fd8c6fd2458b",
+      "lead_host": "ALEX",
+      "angle": "30-year Treasury yield hits 5.1%\u2014highest in a year\u2014because apparently the bond market has decided the US debt load is a feature, not a bug.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "73869b5be8db",
+      "lead_host": "ALEX",
+      "angle": "Starbucks laying off 300 US employees and hinting at more; this is what happens when your stock has commitment issues and your CEO needs to prove he's serious.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "4201855adb22",
+      "lead_host": "JAMIE",
+      "angle": "British Gas pays \u00a320m for force-fitting prepayment meters on vulnerable customers\u2014regulatory theater that costs just enough to feel like punishment but not enough to change behavior.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "594c8f3dd6e7",
+      "lead_host": "MAYA",
+      "angle": "Cerebras stock pulls back after blowout IPO opening\u2014the AI chip darling just learned that 'best opening day' and 'sustainable valuation' are not the same sentence.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "cb9a332ea411",
+    "joke_angle": "A Trump arcade game that's actually good is the most unhinged timeline flex\u2014it's like finding out a NFT project has real utility."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "Cisco just posted record quarterly revenue while firing 3,900 people\u2014the most profitable layoff in corporate theater",
+    "fresh_take": "Starbucks is now running the same playbook: layoffs as a stock-price reset button. Cisco proved it works; Starbucks is betting the market will applaud the encore."
+  },
+  "sign_off": {
+    "callback_target": "Buffett's absence at Berkshire Hathaway\u2014the cold open's Weekend at Bernie's bit"
+  }
+}
