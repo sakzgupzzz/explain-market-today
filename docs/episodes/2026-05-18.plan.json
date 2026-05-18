@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "1b83ec147c06",
+    "hook": "Meta's laying off staff this week because even Zuckerberg can't make the AI math work at $600 billion in market cap."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7384.42 (-0.33%)",
+      "Nasdaq: 26047.29 (-0.68%)",
+      "Biggest gainer: ACN +4.26%",
+      "Biggest loser: ORCL -3.52%"
+    ],
+    "macro_note": "Rates climbing (10-year at 1-year highs), bond vigilantes winning, small caps getting crushed."
+  },
+  "big_story": {
+    "story_id": "653dfb28f05b",
+    "lead_host": "ALEX",
+    "story_title": "The Fed will have to raise interest rates in July to appease 'bond vigilantes,' Yardeni says",
+    "angle": "The bond market is holding the Fed hostage\u2014yields are ripping higher on their own, and Powell may have to hike just to look credible, even if inflation data doesn't demand it. This is pure market theater masquerading as policy.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "98d6fb5641b9",
+      "lead_host": "ALEX",
+      "angle": "KeyBanc bumped CrowdStrike to $700 on 'Mythos' hype\u2014this is the Crocs IPO of cybersecurity: a meme product that somehow justifies a $50B valuation.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "724eeb6ee2fb",
+      "lead_host": "ALEX",
+      "angle": "EU cutting growth, raising inflation on Iran war fears\u2014stagflation is back on the menu, and Europe gets to eat it first.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "3881392e7f77",
+      "lead_host": "MAYA",
+      "angle": "Bug bounty platforms drowning in AI-generated garbage submissions\u2014hackers chose violence today, but with a bot army instead of skill.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "f5790b93d5da",
+      "lead_host": "MAYA",
+      "angle": "London Tube strikes called off\u2014the RMT union's commitment issues are showing; they're the stock that keeps threatening to crater but never quite does.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "61ee2c1fdf46",
+    "joke_angle": "Ebola outbreak coverage is genuinely serious, but the headline reads like a 2014 panic cycle reboot\u2014we're really doing this again?"
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "30-year Treasury yield hits 5.1%\u2014highest in a year\u2014because apparently the bond market has decided the US debt load is a problem.",
+    "fresh_take": "Today it's not just the long end\u201410-year just hit 1-year highs too. The bond vigilantes aren't just awake, they're organizing."
+  },
+  "sign_off": {
+    "callback_target": "Meta's AI math problem\u2014because if Zuckerberg can't solve it at $600B, nobody's solving it."
+  }
+}
