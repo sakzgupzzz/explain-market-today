@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "37d95aa1a5ec",
+    "hook": "30-year Treasury yield just hit 5.18%\u2014highest since before 2008. The bond market is choosing violence today."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7339.86 (-0.85%)",
+      "Nasdaq: 25759.04 (-1.27%)",
+      "Biggest gainer: LLY +3.17%",
+      "Biggest loser: AMD -3.45%"
+    ],
+    "macro_note": "Equities red across the board; rates spiking; pharma rallying while semiconductors and mega-cap tech crater."
+  },
+  "big_story": {
+    "story_id": "a86107f090d3",
+    "lead_host": "JAMIE",
+    "story_title": "In Musk v. Altman trial, the entire AI industry lost",
+    "angle": "Two billionaires fighting over OpenAI's soul while the actual story\u2014that neither side can explain what they're building or why it's worth $600 billion\u2014goes completely unexamined in court.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "4348242277bf",
+      "lead_host": "ALEX",
+      "angle": "CISA, the agency literally tasked with protecting critical infrastructure, left passwords and cloud keys on the open web\u2014this is the cybersecurity equivalent of a bank leaving the vault combo on a Post-it.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "dd4e83c0ebe8",
+      "lead_host": "MAYA",
+      "angle": "Congress scrambling to regulate prediction markets right as they're becoming the only honest price discovery mechanism left in finance\u2014regulators always show up to the party three years late.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "f6f697f963fa",
+      "lead_host": "MAYA",
+      "angle": "MAHA-era FDA is loosening rules on vapes and tanning beds because apparently we're speedrunning the 1980s health crisis playbook.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "0f32fbc224ec",
+      "lead_host": "ALEX",
+      "angle": "Oil hits highest price since Iran war started; Deutsche Bank says markets are sleeping on the actual shock risk\u2014this stock has commitment issues with reality.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "3b75c22f466c",
+    "joke_angle": "Xbox fans demanding free online multiplayer and exclusives is like asking your landlord to lower rent while also renovating the apartment\u2014pick a lane, gamers."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "KeyBanc bumped CrowdStrike to $700 on 'Mythos' hype\u2014this is the Crocs IPO of cybersecurity",
+    "fresh_take": "Today CISA literally exposed passwords to the open web, which means the entire cybersecurity hype cycle is built on theater\u2014CrowdStrike's $700 price target just became the Crocs IPO of corporate governance."
+  },
+  "sign_off": {
+    "callback_target": "CISA leaving passwords on the open web"
+  }
+}
