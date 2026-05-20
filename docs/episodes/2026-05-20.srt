@@ -1,0 +1,170 @@
+1
+00:00:00,000 --> 00:00:12,485
+JAMIE: GitHub just got hacked—thousands of internal repos stolen—and the company that stores everyone else's code learned what it's like to be the victim. A M D's up seven point five one percent anyway.
+
+2
+00:00:12,485 --> 00:00:54,105
+ALEX: S&P up zero point nine one percent to seven thousand four hundred twenty, Nasdaq climbing one point two nine percent to twenty-six thousand two hundred five. Small caps are actually leading today—Russell two thousand up one point nine percent—which is your tell that money's rotating out of the mega-cap safety blanket. A M D's up seven point five one percent, Broadcom up two point six eight, Nvidia up two point two nine. Chip stocks are flying. Meanwhile, oil's getting demolished. Exxon down two point two eight percent, Chevron down one point eight eight. The energy sector chose violence against itself today. Or rather, the market chose violence against energy.
+
+3
+00:00:54,105 --> 00:01:06,969
+JAMIE: Wait, so we're rotating I N T O small caps and tech, O U T of oil? That's the opposite move from six months ago when everyone was convinced we'd be energy-dependent forever.
+
+4
+00:01:06,969 --> 00:01:21,726
+ALEX: Exactly. The "energy supercycle" crowd got very quiet. Exxon's down two point two eight percent while A M D's printing seven point five one percent gains. This is what happens when the market decides a narrative was overcooked.
+
+5
+00:01:21,726 --> 00:01:27,401
+MAYA: Okay but real question—is this a genuine rotation or is this just Tuesday?
+
+6
+00:01:27,401 --> 00:01:34,968
+ALEX: It's a rotation. Risk-on money's moving. When oil gets hit that hard and small caps lead, that's not noise.
+
+7
+00:01:34,968 --> 00:01:44,427
+JAMIE: So A M D up seven point five one percent—is that just "chip stocks are cool again" or is there a real story there?
+
+8
+00:01:44,427 --> 00:02:24,912
+ALEX: Chip stocks are cool again because the market's pricing in a world where AI capex doesn't crater and small-cap tech benefits from that spend. A M D's the second-mover play that actually executes. So Nvidia's options market is doing something that should scare everyone who's been high on the AI trade. Short-dated calls are trading at a premium to puts—meaning traders are paying M O R E for the right to bet the stock goes U P than they're paying to bet it goes D O W N. That's backwards. That's the canary in the coal mine telling you the canary is also short the coal.
+  ↳ source: https://www.cnbc.com/2026/05/20/something-very-unusual-is-happening-with-nvidia-options.html
+
+9
+00:02:24,912 --> 00:02:37,398
+JAMIE: Wait, hold on. Nvidia's up two point two nine percent today. The stock itself is calm. Why would options traders be bracing for a shock if the stock isn't showing any stress?
+
+10
+00:02:37,398 --> 00:02:51,397
+ALEX: Because options traders see something the stock price hasn't priced in yet. Call-put skew this inverted usually means either earnings surprise is coming or—and this is the darker read—someone with real information knows volatility's about to spike.
+
+11
+00:02:51,397 --> 00:03:01,613
+MAYA: Okay but this happens E V E R Y earnings cycle. Everyone panics about the options market and then the stock just keeps going up.
+
+12
+00:03:01,613 --> 00:03:20,531
+ALEX: But the V I X is at seventeen point eight three—historically calm—while Nvidia's implied volatility is trading like the company's about to announce something unexpected. The disconnect is the story. When options are pricing in chaos and the stock is pricing in nothing, one of those markets is wrong.
+
+13
+00:03:20,531 --> 00:03:34,152
+JAMIE: So what's the actual bet here? Are we saying institutional traders know something's broken in the AI capex story, or are they just hedging because the stock's up so much that downside protection is expensive?
+
+14
+00:03:34,152 --> 00:03:52,313
+ALEX: Both. But here's the thing—if the AI capex story was actually intact, you wouldn't see this kind of skew. You'd see calm. Instead, the options market is saying "I don't know what's coming, but I'm paying for the privilege of being ready for it." That's not confidence.
+
+15
+00:03:52,313 --> 00:04:18,042
+MAYA: So you're telling me the most important company in the world right now has commitment issues. The stock's like "I'm staying at two hundred twenty-five dollars" and the options market's like "Yeah but for how long though?" Intuit's laying off over three thousand employees to "refocus on AI"—which is the corporate equivalent of "it's not you, it's me, and also I'm replacing you with a chatbot."
+  ↳ source: https://techcrunch.com/2026/05/20/intuit-to-lay-off-over-3000-employees-to-refocus-on-ai/
+
+16
+00:04:18,042 --> 00:04:22,960
+JAMIE: Three thousand people is like, what, a significant portion of their workforce?
+
+17
+00:04:22,960 --> 00:04:37,338
+MAYA: Yeah. And the thing is, Intuit's already profitable. They're not burning cash. This is a choice to cut headcount and redirect the money toward AI R&D because they're terrified of being disrupted by something cheaper and smarter.
+
+18
+00:04:37,338 --> 00:04:58,905
+ALEX: So they're admitting their current product suite is too complicated to maintain while also building the thing that will replace it. That's not a pivot. That's a confession that the complexity was the business model. Authentic Brands Group—they own Barbie, Marilyn Monroe's estate, Muhammad Ali's likeness, Reebok, Champion—they're eyeing an IPO in the next twelve months.
+  ↳ source: https://www.cnbc.com/2026/05/20/reebok-owner-authentic-brands-group-inches-closer-to-ipo.html
+
+19
+00:04:58,905 --> 00:05:03,445
+JAMIE: Wait, they're going to IPO the I P holding company? That's—
+
+20
+00:05:03,445 --> 00:05:19,336
+ALEX: That's the Crocs IPO of corporate governance. Everyone's going to buy it. It will probably work. And then in three years someone's going to ask why we let a company whose entire value prop is owning dead celebrities' likenesses go public.
+
+21
+00:05:19,336 --> 00:05:26,525
+MAYA: They're literally going to IPO nostalgia. That's not a business, that's a time machine with a ticker.
+
+22
+00:05:26,525 --> 00:05:42,416
+ALEX: Eli Lilly's suing over a Trulicity rebate fraud scheme—and the accused include church bishops and businessmen. When your drug rebate system is so Byzantine that clergy are allegedly running it as a side hustle, you've built something only a cartel could love.
+
+23
+00:05:42,416 --> 00:05:45,822
+JAMIE: Church bishops? How does that even—what's the scheme?
+
+24
+00:05:45,822 --> 00:06:03,983
+ALEX: The lawsuit alleges they were inflating rebate claims and pocketing the difference. The fact that Eli Lilly's own rebate architecture was complicated enough to hide fraud tells you everything about why drug prices are insane. The system's so opaque that bishops could allegedly exploit it for months.
+
+25
+00:06:03,983 --> 00:06:16,090
+MAYA: This is the thing nobody talks about—rebates are supposed to lower drug prices for patients but instead they're just a shell game between manufacturers, PBMs, and apparently now the clergy.
+
+26
+00:06:16,090 --> 00:06:26,685
+ALEX: Lowe's beat Wall Street expectations despite what they called a "challenging housing backdrop." Stock's up because people can't afford to move, so they're just fixing what they've got.
+
+27
+00:06:26,685 --> 00:06:31,225
+JAMIE: Translation: housing's so expensive that renovation is the only option left.
+
+28
+00:06:31,225 --> 00:06:41,441
+ALEX: Exactly. Lowe's reaffirmed full-year guidance. The housing market's frozen, mortgage rates are still elevated, nobody's buying, so they're painting their kitchen instead. That's the entire earnings beat.
+
+29
+00:06:41,441 --> 00:07:05,277
+MAYA: It's the saddest bull case I've ever heard. "Our business model is financial desperation." NanoClaw founder just turned down a twenty-million-dollar buyout offer and raised twelve million in seed funding instead. So they chose the harder path with less money. Either visionary or the startup equivalent of someone offering you a ride and you're like "nah, I'll walk, thanks though."
+
+30
+00:07:05,277 --> 00:07:10,574
+JAMIE: Wait, NanoClaw is an alternative that went viral? How viral are we talking?
+
+31
+00:07:10,574 --> 00:07:29,871
+MAYA: Viral enough that a twenty-million-dollar acquirer showed up. But the founder looked at that check and said "I'd rather raise half that amount and keep diluting myself for the next five years." Which, I mean, respect the conviction, but also—you just rejected generational wealth to stay in the game longer.
+
+32
+00:07:29,871 --> 00:07:52,573
+ALEX: This is what happens when a founder mistakes optionality for strategy. Twenty million dollars is a life-changing exit. Twelve million is a runway extension with the promise of more dilution, more board meetings, and a fifty-fifty shot at either a unicorn or an acquihire in eighteen months. He didn't choose vision. He chose to keep playing the slot machine.
+
+33
+00:07:52,573 --> 00:08:03,545
+JAMIE: So best case he's right and NanoClaw becomes the thing everyone uses. Worst case he's explaining to his Series B investors why he turned down a guaranteed exit.
+
+34
+00:08:03,545 --> 00:08:16,031
+MAYA: Exactly. And in two years when the market's different and his valuation's half what it was, he'll be on a podcast somewhere saying "I had an offer" like it's a war story.
+
+35
+00:08:16,031 --> 00:08:23,977
+JAMIE: On the tape tomorrow, we've got earnings from Hasbro, Analog Devices, Corvel, and a couple others. Alex, what's the macro story?
+
+36
+00:08:23,977 --> 00:08:38,354
+ALEX: Nothing. Tomorrow's just earnings noise. But Analog Devices is the one that matters—they're a bellwether for semiconductor capex, and if their guidance comes in soft, the AI rally narrative gets a stress test it's not ready for.
+
+37
+00:08:38,354 --> 00:08:52,732
+MAYA: And Hasbro's reporting too, which is hilarious because they're still trying to convince Wall Street that toys matter in a world where kids are just watching YouTube unboxing videos instead of playing with the actual toys.
+
+38
+00:08:52,732 --> 00:08:59,164
+JAMIE: So Hasbro's a proxy for consumer discretionary getting crushed, or are they actually still printing money?
+
+39
+00:08:59,164 --> 00:09:13,920
+MAYA: That's three years of people asking "but what's next?" and Hasbro going "uh, we're working on it." Lowe's beat because people can't move—Hasbro's going to have to explain why anyone's still buying their stuff when TikTok is free.
+
+40
+00:09:13,920 --> 00:09:39,649
+ALEX: Corvel's also on there—workers' comp insurance. If their claims trends are deteriorating, that tells you the labor market's actually hotter than the Fed thinks. Watch the loss ratios. So tomorrow when Analog Devices reports, their guidance is basically the canary in the coal mine for whether the AI capex story is actually real or just Nvidia's quarterly earnings call on repeat for the next eighteen months.
+
+41
+00:09:39,649 --> 00:09:51,000
+MAYA: If Analog misses, the entire semiconductor rally becomes a Ponzi scheme where everyone's just buying the stock to sell it to the next guy before the music stops.
+
+42
+00:09:51,000 --> 00:09:56,297
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

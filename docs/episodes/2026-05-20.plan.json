@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "acd880cd45bc",
+    "hook": "GitHub got hacked. Thousands of internal repos stolen. The company that stores everyone else's code just learned what it's like to be the victim."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7420.80 (+0.91%)",
+      "Nasdaq: 26205.45 (+1.29%)",
+      "AMD: +7.51% (biggest gainer)",
+      "XOM: -2.28% (biggest loser)"
+    ],
+    "macro_note": "Small caps leading, chip stocks flying, energy getting crushed\u2014the rotation away from oil is real."
+  },
+  "big_story": {
+    "story_id": "da0193d28a62",
+    "lead_host": "ALEX",
+    "story_title": "Something very unusual is happening with Nvidia options",
+    "angle": "Nvidia options are pricing in volatility that the stock itself isn't showing\u2014either the market is bracing for a shock or someone knows something. This is the canary in the coal mine for the entire AI trade.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "a87d995cff5b",
+      "lead_host": "MAYA",
+      "angle": "Intuit laying off 3,000 to 'refocus on AI'\u2014the corporate equivalent of 'it's not you, it's me, and also I'm replacing you with a chatbot.'",
+      "conviction": "real"
+    },
+    {
+      "story_id": "299997d2228d",
+      "lead_host": "ALEX",
+      "angle": "Authentic Brands Group (Barbie, Marilyn Monroe, Muhammad Ali estates) eyeing IPO in 12 months\u2014this is the Crocs IPO of corporate governance, and yes, it will probably work.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "bf09940d202a",
+      "lead_host": "ALEX",
+      "angle": "Eli Lilly accusing church bishops and businessmen of a Trulicity rebate fraud scheme\u2014when your drug's rebate game is so complex that clergy are allegedly in on it, you've built a system only a cartel could love.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "ea080e08e65b",
+      "lead_host": "ALEX",
+      "angle": "Lowe's beats expectations despite 'challenging housing backdrop'\u2014translation: people are still buying stuff to fix their homes because they can't afford to move.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "017ee7e8d73f",
+    "joke_angle": "NanoClaw founder turned down $20M, raised $12M instead\u2014chose the harder path with less money. Either visionary or the startup equivalent of 'no thanks, I'll walk' when offered a ride."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "CISA left passwords and cloud keys on the open web\u2014the agency literally tasked with protecting critical infrastructure.",
+    "fresh_take": "GitHub just got breached. CISA's still explaining how they left the keys in the ignition. The irony is so thick you could code it."
+  },
+  "sign_off": {
+    "callback_target": "Nvidia options\u2014because if those are wrong, everything else we talked about today is probably wrong too."
+  }
+}
