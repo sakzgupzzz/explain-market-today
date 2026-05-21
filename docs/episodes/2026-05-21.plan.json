@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "1ee5548d761e",
+    "hook": "Walmart stock tanked 7.4% today because the company wants to give you cheaper groceries\u2014and Wall Street hates when retailers actually pass savings to customers."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7408.27 (-0.33%)",
+      "Nasdaq: 26144.59 (-0.48%)",
+      "Biggest gainer: Cisco +2.18%",
+      "Biggest loser: Walmart -7.39%"
+    ],
+    "macro_note": "Broad weakness across tech and retail; VIX dips to 17.35 as macro anxiety eases but earnings reality bites."
+  },
+  "big_story": {
+    "story_id": "8ec5c0982b93",
+    "lead_host": "MAYA",
+    "story_title": "SpaceX is heavily reliant on Starlink for growth and profit as it marches toward Nasdaq listing",
+    "angle": "SpaceX's IPO filing reveals Starlink is the profit engine, not rockets\u2014and that's either a genius diversification or a sign Elon's betting the farm on satellite internet instead of Mars.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "2269318b1448",
+      "lead_host": "MAYA",
+      "angle": "Anthropic is paying $15B/year for Elon's data centers while Elon's company is going public\u2014this is the Crocs IPO of corporate governance, where the CEO's side hustle becomes the main character.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "f17c5aa19682",
+      "lead_host": "ALEX",
+      "angle": "Air France and Airbus convicted of manslaughter in 2009 crash\u201415 years later, European courts finally decided 'too big to fail' doesn't mean 'too big to prosecute.'",
+      "conviction": "real"
+    },
+    {
+      "story_id": "b8953aa1fd0f",
+      "lead_host": "ALEX",
+      "angle": "Spotify stock pops on first investor day since 2022\u2014the streaming wars are over, and the winner is the company that convinced Wall Street podcasts are a moat.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "9d0b052b17e2",
+      "lead_host": "MAYA",
+      "angle": "White House postpones AI executive order signing ceremony\u2014nothing says 'we have a coherent AI strategy' like canceling the photo op.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "9b9c331d1fb9",
+    "joke_angle": "A literary AI scandal that 'changes everything'\u2014in media, 'changes everything' is what we say when we're too embarrassed to admit nothing changed."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Walmart's tariff refund gamble\u2014the one company that chose to actually help shoppers instead of buying back stock."
+  }
+}
