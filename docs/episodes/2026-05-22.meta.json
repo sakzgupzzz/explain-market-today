@@ -1,0 +1,51 @@
+{
+  "date": "2026-05-22",
+  "mp3": "2026-05-22.mp3",
+  "size_bytes": 8476216,
+  "duration_sec": 529.11,
+  "turns": 33,
+  "words": 1359,
+  "char_usage_estimate": 8852,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-05-22T14:48:24.096387Z",
+  "top_mover": {
+    "symbol": "MRK",
+    "name": "MRK",
+    "pct": 4.74
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7480.8701171875,
+        "pct": 0.47
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 50610.390625,
+        "pct": 0.65
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26413.287109375,
+        "pct": 0.46
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2857.909423828125,
+        "pct": 0.51
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 16.850000381469727,
+        "pct": 0.54
+      }
+    ]
+  }
+}

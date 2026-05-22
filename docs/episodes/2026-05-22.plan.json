@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "88dfff8a5edd",
+    "hook": "Tesla is recalling thousands of Model Ys because owners are missing a sticker\u2014yes, a sticker\u2014and somehow this is a federal safety issue."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7480.87 (+0.47%)",
+      "Nasdaq: 26413.29 (+0.46%)",
+      "Biggest gainer: Merck +4.74%",
+      "Biggest loser: Costco -2.36%"
+    ],
+    "macro_note": "Indices flat, VIX creeping up 0.54%, Fed rate-hike door still cracked open\u2014inflation theater continues."
+  },
+  "big_story": {
+    "story_id": "a58e6140c058",
+    "lead_host": "ALEX",
+    "story_title": "Fed's Waller says he can't rule out a rate hike 'further down the road' if inflation persists",
+    "angle": "The Fed is doing the classic 'we're not ruling anything out' move\u2014which means nothing and everything at once\u2014while markets price in cuts and consumers are already panicking.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "70d6fe2a552c",
+      "lead_host": "MAYA",
+      "angle": "Publishers are suing AI companies for training on their books, but the literary world is already losing the plot\u2014AI is writing faster than lawyers can litigate.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "b718df6e1ad8",
+      "lead_host": "ALEX",
+      "angle": "BJ's Wholesale earnings prove that cheap gas is the only thing keeping consumer spending alive\u2014remove that and we're in a recession.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "0ddef77f3411",
+      "lead_host": "MAYA",
+      "angle": "Meta quietly launched a Reddit clone called Forum because apparently owning Instagram, WhatsApp, and Facebook wasn't enough\u2014this is the corporate equivalent of hoarding.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "7a8e6c70f49f",
+      "lead_host": "JAMIE",
+      "angle": "A bank boss called workers 'lower value human capital' and then apologized\u2014which is like saying 'I'm sorry you heard me think that way.'",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "864cb97e9b42",
+    "joke_angle": "Nigel Farage got hit with a \u00a39,400 court judgment for debt\u2014turns out even Brexit architects have to pay their bills, who knew."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "Anthropic is paying $15B/year for Elon's data centers while Elon's company is going public\u2014this is the Crocs IPO of corporate governance",
+    "fresh_take": "Today's AI backlash story shows the bill is coming due: investors are finally asking if AI hype can actually justify the infrastructure spend\u2014Elon's data center goldmine just got a lot riskier."
+  },
+  "sign_off": {
+    "callback_target": "Tesla's missing sticker recall\u2014the most Tesla thing ever, a federal safety issue that's actually just a sticker."
+  }
+}
