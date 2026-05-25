@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "1105b00022d3",
+    "hook": "Oil prices just tanked on Iran peace deal hopes\u2014because nothing says 'geopolitical stability' like betting your portfolio on diplomatic theater that could collapse in 48 hours."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7473.47 (+0.37%)",
+      "Russell 2000: 2869.23 (+0.91%)",
+      "Merck: +5.64% (biggest gainer)",
+      "Costco: -2.11% (biggest loser)"
+    ],
+    "macro_note": "Small caps outrunning large caps on Iran deal optimism; energy sector taking the hit; VIX flat at 16.69\u2014market pricing in 'maybe peace, maybe not.'"
+  },
+  "big_story": {
+    "story_id": "8d232d6bba4c",
+    "lead_host": "JAMIE",
+    "story_title": "White House says Iran deal could take days",
+    "angle": "The real question isn't whether a deal happens\u2014it's whether markets are front-running a negotiation that could blow up tomorrow, and what happens to oil, defense stocks, and geopolitical risk when the White House's timeline meets reality.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "63da2fc5e4d9",
+      "lead_host": "ALEX",
+      "angle": "Three big things to watch in equities this week: earnings season, rate expectations, and whether the 'underdogs driving S&P profit growth' narrative holds or cracks under scrutiny.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "7e2fbe4674cf",
+      "lead_host": "ALEX",
+      "angle": "Mastercard up 11,000% since IPO 20 years ago\u2014the stock has commitment issues now; every analyst asking 'what's left to grow into' is basically asking a billionaire what they want for their birthday.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "739fcf4687dd",
+      "lead_host": "MAYA",
+      "angle": "Americans are still splurging on watches, movies, and burrito taxis during a 'vibecession'\u2014which is just 'recession but make it aesthetic,' and honestly the most 2025 thing possible.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "421f44ebcafc",
+      "lead_host": "MAYA",
+      "angle": "Memory stocks are the new meme stocks\u2014investors are being warned about boom-bust cycles in AI chips, which is code for 'we already learned this lesson three times, please don't do it again.'",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "311237e90091",
+    "joke_angle": "Pope Leo weighs in on AI's rise\u2014the Vatican is now a tech policy stakeholder, which means either AI is genuinely concerning or the Pope's PR team chose violence today."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Mastercard's 11,000% run\u2014because if Iran peace talks fall apart, at least your payment processor is still crushing it."
+  }
+}
