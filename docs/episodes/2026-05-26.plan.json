@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "9f8dbaea0cc5",
+    "hook": "Iranian hackers took down LA transit for weeks\u2014proving that critical infrastructure security has the same energy as a gym membership you keep forgetting to cancel."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7515.80 (+0.57%)",
+      "Nasdaq: 26610.08 (+1.01%)",
+      "AMD: +4.89% (biggest gainer)",
+      "COST: -2.76% (biggest loser)"
+    ],
+    "macro_note": "Small caps outrunning mega-cap; oil bouncing on Iran retaliation fears; defense stocks quietly printing money."
+  },
+  "big_story": {
+    "story_id": "2f1d49c37bc1",
+    "lead_host": "ALEX",
+    "story_title": "Brent oil jumps back above $100 after Iran vows to retaliate for U.S. strikes",
+    "angle": "Oil's whiplash from peace-deal hopes to retaliation threats exposes how thin the geopolitical risk premium actually is\u2014and why betting on 'stability' in the Middle East is the financial equivalent of a house of cards in a wind tunnel.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "0ecc95e382f2",
+      "lead_host": "ALEX",
+      "angle": "World's third-largest shipping line earnings crashed\u2014global trade is slowing harder than consensus admits, and container rates are the canary in the coal mine nobody's watching.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "c833311c12ea",
+      "lead_host": "MAYA",
+      "angle": "Iran's internet coming back online after months-long blackout; the regime's digital stranglehold is loosening, but only because they ran out of ways to make it worse.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "b5e5f5e00221",
+      "lead_host": "MAYA",
+      "angle": "Ghost hackers\u2014a cybersecurity mystery nobody's solved\u2014suggests that the entire 'zero-trust architecture' industry is just expensive theater while actual bad guys operate in the shadows.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "d0c84304c42e",
+      "lead_host": "ALEX",
+      "angle": "Elbit Systems leading defense gains on war demand; the market's already priced in a decade of Middle East instability, and it's not even hiding it.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "84c9936f42c1",
+    "joke_angle": "Two people receive specialist care after TT crash\u2014and nobody knows what TT is, which is either a motorcycle race or the world's most exclusive club."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "Oil prices tanked on Iran peace deal hopes\u2014because nothing says 'geopolitical stability' like betting your portfolio on it",
+    "fresh_take": "24 hours later, oil's back above $100 on retaliation threats; the market's learned nothing and will repeat this exact cycle three more times before year-end."
+  },
+  "sign_off": {
+    "callback_target": "LA transit hackers proving that critical infrastructure security has the energy of a gym membership"
+  }
+}

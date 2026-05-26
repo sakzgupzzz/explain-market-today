@@ -1,0 +1,182 @@
+1
+00:00:00,000 --> 00:00:06,186
+JAMIE: Iranian hackers just took down L A transit for weeks—proving critical infrastructure security has serious vulnerabilities.
+  ↳ source: https://techcrunch.com/2026/05/26/iranian-hackers-blamed-for-breach-of-los-angeles-transit-system-that-took-weeks-to-recover/
+
+2
+00:00:06,186 --> 00:00:20,879
+ALEX: S&P 500 at 7515.80, up 0 point five seven percent. Nasdaq at 26610.08, up 1 point zero one percent. Russell 2000 is up 1 point four four percent, which means small caps are outrunning the mega-cap index.
+
+3
+00:00:20,879 --> 00:00:25,518
+JAMIE: So we're talking about a divergence here—the little guys are winning?
+
+4
+00:00:25,518 --> 00:00:47,171
+ALEX: The little guys are winning because they think interest rates are about to fall. When rates fall, small-cap stocks, which carry more debt, suddenly become less toxic. It's the financial equivalent of your credit card company calling to say they're lowering your A P R out of the goodness of their heart. Spoiler: they're not.
+
+5
+00:00:47,171 --> 00:00:51,424
+MAYA: Wait, so what's the actual gainer story today? Who's printing?
+
+6
+00:00:51,424 --> 00:01:13,076
+ALEX: A M D up 4 point eight nine percent. Broadcom up 2 point four eight percent. Both semiconductor names. Tesla, Eli Lilly—all in the green. The chip cycle is still running hot. Meanwhile, Costco got absolutely demolished—down 2 point seven six percent—because apparently bulk warehouse vibes are out of favor when you're worried about recession.
+
+7
+00:01:13,076 --> 00:01:18,103
+JAMIE: Costco down 2 point seven six percent? What else got hit?
+
+8
+00:01:18,103 --> 00:01:35,115
+ALEX: UnitedHealth down 2 point four five percent, PepsiCo down 2 point two two percent, Chevron down 2 point zero nine percent. The V I X ticked up 1.21 to 16.79, which is still nothing—we're in the "market is bored but mildly concerned" zone.
+
+9
+00:01:35,115 --> 00:01:42,075
+MAYA: So A M D chose violence today, Costco is having an identity crisis—did I get that right?
+
+10
+00:01:42,075 --> 00:01:58,701
+ALEX: You got it exactly right. Brent crude just bounced back above one hundred dollars a barrel after Iran said they're gearing up for retaliation against U.S. strikes. This is the geopolitical risk premium in oil basically operating like a light switch.
+
+11
+00:01:58,701 --> 00:02:07,207
+JAMIE: So oil was down earlier because we thought the Iran thing was cooling off, and now it's back above one hundred?
+
+12
+00:02:07,207 --> 00:02:18,033
+ALEX: Correct. Traders are slamming buy and sell buttons like they're playing Whac-A-Mole. This is what happens when your entire commodity price discovery mechanism depends on geopolitical developments.
+
+13
+00:02:18,033 --> 00:02:21,513
+MAYA: So how much is the premium actually worth?
+
+14
+00:02:21,513 --> 00:02:37,753
+ALEX: That's the problem—nobody knows. The consensus guess is somewhere between seventy and eighty dollars without geopolitical chaos. So we're paying twenty to thirty dollars a barrel just for the privilege of living in a world where the Middle East exists.
+
+15
+00:02:37,753 --> 00:02:41,232
+JAMIE: Twenty to thirty dollars a barrel is insane.
+
+16
+00:02:41,232 --> 00:02:52,832
+MAYA: It's worse than that though, right? Because if you're a refiner or an airline, you can't hedge that. You can't buy insurance against "maybe Iran retaliates, maybe they don't."
+
+17
+00:02:52,832 --> 00:03:04,045
+ALEX: Exactly. And here's the thing that nobody's talking about—the U.S. could resume military action if discussions collapse. That's not a peace signal. That's a threat with a smile.
+
+18
+00:03:04,045 --> 00:03:15,258
+JAMIE: So what does this actually mean for energy stocks? Because we saw Chevron down 2.09 earlier, but if oil is back above one hundred, shouldn't they be rallying?
+
+19
+00:03:15,258 --> 00:03:25,311
+MAYA: They should be, but they're not, which means the market thinks oil is going to tank again. Chevron's got commitment issues with this rally.
+
+20
+00:03:25,311 --> 00:03:33,817
+ALEX: World's third-largest shipping line just reported earnings that got absolutely eviscerated. Container rates have fallen seventy percent from their pandemic peaks.
+  ↳ source: https://finance.yahoo.com/markets/stocks/articles/world-third-largest-shipping-line-142642236.html
+
+21
+00:03:33,817 --> 00:03:41,550
+JAMIE: Seventy percent? That's not a correction, that's a capitulation. What does that actually signal about global trade right now?
+
+22
+00:03:41,550 --> 00:03:51,989
+ALEX: It signals that consensus estimates for growth are fantasy. When container rates crater like this, it means there's too much shipping capacity chasing too little cargo.
+
+23
+00:03:51,989 --> 00:03:57,402
+MAYA: Wait, so shipping lines are the actual economic tell, not the stock market?
+  ↳ source: https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-us-iran-deal-oil-prices-tumble/?src=A00220&yptr=yahoo
+
+24
+00:03:57,402 --> 00:04:07,455
+ALEX: Shipping lines are always the tell. The market's pricing in rate cuts because inflation is "under control," but shipping data says demand is actually weak.
+
+25
+00:04:07,455 --> 00:04:14,415
+MAYA: Iran's internet is coming back online after a months-long blackout. International access is back in limited capacity.
+
+26
+00:04:14,415 --> 00:04:22,148
+JAMIE: They turned off the internet for months and then just... turned it back on? Like a bad WiFi router?
+
+27
+00:04:22,148 --> 00:04:24,855
+MAYA: Exactly like a bad WiFi router.
+
+28
+00:04:24,855 --> 00:04:29,494
+ALEX: So the takeaway is that totalitarian information control has serious limitations.
+
+29
+00:04:29,494 --> 00:04:46,120
+MAYA: There's a shadowy hacking group that stole NSA hacking tools years ago and still nobody knows who they are or what they're doing with them. Like, we spent billions on cybersecurity architecture that's supposed to stop exactly this, and it did nothing.
+
+30
+00:04:46,120 --> 00:04:48,440
+JAMIE: Wait, they haven't been caught?
+
+31
+00:04:48,440 --> 00:04:55,787
+MAYA: Nobody even knows if they're active or dormant. The tools are floating around somewhere in the world.
+
+32
+00:04:55,787 --> 00:05:03,906
+ALEX: So the lesson is: pay more to a vendor, sleep worse at night, and hope nobody tells you the truth.
+
+33
+00:05:03,906 --> 00:05:15,892
+MAYA: So there was a crash during a motorcycle race on the Isle of Man—two people are in specialist care. It's a race that goes around actual roads, not a track.
+
+34
+00:05:15,892 --> 00:05:24,012
+JAMIE: Wait, the Isle of Man race—that's the motorcycle race where they go around actual roads, right? Like, not a track?
+
+35
+00:05:24,012 --> 00:05:31,745
+MAYA: Yes! It's basically what happens when a country decides "you know what we need? Less regulation and more velocity."
+
+36
+00:05:31,745 --> 00:05:40,251
+ALEX: So two people got specialist care, which means they got hurt badly enough that regular hospital discharge wasn't an option.
+
+37
+00:05:40,251 --> 00:05:49,144
+JAMIE: On the tape tomorrow—AutoZone, C S W Industrials, and Champion Homes all report on May 26th. Alex, what's the macro calendar looking like?
+
+38
+00:05:49,144 --> 00:06:06,544
+ALEX: Nothing that matters until the P C E print on May 29th. The market's still operating on the assumption that inflation is solved, so if P C E comes in hot, we're going to see the entire rate-cut narrative evaporate in about four minutes.
+
+39
+00:06:06,544 --> 00:06:14,277
+MAYA: AutoZone's the one to watch though, right? Because if retail auto parts demand is collapsing, that's another canary.
+
+40
+00:06:14,277 --> 00:06:20,850
+JAMIE: AutoZone's been holding up pretty well though, hasn't it? What's the risk case if they miss?
+
+41
+00:06:20,850 --> 00:06:28,969
+ALEX: The risk case is that consumer spending on discretionary maintenance is finally rolling over because people are tapped out.
+
+42
+00:06:28,969 --> 00:06:40,955
+MAYA: Champion Homes on the same day is wild because housing starts are already soft, so if their backlog commentary is weak, that's another sector saying "yeah, demand actually isn't there."
+
+43
+00:06:40,955 --> 00:06:51,395
+JAMIE: So May 26th is basically the day the market finds out whether the soft landing is real or whether we've just been ignoring the physical economy.
+
+44
+00:06:51,395 --> 00:07:04,928
+MAYA: L A's transit authority got hacked, which means critical infrastructure security has serious vulnerabilities. The fact that a transit system serving millions of people has weak security should terrify every city planner in America.
+
+45
+00:07:04,928 --> 00:07:10,341
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
