@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "a84aeba32905",
+    "hook": "Jamie Dimon just said JPMorgan has $20 billion burning a hole in its pocket\u2014and JPM stock is down 3.4% because apparently the market hates when billionaires get shopping ideas."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7506.82 (-0.16%)",
+      "Nasdaq: 26565.84 (-0.34%)",
+      "JPM: -3.42% (biggest loser in mega-cap)",
+      "PG: +3.35% (biggest gainer)"
+    ],
+    "macro_note": "Defensive names rallying (PG, KO, PEP all up 2%+) while financials and semiconductors tank\u2014classic 'something smells off' positioning."
+  },
+  "big_story": {
+    "story_id": "063bee152ed0",
+    "lead_host": "MAYA",
+    "story_title": "ClickHouse triples annualized revenue to $250M, charting a path toward an IPO",
+    "angle": "A database company nobody's heard of just quietly became a $250M ARR business\u2014this is the Crocs IPO of enterprise software: weird, unglamorous, and apparently unstoppable.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "860e45771cfb",
+      "lead_host": "ALEX",
+      "angle": "Abercrombie up 13% on earnings beat despite Iran conflict tanking sales\u2014this stock has commitment issues, but apparently Wall Street only reads the headline.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "0508464457ee",
+      "lead_host": "ALEX",
+      "angle": "Foot Locker returns to growth but Dick's Sporting Goods misses\u2014the sneaker market is bifurcating faster than anyone expected, and Dick's chose violence today by reporting weak numbers.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "06f0dd7676b7",
+      "lead_host": "MAYA",
+      "angle": "Iran's internet shutdown ends after weeks\u2014Iranians describe it like being released from prison, which is a brutal reminder that 'connectivity' is actually freedom.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "d9c09b99e746",
+      "lead_host": "ALEX",
+      "angle": "NY Fed finds 'remarkable increase' in food insecurity\u2014remarkable is Fed-speak for 'we're shocked this is happening while the stock market rips,' which tracks.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "489238120255",
+    "joke_angle": "A Ferrari that should have been a Volkswagen\u2014the automotive equivalent of a startup that raised $500M to solve a problem nobody had."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Brent oil jumps back above $100 after Iran vows to retaliate for U.S. strikes",
+    "fresh_take": "Iran's internet is back online today, but oil markets are still pricing in escalation risk\u2014the geopolitical premium is stickier than the actual conflict."
+  },
+  "sign_off": {
+    "callback_target": "JPMorgan's $20 billion shopping spree\u2014circle back to whether Dimon's actually going to pull the trigger or if this is just banker theater."
+  }
+}
