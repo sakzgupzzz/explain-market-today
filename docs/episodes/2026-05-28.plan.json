@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "story_id": "6a3f3775df06",
+    "hook": "Snowflake just surged 35% on AI frenzy\u2014which is the Crocs IPO of corporate governance: completely unhinged, nobody knows why it works, and somehow it's printing money."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7559.82 (+0.52%)",
+      "Nasdaq: 26848.87 (+0.65%)",
+      "Biggest gainer: ORCL +6.01%",
+      "Biggest loser: V -1.64%"
+    ],
+    "macro_note": "VIX down 2%, inflation still sticky at 3.3% core, Fed watching\u2014but tech's chosen violence on the AI narrative anyway."
+  },
+  "big_story": {
+    "story_id": "7d8df100663f",
+    "lead_host": "ALEX",
+    "story_title": "Everpure Stock Tumbles Despite Earnings Beat. Here's What To Know.",
+    "angle": "The inverse Snowflake: beat earnings, stock dies anyway\u2014a masterclass in why 'the numbers' stopped mattering and now it's all about the vibe, the guidance whisper, and whether your CEO sounds confident on the call.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "7d5db61657b7",
+      "lead_host": "ALEX",
+      "angle": "Best Buy +15% on earnings\u2014the one retailer that figured out people still want to touch a TV before buying it, which is apparently a competitive moat now.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "a8eb2c6a4783",
+      "lead_host": "ALEX",
+      "angle": "Inflation swamps income gains, S&P 500 still up\u2014the market's commitment issues are showing: it knows the math is broken but keeps buying anyway.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "3da9ff132fcb",
+      "lead_host": "JAMIE",
+      "angle": "Iran targeted US base after fresh strikes\u2014escalation spiral is live, oil markets are pricing in 'maybe nothing happens' which is either genius or the most dangerous assumption in the room.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "c24acf561c85",
+      "lead_host": "MAYA",
+      "angle": "Roku's secret to success: not being cool\u2014the anti-hype play that somehow became the streaming box that actually works, which is the most Roku thing ever.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "a0991237c78a",
+    "joke_angle": "DOJ charges Google staffer over Polymarket trades while US is striking Iran\u2014the regulatory priorities are truly unhinged: 'we're bombing the Middle East but ALSO we're watching your prediction market bets, buddy.'"
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "Abercrombie up 13% on earnings beat despite Iran conflict tanking sales\u2014this stock has commitment issues",
+    "fresh_take": "Today we're seeing the inverse: Everpure BEAT and tanked, Best Buy BEAT and soared\u2014turns out 'commitment issues' is now the whole market's diagnosis, not just Abercrombie's."
+  },
+  "sign_off": {
+    "callback_target": "Snowflake's 35% surge on AI frenzy\u2014the Crocs IPO of corporate governance"
+  }
+}
