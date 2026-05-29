@@ -174,8 +174,17 @@ TTS_BACKEND = os.environ.get("TTS_BACKEND", "auto").lower()
 
 # ElevenLabs config. Creator plan = 100k chars/mo (~10 hours of audio).
 ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
-ELEVENLABS_MODEL = os.environ.get("ELEVENLABS_MODEL", "eleven_multilingual_v2")
+# NOTE: the primary render path (_synth_eleven_v3) calls the Text-to-Dialogue
+# API and is pinned to eleven_v3 — the most expressive model, which is what
+# makes multi-host banter sound human. ELEVENLABS_MODEL below is used ONLY by
+# the per-turn v2 fallback that runs when the SDK lacks text_to_dialogue.
+ELEVENLABS_MODEL = os.environ.get("ELEVENLABS_MODEL", "eleven_turbo_v2_5")
 ELEVENLABS_OUTPUT_FORMAT = os.environ.get("ELEVENLABS_OUTPUT_FORMAT", "mp3_44100_128")
+# v3 dialogue stability mode (the only voice setting the dialogue API exposes):
+# 0.0 = Creative (most expressive + most tag-responsive, but can hallucinate),
+# 0.5 = Natural (balanced — recommended for an expressive news show),
+# 1.0 = Robust (steadiest, but suppresses audio-tag delivery → more monotone).
+ELEVEN_V3_STABILITY = float(os.environ.get("ELEVEN_V3_STABILITY", "0.5"))
 # Per-character ElevenLabs voice IDs. Defaults are public premade voices on the
 # ElevenLabs platform. Override per host via env: ELEVEN_VOICE_<NAME>.
 # Browse voices at https://elevenlabs.io/app/voice-library to pick custom IDs.

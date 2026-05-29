@@ -24,14 +24,20 @@ specific thing to call back to (chosen at plan time).
 from __future__ import annotations
 import json
 import re
+from datetime import datetime
 from typing import Any
 
 from config import (
     CHARACTERS, DISCLAIMER_SHORT, BANNED_PHRASES,
 )
 from generate_script import (
-    _llm_call, _resolve_prefs, _fmt_section, _join_natural, _fmt_char_block,
-    OLLAMA_MODEL, GROQ_MODEL,
+    _llm_call, _llm_json, _resolve_prefs, _fmt_section, _join_natural,
+    _fmt_char_block, OLLAMA_MODEL, GROQ_MODEL,
+    OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL,
+)
+from schemas import (
+    ALLOWED_TAGS, build_plan_schema, build_turns_schema, story_signature,
+    validate_plan, validate_turns,
 )
 
 # ─────────── helpers ───────────
@@ -127,8 +133,7 @@ Output ONLY a JSON object with this exact shape (no commentary, no markdown):
 
 {{
   "cold_open": {{
-    "story_id": "<one cluster id from above>",
-    "hook": "<≤20 word punchy specific opener line, leveraging the actual story; MUST include at least one specific number (a percent move, a dollar amount, an index level) OR a specific company/person name with a fact attached. NO 'what's behind X' patterns.>"
+    "hook": "<≤20 word punchy opener that TEASES the big_story below; MUST include at least one specific number (a percent move, a dollar amount, an index level) OR a specific company/person name with a fact attached. NO 'what's behind X' patterns. Do NOT name a story other than big_story.>"
   }},
   "markets": {{
     "lead_host": "ALEX",
@@ -164,7 +169,8 @@ Output ONLY a JSON object with this exact shape (no commentary, no markdown):
 
 Rules:
 - Every story_id MUST exist in the CLUSTERS list above. Do not invent IDs.
-- Cold open + big story + quick hits + odd thing must be ALL DIFFERENT clusters.
+- The cold_open teases big_story (it has no story_id of its own — the hook MUST be about the big_story you pick, so the show always pays off what it teases).
+- big_story + quick_hits + odd_thing must be ALL DIFFERENT clusters from each other.
 - Quick hits = 4 entries (no more, no less).
 - Each quick hit's `conviction` is your editorial call: 'real' = signal worth trading on; 'hype' = narrative-driven, may not stick; 'noise' = filler.
 - Pick stories that play to each host's beat (ALEX = markets/business/macro, MAYA = tech/culture/odd, JAMIE = host/connector).
@@ -172,6 +178,80 @@ Rules:
 - The cold_open.hook MUST contain a number or a proper noun + fact. Reject any hook that's just a question.
 - If the data is thin, prefer fewer beats with depth over many beats spread thin (3 quick hits is fine if the 4th would be filler).
 """
+
+
+def _semantic_dup_violations(outline: dict, idx: dict[str, dict]) -> list[str]:
+    """Blinded, heuristic-gated critic for SEMANTIC duplicate beats — two
+    DIFFERENT story_ids that are really the same story (e.g. two Nvidia
+    clusters that became big_story and a quick_hit; see 2026-05-10 Nvidia
+    covered twice). Exact-id uniqueness can't catch this.
+
+    Gate (cheap): only pairs whose title signatures already overlap are even
+    considered, so the LLM critic usually doesn't run. Blinded: the critic
+    sees ONLY the titles, never the planner's rationale (MARCH-style
+    information asymmetry — avoids rubber-stamping the planner's choice).
+    """
+    beats = _beat_titles(outline, idx)  # [(label, title)]
+    suspects: list[tuple[str, str, str, str]] = []
+    for i in range(len(beats)):
+        for j in range(i + 1, len(beats)):
+            la, ta = beats[i]
+            lb, tb = beats[j]
+            if signatures_overlap(story_signature(ta), story_signature(tb), min_shared=2):
+                suspects.append((la, ta, lb, tb))
+    if not suspects:
+        return []
+    listing = "\n".join(
+        f"{n+1}. A=[{a_l}] \"{a_t}\"  vs  B=[{b_l}] \"{b_t}\""
+        for n, (a_l, a_t, b_l, b_t) in enumerate(suspects)
+    )
+    critic_prompt = (
+        "You are a podcast run-of-show editor. For each numbered pair of story "
+        "titles below, answer whether the two titles describe THE SAME underlying "
+        "news story (same event/company/subject), which would make covering both "
+        "a boring repeat. Judge only the titles shown — no other context.\n\n"
+        f"{listing}\n\n"
+        "Reply with ONLY the numbers that are the same story, comma-separated "
+        "(e.g. '1,3'). If none are the same, reply 'none'."
+    )
+    try:
+        verdict = _llm_call(critic_prompt, OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL,
+                            temperature=0.1).strip().lower()
+    except Exception as e:
+        print(f"[plan] semantic-dup critic skipped ({e})")
+        return []
+    violations: list[str] = []
+    for tok in re.findall(r"\d+", verdict):
+        n = int(tok) - 1
+        if 0 <= n < len(suspects):
+            a_l, a_t, b_l, b_t = suspects[n]
+            violations.append(
+                f"{a_l} and {b_l} are the same underlying story "
+                f"(\"{a_t[:50]}\" / \"{b_t[:50]}\"); replace one with a different story."
+            )
+    return violations
+
+
+def _beat_titles(outline: dict, idx: dict[str, dict]) -> list[tuple[str, str]]:
+    out: list[tuple[str, str]] = []
+    for label, sid in _beat_story_ids_local(outline).items():
+        cl = idx.get(sid)
+        if cl and cl.get("title"):
+            out.append((label, cl["title"]))
+    return out
+
+
+def _beat_story_ids_local(outline: dict) -> dict[str, str]:
+    out: dict[str, str] = {}
+    for beat in ("big_story", "odd_thing"):
+        sid = (outline.get(beat) or {}).get("story_id")
+        if sid:
+            out[beat] = sid
+    for i, qh in enumerate(outline.get("quick_hits") or []):
+        sid = qh.get("story_id")
+        if sid:
+            out[f"quick_hits[{i}]"] = sid
+    return out
 
 
 def plan(ranked: list[dict], market: dict, interests: dict | None = None,
@@ -190,6 +270,14 @@ def plan(ranked: list[dict], market: dict, interests: dict | None = None,
         "\n\nGAINERS:\n" + _fmt_section((market.get("gainers") or [])[:5]) +
         "\n\nLOSERS:\n" + _fmt_section((market.get("losers") or [])[:5])
     )
+    if market.get("is_stale"):
+        market_summary += (
+            f"\n\nNOTE: Markets are CLOSED today. The figures above are from "
+            f"{market.get('as_of', 'the prior session')}, NOT today. The cold_open "
+            f"hook MUST NOT pretend a move happened 'today'. If you use a market "
+            f"number, attribute it to the prior session — or pick a non-market "
+            f"story for the cold open instead."
+        )
     ranked_block = _fmt_ranked_for_plan(ranked, top_n=14)
     yesterday_block = ""
     if yesterday_topics:
@@ -200,6 +288,38 @@ def plan(ranked: list[dict], market: dict, interests: dict | None = None,
         ranked_block=ranked_block, market_summary=market_summary,
         yesterday_block=yesterday_block,
     )
+
+    idx = _ranked_index(ranked)
+    story_ids = [c["id"] for c in ranked[:14] if c.get("id")]
+    schema = build_plan_schema(story_ids)
+    # Cross-day signatures come from the prior episode's plan sidecar (stable
+    # topic TEXT), not cluster ids — ids churn day-over-day, signatures don't.
+    yesterday_sigs = [story_signature(t) for t in (yesterday_topics or []) if t]
+
+    def _violations(outline: dict) -> list[str]:
+        v = validate_plan(outline, idx, yesterday_sigs)
+        # Only run the (LLM) semantic-dup critic once the cheap structural
+        # checks pass — no point judging titles on a plan we're rejecting anyway.
+        if not v:
+            v = _semantic_dup_violations(outline, idx)
+        return v
+
+    # Structured path: the decoder is bound to the schema (story_id ∈ enum,
+    # hosts ∈ cast, quick_hits == 4), and validate_plan re-prompts on the
+    # semantic constraints a schema can't express (cross-beat / cross-day
+    # uniqueness, hook substance). No post-hoc id-repair / token-swap / teaser
+    # re-pointing — those failure classes are now prevented, not patched.
+    try:
+        outline = _llm_json(
+            prompt, schema, schema_name="episode_plan",
+            temperature=0.3, extra_violations=_violations,
+        )
+        return outline
+    except Exception as e:
+        print(f"[plan] structured path failed ({e}); trying legacy text parse")
+
+    # Legacy fallback: free-text JSON, best-effort. Only reached when the
+    # structured path can't satisfy the contract within its retries.
     try:
         raw = _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.3)
     except Exception as e:
@@ -214,70 +334,15 @@ def plan(ranked: list[dict], market: dict, interests: dict | None = None,
     except json.JSONDecodeError as e:
         print(f"[plan] JSON parse failed: {e}")
         return None
-    # Sanity-check story_ids exist in ranked
-    idx = _ranked_index(ranked)
-    bad = []
-    for beat in ("cold_open", "big_story", "odd_thing"):
-        sid = (outline.get(beat) or {}).get("story_id")
-        if sid and sid not in idx:
-            bad.append((beat, sid))
-    for i, qh in enumerate(outline.get("quick_hits") or []):
-        sid = qh.get("story_id")
-        if sid and sid not in idx:
-            bad.append((f"quick_hits[{i}]", sid))
-    if bad:
-        print(f"[plan] hallucinated IDs: {bad} — falling back to top-ranked stories")
-        # repair: replace bad IDs with top-N unused IDs in order
-        used = set()
-        for beat in ("cold_open", "big_story", "odd_thing"):
-            sid = (outline.get(beat) or {}).get("story_id")
-            if sid in idx:
-                used.add(sid)
-        for qh in outline.get("quick_hits") or []:
-            sid = qh.get("story_id")
-            if sid in idx:
-                used.add(sid)
-        spare_ids = [c["id"] for c in ranked if c["id"] not in used]
-        for label, _ in bad:
-            if not spare_ids:
-                break
-            new_id = spare_ids.pop(0)
-            if "[" in label:
-                # quick_hits[i]
-                idx_n = int(re.search(r"\[(\d+)\]", label).group(1))
-                outline["quick_hits"][idx_n]["story_id"] = new_id
-            else:
-                outline.setdefault(label, {})["story_id"] = new_id
-    # Drop yesterday_callback if its topic re-covers a story already on today's
-    # run-of-show. Otherwise the callback turn parrots the cold open or a quick
-    # hit, producing duplicate beats (see 2026-05-09: Parker bankruptcy was both
-    # cold_open AND yesterday_callback → the callback collapsed into markets).
-    yc = outline.get("yesterday_callback") or {}
-    if yc.get("use") and yc.get("topic"):
-        today_text_parts = []
-        for beat in ("cold_open", "big_story", "odd_thing"):
-            b = outline.get(beat) or {}
-            sid = b.get("story_id")
-            today_text_parts.append(b.get("hook") or b.get("angle") or b.get("joke_angle") or "")
-            if sid and sid in idx:
-                today_text_parts.append(idx[sid].get("title", ""))
-        for qh in outline.get("quick_hits") or []:
-            today_text_parts.append(qh.get("angle", ""))
-            sid = qh.get("story_id")
-            if sid and sid in idx:
-                today_text_parts.append(idx[sid].get("title", ""))
-        today_tokens = set(re.findall(r"[A-Za-z]{5,}", " ".join(today_text_parts).lower()))
-        yc_tokens = set(re.findall(r"[A-Za-z]{5,}", yc["topic"].lower()))
-        _STOP = {"about", "after", "again", "their", "there", "these", "those",
-                 "today", "yesterday", "would", "could", "should", "where",
-                 "while", "every", "still", "really", "stock", "stocks",
-                 "company", "market", "markets", "earnings", "report"}
-        overlap = (today_tokens & yc_tokens) - _STOP
-        if overlap:
-            print(f"[plan] yesterday_callback overlaps today's beats on {sorted(overlap)}; "
-                  f"setting use=false")
-            yc["use"] = False
-            outline["yesterday_callback"] = yc
+    # Minimal repair only: drop any story_id not in the ranked set so render
+    # stages don't KeyError. Everything else is left to the (now-blinded) critic.
+    for beat in ("big_story", "odd_thing"):
+        b = outline.get(beat) or {}
+        if b.get("story_id") and b["story_id"] not in idx and story_ids:
+            b["story_id"] = story_ids[0]
+    for qh in outline.get("quick_hits") or []:
+        if qh.get("story_id") and qh["story_id"] not in idx and story_ids:
+            qh["story_id"] = story_ids[0]
     return outline
 
 
@@ -319,23 +384,33 @@ PREVIOUS TURNS (context — do NOT repeat them, build on them):
 YOUR JOB: write the {name} beat ({turn_target_low}-{turn_target_high} turns).
 {instruction}
 
-Hard rules for this beat:
-- Output ONLY `NAME: line` lines. No headers, no commentary, no markdown.
-- NAME must be one of: {", ".join(CHARACTERS.keys())}.
+Output format: a JSON object {{"turns": [...]}}. Each turn is an object with:
+- "speaker": one of {", ".join(CHARACTERS.keys())} (a field, never written into the text).
+- "text": the spoken line. NO inline [bracket] tags — put emotion in the tag field. Never write disfluencies ('um', 'uh'). Speak in the FIRST person — a host never names themselves.
+- "tag": OPTIONAL, at most one of {", ".join(ALLOWED_TAGS)} (or omit / ""). Use sparingly.
+
+Content rules:
 - Every substantive turn includes a SPECIFIC fact (number, name, place) — vague reactions ('that's wild', 'big deal') without a fact are banned.
-- Audio tags allowed sparingly, in-line: [deadpan], [laughs], [excited], [sarcastic], [sighs], [mischievously], [rushed], [curious]. Never write disfluencies ('um', 'uh').
 - Use COMPANY NAMES not tickers — "Nvidia" not "NVDA", "Broadcom" not "AVGO". Spaced letters only for indices and ETFs (S&P, Nasdaq, VIX).
 - Numbers as words: "one point two percent", "four billion dollars".
 - No host speaks two consecutive turns. No host says "Right, exactly" / "Of course it is" / "What every X needs is Y".
 - Do not write the disclaimer. {"Stop after the last substantive turn — disclaimer is appended in audio." if not is_last else ""}
 - {_BANNED_BLOCK}
 """
+    low, high = turn_target_low, turn_target_high
+    schema = build_turns_schema(low, high)
+    try:
+        payload = _llm_json(
+            prompt, schema, schema_name="beat_turns",
+            temperature=0.7, extra_violations=validate_turns,
+        )
+        return _turns_to_text(payload.get("turns") or [])
+    except Exception as e:
+        print(f"[stage] {name}: structured render failed ({e}); legacy text path")
+
+    # Legacy fallback: free-text lines + normalize.
     out = _normalize_lines(_llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.7))
     actual = _count_name_lines(out)
-    # Single retry when a beat comes back thin. Multistage lost the length
-    # feedback loop the single-shot path had; without this, render_sign_off
-    # silently dropping the disclaimer (or render_quick_hits returning 2/4
-    # stories) ships unnoticed.
     if actual < turn_target_low:
         addendum = (
             f"\n\nYour previous attempt produced only {actual} turns. The minimum is "
@@ -351,6 +426,26 @@ Hard rules for this beat:
         else:
             print(f"[stage] {name} retry produced no improvement, keeping {actual} turns")
     return out
+
+
+def _turns_to_text(turns: list[dict]) -> str:
+    """Render structured turns to the canonical `NAME: [tag] text` lines the
+    rest of the pipeline (sanitize, stitch, TTS) consumes. The tag is emitted
+    once, as a prefix; any stray inline brackets in text are dropped (the
+    validator already re-prompts on them, this is a final guard)."""
+    out = []
+    name_set = set(CHARACTERS.keys())
+    for t in turns:
+        spk = (t.get("speaker") or "").strip()
+        if spk not in name_set:
+            continue
+        text = re.sub(r"\[[^\]]+\]", "", t.get("text") or "").strip()
+        if not text:
+            continue
+        tag = (t.get("tag") or "").strip()
+        line = f"{spk}: {tag + ' ' if tag else ''}{text}"
+        out.append(line)
+    return "\n".join(out)
 
 
 def _hook_is_specific(hook: str) -> bool:
@@ -393,10 +488,13 @@ def render_cold_open(plan_d: dict, interests: dict | None = None, market: dict |
         f'JAMIE delivers a punchy 1-line cold open in FIRST PERSON. Use this hook as the '
         f'substance: "{hook}". JAMIE may identify himself with "I\'m Jamie" or "Jamie here" '
         f"— NEVER refer to Jamie in the third person (no \"Jamie's here to tell you\", no "
-        f'"Jamie will explain"). No greeting, no welcome, no "good morning", no "today on '
-        f'the show". Drop straight into the news with a specific number/name. EXACTLY 1 '
-        f"turn, ≤45 words. MUST contain a specific number, dollar amount, or proper noun + fact."
+        f'"Jamie will explain", no "and Jamie breaks down"). No greeting, no welcome, no '
+        f'"good morning", no "today on the show". Drop straight into the news with a '
+        f"specific number/name. EXACTLY 1 turn, ≤45 words. MUST contain a specific number, "
+        f"dollar amount, or proper noun + fact."
     )
+    # Third-person self-reference is now prevented structurally: speaker is a
+    # schema field and validate_turns re-prompts on any in-text self-mention.
     return _render_beat("COLD OPEN", instruction, [], 1, 1, interests=interests)
 
 
@@ -410,13 +508,32 @@ def render_markets(plan_d: dict, prev_turns: list[str], market: dict, interests:
         "\n\nLOSERS:\n" + _fmt_section((market.get("losers") or [])[:5]) +
         "\n\nMACRO:\n" + _fmt_section(market.get("macro") or [])
     )
+    is_stale = bool(market.get("is_stale"))
+    as_of = market.get("as_of")
+    if is_stale and as_of:
+        try:
+            pretty = datetime.fromisoformat(as_of).strftime("%A's close")
+        except Exception:
+            pretty = "the last trading session's close"
+        stale_clause = (
+            f"\n\nIMPORTANT: markets are CLOSED today (weekend or holiday). The numbers "
+            f"above are from {pretty} ({as_of}), NOT today. ALEX MUST frame this beat as "
+            f'"{pretty}" — never say "today" for these moves. Open with a single sentence '
+            f"acknowledging the weekend/closed-market context, then do the recap of what "
+            f"moved last session. JAMIE and MAYA still react once each. 3-4 turns total "
+            f"(not 4-6 — the recap is shorter when markets are closed)."
+        )
+    else:
+        stale_clause = ""
     instruction = (
         f"ALEX leads, JAMIE and MAYA each react ONCE. ALEX cites the actual numbers from "
         f"the MARKET DATA below in turn 1. Key numbers from the plan: {keys}. Macro frame: {macro}. "
         f"4-6 turns total. Every number must trace to the data block."
+        f"{stale_clause}"
     )
+    low, high = (3, 4) if is_stale else (4, 6)
     return _render_beat(
-        "MARKETS", instruction, prev_turns, 4, 6,
+        "MARKETS", instruction, prev_turns, low, high,
         extra_context=f"MARKET DATA:\n{market_block}",
         interests=interests,
     )
@@ -434,6 +551,8 @@ def render_big_story(plan_d: dict, prev_turns: list[str], ranked_idx: dict[str, 
     instruction = (
         f"{lead} leads on this story. The other two hosts push back, react, add color. "
         f'Story: "{title}". Angle to focus on: "{angle}". '
+        f"The cold open already teased this story — open by EXPANDING (new facts, the why, "
+        f"the stakes), do NOT restate the teaser line verbatim. "
         f"5-7 turns of real back-and-forth — not just one host monologuing. End the beat "
         f"on a note that lands (a punchline or sharp observation), not on a question."
     )
@@ -514,21 +633,84 @@ def render_lookahead(civic: dict | None, prev_turns: list[str], interests: dict 
     )
 
 
+def _word_count_excl_tags(line: str) -> int:
+    """Word count for a turn, excluding the speaker tag and audio tags."""
+    body = re.sub(r"^[A-Z][A-Z0-9_]{0,15}:\s*", "", line)
+    body = re.sub(r"\[[^\]]+\]", "", body)
+    return len(body.split())
+
+
+def _has_ngram_overlap(line: str, prev_text: str, n: int = 5, threshold: int = 1) -> bool:
+    """True when `line` shares an n-gram with `prev_text` — used to detect a
+    sign-off turn that's actually re-covering an earlier beat instead of
+    riffing on it. n=5 catches verbatim chunks while letting normal English
+    fragments slide."""
+    def _norm(t: str) -> list[str]:
+        t = re.sub(r"^[A-Z][A-Z0-9_]{0,15}:\s*", "", t, flags=re.M)
+        t = re.sub(r"\[[^\]]+\]", "", t)
+        return re.findall(r"[a-z]+", t.lower())
+    a = _norm(line)
+    b = _norm(prev_text)
+    if len(a) < n or len(b) < n:
+        return False
+    b_grams = {tuple(b[i:i+n]) for i in range(len(b) - n + 1)}
+    hits = sum(1 for i in range(len(a) - n + 1) if tuple(a[i:i+n]) in b_grams)
+    return hits >= threshold
+
+
 def render_sign_off(plan_d: dict, prev_turns: list[str], interests: dict | None = None) -> str:
     so = plan_d.get("sign_off") or {}
     callback = so.get("callback_target", "")
+    # Last beat is what listeners just heard — that's what the sign-off must
+    # NOT re-cover. Pass it explicitly so the planner can't drift into a
+    # restated story (see 2026-05-10: Nvidia covered as quick-hit then
+    # re-covered as sign-off; 2026-05-09 same pattern with NRG).
+    recent_tail = "\n".join(prev_turns[-2:]) if prev_turns else ""
     instruction = (
-        f'EXACTLY 3 turns: '
-        f'(1) ALEX or MAYA opens with a SPECIFIC callback to "{callback}" — name the company '
-        f'or subject and ADD A NEW ANGLE (a fresh metaphor, a follow-up zinger, a forward-looking '
-        f'jab). Do NOT restate any line verbatim from the PREVIOUS TURNS above; if the earlier '
-        f'joke was "X has commitment issues", do not repeat that phrase — escalate it or twist it. '
-        f'(2) The other host adds a one-line riff that builds on turn 1, also without recycling '
-        f'an earlier punchline. '
+        f'EXACTLY 3 turns. This is a TAG, not a recap. The earlier beats already covered '
+        f'the subject in depth — do NOT introduce new facts about it, do NOT re-explain it. '
+        f'Just land a sharp closer.\n'
+        f'(1) ALEX or MAYA: a single SHORT callback to "{callback}" — one fresh metaphor or '
+        f'forward-looking jab. ≤25 words. No new statistics, no story summary, no "the thing is". '
+        f'Do NOT restate any line verbatim from PREVIOUS TURNS; if the earlier joke was '
+        f'"X has commitment issues", do not repeat that phrase — escalate it or twist it.\n'
+        f'(2) The other host: a one-line riff that builds on turn 1. ≤20 words. Do NOT '
+        f'recycle a punchline. Do NOT add a new statistic.\n'
         f'(3) JAMIE: "{DISCLAIMER_SHORT}" (verbatim, exactly this line, nothing else). End.'
     )
-    return _render_beat("SIGN OFF", instruction, prev_turns, 3, 3,
-                        interests=interests, is_last=True)
+    out = _render_beat("SIGN OFF", instruction, prev_turns, 3, 3,
+                       interests=interests, is_last=True)
+    # Post-check: catch a sign-off that's smuggling in a story re-cover.
+    # If turn 1 or 2 is over the word cap OR shares a 5-gram with the last
+    # two beats, retry once with a tighter instruction.
+    lines = [ln for ln in out.splitlines() if re.match(r"^[A-Z][A-Z0-9_]{0,15}:", ln)]
+    needs_retry = False
+    if len(lines) >= 2:
+        for idx_l, cap in ((0, 25), (1, 20)):
+            if _word_count_excl_tags(lines[idx_l]) > cap:
+                needs_retry = True
+                break
+            if recent_tail and _has_ngram_overlap(lines[idx_l], recent_tail):
+                needs_retry = True
+                break
+    if needs_retry:
+        print("[stage] sign_off: turn 1/2 over-runs or echoes prior beat; retrying tighter")
+        retry_instr = instruction + (
+            "\n\nYour previous attempt re-covered the story or ran long. Tighten: turn 1 "
+            "MUST be ≤25 words and contain ZERO new facts, statistics, or re-statements; "
+            "it's a wink, not a wrap-up. Turn 2 ≤20 words. Then disclaimer."
+        )
+        retried = _render_beat("SIGN OFF", retry_instr, prev_turns, 3, 3,
+                               interests=interests, is_last=True)
+        # Only accept the retry if it's at least no worse on the word caps
+        retry_lines = [ln for ln in retried.splitlines()
+                       if re.match(r"^[A-Z][A-Z0-9_]{0,15}:", ln)]
+        if len(retry_lines) >= 2 and all(
+            _word_count_excl_tags(retry_lines[i]) <= cap
+            for i, cap in ((0, 25), (1, 20))
+        ):
+            out = retried
+    return out
 
 
 # ─────────── orchestrator ───────────
