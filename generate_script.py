@@ -431,6 +431,190 @@ def _llm_call(prompt: str, ollama_model: str, groq_model: str, temperature: floa
     return _ollama_call(prompt, ollama_model, temperature)
 
 
+# ─────────── structured (schema-constrained) generation ───────────
+# These power the contract pipeline (see schemas.py). Each backend has a
+# different structured-output mechanism; _llm_json hides the difference and
+# returns a parsed dict, re-prompting on malformed/invalid output.
+
+def _schema_errors(obj, schema: dict, path: str = "") -> list[str]:
+    """Minimal JSON-Schema validator covering the subset schemas.py uses
+    (type/enum/required/additionalProperties/min-max items/length/value,
+    nested objects + arrays). Avoids adding a `jsonschema` dependency."""
+    errs: list[str] = []
+    t = schema.get("type")
+    if t == "object":
+        if not isinstance(obj, dict):
+            return [f"{path or 'root'}: expected object, got {type(obj).__name__}"]
+        for key in schema.get("required", []):
+            if key not in obj:
+                errs.append(f"{path}{key}: required field missing")
+        props = schema.get("properties", {})
+        if schema.get("additionalProperties") is False:
+            for key in obj:
+                if key not in props:
+                    errs.append(f"{path}{key}: unexpected field")
+        for key, sub in props.items():
+            if key in obj:
+                errs.extend(_schema_errors(obj[key], sub, f"{path}{key}."))
+    elif t == "array":
+        if not isinstance(obj, list):
+            return [f"{path or 'root'}: expected array, got {type(obj).__name__}"]
+        if "minItems" in schema and len(obj) < schema["minItems"]:
+            errs.append(f"{path}: need ≥{schema['minItems']} items, got {len(obj)}")
+        if "maxItems" in schema and len(obj) > schema["maxItems"]:
+            errs.append(f"{path}: need ≤{schema['maxItems']} items, got {len(obj)}")
+        item_schema = schema.get("items")
+        if item_schema:
+            for i, item in enumerate(obj):
+                errs.extend(_schema_errors(item, item_schema, f"{path}[{i}]."))
+    elif t == "string":
+        if not isinstance(obj, str):
+            errs.append(f"{path}: expected string")
+        else:
+            if "enum" in schema and obj not in schema["enum"]:
+                errs.append(f"{path}: '{obj}' not in {schema['enum']}")
+            if "minLength" in schema and len(obj) < schema["minLength"]:
+                errs.append(f"{path}: too short (<{schema['minLength']})")
+            if "maxLength" in schema and len(obj) > schema["maxLength"]:
+                errs.append(f"{path}: too long (>{schema['maxLength']})")
+    elif t == "integer":
+        if not isinstance(obj, int) or isinstance(obj, bool):
+            errs.append(f"{path}: expected integer")
+        else:
+            if "minimum" in schema and obj < schema["minimum"]:
+                errs.append(f"{path}: below minimum {schema['minimum']}")
+            if "maximum" in schema and obj > schema["maximum"]:
+                errs.append(f"{path}: above maximum {schema['maximum']}")
+    elif t == "boolean":
+        if not isinstance(obj, bool):
+            errs.append(f"{path}: expected boolean")
+    return errs
+
+
+def _anthropic_json(prompt: str, schema: dict, schema_name: str,
+                    model: str, temperature: float) -> dict:
+    """Force structured output via tool-use: the model must call a single tool
+    whose input_schema is our schema, and we read the tool_use input."""
+    import requests, random, time as _time
+    for attempt in range(2):
+        resp = requests.post(
+            ANTHROPIC_URL,
+            headers={
+                "x-api-key": ANTHROPIC_API_KEY,
+                "anthropic-version": ANTHROPIC_VERSION,
+                "content-type": "application/json",
+            },
+            json={
+                "model": model,
+                "max_tokens": 4096,
+                "temperature": temperature,
+                "tools": [{
+                    "name": schema_name,
+                    "description": "Return the result in this exact structure.",
+                    "input_schema": schema,
+                }],
+                "tool_choice": {"type": "tool", "name": schema_name},
+                "messages": [{"role": "user", "content": prompt}],
+            },
+            timeout=120,
+        )
+        if resp.status_code == 429 or 500 <= resp.status_code < 600:
+            _time.sleep((2 ** attempt) + random.random())
+            continue
+        resp.raise_for_status()
+        for block in resp.json().get("content", []):
+            if block.get("type") == "tool_use":
+                return block.get("input", {})
+        raise RuntimeError("anthropic returned no tool_use block")
+    raise RuntimeError("anthropic_json exhausted retries")
+
+
+def _groq_json(prompt: str, schema: dict, schema_name: str,
+               model: str, temperature: float) -> dict:
+    """OpenAI-compatible json_schema response_format (non-strict: our schemas
+    use optional fields, which strict mode forbids)."""
+    import json, requests, random, time as _time
+    for attempt in range(3):
+        resp = requests.post(
+            GROQ_URL,
+            headers={"Authorization": f"Bearer {GROQ_API_KEY}",
+                     "Content-Type": "application/json"},
+            json={
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": temperature,
+                "max_tokens": 4096,
+                "response_format": {
+                    "type": "json_schema",
+                    "json_schema": {"name": schema_name, "schema": schema},
+                },
+            },
+            timeout=120,
+        )
+        if resp.status_code in (429, 413) or 500 <= resp.status_code < 600:
+            _time.sleep(min(62, (2 ** attempt) + random.random()))
+            continue
+        resp.raise_for_status()
+        return json.loads(resp.json()["choices"][0]["message"]["content"])
+    raise RuntimeError("groq_json exhausted retries")
+
+
+def _ollama_json(prompt: str, schema: dict, model: str, temperature: float) -> dict:
+    """Ollama structured output: pass the JSON schema as `format`."""
+    import json, requests
+    resp = requests.post(
+        OLLAMA_URL,
+        json={
+            "model": model, "prompt": prompt, "stream": False,
+            "format": schema,
+            "options": {"temperature": temperature, "num_ctx": 8192},
+        },
+        timeout=OLLAMA_TIMEOUT,
+    )
+    resp.raise_for_status()
+    return json.loads(resp.json()["response"])
+
+
+def _llm_json(prompt: str, schema: dict, *, schema_name: str = "result",
+              temperature: float = 0.4, extra_violations=None,
+              max_attempts: int = 3) -> dict:
+    """Structured-output dispatch (Anthropic > Groq > Ollama), with a local
+    schema re-prompt loop. `extra_violations(obj) -> list[str]` injects the
+    semantic validators (validate_plan / validate_turns) into the same loop, so
+    schema AND semantic failures both re-prompt the model with a specific
+    message rather than being repaired downstream.
+
+    Raises RuntimeError if no valid object is produced within max_attempts;
+    callers fall back to the legacy text path.
+    """
+    cur = prompt
+    last_obj: dict = {}
+    for attempt in range(max_attempts):
+        if ANTHROPIC_API_KEY:
+            model = ANTHROPIC_CRITIC_MODEL if temperature <= 0.21 else ANTHROPIC_MODEL
+            obj = _anthropic_json(cur, schema, schema_name, model, temperature)
+        elif GROQ_API_KEY:
+            obj = _groq_json(cur, schema, schema_name, GROQ_MODEL, temperature)
+        else:
+            obj = _ollama_json(cur, schema, OLLAMA_MODEL, temperature)
+        last_obj = obj
+        problems = _schema_errors(obj, schema)
+        if not problems and extra_violations:
+            problems = extra_violations(obj) or []
+        if not problems:
+            return obj
+        print(f"[llm_json] attempt {attempt+1}/{max_attempts}: "
+              f"{len(problems)} violation(s): {problems[:4]}")
+        cur = (
+            prompt
+            + "\n\nYour previous response violated these constraints:\n"
+            + "\n".join(f"- {p}" for p in problems[:10])
+            + "\n\nReturn a corrected response that fixes every listed violation."
+        )
+    raise RuntimeError(f"_llm_json: unresolved violations after {max_attempts}: "
+                       f"{_schema_errors(last_obj, schema)[:4]}")
+
+
 _TURN_LINE_RE = __import__("re").compile(r"^[A-Z][A-Z0-9_]{0,15}:\s*\S")
 
 

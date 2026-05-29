@@ -11,3 +11,6 @@ __pycache__/
 .env
 .env.*
 !.env.example
+
+# ElevenLabs Voice Design preview output (transient)
+voice_previews/

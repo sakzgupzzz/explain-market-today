@@ -27,7 +27,7 @@ from config import (
     ROOT, TTS_VOICE, TTS_RATE, PIPER_VOICE_PATH, CHARACTERS, DEFAULT_CHARACTER,
     INTER_LINE_SILENCE_MS, AUDIO_SPEEDUP,
     TTS_BACKEND, ELEVENLABS_API_KEY, ELEVENLABS_MODEL, ELEVENLABS_OUTPUT_FORMAT,
-    ELEVEN_CHARACTER_VOICES,
+    ELEVEN_CHARACTER_VOICES, ELEVEN_V3_STABILITY,
 )
 
 INTRO_STING = ROOT / "assets" / "intro.mp3"
@@ -391,13 +391,23 @@ def _synth_eleven_v3(turns: list[tuple[str, str]], out_mp3: Path) -> tuple[Path,
                     inputs.append({"text": text, "voice_id": voice_id})
 
             chunk_mp3 = tmpdir / f"chunk_{idx:03d}.mp3"
+            convert_kwargs = dict(
+                inputs=inputs,
+                model_id="eleven_v3",
+                output_format="mp3_44100_128",
+                apply_text_normalization="auto",
+            )
+            # Naturalness lever: set the v3 stability mode (Natural by default).
+            # Guarded — older SDKs may not accept `settings`; degrade silently.
             try:
-                audio_iter = client.text_to_dialogue.convert(
-                    inputs=inputs,
-                    model_id="eleven_v3",
-                    output_format="mp3_44100_128",
-                    apply_text_normalization="auto",
+                from elevenlabs.types import ModelSettingsResponseModel
+                convert_kwargs["settings"] = ModelSettingsResponseModel(
+                    stability=ELEVEN_V3_STABILITY
                 )
+            except Exception:
+                pass
+            try:
+                audio_iter = client.text_to_dialogue.convert(**convert_kwargs)
             except AttributeError as e:
                 # SDK doesn't have text_to_dialogue — fall back to per-turn v2.
                 # Narrowly only AttributeError: auth/quota errors must propagate
