@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 May 2026 16:05:41 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2026 15:40:49 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,62 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>CRM +9.1%, SentinelOne shares slide despite earnings beat — May 29</title>
+      <description>SentinelOne beat earnings but tanked 12% anyway—the stock market's way of saying 'we liked your numbers, we hate your future.'. Today's lead: SentinelOne shares slide despite earnings beat as weak outlook weighs. A cybersecurity firm that beat on earnings but guided down is the perfect case study in why 'the numbers' don't matter anymore—investors are pricing in the recession before the recession happens, and SentinelOne just admitted it sees it coming.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:09  Markets
+  00:02:11  Big story
+  00:04:54  Quick hits
+  00:06:06  Odd thing of the day
+  00:07:21  Sign-off
+
+Stories covered:
+  • Wikipedia editors threatening to strike over AI training data—the internet's most trusted source is about to unionize against the thing that's supposed to make it obsolete. [real]
+  • Gas prices dropping but still high is the economic equivalent of 'we fixed it but didn't fix it'—consumer relief theater with a 30% asterisk. [noise]
+  • Trump's $1.77B 'anti-weaponization' fund got blocked by a federal judge—the administration chose violence today and lost in court before lunch. [real]
+  • Fed Governor Bowman warns against hiking on inflation—there's now a governor actively arguing against the Fed's own playbook, which means the institution is fracturing in real time. [real]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] SentinelOne beat earnings and dropped twelve percent anyway—which is the stock market's way of saying 'we loved your numbers, we hate your future.'
+ALEX: [deadpan] So the S&amp;P closed at seven thousand five hundred eighty-eight, up a third of a percent, Nasdaq at twenty-seven thousand and one, also up a third of a percent—which means the market is running on the thinnest possible margin of hope. Meanwhile the Russell two thousand dropped zero point seven seven percent, which is the small-cap equivalent of getting left at the gas station while everyone else carpools to the AI conference.
+JAMIE: [curious] So the rotation into mega-cap is still happening. Who were the actual winners today?
+ALEX: [sarcastic] Salesforce up nine point one percent—that's the biggest gainer—Oracle up eight point three three, Microsoft up four point zero nine. Adobe up five point eighty-three. Basically if your stock has 'cloud' or 'AI' somewhere in the investor deck, you made money. Meanwhile Costco dropped four point seven four percent, Walmart down three point three one, Eli Lilly down two point nine eight. The consumer is either broke or the market has decided to hate grocery stores. Pick one.
+MAYA: [excited] Wait, Costco is down nearly five percent? That stock is like the boomer version of a growth play. That's the Crocs IPO of retail—it's not supposed to move.
+ALEX: [sighs] Exactly. The V I X dropped one point five two percent, everyone's sleeping soundly, the soft landing narrative is holding. But the minute small caps started bleeding out, nobody panicked, nobody even looked. This is what peak indifference to inequality looks like.
+JAMIE: [laughs] So Costco chose violence today, and nobody noticed because Salesforce had a good quarter.
+ALEX: [deadpan] SentinelOne beat earnings and then immediately told investors deal cycles are lengthening and customers are deferring purchases. That's not guidance—that's a corporate panic button disguised as a forecast. The stock tanked twelve percent because earnings don't matter if the next quarter looks like a recession.
+JAMIE: [curious] But wait—if deal cycles are lengthening, that means enterprises are still buying, they're just taking longer. That's not a demand problem, that's a timing problem.
+ALEX: [sarcastic] Except 'deal cycles are lengthening' is Wall Street speak for 'our customers are scared and our sales team can't close anything.' SentinelOne's guidance is basically 'somewhere between growth and contraction.' They're hedging so hard they might as well have said 'we have no idea what happens in ninety days.' The business works, the market just doesn't believe in the future anymore.
+MAYA: [rushed] So they beat on the past and got punished for the future. This stock has commitment issues. It's like saying 'I made great money last year, but I'm genuinely unsure if I'll make money next year,' and the market goes 'okay we're out.' How many other security companies are seeing the same thing?
+ALEX: [sighs] The whole cybersecurity space is basically pricing in a spending freeze right now. Investors aren't asking 'is the product good?' anymore. They're asking 'will the CFO actually sign the check?' and the answer from SentinelOne was 'we're not sure.'
+JAMIE: [laughs] So this is the real test of the soft landing narrative. If cybersecurity—which is supposed to be non-discretionary, recession-proof spending—is getting deferred, then we're not in a soft landing. We're in a 'companies are acting like a hard landing is coming' landing.
+MAYA: [mischievously] Exactly. SentinelOne didn't lose a customer. It just lost the market's faith that it will gain any new ones. And if security spending is optional now, nothing is mandatory anymore. [rushed] Wikipedia editors are threatening to strike over AI training data—and I mean the people who literally built the internet's most trusted source are about to unionize against the thing that's supposed to make them obsolete.
+JAMIE: [curious] Wait, how many editors are we talking about here? This isn't like a fringe group.
+MAYA: [excited] Hundreds of prolific editors—the people who actually maintain the thing. And the issue is that Wikimedia started letting AI companies train on Wikipedia content without compensation or even a heads-up to the people who wrote it. So basically the institution said 'we're monetizing your unpaid labor' and the volunteers said 'no.'
+ALEX: [deadpan] So Wikipedia chose to become the training data for every large language model while the people maintaining it get nothing, and now those people are saying they'll delete their contributions if it doesn't stop. That's the digital equivalent of a factory worker threatening to dismantle the machines they built.
+JAMIE: [laughs] And here's the thing—Wikipedia is one of the last places on the internet where you can actually trust the information. If the editors walk, the whole thing becomes just another dataset, not a community project. Wikimedia basically bet that the editors had nowhere else to go.
+ALEX: [sarcastic] Gas prices are dropping—but they're still high, which is the economic equivalent of 'we fixed it but didn't fix it.' Consumer relief theater with an asterisk.
+MAYA: [mischievously] So people are supposed to feel better because gas went down from the peak, but it's still brutal. That's not a win, that's just less losing.
+JAMIE: [curious] Trump's one point seven seven billion dollar anti-weaponization fund just got blocked by a federal judge—which means the administration chose violence today and lost in court before lunch.
+ALEX: [deadpan] The fund was temporarily blocked. So the whole thing is on hold. This is what happens when you try to turn the government into a political piggy bank.
+MAYA: [rushed] And the timing is wild because they're trying to do this while simultaneously arguing they're not weaponizing the government. The judge basically said 'you can't call it an anti-weaponization fund if it's literally just paying off political allies.'
+ALEX: [sighs] Fed Governor Michelle Bowman just warned against hiking interest rates on top of the inflation spike—and here's the thing: she's a governor actively arguing against the Fed's own playbook, which means the institution is fracturing in real time.
+JAMIE: [excited] So Bowman is saying energy prices and tariffs are driving inflation, and hiking rates won't fix that—it'll just crush growth. And she's right. But the fact that a Fed governor is publicly dissenting this hard means the consensus is breaking.
+MAYA: [rushed] Infinity Ward just announced the next Call of Duty is set in a North Korean invasion scenario. So basically Activision looked at the current geopolitical situation and decided what the market really needed was a playable version of the thing that might actually happen.
+JAMIE: [laughs] Wait, so they're launching a game about North Korea invading while actual tensions are spiking? That's either the most tone-deaf product launch in gaming history or the most prescient—either way, Activision is betting that geopolitical instability is a feature, not a bug. They're selling anxiety as entertainment.
+ALEX: [deadpan] The game is supposed to be grounded in military authenticity, which is corporate speak for 'we did just enough research to sound credible while making sure you can still quickscope a general.' Activision spent millions making sure the weapons feel real and the scenario feels plausible, but the actual geopolitical context? That's just ambient flavor. It's like selling a recession simulator and calling it 'educational gaming.'
+MAYA: [mischievously] So in six months, if tensions actually escalate, Activision gets free marketing because millions of people have already run through the scenario in their living room. And if nothing happens, they just sold a game where you get to feel like a soldier. Either way, they're not losing sleep—they're just monetizing your fear of what might be coming. [sarcastic] So we're going to hear 'strong execution, uncertain outlook' from every CFO for the next twelve months, and investors will just keep selling on the news.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">935d9eb5-c2a3-67f7-c6bf-055625741efa</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-29.mp3" length="7682972" type="audio/mpeg" />
+      <pubDate>Fri, 29 May 2026 15:40:43 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-29.jpg" />
+      <itunes:duration>00:07:59</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260529</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-29.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-29.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-05-29.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>ORCL +6.0%, Everpure Stock Tumbles Despite Earnings Beat — May 28</title>
       <description>Snowflake just surged 35% on AI frenzy—which is the Crocs IPO of corporate governance: completely unhinged, nobody knows why it works, and somehow it's printing money. Today's lead: Everpure Stock Tumbles Despite Earnings Beat. Here's What To Know.. The inverse Snowflake: beat earnings, stock dies anyway—a masterclass in why 'the numbers' stopped mattering and now it's all about the vibe, the guidance whisper, and whether your CEO sounds confident on the call.

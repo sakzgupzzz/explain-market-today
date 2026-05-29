@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "SentinelOne beat earnings but tanked 12% anyway\u2014the stock market's way of saying 'we liked your numbers, we hate your future.'"
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7588.93 (+0.33%)",
+      "Nasdaq: 27001.71 (+0.31%)",
+      "Biggest gainer: CRM +9.10%",
+      "Biggest loser: COST -4.74%"
+    ],
+    "macro_note": "Soft landing narrative holding, VIX down 1.5%, but small caps bleeding out\u2014rotation into mega-cap AI plays continues."
+  },
+  "big_story": {
+    "story_id": "0f610e9ba514",
+    "lead_host": "ALEX",
+    "story_title": "SentinelOne shares slide despite earnings beat as weak outlook weighs",
+    "angle": "A cybersecurity firm that beat on earnings but guided down is the perfect case study in why 'the numbers' don't matter anymore\u2014investors are pricing in the recession before the recession happens, and SentinelOne just admitted it sees it coming.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "ca5d4561d49a",
+      "lead_host": "MAYA",
+      "angle": "Wikipedia editors threatening to strike over AI training data\u2014the internet's most trusted source is about to unionize against the thing that's supposed to make it obsolete.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "1d316068fd2f",
+      "lead_host": "ALEX",
+      "angle": "Gas prices dropping but still high is the economic equivalent of 'we fixed it but didn't fix it'\u2014consumer relief theater with a 30% asterisk.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "bcff5fb3c2a0",
+      "lead_host": "JAMIE",
+      "angle": "Trump's $1.77B 'anti-weaponization' fund got blocked by a federal judge\u2014the administration chose violence today and lost in court before lunch.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "3b456c1d1587",
+      "lead_host": "ALEX",
+      "angle": "Fed Governor Bowman warns against hiking on inflation\u2014there's now a governor actively arguing against the Fed's own playbook, which means the institution is fracturing in real time.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "21bf53aac582",
+    "joke_angle": "Call of Duty set in North Korea invasion is either the most tone-deaf game launch ever or the most prescient\u2014either way, Activision is betting geopolitical tension is a feature, not a bug."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "SentinelOne's weak guidance\u2014tie it back to the cold open by having ALEX or MAYA riff on whether 'beating earnings while admitting the future is broken' becomes the new normal for 2025."
+  }
+}

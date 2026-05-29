@@ -1,0 +1,51 @@
+{
+  "date": "2026-05-29",
+  "mp3": "2026-05-29.mp3",
+  "size_bytes": 7682972,
+  "duration_sec": 479.58,
+  "turns": 30,
+  "words": 1241,
+  "char_usage_estimate": 8214,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-05-29T15:40:43.243326Z",
+  "top_mover": {
+    "symbol": "CRM",
+    "name": "CRM",
+    "pct": 9.1
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7588.93017578125,
+        "pct": 0.33
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 51063.46875,
+        "pct": 0.78
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 27001.705078125,
+        "pct": 0.31
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2913.909423828125,
+        "pct": -0.77
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 15.5,
+        "pct": -1.52
+      }
+    ]
+  }
+}
