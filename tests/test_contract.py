@@ -125,3 +125,44 @@ def test_llm_json_reprompts_until_valid(monkeypatch):
                       extra_violations=schemas.validate_turns)
     assert state["n"] == 2
     assert len(out["turns"]) == 2
+
+
+# ─────────── budget pacing: multistage scales beats to char budget ───────────
+
+def _preset(min_turns):
+    return {"preferences": {"_dynamic_preset": {"min_turns": min_turns}}}
+
+
+def test_budget_scale_full_when_no_preset():
+    # No preset (restricted key / local run) → no scaling, behavior unchanged.
+    assert sp._budget_scale(None) == 1.0
+    assert sp._budget_scale({}) == 1.0
+    assert sp._budget_scale({"preferences": {}}) == 1.0
+
+
+def test_budget_scale_full_when_flush():
+    # Flush budget → paced min_turns at/above nominal → clamp to 1.0.
+    assert sp._budget_scale(_preset(sp._NOMINAL_FULL_TURNS)) == 1.0
+    assert sp._budget_scale(_preset(40)) == 1.0
+
+
+def test_budget_scale_tightens_when_low():
+    # Tight budget → smaller paced min_turns → scale shrinks, floored at 0.5.
+    half = sp._budget_scale(_preset(sp._NOMINAL_FULL_TURNS // 2))
+    assert 0.45 < half <= 0.55
+    assert sp._budget_scale(_preset(1)) == sp._MIN_BUDGET_SCALE  # floor holds
+
+
+def test_scale_band_floors_and_orders():
+    # Bands never render zero turns and high stays ≥ low.
+    assert sp._scale_band(4, 6, 1.0) == (4, 6)
+    assert sp._scale_band(4, 6, 0.5, floor=2) == (2, 3)
+    lo, hi = sp._scale_band(3, 4, sp._MIN_BUDGET_SCALE, floor=2)
+    assert lo >= 2 and hi >= lo
+
+
+def test_quick_hits_band_floor_covers_every_story():
+    # Even at the tightest scale, the floor keeps ≥1 turn per planned story.
+    n = 4
+    lo, hi = sp._scale_band(max(6, n * 2), n * 3, sp._MIN_BUDGET_SCALE, floor=n)
+    assert lo >= n and hi >= lo

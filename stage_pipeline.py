@@ -476,6 +476,38 @@ def _top_mover_fallback(market: dict) -> str:
     return f"{name} {direction} {abs(pct):.1f} percent"
 
 
+# ── budget-paced beat sizing ──────────────────────────────────────────────
+# eleven_budget.compute_dynamic_preset() paces episode length across the
+# remaining monthly ElevenLabs char budget and injects the result into
+# interests["preferences"]["_dynamic_preset"]. The single-shot generate()
+# path consumes it via _resolve_prefs, but the multistage path renders FIXED
+# per-beat turn bands — so it ignored the budget entirely and episodes ran
+# full-size every day, exhausting the monthly cap early and tripping the 95%
+# guard (took down cron 2026-06-01/02). We scale the content-beat turn bands
+# by the paced target here so cumulative char usage stays under the cap.
+# No preset (restricted key / local run) → scale 1.0, behavior unchanged.
+_NOMINAL_FULL_TURNS = 36   # matches eleven_budget.MAX_TURNS_CEIL (a flush episode)
+_MIN_BUDGET_SCALE = 0.5    # never collapse an episode below ~half length
+
+
+def _budget_scale(interests: dict | None) -> float:
+    preset = ((interests or {}).get("preferences") or {}).get("_dynamic_preset")
+    if not isinstance(preset, dict):
+        return 1.0
+    target = preset.get("min_turns")
+    if not target:
+        return 1.0
+    return max(_MIN_BUDGET_SCALE, min(1.0, target / _NOMINAL_FULL_TURNS))
+
+
+def _scale_band(low: int, high: int, scale: float, floor: int = 1) -> tuple[int, int]:
+    """Scale a (low, high) turn band by the budget factor, keeping low ≥ floor
+    and high ≥ low so a beat never renders zero turns."""
+    lo = max(floor, round(low * scale))
+    hi = max(lo, round(high * scale))
+    return lo, hi
+
+
 def render_cold_open(plan_d: dict, interests: dict | None = None, market: dict | None = None) -> str:
     co = plan_d.get("cold_open") or {}
     hook = co.get("hook", "")
@@ -532,6 +564,7 @@ def render_markets(plan_d: dict, prev_turns: list[str], market: dict, interests:
         f"{stale_clause}"
     )
     low, high = (3, 4) if is_stale else (4, 6)
+    low, high = _scale_band(low, high, _budget_scale(interests), floor=2)
     return _render_beat(
         "MARKETS", instruction, prev_turns, low, high,
         extra_context=f"MARKET DATA:\n{market_block}",
@@ -557,7 +590,8 @@ def render_big_story(plan_d: dict, prev_turns: list[str], ranked_idx: dict[str, 
         f"on a note that lands (a punchline or sharp observation), not on a question."
     )
     src_block = f"SOURCE STORY:\n  Title: {title}\n  Sources: {sources}\n  Summary: {summary or '(no summary)'}"
-    return _render_beat("BIG STORY", instruction, prev_turns, 5, 7,
+    low, high = _scale_band(5, 7, _budget_scale(interests), floor=3)
+    return _render_beat("BIG STORY", instruction, prev_turns, low, high,
                         extra_context=src_block, interests=interests)
 
 
@@ -589,6 +623,11 @@ def render_quick_hits(plan_d: dict, prev_turns: list[str], ranked_idx: dict[str,
     )
     target_low = max(6, len(qhs) * 2)
     target_high = len(qhs) * 3
+    # Scale by budget, but floor at len(qhs) so every planned story still gets
+    # covered (≥1 turn each) even on the tightest budget day.
+    target_low, target_high = _scale_band(
+        target_low, target_high, _budget_scale(interests), floor=len(qhs)
+    )
     return _render_beat("QUICK HITS", instruction, prev_turns, target_low, target_high,
                         interests=interests)
 
@@ -606,7 +645,8 @@ def render_odd_thing(plan_d: dict, prev_turns: list[str], ranked_idx: dict[str, 
         f"3 turns total. End on the joke."
     )
     src_block = f"ODD STORY:\n  Title: {title}\n  Summary: {summary or '(no summary)'}"
-    return _render_beat("ODD THING", instruction, prev_turns, 3, 4,
+    low, high = _scale_band(3, 4, _budget_scale(interests), floor=2)
+    return _render_beat("ODD THING", instruction, prev_turns, low, high,
                         extra_context=src_block, interests=interests)
 
 
@@ -626,8 +666,9 @@ def render_lookahead(civic: dict | None, prev_turns: list[str], interests: dict 
         "Each item must reference a SPECIFIC date and SPECIFIC company/release "
         "name from the LOOKAHEAD DATA. 3-4 turns total. Punchy, not a list."
     )
+    low, high = _scale_band(3, 4, _budget_scale(interests), floor=2)
     return _render_beat(
-        "LOOKAHEAD", instruction, prev_turns, 3, 4,
+        "LOOKAHEAD", instruction, prev_turns, low, high,
         extra_context=f"LOOKAHEAD DATA:\n{block}",
         interests=interests,
     )
@@ -746,6 +787,11 @@ def generate_multistage(
           f"quick_hits={len(outline.get('quick_hits') or [])} "
           f"odd_thing={_sid6('odd_thing')}")
     ranked_idx = _ranked_index(ranked)
+
+    scale = _budget_scale(interests)
+    if scale < 1.0:
+        print(f"[stage] budget pacing: scaling beat turn bands ×{scale:.2f} "
+              f"(tight ElevenLabs char budget → tighter episode)")
 
     print("[stage] cold_open…")
     co = render_cold_open(outline, interests, market=market)
