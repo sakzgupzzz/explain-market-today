@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Victoria's Secret just jumped 40% on earnings\u2014turns out the internet's favorite punching bag figured out how to sell things to actual humans again."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7609.78 (+0.13%)",
+      "Nasdaq: 27093.90 (+0.03%)",
+      "Biggest gainer: CSCO +5.50%",
+      "Biggest loser: ACN -5.27%"
+    ],
+    "macro_note": "Mega-cap tech rolling over (MSFT -4.17%, GOOGL -3.86%) while small-cap and semiconductor plays catch a bid; VIX cooling suggests no panic underneath."
+  },
+  "big_story": {
+    "story_id": "d4cc96fca1dc",
+    "lead_host": "ALEX",
+    "story_title": "Victoria's Secret shares spike 40% after big earnings beat, raised sales outlook",
+    "angle": "A brand that spent five years being a cultural punchline just proved the turnaround thesis works\u2014what changed operationally, and is this a one-quarter pop or a real reset?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "90d850450f2c",
+      "lead_host": "ALEX",
+      "angle": "HPE's 19% surge on blowout earnings is the infrastructure-AI trade working exactly as advertised\u2014data center capex is real money, not hype.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "6f77336e66de",
+      "lead_host": "ALEX",
+      "angle": "Palo Alto Networks rallying on earnings because AI actually *is* helping cybersecurity (not replacing it)\u2014the rare case where the hype cycle and fundamentals align.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "2604af61a416",
+      "lead_host": "MAYA",
+      "angle": "Next-gen handheld gaming device review incoming\u2014the portable console market is choosing violence against Nintendo's handheld dominance again.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "4ce9641d3ed4",
+      "lead_host": "MAYA",
+      "angle": "Microsoft Build 2026 announcements: seven big reveals, probably four of them are 'AI but slightly different' and one will actually matter in 18 months.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "7ad1e7843a9c",
+    "joke_angle": "Cyberdecks are having a moment\u2014basically steampunk laptops for people who think their MacBook Air is too complicit in the surveillance economy. It's the Crocs IPO of computing."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Victoria's Secret's 40% pop\u2014because sometimes the internet's favorite brand to dunk on just decides to actually execute."
+  }
+}
