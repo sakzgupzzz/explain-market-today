@@ -265,6 +265,27 @@ def test_validate_plan_flags_callback_repeating_big_story():
     assert any("repeats today's big_story" in x for x in v)
 
 
+def test_semantic_dup_critic_importable_no_nameerror():
+    # Regression: stage_pipeline must import signatures_overlap, else
+    # _semantic_dup_violations NameErrors and silently kills the structured
+    # plan path (every run fell back to the unvalidated legacy parser).
+    # Distinct titles → no suspect pairs → returns [] without any LLM call.
+    ranked = [
+        {"id": "a", "title": "Federal Reserve holds interest rates steady again"},
+        {"id": "b", "title": "Nvidia unveils a brand new datacenter accelerator"},
+        {"id": "c", "title": "Oil prices tumble on surprise inventory build"},
+        {"id": "d", "title": "Retail sales disappoint across department stores"},
+        {"id": "e", "title": "Bitcoin rallies past a fresh all-time record high"},
+        {"id": "f", "title": "Airline strike grounds thousands of summer flights"},
+    ]
+    outline = {
+        "big_story": {"story_id": "a"},
+        "quick_hits": [{"story_id": x} for x in ("b", "c", "d", "e")],
+        "odd_thing": {"story_id": "f"},
+    }
+    assert sp._semantic_dup_violations(outline, sp._ranked_index(ranked)) == []
+
+
 def test_multistage_degrades_on_plan_failure(monkeypatch):
     # plan() returning None must NOT raise — it must fall back and still ship.
     ranked = _fake_ranked(6)

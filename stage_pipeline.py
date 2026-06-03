@@ -37,7 +37,7 @@ from generate_script import (
 )
 from schemas import (
     ALLOWED_TAGS, build_plan_schema, build_turns_schema, story_signature,
-    validate_plan, validate_turns,
+    signatures_overlap, validate_plan, validate_turns,
 )
 
 # ─────────── helpers ───────────
