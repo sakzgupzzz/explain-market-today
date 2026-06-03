@@ -32,6 +32,12 @@ import json
 import sys
 from pathlib import Path
 
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
 from config import ROOT, ELEVENLABS_API_KEY, ELEVENLABS_OUTPUT_FORMAT
 
 PREVIEW_DIR = ROOT / "voice_previews"
@@ -91,7 +97,9 @@ def _client():
     if not ELEVENLABS_API_KEY:
         sys.exit("ELEVENLABS_API_KEY not set — export it and retry.")
     from elevenlabs.client import ElevenLabs
-    return ElevenLabs(api_key=ELEVENLABS_API_KEY)
+    # Voice Design generation is slow (multiple candidates per call); the SDK's
+    # default ~30s read timeout trips a ReadTimeout. Give it generous headroom.
+    return ElevenLabs(api_key=ELEVENLABS_API_KEY, timeout=300)
 
 
 def cmd_preview(names: list[str]) -> None:
