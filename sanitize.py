@@ -444,18 +444,34 @@ def _drop_self_reference(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, 
     return out, fixes
 
 
+# Max words for an appended same-speaker turn to count as a continuation
+# fragment (a genuine split thought) rather than a distinct turn.
+_CONTINUATION_FRAGMENT_MAXWORDS = 6
+
+
 def _collapse_same_speaker_streaks(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str]], int]:
-    """Two consecutive turns by the same speaker → merge into one."""
+    """Fold only a SHORT continuation fragment into the prior same-speaker turn.
+
+    In the multi-stage pipeline each beat is validated to never repeat a speaker
+    within itself, so adjacent same-speaker turns are almost always beat SEAMS
+    carrying full, distinct content. Blindly merging them (the old behaviour)
+    crammed two topics into one breath, pulled the second turn's leading [tag]
+    inline (a contract violation TTS reads aloud), and swallowed the sign-off
+    into the prior beat. So we only merge when the second turn is a short
+    fragment, and we strip its leading audio tag before concatenating so a tag
+    never lands mid-text. Full turns are left as separate lines."""
     if not turns:
         return turns, 0
     out: list[tuple[str, str]] = [turns[0]]
     merges = 0
     for name, text in turns[1:]:
         if out and out[-1][0] == name:
-            out[-1] = (name, (out[-1][1] + " " + text).strip())
-            merges += 1
-        else:
-            out.append((name, text))
+            body = re.sub(r"^\s*\[[^\]]+\]\s*", "", text).strip()
+            if len(body.split()) <= _CONTINUATION_FRAGMENT_MAXWORDS:
+                out[-1] = (name, (out[-1][1] + " " + body).strip())
+                merges += 1
+                continue
+        out.append((name, text))
     return out, merges
 
 

@@ -280,6 +280,7 @@ BANNED_PHRASES = [
     "moving the needle",
     "boil the ocean",
     # over-used joke templates (observed in production episodes)
+    "crocs ipo of",
     "right, exactly",
     "of course it is",
     "who doesn't love a good",

@@ -236,6 +236,33 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
     if yesterday_topics:
         print(f"[{today}] yesterday topics for callback: {yesterday_topics}")
 
+    # ── cross-day duplicate guard ──────────────────────────────────────────
+    # If today's top stories are essentially yesterday's (same news pool — e.g.
+    # a re-run on a closed-market day, which is how 2026-06-03 shipped a near
+    # carbon copy of 06-02), skip rather than publish a duplicate. A normal
+    # follow-up day shares SOME stories; this fires only when nearly the whole
+    # top slate repeats. --force overrides.
+    if yesterday_topics and fresh and not force:
+        from schemas import story_signature, signatures_overlap
+        ysigs = [story_signature(t) for t in yesterday_topics if t]
+        top = fresh[:5]
+        dup = sum(
+            1 for c in top
+            if any(signatures_overlap(story_signature(c.get("title", "")), ys)
+                   for ys in ysigs)
+        )
+        if top and dup >= max(3, len(top) - 1):
+            msg = (f"[{today}] top {dup}/{len(top)} stories overlap yesterday — "
+                   f"news unchanged; skipping to avoid a near-duplicate episode "
+                   f"(use --force to override)")
+            print(msg)
+            try:
+                from notify import notify_warn
+                notify_warn(today, "duplicate_guard", msg)
+            except Exception:
+                pass
+            return mp3_path
+
     # ── show render ────────────────────────────────────────────────────────
     if mode in ("show", "both"):
         if mp3_path.exists() and not force:

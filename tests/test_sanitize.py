@@ -3,8 +3,46 @@ from __future__ import annotations
 import pytest
 from sanitize import (
     sanitize_script, _strip_banned_openers, _fix_wrong_name_intros,
-    _space_tickers, _enforce_jamie_cap, _parse,
+    _space_tickers, _enforce_jamie_cap, _parse, _collapse_same_speaker_streaks,
 )
+
+
+# ─────────── beat-seam handling: no inline tags, no topic cram ───────────
+
+def test_collapse_leaves_full_seam_turns_separate():
+    # Two full same-speaker turns (a beat seam) must NOT fuse — that crammed
+    # topics and pulled the second turn's [tag] inline.
+    turns = [
+        ("MAYA", "[mischievously] SentinelOne lost the market's faith entirely."),
+        ("MAYA", "[rushed] Wikipedia editors are threatening to strike over AI."),
+    ]
+    out, merges = _collapse_same_speaker_streaks(turns)
+    assert merges == 0
+    assert len(out) == 2
+    # No inline tag leaked into any merged body.
+    assert "[rushed]" not in out[0][1]
+
+
+def test_collapse_folds_short_fragment_and_strips_tag():
+    turns = [
+        ("ALEX", "The S&P closed up a third of a percent on thin volume."),
+        ("ALEX", "[sighs] Exactly."),  # short continuation fragment
+    ]
+    out, merges = _collapse_same_speaker_streaks(turns)
+    assert merges == 1
+    assert len(out) == 1
+    assert "[sighs]" not in out[0][1]   # tag stripped, not inlined
+    assert out[0][1].endswith("Exactly.")
+
+
+def test_crocs_ipo_template_scrubbed():
+    script = (
+        "JAMIE: Victoria's Secret jumped forty percent today.\n"
+        "ALEX: That's the Crocs IPO of corporate governance, frankly.\n"
+        "JAMIE: This show is for entertainment and education only — nothing here is investment advice."
+    )
+    out = sanitize_script(script, verbose=False)
+    assert "crocs ipo of" not in out.lower()
 
 
 def test_strip_banned_openers_basic():
