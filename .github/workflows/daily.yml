@@ -61,6 +61,11 @@ jobs:
       # TTS via ElevenLabs v3 text_to_dialogue API.
       TTS_BACKEND: eleven
       ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+      # Custom Voice-Design host voices (replace the recognizable stock voices).
+      # Created via design_voices.py; set as repo secrets.
+      ELEVEN_VOICE_JAMIE: ${{ secrets.ELEVEN_VOICE_JAMIE }}
+      ELEVEN_VOICE_ALEX: ${{ secrets.ELEVEN_VOICE_ALEX }}
+      ELEVEN_VOICE_MAYA: ${{ secrets.ELEVEN_VOICE_MAYA }}
       # ntfy.sh push notifications. Set NTFY_TOPIC repo variable (or secret)
       # to a unique topic name; subscribe on phone via the ntfy app to get
       # success + failure pings. Without this, all CI failures are silent.
