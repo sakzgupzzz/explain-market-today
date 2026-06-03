@@ -476,6 +476,72 @@ def _top_mover_fallback(market: dict) -> str:
     return f"{name} {direction} {abs(pct):.1f} percent"
 
 
+# ── deterministic fallback plan (no LLM) ───────────────────────────────────
+# When plan() returns None (every structured + legacy LLM attempt failed) the
+# old code raised, dropping the whole run to generate()'s single-shot legacy
+# path — which lacks the contract guarantees (enum story_ids, validated turns)
+# and re-opens the "weird event" failure classes the restructure closed. This
+# builds a contract-valid outline from ranked + market WITHOUT an LLM so the
+# normal validated render_* stages run instead. It's a constructive producer,
+# not post-hoc repair: the outline satisfies build_plan_schema by construction.
+
+def _fallback_plan(ranked: list[dict], market: dict) -> dict | None:
+    """Build a schema-valid outline from ranked stories + market, no LLM.
+    Returns None only when there isn't a single usable story (then the caller
+    re-raises and generate()'s single-shot path is the last resort)."""
+    ids = [c["id"] for c in ranked if c.get("id")]
+    if not ids:
+        return None
+    idx = _ranked_index(ranked)
+    hosts = list(CHARACTERS.keys())
+    h = lambda i: hosts[i % len(hosts)]
+
+    def _nth(n: int) -> str:
+        return ids[n] if n < len(ids) else ids[-1]
+
+    big_id = ids[0]
+    big_title = (idx.get(big_id) or {}).get("title") or "today's top story"
+    # Hook must carry a number or proper noun (validate_plan rule 3). Prefer a
+    # real market mover; fall back to the big-story title (a proper noun).
+    mover = _top_mover_fallback(market)
+    hook = (f"{mover} — and that's not even the headline." if mover else big_title)
+    if len(hook) < 8:
+        hook = (big_title + " leads today.")
+    hook = hook[:200]
+
+    quick = [
+        {"story_id": _nth(1 + i), "lead_host": h(1 + i),
+         "angle": ((idx.get(_nth(1 + i)) or {}).get("title") or "")[:120] or "today's news",
+         "conviction": "real"}
+        for i in range(4)
+    ]
+    indices = market.get("indices") or []
+    key_numbers = [
+        f"{r.get('name', r.get('symbol', '?'))} {r.get('pct', 0):+.2f} percent"
+        for r in indices[:4]
+    ] or ["markets mixed"]
+
+    return {
+        "cold_open": {"hook": hook},
+        "markets": {
+            "lead_host": "ALEX" if "ALEX" in hosts else h(0),
+            "key_numbers": key_numbers,
+            "macro_note": "Quick read on where the tape closed.",
+        },
+        "big_story": {
+            "story_id": big_id, "lead_host": h(0),
+            "story_title": big_title,
+            "angle": "Lead with the facts and why it matters.",
+            "depth_turns": 6,
+        },
+        "quick_hits": quick,
+        "odd_thing": {"story_id": _nth(5),
+                      "joke_angle": "The lighter one to close on."},
+        "yesterday_callback": {"use": False, "topic": "", "fresh_take": ""},
+        "sign_off": {"callback_target": big_title[:60]},
+    }
+
+
 # ── budget-paced beat sizing ──────────────────────────────────────────────
 # eleven_budget.compute_dynamic_preset() paces episode length across the
 # remaining monthly ElevenLabs char budget and injects the result into
@@ -776,9 +842,15 @@ def generate_multistage(
     global _LAST_OUTLINE
     print("[stage] plan…")
     outline = plan(ranked, market, interests, yesterday_topics=yesterday_topics)
-    _LAST_OUTLINE = outline
     if not outline:
-        raise RuntimeError("plan stage failed; cannot proceed multi-stage")
+        # DEGRADE, don't abandon the hardened path: build a contract-valid
+        # outline deterministically so the validated render_* stages still run,
+        # instead of raising into generate()'s un-validated single-shot legacy.
+        print("[stage] plan: LLM plan failed; using deterministic fallback plan")
+        outline = _fallback_plan(ranked, market)
+        if not outline:
+            raise RuntimeError("plan stage failed and no rankable stories; cannot proceed")
+    _LAST_OUTLINE = outline
     def _sid6(beat: str) -> str:
         sid = (outline.get(beat) or {}).get("story_id")
         return sid[:6] if isinstance(sid, str) and sid else "?"

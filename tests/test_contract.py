@@ -166,3 +166,61 @@ def test_quick_hits_band_floor_covers_every_story():
     n = 4
     lo, hi = sp._scale_band(max(6, n * 2), n * 3, sp._MIN_BUDGET_SCALE, floor=n)
     assert lo >= n and hi >= lo
+
+
+# ─────────── deterministic fallback plan (plan-stage failure ≠ crash) ───────────
+
+def _fake_ranked(n=6):
+    return [
+        {"id": f"c{i}", "title": f"Story {i} about Acme Corp earnings beat",
+         "summary": f"Summary {i}", "sources": ["reuters.com"]}
+        for i in range(n)
+    ]
+
+
+def _fake_market():
+    return {"indices": [{"name": "S&P 500", "symbol": "^GSPC", "close": 5200.0, "pct": 1.2},
+                        {"name": "Nasdaq", "symbol": "^IXIC", "close": 16300.0, "pct": -0.4}],
+            "gainers": [{"name": "Nvidia", "symbol": "NVDA", "close": 120.0, "pct": 5.1}],
+            "losers": [{"name": "Tesla", "symbol": "TSLA", "close": 170.0, "pct": -3.2}],
+            "macro": []}
+
+
+def test_fallback_plan_is_schema_valid():
+    ranked = _fake_ranked(6)
+    out = sp._fallback_plan(ranked, _fake_market())
+    schema = schemas.build_plan_schema([c["id"] for c in ranked])
+    assert g._schema_errors(out, schema) == []
+
+
+def test_fallback_plan_passes_validate_plan():
+    ranked = _fake_ranked(6)
+    out = sp._fallback_plan(ranked, _fake_market())
+    assert schemas.validate_plan(out, sp._ranked_index(ranked)) == []
+
+
+def test_fallback_plan_distinct_beats_when_enough_stories():
+    ranked = _fake_ranked(6)
+    out = sp._fallback_plan(ranked, _fake_market())
+    ids = [out["big_story"]["story_id"]] + \
+          [q["story_id"] for q in out["quick_hits"]] + \
+          [out["odd_thing"]["story_id"]]
+    assert len(set(ids)) == len(ids)  # all 6 beats cover a different story
+
+
+def test_fallback_plan_none_when_no_stories():
+    assert sp._fallback_plan([], {}) is None
+    assert sp._fallback_plan([{"title": "no id"}], {}) is None
+
+
+def test_multistage_degrades_on_plan_failure(monkeypatch):
+    # plan() returning None must NOT raise — it must fall back and still ship.
+    ranked = _fake_ranked(6)
+    monkeypatch.setattr(sp, "plan", lambda *a, **k: None)
+    monkeypatch.setattr(sp, "_render_beat",
+                        lambda name, *a, **k: f"JAMIE: {name} line.")
+    monkeypatch.setattr(sp, "render_cold_open",
+                        lambda *a, **k: "JAMIE: cold open line.")
+    script = sp.generate_multistage(_fake_market(), ranked)
+    assert script.strip()
+    assert sp._LAST_OUTLINE is not None
