@@ -65,10 +65,12 @@ _TICKER_TO_NAME = {
     "UNH": "UnitedHealth",
     "XOM": "Exxon",
     "WMT": "Walmart",
-    "MA": "Mastercard",
+    # "MA" (Mastercard), "HD" (Home Depot), "KO" (Coca-Cola), "NOW" (ServiceNow)
+    # deliberately omitted — they collide with common English words written in
+    # caps ("MA degree", "in HD", "NOW we…") and the standalone-ticker pass would
+    # corrupt them. Use COMPANY NAMES in the prompt; these stay as-is if emitted.
     "PG": "Procter and Gamble",
     "JNJ": "Johnson and Johnson",
-    "HD": "Home Depot",
     "COST": "Costco",
     "NFLX": "Netflix",
     "BAC": "Bank of America",
@@ -79,7 +81,6 @@ _TICKER_TO_NAME = {
     "TMO": "Thermo Fisher",
     "CVX": "Chevron",
     "ABBV": "AbbVie",
-    "KO": "Coca-Cola",
     "MRK": "Merck",
     "CSCO": "Cisco",
     "ACN": "Accenture",
@@ -87,7 +88,6 @@ _TICKER_TO_NAME = {
     "DIS": "Disney",
     "CRWD": "CrowdStrike",
     "DDOG": "Datadog",
-    "NOW": "ServiceNow",
     "INTC": "Intel",
     "QCOM": "Qualcomm",
     "TXN": "Texas Instruments",
@@ -373,9 +373,17 @@ def _scrub_banned_in_turns(turns: list[tuple[str, str]]) -> tuple[list[tuple[str
 
 
 def _disclaimer_signature(text: str) -> bool:
-    """Detect any turn that's a disclaimer (verbatim or paraphrase). Looks for
-    the canonical short fragment 'entertainment and education only'."""
-    return "entertainment and education only" in text.lower() or "investment advice" in text.lower()
+    """Detect a disclaimer turn (verbatim or paraphrase). Requires a canonical
+    disclaimer fragment — NOT a bare 'investment advice', which appears in
+    ordinary markets talk ('the best investment advice is buy low') and would
+    cause _dedup_disclaimer to delete substantive turns."""
+    t = text.lower()
+    return (
+        "entertainment and education only" in t
+        or "nothing here is investment advice" in t
+        or "not investment advice" in t
+        or "is not investment advice" in t
+    )
 
 
 def _dedup_disclaimer(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str]], int]:

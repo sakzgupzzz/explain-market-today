@@ -105,12 +105,15 @@ def _normalize_lines(text: str) -> str:
     return "\n".join(out)
 
 
-def _prev_turns_block(turns_so_far: list[str], char_limit: int = 6000) -> str:
-    """Last N chars of the script so far, formatted for next-stage context."""
+def _prev_turns_block(turns_so_far: list[str], char_limit: int = 20000) -> str:
+    """The script so far, fed to the next beat so it doesn't repeat earlier
+    content. The old 6000-char tail-clip dropped the cold_open exactly when
+    later beats needed to avoid restating it; Haiku's 200k context easily holds
+    the whole script, so keep it (clip only as a runaway guard, and keep the
+    HEAD — the cold_open/big_story — which is what gets echoed)."""
     text = "\n".join(turns_so_far)
     if len(text) > char_limit:
-        # Keep tail (most recent context most relevant for callbacks)
-        text = "…\n" + text[-char_limit:]
+        text = text[:char_limit] + "\n…"
     return text or "(no prior turns yet — this is the start of the show)"
 
 
@@ -376,7 +379,7 @@ def _render_beat(
 CAST: {cast_csv}
 {char_lines}
 
-PREVIOUS TURNS (context — do NOT repeat them, build on them):
+ALREADY SAID (every fact, number, name, analogy, and joke below is SPENT — the listener just heard it; do NOT restate or paraphrase any of it, build PAST it):
 {prev_block}
 
 {extra_context}
@@ -390,7 +393,9 @@ Output format: a JSON object {{"turns": [...]}}. Each turn is an object with:
 - "tag": OPTIONAL, at most one of {", ".join(ALLOWED_TAGS)} (or omit / ""). Use sparingly.
 
 Content rules:
-- Every substantive turn includes a SPECIFIC fact (number, name, place) — vague reactions ('that's wild', 'big deal') without a fact are banned.
+- Every substantive turn includes a SPECIFIC fact (number, name, place) AND advances past the prior turns — a turn that restates an earlier point in new words is banned. If you can't add a new fact, cut the turn.
+- Do NOT reuse an analogy, metaphor, or sentence shape that appears in ALREADY SAID. Never use the frame "X is the [famous brand/event] of [category]" or "[X] equivalent of [Y]" or "corporate speak for [Y]" — these are banned cliché shapes. Invent a fresh comparison from THIS story's details, or just say it plainly.
+- Not every turn needs a punchline — a clean factual stop is fine; relentless quipping reads as forced. Avoid leaning on the filler words 'actually', 'basically', 'apparently', 'turns out'.
 - Use COMPANY NAMES not tickers — "Nvidia" not "NVDA", "Broadcom" not "AVGO". Spaced letters only for indices and ETFs (S&P, Nasdaq, VIX).
 - Numbers as words: "one point two percent", "four billion dollars".
 - No host speaks two consecutive turns. No host says "Right, exactly" / "Of course it is" / "What every X needs is Y".
@@ -402,7 +407,11 @@ Content rules:
     try:
         payload = _llm_json(
             prompt, schema, schema_name="beat_turns",
-            temperature=0.7, extra_violations=validate_turns,
+            temperature=0.7,
+            # Pass the prior beats' text so validate_turns can re-prompt on any
+            # turn that recycles a phrase already spoken (cross-beat echo) — the
+            # cold_open↔big_story restatement that read as "stuck on one story".
+            extra_violations=lambda p: validate_turns(p, prev_text=prev_block),
         )
         return _turns_to_text(payload.get("turns") or [])
     except Exception as e:
@@ -647,13 +656,19 @@ def render_big_story(plan_d: dict, prev_turns: list[str], ranked_idx: dict[str, 
     lead = bs.get("lead_host", "JAMIE")
     summary = (cluster.get("summary") or "")[:400]
     sources = ", ".join((cluster.get("sources") or [])[:3])
+    hook = (plan_d.get("cold_open") or {}).get("hook", "")
     instruction = (
         f"{lead} leads on this story. The other two hosts push back, react, add color. "
         f'Story: "{title}". Angle to focus on: "{angle}". '
-        f"The cold open already teased this story — open by EXPANDING (new facts, the why, "
-        f"the stakes), do NOT restate the teaser line verbatim. "
-        f"5-7 turns of real back-and-forth — not just one host monologuing. End the beat "
-        f"on a note that lands (a punchline or sharp observation), not on a question."
+        f'The cold open ALREADY said this, verbatim: "{hook}". You are FORBIDDEN from '
+        f"opening with that fact or any paraphrase of it — the listener just heard the "
+        f"headline. Your FIRST turn must start mid-analysis: the mechanism, the why, the "
+        f"bear case, or a number that is NOT in the hook. "
+        f"5-7 turns of real back-and-forth — not one host monologuing. CRITICAL: each turn "
+        f"must add a DISTINCT fact or angle no prior turn has stated (a new number, a "
+        f"counterpoint, a second-order consequence, what it means for peers, what to watch "
+        f"next). Re-explaining the same point in new words is BANNED — at most ONE "
+        f"'what changed' turn, then move on. End on a sharp line or a clean stop, not a question."
     )
     src_block = f"SOURCE STORY:\n  Title: {title}\n  Sources: {sources}\n  Summary: {summary or '(no summary)'}"
     low, high = _scale_band(5, 7, _budget_scale(interests), floor=3)
@@ -689,10 +704,12 @@ def render_quick_hits(plan_d: dict, prev_turns: list[str], ranked_idx: dict[str,
     )
     target_low = max(6, len(qhs) * 2)
     target_high = len(qhs) * 3
-    # Scale by budget, but floor at len(qhs) so every planned story still gets
-    # covered (≥1 turn each) even on the tightest budget day.
+    # Scale by budget, but floor at len(qhs)*2 so every planned story keeps a
+    # fact turn + a reaction turn even when tight — flooring at len(qhs) (1 turn
+    # each) collapsed quick_hits to flat headlines while big_story stayed full,
+    # making the lead story dominate. Quick_hits is where variety lives.
     target_low, target_high = _scale_band(
-        target_low, target_high, _budget_scale(interests), floor=len(qhs)
+        target_low, target_high, _budget_scale(interests), floor=len(qhs) * 2
     )
     return _render_beat("QUICK HITS", instruction, prev_turns, target_low, target_high,
                         interests=interests)
@@ -779,8 +796,8 @@ def render_sign_off(plan_d: dict, prev_turns: list[str], interests: dict | None 
         f'Just land a sharp closer.\n'
         f'(1) ALEX or MAYA: a single SHORT callback to "{callback}" — one fresh metaphor or '
         f'forward-looking jab. ≤25 words. No new statistics, no story summary, no "the thing is". '
-        f'Do NOT restate any line verbatim from PREVIOUS TURNS; if the earlier joke was '
-        f'"X has commitment issues", do not repeat that phrase — escalate it or twist it.\n'
+        f'Do NOT repeat any punchline, phrase, or analogy already used earlier in the show — '
+        f'escalate or twist it instead of restating it.\n'
         f'(2) The other host: a one-line riff that builds on turn 1. ≤20 words. Do NOT '
         f'recycle a punchline. Do NOT add a new statistic.\n'
         f'(3) JAMIE: "{DISCLAIMER_SHORT}" (verbatim, exactly this line, nothing else). End.'

@@ -69,6 +69,30 @@ def signatures_overlap(a: set[str], b: set[str], min_shared: int = 3) -> bool:
     return len(a & b) >= min_shared
 
 
+# ─────────── n-gram overlap (content-novelty checks) ───────────
+
+def _norm_words(text: str) -> list[str]:
+    """Lowercased word tokens, audio tags + punctuation stripped."""
+    text = re.sub(r"\[[^\]]+\]", " ", text.lower())
+    return re.findall(r"[a-z0-9]+", text)
+
+
+def ngram_overlap(text: str, prior: str, n: int = 6) -> str | None:
+    """Return the first n-word phrase `text` shares with `prior`, else None.
+    Used to flag a turn that recycles a phrase already spoken (cross-beat) or
+    restates an earlier turn (intra-beat). n=6 catches verbatim/near-verbatim
+    chunks while letting ordinary English collocations pass."""
+    a, b = _norm_words(text), _norm_words(prior)
+    if len(a) < n or len(b) < n:
+        return None
+    b_grams = {tuple(b[i:i + n]) for i in range(len(b) - n + 1)}
+    for i in range(len(a) - n + 1):
+        g = tuple(a[i:i + n])
+        if g in b_grams:
+            return " ".join(g)
+    return None
+
+
 # ─────────── plan schema ───────────
 
 def build_plan_schema(story_ids: list[str]) -> dict:
@@ -274,6 +298,24 @@ def validate_plan(outline: dict, ranked_idx: dict[str, dict],
                     )
                     break
 
+    # 2b. The yesterday_callback must not re-cover today's OWN lead. The plan
+    #     prompt says set use=false when the callback repeats the big story, but
+    #     nothing enforced it — so VS shipped as cold_open + callback + big_story
+    #     (three hits on one story in the first 90s). Flag the overlap.
+    cb = outline.get("yesterday_callback") or {}
+    if cb.get("use") and cb.get("topic"):
+        cb_sig = story_signature(cb["topic"])
+        bs_cluster = ranked_idx.get((outline.get("big_story") or {}).get("story_id"))
+        bs_sig = story_signature(bs_cluster.get("title", "")) if bs_cluster else set()
+        hook_sig = story_signature((outline.get("cold_open") or {}).get("hook", ""))
+        if (bs_sig and signatures_overlap(cb_sig, bs_sig, min_shared=2)) or \
+           (hook_sig and signatures_overlap(cb_sig, hook_sig, min_shared=2)):
+            violations.append(
+                "yesterday_callback.topic repeats today's big_story / cold_open; "
+                "set use=false or point the callback at a DIFFERENT continuing "
+                "thread — don't cover the lead story three times."
+            )
+
     # 3. Cold-open hook substance: must carry a number or a proper noun + fact,
     #    not be a bare question.
     hook = (outline.get("cold_open") or {}).get("hook", "")
@@ -291,14 +333,18 @@ def validate_plan(outline: dict, ranked_idx: dict[str, dict],
 
 # ─────────── turns validator (semantic, post-decode) ───────────
 
-def validate_turns(payload: dict) -> list[str]:
+def validate_turns(payload: dict, prev_text: str = "") -> list[str]:
     """Semantic checks on a rendered beat that the schema can't express:
-    no host speaks twice in a row, and no host refers to THEMSELVES in the
-    third person (the '…and Jamie's here to tell you' failure — now a
-    re-prompt, not a regex strip)."""
+    no host speaks twice in a row, no host refers to THEMSELVES in the third
+    person, no inline tags, and — when `prev_text` (the turns from earlier
+    beats) is supplied — no recycling of a phrase already spoken in an earlier
+    beat or restating an earlier turn within THIS beat. Content novelty was the
+    one constraint the contract never enforced; these checks make repetition a
+    re-prompt instead of a shipped defect."""
     violations: list[str] = []
     turns = payload.get("turns") or []
     prev_speaker = None
+    seen_so_far = prev_text or ""
     for i, turn in enumerate(turns):
         spk = turn.get("speaker", "")
         text = turn.get("text", "") or ""
@@ -320,4 +366,16 @@ def validate_turns(payload: dict) -> list[str]:
                 f"turns[{i}]: remove the inline [bracket] tag from text; put a "
                 f"single emotion in the `tag` field instead."
             )
+        # Content novelty: don't recycle a 6-word phrase from an earlier beat
+        # or an earlier turn in this beat. seen_so_far accumulates as we go so a
+        # later turn is checked against everything before it.
+        if seen_so_far:
+            dup = ngram_overlap(text, seen_so_far, n=6)
+            if dup:
+                violations.append(
+                    f"turns[{i}]: repeats a phrase already spoken (\"{dup}…\"); "
+                    f"the cold open / earlier turns already covered this — say "
+                    f"something NEW (a different fact, number, or angle) or cut it."
+                )
+        seen_so_far = (seen_so_far + "\n" + text) if seen_so_far else text
     return violations

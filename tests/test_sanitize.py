@@ -35,6 +35,24 @@ def test_collapse_folds_short_fragment_and_strips_tag():
     assert out[0][1].endswith("Exactly.")
 
 
+def test_disclaimer_signature_ignores_casual_investment_advice():
+    from sanitize import _disclaimer_signature
+    # Real markets talk mentioning "investment advice" must NOT be flagged
+    # (else _dedup_disclaimer deletes it as a stray disclaimer).
+    assert not _disclaimer_signature("Honestly the best investment advice is buy low, sell high.")
+    assert _disclaimer_signature("This show is for entertainment and education only — nothing here is investment advice.")
+
+
+def test_ambiguous_tickers_not_expanded():
+    from sanitize import _space_standalone_tickers
+    # NOW / MA / HD / KO collide with common words — must pass through untouched.
+    for s in ["NOW we turn to the Fed.", "She has an MA in economics.",
+              "Watching the game in HD tonight.", "He was out cold, KO in round two."]:
+        out, _ = _space_standalone_tickers(s)
+        assert "ServiceNow" not in out and "Mastercard" not in out
+        assert "Home Depot" not in out and "Coca-Cola" not in out
+
+
 def test_crocs_ipo_template_scrubbed():
     script = (
         "JAMIE: Victoria's Secret jumped forty percent today.\n"

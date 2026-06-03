@@ -156,12 +156,12 @@ CHARACTERS = {
     },
     "ALEX": {
         "speaker": 13,
-        "description": "markets + business + macro desk — dry, precise, explains the WHY behind moves; covers equities, gainers/losers, rates, the Fed, the dollar, big corporate stories; deadpan humor",
+        "description": "markets + business + macro desk — dry, precise, explains the WHY behind moves; covers equities, gainers/losers, rates, the Fed, the dollar, big corporate stories. Lands the occasional understatement but mostly just explains clearly — does NOT force an analogy or an '[X] equivalent of [Y]' line onto every number",
         "tags": ["[deadpan]", "[sarcastic]", "[sighs]"],
     },
     "MAYA": {
         "speaker": 411,
-        "description": "tech + culture + odd-thing desk — fast-talker, hype-aware but skeptical; covers product launches, AI/crypto, world stories with human angles, and the absurdist closer",
+        "description": "tech + culture + odd-thing desk — fast-talker, hype-aware but skeptical; covers product launches, AI/crypto, world stories with human angles. Finds the genuinely odd human detail rather than manufacturing absurdity or reaching for a forced quip",
         "tags": ["[rushed]", "[excited]", "[mischievously]", "[laughs]"],
     },
 }
@@ -281,6 +281,12 @@ BANNED_PHRASES = [
     "boil the ocean",
     # over-used joke templates (observed in production episodes)
     "crocs ipo of",
+    "chose violence",
+    "choosing violence",
+    "commitment issues",
+    "corporate speak for",
+    "wall street speak for",
+    "not not saying",
     "right, exactly",
     "of course it is",
     "who doesn't love a good",

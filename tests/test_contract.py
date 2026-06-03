@@ -213,6 +213,58 @@ def test_fallback_plan_none_when_no_stories():
     assert sp._fallback_plan([{"title": "no id"}], {}) is None
 
 
+# ─────────── anti-repetition contract (content novelty) ───────────
+
+def test_ngram_overlap_detects_shared_phrase():
+    a = "Victoria's Secret jumped forty percent yesterday after a big earnings beat"
+    b = "So Victoria's Secret jumped forty percent yesterday — turns out the punching bag"
+    assert schemas.ngram_overlap(b, a, n=6)  # shares 6+ word run
+    assert schemas.ngram_overlap("totally unrelated sentence about gold and oil prices",
+                                 a, n=6) is None
+
+
+def test_validate_turns_flags_cross_beat_echo():
+    prev = "JAMIE: Victoria's Secret jumped forty percent yesterday after a huge earnings beat."
+    payload = {"turns": [
+        {"speaker": "ALEX", "text": "Victoria's Secret jumped forty percent yesterday after a huge earnings beat, and here's why."},
+        {"speaker": "MAYA", "text": "The cybersecurity names are a totally separate signal from retail."},
+    ]}
+    v = schemas.validate_turns(payload, prev_text=prev)
+    assert any("repeats a phrase already spoken" in x for x in v)
+
+
+def test_validate_turns_flags_intra_beat_repeat():
+    payload = {"turns": [
+        {"speaker": "ALEX", "text": "They killed the angel sizing and started selling to real customers."},
+        {"speaker": "MAYA", "text": "Right, they killed the angel sizing and started selling to real customers indeed."},
+    ]}
+    v = schemas.validate_turns(payload)  # no prev_text → intra-beat only
+    assert any("repeats a phrase already spoken" in x for x in v)
+
+
+def test_validate_turns_clean_passes():
+    payload = {"turns": [
+        {"speaker": "ALEX", "text": "The S&P closed up a third of a percent on thin breadth."},
+        {"speaker": "JAMIE", "text": "Meanwhile small caps quietly outran the megacaps for once."},
+    ]}
+    assert schemas.validate_turns(payload, prev_text="JAMIE: Totally different cold open about oil.") == []
+
+
+def test_validate_plan_flags_callback_repeating_big_story():
+    ranked = [{"id": "vsx", "title": "Victoria Secret shares surge forty percent turnaround"}]
+    ranked += [{"id": f"c{i}", "title": f"Distinct unrelated headline number {i} about gold"}
+               for i in range(1, 6)]
+    outline = {
+        "cold_open": {"hook": "Victoria Secret turnaround is the story today"},
+        "big_story": {"story_id": "vsx"},
+        "quick_hits": [{"story_id": ranked[i]["id"]} for i in (1, 2, 3, 4)],
+        "odd_thing": {"story_id": ranked[5]["id"]},
+        "yesterday_callback": {"use": True, "topic": "Victoria Secret turnaround surge continues"},
+    }
+    v = schemas.validate_plan(outline, sp._ranked_index(ranked))
+    assert any("repeats today's big_story" in x for x in v)
+
+
 def test_multistage_degrades_on_plan_failure(monkeypatch):
     # plan() returning None must NOT raise — it must fall back and still ship.
     ranked = _fake_ranked(6)
