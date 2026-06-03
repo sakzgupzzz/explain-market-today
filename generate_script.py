@@ -613,7 +613,17 @@ def _llm_json(prompt: str, schema: dict, *, schema_name: str = "result",
             + "\n".join(f"- {p}" for p in problems[:10])
             + "\n\nReturn a corrected response that fixes every listed violation."
         )
-    raise RuntimeError(f"_llm_json: unresolved violations after {max_attempts}: "
+    # Exhausted re-prompts. If last_obj still satisfies the SCHEMA (the hard
+    # contract), ship it despite a residual SOFT violation (consecutive speaker
+    # / phrase echo). Raising here drops the beat to the legacy text path, which
+    # has no schema and can return 0 turns — losing a whole beat (quick_hits
+    # vanished this way). A schema-valid beat with one minor repeat beats nothing.
+    if last_obj and not _schema_errors(last_obj, schema):
+        residual = (extra_violations(last_obj) if extra_violations else []) or []
+        print(f"[llm_json] max attempts reached; accepting last schema-valid "
+              f"response with {len(residual)} soft violation(s)")
+        return last_obj
+    raise RuntimeError(f"_llm_json: no schema-valid response after {max_attempts}: "
                        f"{_schema_errors(last_obj, schema)[:4]}")
 
 

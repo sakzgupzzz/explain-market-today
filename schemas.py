@@ -77,18 +77,37 @@ def _norm_words(text: str) -> list[str]:
     return re.findall(r"[a-z0-9]+", text)
 
 
-def ngram_overlap(text: str, prior: str, n: int = 6) -> str | None:
-    """Return the first n-word phrase `text` shares with `prior`, else None.
-    Used to flag a turn that recycles a phrase already spoken (cross-beat) or
-    restates an earlier turn (intra-beat). n=6 catches verbatim/near-verbatim
-    chunks while letting ordinary English collocations pass."""
+# Number-words + direction words: a shared phrase made of these is just two
+# turns quoting the same market figure ("up two point seven eight percent"),
+# NOT a content repeat — don't flag it.
+_NUM_WORDS = {
+    "zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
+    "nine", "ten", "eleven", "twelve", "twenty", "thirty", "forty", "fifty",
+    "hundred", "thousand", "million", "billion", "trillion", "point", "percent",
+    "up", "down", "dollars", "and", "the", "a",
+}
+
+
+def ngram_overlap(text: str, prior: str, n: int = 6, min_substantive: int = 3) -> str | None:
+    """Return the first n-word phrase `text` shares with `prior` that carries
+    real content, else None. Flags a turn recycling a phrase already spoken
+    (cross-beat) or restating an earlier turn (intra-beat). A shared n-gram only
+    counts if it has >= min_substantive tokens that are NOT number-words and NOT
+    signature stopwords — so quoting the same percentage twice doesn't trip it,
+    but echoing a sentence ('victoria secret jumped … yesterday after') does."""
     a, b = _norm_words(text), _norm_words(prior)
     if len(a) < n or len(b) < n:
         return None
     b_grams = {tuple(b[i:i + n]) for i in range(len(b) - n + 1)}
     for i in range(len(a) - n + 1):
         g = tuple(a[i:i + n])
-        if g in b_grams:
+        if g not in b_grams:
+            continue
+        substantive = sum(
+            1 for w in g
+            if len(w) >= 4 and w not in _NUM_WORDS and w not in _SIGNATURE_STOP
+        )
+        if substantive >= min_substantive:
             return " ".join(g)
     return None
 
