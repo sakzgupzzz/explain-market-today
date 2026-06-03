@@ -1,60 +1,60 @@
 {
   "cold_open": {
-    "hook": "Victoria's Secret jumped 40% yesterday\u2014turns out the internet's favorite punching bag figured out how to actually sell things."
+    "hook": "Victoria's Secret jumped 40% yesterday. Yes. THAT Victoria's Secret. We're going to explain how a company America spent a decade roasting became the market's favorite comeback story."
   },
   "markets": {
     "lead_host": "ALEX",
     "key_numbers": [
       "S&P 500: 7609.78 (+0.13% yesterday)",
-      "Nasdaq: 27093.90 (+0.03% yesterday)",
+      "Russell 2000: +0.90% (small caps outpacing)",
       "Biggest gainer: Cisco +5.50%",
-      "Biggest loser: Accenture -5.27%"
+      "Biggest loser: Microsoft -4.17%"
     ],
-    "macro_note": "Breadth weak\u2014mega-cap tech rolling over while infrastructure and retail beat expectations; VIX compression suggests complacency."
+    "macro_note": "Breadth paradox warning: S&P on a 9-day win streak but fewer stocks participating\u2014classic late-cycle distribution pattern."
   },
   "big_story": {
     "story_id": "d4cc96fca1dc",
-    "lead_host": "ALEX",
+    "lead_host": "JAMIE",
     "story_title": "Victoria's Secret shares spike 40% after big earnings beat, raised sales outlook",
-    "angle": "The company that spent a decade as a cultural punchline just proved Wall Street's 'legacy retail is dead' thesis wrong\u2014and the market is repricing it in real time. What changed operationally, and does this signal a broader retail resilience play?",
+    "angle": "A brand that became a cultural punchline for toxic marketing and outdated sizing just proved Wall Street's death-knell predictions wrong\u2014what actually changed, and is this a real turnaround or a one-quarter relief rally?",
     "depth_turns": 6
   },
   "quick_hits": [
     {
       "story_id": "8fa226cb120c",
       "lead_host": "ALEX",
-      "angle": "Palo Alto Networks upgraded after earnings\u2014AI disruption fears evaporating as cybersecurity becomes table stakes in enterprise capex, not a nice-to-have.",
+      "angle": "Palo Alto Networks upgraded after earnings as cybersecurity becomes non-negotiable infrastructure, not a discretionary spend\u2014the 'AI will kill us all' narrative finally hitting a wall.",
       "conviction": "real"
     },
     {
-      "story_id": "2604af61a416",
-      "lead_host": "MAYA",
-      "angle": "Next-gen handheld gaming device hands-on: the form factor wars are heating up again, and Nintendo's not the only player anymore.",
-      "conviction": "hype"
+      "story_id": "91743d8f8916",
+      "lead_host": "ALEX",
+      "angle": "Ulta Beauty also beat and raised\u2014beauty retail is having a moment while big tech stumbles; margin expansion in a category that was supposed to be Amazon-proof.",
+      "conviction": "real"
     },
     {
       "story_id": "4ce9641d3ed4",
       "lead_host": "MAYA",
-      "angle": "Microsoft Build 2026 announcements\u2014seven big ones, but the real story is whether any of them actually ship or if this is just the annual AI theater refresh.",
+      "angle": "Microsoft Build 2026 announcements: the company is throwing everything at AI integration, but the market just sold $18B in MSFT stock\u2014investors voting 'we've heard this before.'",
       "conviction": "hype"
     },
     {
-      "story_id": "ed60872e09a7",
-      "lead_host": "JAMIE",
-      "angle": "Sailors trapped in the Strait of Hormuz for months\u2014a human cost story buried under geopolitics that reminds us supply chains run on exhausted people.",
+      "story_id": "2a5cc3f1cc17",
+      "lead_host": "ALEX",
+      "angle": "Fed Chair Warsh hiring a Project 2025 author signals the central bank is about to become a lot more political\u2014regulatory theater meets actual policy.",
       "conviction": "real"
     }
   ],
   "odd_thing": {
-    "story_id": "7ad1e7843a9c",
-    "joke_angle": "Cyberdecks are having a moment\u2014basically laptops that look like they're from a 1980s hacker movie, chosen by people who want to reject Big Tech surveillance but also want to be seen rejecting it very visibly."
+    "story_id": "ed60872e09a7",
+    "joke_angle": "Sailors trapped in the Strait of Hormuz for months are stressed and exhausted\u2014turns out being a human cargo container in a geopolitical hostage situation is bad for morale; who knew."
   },
   "yesterday_callback": {
-    "use": false,
-    "topic": "",
-    "fresh_take": ""
+    "use": true,
+    "topic": "Victoria's Secret jumped 40% yesterday\u2014turns out the internet's favorite punching bag figured out how to actually sell",
+    "fresh_take": "Today we dig into whether this is a structural fix (new leadership, actual product strategy) or just a relief bounce that'll fade when the next earnings miss hits."
   },
   "sign_off": {
-    "callback_target": "Victoria's Secret's 40% jump\u2014close on the idea that sometimes the internet's favorite punching bag just needed to actually execute."
+    "callback_target": "Victoria's Secret\u2014because if a company can survive being the internet's favorite joke and still post a 40% day, maybe we're all underestimating comebacks."
   }
 }
