@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Meta's up 4.2% after actually letting someone else have a VR fitness game \u2014 a first for Zuckerberg"
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.74%",
+      "Nasdaq -0.89%",
+      "Meta +4.24%",
+      "Oracle -5.83%",
+      "VIX +1.84%"
+    ],
+    "macro_note": "Broad weakness with tech divergence \u2014 Oracle and CRM tanking on earnings while Meta and AMD pop; VIX creeping up on geopolitical noise."
+  },
+  "big_story": {
+    "story_id": "407b4039b4d4",
+    "lead_host": "MAYA",
+    "story_title": "Meta mercifully spun out VR fitness game Supernatural instead of just killing it",
+    "angle": "Meta's spinout of Supernatural is less a victory lap and more a confession that the metaverse bet didn't work \u2014 but at least they're letting the game live instead of torching it like every other failed VR experiment.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "e11cc42fbdd0",
+      "lead_host": "ALEX",
+      "angle": "CrowdStrike stock craters as investors realize cybersecurity vendors are selling the same product at different price points \u2014 margin compression is real.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "59f04b3f4d3b",
+      "lead_host": "ALEX",
+      "angle": "SpaceX wants $75B valuation on an IPO that won't happen this year \u2014 Musk is testing how high the number can go before someone laughs.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "c9102c0a6b79",
+      "lead_host": "JAMIE",
+      "angle": "Trump strips job protections from 8,000 federal workers \u2014 a move that tests whether the courts or Congress will actually push back.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "e6ae689a78ca",
+      "lead_host": "ALEX",
+      "angle": "Macy's posts best Q1 in four years despite consumer doom narratives \u2014 either the data is wrong or the narrative is.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "536b55e6b86e",
+    "joke_angle": "MI5 warns Chinese spies are using LinkedIn to recruit British government workers \u2014 the most on-brand infiltration method imaginable."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Meta's willingness to let Supernatural live \u2014 a sign that even Zuckerberg knows when to stop swinging"
+  }
+}
