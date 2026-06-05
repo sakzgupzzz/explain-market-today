@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Jun 2026 00:17:28 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2026 15:01:33 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,55 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>AMD -5.9%, One argument for a rate hike — Jun 5</title>
+      <description>Nasdaq down 1.84% as chip stocks crater—but Eli Lilly's up 3.2% on a jobs report that somehow argues for both a rate hike AND a cut. Today's lead: One argument for a rate hike, another for a rate cut, after blowout jobs report. The jobs report was so strong it's become a Rorschach test: hawks see wage pressure, doves see no recession risk. The Fed gets to do nothing and call it data-dependent.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:12  Markets
+  00:01:50  Big story
+  00:03:42  Quick hits
+  00:04:35  Odd thing of the day
+  00:05:12  Sign-off
+
+Stories covered:
+  • Anthropic IPO prices AI valuations at a moment when the market can't decide if AI is infrastructure or tulips. [real]
+  • Chipotle's turnaround is operational—unit economics, pricing power, execution. Starbucks is just hoping people forget about the CEO drama. [real]
+  • Broadway's $1.9B season proves consumers will spend on *experiences* even as they're terrified about rates—the real consumer story nobody's talking about. [hype]
+  • NSA using Anthropic's model for cyber ops is the first real-world government adoption—not a press release, actual classified work. [real]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] Nasdaq dropped one point eight four percent as chip stocks imploded, but Eli Lilly climbed three point two on a jobs report so contradictory it's basically the economic equivalent of your ex saying they miss you while blocking your number.
+ALEX: [deadpan] The S&amp;P dropped one percent, Nasdaq fell one point eight four percent as chip stocks got absolutely demolished. A M D tanked five point nine two percent, Oracle down five point eight nine, Broadcom off four point four eight. But here's the thing: we got a jobs beat—payrolls came in hotter than expected—which means the Fed can credibly sit still and do nothing, and that's exactly what happened.
+JAMIE: [curious] So we have a jobs number that's too good for rate cuts but not good enough to panic about inflation, and the market's response is to punish semiconductors while rewarding Eli Lilly for reasons that have nothing to do with the jobs data.
+MAYA: [rushed] Lilly's up three point two percent, and I've been staring at this trying to figure out if there's an earnings angle or a trial readout I missed, and no—it's just that when everything else is radioactive, defensive healthcare wins by showing up. Coca-Cola's up two point four five, Procter &amp; Gamble up two point one nine, Walmart up one point seven seven. We're watching a flight to things your grandmother would buy, which is what happens when your entire investment thesis boils down to 'I have no idea what happens next.'
+ALEX: [deadpan] Here's where the confusion lives: payrolls came in hot. Wage growth ticked up. If you're a hawk, you look at that and think the Fed has no business cutting rates—inflation's still baked into the labor market. If you're a dove, you see strong payrolls and think, okay, the economy's not falling apart, we don't need to panic-hike. So the Fed gets to sit still and claim they're being data-dependent when really they're just letting both sides find exactly what they want to find.
+JAMIE: [laughs] So it's a jobs report that proves nothing and everything at the same time. That's not data-dependent, that's just cowardice with a spreadsheet.
+MAYA: [rushed] But here's the thing nobody's talking about—unemployment dropped. We're at levels that suggest the economy could be overheating. And the market's response was to sell semiconductors, which is just the classic move: when you don't know if the economy's about to run hot or cool down, you panic-sell the thing that needs growth the most.
+ALEX: [sarcastic] Right, but here's the second-order thing: if unemployment's really that tight, the Fed should be concerned about wage-price spirals, which means the case for staying higher for longer actually gets stronger, not weaker. And yet Treasury yields went up, which is normally a sign that people think rates are peaking. So you've got a jobs report that's simultaneously the strongest argument for the hawks and the strongest argument for the doves to just wait it out. The Fed gets to do nothing and call it wisdom.
+MAYA: [rushed] Anthropic's IPO is pricing the company at around forty billion dollars, which puts it ahead of OpenAI on paper—except OpenAI isn't public, so we're basically guessing whether AI is a foundational technology or a mass hallucination machine that cost venture capitalists billions to build.
+JAMIE: [curious] So the market's first real chance to vote on AI valuations, and Anthropic gets to price at the exact moment when nobody knows if the model wars are over or if we're still in act one of a ten-act play.
+ALEX: [deadpan] Forty billion on revenue that's probably still in the hundreds of millions. The math works if you believe AI compute becomes cheaper and faster every quarter forever, and if you believe the companies building it won't cannibalize each other's margins. Both of those are real bets, neither of them is guaranteed.
+MAYA: [excited] Chipotle just hit a new all-time high—same-store sales up, pricing power holding, and their labor costs are actually down because they automated the line. That's not a narrative, that's an operating system that works.
+ALEX: [sarcastic] Starbucks, meanwhile, is down since leadership changes, and the best thing anyone can say is that the CEO drama is finally over. But operational metrics are still soft, and hoping people forget about board dynamics is not a turnaround plan.
+JAMIE: [laughs] So one company proved it can raise prices and improve execution, and the other is betting that time heals all wounds caused by leadership theater.
+MAYA: [rushed] Consumers are terrified about rates, credit card debt is exploding, and yet people are still spending on experiences because that's the one thing nobody's willing to cut.
+ALEX: [deadpan] The NSA is reportedly using Anthropic's Mythos model for classified cyber operations, which is the first time an AI company has shipped actual production work into government intelligence—not a contract, not a pilot, actual classified use. That's the real story from Anthropic's IPO week, not the valuation.
+MAYA: [rushed] DOGE wanted to declare two point seven million people dead at Social Security. Not metaphorically—actually mark them as deceased in the system. Third whistleblower to come forward about this. The most efficient way to cut the deficit is apparently just declaring people don't exist.
+JAMIE: [curious] Wait, so they wanted to just—administratively erase two point seven million benefit recipients from the rolls without, say, confirming they're actually dead?
+JAMIE: [curious] On the tape tomorrow: we've got G III Apparel, A B M Industries, Hurco, and Ferrellgas all reporting before the open, which is a lot of mid-cap earnings noise to parse through before the market even opens its eyes.
+MAYA: [rushed] G III's the one to watch—they own heritage brands, they're basically the bridge between established names and whatever Gen Z thinks is cool this week. If their wholesale orders are down because retailers are choking on inventory, that's a real signal that consumer spending's finally hitting a wall. Apparel's usually the canary, not the coal mine.
+ALEX: [deadpan] Tomorrow's earnings will either confirm the Fed's sitting pretty or expose that they've been reading tea leaves for months straight.
+MAYA: [rushed] G III's wholesale orders will tell us whether consumer spending hit a wall or just stubbed a toe.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">e21b122a-cf23-4b82-0aba-a1e31d5e9537</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-05.mp3" length="5166853" type="audio/mpeg" />
+      <pubDate>Fri, 05 Jun 2026 15:00:51 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-05.jpg" />
+      <itunes:duration>00:05:22</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260605</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-05.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-05.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-05.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>ORCL -5.8%, Meta mercifully spun out VR fitness — Jun 4</title>
       <description>Meta's up 4.2% after actually letting someone else have a VR fitness game — a first for Zuckerberg. Today's lead: Meta mercifully spun out VR fitness game Supernatural instead of just killing it. Meta's spinout of Supernatural is less a victory lap and more a confession that the metaverse bet didn't work — but at least they're letting the game live instead of torching it like every other failed VR experiment.

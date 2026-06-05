@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Nasdaq down 1.84% as chip stocks crater\u2014but Eli Lilly's up 3.2% on a jobs report that somehow argues for both a rate hike AND a cut."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -1.00%",
+      "Nasdaq -1.84%",
+      "LLY +3.20%",
+      "AMD -5.92%"
+    ],
+    "macro_note": "Jobs beat, but inflation signals mixed\u2014Fed has cover to move either direction, so nobody moves."
+  },
+  "big_story": {
+    "story_id": "362d92bcc034",
+    "lead_host": "ALEX",
+    "story_title": "One argument for a rate hike, another for a rate cut, after blowout jobs report",
+    "angle": "The jobs report was so strong it's become a Rorschach test: hawks see wage pressure, doves see no recession risk. The Fed gets to do nothing and call it data-dependent.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "95f3518df1c9",
+      "lead_host": "MAYA",
+      "angle": "Anthropic IPO prices AI valuations at a moment when the market can't decide if AI is infrastructure or tulips.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "90ad01c50e06",
+      "lead_host": "ALEX",
+      "angle": "Chipotle's turnaround is operational\u2014unit economics, pricing power, execution. Starbucks is just hoping people forget about the CEO drama.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "1a3d20392c15",
+      "lead_host": "MAYA",
+      "angle": "Broadway's $1.9B season proves consumers will spend on *experiences* even as they're terrified about rates\u2014the real consumer story nobody's talking about.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "70d07d18d735",
+      "lead_host": "MAYA",
+      "angle": "NSA using Anthropic's model for cyber ops is the first real-world government adoption\u2014not a press release, actual classified work.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "a93ed0d8fa65",
+    "joke_angle": "DOGE wanted to mark 2.7 million people dead at Social Security\u2014the most efficient way to cut the deficit is apparently just declaring people don't exist."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "the Fed's Rorschach test\u2014we'll see which way they actually lean when the data gets *really* messy."
+  }
+}
