@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Meta's AI chatbot just got 20,000 Instagram accounts stolen\u2014turns out the security feature was the vulnerability."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.87% to 7448",
+      "Nasdaq +1.55% to 26109",
+      "AMD +5.04%, TSLA +2.85%",
+      "MSFT -1.33%, GOOGL -1.75%"
+    ],
+    "macro_note": "Chip strength masks Big Tech weakness; VIX crater signals complacency or relief."
+  },
+  "big_story": {
+    "story_id": "4678613ae18a",
+    "lead_host": "MAYA",
+    "story_title": "Hackers likely hijacked over 20,000 Instagram accounts with Meta's AI chatbot",
+    "angle": "Meta marketed its AI chatbot as a security feature\u2014a way to catch phishing\u2014and hackers weaponized it to steal accounts at scale. The irony isn't just embarrassing; it's a live case study in how AI safety theater becomes AI attack surface.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "31c286ed8bc4",
+      "lead_host": "ALEX",
+      "angle": "Household financial anxiety hits highest level since July 2022\u2014Fed rate cuts are priced in, but consumers aren't feeling it yet.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "977bb65dac23",
+      "lead_host": "JAMIE",
+      "angle": "United CEO says there's 'nothing' to airline mergers after American rejected a deal\u2014which is what every CEO says right before they do the thing.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "b11893233391",
+      "lead_host": "MAYA",
+      "angle": "Uber, Wayve, and Waymo are all racing robotaxis in London\u2014the city that banned Uber once is now the proving ground for three different self-driving futures.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "32a69767abdb",
+      "lead_host": "MAYA",
+      "angle": "WhatsApp caught NSO spyware again, same group, after a court order\u2014at some point 'caught' just means 'announced we found it again.'",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "5965e248c443",
+    "joke_angle": "Amazon's AI merch designer is just a print-on-demand machine that learned to hallucinate\u2014finally, a tool for people who want their t-shirt to say something their brain couldn't."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Anthropic IPO prices AI valuations at a moment when the market can't decide if AI is infrastructure or tulips.",
+    "fresh_take": "Meta's chatbot getting weaponized to steal accounts is the market's answer: AI is neither infrastructure nor tulips\u2014it's a liability with a venture-backed business model attached."
+  },
+  "sign_off": {
+    "callback_target": "Meta's AI chatbot\u2014the security feature that became the security breach."
+  }
+}
