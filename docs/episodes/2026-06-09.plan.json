@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Apple down 3.1%, Nasdaq off 1%, but a sea drone just rescued a US Army helicopter crew\u2014and it cost less than a Tesla."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: -0.49%",
+      "Nasdaq: -0.97%",
+      "Apple (AAPL): -3.10%",
+      "Home Depot (HD): +3.54%"
+    ],
+    "macro_note": "Tech rolling over, defensives holding\u2014VIX down but breadth is thin."
+  },
+  "big_story": {
+    "story_id": "fde6a1f0a33c",
+    "lead_host": "JAMIE",
+    "story_title": "Sea drone rescues US Army helicopter crew near Strait of Hormuz",
+    "angle": "Autonomous drones just proved they can execute a real-world military rescue in one of the world's most contested waterways\u2014this isn't a demo, it's a capability shift.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "1cb2f3bf939f",
+      "lead_host": "ALEX",
+      "angle": "OpenAI filed for IPO\u2014the company that broke the internet is now asking the internet to buy it at a valuation nobody can justify yet.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "0218669ac223",
+      "lead_host": "MAYA",
+      "angle": "Lovable hit $500M annualized revenue with 1 million new projects a week\u2014it's an AI code-gen tool that's growing so fast it's outpacing the ability to explain what it does.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "4fc97544b1f9",
+      "lead_host": "ALEX",
+      "angle": "Trump's new trade target is forced labor\u2014sounds moral until you realize the enforcement mechanism is a tariff on the countries that actually enforce it.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "53b3f60663a2",
+      "lead_host": "ALEX",
+      "angle": "Palo Alto Networks hit $10B revenue run rate and beats the S&P 500 across all timeframes\u2014cybersecurity is the one sector that doesn't need a macro excuse to go up.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "bcb18ac62e06",
+    "joke_angle": "A color-changing light finally made someone appreciate color-changing lights\u2014the bar for 'innovation' is now 'does the thing it was supposed to do from the start.'"
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "the sea drone rescue\u2014tie back to how a $500K autonomous system just did the job of a $100M helicopter in the Strait of Hormuz"
+  }
+}

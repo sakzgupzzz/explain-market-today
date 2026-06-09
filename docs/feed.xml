@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jun 2026 16:00:20 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 15:00:47 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,55 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>HD +3.5%, Sea drone rescues US Army helicopter — Jun 9</title>
+      <description>Apple down 3.1%, Nasdaq off 1%, but a sea drone just rescued a US Army helicopter crew—and it cost less than a Tesla. Today's lead: Sea drone rescues US Army helicopter crew near Strait of Hormuz. Autonomous drones just proved they can execute a real-world military rescue in one of the world's most contested waterways—this isn't a demo, it's a capability shift.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:09  Markets
+  00:01:52  Big story
+  00:03:28  Quick hits
+  00:04:29  Odd thing of the day
+  00:04:57  Sign-off
+
+Stories covered:
+  • OpenAI filed for IPO—the company that broke the internet is now asking the internet to buy it at a valuation nobody can justify yet. [hype]
+  • Lovable hit $500M annualized revenue with 1 million new projects a week—it's an AI code-gen tool that's growing so fast it's outpacing the ability to explain what it does. [real]
+  • Trump's new trade target is forced labor—sounds moral until you realize the enforcement mechanism is a tariff on the countries that actually enforce it. [noise]
+  • Palo Alto Networks hit $10B revenue run rate and beats the S&amp;P 500 across all timeframes—cybersecurity is the one sector that doesn't need a macro excuse to go up. [real]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] Apple's down three point one percent, Nasdaq off zero point nine seven percent, but a sea drone just pulled a US Army helicopter crew out of the water.
+ALEX: [deadpan] So the broader market is down zero point four nine percent on the S&amp;P, Nasdaq fell zero point nine seven percent—and the story is basically that tech is the only thing that ever matters, so when it rolls over, everything else has to pretend to care. Home Depot up three point five four percent, Thermo Fisher up three point one two percent, Pepsi up one point eight three percent. The defensives are doing what they always do when the Mag Seven stumbles: they just stand there and collect a paycheck. Apple specifically got hit three point one percent, which is enough to make headlines but not enough to make anyone actually sell.
+JAMIE: [curious] So we've got a weird split—big tech is getting kicked, but Home Depot is basically printing money. Are we seeing actual rotation into value, or is this just the market's way of saying 'I'm fine, everything's fine' while nervously sweating?
+MAYA: [mischievously] It's the second one. The V I X dropped two point five nine percent, which is the market equivalent of someone saying 'relax, it's not that bad' while their hands are visibly shaking. You've got the Russell 2000 up one point two nine percent, which means small caps are doing better than large caps—that's not a sign of confidence, that's a sign that nobody knows what's actually going to happen next, so they're just throwing darts at everything.
+JAMIE: [curious] So a helicopter went down near the Strait of Hormuz, and a sea drone executed a real-time pickup. How many people were in the water?
+ALEX: [deadpan] Two crew members. And the drone was already in the region as part of US naval operations, which means this wasn't some emergency procurement, wasn't a prototype pulled from a lab. It was a system that was already positioned, already integrated into the task force, and when the moment came, it worked. That's different from 'we tested it once and it was cool.' This is operational.
+MAYA: [excited] And here's what's wild—nobody's even confirmed the drone model yet. We know it exists, we know it pulled two people out of the water, but the military is being cagey about specs. Which means whoever built it, whether it's a contractor or in-house Navy development, they just proved something works in the actual world, not a simulation, and now every peer in the space is watching and thinking 'we need that.'
+JAMIE: [laughs] So you've got a capability that just proved itself under fire in a sensitive shipping lane, and the only thing the market's doing is yawning because Apple stock moved three points. The second-order play here is whoever's building autonomous maritime systems just got the most expensive endorsement possible without paying a dollar.
+ALEX: [deadpan] OpenAI filed for an IPO this week. The company that convinced the world AI would replace us is now asking those same people to buy shares at a valuation they can't actually defend with a spreadsheet.
+JAMIE: [sarcastic] So they're going public on vibes. What's the pitch—'we made ChatGPT, we don't know what it's worth, but we're pretty sure it's more than Nvidia'?
+MAYA: [rushed] The timing is peak theater. They file right when the AI bubble is showing cracks, when every startup that promised to 'disrupt' something with LLMs is quietly laying off, and OpenAI's like 'no no, we're different, give us your money.' It's the IPO equivalent of throwing a party right before the lease ends.
+ALEX: Lovable just hit five hundred million dollars in annualized revenue. One million new projects a week. It's a code-generation tool that's growing so fast nobody, including Lovable, seems to know what it actually is anymore.
+JAMIE: [curious] One million projects a week? That's not growth, that's a fire alarm. How many of those are real businesses versus someone's weekend hobby?
+MAYA: Doesn't matter. The signal is that there's a floor of demand—actual humans, actual code, actual deployment—that's so wide and so fast that the company can't even measure what's happening inside it. That's real. Whether half of it disappears in six months is a different question.
+ALEX: [sighs] Trump's trade war has a new target: forced labor. Sounds moral until you realize the enforcement mechanism is a tariff on countries that actually enforce labor standards, while the US itself has a forced labor problem it can't solve.
+JAMIE: So the move is to punish the people trying to do the right thing. Got it.
+MAYA: [rushed] Hue just dropped SpatialAware on the Bridge Pro, and the whole pitch is that your color-changing lights can now detect motion in the room. Which sounds revolutionary until you realize we've had motion sensors for thirty years—they just weren't R G B. So now your light turns on when you walk in AND it can be periwinkle while doing it.
+JAMIE: [deadpan] So a color-changing light finally made someone appreciate color-changing lights. The innovation bar has officially crossed into 'does the thing it was supposed to do from the start.'
+JAMIE: On the tape tomorrow: we've got earnings rolling in on June ninth—Academy Sports, Designer Brands, Nathan's Famous, and a few others hitting the wire.
+ALEX: [deadpan] Nathan's Famous reporting earnings is the market equivalent of a hot dog eating contest scoring itself—you get a number, but nobody's actually sure what it measures. The real question is whether small-cap discretionary spending held up or if people finally admitted they're broke.
+MAYA: [mischievously] The sea drone just became the most expensive recruitment video in military procurement history—and it didn't cost a dime to make.
+ALEX: [deadpan] Every defense contractor's PowerPoint just got a lot more nervous.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">195674bc-9f32-320c-09e6-f197ba74e01d</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-09.mp3" length="4899091" type="audio/mpeg" />
+      <pubDate>Tue, 09 Jun 2026 15:00:05 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-09.jpg" />
+      <itunes:duration>00:05:05</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260609</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-09.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-09.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-09.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AMD +5.0%, Hackers likely hijacked over 20,000 Instagram — Jun 8</title>
       <description>Meta's AI chatbot just got 20,000 Instagram accounts stolen—turns out the security feature was the vulnerability. Today's lead: Hackers likely hijacked over 20,000 Instagram accounts with Meta's AI chatbot. Meta marketed its AI chatbot as a security feature—a way to catch phishing—and hackers weaponized it to steal accounts at scale. The irony isn't just embarrassing; it's a live case study in how AI safety theater becomes AI attack surface.

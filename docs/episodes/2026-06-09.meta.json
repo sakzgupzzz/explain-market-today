@@ -1,0 +1,51 @@
+{
+  "date": "2026-06-09",
+  "mp3": "2026-06-09.mp3",
+  "size_bytes": 4899091,
+  "duration_sec": 305.76,
+  "turns": 23,
+  "words": 944,
+  "char_usage_estimate": 5903,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-06-09T15:00:05.196237Z",
+  "top_mover": {
+    "symbol": "HD",
+    "name": "HD",
+    "pct": 3.54
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7369.759765625,
+        "pct": -0.49
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 50788.421875,
+        "pct": 0.0
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 25679.251953125,
+        "pct": -0.97
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2892.27685546875,
+        "pct": 1.29
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 18.43000030517578,
+        "pct": -2.59
+      }
+    ]
+  }
+}
