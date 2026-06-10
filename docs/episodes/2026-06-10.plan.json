@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Nasdaq down 1.18%, Dow off 1.09%, and Trump just told Iran they'll 'pay the price'\u2014but the real story is what's actually moving."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 down 0.83%",
+      "Nasdaq down 1.18%",
+      "VIX up 10.27% to 21.91",
+      "Energy stocks up: XOM +1.62%, CVX +2.40%"
+    ],
+    "macro_note": "Risk-off on geopolitical escalation; energy and staples outperforming; tech and semiconductors getting hammered."
+  },
+  "big_story": {
+    "story_id": "fcc3725056bd",
+    "lead_host": "JAMIE",
+    "story_title": "Trump and Iran trade new threats after strikes exchanged",
+    "angle": "The escalation cycle is accelerating\u2014Trump's 'pay the price' rhetoric vs. Iran's actual military capability, and what markets are pricing in as the real risk.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "9e9c6a1f31db",
+      "lead_host": "ALEX",
+      "angle": "Stock market tanked on Trump's Iran warning and CPI inflation data; Super Micro down 13% on $7B financing\u2014AI server demand is real but the financing math is terrifying investors.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "27e0b1372f43",
+      "lead_host": "MAYA",
+      "angle": "SpaceX IPO is historic, but Elon's regulatory risk and government contract dependency are the actual landmines\u2014not the rockets.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "5ec4a06cef6c",
+      "lead_host": "MAYA",
+      "angle": "Warner Music buying Sureel AI for attribution\u2014the music industry is finally admitting AI is here and they need to own the tooling, not just sue it.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "033f85839fa5",
+      "lead_host": "ALEX",
+      "angle": "Regulators want to ban prediction market trading on terrorism and assassinations\u2014which is either the most obvious rule ever or proof that someone was already trying to profit from it.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "d2e5c0696e9e",
+    "joke_angle": "American grass is having a 'moment of truth'\u2014which is either a climate story or a very expensive lawn care crisis."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Sea drone rescues US Army helicopter crew near Strait of Hormuz",
+    "fresh_take": "Today's Iran escalation is happening in the exact same waters where yesterday's sea drone proved unmanned systems can do the job cheaper and faster than traditional military\u2014the irony is not lost."
+  },
+  "sign_off": {
+    "callback_target": "Trump's 'pay the price' threat to Iran"
+  }
+}

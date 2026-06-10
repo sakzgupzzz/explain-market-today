@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Tue, 09 Jun 2026 15:00:47 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Jun 2026 15:43:16 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,45 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>AVGO -4.5%, Trump and Iran trade new threats — Jun 10</title>
+      <description>Nasdaq down 1.18%, Dow off 1.09%, and Trump just told Iran they'll 'pay the price'—but the real story is what's actually moving. Today's lead: Trump and Iran trade new threats after strikes exchanged. The escalation cycle is accelerating—Trump's 'pay the price' rhetoric vs. Iran's actual military capability, and what markets are pricing in as the real risk.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:11  Markets
+  00:00:52  Big story
+  00:01:55  Quick hits
+  00:02:21  Odd thing of the day
+  00:02:44  Sign-off
+
+Stories covered:
+  • Stock market tanked on Trump's Iran warning and CPI inflation data; Super Micro down 13% on $7B financing—AI server demand is real but the financing math is terrifying investors. [real]
+  • SpaceX IPO is historic, but Elon's regulatory risk and government contract dependency are the actual landmines—not the rockets. [real]
+  • Warner Music buying Sureel AI for attribution—the music industry is finally admitting AI is here and they need to own the tooling, not just sue it. [hype]
+  • Regulators want to ban prediction market trading on terrorism and assassinations—which is either the most obvious rule ever or proof that someone was already trying to profit from it. [noise]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] Nasdaq down one point one eight percent, Dow off one point zero nine, and Trump just told Iran they'll pay the price—but the real story is what's actually moving markets right now.
+ALEX: [deadpan] S&amp;P down zero point eight three percent, Nasdaq off one point one eight percent, and the V I X just spiked ten point two seven percent to twenty-one point nine one. But here's what's actually moving: energy stocks are the only thing with a pulse. Exxon up one point six two, Chevron up two point four, while Broadcom is down four point five five and A M D is down three point eight four. The trade is simple—geopolitical risk premium on oil, rotation out of anything that needs Taiwan's supply chain.
+JAMIE: [curious] So we're in this moment where markets are pricing in escalation. Investors are buying energy like it's going out of style while dumping semiconductors. That's not hedging, that's just—
+MAYA: [rushed] That's panic with a spreadsheet. The whole semiconductor complex is getting destroyed because everyone's suddenly worried about supply chains and geopolitical blowback, and the only thing that wins in a crisis is the stuff that comes out of the ground. Coca-Cola is up two point nine five, Pepsi up one point seven seven—people aren't trading on fundamentals right now, they're trading on 'what do I need if the world gets weird?' And apparently the answer is sugar water and crude oil.
+ALEX: [deadpan] Super Micro down thirteen percent on a seven billion dollar financing deal. The AI server demand is real—but the financing math is so terrifying that investors just decided to punish the stock for proving the business works.
+JAMIE: [curious] So they're saying 'we need seven billion dollars to build the thing everyone wants' and the market's response is 'great, now we hate you'?
+ALEX: The debt load signals they're scaling faster than cash flow can handle. Investors read that as 'this might work but it's going to be painful,' and painful is worse than 'might not work' because at least you can short the latter cleanly.
+MAYA: [rushed] SpaceX just filed for an IPO, and there's significant regulatory risk around launch licenses and national security contracts.
+ALEX: Warner Music just bought Sureel AI, an attribution startup. The music industry is finally admitting that instead of suing AI into oblivion, they should own the tooling.
+JAMIE: [laughs] Regulators want to ban prediction market trading on terrorism and assassinations, which either means they're being responsible or someone was already trying to bet on it and they got caught.
+MAYA: [rushed] Chewy reports on June tenth, and this is the test case for whether pet spending holds up when people are rotating out of everything else. The stock's been getting hammered because investors think discretionary breaks first, but Chewy's basically recession-proof because your dog still needs food whether the Fed cuts rates or not. If they miss, it's not about the business—it's about whether the market's actually scared.
+ALEX: [deadpan] Trump's drawn the line, and oil's just waiting to see what happens next.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">f093d31a-4c58-c826-2af9-997dc5866a93</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-10.mp3" length="2790888" type="audio/mpeg" />
+      <pubDate>Wed, 10 Jun 2026 15:42:21 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-10.jpg" />
+      <itunes:duration>00:02:54</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260610</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-10.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-10.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-10.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>HD +3.5%, Sea drone rescues US Army helicopter — Jun 9</title>
       <description>Apple down 3.1%, Nasdaq off 1%, but a sea drone just rescued a US Army helicopter crew—and it cost less than a Tesla. Today's lead: Sea drone rescues US Army helicopter crew near Strait of Hormuz. Autonomous drones just proved they can execute a real-world military rescue in one of the world's most contested waterways—this isn't a demo, it's a capability shift.

@@ -1,0 +1,51 @@
+{
+  "date": "2026-06-10",
+  "mp3": "2026-06-10.mp3",
+  "size_bytes": 2790888,
+  "duration_sec": 174.13,
+  "turns": 13,
+  "words": 505,
+  "char_usage_estimate": 3201,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-06-10T15:42:21.474491Z",
+  "top_mover": {
+    "symbol": "AVGO",
+    "name": "AVGO",
+    "pct": -4.55
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7325.08984375,
+        "pct": -0.83
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 50318.671875,
+        "pct": -1.09
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 25375.12109375,
+        "pct": -1.18
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2855.994140625,
+        "pct": -0.38
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 21.90999984741211,
+        "pct": 10.27
+      }
+    ]
+  }
+}

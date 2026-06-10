@@ -1,0 +1,55 @@
+1
+00:00:00,000 --> 00:00:11,157
+JAMIE: Nasdaq down one point one eight percent, Dow off one point zero nine, and Trump just told Iran they'll pay the price—but the real story is what's actually moving markets right now.
+  ↳ source: https://www.bbc.com/news/articles/ce371kw2ex2o?at_medium=RSS&at_campaign=rss
+
+2
+00:00:11,157 --> 00:00:42,265
+ALEX: S&P down zero point eight three percent, Nasdaq off one point one eight percent, and the V I X just spiked ten point two seven percent to twenty-one point nine one. But here's what's actually moving: energy stocks are the only thing with a pulse. Exxon up one point six two, Chevron up two point four, while Broadcom is down four point five five and A M D is down three point eight four. The trade is simple—geopolitical risk premium on oil, rotation out of anything that needs Taiwan's supply chain.
+
+3
+00:00:42,265 --> 00:00:52,408
+JAMIE: So we're in this moment where markets are pricing in escalation. Investors are buying energy like it's going out of style while dumping semiconductors. That's not hedging, that's just—
+
+4
+00:00:52,408 --> 00:01:20,134
+MAYA: That's panic with a spreadsheet. The whole semiconductor complex is getting destroyed because everyone's suddenly worried about supply chains and geopolitical blowback, and the only thing that wins in a crisis is the stuff that comes out of the ground. Coca-Cola is up two point nine five, Pepsi up one point seven seven—people aren't trading on fundamentals right now, they're trading on 'what do I need if the world gets weird?' And apparently the answer is sugar water and crude oil.
+
+5
+00:01:20,134 --> 00:01:32,983
+ALEX: Super Micro down thirteen percent on a seven billion dollar financing deal. The AI server demand is real—but the financing math is so terrifying that investors just decided to punish the stock for proving the business works.
+  ↳ source: https://www.investors.com/news/technology/smci-stock-supermicro-falls-on-financing-to-fund-ai-orders/?src=A00220&yptr=yahoo
+
+6
+00:01:32,983 --> 00:01:41,436
+JAMIE: So they're saying 'we need seven billion dollars to build the thing everyone wants' and the market's response is 'great, now we hate you'?
+
+7
+00:01:41,436 --> 00:01:55,637
+ALEX: The debt load signals they're scaling faster than cash flow can handle. Investors read that as 'this might work but it's going to be painful,' and painful is worse than 'might not work' because at least you can short the latter cleanly.
+
+8
+00:01:55,637 --> 00:02:02,061
+MAYA: SpaceX just filed for an IPO, and there's significant regulatory risk around launch licenses and national security contracts.
+
+9
+00:02:02,061 --> 00:02:11,190
+ALEX: Warner Music just bought Sureel AI, an attribution startup. The music industry is finally admitting that instead of suing AI into oblivion, they should own the tooling.
+  ↳ source: https://techcrunch.com/2026/06/10/warner-music-acquires-ai-attribution-startup-sureel-ai/
+
+10
+00:02:11,190 --> 00:02:21,672
+JAMIE: Regulators want to ban prediction market trading on terrorism and assassinations, which either means they're being responsible or someone was already trying to bet on it and they got caught.
+
+11
+00:02:21,672 --> 00:02:44,664
+MAYA: Chewy reports on June tenth, and this is the test case for whether pet spending holds up when people are rotating out of everything else. The stock's been getting hammered because investors think discretionary breaks first, but Chewy's basically recession-proof because your dog still needs food whether the Fed cuts rates or not. If they miss, it's not about the business—it's about whether the market's actually scared.
+  ↳ source: https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-trump-cpi-inflation-tsm-stock/?src=A00220&yptr=yahoo
+
+12
+00:02:44,664 --> 00:02:49,398
+ALEX: Trump's drawn the line, and oil's just waiting to see what happens next.
+
+13
+00:02:49,398 --> 00:02:54,132
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
