@@ -1,0 +1,41 @@
+1
+00:00:00,000 --> 00:00:08,959
+JAMIE: Oracle stock just tanked eleven percent because of capital raise concerns—which is basically the financial equivalent of a billionaire deciding his self-esteem needs another yacht.
+
+2
+00:00:08,959 --> 00:00:42,039
+ALEX: Small caps are having a moment. Russell 2000 up one point four-one percent while the S&P barely moves at zero point three-eight. Nasdaq at zero point six-one. The mega-cap tech sell-off is real—Microsoft down two point seven-one, Adobe down five point zero-seven—but the breadth underneath is actually healthy. A M D's up three point one-one, Broadcom up one point three. V I X dropped to twenty-one point nine, so the market's pricing in rate cuts even though inflation's still sticky. It's the trade of someone who believes the Fed will blink before the economy does.
+
+3
+00:00:42,039 --> 00:00:56,857
+JAMIE: So mega-cap tech is getting sold and people are rotating into the stuff that's been left for dead. That's not a sign of confidence, that's a sign of someone trying to catch a falling knife by throwing a different knife at it.
+
+4
+00:00:56,857 --> 00:01:17,532
+MAYA: The Russell rotation is real but let's be honest—small caps are also where people park money when they're too terrified to sit in cash. It's like the financial equivalent of moving to a smaller apartment because you're mad at your landlord, not because the apartment is actually better. And meanwhile Oracle's getting absolutely eviscerated, down eleven point six-five percent.
+
+5
+00:01:17,532 --> 00:01:30,971
+ALEX: Gold just hit a six-month low, and here's the thing—this is happening while inflation fears are still live. Real rates are rising faster than inflation expectations are falling, so holding gold costs you yield you could get elsewhere.
+
+6
+00:01:30,971 --> 00:01:38,552
+JAMIE: So gold's not losing because people think inflation's solved. It's losing because the opportunity cost of owning it got too high.
+
+7
+00:01:38,552 --> 00:01:51,646
+MAYA: Exactly. Gold's the hedge that only works when rates are pinned down. The second the Fed starts looking serious about staying higher for longer, gold becomes the asset you own because you're scared, not because you're smart.
+
+8
+00:01:51,646 --> 00:01:56,470
+MAYA: SpaceX IPO hype is already baked into Virgin Galactic and the space-adjacent stocks.
+  ↳ source: https://finance.yahoo.com/markets/article/virgin-galactic-stock-pops-ahead-of-spacex-ipo-153607589.html
+
+9
+00:01:56,470 --> 00:02:01,294
+ALEX: South Korea just fined Coupang four hundred million dollars for a data breach.
+  ↳ source: https://techcrunch.com/2026/06/11/south-korea-hits-coupang-with-400m-fine-for-data-breach-that-affected-millions/
+
+10
+00:02:01,294 --> 00:02:06,119
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

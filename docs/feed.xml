@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Wed, 10 Jun 2026 15:43:16 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2026 16:09:55 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,42 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>ORCL -11.7%, Oracle shares tumble 11% on increased — Jun 11</title>
+      <description>Oracle just got cut in half—well, 11%—and it's not because the AI boom ended, it's because Ellison wants MORE money. Today's lead: Oracle shares tumble 11% on increased capital raise, cash concerns. Ellison's $10B capital raise is a tell: even the richest software company in the world is now openly worried it doesn't have enough cash to keep up with AI capex—and the market is pricing in that this is a structural problem, not a one-quarter blip.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:08  Markets
+  00:00:56  Big story
+  00:01:38  Quick hits
+  00:01:56  Odd thing of the day
+  00:02:01  Sign-off
+
+Stories covered:
+  • Trump threatens to seize Iran's Kharg Island oil hub—geopolitical theater that moves energy markets but probably doesn't move policy; the real question is whether this is negotiation posture or actual escalation. [hype]
+  • Gold at 6-month lows despite inflation fears—the disconnect is real: real rates are rising faster than inflation expectations, so holding gold costs you more in foregone yield. [real]
+  • SpaceX IPO hype is already priced into Virgin Galactic and space-adjacent stocks; the $50B spending spree narrative is pre-written, not pre-funded. [hype]
+  • South Korea fines Coupang $400M+ for a data breach—the fine is massive, but Coupang's market cap barely flinched; regulatory theater meets 'too big to care.' [noise]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] Oracle stock just tanked eleven percent because of capital raise concerns—which is basically the financial equivalent of a billionaire deciding his self-esteem needs another yacht.
+ALEX: [deadpan] Small caps are having a moment. Russell 2000 up one point four-one percent while the S&amp;P barely moves at zero point three-eight. Nasdaq at zero point six-one. The mega-cap tech sell-off is real—Microsoft down two point seven-one, Adobe down five point zero-seven—but the breadth underneath is actually healthy. A M D's up three point one-one, Broadcom up one point three. V I X dropped to twenty-one point nine, so the market's pricing in rate cuts even though inflation's still sticky. It's the trade of someone who believes the Fed will blink before the economy does.
+JAMIE: [curious] So mega-cap tech is getting sold and people are rotating into the stuff that's been left for dead. That's not a sign of confidence, that's a sign of someone trying to catch a falling knife by throwing a different knife at it.
+MAYA: [rushed] The Russell rotation is real but let's be honest—small caps are also where people park money when they're too terrified to sit in cash. It's like the financial equivalent of moving to a smaller apartment because you're mad at your landlord, not because the apartment is actually better. And meanwhile Oracle's getting absolutely eviscerated, down eleven point six-five percent.
+ALEX: [deadpan] Gold just hit a six-month low, and here's the thing—this is happening while inflation fears are still live. Real rates are rising faster than inflation expectations are falling, so holding gold costs you yield you could get elsewhere.
+JAMIE: [curious] So gold's not losing because people think inflation's solved. It's losing because the opportunity cost of owning it got too high.
+MAYA: [mischievously] Exactly. Gold's the hedge that only works when rates are pinned down. The second the Fed starts looking serious about staying higher for longer, gold becomes the asset you own because you're scared, not because you're smart.
+MAYA: [excited] SpaceX IPO hype is already baked into Virgin Galactic and the space-adjacent stocks.
+ALEX: [sarcastic] South Korea just fined Coupang four hundred million dollars for a data breach.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">94f3c6ea-42a6-a76c-bf9e-db3595abd6f8</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-11.mp3" length="2021911" type="audio/mpeg" />
+      <pubDate>Thu, 11 Jun 2026 16:09:06 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-11.jpg" />
+      <itunes:duration>00:02:06</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260611</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-11.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-11.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-11.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AVGO -4.5%, Trump and Iran trade new threats — Jun 10</title>
       <description>Nasdaq down 1.18%, Dow off 1.09%, and Trump just told Iran they'll 'pay the price'—but the real story is what's actually moving. Today's lead: Trump and Iran trade new threats after strikes exchanged. The escalation cycle is accelerating—Trump's 'pay the price' rhetoric vs. Iran's actual military capability, and what markets are pricing in as the real risk.

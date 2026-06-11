@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Oracle just got cut in half\u2014well, 11%\u2014and it's not because the AI boom ended, it's because Ellison wants MORE money."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.38%",
+      "Nasdaq +0.61%",
+      "Russell 2000 +1.41%",
+      "Oracle -11.65%",
+      "AMD +3.11%"
+    ],
+    "macro_note": "Small caps outrunning mega-cap tech; VIX cooling as rate-cut hopes persist despite sticky inflation."
+  },
+  "big_story": {
+    "story_id": "19a6a34113e0",
+    "lead_host": "ALEX",
+    "story_title": "Oracle shares tumble 11% on increased capital raise, cash concerns",
+    "angle": "Ellison's $10B capital raise is a tell: even the richest software company in the world is now openly worried it doesn't have enough cash to keep up with AI capex\u2014and the market is pricing in that this is a structural problem, not a one-quarter blip.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "109dbe78be5f",
+      "lead_host": "JAMIE",
+      "angle": "Trump threatens to seize Iran's Kharg Island oil hub\u2014geopolitical theater that moves energy markets but probably doesn't move policy; the real question is whether this is negotiation posture or actual escalation.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "04821f672ad3",
+      "lead_host": "ALEX",
+      "angle": "Gold at 6-month lows despite inflation fears\u2014the disconnect is real: real rates are rising faster than inflation expectations, so holding gold costs you more in foregone yield.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "3b3825a05e72",
+      "lead_host": "MAYA",
+      "angle": "SpaceX IPO hype is already priced into Virgin Galactic and space-adjacent stocks; the $50B spending spree narrative is pre-written, not pre-funded.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "d01e37c4991c",
+      "lead_host": "MAYA",
+      "angle": "South Korea fines Coupang $400M+ for a data breach\u2014the fine is massive, but Coupang's market cap barely flinched; regulatory theater meets 'too big to care.'",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "18eba4827a8e",
+    "joke_angle": "A sea drone rescued a helicopter crew\u2014so now we're in the timeline where the robot saves the pilot instead of the other way around."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Trump and Iran trade new threats after strikes exchanged",
+    "fresh_take": "Yesterday's Iran threat moved markets; today's threat is already priced in\u2014the market is learning Trump's escalation ladder, which means the next rung has to be bigger to move the needle."
+  },
+  "sign_off": {
+    "callback_target": "Oracle's $10B capital raise\u2014the moment a trillion-dollar company admits it's not sure it has enough money"
+  }
+}
