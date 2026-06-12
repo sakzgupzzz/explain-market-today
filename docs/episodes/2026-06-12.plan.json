@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "SpaceX just priced its IPO at $135 a share\u2014the largest ever\u2014and some investors still won't know what they actually own."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +1.75% (prior session)",
+      "Nasdaq +2.54% (prior session)",
+      "Oracle down 8.53% (prior session)",
+      "AMD up 7.97% (prior session)"
+    ],
+    "macro_note": "Broad rally yesterday; tech volatility on Oracle's capital raise and SpaceX IPO momentum."
+  },
+  "big_story": {
+    "story_id": "32cf4e602652",
+    "lead_host": "MAYA",
+    "story_title": "SpaceX raising $75 billion in record-setting IPO as Nasdaq debut awaits",
+    "angle": "The IPO is real, the valuation is absurd, and the retail allocation is so small it's almost a punchline\u2014unpack why Musk gets to set the terms and what happens when the lock-up lifts.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "9801d6dba9e5",
+      "lead_host": "MAYA",
+      "angle": "Oracle's security bug hit 100+ companies and nobody noticed until it was too late\u2014the irony of a database company's own database being the vulnerability.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "88a1feb54d8d",
+      "lead_host": "JAMIE",
+      "angle": "Trump says Iran deal is close after calling off strikes\u2014geopolitical whiplash that oil markets are pricing in real-time.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "b57e07279d3e",
+      "lead_host": "MAYA",
+      "angle": "World Cup economics are insane this year\u2014host nations are spending like they're building a space program, not a stadium.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "21d22bd14e6c",
+      "lead_host": "ALEX",
+      "angle": "SpaceX SPV investors won't see their true holdings until post-IPO lock-ups lift\u2014a financial transparency theater that's somehow legal.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "d9a1413420da",
+    "joke_angle": "Air India crash families have spent a year identifying remains\u2014a tragedy that exposes how little we've actually solved in aviation forensics since the 1980s."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "SpaceX's retail allocation being so small it's almost a punchline"
+  }
+}
