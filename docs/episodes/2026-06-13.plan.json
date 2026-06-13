@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "SpaceX just priced its IPO at $135 a share\u2014and Elon's already hinting at a Tesla merger before the stock even trades."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.50%",
+      "Nasdaq +0.31%",
+      "AMD +4.73%",
+      "ADBE -6.76%"
+    ],
+    "macro_note": "Small caps outpacing tech; VIX down 9%, risk-on sentiment despite selective weakness in software and pharma."
+  },
+  "big_story": {
+    "story_id": "e56129cd0a90",
+    "lead_host": "MAYA",
+    "story_title": "SpaceX president Gwynne Shotwell just gave another hint at a Tesla merger",
+    "angle": "Shotwell's merger chatter is either a negotiation signal or a distraction from the fact that SpaceX's IPO prospectus still doesn't explain what the company actually does\u2014and now retail investors are about to find out live.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "ebdbb3806882",
+      "lead_host": "ALEX",
+      "angle": "Justice Dept. rubber-stamps Paramount-Warner Bros. merger after months of theater; consolidation wins again, and the streaming wars just became a two-horse race.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "1cf63a8b720a",
+      "lead_host": "JAMIE",
+      "angle": "Trump's name must come off the Kennedy Center by Friday\u2014appeals court said no delays, so we're watching a real-time property dispute play out in federal court.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "9f013952aab4",
+      "lead_host": "ALEX",
+      "angle": "Value stocks are crushing growth by the widest margin in years; the narrative flip is real, but the question is whether it's mean reversion or a structural shift.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "5dc18724627e",
+      "lead_host": "JAMIE",
+      "angle": "Trump administration says Iran deal signing is 'likely in coming days, but not 100% certain'\u2014which is the diplomatic equivalent of 'we're working on it, but don't ask us when.'",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "997f1eeeff60",
+    "joke_angle": "Meta's AI unit is described as a 'soul-crushing gulag' by its own engineers\u2014which is what happens when you hire brilliant people and tell them their job is to make ads slightly better at knowing you want sneakers."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "SpaceX raising $75 billion in record-setting IPO as Nasdaq debut awaits",
+    "fresh_take": "Yesterday we talked about the IPO price; today Shotwell's merger hints suggest Elon's already thinking about what to do with the cash\u2014and whether Tesla is the answer."
+  },
+  "sign_off": {
+    "callback_target": "SpaceX's IPO prospectus still doesn't explain what the company actually does"
+  }
+}

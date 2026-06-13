@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jun 2026 00:06:28 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 00:04:25 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,44 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>ADBE -6.8%, SpaceX president Gwynne Shotwell just gave — Jun 13</title>
+      <description>SpaceX just priced its IPO at $135 a share—and Elon's already hinting at a Tesla merger before the stock even trades. Today's lead: SpaceX president Gwynne Shotwell just gave another hint at a Tesla merger. Shotwell's merger chatter is either a negotiation signal or a distraction from the fact that SpaceX's IPO prospectus still doesn't explain what the company actually does—and now retail investors are about to find out live.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:28  Markets
+  00:00:51  Big story
+  00:02:04  Quick hits
+  00:02:38  Odd thing of the day
+  00:02:44  Sign-off
+
+Stories covered:
+  • Justice Dept. rubber-stamps Paramount-Warner Bros. merger after months of theater; consolidation wins again, and the streaming wars just became a two-horse race. [real]
+  • Trump's name must come off the Kennedy Center by Friday—appeals court said no delays, so we're watching a real-time property dispute play out in federal court. [real]
+  • Value stocks are crushing growth by the widest margin in years; the narrative flip is real, but the question is whether it's mean reversion or a structural shift. [real]
+  • Trump administration says Iran deal signing is 'likely in coming days, but not 100% certain'—which is the diplomatic equivalent of 'we're working on it, but don't ask us when.' [hype]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] SpaceX just priced its IPO, and there's been hints at a Tesla merger before the stock even opens for trading.
+ALEX: [deadpan] So if a Tesla merger is being floated, that's a pretty bold move. Gwynne Shotwell, the actual president of SpaceX, has been hinting at it—but the fact that she's even signaling it tells you everything you need to know about what happens when you hand someone a blank check and they immediately start shopping for a sports car they already own.
+ALEX: [deadpan] Markets were closed today, so we're looking at Friday's close: the S&amp;P finished at seven-thousand four hundred thirty-one, up half a percent. The Nasdaq climbed point three-one percent. Small caps outpaced both—the Russell two-thousand jumped point seven-nine percent. Meanwhile, the V I X collapsed nine percent, which is the kind of fear gauge reset you see when traders wake up and realize they've been panicking about nothing in particular.
+JAMIE: [curious] So risk is back on the menu, but there's some actual damage underneath. Adobe got hammered—down six point seven-six percent. Eli Lilly fell two point four-one percent. Tech and pharma getting their teeth kicked in while everything else parties. What happened?
+MAYA: [rushed] Adobe's earnings were fine, but the guidance was soft, and investors basically decided that if the software giant can't promise growth in an AI boom, nobody can. Lilly's a different story—some noise around G L P-one competition, but honestly the real move was A M D exploding four point seven-three percent because chip stocks decided Friday was their turn to be the cool kids, and when the cool kids show up, the pharma kids go home.
+MAYA: [rushed] Okay, so Shotwell's been signaling the merger, but here's what's wild: SpaceX's prospectus doesn't break down what percentage of revenue comes from government contracts versus commercial launches versus Starlink. Like, the company's about to trade and retail investors have no idea what they're actually buying.
+ALEX: [deadpan] So the merger signal is either a negotiation play with the board or a very expensive way to change the subject. If SpaceX's margins are actually worse than the market assumes, a Tesla tie-up becomes the distraction that costs shareholders equity to solve a problem they didn't know existed.
+JAMIE: [curious] But Shotwell herself is saying this. She's not some random board member—she's been running the company operationally for years. Why would she keep signaling something that Elon already walked back?
+MAYA: [mischievously] Because she might actually want it. Shotwell's been there for years, and a merger with Tesla means her operational expertise suddenly matters in a way it doesn't if SpaceX stays independent and Elon just keeps launching rockets and tweeting. She gets to be the adult in the room instead of the person who has to explain to investors why a launch provider's cash flow doesn't look like Amazon Web Services.
+MAYA: [rushed] SpaceX's prospectus still won't tell you if they're a government contractor or a space company.
+ALEX: [deadpan] Retail investors are about to own a mystery box wrapped in a Tesla press release.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">6ff62929-6be4-8bf3-44de-dddfc4190b4b</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-13.mp3" length="2794235" type="audio/mpeg" />
+      <pubDate>Sat, 13 Jun 2026 00:03:49 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-13.jpg" />
+      <itunes:duration>00:02:54</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260613</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-13.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-13.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-13.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>ORCL -8.5%, SpaceX raising $75 billion in record-setting — Jun 12</title>
       <description>SpaceX just priced its IPO at $135 a share—the largest ever—and some investors still won't know what they actually own. Today's lead: SpaceX raising $75 billion in record-setting IPO as Nasdaq debut awaits. The IPO is real, the valuation is absurd, and the retail allocation is so small it's almost a punchline—unpack why Musk gets to set the terms and what happens when the lock-up lifts.
