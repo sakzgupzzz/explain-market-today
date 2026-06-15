@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Anthropic's best AI models just got banned by the US government, and the cybersecurity experts who built them are losing their minds about it."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7570.14 (+1.87%)",
+      "Nasdaq: 26654.47 (+2.96%)",
+      "AMD: +7.15% (biggest gainer)",
+      "XOM: -3.47% (biggest loser)"
+    ],
+    "macro_note": "Tech rally on Iran deal softening rate-hike expectations; energy and pharma selling off on geopolitical repricing."
+  },
+  "big_story": {
+    "story_id": "18f60a792e68",
+    "lead_host": "MAYA",
+    "story_title": "Cybersecurity vets protest 'dangerous' US government ban on Anthropic's most powerful models",
+    "angle": "The government just banned the exact tools that could help defend against the threats it claims to fear\u2014a self-sabotaging move that reveals how little regulators understand the thing they're regulating.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "ca53ddc3d186",
+      "lead_host": "ALEX",
+      "angle": "SpaceX IPO now at $85.7B total after greenshoe exercise\u2014Elon's already telegraphed a Tesla merger before the stock even opens, which is either visionary or the financial equivalent of naming your kid before the birth certificate clears.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "be9336137e16",
+      "lead_host": "MAYA",
+      "angle": "Xbox is hemorrhaging studios and executives while PlayStation quietly consolidates\u2014Microsoft's strategy looks like a man rearranging deck chairs while the ship is actively listing.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "909e4203c7db",
+      "lead_host": "ALEX",
+      "angle": "OpenAI wins dismissal of Musk's trade secret lawsuit\u2014the guy who co-founded the company and then left to start xAI just got told by a judge that his grievance doesn't hold water.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "32a964e7e020",
+      "lead_host": "MAYA",
+      "angle": "Hollywood's merger wave isn't fixing anything\u2014it's just moving deck chairs in a theater that's already on fire, which The Atlantic is now saying out loud.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "bc2445b61850",
+    "joke_angle": "A 2-year-old ended up in the hospital after a car crashed into a nursery playground\u2014which is either the worst playground safety record or the most aggressive daycare field trip ever."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "SpaceX just priced its IPO at $135 a share\u2014and Elon's already hinting at a Tesla merger before the stock even trades.",
+    "fresh_take": "The greenshoe just exercised and we're now at $85.7B raised\u2014Elon's merger hint has aged from 'wild speculation' to 'actual pre-market negotiation theater.'"
+  },
+  "sign_off": {
+    "callback_target": "Anthropic's banned models"
+  }
+}

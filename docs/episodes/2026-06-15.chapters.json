@@ -1,0 +1,29 @@
+{
+  "version": "1.2.0",
+  "chapters": [
+    {
+      "startTime": 0.0,
+      "title": "Cold open"
+    },
+    {
+      "startTime": 11.22,
+      "title": "Markets"
+    },
+    {
+      "startTime": 65.29,
+      "title": "Big story"
+    },
+    {
+      "startTime": 145.21,
+      "title": "Quick hits"
+    },
+    {
+      "startTime": 164.6,
+      "title": "Odd thing of the day"
+    },
+    {
+      "startTime": 210.51,
+      "title": "Sign-off"
+    }
+  ]
+}
