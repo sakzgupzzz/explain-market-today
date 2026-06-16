@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Meta's new AI Mode just started pulling from your entire Facebook history\u2014and yes, it's as creepy as it sounds."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +1.65%",
+      "Nasdaq +3.07%",
+      "AMD +6.98%",
+      "XOM -4.14%"
+    ],
+    "macro_note": "Tech leading hard, energy getting crushed, VIX down 8%\u2014risk-on day with no real macro catalyst."
+  },
+  "big_story": {
+    "story_id": "5d2d6da4db60",
+    "lead_host": "MAYA",
+    "story_title": "Meta's new 'AI Mode' on Facebook pulls from public info across its platforms",
+    "angle": "Meta is training its AI on your entire public Facebook history without explicit opt-in\u2014this is the moment the company stops pretending privacy is a feature and admits it's a cost center.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "8a5dc966211c",
+      "lead_host": "MAYA",
+      "angle": "SpaceX IPO raised $10B more than expected\u2014Elon's now a public company CEO, which means quarterly earnings calls and actual accountability for the first time in his life.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "8b852e1e9289",
+      "lead_host": "ALEX",
+      "angle": "Trump's already signaling Kevin Warsh as Fed Chair\u2014this is about pre-emptively softening the Fed before rate cuts become politically necessary, not about finding the best monetary policy mind.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "a0acfb4ce22b",
+      "lead_host": "JAMIE",
+      "angle": "Trump says Iran deal is 'already signed' but details come 'pretty soon'\u2014the geopolitical equivalent of 'the check is in the mail.'",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "b653ea511594",
+      "lead_host": "MAYA",
+      "angle": "Fox's $22B Roku acquisition is a bet that linear TV's future is on smart TVs\u2014basically buying a house because you like the mailbox.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "935e2ad33ac9",
+    "joke_angle": "A VAR official blamed a hand gesture on an 'involuntary, subconscious twitch'\u2014which is what every referee says when they get caught making a bad call, and somehow it's now a legal defense."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "SpaceX IPO now at $85.7B total after greenshoe exercise\u2014Elon's already telegraphed a Tesla merger before the stock even",
+    "fresh_take": "SpaceX just raised $10B more than expected in the IPO, which means Elon now has even more dry powder to pursue that Tesla merger he's been hinting at\u2014and shareholders can't stop him anymore because he's answerable to the public markets."
+  },
+  "sign_off": {
+    "callback_target": "Meta's AI Mode pulling from your entire Facebook history"
+  }
+}
