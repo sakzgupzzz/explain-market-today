@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Broadcom just jumped 5.6% on Cramer's say-so\u2014and yes, we're asking whether that's investing or just expensive astrology."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.03%",
+      "Nasdaq -0.10%",
+      "Broadcom +5.61%",
+      "Google -2.32%",
+      "VIX +2.74%"
+    ],
+    "macro_note": "Small caps outpacing mega-cap tech; VIX creeping higher ahead of Fed decision and Warsh's debut."
+  },
+  "big_story": {
+    "story_id": "50a99da0f033",
+    "lead_host": "ALEX",
+    "story_title": "Jim Cramer Shares Unmissable Insights About Broadcom (AVGO)",
+    "angle": "A single TV personality's endorsement moved a $150B+ stock 5.6% in one day\u2014what does that tell us about market structure, retail attention, and whether fundamental analysis is just theater now?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "7818e81669d5",
+      "lead_host": "ALEX",
+      "angle": "Dollar strengthening into Fed decision and Warsh's first meeting\u2014classic risk-off positioning or just rate-repricing noise?",
+      "conviction": "real"
+    },
+    {
+      "story_id": "2e6251efffaa",
+      "lead_host": "MAYA",
+      "angle": "Meta's new AI search is literally mining your Facebook posts to answer questions\u2014the privacy implication is a feature, not a bug, in their playbook.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "09ca77756f5f",
+      "lead_host": "MAYA",
+      "angle": "DeepL buying Mixhalo for live-event translation is the unsexy AI consolidation nobody's talking about\u2014real enterprise value, zero hype.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "f1ad94b79a77",
+      "lead_host": "ALEX",
+      "angle": "CarMax beat earnings but stock tanked anyway\u2014used-car market is cooling faster than the market's willing to admit.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "c4c01217da70",
+    "joke_angle": "A British couple got warning shots fired at them by a Russian warship and lived to describe it on BBC\u2014the most British possible response to an international incident is probably 'well, that was rather unexpected.'"
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Meta's new 'AI Mode' on Facebook pulls from public info across its platforms",
+    "fresh_take": "Yesterday we said it was creepy; today we're learning the creepiness is intentional\u2014Meta's not hiding the surveillance, they're monetizing it as a feature."
+  },
+  "sign_off": {
+    "callback_target": "Broadcom's 5.6% jump on Cramer's word"
+  }
+}

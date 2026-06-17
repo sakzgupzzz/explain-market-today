@@ -1,0 +1,87 @@
+1
+00:00:00,000 --> 00:00:09,997
+JAMIE: Broadcom's up five point six one percent because Jim Cramer said something positive about it, and I'm genuinely unsure if we're running a stock market or a séance at this point.
+  ↳ source: https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-fed-decision-warsh-spacex-stock-spcx/?src=A00220&yptr=yahoo
+
+2
+00:00:09,997 --> 00:00:33,742
+ALEX: S&P up point zero three percent. Nasdaq down point one. Small caps, though—Russell 2000 up zero point seven six percent. So we're in that mode where the market's basically shrugging, but the V I X just climbed two point seven four points, which is the kind of thing that happens when traders are eyeing the Fed decision and Kevin Warsh's debut on the policy side, and nobody wants to get caught holding the wrong bag.
+
+3
+00:00:33,742 --> 00:00:40,928
+JAMIE: Wait—small caps are outrunning the big tech names right now? That's the inverse of what we've been living in for two years.
+
+4
+00:00:40,928 --> 00:01:01,237
+MAYA: Mega-cap is bleeding. Google down two point three two percent, Amazon down two point two seven, Microsoft and Meta both down two point one four. Meanwhile Broadcom's still riding that Cramer séance energy—up five point six one percent—and A M D's up three point zero seven. So it's like the market finally remembered that there are companies that aren't just Magnificent Seven holding patterns.
+
+5
+00:01:01,237 --> 00:01:15,296
+ALEX: The big tech names are down, the V I X is creeping up, and small caps are having their moment. That's not a rotation—that's the market doing the equivalent of leaving a bad relationship and immediately going to the gym to prove it's fine.
+
+6
+00:01:15,296 --> 00:01:31,543
+ALEX: So Broadcom trades at a premium valuation, and it's a semiconductor infrastructure play. Cramer was on air saying the company's positioning for AI infrastructure buildout is being undervalued by the Street. Within minutes, retail flows lit up, and the stock moved before any institutional research desk could even finish a note.
+
+7
+00:01:31,543 --> 00:01:39,978
+JAMIE: But Broadcom's valuation is already baked in. It's not like this was some hidden gem that Cramer unearthed. The analysts have been covering this for years.
+
+8
+00:01:39,978 --> 00:02:00,599
+MAYA: Right, but here's the thing—Broadcom's been lagging the Magnificent Seven rotation for a while. So you've got this pocket of retail money that's been watching mega-cap tech get crushed today, and they're looking for the next play, and Cramer's voice on C N B C is basically a signal flare. It's not about new information. It's about attention arbitrage. Someone just realized Broadcom exists again.
+
+9
+00:02:00,599 --> 00:02:16,846
+ALEX: The volume spike confirms it. Broadcom moved significantly in a single day on the back of that commentary. For a company of that market cap, that's not trivial—that's the kind of move you'd normally see around earnings or a major deal announcement. This was just a T V guy saying 'undervalued.'
+
+10
+00:02:16,846 --> 00:02:29,655
+JAMIE: So the question isn't whether Cramer's right about the fundamentals. It's whether the market has become so dependent on these attention pulses that the stock price is now just a reflection of whose turn it is to be on T V.
+  ↳ source: https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-fed-decision-warsh-spacex-stock-spcx/?src=A00220&yptr=yahoo
+
+11
+00:02:29,655 --> 00:02:40,903
+ALEX: Dollar's climbing into the Fed decision and Warsh's first meeting next week—and I need to know if this is genuine risk-off positioning or just the market repricing rate expectations for the hundredth time this quarter.
+
+12
+00:02:40,903 --> 00:02:48,714
+JAMIE: But the dollar's been weak for months. This is a reversal, right? That usually means something's shifted in how people see the path forward.
+
+13
+00:02:48,714 --> 00:03:01,211
+ALEX: It is a reversal, but it's narrow. Traders are moving to the sidelines before Warsh shows up and starts talking about what 'sound money' actually means in practice, because nobody knows if that's code for tighter policy or just vibes.
+
+14
+00:03:01,211 --> 00:03:13,709
+ALEX: DeepL just acquired Mixhalo for live-event audio translation—that's the company that handles real-time captioning and multi-language audio at conferences and festivals. No hype cycle, no AI theater, just an enterprise play that actually solves a problem people pay for.
+
+15
+00:03:13,709 --> 00:03:23,082
+JAMIE: CarMax beat earnings and the stock dropped anyway. Used-car market's cooling faster than Wall Street wants to admit, which means the beat doesn't matter if the trend underneath is broken.
+  ↳ source: https://www.investors.com/news/carmax-earnings-carmax-stock-kmx-stock-buy-zone-carvana-move/?src=A00220&yptr=yahoo
+
+16
+00:03:23,082 --> 00:03:41,203
+MAYA: A British couple in the English Channel got warning shots fired at them by a Russian warship, and they're now on B B C describing that they tried to wave at the ship to show they'd changed course. These are retirees in a sailboat. The warship fired. And their response was basically to politely signal their intentions.
+  ↳ source: https://www.bbc.com/news/articles/c20yzm84r7lo?at_medium=RSS&at_campaign=rss
+
+17
+00:03:41,203 --> 00:03:48,701
+JAMIE: Wait, they were trying to communicate with the warship? Like, 'sorry, didn't see you there, just adjusting course'—and the warship's answer was gunfire?
+
+18
+00:03:48,701 --> 00:04:19,007
+ALEX: The couple said the shots came after they'd already altered their heading. So somewhere in that sequence, the warship's crew decided that the appropriate response to a sailboat changing direction was to fire warning shots into the English Channel. Which is either a catastrophic communication failure or the most expensive way to say 'I wasn't paying attention' in international waters. Either way, they lived to tell it on television, which I think makes them the only people who can say they've been shot at by the Russian Navy and still have time for the evening broadcast.
+
+19
+00:04:19,007 --> 00:04:27,131
+ALEX: So next week Kevin Warsh walks into his first policy meeting and Broadcom's already priced in the assumption that he'll be bullish on semiconductor infrastructure.
+
+20
+00:04:27,131 --> 00:04:31,505
+MAYA: Which means if he isn't, that Cramer bounce evaporates in about six minutes.
+
+21
+00:04:31,505 --> 00:04:35,879
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
