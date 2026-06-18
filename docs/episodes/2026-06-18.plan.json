@@ -1,0 +1,62 @@
+{
+  "cold_open": {
+    "hook": "Accenture just tanked 16.6%\u2014and it's not because the internet broke, it's because the internet finally caught up."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.95% to 7490",
+      "Nasdaq +1.29% to 26357",
+      "Russell 2000 +1.53%",
+      "VIX down 8% to 16.96",
+      "AVGO +4.21%, AMD +3.99%",
+      "ACN -16.63%, MRK -2.92%"
+    ],
+    "macro_note": "Chip strength, healthcare weakness, volatility collapsing\u2014risk-on with a tech tilt."
+  },
+  "big_story": {
+    "story_id": "15d0902093e8",
+    "lead_host": "ALEX",
+    "story_title": "Salesforce (CRM) Inks Definitive Agreement for Fin Acquisition",
+    "angle": "Salesforce is buying Fin to automate customer service at scale\u2014the real question is whether this is a genuine productivity play or just Salesforce buying its way into the AI arms race because it got spooked by the competition.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "323972ca8099",
+      "lead_host": "MAYA",
+      "angle": "Deutsche Bank exec says AI cuts project timelines from years to months\u2014which is either the productivity revolution or the most expensive way to ship broken code faster.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "a15c3560d505",
+      "lead_host": "ALEX",
+      "angle": "Retirement savers may now own SpaceX through their 401(k)s without knowing it\u2014Elon's company is quietly becoming a pension-fund staple.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "b787a21f58a0",
+      "lead_host": "JAMIE",
+      "angle": "Hegseth is warning NATO allies some will 'fail' the U.S. defense review\u2014which is either a serious restructuring signal or just the new admin's way of saying 'pay up or we're leaving.'",
+      "conviction": "real"
+    },
+    {
+      "story_id": "2a7fe5661a67",
+      "lead_host": "ALEX",
+      "angle": "Bank of England holds rates at 3.75% as Iran war peace prospects improve\u2014the market's already pricing in a dovish pivot if geopolitical risk actually recedes.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "648e1a181820",
+    "joke_angle": "World Cup refugee players hiding in rice sacks to escape war, now playing on the world's biggest stage\u2014the most literal 'from nothing to everything' sports narrative ever."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Broadcom just jumped 5.6% on Cramer's say-so\u2014and yes, we're asking whether that's investing or just expensive astrology.",
+    "fresh_take": "Today AVGO is up another 4.2% on actual chip strength and AI demand\u2014so maybe Cramer was just early, or maybe the market's finally catching up to the hype he was selling yesterday."
+  },
+  "sign_off": {
+    "callback_target": "Accenture's 16.6% crater\u2014the cold open's punchline that pays off when we circle back to why consulting got blindsided by AI."
+  }
+}
