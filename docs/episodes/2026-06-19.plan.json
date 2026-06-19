@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Fed Chair Kevin Warsh just removed the guardrails\u2014and the market's already testing how far it can drive without them."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +1.08%",
+      "Nasdaq +1.91%",
+      "Russell 2000 +2.12%",
+      "VIX -11.06%",
+      "ACN -17.97%"
+    ],
+    "macro_note": "Smaller caps rallying, volatility crushed, but Accenture's collapse yesterday signals cracks in the 'AI productivity' narrative."
+  },
+  "big_story": {
+    "story_id": "6c56973c21c8",
+    "lead_host": "ALEX",
+    "story_title": "These stocks are in trouble after Fed Chair Kevin Warsh removed the market's guardrails",
+    "angle": "Warsh's first move as Fed Chair signals a pivot away from the safety-net mentality\u2014which means volatility is about to become a feature, not a bug, and some sectors are already pricing in the pain.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "119a4da37e0f",
+      "lead_host": "JAMIE",
+      "angle": "US-Iran deal closes a war nobody can articulate the purpose of\u2014the real question is whether markets care or if this just becomes another geopolitical noise trade.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "0e081e3d5ec6",
+      "lead_host": "MAYA",
+      "angle": "Waymo's robotaxis drove into active freeway construction zones\u2014the recall is tiny, but it's the first time a self-driving car's failure mode has been 'oops, didn't see the orange cones.'",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "72c7b707e37a",
+      "lead_host": "MAYA",
+      "angle": "OpenAI's IPO prep is now a who's-who of Silicon Valley\u2014but hiring big names before the IPO is just insurance against the IPO being the peak.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "4f7911b287e3",
+      "lead_host": "ALEX",
+      "angle": "Trump admin cuts student loan rates for autopay borrowers\u2014it's a policy win that costs the government money, which means it's either brilliant or it's a Trojan horse for something else.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "1ad5af4a4d24",
+    "joke_angle": "Moscow residents are complaining about black rain after a Ukrainian attack on an oil refinery\u2014which is either an environmental disaster or the world's most metal weather report."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Accenture just tanked 16.6%\u2014and it's not because the internet broke, it's because the internet finally caught up.",
+    "fresh_take": "Accenture's collapse wasn't an outlier\u2014it's the canary in the coal mine for any company betting its entire margin expansion on AI labor arbitrage. Warsh's guardrail removal means the market's about to get very selective about who actually delivers."
+  },
+  "sign_off": {
+    "callback_target": "Warsh's guardrails"
+  }
+}

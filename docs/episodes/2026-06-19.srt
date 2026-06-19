@@ -1,0 +1,102 @@
+1
+00:00:00,000 --> 00:00:10,634
+JAMIE: Fed Chair Kevin Warsh just told Wall Street it doesn't need guardrails anymore, and the S&P 500 jumped one point zero eight percent—because apparently deregulation hits different when you're already up this year.
+
+2
+00:00:10,634 --> 00:00:42,223
+ALEX: Accenture just tanked seventeen point nine seven percent, and it's not because the internet broke—it's because the internet finally caught up. Their entire playbook was 'hire cheap offshore talent, rebrand it as AI transformation, charge clients three times what it's worth.' Turns out when your margin expansion strategy depends on nobody noticing the emperor has no clothes, a drop like this is just the market calling you out. And with Warsh basically telling regulators to go home, we're about to see a lot more of this—companies that built their stock price on hype getting repriced to reality in real time.
+
+3
+00:00:42,223 --> 00:01:06,931
+ALEX: Markets closed at S&P up one point zero eight percent, Russell 2000 up two point one two percent, which tells you the money wasn't actually confident enough to chase the mega-cap names. Nasdaq did better at one point nine one percent, V I X collapsed eleven point zero six percent, and then Accenture dropped seventeen point nine seven percent in the same session. So volatility evaporated while the company that literally sells 'AI transformation' got its face removed.
+
+4
+00:01:06,931 --> 00:01:19,442
+JAMIE: Wait—V I X down eleven percent and Accenture down eighteen percent on the same day? That's not a market repricing a company, that's a market repricing a lie in real time. How does that even happen in one session?
+
+5
+00:01:19,442 --> 00:01:46,965
+MAYA: Because Accenture's guidance miss wasn't just 'oh, we hired wrong'—it was 'we spent the last three years telling clients their entire I T infrastructure needed AI surgery, charged them like we invented it, and then couldn't actually staff the projects.' The V I X dropped because the Fed basically said 'stop worrying about rules' yesterday, so every other stock in the market got a hall pass. Accenture just happened to be the one stock where the hall pass didn't matter because the building was already on fire.
+
+6
+00:01:46,965 --> 00:02:11,048
+ALEX: Here's what Warsh actually changed: the Fed had been signaling for months that if things got weird, there's a floor. Now he's saying the Fed is stepping back from that deal. Not dramatically—it's a posture shift, not a policy reversal—but the market's already reading it as 'central bank puts are off.' And the weird part is, that's not making everything cheaper. It's making the expensive stuff more expensive because there's no safety net underneath volatility anymore.
+
+7
+00:02:11,048 --> 00:02:16,365
+JAMIE: Wait, so the removal of the safety net is making equities go up? That feels backwards.
+
+8
+00:02:16,365 --> 00:02:52,646
+MAYA: It's not backwards if you're already a mega-cap tech stock that's already up. The market's saying 'if there's no put, then we need to be even more concentrated in the things that don't need a put'—which is why certain stocks keep getting bid up while everything else gets repriced. It's like the Fed just told the market 'you can take as much leverage as you want' and the market immediately took that as 'we should lever up into the only stocks we're sure about.' Small caps are up more than the S&P in the short term, but that's just the bounce. The real move is money fleeing anything that looks like it needs a backstop.
+
+9
+00:02:52,646 --> 00:03:19,544
+ALEX: And that's the danger. Once the Fed stops being the bagholder of last resort, the market has to price in actual default risk for the first time in years. Companies like Accenture—or any mid-cap that's been living on the assumption that the Fed would never let things get that bad—they're suddenly trading on fundamentals. Not hype, not 'the Fed's got my back,' just 'can you actually make money?' Warsh isn't raising rates. He's just removing the implicit guarantee that volatility will be managed for you.
+
+10
+00:03:19,544 --> 00:03:29,865
+JAMIE: So we're about to find out which companies actually built something and which ones just built a stock price. And the ones that built a stock price are going to get it.
+
+11
+00:03:29,865 --> 00:03:48,006
+JAMIE: The US and Iran just closed a deal to end their war, which is great, except neither side can actually explain what the war was for in the first place—and I'm genuinely asking: does the market care, or is this just another geopolitical noise trade that moves the oil price for two hours and then everyone forgets?
+
+12
+00:03:48,006 --> 00:03:58,327
+ALEX: Oil barely moved. The real question is whether this actually unlocks Iranian oil back into global supply, and the answer is probably not fast enough to matter to energy traders right now.
+
+13
+00:03:58,327 --> 00:04:09,587
+MAYA: It's going to be noise for three weeks and then someone's going to write a 'why the Iran deal is actually bullish for AI infrastructure' thread and we'll all have to pretend that made sense.
+
+14
+00:04:09,587 --> 00:04:20,846
+JAMIE: Waymo just recalled about three thousand nine hundred robotaxis because some of them drove straight into active freeway construction zones—and I want to be clear, the failure mode here is 'did not see orange cones.'
+
+15
+00:04:20,846 --> 00:04:31,480
+ALEX: Software fix, not hardware, so the cars themselves are fine. They just need to be taught that when humans put giant neon warnings on the road, that's a signal to not drive there.
+
+16
+00:04:31,480 --> 00:04:48,369
+MAYA: This is actually the most honest failure mode in autonomous vehicles yet—not 'we can't predict human behavior' or 'the weather confused the sensors,' just 'we didn't account for temporary obstacles that construction workers have been using since the 1950s.' It's like finding out your self-driving car's training data didn't include the color orange.
+
+17
+00:04:48,369 --> 00:04:58,065
+JAMIE: OpenAI is bulking up before its IPO—they just hired people from Google DeepMind and from the Trump administration in the same week. That's not a hiring spree, that's an insurance policy.
+  ↳ source: https://www.cnbc.com/2026/06/18/trump-student-loan-autopay-interest-rate-discount.html
+
+18
+00:04:58,065 --> 00:05:10,263
+MAYA: When you're padding the org chart with major hires right before you go public, you're not saying 'we have great people.' You're saying 'we're terrified the IPO is the peak and we need credibility on the way down.'
+
+19
+00:05:10,263 --> 00:05:22,461
+ALEX: The Trump administration just cut student loan interest rates for borrowers on autopay—which is a policy win that costs the government money, so either it's brilliant or it's a Trojan horse for something else we haven't seen yet.
+  ↳ source: https://www.cnbc.com/2026/06/18/trump-student-loan-autopay-interest-rate-discount.html
+
+20
+00:05:22,461 --> 00:05:37,786
+MAYA: Moscow residents are complaining about black rain after a Ukrainian drone attack hit an oil refinery—and the refinery went up, and now people are posting photos of their windows covered in this oily black soot. Which is either an environmental disaster or the world's most metal weather report.
+  ↳ source: https://www.bbc.com/news/articles/c98291g5rr1o?at_medium=RSS&at_campaign=rss
+
+21
+00:05:37,786 --> 00:05:45,918
+JAMIE: Wait, is the black rain actually toxic, or is this just soot from burning crude? Because those are very different 'my city is unlivable' scenarios.
+
+22
+00:05:45,918 --> 00:06:06,248
+ALEX: It's soot and unburned hydrocarbons raining down on residential areas. So yes, toxic. The refinery fire itself is bad enough, but when you're washing carcinogenic particulates off your apartment building, you've crossed from 'military target' into 'everyone living there is now breathing the production process.' Moscow's air quality just became a real-time display of how much fuel they're burning to keep the war going.
+
+23
+00:06:06,248 --> 00:06:14,693
+ALEX: So Warsh's guardrails are gone, and the market's already running the experiment: companies that can't survive without a net are finding out what gravity feels like.
+
+24
+00:06:14,693 --> 00:06:18,759
+MAYA: Accenture's just the first one to hit the ground and bounce weird.
+
+25
+00:06:18,759 --> 00:06:23,137
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
