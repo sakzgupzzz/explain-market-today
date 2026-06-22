@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "WhatsApp's seven-year leader just walked, and Meta's already hired a billionaire founder from India to replace him\u2014$900M bet included."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7478.63 (-0.29%)",
+      "Nasdaq: 26212.35 (-1.15%)",
+      "Netflix: -6.67%",
+      "Google: -5.87%"
+    ],
+    "macro_note": "Big Tech rolling over while banks and healthcare hold steady\u2014VIX spiking 6% on rate uncertainty."
+  },
+  "big_story": {
+    "story_id": "75ca3aea3053",
+    "lead_host": "MAYA",
+    "story_title": "WhatsApp gets new chief as Meta taps India's CRED founder Kunal Shah, and invests $900M in startup",
+    "angle": "Meta's not replacing a WhatsApp exec\u2014it's importing a founder who built a fintech unicorn, signaling Zuck's betting the next decade of messaging is payments, not just chat.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "002922c37a7a",
+      "lead_host": "ALEX",
+      "angle": "Palantir down 7% while Palo Alto and CrowdStrike hold\u2014the market's asking if Palantir's valuation finally caught up to reality or if this is just noise in a volatile sector.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "711ab86c7e45",
+      "lead_host": "ALEX",
+      "angle": "SpaceX stock down 9% for the third straight day after a hot IPO start\u2014early investors learning that 'red-hot' and 'sustainable' are not the same thing.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "8e2352985adf",
+      "lead_host": "MAYA",
+      "angle": "Lucid cuts 18% of staff to 'simplify'\u2014which is corporate speak for 'we spent too much on the wrong things and now we're paying for it.'",
+      "conviction": "real"
+    },
+    {
+      "story_id": "1159f65d276c",
+      "lead_host": "JAMIE",
+      "angle": "Prediction markets say Zuckerberg has the best shot at joining Musk in the trillionaire club\u2014a bet on Meta's AI ambitions or just a bet on Mark's ability to acquire his way there?",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "58a6855b88c9",
+    "joke_angle": "UK issuing a rare red heat warning for 40C temps\u2014the country that invented the phrase 'a bit warm' is now admitting it's actually hot."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Meta's $900M bet on Kunal Shah and the idea that messaging's future is payments, not just chat"
+  }
+}

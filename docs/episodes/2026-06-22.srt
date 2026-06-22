@@ -1,0 +1,122 @@
+1
+00:00:00,000 --> 00:00:12,369
+JAMIE: Meta just paid nine hundred million dollars to hire a billionaire founder from India as WhatsApp's new leader, which is either confidence or the corporate equivalent of buying a lottery ticket after your dog ate the winning one.
+
+2
+00:00:12,369 --> 00:00:36,474
+ALEX: So the S&P fell point two nine percent, Nasdaq dropped one point one five percent, but somehow the Dow climbed point four. Banks are up—JPMorgan and Bank of America both green—healthcare's holding. Netflix got obliterated, down six point six seven percent. Google fell five point eight seven percent. The V I X spiked six point zero four percent on rate uncertainty, which means the market's pricing in something nervous about what the Fed does next.
+
+3
+00:00:36,474 --> 00:00:47,258
+JAMIE: So Big Tech is actually rolling over while banks and healthcare are just sitting there unmoved. What's the read—are people rotating out of the expensive stuff or are they just spooked by rates?
+
+4
+00:00:47,258 --> 00:01:05,971
+ALEX: When rates spike, you're paying more to hold a bond, so the math on every unprofitable tech company gets worse. Netflix down six point six seven—that's not a glitch, that's people exiting. Google down five point eight seven. Amazon down four point five five. Oracle down four point eight six. Accenture down five point three eight. It's not random.
+
+5
+00:01:05,971 --> 00:01:26,905
+MAYA: So while Meta's out here spending nine hundred million to import WhatsApp leadership, the entire streaming and cloud infrastructure complex is having a moment where it realizes growth stocks don't work if rates go up. Netflix took the hit first—which is hilarious because they're the one company that actually proved the model works—and now everyone else is following like they just remembered how math works.
+
+6
+00:01:26,905 --> 00:01:36,420
+JAMIE: Bitcoin's up two point two two percent though, so at least someone's feeling brave. Crude's down three point seven six, gold's down half a percent. What's the signal there?
+
+7
+00:01:36,420 --> 00:01:55,133
+MAYA: Okay so the thing everyone's missing here is that Will Cathcart is stepping down from WhatsApp. Now Meta's bringing in Kunal Shah, the founder of C R E D, and investing nine hundred million in the startup. That's not a promotion shuffle—that's Meta saying 'we need someone who knows how to monetize chat through fintech, not just ads.'
+
+8
+00:01:55,133 --> 00:02:03,379
+JAMIE: Wait, so Kunal Shah's track record is C R E D, which is a credit infrastructure company. What does that have to do with WhatsApp?
+
+9
+00:02:03,379 --> 00:02:21,775
+MAYA: Everything. C R E D's whole business is embedding payments into behavior people already do—in their case, paying credit card bills. Shah's bet is that WhatsApp can do the same thing but at scale: embed payments into the one app that already owns conversations between billions of people. Zuck's not buying a CEO, he's buying the playbook.
+
+10
+00:02:21,775 --> 00:02:39,537
+ALEX: And Meta's putting nine hundred million dollars into C R E D itself, which means they're not just hiring the founder—they're taking a stake in the company so Shah's incentive structure is tied to proving the India fintech thesis works. If it does, WhatsApp Payments becomes a revenue stream that doesn't depend on ad load.
+
+11
+00:02:39,537 --> 00:02:56,030
+JAMIE: So the bear case is: WhatsApp's been a feature inside Meta for years, not a profit center. Bringing in a fintech guy and sinking nine hundred million dollars into a bet that payments-as-a-feature can work at that scale—that's execution risk on top of regulatory risk in every market where WhatsApp operates.
+
+12
+00:02:56,030 --> 00:03:09,351
+MAYA: And if it works? Meta's just quietly built a payments network that reaches billions of people without needing a bank charter. That's not a WhatsApp problem—that's a problem for every payment processor and remittance company that thought they had a moat.
+
+13
+00:03:09,351 --> 00:03:21,403
+ALEX: Palantir's down seven percent today while Palo Alto and CrowdStrike are basically flat—and the market's doing that thing where it suddenly remembers that a company selling to the government doesn't get to trade at software multiples forever.
+  ↳ source: https://finance.yahoo.com/markets/stocks/articles/palantir-down-7-today-underperforming-164011831.html
+
+14
+00:03:21,403 --> 00:03:34,090
+MAYA: Seven percent on a single day is just gravity checking its work. The real question is whether this is the market saying 'okay, Palantir's valuation is done' or just a speed bump on the way to the next leg.
+
+15
+00:03:34,090 --> 00:03:49,315
+ALEX: SpaceX stock is down nine percent for the third straight day after that red-hot IPO debut, which is what happens when you convince people a company is the future of space and then it turns out the stock market doesn't care about trajectory—it cares about cash flow.
+  ↳ source: https://www.cnbc.com/2026/06/22/spacex-stock-ipo-rally-selloff.html
+
+16
+00:03:49,315 --> 00:03:54,706
+JAMIE: So the IPO was record-breaking and now it's just... breaking. How fast did that honeymoon end?
+
+17
+00:03:54,706 --> 00:04:02,636
+MAYA: Three days. Three full trading days. That's the turnaround time between 'this is the next Apple' and 'wait, does this thing actually make money?'
+
+18
+00:04:02,636 --> 00:04:12,785
+ALEX: Lucid just cut eighteen percent of staff to 'simplify the company,' which is what executives say when they spent billions building factories before they had customers who could afford the cars.
+
+19
+00:04:12,785 --> 00:04:25,789
+MAYA: Eighteen percent of a company that's already burning through funding is basically Lucid saying 'we built for a market that doesn't exist at these prices, so we're shrinking to match reality instead of waiting for reality to match our spreadsheet.'
+
+20
+00:04:25,789 --> 00:04:40,062
+JAMIE: Prediction markets are saying Zuckerberg has the best shot at joining Musk in the trillionaire club—which either means the market thinks Meta's AI play is going to print money, or it's just betting that Mark will buy enough companies to get there by arithmetic.
+
+21
+00:04:40,062 --> 00:04:52,749
+ALEX: Jensen Huang's second on those odds, which is funny because Nvidia's already the most valuable semiconductor company in the world and apparently that's still not enough to win the trillionaire race—you need to either own space or own social.
+
+22
+00:04:52,749 --> 00:05:09,876
+MAYA: The Met Office just issued a red weather warning for the UK—that's the highest alert level—because temperatures could hit forty degrees Celsius over the next two days. Forty. The country that spent the last century describing any weather above fifteen degrees as 'a bit warm' is now treating heat like a national emergency.
+  ↳ source: https://www.bbc.com/news/articles/c982l60v0z7o?at_medium=RSS&at_campaign=rss
+
+23
+00:05:09,876 --> 00:05:20,660
+JAMIE: Wait, forty Celsius is a hundred and four Fahrenheit. That's not even record heat for most of North America, but the UK's infrastructure isn't built for it. Air conditioning isn't standard there, right?
+
+24
+00:05:20,660 --> 00:05:43,179
+ALEX: Right. The entire National Health Service is basically running a triage operation because heat deaths spike when you've got a population that evolved to manage drizzle and has a national power grid designed around the assumption that cooling isn't necessary. The red warning exists because the Met Office looked at the forecast and realized the country's hospitals, transport, and infrastructure all assumed summer meant 'put on a slightly lighter jumper.'
+
+25
+00:05:43,179 --> 00:05:54,280
+JAMIE: On the tape tomorrow—earnings from E N N I S, Fervo Energy, HawkEye 360, and I N V O Fertility all hitting on June 22nd. Alex, anything macro that matters before we get there?
+
+26
+00:05:54,280 --> 00:06:05,381
+ALEX: Nothing scheduled until late in the week, so the market's basically in a holding pattern waiting to see if the Fed's rate anxiety from today sticks or if it was just a one-day flush.
+
+27
+00:06:05,381 --> 00:06:23,460
+MAYA: The I N V O Fertility earnings are interesting because the fertility space is having this weird moment where insurance coverage is expanding, but the stock's been getting hammered anyway—so we'll find out if I N V O's actually growing into that tailwind or if the entire sector's just repricing on rate risk like everything else.
+
+28
+00:06:23,460 --> 00:06:30,438
+MAYA: Meta just bet nine hundred million that billions of people will trust WhatsApp with their money instead of just their secrets.
+
+29
+00:06:30,438 --> 00:06:36,147
+ALEX: That's a lot of faith in a company that started by promising not to monetize at all.
+
+30
+00:06:36,147 --> 00:06:40,587
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

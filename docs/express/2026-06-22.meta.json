@@ -1,0 +1,51 @@
+{
+  "date": "2026-06-22",
+  "mp3": "2026-06-22.mp3",
+  "size_bytes": 1338767,
+  "duration_sec": 83.64,
+  "turns": 9,
+  "words": 189,
+  "char_usage_estimate": 1218,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-06-22T17:05:43.884899Z",
+  "top_mover": {
+    "symbol": "ABBV",
+    "name": "ABBV",
+    "pct": 6.97
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7478.6298828125,
+        "pct": -0.29
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 51769.01171875,
+        "pct": 0.4
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26212.349609375,
+        "pct": -1.15
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2996.99365234375,
+        "pct": 0.58
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 17.389999389648438,
+        "pct": 6.04
+      }
+    ]
+  }
+}
