@@ -1,0 +1,106 @@
+1
+00:00:00,000 --> 00:00:10,567
+JAMIE: Meta's selling three-hundred-dollar smart glasses while Nvidia just tanked two point eight-five percent and the Nasdaq's down one point four-seven—so Zuckerberg's building the future and the market's decided it's not coming.
+
+2
+00:00:10,567 --> 00:00:37,645
+ALEX: S&P down zero point nine-six percent, Nasdaq down one point four-seven, and the V I X just spiked eleven point four-six percent—that's a fear gauge that went from napping to checking your portfolio every thirty seconds. A M D's in freefall at down five point two-one percent. The only thing keeping us off a proper bloodbath is Microsoft and Merck holding the line with gains around two percent each. This is what happens when rate-hike expectations come back into the chat.
+
+3
+00:00:37,645 --> 00:00:48,212
+JAMIE: So we're watching tech get absolutely shredded while defensive names like Walmart and healthcare stocks just sit there unbothered. Is that the actual trade right now—dump the future, hug the toothpaste?
+
+4
+00:00:48,212 --> 00:01:09,346
+ALEX: Exactly. Walmart up one point eight-four, Merck up two point three-six. When the Fed conversation shifts from 'cuts are coming' to 'maybe we hold longer,' money doesn't evaporate—it just moves to things that don't require a rate environment to exist. Broadcom's down two point eighteen, Oracle's down one point nine. Every chip or software play that priced in cheap money is repricing today.
+
+5
+00:01:09,346 --> 00:01:22,885
+MAYA: And Bitcoin's down, crude's down, gold's down—so we're getting the full 'risk-off everything' treatment. Except Zuckerberg's still out here dropping three-hundred-dollar glasses while his company's betting on WhatsApp, and the market's basically responding with a 'maybe not right now, Mark.'
+
+6
+00:01:22,885 --> 00:01:32,461
+JAMIE: Tesla's down four point four-six percent too. So the guy who's supposedly the future is getting humbled on the exact day the market decides the future's too expensive.
+
+7
+00:01:32,461 --> 00:01:54,586
+MAYA: So the glasses are shipping at two ninety-nine, but here's the thing nobody's talking about—Meta's positioning these as the gateway drug to something way more ambitious. The real product, the one with actual screens embedded in the lenses, doesn't exist yet. They're selling a camera and some AI features wrapped in wearable form factor, and calling it a step toward computing you wear on your face.
+
+8
+00:01:54,586 --> 00:02:07,464
+ALEX: Which means Zuckerberg's asking people to adopt the infrastructure—the social graph, the app ecosystem—before the actual device is ready. It's backwards. You're asking someone to commit to the platform while you're still building the reason they'd want to.
+
+9
+00:02:07,464 --> 00:02:16,380
+JAMIE: But he's done this before, right? The Quest headset was the same play—early hardware, build the install base, iterate toward something that matters. Why's this different?
+
+10
+00:02:16,380 --> 00:02:33,552
+MAYA: Because last time the entire venture ecosystem believed in the metaverse. Today, Meta's burning through significant resources on AI infrastructure while the market's punishing chip stocks and saying 'actually, we don't know if any of this ROIs.' He's asking people to buy into glasses while investors are actively selling the future.
+  ↳ source: https://www.marketwatch.com/story/stock-investors-expect-the-fed-to-save-them-but-no-warsh-put-is-coming-and-the-greenspan-put-was-a-myth-ed92e3d9?mod=mw_rss_topstories
+
+11
+00:02:33,552 --> 00:02:48,412
+ALEX: And the WhatsApp bet makes it worse. You're committing significant resources to fix monetization on the one product Meta has that actually works, that actually makes money, while simultaneously saying 'but also we're building the next platform.' That's not vision—that's hedging in real time.
+
+12
+00:02:48,412 --> 00:02:59,309
+JAMIE: So we're watching a company try to innovate itself out of the present while desperately patching the thing that actually pays the bills. That's not a strategy, that's a company fighting itself.
+
+13
+00:02:59,309 --> 00:03:11,857
+ALEX: Powell's not coming to save you anymore. The Fed put is dead—investors have finally priced in that the Fed won't bail out every dip, and the market's reacting like someone cut off their credit card mid-shopping spree.
+  ↳ source: https://www.cnbc.com/2026/06/23/trump-threatens-lawsuits-against-abc-network-for-reporting-on-reflecting-pool.html
+
+14
+00:03:11,857 --> 00:03:20,443
+JAMIE: But that's been the play since 2008, right? Every correction gets met with a cut or a pivot. Why would anyone believe it stops now?
+
+15
+00:03:20,443 --> 00:03:32,001
+ALEX: Because Powell's actually signaling he'll hold rates if inflation stays sticky. The dot-com crash happened while Greenspan was following the rules, not rewriting them. Wall Street's been pricing in a savior who doesn't exist.
+
+16
+00:03:32,001 --> 00:03:38,935
+MAYA: Bitcoin's sliding—crypto's the canary in the coal mine for this stuff. When rate expectations shift, risk-off happens everywhere at once.
+
+17
+00:03:38,935 --> 00:03:45,210
+JAMIE: So the digital assets are just signaling what the stock market's already pricing. They're not leading anymore, they're confirming.
+
+18
+00:03:45,210 --> 00:03:53,135
+ALEX: Right. Crypto's no longer the speculative edge case—it's just another asset class that reprices when central bank expectations move. The novelty wore off.
+
+19
+00:03:53,135 --> 00:04:03,041
+JAMIE: Trump's threatening to sue A B C over their Reflecting Pool reporting. He says, quote, 'I like their money'—so the legal theater is becoming a literal business story now.
+  ↳ source: https://www.cnbc.com/2026/06/23/trump-threatens-lawsuits-against-abc-network-for-reporting-on-reflecting-pool.html
+
+20
+00:04:03,041 --> 00:04:12,948
+JAMIE: More men are stepping up as caregivers for aging relatives. That's a real demographic shift—not a trend piece. It's reshaping labor markets and family economics as the population ages.
+
+21
+00:04:12,948 --> 00:04:20,213
+JAMIE: On the tape tomorrow—we've got earnings that might tell us whether the market's actually scared or just having a bad week.
+
+22
+00:04:20,213 --> 00:04:37,384
+ALEX: Carnival reports on June twenty-third, and if there's a company that lives or dies on whether people still believe in spending money on fun, it's them. Cruise bookings are a forward-looking indicator for consumer confidence—if they're solid, maybe the market's panic-selling for nothing. If they're weak, we've got a real problem.
+
+23
+00:04:37,384 --> 00:04:58,518
+MAYA: Sunbelt Rentals also reports the same day, and that's basically the construction and event industry's pulse. If commercial activity is actually slowing, their numbers will show it before the macro data catches up. Plus Korn Ferry on the twenty-third—they're an executive search firm, so if companies are still hiring leadership aggressively, that's a signal the C-suite still thinks the future's worth betting on.
+
+24
+00:04:58,518 --> 00:05:08,095
+MAYA: Meta's betting three hundred dollars that you'll wear a camera on your face while they build the actual product in the background—it's a preorder disguised as a purchase.
+
+25
+00:05:08,095 --> 00:05:15,690
+ALEX: And they're doing it on the same day the market decided to stop lending money to companies that don't make money yet.
+
+26
+00:05:15,690 --> 00:05:20,313
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

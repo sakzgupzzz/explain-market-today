@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Meta's selling $299 smart glasses while Nvidia's down 2.85% and the Nasdaq's bleeding 1.47%\u2014Zuckerberg's betting on wearables, the market's betting on gravity."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.96%",
+      "Nasdaq -1.47%",
+      "VIX +11.46%",
+      "AMD -5.21% (biggest loser)",
+      "MSFT +2.34% (top gainer)"
+    ],
+    "macro_note": "Tech rolling over as rate-hike fears resurface; defensive plays (healthcare, retail) holding ground."
+  },
+  "big_story": {
+    "story_id": "3d48a1051b27",
+    "lead_host": "MAYA",
+    "story_title": "Meta announces new smart glasses starting at $299, as Zuckerberg keeps pushing wearables",
+    "angle": "Zuckerberg's betting the farm on glasses-as-the-next-platform while the entire AI/chip complex is tanking\u2014is this visionary or just expensive denial?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "583c9ae7e10f",
+      "lead_host": "ALEX",
+      "angle": "Fed put is dead\u2014investors are finally pricing in that Powell won't bail them out on every dip, and the market's reacting like a teenager who just lost their credit card.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "f4fb6c4bf43f",
+      "lead_host": "ALEX",
+      "angle": "Bitcoin and Ethereum sliding on rate-hike chatter\u2014crypto's still the canary in the coal mine for risk-off sentiment.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "740f4079a9e8",
+      "lead_host": "JAMIE",
+      "angle": "Trump threatening ABC with lawsuits over Reflecting Pool reporting\u2014the legal theater is escalating, and it's becoming a business story whether we like it or not.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "7dcce0a5de3e",
+      "lead_host": "MAYA",
+      "angle": "Men stepping up as caregivers for aging relatives\u2014a genuine demographic shift that's reshaping labor markets and family economics, not a trend piece.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "2b82fe7d345c",
+    "joke_angle": "Europeans are literally chalking windows and building 'cool-down spots' to survive the heat\u2014we've gone from air conditioning to medieval village tactics."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "WhatsApp's seven-year leader just walked, and Meta's already hired a billionaire founder from India to replace him\u2014$900M",
+    "fresh_take": "Meta's burning $900M on WhatsApp leadership while launching $299 glasses in a down market\u2014the company's doubling down on hardware and India bets even as core platforms bleed momentum."
+  },
+  "sign_off": {
+    "callback_target": "Meta's $299 glasses\u2014the price point that makes you wonder if Zuckerberg's betting on wearables or just betting we'll buy anything with a logo."
+  }
+}
