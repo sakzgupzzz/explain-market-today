@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Jun 2026 14:58:54 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 14:39:15 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,59 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>TMO +4.8%, BofA flips the script with bombshell — Jun 24</title>
+      <description>Amazon's up 1.94% on Prime Day timing shift, but BofA just flipped the Fed script—rates are staying higher, longer. Today's lead: BofA flips the script with bombshell Fed interest-rate outlook. BofA's rate forecast reversal is the real story—not just a call change, but a signal that the market's been pricing in too many cuts too soon, and that's about to hurt anyone holding duration.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:08  Markets
+  00:01:44  Big story
+  00:03:30  Quick hits
+  00:03:48  Odd thing of the day
+  00:04:47  Sign-off
+
+Stories covered:
+  • Amazon's Q2 revenue beat narrative is real, but Prime Day timing shift is a scheduling trick—the revenue's still there, just moved. Not a growth story, a calendar story. [real]
+  • Brent crude at lowest since Iran war started—Hormuz expectations of smoother flows are the real driver, not demand collapse. Geopolitical de-risking, not recession signal. [real]
+  • Claude refusing illegal military orders is a fun thought experiment, but the real question is whether AI companies are building guardrails for theater or for actual risk mitigation. [hype]
+  • Kalshi CEO saying IPO is 'not for this year' is the most Silicon Valley non-denial denial—translation: we're prepping for it, just not admitting it yet. [hype]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] Amazon's up one point nine four percent on Prime Day timing, but Bank of America just told the Fed to sit down—rates are staying higher, longer.
+ALEX: [deadpan] S&amp;P up zero point four five percent to seven thousand three hundred ninety-eight, Nasdaq up zero point five percent to twenty-five thousand seven hundred fifteen. V I X dropped two point one five points. The real story is energy—Chevron down two point five five percent, ExxonMobil down two point four one percent—because crude just fell on expectations of smoother oil flows. That's not a correction, that's a message.
+JAMIE: [curious] A message about what? Demand collapse, or did someone finally admit we're not running out of oil?
+ALEX: [sarcastic] Softer demand outlook. The Fed's still holding rates higher longer—Bank of America made that crystal clear—so borrowing costs stay elevated, which means people buy fewer things, which means less fuel gets burned. It's a chain reaction that starts with rate expectations and ends with oil tanking. Meanwhile, Thermo Fisher up four point seven eight percent, Home Depot up four point zero two percent. Those two are swimming in the opposite direction.
+MAYA: [mischievously] So energy stocks are basically getting punished for a future that hasn't happened yet while Home Depot gets rewarded for selling you stuff you might not build because rates are too high. It's like we're pricing in a recession but only for people who drive cars.
+ALEX: Oracle down two point one seven percent, UnitedHealth down two point zero six percent. When you've got that kind of divergence—defensive industrials and healthcare getting hit while discretionary retail climbs—you're watching the market hedge its bets on how long the Fed actually holds.
+JAMIE: [excited] So the BofA call didn't just move rates, it rewired what gets bought and what gets sold in real time.
+ALEX: [deadpan] Bank of America just shifted their rate-cut forecast. That's not a tweak. That's a full reversal of what the market's been building portfolios around for the last six months.
+JAMIE: [curious] So the market's been operating on a fantasy, and BofA just flipped the lights on. What made them change their mind—did inflation come back, or did they just finally read the Fed's own signals?
+ALEX: [sarcastic] Both. Inflation hasn't rolled over the way consensus expected, and the Fed's language has gotten harder. But here's the thing: BofA's own clients have been positioning for a rate-cut cycle that now looks like it won't happen until late 2025 at the earliest. Anyone long duration—long-term bonds, growth stocks with no earnings, leveraged real estate—just took a hit they didn't price in.
+MAYA: [rushed] Wait, so the people who were supposed to know this were—what, surprised? Or did they know and just hope nobody else would notice until they could reposition?
+ALEX: The second one. Consensus was one thing. BofA goes another direction. That means every strategist who published a rate-pivot thesis has to either eat it or pivot faster than the Fed ever will. And the market's already pricing in that scramble—you see it in the rotation: defensive names hold, anything that needed rate cuts to justify the valuation gets sold.
+JAMIE: [excited] So the real damage isn't the rate forecast itself—it's that one call just atomized the thesis that half the market was built on, and everyone's going to spend the next month figuring out what actually holds value when the discount rate doesn't collapse.
+ALEX: [deadpan] Amazon beat Q2 revenue expectations, but here's the thing—Prime Day moved from July to October this year, so the revenue's real, the growth narrative isn't. It's a calendar shuffle, not a business inflection.
+MAYA: [mischievously] So we're going to spend three months watching analysts debate whether Amazon's actually growing, when the answer is just 'we moved the sale to a different month and you're all going to count it twice anyway.'
+ALEX: Brent crude just hit its lowest price since before the Iran conflict started—but the demand story isn't the real driver. Hormuz expectations have softened. We're pricing in smoother geopolitical flows, not a recession.
+JAMIE: [curious] So oil's falling because the world got less scary, not because everyone suddenly stopped needing to move things around.
+ALEX: [sarcastic] Exactly. The energy sector got hammered earlier on recession fears, but this move is actually a geopolitical de-risking. Different signal, same price action—which is why the market's been so confused about what the oil move actually means.
+MAYA: [rushed] Claude the AI chatbot apparently has misgivings about helping with illegal military orders, which is great, very thoughtful of it, but the real question nobody's asking is whether these guardrails are actual risk mitigation or just good PR theater so people feel comfortable asking the chatbot increasingly weird things.
+JAMIE: [excited] So we're supposed to believe the safety feature is the feature, not the story around the feature.
+MAYA: If a chatbot refuses an order, does anyone actually hear it? That's the whole thing—we're testing the ethics of a system that has no stakes in the outcome.
+ALEX: [deadpan] Kalshi's CEO said thinking about an IPO makes sense at their stage, but not for this year—which is the most Silicon Valley non-denial denial ever recorded.
+JAMIE: [laughs] Translation: the bankers are already circling and we're just waiting for the regulatory wind to shift.
+MAYA: [mischievously] And by 'not for this year' he means we've already got the PowerPoint deck and we're just watching the calendar.
+ALEX: [deadpan] So Bank of America just rewrote the rate-cut script, and every portfolio built on the old one's now basically reading from a napkin.
+MAYA: [mischievously] Which means tomorrow morning, someone's going to publish the same forecast and pretend they invented it.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">40416143-3f15-a3e2-9aed-f25d24e5714a</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-24.mp3" length="4766047" type="audio/mpeg" />
+      <pubDate>Wed, 24 Jun 2026 14:38:41 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-24.jpg" />
+      <itunes:duration>00:04:57</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260624</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-24.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-24.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-06-24.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AMD -5.2%, Meta announces new smart glasses starting — Jun 23</title>
       <description>Meta's selling $299 smart glasses while Nvidia's down 2.85% and the Nasdaq's bleeding 1.47%—Zuckerberg's betting on wearables, the market's betting on gravity. Today's lead: Meta announces new smart glasses starting at $299, as Zuckerberg keeps pushing wearables. Zuckerberg's betting the farm on glasses-as-the-next-platform while the entire AI/chip complex is tanking—is this visionary or just expensive denial?.

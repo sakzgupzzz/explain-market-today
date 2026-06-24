@@ -1,0 +1,51 @@
+{
+  "date": "2026-06-24",
+  "mp3": "2026-06-24.mp3",
+  "size_bytes": 1239711,
+  "duration_sec": 77.45,
+  "turns": 8,
+  "words": 176,
+  "char_usage_estimate": 1155,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-06-24T14:39:15.465862Z",
+  "top_mover": {
+    "symbol": "TMO",
+    "name": "TMO",
+    "pct": 4.78
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7398.77001953125,
+        "pct": 0.45
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 51894.5,
+        "pct": 0.44
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 25715.3359375,
+        "pct": 0.5
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2980.81640625,
+        "pct": 0.18
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 19.06999969482422,
+        "pct": -2.15
+      }
+    ]
+  }
+}

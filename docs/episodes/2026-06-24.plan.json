@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Amazon's up 1.94% on Prime Day timing shift, but BofA just flipped the Fed script\u2014rates are staying higher, longer."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.45% to 7398.77",
+      "Nasdaq +0.50% to 25715.34",
+      "TMO +4.78% (biggest gainer)",
+      "CVX -2.55% (biggest loser)"
+    ],
+    "macro_note": "Energy stocks tanking on softer oil outlook; BofA hawkish pivot on Fed rates reshaping the entire rate-cut narrative."
+  },
+  "big_story": {
+    "story_id": "c1995ff423c0",
+    "lead_host": "ALEX",
+    "story_title": "BofA flips the script with bombshell Fed interest-rate outlook",
+    "angle": "BofA's rate forecast reversal is the real story\u2014not just a call change, but a signal that the market's been pricing in too many cuts too soon, and that's about to hurt anyone holding duration.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "8782fd310c35",
+      "lead_host": "ALEX",
+      "angle": "Amazon's Q2 revenue beat narrative is real, but Prime Day timing shift is a scheduling trick\u2014the revenue's still there, just moved. Not a growth story, a calendar story.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "4be48eae6705",
+      "lead_host": "ALEX",
+      "angle": "Brent crude at lowest since Iran war started\u2014Hormuz expectations of smoother flows are the real driver, not demand collapse. Geopolitical de-risking, not recession signal.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "fdbecf3c23e7",
+      "lead_host": "MAYA",
+      "angle": "Claude refusing illegal military orders is a fun thought experiment, but the real question is whether AI companies are building guardrails for theater or for actual risk mitigation.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "310e8422b6dc",
+      "lead_host": "MAYA",
+      "angle": "Kalshi CEO saying IPO is 'not for this year' is the most Silicon Valley non-denial denial\u2014translation: we're prepping for it, just not admitting it yet.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "72f807680f6d",
+    "joke_angle": "Investors are literally using offshore crypto platforms to get early access to a SpaceX IPO that doesn't exist yet\u2014it's like camping outside a store for a product that hasn't been announced."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "BofA's rate forecast flip"
+  }
+}
