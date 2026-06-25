@@ -1,0 +1,74 @@
+1
+00:00:00,000 --> 00:00:07,838
+JAMIE: Apple's cratering four point six one percent while healthcare stocks jump—turns out the market just realized you can't trade insulin for a thinner iPhone.
+  ↳ source: https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-inflation-data-micron-stock-mu/?src=A00220&yptr=yahoo
+
+2
+00:00:07,838 --> 00:00:46,090
+ALEX: S&P is up zero point four one percent, Dow's up one point four five, but Nasdaq is actually down zero point three two. V I X spiked three point two seven—that's the anxiety index telling you the market's not sure if it's celebrating or panicking. Here's what's really happening: healthcare stocks are ripping. Thermo Fisher up three point nine two percent, AbbVie up two point five one, UnitedHealth up two point four four. Meanwhile Apple's in freefall, down four point six one percent, Oracle's off two point eight eight, Amazon down two point one five, Nvidia down two point zero five. The rotation out of mega-cap tech into healthcare and financials isn't a fluke—it's breadth collapsing while the index stays flat.
+  ↳ source: https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-inflation-data-micron-stock-mu/?src=A00220&yptr=yahoo
+
+3
+00:00:46,090 --> 00:00:55,183
+JAMIE: So we went from 'free money forever' to 'actually maybe we need to keep rates here for a while,' and the market just started speed-dating financial stocks instead.
+  ↳ source: https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-inflation-data-micron-stock-mu/?src=A00220&yptr=yahoo
+
+4
+00:00:55,183 --> 00:01:02,081
+ALEX: JPMorgan's up two point eight four percent because interest rates staying higher for longer is basically a tax cut for banks.
+
+5
+00:01:02,081 --> 00:01:16,817
+MAYA: So the Magnificent Seven are learning what it's like when the entire thesis was 'rates go to zero and nothing matters'—which is like building your house on the assumption that gravity stops working. One rate decision later, gravity's back, and suddenly you're shopping for a basement.
+
+6
+00:01:16,817 --> 00:01:24,342
+ALEX: Russell 2000 is up zero point eighty three percent. Small-cap cyclicals are moving because they actually care about economic growth instead of free capital.
+
+7
+00:01:24,342 --> 00:01:32,808
+JAMIE: And McDonald's down one point nine four percent—which I assume means people are too stressed about their portfolio to even enjoy a Big Mac right now.
+
+8
+00:01:32,808 --> 00:01:42,528
+ALEX: Darden beat earnings but Olive Garden same-store sales growth fell short. Casual dining is finally hitting the wall—consumers are trading down from breadsticks and unlimited soup to whatever costs less.
+
+9
+00:01:42,528 --> 00:01:50,053
+JAMIE: So the same people who were fine-dining six months ago are now deciding that maybe they don't need the salad course after all.
+
+10
+00:01:50,053 --> 00:02:10,746
+ALEX: The consumer's out of money. Darden's fine-dining portfolio is still holding up because people with real wealth aren't eating less—but Olive Garden's traffic is slowing because that's where the middle market goes when the credit card bill shows up. When Olive Garden's growth rate drops, it's not noise. It's the canary in the coal mine, except the canary just ordered water instead of a drink.
+
+11
+00:02:10,746 --> 00:02:26,110
+MAYA: Iran just warned ships that transiting the Strait of Hormuz without their approval is unacceptable and dangerous. Which is funny because Iran's basically saying 'you need our permission slip to use this waterway,' and they're delivering it like a parent who just discovered their kid's been sneaking out.
+
+12
+00:02:26,110 --> 00:02:35,516
+JAMIE: So Iran's not just threatening ships, they're establishing a permission structure for one of the most critical shipping lanes on Earth. That's not a warning, that's a business model.
+
+13
+00:02:35,516 --> 00:02:44,609
+JAMIE: On the tape tomorrow: we've got a cluster of earnings and some macro data that'll either confirm the rotation is real or send everyone back to panic-buying Nvidia.
+
+14
+00:02:44,609 --> 00:03:03,108
+ALEX: Darden reports again on June twenty-fifth, which means we get a second look at whether casual dining traffic is actually stabilizing or if that last print was just a dead-cat bounce. Same day you've got Commercial Metals and T D Synnex—both cyclical plays that'll tell you whether the capex cycle is still alive or if we're actually slowing.
+
+15
+00:03:03,108 --> 00:03:19,725
+MAYA: And BlackBerry's reporting the same day, which is wild because nobody remembers BlackBerry is still a company. They pivoted to software and cybersecurity years ago, so if they beat, it's proof that the old phone empire actually found a second act. If they miss, it's just another zombie that forgot to die.
+
+16
+00:03:19,725 --> 00:03:31,640
+JAMIE: So basically we get to watch whether the shovels are still selling, whether people are still eating out, and whether a company that used to be synonymous with 'outdated' can actually execute. That's the frame for tomorrow.
+
+17
+00:03:31,640 --> 00:03:42,614
+ALEX: Apple's down four point six one percent because the market just realized that borrowing at lower rates to fund trillion-dollar bets on things that don't have customers yet is a luxury that's officially over.
+
+18
+00:03:42,614 --> 00:03:47,004
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

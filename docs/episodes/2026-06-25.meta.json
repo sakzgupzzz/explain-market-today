@@ -1,0 +1,51 @@
+{
+  "date": "2026-06-25",
+  "mp3": "2026-06-25.mp3",
+  "size_bytes": 3637684,
+  "duration_sec": 227.0,
+  "turns": 18,
+  "words": 708,
+  "char_usage_estimate": 4582,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-06-25T14:41:26.792298Z",
+  "top_mover": {
+    "symbol": "AAPL",
+    "name": "AAPL",
+    "pct": -4.61
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7388.18017578125,
+        "pct": 0.41
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 52602.2109375,
+        "pct": 1.45
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 25395.837890625,
+        "pct": -0.32
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 3011.443603515625,
+        "pct": 0.83
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 19.239999771118164,
+        "pct": 3.27
+      }
+    ]
+  }
+}

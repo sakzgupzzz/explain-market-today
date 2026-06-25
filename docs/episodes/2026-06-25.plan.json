@@ -1,0 +1,62 @@
+{
+  "cold_open": {
+    "hook": "Apple's down 4.6% while healthcare stocks are up 2.4% \u2014 the market just voted: AI hype is over, people actually need insulin."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.41%",
+      "Dow +1.45%",
+      "Nasdaq -0.32%",
+      "Apple -4.61%",
+      "TMO +3.92%",
+      "VIX +3.27%"
+    ],
+    "macro_note": "Inflation data cooled fears, but breadth is weak\u2014big tech selling while healthcare and financials bid."
+  },
+  "big_story": {
+    "story_id": "230f9fc70abe",
+    "lead_host": "ALEX",
+    "story_title": "Stock Market Today: Dow Rises After Key Inflation, Surprise GDP Data; Micron Rockets On Earnings",
+    "angle": "PCE and GDP beat expectations, but the market's real move is a rotation OUT of mega-cap AI plays and INTO healthcare and semiconductors\u2014the narrative that rates stay higher longer is finally pricing in.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "09e1dd6e9dd7",
+      "lead_host": "ALEX",
+      "angle": "PCE inflation fell to 2.6% YoY, the softest print in three years\u2014but core PCE is still sticky at 3.4%, so the Fed's not done yet.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "0d6c6733672c",
+      "lead_host": "MAYA",
+      "angle": "Apple raising MacBook and iPad prices because memory chip supply is tight\u2014the company that invented the premium markup is now blaming semiconductors instead of design.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "017ce696585c",
+      "lead_host": "ALEX",
+      "angle": "Darden beat earnings but Olive Garden same-store sales are slowing\u2014casual dining is finally hitting the wall as consumers trade down.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "bfcf337878d4",
+      "lead_host": "MAYA",
+      "angle": "Healthcare fraud rings are buying Ferraris with stolen insurance money\u2014the grift has gotten so brazen it's almost a business model.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "b0b29d10b6f7",
+    "joke_angle": "Iran is now requiring ships to download an app to transit the Strait of Hormuz\u2014geopolitical chokepoint meets app store review process."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "BofA flips the script with bombshell Fed interest-rate outlook",
+    "fresh_take": "Today's inflation data confirms it: rates are staying higher longer, and the market is finally rotating OUT of the mega-cap AI trades that were priced for zero-rate fantasy."
+  },
+  "sign_off": {
+    "callback_target": "Apple's 4.6% drop\u2014the day mega-cap tech finally paid the price for the rate-hike narrative."
+  }
+}
