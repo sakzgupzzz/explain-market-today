@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "LLY up 5.5% as healthcare stocks crush AI hype\u2014but Red Lobster's Endless Shrimp just crashed the company."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.06%",
+      "Nasdaq -0.11%",
+      "LLY +5.50%",
+      "CSCO -2.67%",
+      "VIX +2.06% to 19.28"
+    ],
+    "macro_note": "Inflation still sticky at 4%, Fed pressure easing, but breadth weak\u2014tech rolling over while healthcare rallies."
+  },
+  "big_story": {
+    "story_id": "41f2abebf8fc",
+    "lead_host": "ALEX",
+    "story_title": "Red Lobster's Ultimate Endless Shrimp promotion described as a 'car crash' for the company, lawsuit",
+    "angle": "A restaurant chain bet its survival on an all-you-can-eat shrimp deal and lost\u2014the math of promotional suicide and why unlimited buffets are a death trap for unit economics.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "0316a335c855",
+      "lead_host": "ALEX",
+      "angle": "Citi upgrades Allegiant on merger synergies while airline earnings beat\u2014consolidation narrative is real, not hype.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "f3340df86cd3",
+      "lead_host": "ALEX",
+      "angle": "Trump eases pressure on Fed Chair Warsh as inflation tops 4%\u2014political theater masking sticky core PCE, nothing actually solved.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "57756825084a",
+      "lead_host": "MAYA",
+      "angle": "Meta thinks gambling is the future\u2014because engagement metrics matter more than whether your product is actually good.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "03decebbfb2b",
+      "lead_host": "MAYA",
+      "angle": "Imposter scams led fraud reports for fifth straight year, $3.5B stolen\u2014the same con, year after year, because people still answer the phone.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "4b4d41729009",
+    "joke_angle": "Experts warn: don't run in the heat AND drink too many beers\u2014as if the problem was people were doing both simultaneously and needed permission to stop."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Apple's down 4.6% while healthcare stocks are up 2.4%\u2014the market just voted: AI hype is over, people actually need ins",
+    "fresh_take": "LLY's 5.5% pop today proves yesterday's thesis: healthcare is eating AI's lunch, and Red Lobster's shrimp disaster shows even old-school consumer plays can't hide from margin math."
+  },
+  "sign_off": {
+    "callback_target": "Red Lobster's Endless Shrimp\u2014the only thing more infinite than the losses was management's confidence in the deal."
+  }
+}
