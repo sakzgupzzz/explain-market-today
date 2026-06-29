@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Supreme Court blocks Trump's Fed firing\u2014Lisa Cook stays, markets pop 0.74%, and the guardrails just got real."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.74%",
+      "Nasdaq +1.30%",
+      "Tesla +5.25%",
+      "UNH -2.22%"
+    ],
+    "macro_note": "Tech leads as Fed independence survives; healthcare stumbles on policy uncertainty."
+  },
+  "big_story": {
+    "story_id": "e99fc3f318c6",
+    "lead_host": "JAMIE",
+    "story_title": "Fed's Lisa Cook can stay on at central bank while challenging Trump's attempt to fire her, Supreme Court rules",
+    "angle": "The Supreme Court just told Trump he can't unilaterally purge the Fed\u2014a massive institutional check that reframes the entire power dynamic between the White House and monetary policy for the next four years.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "03ddaa4f0fb7",
+      "lead_host": "MAYA",
+      "angle": "Supreme Court nukes FTC independence\u2014commissioners can now be fired at will, handing tech regulation back to whoever controls the White House.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "92ebe0d5a575",
+      "lead_host": "ALEX",
+      "angle": "Alphabet joins the Dow, signaling the index is finally admitting tech isn't a bubble\u2014it's the economy now.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "d72a49e7394f",
+      "lead_host": "MAYA",
+      "angle": "The 'anti-woke' crusade is now targeting federal science funding\u2014watch for brain drain as researchers flee to Canada and Europe.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "f6ba0577bba1",
+      "lead_host": "ALEX",
+      "angle": "Oil near pre-war lows but supply risks loom\u2014OPEC's holding its breath waiting to see if the Middle East stays quiet.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "223e0957a53f",
+    "joke_angle": "Teyana Taylor's tears and a Lauryn Hill tribute stole the BET Awards\u2014proof that genuine emotion still beats a choreographed TikTok moment."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Lisa Cook and the Fed's institutional independence\u2014the one guardrail that actually held."
+  }
+}
