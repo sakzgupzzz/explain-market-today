@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Nasdaq up 0.80%, but Eli Lilly just tanked 2.96%\u2014the AI boom's favorite pharma play is suddenly looking mortal."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: +0.30%",
+      "Nasdaq: +0.80%",
+      "AMD: +3.39% (biggest gainer)",
+      "LLY: -2.96% (biggest loser)"
+    ],
+    "macro_note": "Tech rallying on AI optimism while biotech stumbles; VIX compression signals complacency."
+  },
+  "big_story": {
+    "story_id": "decda2ce0af6",
+    "lead_host": "MAYA",
+    "story_title": "The New (And Slightly Smelly) Center of the AI Boom",
+    "angle": "Where is the actual AI infrastructure being built, and why are the real estate and logistics costs turning out to be the unglamorous bottleneck nobody wants to talk about?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "d08d71f1f4b7",
+      "lead_host": "ALEX",
+      "angle": "NVIDIA and Palantir's government AI partnership is the real moat\u2014not consumer chatbots, but the infrastructure states and defense contractors will actually pay for.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "e70b975cca89",
+      "lead_host": "ALEX",
+      "angle": "Trump's defense budget is massive, but the U.S. war machine is depleted\u2014states are now bidding against each other for manufacturing contracts, turning national security into a jobs program.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "a55ea8e3d27d",
+      "lead_host": "MAYA",
+      "angle": "Proton's privacy-focused AI chatbot is the contrarian play\u2014while everyone else chases scale, they're betting on the user who actually cares if their prompts get logged.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "1d68ae5e9730",
+      "lead_host": "ALEX",
+      "angle": "Palantir stock crashed but the fundamentals (government contracts, AI deployment) are real\u2014this is the dip that separates hype traders from actual conviction holders.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "e764c5547564",
+    "joke_angle": "DC's new cinematic universe started hot and is already slowing down\u2014turns out you can't just throw money at IP and expect it to stick when the actual stories are mid."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Supreme Court nukes FTC independence\u2014commissioners can now be fired at will, handing tech regulation back to whoever controls the executive",
+    "fresh_take": "Today's NVIDIA-Palantir government AI deal is the direct consequence: with FTC toothless, the real power consolidates around defense contracts and state partnerships instead of consumer protection."
+  },
+  "sign_off": {
+    "callback_target": "Palantir\u2014the stock that crashed but the government contracts that didn't."
+  }
+}

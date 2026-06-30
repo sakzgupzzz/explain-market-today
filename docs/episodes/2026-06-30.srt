@@ -1,0 +1,150 @@
+1
+00:00:00,000 --> 00:00:09,392
+JAMIE: Nasdaq is up zero point eighty percent, but Eli Lilly just dropped two point ninety-six—turns out the market's favorite AI-era drug stock can still remember what gravity is.
+  ↳ source: https://www.investors.com/market-trend/stock-market-today/stock-market-today-economic-data-aerovironment-avav/?src=A00220&yptr=yahoo
+
+2
+00:00:09,392 --> 00:00:44,369
+ALEX: The Nasdaq is up zero point eighty percent, S&P is barely awake at plus zero point three, but the real story is in the wreckage: Eli Lilly down two point ninety-six, Procter & Gamble down two point six-six, Thermo Fisher down two point zero-eight. Meanwhile, A M D is screaming up three point thirty-nine percent, Nvidia up one point five-three. So we have a market that's simultaneously celebrating AI chips and executing biotech into the ground. The V I X is down two point ninety-five to seventeen point one-three, which means investors are not worried about anything, which is exactly when they should be worried about something.
+
+3
+00:00:44,369 --> 00:00:54,085
+JAMIE: So biotech is getting massacred and nobody cares because the machine learning stocks are printing money. What happened to diversification—or is that just something boomers mention at Thanksgiving now?
+
+4
+00:00:54,085 --> 00:01:22,261
+MAYA: No, diversification is still a thing, it's just that diversification now means owning six different AI infrastructure plays instead of one. Broadcom up zero point ninety-nine, Cisco up zero point ninety-six—it's all semiconductors and defense integrations. The only reason Procter & Gamble is down is because the market looked at a company that sells soap and toothpaste and decided that was the opposite of a growth story in an era where everyone's convinced the future is algorithmic. Which, fair, but also: people still need to shower.
+
+5
+00:01:22,261 --> 00:01:28,414
+ALEX: Gold is up zero point eighty-six percent—investors hedging by buying shiny rocks while simultaneously buying zero-percent-interest-rate-dependent mega-cap tech.
+
+6
+00:01:28,414 --> 00:01:42,016
+JAMIE: So we're in a world where Nvidia and Palantir are buddying up with no regulatory friction, and the market is so relaxed it's basically asleep—V I X at seventeen—while biotech stocks are being treated like they personally disappointed someone's portfolio manager.
+  ↳ source: https://finance.yahoo.com/markets/stocks/article/palantir-stock-has-crashed-this-year-but-there-may-be-upside-ahead-134226521.html
+
+7
+00:01:42,016 --> 00:02:06,630
+MAYA: It's not even that biotech disappointed them. It's that biotech isn't artificial intelligence, and right now the market will only fund things that can be described as AI in a press release. Eli Lilly is down two point ninety-six because it turns out being the world's largest insulin manufacturer is no longer a compelling narrative when you could own a company that trains large language models instead. Which is insane, but that's where we are.
+
+8
+00:02:06,630 --> 00:02:31,244
+MAYA: So the Bank for International Settlements just dropped a warning that the AI buildout is starting to look like every other capital boom that ended in a crater—railroad overexpansion, dot-com, 2008. And here's the thing nobody's talking about: the actual bottleneck isn't chips or talent, it's real estate and power. Data centers need land, cooling water, electricity grids that don't exist yet, and all of that costs money that doesn't fit in a PowerPoint deck.
+
+9
+00:02:31,244 --> 00:02:36,425
+JAMIE: Wait—so we're simultaneously discovering that the infrastructure they're building on requires... permits and zoning boards?
+
+10
+00:02:36,425 --> 00:03:00,067
+ALEX: A data center in Iowa needs more water than the town's municipal supply. Hyperscalers are bidding against each other for land in places with cheap power, but that cheap power usually means coal plants or reservoirs that local governments are suddenly very concerned about. So you have a situation where the capital is infinite but the physical footprint is constrained by the same NIMBYism that's been stopping infrastructure projects for thirty years.
+
+11
+00:03:00,067 --> 00:03:22,738
+MAYA: And the irony is that the companies posting the highest valuations—the ones we've been watching print money all morning—they're the ones least equipped to deal with this. Palantir's not running data centers at scale. Nvidia designs chips; they don't build facilities. So you've got this weird dependency where the infrastructure play is actually the unsexy real estate and energy companies, and the market's treating them like they're yesterday's news.
+
+12
+00:03:22,738 --> 00:03:34,721
+JAMIE: So we're in a moment where Procter & Gamble is down two point six-six because it sells soap, but nobody's panicking that the entire AI infrastructure boom depends on getting a zoning variance approved in Nebraska.
+
+13
+00:03:34,721 --> 00:04:02,249
+ALEX: The B I S is basically saying: you can have unlimited venture capital and no antitrust enforcement, but you still can't pour a concrete foundation without a public hearing. And those public hearings are starting to happen. Duke Energy, Southern Company, the grid operators—they're all signaling that the power demand from AI is going to require investment they haven't budgeted for. Which means either those costs get passed to the hyperscalers, or they get passed to electricity rates, or the whole thing slows down.
+
+14
+00:04:02,249 --> 00:04:23,300
+MAYA: The unsexy play right now is watching who controls the land and the power. If you're looking at what doesn't get repriced when the AI narrative corrects, it's the companies that own the physical infrastructure that can't be virtualized away—utilities, real estate trusts, the companies running the fiber. Because no matter how good your model is, you still need somewhere to plug it in.
+
+15
+00:04:23,300 --> 00:04:33,664
+ALEX: Nvidia and Palantir just announced a joint platform for secure government AI—not consumer chatbots, not enterprise SaaS, but the infrastructure that defense contractors and federal agencies will actually write checks for.
+
+16
+00:04:33,664 --> 00:04:42,732
+JAMIE: So immediately the two companies best positioned to lock in government contracts decide to hold hands. That's not a partnership, that's a marriage announcement at a funeral.
+
+17
+00:04:42,732 --> 00:04:51,152
+ALEX: The moat here isn't technical—it's contractual. Once the Pentagon standardizes on your architecture, switching costs become infinite. Consumer AI is a commodity. This is monopoly infrastructure.
+
+18
+00:04:51,152 --> 00:05:02,488
+MAYA: And Palantir's actually been building this the entire time—they've got the government relationships, the security clearances, the sales team that knows how to navigate a five-year procurement. Nvidia just showed up with the chips.
+
+19
+00:05:02,488 --> 00:05:16,414
+ALEX: The U.S. weapons stockpile is depleted. We're not building new capacity, we're scrambling to refill what we gave to Ukraine. So every state in the Midwest is now bidding against each other to host manufacturing plants for hypersonic missiles and artillery shells.
+
+20
+00:05:16,414 --> 00:05:23,215
+JAMIE: National security turned into a jobs program. That's not a budget, that's a regional development grant with nuclear weapons attached.
+
+21
+00:05:23,215 --> 00:05:46,209
+MAYA: The funny part is that nobody's actually solved the bottleneck—you can't just spin up a missile factory in Ohio because the Pentagon says so. You need specialized labor, supply chains for rare materials, quality control that takes years to build. So you're going to have states winning bids for factories that don't exist yet, promising jobs that won't materialize for three years, all while China's already manufacturing the next generation.
+
+22
+00:05:46,209 --> 00:05:55,925
+ALEX: Proton's releasing Lumo, their privacy-focused AI chatbot. While everyone else is chasing scale and logging every prompt, they're betting on the user who actually reads their terms of service.
+  ↳ source: https://techcrunch.com/2026/06/30/lumo-protons-privacy-focused-ai-chatbot-gets-an-upgrade/
+
+23
+00:05:55,925 --> 00:06:09,204
+MAYA: Enough to fund a feature update, apparently. But the real play is that Proton's already got the email and VPN customers—they're just expanding the moat with people who already distrust Silicon Valley. It's not a mass-market product, it's a loyalty feature.
+
+24
+00:06:09,204 --> 00:06:18,596
+ALEX: Palantir stock crashed this year, but the government contracts are real. The AI deployment is real. The Pentagon isn't switching platforms because the stock had a bad quarter.
+  ↳ source: https://finance.yahoo.com/markets/stocks/article/palantir-stock-has-crashed-this-year-but-there-may-be-upside-ahead-134226521.html
+
+25
+00:06:18,596 --> 00:06:27,988
+JAMIE: So this is the moment where you find out who actually owns the stock because they believe in the business versus who was just riding the AI wave.
+
+26
+00:06:27,988 --> 00:06:59,078
+MAYA: So Warner Bros. Discovery's new D C universe started with Superman and James Gunn actually nailed it—Kara Zor-El shows up at the end, the internet lost its mind, everyone left the theater thinking this was going to be the thing. And then immediately, the studio greenlit a standalone Supergirl movie. Which sounds smart until you realize they're doing it in reverse: they made the audience care about a character in a post-credits scene and then decided the logical next step was to isolate her in her own film before anyone actually knew who she was.
+  ↳ source: https://seekingalpha.com/news/4608483-warner-bros-discovery-ticks-lower-as-uk-may-intervine-in-paramount-skydance-deal?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news
+
+27
+00:06:59,078 --> 00:07:10,090
+JAMIE: Wait—they're fast-tracking a Supergirl spinoff on the strength of a thirty-second cameo? That's like someone laughing at your opening joke at a party and immediately asking you to do a solo comedy special.
+
+28
+00:07:10,090 --> 00:07:37,942
+ALEX: The real problem is that Warner Bros. Discovery has been trying to solve the M C U equation by throwing money at I P and hoping the math works. Marvel spent fifteen years building toward Avengers. D C wants the same result in three films. Superman worked because Gunn made an actual movie—character, story, stakes. Supergirl doesn't have any of that yet. It's just a name and a cape that showed up for ninety seconds, and now they're betting a hundred million dollars that's enough.
+  ↳ source: https://seekingalpha.com/news/4608483-warner-bros-discovery-ticks-lower-as-uk-may-intervine-in-paramount-skydance-deal?utm_source=feed_news_all&utm_medium=referral&feed_item_type=news
+
+29
+00:07:37,942 --> 00:07:52,192
+MAYA: The momentum is already dead.' D C keeps making the same mistake: they confuse I P recognition with narrative momentum. Everyone knows who Superman and Supergirl are. Nobody cares about a Supergirl movie that hasn't explained why that version of the character matters.
+
+30
+00:07:52,192 --> 00:08:08,061
+JAMIE: On the tape tomorrow: K L X Energy Services reports on June thirtieth, and we'll be watching to see if the energy infrastructure play actually gets priced in or if the market's still too busy staring at Nvidia to notice the companies that have to plug everything in.
+
+31
+00:08:08,061 --> 00:08:21,987
+ALEX: The real macro event is whether we get any signal on whether the Fed's actually done hiking. If inflation data keeps rolling in soft, rate cuts start looking real, and suddenly the Treasury curve inverts again and everyone remembers that bonds exist.
+
+32
+00:08:21,987 --> 00:08:46,601
+MAYA: K L X is interesting because they're in the middle of the infrastructure squeeze we've been talking about—they're not a hyperscaler, they're not a chip designer, they're the company that keeps the power and cooling systems running. If their guidance reflects the actual demand they're seeing from data center buildouts, that's the number that tells you whether this AI infrastructure story is real capital expenditure or just hype that stops when interest rates stay sticky.
+
+33
+00:08:46,601 --> 00:08:53,402
+JAMIE: So we're watching to see if the unglamorous play finally admits that it's the bottleneck, not the cherry on top.
+
+34
+00:08:53,402 --> 00:09:00,851
+ALEX: Palantir's stock got halved but the Pentagon's not shopping for alternatives—switching costs don't exist when there's only one player at the table.
+  ↳ source: https://finance.yahoo.com/markets/stocks/article/palantir-stock-has-crashed-this-year-but-there-may-be-upside-ahead-134226521.html
+
+35
+00:09:00,851 --> 00:09:07,328
+MAYA: By the time the market figures that out, the government's already three years into a contract nobody can unwind.
+
+36
+00:09:07,328 --> 00:09:11,862
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
