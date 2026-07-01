@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Meta just jumped 10.32%\u2014because apparently the solution to having too much AI compute is to become a cloud company."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7494.18 (-0.07%)",
+      "Nasdaq: 26115.12 (-0.38%)",
+      "Meta: +10.32%",
+      "AMD: -4.63%"
+    ],
+    "macro_note": "Broad market flat; mega-cap tech diverging hard\u2014Meta soars on cloud pivot while chip stocks crater on compute glut fears."
+  },
+  "big_story": {
+    "story_id": "1938ebb40f6c",
+    "lead_host": "MAYA",
+    "story_title": "Meta, like SpaceX, looks to turn excess AI compute into cash",
+    "angle": "Meta and SpaceX are both sitting on massive infrastructure they built for one thing and are now monetizing the overflow\u2014the difference is SpaceX had a plan for it, Meta is improvising in real time.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "f3e7d445e5e1",
+      "lead_host": "MAYA",
+      "angle": "Getty-Shutterstock merger cleared in the US but killed by UK regulators\u2014a reminder that antitrust theater is now geographically fragmented and unpredictable.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "a5652b50eae7",
+      "lead_host": "ALEX",
+      "angle": "Warsh says the Fed will hint at rate moves only when they 'shut the door'\u2014which is Fed-speak for 'we're not telling you anything until we've already decided.'",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "05e3b3711823",
+      "lead_host": "MAYA",
+      "angle": "Venice AI hits unicorn status on a privacy-first pitch\u2014in a market where every other startup is selling your data to train models, being boring about privacy is somehow the contrarian move.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "5a785b54c30d",
+      "lead_host": "MAYA",
+      "angle": "England just had its warmest June on record\u2014which is either climate news or a setup for why London tech conferences are now unbearable.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "d41cd5dbac24",
+    "joke_angle": "Rhythm Heaven never misses a beat\u2014a Nintendo game so rhythmically precise it makes your own sense of timing feel broken."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Meta's cloud pivot\u2014the overflow problem that became a business model"
+  }
+}

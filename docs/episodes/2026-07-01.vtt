@@ -1,0 +1,95 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.865
+<v Jamie>Meta's stock just jumped ten point three-two percent because Mark Zuckerberg decided the fix for drowning in AI compute is to rent it out to everyone else.
+  ↳ source: https://finance.yahoo.com/markets/stocks/article/meta-stock-pops-on-news-it-will-reportedly-start-a-cloud-computing-business-134412120.html
+
+00:00:08.865 --> 00:00:36.411
+<v Alex>The broad market is basically sleepwalking—S&P at seven thousand four hundred ninety-four, down zero point zero seven percent, Nasdaq down zero point three eight percent. But the real story is the chip sector got hit like it just found out there's unlimited AI compute on the market now. A M D down four point six three percent, Broadcom down one point seven one. Turns out when you're the company selling picks and shovels and suddenly everyone has access to a rental mine, your margins get nervous.
+
+00:00:36.411 --> 00:00:42.426
+<v Jamie>So Meta's up ten point three two percent because they're the landlord now, and the miners are panicking.
+
+00:00:42.426 --> 00:01:04.273
+<v Maya>The funny part is Salesforce is up five point one percent and Accenture up three point five seven—so consulting and Salesforce firms are thriving on the idea that companies need help figuring out what to do with all this compute they're about to rent. It's like the entire ecosystem just realized they can sell shovels, rental agreements, and consulting on how to use the shovels, all at once.
+
+00:01:04.273 --> 00:01:13.138
+<v Alex>Meanwhile Walmart down four point five three percent, Merck down one point eight four—the things people actually need are getting punished because money's chasing the infrastructure play.
+
+00:01:13.138 --> 00:01:23.903
+<v Jamie>So we've got a market where the landlord wins, the consultants win, the infrastructure vendors win, and everyone else is just trying to figure out if they need to rent or own. Classic.
+
+00:01:23.903 --> 00:01:44.800
+<v Maya>The thing that's actually wild is the comparison to SpaceX—both companies built massive infrastructure for their primary mission, SpaceX for rockets and Meta for training AI models, but SpaceX already had a playbook when they started launching services. Meta is out here going, 'Wait, we have a data center problem? Let's become a cloud provider.' It's not a plan, it's a fire sale of capacity.
+
+00:01:44.800 --> 00:01:59.998
+<v Alex>Right, but the infrastructure cost is already sunk. At that point, you're not losing money by renting it out—you're just printing margin on something that's already built and humming. The question is whether they can actually compete with Amazon, Google, and Microsoft on service, not on hardware.
+  ↳ source: https://www.theverge.com/tech/959503/google-home-speaker-review-gemini-for-home
+
+00:01:59.998 --> 00:02:12.029
+<v Jamie>But those three have been doing this for over a decade. They've got customer relationships, compliance frameworks, the whole stack. Meta's got excess GPUs and a reputation for privacy disasters. How does that pitch meeting even go?
+
+00:02:12.029 --> 00:02:36.409
+<v Maya>They lead with price and speed. Meta can undercut on compute cost because they don't need to build a business around it—it's a byproduct. And they've already got relationships with thousands of app developers from the Meta ecosystem. The real threat isn't that Meta becomes the cloud leader; it's that they become a viable alternative for companies that don't want to be locked into A W S or Azure. That alone fractures the oligopoly a little.
+
+00:02:36.409 --> 00:02:51.606
+<v Alex>Except the major cloud providers make substantial revenue and run at strong operating margins. Meta's cloud business doesn't exist yet. They'd need to hire teams, build support infrastructure, deal with SLAs and enterprise contracts. That's not a byproduct—that's a business. And it bleeds cash while they're learning.
+
+00:02:51.606 --> 00:03:07.754
+<v Jamie>So the market's pricing in that Meta figured out how to turn a cost center into a profit center, but the bear case is they're about to learn that cloud services aren't just 'rent out your spare GPUs and call it a day.' They have to actually run a business.
+
+00:03:07.754 --> 00:03:23.585
+<v Maya>And if they stumble, they're still burning significant capex on AI that's not generating enough revenue to justify it. So the stock gets punished twice—once for the cloud play failing, once for the core AI bet looking like a black hole. That's the real risk no one's talking about.
+
+00:03:23.585 --> 00:03:31.500
+<v Maya>Getty and Shutterstock's merger is officially dead—the US cleared it, but the UK regulators blocked it hard enough that both companies just walked away.
+
+00:03:31.500 --> 00:03:42.899
+<v Alex>So the US looked at the deal, saw no monopoly problem, and the UK looked at the exact same deal and said it would crush competition in image licensing. Two regulators, one transaction, opposite conclusions.
+
+00:03:42.899 --> 00:03:57.780
+<v Jamie>Which means if you're a CEO trying to do a cross-border deal, you now have to clear every single regulatory jurisdiction separately, and if one says no, the whole thing dies anyway. That's not merger arbitrage—that's a regulatory lottery where losing one ticket kills the prize.
+
+00:03:57.780 --> 00:04:08.545
+<v Alex>Warsh says the Fed will hint at rate moves only when they 'shut the door' at the next meeting—which in central bank language means they're not telling anyone anything until they've already decided.
+  ↳ source: https://finance.yahoo.com/economy/policy/articles/warsh-hits-international-stage-peers-101241127.html
+
+00:04:08.545 --> 00:04:21.843
+<v Jamie>So the entire market is supposed to just sit in silence until the Fed walks into a room, closes the door, and then tells everyone what they decided. That's not transparency—that's a surprise party where the guest of honor is inflation.
+
+00:04:21.843 --> 00:04:31.974
+<v Maya>Venice AI just hit unicorn status on sixty-five million in Series A funding, and the pitch is basically 'we train AI models without stealing your data'—which is apparently a contrarian move.
+
+00:04:31.974 --> 00:04:46.222
+<v Alex>They're already doing strong revenue and they're profitable. So they built a business first and got valued as a unicorn second, which is the opposite of every other AI startup that got the valuation first and is still figuring out what the business is.
+
+00:04:46.222 --> 00:04:52.555
+<v Jamie>England just had its warmest June on record, which means London tech conferences are now a legitimate occupational hazard.
+  ↳ source: https://www.bbc.co.uk/weather/articles/cjdg98g8lg8o?at_medium=RSS&at_campaign=rss
+
+00:04:52.555 --> 00:04:56.987
+<v Maya>So basically everyone's pretending to care about climate while sweating through their keynotes.
+
+00:04:56.987 --> 00:05:20.100
+<v Maya>Rhythm Heaven just dropped a new game on Switch—first entry in the series since 2012, and before this week there were only four games total, one of which never left Japan. Nintendo let this franchise sit dormant for over a decade and then just dropped it like nothing happened, no marketing blitz, no lead-up. It's the most Nintendo thing possible: ignore a cult classic until you remember it exists, then release it.
+  ↳ source: https://www.theverge.com/entertainment/959757/rhythm-heaven-groove-review-nintendo-switch
+
+00:05:20.100 --> 00:05:27.066
+<v Jamie>So they had a loyal audience waiting twelve years and didn't even tease it? That's not confidence—that's negligence disguised as mystery.
+
+00:05:27.066 --> 00:05:47.963
+<v Alex>Rhythm Heaven's whole thing is that your timing has to be pixel-perfect or the game makes you feel like you have no rhythm at all. It's basically a device that proves most people shouldn't be allowed near percussion instruments. The fact that they're bringing it back now, when everyone's playing other games, is like reopening a restaurant that only serves foods you can't chew properly.
+  ↳ source: https://www.theverge.com/entertainment/959757/rhythm-heaven-groove-review-nintendo-switch
+
+00:05:47.963 --> 00:06:04.110
+<v Maya>But that's exactly why it works—Rhythm Heaven doesn't need hype because the game itself is the punishment. You boot it up, miss one beat, and spend the next six minutes convinced your brain is broken. That's the marketing. That's the viral moment. Your friends watching you fail is the product.
+  ↳ source: https://www.theverge.com/entertainment/959757/rhythm-heaven-groove-review-nintendo-switch
+
+00:06:04.110 --> 00:06:09.493
+<v Maya>Meta's about to learn that excess capacity and actual customer service are not the same thing.
+
+00:06:09.493 --> 00:06:16.458
+<v Alex>In other words, they're about to hire a thousand support engineers to tell people their model crashed at 2 A M.
+
+00:06:16.458 --> 00:06:20.891
+<v Jamie>This show is for entertainment and education only — nothing here is investment advice.
