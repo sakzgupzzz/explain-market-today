@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Meta's down 3.27% today, but yesterday it jumped 10%\u2014turns out the real business model is just renting your AI compute to everyone else."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.71% to 7536",
+      "Nasdaq +0.80% to 26248",
+      "Apple +2.89%",
+      "Meta -3.27%"
+    ],
+    "macro_note": "VIX crushed 4.1%, broad rally on softer rate expectations after jobs surprise."
+  },
+  "big_story": {
+    "story_id": "b0da19de41dd",
+    "lead_host": "MAYA",
+    "story_title": "Meta's push into cloud computing means Wall Street has to prepare for lower margins",
+    "angle": "Meta's pivot from ad-only to cloud infrastructure is forcing investors to rethink the entire margin story\u2014this isn't a new revenue stream, it's a margin compression trade that Wall Street hasn't priced in yet.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "5a74f5020cd9",
+      "lead_host": "ALEX",
+      "angle": "Morningstar's 30% AI crash warning is the same analyst shop that called the bottom in 2008\u2014conviction matters, but so does track record.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "dce0d1556dbe",
+      "lead_host": "ALEX",
+      "angle": "Google loses $4.7B EU antitrust fine appeal\u2014the company that invented regulatory arbitrage just ran out of jurisdictions.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "4ad40e4fb36e",
+      "lead_host": "MAYA",
+      "angle": "Indian tech tycoon betting $30M personal cash on an Office alternative\u2014either the bravest or the most delusional person in the room.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "69c169148ce7",
+      "lead_host": "MAYA",
+      "angle": "Meta's putting a paywall on Ray-Ban glasses features\u2014the device that was supposed to be the future just became a subscription service.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "855c6868baaa",
+    "joke_angle": "AutoCamp is raising capital to sell $500-a-night glamping tents\u2014the business model is 'what if camping, but you paid hotel prices and still had to bring your own toilet paper.'"
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Meta, like SpaceX, looks to turn excess AI compute into cash",
+    "fresh_take": "Yesterday we said Meta was copying SpaceX's playbook; today Wall Street is realizing that playbook tanks your margins\u2014the compute arbitrage only works if you don't have to report earnings."
+  },
+  "sign_off": {
+    "callback_target": "Meta's margin compression\u2014the thing that made it jump 10% yesterday is the same thing that's going to make it crater 3% today."
+  }
+}
