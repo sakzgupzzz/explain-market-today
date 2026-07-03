@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Mark Zuckerberg just told staff AI agents are moving slower than he promised\u2014and Meta's down 4.9% while Apple's up 4.84%."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 flat at 7483",
+      "Nasdaq -0.80%",
+      "Apple +4.84%",
+      "Tesla -7.49%",
+      "Meta -4.90%"
+    ],
+    "macro_note": "Mega-cap rotation: AI hype cooling, Apple hardware strength, Tesla stumbling on delivery concerns."
+  },
+  "big_story": {
+    "story_id": "7106fc698371",
+    "lead_host": "MAYA",
+    "story_title": "Mark Zuckerberg tells staff that AI agents haven't progressed as quickly as he'd hoped",
+    "angle": "Zuckerberg's public admission that his signature bet is behind schedule is a rare crack in the CEO confidence facade\u2014what does it mean for Meta's capex roadmap and the broader AI arms race if the guy with the most compute is saying the math isn't working yet?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "b2fe166ceabd",
+      "lead_host": "ALEX",
+      "angle": "Gold up for first week in a month as Fed rate-hike bets cool\u2014the market is pricing in pause, not cuts, which is a subtle but real shift in expectations.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "65baf2d3ff77",
+      "lead_host": "MAYA",
+      "angle": "The politician who investigated Pegasus spyware got hacked with Pegasus spyware\u2014a perfect irony that suggests either the spyware vendors have a sense of humor or the investigation was too close for comfort.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "db8d159a9e41",
+      "lead_host": "ALEX",
+      "angle": "Ford's CEO is chasing 'flawless' vehicle launches after years of quality stumbles\u2014the bar used to be 'don't catch fire,' now it's 'perfection,' which is either ambition or desperation.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "6c3c10b9a7e8",
+      "lead_host": "MAYA",
+      "angle": "Europe's top bankers and regulators are warning that AI is outpacing the rules\u2014translation: we have no idea what we're regulating, but we're going to regulate it anyway.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "14afbccbdbda",
+    "joke_angle": "A literary AI scandal twist\u2014because apparently the only thing weirder than AI writing a book is the scandal around who wrote the scandal about the AI book."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Meta's push into cloud computing means Wall Street has to prepare for lower margins",
+    "fresh_take": "Today Zuckerberg admits the AI agents that were supposed to justify all that capex are moving slower than expected\u2014so the margin hit is real, but the payoff timeline just got longer."
+  },
+  "sign_off": {
+    "callback_target": "Zuckerberg's 'slower than hoped' admission\u2014we'll see if Meta's next earnings call tries to spin it as 'strategic patience' or just owns the miss."
+  }
+}

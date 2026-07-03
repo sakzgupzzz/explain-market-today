@@ -1,0 +1,98 @@
+1
+00:00:00,000 --> 00:00:14,548
+JAMIE: Mark Zuckerberg just admitted to Meta staff that AI agents are shipping slower than he promised—and the stock's down four point nine percent while Apple's up four point eight four, so apparently the market is rewarding patience and punishing honesty in the same breath.
+  ↳ source: https://techcrunch.com/2026/07/02/mark-zuckerberg-tells-staff-that-ai-agents-havent-progressed-as-quickly-as-hed-hoped/
+
+2
+00:00:14,548 --> 00:00:38,149
+ALEX: So yesterday we talked about Meta's cloud infrastructure spending crushing margins for years, and today Zuckerberg's telling staff the AI agents that were supposed to justify all that capex are running behind schedule—which means the company is now bleeding money on a bet that won't pay out when they originally said it would. The margin compression is locked in; the revenue that was supposed to offset it just got pushed further out.
+
+3
+00:00:38,149 --> 00:01:08,862
+ALEX: S&P flat at seven thousand four hundred eighty-three, Nasdaq down zero point eight percent, but the real story is the rotation. Apple's up four point eight four percent, Netflix up four point six six, Adobe up four point one four—all the stuff that actually makes revenue. Meanwhile Tesla's down seven point four nine percent on delivery concerns, Meta's down four point nine on the AI delay we just covered. The mega-cap AI narrative is getting sorted into 'hardware and software that works' versus 'we spent a hundred billion dollars and the thing isn't ready.'
+
+4
+00:01:08,862 --> 00:01:16,945
+JAMIE: So the market's saying Apple knows how to ship a phone but Meta doesn't know how to ship an agent. That's a brutal split.
+
+5
+00:01:16,945 --> 00:01:42,485
+MAYA: And Tesla's getting hammered separately—not even the AI story, just delivery numbers coming in soft. But here's the thing: Accenture's up four point seven four percent, McDonald's up four point one six, Cisco down three point six nine. The market's rewarding boring competence right now. You can sell cloud infrastructure to banks, you can sell franchises burgers, you can't sell 'trust us, the AI agents are coming next quarter.' Gold's up because apparently everyone needs a security blanket.
+
+6
+00:01:42,485 --> 00:01:56,710
+JAMIE: So we've got this weird moment where the V I X dropped below sixteen—that's calm—but investors are basically saying 'I believe in your products, not your promises.' Apple's promise is a phone you can hold. Meta's promise is... software that doesn't exist yet.
+
+7
+00:01:56,710 --> 00:02:14,492
+MAYA: So Zuckerberg's in this all-hands, right, and he just—casually drops that the AI agents roadmap is slipping. Not 'we're optimizing timelines,' not 'we're taking a more thoughtful approach'—he said they haven't progressed as quickly as he'd hoped. Which is CEO-speak for 'I promised this would be here by now and it is not here.'
+
+8
+00:02:14,492 --> 00:02:31,950
+ALEX: And the reason that matters is Meta's already committed to spending on capital expenditure—mostly data centers and chips to train these agents. That money's already allocated. The agents aren't delivering the returns he said they would. So you're locked into the spending, but the payoff just moved to a date nobody knows yet.
+
+9
+00:02:31,950 --> 00:02:40,032
+JAMIE: Is he saying the technology isn't working, or is he saying it's working but slower to deploy at scale? Because those are different problems.
+
+10
+00:02:40,032 --> 00:03:00,724
+MAYA: He didn't get specific—and that's the tell. If it was just a deployment bottleneck, he'd say 'we're ramping production next quarter.' Instead he said progress hasn't been quick enough, which means the R&D itself is grinding. OpenAI's shipping G P T-4o, Anthropic's shipping Claude, Google's shipping Gemini, and Meta's apparently in a room going 'so about those agents we've been training on compute...'
+
+11
+00:03:00,724 --> 00:03:15,595
+ALEX: Gold's up for the first week in a month as investors are pulling back on Fed rate-hike bets—the market's pricing in a pause now, not cuts, which is a subtle shift but it moves the needle on what central banks are actually allowed to do.
+
+12
+00:03:15,595 --> 00:03:20,121
+JAMIE: So the Fed's still holding, but the market's stopped betting they'll keep tightening?
+
+13
+00:03:20,121 --> 00:03:33,377
+ALEX: Exactly. The inflation data's not screaming anymore, and traders are reading that as 'okay, maybe we're done here,' which is why gold's rallying—it doesn't pay interest, so it only wins when real rates are expected to stay low or fall.
+
+14
+00:03:33,377 --> 00:03:44,046
+MAYA: A politician in Europe who was investigating spyware abuses had his phone hacked with Pegasus spyware—which is either the most poetic irony or a threat so direct it doesn't even need words.
+
+15
+00:03:44,046 --> 00:03:49,218
+JAMIE: Wait, so the tool used to hack him was the same one he was investigating?
+
+16
+00:03:49,218 --> 00:03:59,241
+MAYA: Yes. The politician was looking into spyware abuses, and some government just decided to make his investigation personal. It's like hiring a private investigator to prove you're not being investigated.
+  ↳ source: https://techcrunch.com/2026/07/02/politician-who-investigated-spyware-abuses-had-his-phone-hacked-with-pegasus-spyware/
+
+17
+00:03:59,241 --> 00:04:15,082
+ALEX: Ford's CEO just announced the automaker is targeting flawless vehicle launches after years of quality recalls—which means the bar used to be 'doesn't spontaneously fail,' and now it's 'perfection,' so either they've figured something out or they're setting themselves up for the most visible failure in automotive history.
+
+18
+00:04:15,082 --> 00:04:28,661
+JAMIE: Europe's top bankers and regulators are warning that AI is already outpacing the rules they're supposed to write, which translates to: we have no framework for this, we will create one anyway, and it will probably be obsolete before it's finalized.
+  ↳ source: https://www.cnbc.com/2026/07/03/ai-outpacing-rules-europe-top-bankers-regulators-warn.html
+
+19
+00:04:28,661 --> 00:04:49,352
+MAYA: So there's a literary AI scandal where a writer's use of AI tools in the writing process sent people into a frenzy about authenticity and craft and whether a machine learning model can have a muse. Now he's coming forward with his version of what actually happened, and it turns out the story people were mad about isn't the story he was living.
+
+20
+00:04:49,352 --> 00:04:56,465
+JAMIE: Hold on—so the controversy was premature? People decided he cheated before he even got a chance to explain what he did?
+
+21
+00:04:56,465 --> 00:05:25,238
+ALEX: The literary establishment is spending real energy right now deciding whether a tool that predicts the next word counts as collaboration or theft, which is genuinely harder to solve than any of the AI regulation Europe's supposedly writing. At least with spyware everyone agrees hacking someone's phone is bad. With this, half the internet thinks AI in the writing process is the future and the other half thinks it's the death of literature, and the writer's just standing there holding a prize that nobody can agree he deserved.
+
+22
+00:05:25,238 --> 00:05:35,584
+MAYA: Meta's going to spend the next earnings call explaining why a major bet on agents is actually a down payment on the future, not a sunk cost they're trying to justify.
+
+23
+00:05:35,584 --> 00:05:41,726
+ALEX: By which time the market will have already decided whether it believes the next date they give us.
+
+24
+00:05:41,726 --> 00:05:46,253
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
