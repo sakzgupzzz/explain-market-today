@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Microsoft just fired 4,800 people and is spinning off its gaming studios\u2014the company that owns Xbox is basically saying 'we're not a gaming company anymore.'"
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.69% to 7534.69",
+      "Nasdaq +1.29% to 26165.13",
+      "AMD +9.98%, TSLA +4.92%",
+      "PG -2.79%, HD -2.69%"
+    ],
+    "macro_note": "Tech leading, consumer discretionary stumbling, VIX cooling\u2014the market is pricing in patience from the Fed."
+  },
+  "big_story": {
+    "story_id": "e2b9cbd0ccb4",
+    "lead_host": "MAYA",
+    "story_title": "Microsoft cuts 4,800 jobs, as Xbox unit downsizes and plans to spin off four gaming studios",
+    "angle": "Microsoft is admitting that gaming is no longer a core business\u2014it's a spinoff, not a division. What does that say about the $69 billion Activision bet, and is this the beginning of the end for console gaming as a standalone business?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "7fa6deb5f3ae",
+      "lead_host": "ALEX",
+      "angle": "Micron's stock is up on chip-sector optimism\u2014but the real signal is whether this sticks or if it's just relief that earnings weren't worse.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "b602654aef84",
+      "lead_host": "JAMIE",
+      "angle": "Trump called FIFA to overturn a US striker's ban\u2014this is the moment we learn whether FIFA's rules apply to everyone or just to people without a direct line to Mar-a-Lago.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "421ad912c98f",
+      "lead_host": "MAYA",
+      "angle": "UK regulator warns of an 'arms race' in AI use in finance\u2014translation: everyone's deploying AI faster than they understand the risks, and regulators are three steps behind.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "a2638bdc67c0",
+      "lead_host": "ALEX",
+      "angle": "Canada's spy agency hacked drug traffickers and ransomware gangs\u2014and they're *telling* everyone about it, which means either they're very confident or they're very worried about optics.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "a5461e9d1c99",
+    "joke_angle": "Nintendo is discontinuing the original Switch in Europe\u2014the console that was supposed to be timeless is now officially old, which means everyone who bought one in 2017 is now a retro gamer."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Mark Zuckerberg tells staff that AI agents haven't progressed as quickly as he'd hoped",
+    "fresh_take": "Microsoft is now spinning off gaming because AI and cloud are the real growth engines\u2014Meta's AI delays look even worse when your competitor is literally restructuring around the bet that AI is the future."
+  },
+  "sign_off": {
+    "callback_target": "Microsoft spinning off gaming\u2014the company that bought Activision for $69 billion is now saying 'actually, gaming is not our thing.'"
+  }
+}
