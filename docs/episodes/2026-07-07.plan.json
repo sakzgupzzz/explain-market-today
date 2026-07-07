@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Nvidia down 2%, AMD down nearly 8%\u2014but one of them just announced it's literally paying people to use its software"
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.64%",
+      "Nasdaq -1.50%",
+      "AMD -7.98%",
+      "ACN +3.97%"
+    ],
+    "macro_note": "Tech weakness dragging broad indices; defensive plays and energy holding up"
+  },
+  "big_story": {
+    "story_id": "f5352b10614c",
+    "lead_host": "ALEX",
+    "story_title": "Nvidia Corp. (NVDA) Announces a Profit-Sharing Program For Its Computing Framework Access",
+    "angle": "Nvidia is so desperate to lock in developers that it's literally cutting them a check\u2014a sign the AI infrastructure arms race is shifting from 'build it' to 'beg people to use it.'",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "8e9710eb311e",
+      "lead_host": "MAYA",
+      "angle": "Microsoft's Xbox spinoff plan is basically admitting that owning a gaming studio is now a liability, not an asset\u2014the hardware maker wants out of the creativity business.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "6817ded7065e",
+      "lead_host": "JAMIE",
+      "angle": "Nigel Farage quits Parliament mid-scandal to fight a special election\u2014the political equivalent of rage-quitting a video game to reset your save file.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "9e825f8e662c",
+      "lead_host": "ALEX",
+      "angle": "Obamacare enrollment is plummeting in key states\u2014not because people don't want coverage, but because the messaging has gone silent and confusion is winning.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "e541aa93622e",
+      "lead_host": "JAMIE",
+      "angle": "Trump signals openness to selling F-35s to Turkey\u2014a NATO ally that's also been cozying up to Russia, so basically we're selling advanced fighter jets to a country that might show them to Moscow.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "edf803802b41",
+    "joke_angle": "iRobot's newest floor cleaner isn't a robot\u2014it's a Roomba that gave up and decided to just be a really expensive broom with an app."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Nvidia's profit-sharing desperation move"
+  }
+}
