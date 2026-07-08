@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Tesla faces a robotaxi ban in California\u2014the state that basically invented the car industry."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.43%",
+      "Nasdaq -0.30%",
+      "VIX +6.82%",
+      "TSLA -2.00%",
+      "META -1.77%"
+    ],
+    "macro_note": "Broad selloff with volatility spike; tech and consumer discretionary under pressure."
+  },
+  "big_story": {
+    "story_id": "250025c7983a",
+    "lead_host": "MAYA",
+    "story_title": "The robotaxi law that could ban Tesla",
+    "angle": "California is drafting regulations that could explicitly exclude Tesla's robotaxi from operating\u2014not because of safety data, but because Elon refuses to play by the existing permitting game.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "20cb7cb8e489",
+      "lead_host": "MAYA",
+      "angle": "Meta is now generating AI images from your public Instagram photos without explicit opt-in\u2014the privacy light on their glasses is starting to feel like security theater.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "e6b01b5e796a",
+      "lead_host": "ALEX",
+      "angle": "IMF says an Iran war leaves inflation scars through 2027\u2014that's a multi-year oil shock baked into the forecast, not a one-quarter blip.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "2f0a78dbd63c",
+      "lead_host": "MAYA",
+      "angle": "Venus Williams backed a startup that literally locks your apps until you hit your step count\u2014gamification as digital hostage-taking.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "4310b895964f",
+      "lead_host": "ALEX",
+      "angle": "InsuranceDekho parent is IPO-bound\u2014India's insurance-tech play is finally getting the capital-markets moment.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "db22fcee1412",
+    "joke_angle": "Weight-loss jabs are now driving demand for mouthwash and hair dye\u2014people are literally shopping their side effects."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Tesla's refusal to play by California's permitting rules"
+  }
+}
