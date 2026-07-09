@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Meta's building its own AI chips but the stock is down\u2014the startup energy of a $1.3 trillion company."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.48%",
+      "Nasdaq +0.64%",
+      "AMD +7.25%",
+      "PepsiCo -4.00%"
+    ],
+    "macro_note": "Small caps outpacing, tech mixed on AI capex bets, consumer weakness spreading."
+  },
+  "big_story": {
+    "story_id": "d2dab3f29dac",
+    "lead_host": "MAYA",
+    "story_title": "Meta Reportedly Takes Big Step Toward AI Chip. But The Stock Is Falling.",
+    "angle": "Meta's vertical integration into silicon is real infrastructure play, but market's reading it as capex desperation\u2014the gap between what they're building and what investors want to hear.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "c18d7ae09044",
+      "lead_host": "ALEX",
+      "angle": "PepsiCo cut prices again and still missed\u2014the consumer is not coming back for cheaper Doritos, they're just buying less.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "34b1f318293a",
+      "lead_host": "MAYA",
+      "angle": "Meta's also jumping into AI coding to chase Anthropic and OpenAI\u2014so they're building chips AND chasing the software race everyone else is in.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "837dbc95afb1",
+      "lead_host": "ALEX",
+      "angle": "Tanker traffic through Hormuz slowing after Iranian attacks\u2014energy supply chain stress is real, but Fed's Williams says don't expect sustained price surge.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "72eaaa7c2526",
+      "lead_host": "JAMIE",
+      "angle": "Trump says Iran called to make a deal after U.S. strikes; also says it's unclear if war is back on\u2014clarity at its finest.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "2dae97f9b226",
+    "joke_angle": "Farage's by-election in Clacton officially confirmed\u2014the man who already won is running again, because apparently one seat wasn't enough theater."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Meta's chip bet\u2014the startup energy of a $1.3 trillion company"
+  }
+}
