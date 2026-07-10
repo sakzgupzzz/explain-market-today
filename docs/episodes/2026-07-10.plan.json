@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Meta's up 5.3% on AI cloud dreams while Netflix drops 3%\u2014the market's decided which streaming future it believes in."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.15% to 7554.80",
+      "Nasdaq -0.08% to 26186.60",
+      "Meta +5.35% to $665.28",
+      "Netflix -3.07% to $73.15"
+    ],
+    "macro_note": "Broad market flat, VIX down nearly 2%, mega-cap tech carrying the load while small-caps lag."
+  },
+  "big_story": {
+    "story_id": "ef3d7e677940",
+    "lead_host": "ALEX",
+    "story_title": "Meta Platforms Jumps 6% on AI Cloud Ambitions: Can It Challenge Amazon and CoreWeave?",
+    "angle": "Meta's betting its cloud infrastructure play can compete with AWS and the AI-native startups\u2014the real question is whether a social media company can actually execute on enterprise infrastructure, or if this is just Zuckerberg's latest 'we're pivoting to X' moment.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "b5e5c28c1748",
+      "lead_host": "MAYA",
+      "angle": "EU says Instagram and Facebook are addictive by design\u2014Meta now has to prove they're not, which is like asking a casino to redesign slots to be less fun.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "c5e99091177d",
+      "lead_host": "ALEX",
+      "angle": "Circle, a stablecoin issuer, just got a bank charter and stock jumped 7%\u2014crypto's finally getting the regulatory hug it's been chasing, or this is just the beginning of a very long compliance headache.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "0ad8e10a5c29",
+      "lead_host": "MAYA",
+      "angle": "A ransomware negotiator got convicted for helping the gang he was supposed to be negotiating against\u2014the most on-brand cybersecurity plot twist of the year.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "e952ce226332",
+      "lead_host": "ALEX",
+      "angle": "America's 10 most expensive states are punishing residents with inflation\u2014spoiler: California, Massachusetts, and New York are still winning the 'where your paycheck evaporates' competition.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "e531a5d02700",
+    "joke_angle": "Taliban declares war on smartphones\u2014the one enemy they might actually lose to, since even they probably have a WhatsApp group."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Meta's building its own AI chips but the stock is down\u2014the startup energy of a $1.3 trillion company.",
+    "fresh_take": "Yesterday Meta was down on chip ambitions; today it's up 5% on the cloud play those chips are supposed to power\u2014turns out the market cares less about the hardware than whether Zuck can actually sell compute to enterprises."
+  },
+  "sign_off": {
+    "callback_target": "Meta's cloud ambitions vs. AWS\u2014the callback to whether a social media company can actually execute on enterprise infrastructure"
+  }
+}
