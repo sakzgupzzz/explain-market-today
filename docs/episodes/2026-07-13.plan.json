@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Nasdaq down 0.82% as Iran tensions spike\u2014but TSMC just posted a 68% revenue surge that's making chipmakers look like the only adults in the room."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7551.62 (-0.31%)",
+      "Nasdaq: 26064.88 (-0.82%)",
+      "VIX: 16.33 (+8.65%)",
+      "CRM +3.52%, XOM +2.78%",
+      "ORCL -3.03%, TSLA -2.22%"
+    ],
+    "macro_note": "Risk-off on geopolitical flare-up; energy and enterprise software bid, semiconductors mixed despite TSMC strength."
+  },
+  "big_story": {
+    "story_id": "d15281701ccd",
+    "lead_host": "ALEX",
+    "story_title": "TSMC, the world's largest contract chipmaker, reports 68% surge in June revenue",
+    "angle": "TSMC's monster June number (68% YoY) is the rare piece of hard demand signal in a market drowning in AI hype\u2014what it actually tells us about whether the AI capex cycle is real or just a very expensive belief system.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "2b7018be645a",
+      "lead_host": "ALEX",
+      "angle": "Nasdaq slide tied to fresh US-Iran strikes and SK Hynix plunge\u2014geopolitical risk is now a live equity factor again, not just a talking point.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "601ccdc797d3",
+      "lead_host": "ALEX",
+      "angle": "Big banks about to report record revenue on SpaceX IPO fees and war volatility\u2014the financial system's best quarter is built on chaos and billionaire launches.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "70c8627d377f",
+      "lead_host": "MAYA",
+      "angle": "Europe moving to hard limits on teen social media use\u2014the regulatory playbook that started with TikTok is now coming for Instagram and Snapchat, and it's actually sticking.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "317d8e497650",
+      "lead_host": "ALEX",
+      "angle": "Paramount-WBD merger facing multi-state lawsuits before it even closes\u2014consolidation in media is hitting a wall that even scale can't break through.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "f3e114b956f3",
+    "joke_angle": "Lorde says Ray-Ban Meta AI glasses aren't sexy\u2014a pop star just became the product reviewer that Meta's engineers didn't want to hear from, and she's right."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Meta's up 5.3% on AI cloud dreams while Netflix drops 3%\u2014the market's decided which streaming future it believes in.",
+    "fresh_take": "Today: Meta's AI hardware (the glasses) is getting roasted by actual cultural tastemakers, not just investors\u2014the gap between Meta's AI narrative and what people actually want to wear is widening fast."
+  },
+  "sign_off": {
+    "callback_target": "TSMC's 68% surge\u2014the one number today that doesn't need a story to justify itself."
+  }
+}
