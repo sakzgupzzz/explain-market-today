@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "IBM just fell 23% on earnings\u2014but the real story is CPI just shocked everyone cool, and the market's already pricing in fewer rate hikes."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.28%",
+      "Nasdaq +0.48%",
+      "AMD +3.53%",
+      "MSFT -2.05%"
+    ],
+    "macro_note": "CPI surprise cool, VIX down 2.56%, small caps struggling (-0.83% Russell 2000)."
+  },
+  "big_story": {
+    "story_id": "c9de3d6c1eeb",
+    "lead_host": "ALEX",
+    "story_title": "Stock Market Today: S&P Climbs On Surprise CPI Inflation Report; IBM Plunges 23% On Earnings",
+    "angle": "IBM's earnings collapse is a real business problem, but it's being swallowed by the inflation narrative\u2014the market is now betting the Fed's done tightening, and that's reshaping everything from tech valuations to bank lending outlooks.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "116c9abc6650",
+      "lead_host": "ALEX",
+      "angle": "CPI fell for the first time since early COVID\u2014if this holds, the Fed's entire 2024 tightening cycle gets reframed as overkill, and that's a massive repricing signal.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "25c63bcd5af6",
+      "lead_host": "ALEX",
+      "angle": "Jamie Dimon says the consumer is 'fine' and markets are 'booming'\u2014JPMorgan's blowout profits are real, but that's also the moment to ask if he's seeing something the rest of the market isn't, or if he's just riding the wave.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "bbafc54792dc",
+      "lead_host": "MAYA",
+      "angle": "A space mirror to reflect sunlight just got cleared for launch\u2014it's not a joke, it's a real geoengineering play, and the fact that it's happening quietly while everyone's distracted by AI is genuinely wild.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "e88684263dce",
+      "lead_host": "MAYA",
+      "angle": "Pixel Watch 5 leak shows four finishes\u2014Google's watch strategy is basically 'throw enough colors at the wall and hope one sticks,' which is not a product strategy, it's a panic move.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "34086b26d51a",
+    "joke_angle": "Families of RAF Chinook crash victims are suing to proceed with a case\u2014it's serious, but the fact that it's still in court limbo while everyone else moves on is the kind of institutional slowness that makes you wonder if the system is designed to protect victims or just delay them."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "TSMC revenue surge and chipmaker strength amid geopolitical risk",
+    "fresh_take": "Yesterday chipmakers were the bright spot in a geopolitical downturn; today AMD's up 3.5% on a softer macro backdrop\u2014the question is whether chip strength is real demand or just rate-cut euphoria."
+  },
+  "sign_off": {
+    "callback_target": "IBM's 23% plunge\u2014the earnings miss that got buried by inflation news"
+  }
+}

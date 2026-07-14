@@ -1,0 +1,51 @@
+{
+  "date": "2026-07-14",
+  "mp3": "2026-07-14.mp3",
+  "size_bytes": 1431972,
+  "duration_sec": 89.47,
+  "turns": 10,
+  "words": 214,
+  "char_usage_estimate": 1404,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-07-14T13:53:18.060808Z",
+  "top_mover": {
+    "symbol": "ADBE",
+    "name": "ADBE",
+    "pct": -4.03
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7536.35009765625,
+        "pct": 0.28
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 52603.08984375,
+        "pct": 0.2
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 25998.6484375,
+        "pct": 0.48
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2953.169921875,
+        "pct": -0.83
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 16.719999313354492,
+        "pct": -2.56
+      }
+    ]
+  }
+}

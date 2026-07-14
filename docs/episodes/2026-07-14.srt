@@ -1,0 +1,127 @@
+1
+00:00:00,000 --> 00:00:12,048
+JAMIE: I B M dropped twenty-three percent this morning on earnings, but the real shock is C P I just came in cooler than expected—and the market's already betting the Fed cuts rates sooner than it said it would.
+
+2
+00:00:12,048 --> 00:00:32,129
+ALEX: So yesterday chipmakers were holding up the whole sector while geopolitical risk was dragging everything else down, and now A M D's up three point five three percent on a softer macro read—which means we need to figure out if chip demand is actually there or if we're just watching investors do a rate-cut victory lap and dragging semiconductor stocks along for the ride.
+
+3
+00:00:32,129 --> 00:01:05,185
+ALEX: So the S&P closed up zero point two eight percent, Nasdaq up zero point four eight, but here's what's actually interesting—the Russell two thousand dropped zero point eight three percent. Small caps are getting left behind while the big-cap names ride the rate-cut narrative. And look, the V I X fell two point five six percent, which means volatility is pricing in a much calmer world than it was yesterday. But Microsoft dropped two point zero five percent despite all that calm, and Adobe fell four point zero three percent—software stocks are selling off like the C P I surprise somehow made their products less valuable.
+
+4
+00:01:05,185 --> 00:01:10,746
+JAMIE: Wait, so cooler inflation is bad for software? That's the opposite of what I thought would happen.
+
+5
+00:01:10,746 --> 00:01:39,477
+ALEX: It's not that inflation is bad for them—it's that investors are repricing growth stocks now that the rate environment might shift faster than expected. When rates fall, you'd normally think high-multiple tech names get a boost, but what's happening is traders are rotating out of the mega-cap software plays and into value and financials. JPMorgan up one point seven five, Bank of America up one point five nine. The market's saying 'thanks for the rate-cut gift, but we're going to redeploy into the stuff that actually prints money when rates are lower.'
+  ↳ source: https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-june-cpi-inflation-ibm-stock/?src=A00220&yptr=yahoo
+
+6
+00:01:39,477 --> 00:01:44,420
+MAYA: So everyone's abandoning the idea that AI is going to solve all of Adobe's problems?
+
+7
+00:01:44,420 --> 00:02:06,664
+ALEX: Adobe's down because Salesforce is down three point two one percent and Accenture is down three percent—the whole consulting and enterprise software complex just got marked down. A M D, though, is up three point five three percent, which tells you chip demand is real enough that investors are willing to bet on it even when growth stocks are getting hammered. That's the only real green flag in the tech sector today.
+
+8
+00:02:06,664 --> 00:02:12,842
+ALEX: I B M's infrastructure business is facing significant headwinds, with the company losing market share in the enterprise space.
+
+9
+00:02:12,842 --> 00:02:17,785
+JAMIE: So I B M's not just having a bad quarter, they're losing the actual business.
+
+10
+00:02:17,785 --> 00:02:35,395
+MAYA: Right, but the stock's down twenty-three percent and nobody's even asking 'what does this mean for the rest of enterprise tech?' Like, if I B M can't hold infrastructure, who's actually winning that contract fight—is it Amazon Web Services, is it Microsoft Azure, or are companies just deciding they don't need anyone and they're building in-house?
+
+11
+00:02:35,395 --> 00:03:00,419
+ALEX: The answer is all three, which is why the market doesn't care about I B M's collapse right now. Investors are too busy repricing the entire sector on the idea that the Fed's pivot is coming sooner, which means the lending environment gets easier, which means the companies that actually profit from lower rates—your JPMorgans, your Bank of Americas—they're the ones getting bought today. I B M's a legacy play that's losing relevance, and the rate-cut narrative just buried it.
+
+12
+00:03:00,419 --> 00:03:06,906
+JAMIE: So I B M's twenty-three percent drop is just noise in a bigger story about the Fed and valuations shifting.
+
+13
+00:03:06,906 --> 00:03:31,312
+MAYA: Which is insane because I B M's losing market share and nobody's asking whether that's a signal that the whole enterprise software market is about to get repriced. Like, we spent the last three years watching companies rush to cloud and AI, and now I B M's saying 'yeah, that killed our business,' and the market's response is 'cool, buy the banks.' It's like watching someone crash their car and the traffic report just says the highway's open.
+
+14
+00:03:31,312 --> 00:03:43,670
+ALEX: Consumer prices fell for the first time since early C O V I D. If this holds, the entire tightening cycle gets reframed as the Fed swinging a sledgehammer at a problem that was already deflating on its own.
+  ↳ source: https://www.marketwatch.com/story/consumer-prices-fall-for-first-time-since-2020-pandemic-but-fight-vs-high-inflation-isnt-over-1544566d?mod=mw_rss_topstories
+
+15
+00:03:43,670 --> 00:03:52,320
+MAYA: So the Fed spent all year telling us inflation was sticky and persistent, and now it turns out inflation was just bored and left on its own?
+
+16
+00:03:52,320 --> 00:04:00,970
+ALEX: The Fed raised rates significantly, and meanwhile the actual inflation numbers are sliding down without permission. That's not policy success—that's the market telling the Fed it overshot.
+
+17
+00:04:00,970 --> 00:04:10,856
+JAMIE: JPMorgan posted strong earnings and beat estimates, so the question is whether the market's seeing actual strength or if it's just riding the wave because banks profit when money moves fast.
+
+18
+00:04:10,856 --> 00:04:18,889
+MAYA: When the guy whose bank makes money on volatility and trading tells you everything's booming, that's not analysis—that's a business update disguised as market commentary.
+
+19
+00:04:18,889 --> 00:04:29,701
+ALEX: JPMorgan's investment banking revenue jumped significantly year-over-year because M&A activity snapped back hard. The bank's not wrong that markets are moving—it's just leaving out the part where its business model depends on that movement continuing.
+
+20
+00:04:29,701 --> 00:04:45,148
+MAYA: The first sunlight reflecting space mirror has been cleared for launch—an actual orbital reflector designed to bounce sunlight down to Earth at night. It's geoengineering, it's real, and the fact that nobody's talking about it because everyone's distracted by AI is the most 2024 thing that's happened all week.
+  ↳ source: https://www.theverge.com/science/965263/reflect-orbital-space-mirror-launch-fcc-clearance
+
+21
+00:04:45,148 --> 00:04:50,400
+JAMIE: Wait, is this a real thing or a startup pitch deck that somehow got regulatory approval?
+
+22
+00:04:50,400 --> 00:05:06,465
+MAYA: It's real—it got cleared for launch, which means regulators looked at the orbital mechanics, the light reflection angles, and the risks and decided to move forward. The company's already raised funding, they've got a launch window, and we're all sitting here talking about whether Google's next watch comes in four colors.
+
+23
+00:05:06,465 --> 00:05:17,896
+MAYA: Families of R A F Chinook crash victims are back in court asking to proceed with their case. Thirty years. Thirty years and the legal system is still deciding whether they get to have their day.
+  ↳ source: https://www.bbc.co.uk/news/articles/crm0mkgxn9eo?at_medium=RSS&at_campaign=rss
+
+24
+00:05:17,896 --> 00:05:26,546
+JAMIE: Wait, what's the hold-up? I mean, I understand appeals take time, but thirty years is—that's not a legal process, that's a waiting list at a government office.
+
+25
+00:05:26,546 --> 00:05:38,594
+ALEX: The case has faced delays, and now the families are asking to move forward. It's the legal equivalent of a company that takes years to respond to a complaint and then asks for another extension to read it.
+
+26
+00:05:38,594 --> 00:05:48,480
+JAMIE: On the tape tomorrow—we've got a slate of earnings that'll tell us whether the rate-cut euphoria actually translates to real business performance or if we're watching companies post numbers into a vacuum.
+
+27
+00:05:48,480 --> 00:06:02,074
+ALEX: Fastenal reports on the fourteenth—they're industrial distribution, so if companies are actually buying and building, their revenue will show it. If the capex story is real, Fastenal's order book will reflect that. If it's just investor sentiment, we'll see it in their guidance.
+
+28
+00:06:02,074 --> 00:06:21,846
+MAYA: H C A Healthcare reports the same day, and here's the thing—hospital networks are the ultimate indicator of whether consumer spending is actually holding or if everyone's just pretending the economy is fine because the Fed might cut rates. If they're seeing patient volume drop or insurance denials spike, that's the signal nobody wants to hear but everyone needs to pay attention to.
+
+29
+00:06:21,846 --> 00:06:29,260
+ALEX: I B M's twenty-three percent bloodbath happened because the company showed up to a knife fight with a business plan from years past.
+
+30
+00:06:29,260 --> 00:06:34,512
+MAYA: And nobody even noticed because the Fed cut rates and suddenly everyone cared about banks instead.
+
+31
+00:06:34,512 --> 00:06:38,837
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
