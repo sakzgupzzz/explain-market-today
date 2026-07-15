@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "JPM up 4.89%, Morgan Stanley posts record revenue\u2014but Buffett just warned the market is basically a casino."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.75% to 7571.55",
+      "Nasdaq +1.46% to 26249.73",
+      "JPM +4.89%, NVDA +4.21%",
+      "LLY -3.45%, PEP -2.61%"
+    ],
+    "macro_note": "Inflation surprise cooling sentiment, equities trading surges lifting financials, but breadth weakening (Russell 2000 -0.83%)."
+  },
+  "big_story": {
+    "story_id": "4775e9e4c835",
+    "lead_host": "ALEX",
+    "story_title": "Morgan Stanley posts record quarterly revenue and profit as equities trading surges 69%",
+    "angle": "The market's fear-to-greed conversion is printing money for banks\u2014but Buffett's 'gambling' comment suggests the party is built on air, not fundamentals.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "54595d5ab685",
+      "lead_host": "JAMIE",
+      "angle": "Buffett on the market: 'It's tough to find values when everybody is preferring gambling'\u2014the Oracle is basically saying retail is doing the Fed's job for them.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "c4d50e29a5ad",
+      "lead_host": "MAYA",
+      "angle": "A SpaceX vet raised $65M to modernize wire harnesses\u2014the unglamorous infrastructure play that actually moves rockets, not the AI hype.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "5f1f81ca9c99",
+      "lead_host": "MAYA",
+      "angle": "Anthropic and Blackstone betting the next trillion-dollar AI business is implementation, not models\u2014the shift from 'build the model' to 'actually make it work for someone'.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "17b8f3f2c5f9",
+      "lead_host": "ALEX",
+      "angle": "PayPal stock soars on Stripe/Advent buyout rumors\u2014a company that once owned the payments future is now a takeover target.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "7c5321e9390c",
+    "joke_angle": "UK proposes midnight social media curfew for 16-17 year-olds but lets them opt out\u2014it's a curfew with a loophole the size of TikTok."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "CPI fell for the first time since early COVID\u2014if this holds, the Fed's entire 2024 tightening cycle gets reframed as over",
+    "fresh_take": "Today's inflation surprise is already flowing into equities trading (Morgan Stanley +69% trading revenue) and bank earnings\u2014the market is front-running a Fed pivot before it happens."
+  },
+  "sign_off": {
+    "callback_target": "Buffett's 'gambling' comment\u2014tie it back to Morgan Stanley's record trading revenue as the punchline."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "date": "2026-07-15",
+  "mp3": "2026-07-15.mp3",
+  "size_bytes": 1227172,
+  "duration_sec": 76.67,
+  "turns": 8,
+  "words": 160,
+  "char_usage_estimate": 1096,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-07-15T13:52:50.422451Z",
+  "top_mover": {
+    "symbol": "JPM",
+    "name": "JPM",
+    "pct": 4.89
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7571.5498046875,
+        "pct": 0.75
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 52707.62109375,
+        "pct": 0.4
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26249.734375,
+        "pct": 1.46
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2953.169921875,
+        "pct": -0.83
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 16.170000076293945,
+        "pct": -5.77
+      }
+    ]
+  }
+}
