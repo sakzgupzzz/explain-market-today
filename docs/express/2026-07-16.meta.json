@@ -1,0 +1,51 @@
+{
+  "date": "2026-07-16",
+  "mp3": "2026-07-16.mp3",
+  "size_bytes": 1394773,
+  "duration_sec": 87.14,
+  "turns": 9,
+  "words": 195,
+  "char_usage_estimate": 1303,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-07-16T13:58:56.776710Z",
+  "top_mover": {
+    "symbol": "UNH",
+    "name": "UNH",
+    "pct": 7.98
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7543.22998046875,
+        "pct": -0.39
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 52709.73828125,
+        "pct": 0.1
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26008.083984375,
+        "pct": -0.99
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2973.624755859375,
+        "pct": -0.09
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 16.299999237060547,
+        "pct": 4.02
+      }
+    ]
+  }
+}

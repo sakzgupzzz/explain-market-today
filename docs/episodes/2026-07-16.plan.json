@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Meta's AI just became a snitch\u2014it's now tattling to parents about teen suicide conversations, and UNH is up 7.98% on the day."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.39%",
+      "Nasdaq -0.99%",
+      "UNH +7.98%",
+      "ORCL -4.01%"
+    ],
+    "macro_note": "Nasdaq soft, VIX spiking 4%, but healthcare and staples holding up\u2014rotation into safety."
+  },
+  "big_story": {
+    "story_id": "aea03891bf1a",
+    "lead_host": "MAYA",
+    "story_title": "Meta now alerts parents if their teen discussed suicide or self-harm with its AI chatbot",
+    "angle": "Meta's AI is now a mandatory reporter\u2014the company is betting that surveillance-as-care will win back trust with regulators and parents, but the real question is whether an algorithm should be the first line of defense for a kid in crisis.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "2a8c62547e49",
+      "lead_host": "ALEX",
+      "angle": "Bond yields are finally beating inflation for the first time in years\u2014the 'decade trade' everyone missed while chasing AI stocks.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "6f57a537b752",
+      "lead_host": "JAMIE",
+      "angle": "Trump just missile-struck an Iranian oil tanker to enforce a blockade nobody knew was happening\u2014escalation theater or actual policy shift?",
+      "conviction": "real"
+    },
+    {
+      "story_id": "cfc81a53f67c",
+      "lead_host": "MAYA",
+      "angle": "EU just ordered Google to open Android and Search to rivals\u2014the company that owns search is about to have actual competition for the first time.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "a142379a848f",
+      "lead_host": "ALEX",
+      "angle": "IRS tax liens are surging and destroying small businesses\u2014the agency's collection tool is becoming a financial death sentence.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "d4adfe9a204b",
+    "joke_angle": "The UK just had to officially announce that the Falkland Islands are 'definitely ours' after Argentina hung a banner\u2014we've reached peak geopolitics where countries are settling disputes like roommates arguing over a shared Netflix password."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Buffett on the market: 'It's tough to find values when everybody is preferring gambling'\u2014the Oracle is basically saying the market is a casino.",
+    "fresh_take": "Today's bond story proves Buffett right\u2014while everyone was gambling on AI, actual value (inflation-beating yields) was sitting right there in plain sight."
+  },
+  "sign_off": {
+    "callback_target": "Meta's AI tattling to parents\u2014we'll circle back to whether surveillance-as-care actually works or if it just makes teens delete their accounts."
+  }
+}
