@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Oracle just got cut in half\u2014down 6.25%\u2014and the AI boom's first real casualty might be the companies that were supposed to win it."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.51%",
+      "Nasdaq -1.47%",
+      "Oracle -6.25%",
+      "Accenture +5.54%"
+    ],
+    "macro_note": "Tech selloff despite AI gainers; VIX spiking 13.93% signals rotation anxiety."
+  },
+  "big_story": {
+    "story_id": "22c945992e53",
+    "lead_host": "JAMIE",
+    "story_title": "Pro-AI super PAC keeps $31M ready for the midterms",
+    "angle": "The AI industry is now openly buying political protection before regulation lands\u2014this is what regulatory capture looks like in real time, and it's happening faster than Congress can even define what AI is.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "84fdcb3d1b43",
+      "lead_host": "ALEX",
+      "angle": "SpaceX stock fell below $135 and bears are panicking\u2014but Meta's IPO dropped 23% in year one and became a $1T company anyway; the real question is whether Elon's valuation was ever real.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "102a838b67e9",
+      "lead_host": "MAYA",
+      "angle": "Coca-Cola's Fairlife dairy got ransomware-locked and had to shut production\u2014turns out the premium milk brand's biggest threat isn't competition, it's a teenager in a basement with a laptop.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "0181d27700aa",
+      "lead_host": "ALEX",
+      "angle": "Chinese fraud rings are stealing billions from banks and retailers using coordinated schemes\u2014this is organized crime at scale, and it's exposing how porous cross-border financial controls still are.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "56ad7f3c9ee3",
+      "lead_host": "MAYA",
+      "angle": "The 'woke science' wars just hit space research\u2014politicians are now deciding which scientific questions are ideologically acceptable, which is how you get bad data and worse policy.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "932c2d9ff802",
+    "joke_angle": "The World Cup's biggest winners were ranch dressing and stuffed raccoons\u2014which means somewhere a brand manager is pitching 'sports beverage synergy' to a taxidermist."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Oracle's 6.25% drop\u2014the AI boom's first real casualty"
+  }
+}
