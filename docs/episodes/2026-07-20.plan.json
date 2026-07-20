@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "AMD just jumped 3.55% on a new rack system that might actually make Nvidia sweat\u2014and Microsoft's already buying."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.33%",
+      "Nasdaq +0.60%",
+      "AMD +3.55% (biggest gainer)",
+      "Oracle -3.59% (biggest loser)"
+    ],
+    "macro_note": "VIX crushed 4.58%, risk appetite back on, AI chip wars heating up while legacy software gets punished."
+  },
+  "big_story": {
+    "story_id": "5de0411ebf75",
+    "lead_host": "ALEX",
+    "story_title": "AMD launches Helios, its first rack AI system to rival Nvidia, adding Microsoft as newest buyer",
+    "angle": "AMD finally has a credible Nvidia alternative that actual hyperscalers will buy\u2014this is the first real supply-chain crack in Jensen's monopoly, not vaporware.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "f15340cb6615",
+      "lead_host": "ALEX",
+      "angle": "IBM down hard enough that Wall Street is openly discussing breakup\u2014the company that invented the mainframe is now a breakup candidate.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "40b59605aadb",
+      "lead_host": "MAYA",
+      "angle": "Electric air taxis are now fighting each other in the same airspace\u2014Joby vs. Archer vs. Lilium, all racing to be first, none profitable yet.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "9160afc151ce",
+      "lead_host": "ALEX",
+      "angle": "FedEx is now charging EU customers MORE to ship to more zip codes\u2014inflation theater disguised as logistics optimization.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "b6e829b7840a",
+      "lead_host": "MAYA",
+      "angle": "Hugging Face got breached and is asking users to rotate credentials\u2014the open-source AI darling just proved it's not immune to the same security theater everyone else does.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "662fb5a5bf46",
+    "joke_angle": "South East Water is banning hosepipes for 2.4 million people because it's too dry\u2014in a country where it rains constantly, they're rationing water like it's 1945."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Oracle just got cut in half\u2014down 6.25%\u2014and the AI boom's first real casualty might be the companies that were supposed to",
+    "fresh_take": "Oracle's down another 3.59% today as AMD's Helios launch proves the real AI winners aren't the legacy software vendors\u2014they're the chip makers and hyperscalers who can actually execute."
+  },
+  "sign_off": {
+    "callback_target": "AMD's 3.55% jump and Microsoft's Helios order\u2014the moment the chip duopoly actually cracked."
+  }
+}
