@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Jamie Dimon says don't buy stocks or Treasurys at current prices\u2014and the market's up 0.4% anyway, because apparently billionaires yelling into the void is now a market indicator."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.41%",
+      "Nasdaq +0.81%",
+      "AMD +6.25%",
+      "ADBE -2.45%"
+    ],
+    "macro_note": "VIX crushed 5.74%, equities shrug off Dimon's dour call, small-caps outpacing large-caps."
+  },
+  "big_story": {
+    "story_id": "2c86f44a8f7d",
+    "lead_host": "JAMIE",
+    "story_title": "Jamie Dimon says markets underestimate risks and he wouldn't buy stocks or Treasurys at current prices",
+    "angle": "Dimon's warning is a masterclass in having it both ways\u2014he's terrified enough to tell everyone not to buy, but not terrified enough to actually sell JPMorgan's own massive portfolio; the real story is whether this is genuine risk-sensing or just the loudest voice in the room getting louder.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "2d669b6a1c95",
+      "lead_host": "MAYA",
+      "angle": "Trump's 50% Canada tariff is the kind of number that sounds like a negotiating position until you realize he might actually mean it\u2014Carney's 'intensify' response is Canada's way of saying 'we also have tariffs, buddy.'",
+      "conviction": "real"
+    },
+    {
+      "story_id": "e31762828586",
+      "lead_host": "ALEX",
+      "angle": "GM beats earnings and raises guidance on 'resilient consumer'\u2014translation: people are still buying cars they can't afford, and the company is not complaining about it.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "560058080f83",
+      "lead_host": "ALEX",
+      "angle": "Stocktwits co-founder dumped chip stocks before the 20% slide\u2014either he's a genius or he got lucky; either way, retail traders are now following his moves like he's not the guy who built a platform for retail traders to lose money on.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "6df194220254",
+      "lead_host": "MAYA",
+      "angle": "FCC retroactively banning 'disguised DJI gadgets' is the regulatory equivalent of closing the barn door after the drones have already filmed your house\u2014and somehow DJI is still the company everyone buys.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "fa72889be266",
+    "joke_angle": "Americans are skipping lettuce over a cyclospora outbreak\u2014the salad industry's worst nightmare is that people are finally listening to their doctors instead of their Instagram wellness accounts."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "AMD launches Helios, its first rack AI system to rival Nvidia, adding Microsoft as newest buyer",
+    "fresh_take": "AMD's up 6.25% today on momentum from Helios, but the real test is whether Microsoft's buying power actually translates to market share or just gives AMD a headline to lean on while Nvidia still owns the data center."
+  },
+  "sign_off": {
+    "callback_target": "Jamie Dimon's 'don't buy' call\u2014circle back to whether the market's 0.4% gain is spite or just indifference to billionaire warnings."
+  }
+}
