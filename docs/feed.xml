@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Jul 2026 14:00:37 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jul 2026 14:02:39 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,62 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>CRM -2.4%, AT&amp;T Earnings Beat, Revenue Light As — Jul 22</title>
+      <description>AT&amp;T beat earnings but can't sell it—subscribers up, revenue down, stock ripping anyway because apparently that's how this works now. Today's lead: AT&amp;T Earnings Beat, Revenue Light As Wireless Subscribers Top Estimates. AT&amp;T crushed subscriber adds but revenue missed—the disconnect is the story: are investors pricing in future pricing power, or is the market just rewarding growth at any cost?.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:15  Markets
+  00:02:21  Big story
+  00:04:00  Quick hits
+  00:04:13  Odd thing of the day
+  00:05:59  Sign-off
+
+Stories covered:
+  • Jensen Huang goes on offense about Chinese AI while the West panics over Kimi—he's betting the geopolitical risk is overblown and the market's already priced it in. [hype]
+  • The Fed sounded the alarm on Anthropic's Mythos model but didn't actually have access to it for months—regulators playing catch-up theater while the AI moves faster. [real]
+  • SMCI surging on Alphabet and Tesla earnings coming—the AI infrastructure play is betting the big boys will keep spending, which is a bet on capex not slowing. [real]
+  • Rubio warns Tehran's Hormuz threat could roil global markets—11 straight nights of U.S. strikes and the oil market's barely flinching, which is either confidence or complacency. [noise]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] A T&amp;T's earnings are like a magician pulling a rabbit out of a hat—except the rabbit is invisible, the hat is on fire, and Wall Street's just clapping anyway: subscribers climbed, revenue tanked, stock's up because apparently none of those things matter in the same direction anymore.
+ALEX: [deadpan] S&amp;P 500 down zero point zero three percent, Nasdaq off zero point three one percent, but the Dow climbed zero point three one percent—which is the market's way of saying it can't decide if today's good or bad, so it's splitting the difference and disappointing everyone equally. Netflix up two point one eight percent, Exxon Mobil up one point three two percent. Meanwhile Salesforce dropped two point four three percent, Meta down one point seven six percent. Tech's getting crushed, energy's celebrating, and the Dow's just happy to be here.
+JAMIE: [curious] So the Dow's the only one with good news today—what, is it the only index that bought Exxon?
+MAYA: [rushed] No, it's heavier in industrials and financials. But also Netflix is up, which is weird because that's usually a Nasdaq stock, and the Nasdaq's bleeding. So we've got this bizarre crossover where the old-economy winners are dragging the Dow up while the mega-cap tech that's supposed to be holding up the entire market is just tanking. Microsoft down one point five three percent, Liliana down one point four five percent—that's your AI darlings getting smacked around.
+ALEX: [sarcastic] So bonds are getting more expensive, gold's doing gold things, crypto's just existing. The real story is that tech's selling off into higher rates instead of selling off because rates are too high, which means investors are finally pricing in that maybe these companies don't have infinite profit runways.
+JAMIE: [laughs] That's the opposite of the invisible rabbit thing from earlier—now the hat's visible, the rabbit's gone, and Wall Street's just staring at the empty table going 'I'm sure it'll be back.'
+ALEX: [deadpan] Here's where it gets weird: A T&amp;T added subscribers, which is genuinely huge, but the company's bringing in less revenue per user than it was a year ago. So they're winning the volume game while losing the price game—and the stock's treating that like a feature, not a bug.
+MAYA: [curious] Wait, how are they losing price power when the entire telecom industry has been jacking up rates? Like, Verizon's been flexing on price increases for two years straight.
+ALEX: [sarcastic] Because A T&amp;T's chasing postpaid phone adds—the cheapest, most competitive segment. They're not raising prices on those customers; they're undercutting to steal them from Verizon. The margin compression is real. But investors are betting that once they've built this subscriber base, they can flip a switch and monetize it later.
+JAMIE: [laughs] So we're back to the invisible rabbit—they're saying 'trust us, the money's coming,' and the market's nodding along because growth numbers feel more real than a promise to raise prices in a year.
+MAYA: [rushed] Except Verizon and T-Mobile didn't have to choose. They both added subs AND held pricing power. A T&amp;T's playing a completely different game—it's like they decided the only way to win was to lose money faster than everyone else.
+ALEX: The real test is whether that strategy actually works. If A T&amp;T can't raise prices on these new customers without losing them again, they've just bought market share at the cost of profitability. And that's a bet that only pays off if the market stays irrational about rewarding growth over cash flow.
+JAMIE: [deadpan] Which, given that the stock's ripping on the news, apparently we're betting it does.
+MAYA: [rushed] Jensen Huang just went on offense about Chinese AI—he's saying the West's panicking over Kimi and the open-source models, but he thinks the geopolitical risk is already baked into prices and the market's overreacting.
+JAMIE: [curious] So the Nvidia CEO is basically telling Wall Street to chill out about the very thing that usually drives Nvidia's stock price up—the fear that everyone needs American chips because China's locked out?
+MAYA: [mischievously] Exactly. He's arguing that banning Chinese models would actually hurt Nvidia more than letting them exist, because the real money's in the infrastructure that runs them, not in the geopolitical theater. It's a weird flex to tell your own investors their panic is priced in.
+ALEX: [deadpan] The Fed spent months sounding the alarm about Anthropic's Mythos model without actually having access to it—they were running threat assessments on a model they couldn't touch until mid-July.
+JAMIE: [laughs] So regulators were warning the public about a fire in a building they hadn't walked into yet. That's not oversight, that's a press release pretending to be policy.
+MAYA: [excited] And the actual risk is that AI's moving faster than the institutions trying to regulate it—by the time they got access to Mythos, other companies were already patching vulnerabilities. The Fed's operating on a three-month lag while the tech's shipping weekly.
+ALEX: [sarcastic] Super Micro Computer's surging because Alphabet and Tesla earnings are coming up, and the market's betting the big AI spenders keep opening their wallets on capex. The entire play hinges on whether the spending keeps accelerating instead of normalizing.
+JAMIE: [deadpan] So we're pricing in that hyperscalers never get tired of buying infrastructure. That's not a bet on fundamentals—that's a bet that the hype cycle doesn't turn.
+MAYA: [rushed] Rubio's warning that Tehran's threatening the Strait of Hormuz while the U.S. is on night eleven of strikes, and oil barely moved.
+ALEX: [sarcastic] Eleven consecutive nights of military action and the oil market's response is basically a shrug. Either traders are confident it won't escalate, or they're pricing in that it doesn't matter anymore. The market hasn't told us yet.
+JAMIE: On the tape tomorrow: we've got earnings rolling in across financials, infrastructure, and some names you might not be tracking yet.
+ALEX: [deadpan] C M E Group reports July twenty-second—that's your derivatives exchange, so volume and volatility are the real numbers to watch. If the Fed's actually pausing rate hikes, trading activity should tick up. The other thing nobody's talking about is ADTRAN on the same day—telecom infrastructure play that's been buried under the A T&amp;T noise, but if capex spending's still accelerating, they'll show it in the orders.
+MAYA: [rushed] Cal-Maine Foods is also July twenty-second, which sounds random until you remember egg prices have been insane for two years straight. This is your test case for whether commodity inflation's actually rolling over or if it's just taking a breath.
+JAMIE: [laughs] So we've got a derivatives exchange that only matters if the market's actually moving, a telecom gear company that only matters if hyperscalers keep spending, and an egg producer that only matters if we finally know what eggs cost. Tomorrow's basically three different bets on whether the last three months of hype actually stick.
+ALEX: [deadpan] A T&amp;T's buying subscribers the way a casino buys chips—lots of volume, zero guarantee anyone leaves the table with more money.
+MAYA: [mischievously] And the casino's convinced itself the house always wins eventually, so the stock just rips.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">40519e9f-79bc-1687-93b8-0310f5bb63bd</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-22.mp3" length="5909890" type="audio/mpeg" />
+      <pubDate>Wed, 22 Jul 2026 14:02:13 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-22.jpg" />
+      <itunes:duration>00:06:08</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260722</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-22.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-22.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-22.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AMD +6.2%, Jamie Dimon says markets underestimate risks — Jul 21</title>
       <description>Jamie Dimon says don't buy stocks or Treasurys at current prices—and the market's up 0.4% anyway, because apparently billionaires yelling into the void is now a market indicator. Today's lead: Jamie Dimon says markets underestimate risks and he wouldn't buy stocks or Treasurys at current prices. Dimon's warning is a masterclass in having it both ways—he's terrified enough to tell everyone not to buy, but not terrified enough to actually sell JPMorgan's own massive portfolio; the real story is whether this is genuine risk-sensing or just the loudest voice in the room getting louder.

@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "AT&T beat earnings but can't sell it\u2014subscribers up, revenue down, stock ripping anyway because apparently that's how this works now."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.03%",
+      "Nasdaq -0.31%",
+      "Dow +0.31%",
+      "NFLX +2.18%, XOM +1.32%",
+      "CRM -2.43%, META -1.76%"
+    ],
+    "macro_note": "Dow holding, Nasdaq sliding, energy up on oil jump, mega-cap tech taking it on the chin."
+  },
+  "big_story": {
+    "story_id": "cdbf7c94b6b5",
+    "lead_host": "ALEX",
+    "story_title": "AT&T Earnings Beat, Revenue Light As Wireless Subscribers Top Estimates",
+    "angle": "AT&T crushed subscriber adds but revenue missed\u2014the disconnect is the story: are investors pricing in future pricing power, or is the market just rewarding growth at any cost?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "c2c73c1b00de",
+      "lead_host": "MAYA",
+      "angle": "Jensen Huang goes on offense about Chinese AI while the West panics over Kimi\u2014he's betting the geopolitical risk is overblown and the market's already priced it in.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "33592b0c79df",
+      "lead_host": "MAYA",
+      "angle": "The Fed sounded the alarm on Anthropic's Mythos model but didn't actually have access to it for months\u2014regulators playing catch-up theater while the AI moves faster.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "97d8abcdab22",
+      "lead_host": "ALEX",
+      "angle": "SMCI surging on Alphabet and Tesla earnings coming\u2014the AI infrastructure play is betting the big boys will keep spending, which is a bet on capex not slowing.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "99c45d33b3f1",
+      "lead_host": "JAMIE",
+      "angle": "Rubio warns Tehran's Hormuz threat could roil global markets\u201411 straight nights of U.S. strikes and the oil market's barely flinching, which is either confidence or complacency.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "91e47da51b7c",
+    "joke_angle": "Honda's 2026 Prelude is a hybrid marvel\u2014a car so technologically advanced it's basically a rolling spreadsheet that also has cup holders."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "AT&T's revenue miss that nobody cares about because the subscriber number was too loud"
+  }
+}
