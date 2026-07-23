@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Tesla down 12%, Nasdaq down 1.7%, and somehow the real story is a $1 billion fine that happened yesterday\u2014but today it's personal."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.94%",
+      "Nasdaq -1.73%",
+      "TMO +9.72%",
+      "TSLA -12.42%",
+      "VIX +12.44%"
+    ],
+    "macro_note": "Oil surge reignites inflation fears; rates climbing, tech bleeding, energy rallying."
+  },
+  "big_story": {
+    "story_id": "114728edf770",
+    "lead_host": "MAYA",
+    "story_title": "Europe just fined Google $1 billion, the day before Trump is expected to announce tariffs",
+    "angle": "The EU swung first on antitrust, Google got hit, and now Trump's tariff threat looms\u2014this is the moment the tech giants realize they can't play both sides anymore.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "7ddc9918984f",
+      "lead_host": "ALEX",
+      "angle": "Blackstone's AI bet is printing money\u2014record inflows on the back of a beat\u2014but the real question is whether they're riding a wave or building something that survives the next correction.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "3241adca5d68",
+      "lead_host": "MAYA",
+      "angle": "IBM insists AI isn't killing the mainframe after a shocking quarter\u2014which is like a restaurant saying the food poisoning rumors are overblown while the health inspector is still in the kitchen.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "e6fbdf7b3cd1",
+      "lead_host": "ALEX",
+      "angle": "Albertsons stock craters on weaker grocery spending\u2014consumer is tapping out, and grocers are the first to feel it.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "72ee0338133f",
+      "lead_host": "ALEX",
+      "angle": "10-year Treasury yield hits highest since January as oil-driven inflation fears resurface\u2014the Fed's rate-cut narrative just got a lot quieter.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "62b463e47ca6",
+    "joke_angle": "Framework's premium laptop ships with LESS RAM than expected\u2014it's like ordering a luxury car and getting the base model's memory."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Jensen Huang goes on offense about Chinese AI while the West panics over Kimi\u2014he's betting the geopolitical risk is over",
+    "fresh_take": "Google just got fined $1B by the EU for antitrust, and Trump's tariffs are coming\u2014Huang's geopolitical bet is looking a lot riskier today than it did yesterday."
+  },
+  "sign_off": {
+    "callback_target": "Google's $1 billion fine and what it means for tech's regulatory whiplash"
+  }
+}
