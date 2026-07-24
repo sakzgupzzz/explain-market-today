@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Trump's tariff wave just hit 50+ countries, and oil's already knocking on $100\u2014here's what breaks next."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.10%",
+      "Nasdaq -0.33%",
+      "VIX +1.44% to 18.97",
+      "ACN +3.46%, AVGO -2.37%"
+    ],
+    "macro_note": "Tariff anxiety creeping into tech; small-caps outpacing large-caps; volatility ticking up but still calm."
+  },
+  "big_story": {
+    "story_id": "c3d2605884d2",
+    "lead_host": "JAMIE",
+    "story_title": "US hits dozens of countries with new wave of tariffs",
+    "angle": "Tariffs are no longer a threat\u2014they're live policy now. The real question is whether markets are pricing in the actual damage or just the headline noise.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "3d78a3a243e9",
+      "lead_host": "ALEX",
+      "angle": "Oil at $100 is the tariff tax on everything else\u2014shipping costs, manufacturing, inflation creep. This is how tariffs actually hurt.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "40eb4490026f",
+      "lead_host": "MAYA",
+      "angle": "Meta's smart glasses got banned from Comic-Con for secret filming\u2014the exact privacy nightmare that should've been the product's first problem, not an afterthought.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "439cb73a9681",
+      "lead_host": "ALEX",
+      "angle": "SAP beats revenue but guidance is the tell\u2014when software companies get cagey about the future, it's because they see tariff/macro headwinds coming.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "4e685fe18885",
+      "lead_host": "MAYA",
+      "angle": "EU says TikTok's kid protection can't be opt-in\u2014which means TikTok's entire business model for Gen Z just got a regulatory deadline.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "40538a7ef840",
+    "joke_angle": "Microsoft's solution to LG monitors installing McAfee ads on Windows: tell users to uninstall McAfee. That's like a restaurant saying 'the food poisoning is the customer's fault for not checking the kitchen.'"
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Europe just fined Google $1 billion, the day before Trump is expected to announce tariffs",
+    "fresh_take": "Today Trump actually delivered on tariffs\u201450+ countries hit. The EU's Google fine looks like a warmup act. Now it's a race: who can extract more economic pain faster, Brussels or Washington?"
+  },
+  "sign_off": {
+    "callback_target": "oil at $100\u2014the tariff tax nobody wants to pay"
+  }
+}
