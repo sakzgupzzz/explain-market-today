@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "AMD just tanked 7.5% while Adobe soared 5.5%\u2014the AI trade is officially splitting into winners and wreckage."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.14%",
+      "Nasdaq -0.43%",
+      "AMD -7.52%",
+      "Adobe +5.55%",
+      "VIX 18.67"
+    ],
+    "macro_note": "Broad market flat, but AI narrative fracturing\u2014chip stocks bleeding while software rallies on earnings optimism."
+  },
+  "big_story": {
+    "story_id": "576d8cb06bc7",
+    "lead_host": "MAYA",
+    "story_title": "Tech stocks today: Big Tech earnings this week mark a pivotal moment for the AI trade",
+    "angle": "The AI trade isn't one trade anymore\u2014it's a Venn diagram of who can actually monetize it vs. who's just burning capex. This week's earnings will expose which camp each mega-cap is really in.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "c58c33654542",
+      "lead_host": "ALEX",
+      "angle": "CXMT's 466% debut is pure China-listing theater: a chipmaker nobody's heard of becomes the most valuable China-listed company in hours. The float is probably the size of a postage stamp.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "7219e77b9b2f",
+      "lead_host": "ALEX",
+      "angle": "Cocoa prices are down 40% from peak but chocolate bars still cost $7\u2014retailers are pocketing the margin windfall instead of passing it through. Inflation theater.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "d27236341ba0",
+      "lead_host": "MAYA",
+      "angle": "Meta's smart glasses rollout is a masterclass in how NOT to launch hardware: limited supply, no killer app, and the company's own AI team seems more interested in chatbots than AR.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "952d79fb9799",
+      "lead_host": "JAMIE",
+      "angle": "The UK is considering shutting down Jodrell Bank, one of the world's oldest radio telescopes, to save money. It's like selling your telescope to pay for a telescope.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "b9b3ff817ab5",
+    "joke_angle": "A movie called 'Champagne and Bullets' is being ranked on the Mount Rushmore of bad films\u2014which means someone watched it, took notes, and decided it deserved a historical monument."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Oil at $100 is the tariff tax on everything else\u2014shipping costs, manufacturing, inflation creep.",
+    "fresh_take": "Cocoa prices are down but chocolate is still expensive: retailers are hoarding the margin instead of passing savings through. Same playbook as tariff pass-through\u2014companies test how much consumers will tolerate before they actually cut prices."
+  },
+  "sign_off": {
+    "callback_target": "AMD's 7.5% drop\u2014the chip sector's canary in the coal mine for whether AI capex is actually paying off or just burning cash."
+  }
+}

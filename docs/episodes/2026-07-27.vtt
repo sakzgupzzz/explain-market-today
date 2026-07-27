@@ -1,0 +1,118 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:08.449
+<v Jamie>A M D just tanked seven point five two percent while Adobe soared five point five five—the AI trade is officially splitting into winners and wreckage.
+
+00:00:08.449 --> 00:00:23.157
+<v Alex>So cocoa prices collapsed, but chocolate bars are still expensive at the checkout. Retailers are pocketing the difference instead of passing it along—which is the same thing we saw with tariffs last year. Companies test the ceiling on consumer tolerance before they ever drop a price.
+  ↳ source: https://www.cnbc.com/2026/07/26/cocoa-prices-chocolate-lindt-barry-callebaut-nestle.html
+
+00:00:23.157 --> 00:00:42.559
+<v Alex>S&P is down zero point one four percent, Nasdaq dropped zero point four three. The V I X crawled up to eighteen point six seven. On the surface, nothing. But zoom in and you're watching the AI trade have what I'd call a structural argument with itself—chip stocks are getting demolished while software companies are having their best day in months.
+
+00:00:42.559 --> 00:00:47.879
+<v Jamie>So what's the chip story? Is this just Nvidia being Nvidia, or is something deeper happening?
+
+00:00:47.879 --> 00:01:22.929
+<v Alex>A M D dropped seven point five two percent—that's not a wobble, that's a full retreat. Nvidia off three point nine. The narrative was supposed to be that AI infrastructure is the gold rush and everyone sells shovels and picks. Turns out the picks are getting cheaper, the competition is showing up, and the people who actually need the picks are asking harder questions about R O I. Meanwhile, Adobe up five point five five, Salesforce up five point three nine, Oracle up four point eight six—these are the companies that get to charge you monthly to use the AI they trained on your data, and nobody's questioning the math there.
+
+00:01:22.929 --> 00:01:39.827
+<v Maya>Wait, so the software companies are basically winning because they're selling the dream while hardware companies are stuck selling the reality? Like, Adobe can tell you AI will make you more creative and you just believe it, but Nvidia has to actually deliver chips that work and don't cost a fortune to run?
+
+00:01:39.827 --> 00:01:49.528
+<v Alex>Exactly. One is a story that lives in a spreadsheet. The other is a supply chain that has to compete on physics and price. Guess which one Wall Street prefers today.
+
+00:01:49.528 --> 00:02:01.420
+<v Jamie>So when you said the chocolate bar margin hit a five-year high while cocoa collapsed, that was the software play. Adobe's the one sitting on the shelf at checkout while everyone else is scrambling to cut costs.
+
+00:02:01.420 --> 00:02:21.135
+<v Maya>So here's the thing nobody's talking about: Nvidia's guidance is going to be the bellwether, but what we're actually watching is whether they can still convince people that AI inference—the part where you actually *use* the model after training it—is going to be as capital-intensive as training was. Because if inference gets cheaper, the whole R O I math for enterprises flips.
+
+00:02:21.135 --> 00:02:39.912
+<v Alex>Inference is already cheaper. That's the problem. You train on H100s, but you can run inference on older chips, smaller chips, sometimes even CPUs if you're willing to take a latency hit. Nvidia knows this. So they're going to talk about full-stack solutions, software bundles, lock-in—anything to keep the revenue per customer climbing even if the hardware margin compresses.
+
+00:02:39.912 --> 00:02:48.361
+<v Jamie>Wait, so Nvidia's earnings aren't really about whether AI works. They're about whether Nvidia can convince Wall Street that Nvidia gets to own the entire chain.
+
+00:02:48.361 --> 00:03:07.137
+<v Maya>Exactly. And that's why Meta and Microsoft and Google's earnings matter just as much. Because if those companies say 'our inference costs are dropping faster than we expected,' Nvidia has to suddenly explain why their data center revenue isn't growing as fast next quarter. It's like watching three separate earnings calls that are all secretly about the same question.
+
+00:03:07.137 --> 00:03:24.036
+<v Alex>Microsoft's already signaling that. They've been talking up their Maia chips and their partnerships with A M D. That's not strategy—that's insurance. They're building optionality because they know Nvidia's prices are unsustainable at current volumes. If Microsoft's capex guidance comes in flat or lower this quarter, the entire chip complex gets repriced downward.
+
+00:03:24.036 --> 00:03:33.737
+<v Jamie>So earnings week isn't five separate stories. It's one story being told five different ways, and whoever breaks first—whoever admits their AI capex isn't paying off yet—that's the real headline.
+
+00:03:33.737 --> 00:03:48.446
+<v Maya>And the software companies know this. They're going to report margins and user growth and act like the infrastructure underneath doesn't matter. Oracle and Salesforce don't have to answer for Nvidia's valuation. They just have to prove their AI features are sticky. That's a much easier pitch.
+
+00:03:48.446 --> 00:03:56.269
+<v Alex>C X M T, a chipmaker, just had a market debut surge of four hundred sixty-six percent, making it the most valuable China-listed company.
+
+00:03:56.269 --> 00:04:04.718
+<v Maya>Four hundred sixty-six percent on a company with zero distribution outside China? That's not an IPO, that's a lottery ticket printer that happens to make semiconductors.
+
+00:04:04.718 --> 00:04:19.427
+<v Alex>The float was probably the size of a postage stamp. You've got market cap built on what amounts to a few billion shares that actually traded hands. Pure theater—the kind where you build the entire house of cards before anyone's allowed to walk through the door.
+
+00:04:19.427 --> 00:04:26.937
+<v Jamie>Cocoa futures are down from their peak, but a chocolate bar at the checkout is still expensive. So where did the savings go?
+
+00:04:26.937 --> 00:04:43.836
+<v Alex>Into retailer margins. Chocolate makers tested the ceiling on what consumers would actually pay, found it was way higher than the input cost drop, and just... kept it. Same playbook as the tariff windfall last year—companies don't lower prices when inputs fall, they lower input costs as an excuse to raise prices elsewhere.
+
+00:04:43.836 --> 00:04:57.918
+<v Maya>So chocolate makers are basically running the C X M T playbook but in reverse: instead of announcing a product and watching the market price it into the stratosphere, they're announcing a cost collapse and watching retailers price it straight into their own pockets.
+
+00:04:57.918 --> 00:05:02.299
+<v Jamie>Meta's smart glasses rollout is getting criticized for limited supply and unclear applications.
+
+00:05:02.299 --> 00:05:15.130
+<v Maya>No killer app, and the company's own AI team is more interested in chatbots than A R. So Meta's releasing hardware that solves a problem nobody has, with software that doesn't exist, to people who can't actually buy it yet.
+
+00:05:15.130 --> 00:05:18.572
+<v Alex>At least the market research is writing the actual headlines.
+
+00:05:18.572 --> 00:05:24.205
+<v Jamie>The UK is considering shutting down Jodrell Bank, one of the world's oldest radio telescopes, to save money.
+
+00:05:24.205 --> 00:05:39.226
+<v Maya>Astronomers are saying it would tear the heart out of UK science. Which is a fancy way of saying the government is about to sell off the tools that train the next generation of researchers so they can save a budget line item for two fiscal years.
+
+00:05:39.226 --> 00:05:50.179
+<v Alex>It's infrastructure theater. Cut the telescope, announce the savings, watch the headlines move on, and then spend three times as much rebuilding research capacity ten years later when everyone realizes you broke the pipeline.
+
+00:05:50.179 --> 00:05:58.628
+<v Maya>There's a movie called Champagne and Bullets that's now being ranked alongside The Room and Troll 2 as one of the greatest bad films ever made.
+  ↳ source: https://www.theverge.com/column/971103/champagne-and-bullets-bad-movies-review
+
+00:05:58.628 --> 00:06:08.330
+<v Jamie>Wait, so someone actually watched this movie, took detailed notes, and said 'yes, this belongs on the Mount Rushmore of cinematic disasters'? That's not a review, that's a historical designation.
+
+00:06:08.330 --> 00:06:23.351
+<v Alex>The formula is always the same: ambition light-years ahead of budget, zero self-awareness, and just enough earnestness that it loops back around to being genuinely watchable. Champagne and Bullets probably cost far less than a major studio film and somehow convinced itself it was a major thriller.
+  ↳ source: https://www.theverge.com/column/971103/champagne-and-bullets-bad-movies-review
+
+00:06:23.351 --> 00:06:35.868
+<v Maya>It's the only genre where failure becomes a feature. You can't accidentally make a good action movie—but you can accidentally make a movie so committed to its own delusion that people will show up specifically to watch it collapse.
+
+00:06:35.868 --> 00:06:47.447
+<v Jamie>On the tape tomorrow: Baker Hughes reports earnings, and we've got a slate of regional banks filing the same day—Sierra Bancorp, Bank of Marin, California BanCorp. Anything worth watching, or is this just the cleanup crew?
+
+00:06:47.447 --> 00:07:08.727
+<v Alex>Baker Hughes is the one to care about. Energy services, offshore drilling, all the infrastructure plays that move with oil prices and capex cycles. If they're guiding down on rig counts or talking about margin pressure from competition, that tells you something about where energy companies think the next six months are headed. The banks are more noise—regional lenders haven't exactly been the growth story this year.
+
+00:07:08.727 --> 00:07:28.442
+<v Maya>Alpha Metallurgical Resources also reports. Coal company, which is wild because coal's supposed to be dead, but data centers and power grids are suddenly hungry again, and A M R's stock is up this year. So if they come out and say 'yeah, we're actually printing money because everyone needs baseload power for AI servers,' that's the real story nobody saw coming.
+
+00:07:28.442 --> 00:07:42.837
+<v Jamie>So we've got the energy infrastructure play, the regional banking check-in, and the coal company that became relevant again by accident. Tomorrow's going to tell us whether the earnings surprises are hiding in plain sight or if the market's already priced all of this in.
+
+00:07:42.837 --> 00:07:50.035
+<v Alex>A M D down seven point five two percent is the market asking Nvidia whether it's selling infrastructure or just selling faith.
+
+00:07:50.035 --> 00:07:54.103
+<v Maya>And tomorrow's earnings are going to answer whether faith still pays rent.
+
+00:07:54.103 --> 00:07:58.484
+<v Jamie>This show is for entertainment and education only — nothing here is investment advice.
