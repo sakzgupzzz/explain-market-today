@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Mon, 27 Jul 2026 14:41:20 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 14:15:47 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,68 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>AMD -7.9%, Advanced Micro Devices (AMD) Surged on — Jul 28</title>
+      <description>AMD crashed 7.9% while the Booker Prize just crowned 13 novels nobody's read yet—two different kinds of AI hype, same day. Today's lead: Advanced Micro Devices (AMD) Surged on an Agentic AI-Driven Server CPU Renaissance. AMD's agentic AI server play was supposed to be the narrative that saved the stock—instead it tanked 7.9% today, exposing how thin the conviction is on who actually wins the next chip cycle.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:31  Markets
+  00:02:31  Big story
+  00:04:25  Quick hits
+  00:05:34  Odd thing of the day
+  00:07:05  Sign-off
+
+Stories covered:
+  • UPS raised full-year guidance but admits domestic Q3 revenue will be flat—the logistics company is saying 'we're doing great, but also nothing's moving.' [real]
+  • JetBlue's Q2 loss widened as fuel costs surged 81%—airlines are now just fuel hedges with wings attached. [real]
+  • Kevin Warsh's Fed press conference will be revealing even without a rate hike—the real signal is what he *doesn't* say about inflation. [hype]
+  • Cursor's India push with localized pricing ahead of SpaceX acquisition is a bet that AI coding tools need geographic arbitrage to scale—or it's just cheap labor optics. [hype]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] A M D dropped seven point nine percent today while the Booker Prize just crowned thirteen novels, and I'm genuinely unsure which institution is more confident nobody will actually engage with their selection.
+ALEX: [deadpan] A M D tanked seven point nine two percent today, which means yesterday's split between infrastructure and enterprise software wasn't a correction—it's the actual map of where money flows now. Broadcom down, Intel down, but Accenture climbed six point five nine percent. The chip foundries that sell picks during a gold rush are getting crushed while the people selling shovels to dig through data are doing fine.
+ALEX: [deadpan] The S&amp;P five hundred dropped zero point one seven percent, Nasdaq fell one point zero six percent, and the V I X climbed two point zero nine points on rate uncertainty. But here's the thing: the pain is not distributed evenly. A M D collapsed seven point nine two percent. Oracle down three point two seven percent. Meanwhile Accenture jumped six point five nine percent, Coca-Cola up six point one three, Thermo Fisher up four point eight six. The market is literally paying a premium to ignore semiconductors right now.
+JAMIE: [curious] So the chip story is not about demand disappearing—it's about where the money thinks the actual profit lives?
+ALEX: Exactly. Enterprise software and business services companies that help other companies extract value from their data are ascending. The foundries and chip designers that were supposed to be the backbone of the AI boom are getting treated like they overcharged for a commodity. Accenture's up six point five nine percent because they're the middleman who teaches your company how to use the thing everyone already has.
+MAYA: [mischievously] So A M D is the person who built the stadium and nobody's paying them to sit in it anymore, they're just paying the guy who sells the concessions?
+JAMIE: [laughs] That's—that's exactly right. The Booker Prize crowned thirteen novels and the market crowned one winner: the people who bill hourly to tell other people what to do with their hardware.
+ALEX: [deadpan] Here's where A M D's agentic AI narrative breaks down: the company spent the last eighteen months positioning Epyc server chips as the infrastructure play for autonomous AI agents—things that can run tasks without human intervention. That story was supposed to be the reframe after losing so much mindshare to Nvidia. But the market saw A M D's agentic AI pivot today and didn't say 'finally, a new angle.' It said 'you're still not winning the game you're in.'
+MAYA: [curious] Wait, what's the actual server CPU market situation?
+ALEX: [sarcastic] A M D's not keeping pace with the market. They're not even holding their slice. So you can announce agentic AI server chips all you want, but if the hyperscalers are already committed to Nvidia's ecosystem and your own customers are telling you they're going to keep buying Nvidia anyway, a rebrand doesn't move the needle.
+JAMIE: [laughs] Is this the thing where the customer says 'yes, we'll definitely evaluate A M D' and then never actually does?
+MAYA: [rushed] It's worse. It's the thing where they say 'agentic AI is the future' and A M D says 'we have agentic AI chips' and the customer goes 'cool, we're buying more Nvidia.' Because switching costs aren't about the hardware anymore—they're about the software stack, the training libraries, the people who know how to optimize for it. A M D can have the faster chip on a benchmark and it doesn't matter if everyone's already written their code for Nvidia's architecture.
+ALEX: [deadpan] And here's the part that probably spooked investors today: A M D's guidance for next quarter is still contingent on hyperscaler demand stabilizing. But the hyperscalers have already bought what they need for the next six months. They're not in a shortage anymore. So A M D is selling into a market that just switched from 'we can't get enough chips' to 'we're evaluating what we actually use.' That's a completely different sales environment.
+JAMIE: So the agentic AI thing isn't a pivot—it's a prayer.
+ALEX: [deadpan] U P S raised full-year guidance but admitted domestic third-quarter revenue will be flat—the logistics company is essentially saying we're crushing it financially while nothing's actually moving through our network.
+JAMIE: [curious] So they're profitable because they've already squeezed the margin out of every box, not because anyone's shipping more boxes?
+ALEX: Exactly. Guidance up, volume flat. That's the playbook now: charge more, move the same amount, call it a win.
+MAYA: [rushed] JetBlue's Q2 loss actually widened while fuel costs surged eighty-one percent—which means the airline industry has basically become a bet on oil prices with occasional seating.
+JAMIE: [laughs] Eighty-one percent is not a cost increase, that's a hostage situation.
+ALEX: [sarcastic] When your single largest variable cost moves that much in one quarter, you can't price your way out of it fast enough. JetBlue's margin just evaporated.
+MAYA: [mischievously] Kevin Warsh's Fed press conference is happening without a rate cut, but investors are treating it like the real signal is what he doesn't say about inflation—like we're reading tea leaves to figure out whether the Fed actually believes its own data.
+JAMIE: [curious] So the headline is the rate decision, but the actual news is the energy shocks and AI-driven price pressure he either acknowledges or pretends don't exist?
+ALEX: [deadpan] He'll talk around it. The Fed's job is to sound confident even when the inflation picture is genuinely fragmented. Some sectors are cooling, some are still hot, and nobody wants to say 'we don't know which one matters more.'
+MAYA: [rushed] Cursor's pushing into India with localized pricing right before the SpaceX acquisition closes, which tells you they're either betting that AI coding tools need geographic arbitrage to actually scale, or they're just trying to look efficient before the deal finalizes.
+JAMIE: [excited] India's their third-largest market globally and they're hiring locally—is that the real growth story or the optics play?
+MAYA: Both, probably. But if they're serious about scale, the unit economics in India have to work without subsidizing the pricing forever, or it's just a customer acquisition cost that never pays back.
+MAYA: [rushed] The Booker Prize longlist just dropped thirteen novels—and I'm looking at the judges' statement saying these are the ones that will 'spark conversations' and I'm trying to figure out who the audience is for a thirteen-book longlist. Like, are you the person who's read all thirteen?
+JAMIE: [curious] How many people actually make it through the whole longlist before the shortlist gets announced?
+ALEX: [deadpan] The shortlist gets announced in September. We're in August. So you've got about four weeks to read thirteen novels while also doing your job, and then six more weeks to read the six shortlisted ones before the winner drops in November. The Booker Prize is a marketing calendar that calls itself a literary institution. The longlist isn't a reading list—it's a press release that happens to have book spines on it.
+JAMIE: [excited] On the tape tomorrow: American Tower reports, and we're watching what happens when a company that owns the physical infrastructure for cell towers has to explain itself to a market that just spent the last three months deciding infrastructure doesn't matter.
+ALEX: [deadpan] American Tower's got real estate and recurring revenue from carriers who have no choice but to pay them. That's supposed to be the hedge against what we saw today—the flight from semiconductors into things that actually generate cash flow. So if they miss, it's not about demand; it's about whether the carriers themselves are under enough pressure that they're renegotiating leases.
+MAYA: [rushed] And Asbury Automotive Group reports—which is wild because car dealers are essentially the A M D of retail right now. They built the lot, they own the inventory, and then the customer walks in and finances the deal through a bank instead of paying them. So Asbury's margins live and die on whether people are actually buying cars or just kicking tires.
+JAMIE: [laughs] So tomorrow we find out whether the things that seemed safe—towers, dealerships—are actually just slower ways to watch your margin get hollowed out.
+MAYA: [rushed] A M D spent eighteen months convincing everyone their chips were the future, and the market spent four hours proving the future doesn't need them.
+ALEX: [deadpan] The narrative expires faster than the silicon does.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">d03fdb3e-5c82-b82b-aa1b-26ce62c76055</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-28.mp3" length="6926965" type="audio/mpeg" />
+      <pubDate>Tue, 28 Jul 2026 14:15:14 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-28.jpg" />
+      <itunes:duration>00:07:12</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260728</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-28.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-28.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-28.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AMD -7.5%, Tech stocks today: Big Tech earnings — Jul 27</title>
       <description>AMD just tanked 7.5% while Adobe soared 5.5%—the AI trade is officially splitting into winners and wreckage. Today's lead: Tech stocks today: Big Tech earnings this week mark a pivotal moment for the AI trade. The AI trade isn't one trade anymore—it's a Venn diagram of who can actually monetize it vs. who's just burning capex. This week's earnings will expose which camp each mega-cap is really in.

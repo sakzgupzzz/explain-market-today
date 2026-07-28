@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "AMD crashed 7.9% while the Booker Prize just crowned 13 novels nobody's read yet\u2014two different kinds of AI hype, same day."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: -0.17%",
+      "Nasdaq: -1.06%",
+      "AMD: -7.92%",
+      "Accenture: +6.59%"
+    ],
+    "macro_note": "Tech selling pressure offset by enterprise software strength; VIX creeping up on rate uncertainty."
+  },
+  "big_story": {
+    "story_id": "929556b8b7a4",
+    "lead_host": "ALEX",
+    "story_title": "Advanced Micro Devices (AMD) Surged on an Agentic AI-Driven Server CPU Renaissance",
+    "angle": "AMD's agentic AI server play was supposed to be the narrative that saved the stock\u2014instead it tanked 7.9% today, exposing how thin the conviction is on who actually wins the next chip cycle.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "cc4c677b1769",
+      "lead_host": "ALEX",
+      "angle": "UPS raised full-year guidance but admits domestic Q3 revenue will be flat\u2014the logistics company is saying 'we're doing great, but also nothing's moving.'",
+      "conviction": "real"
+    },
+    {
+      "story_id": "272fb66d82a6",
+      "lead_host": "ALEX",
+      "angle": "JetBlue's Q2 loss widened as fuel costs surged 81%\u2014airlines are now just fuel hedges with wings attached.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "2cae25ea15d2",
+      "lead_host": "ALEX",
+      "angle": "Kevin Warsh's Fed press conference will be revealing even without a rate hike\u2014the real signal is what he *doesn't* say about inflation.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "173a2ef17e77",
+      "lead_host": "MAYA",
+      "angle": "Cursor's India push with localized pricing ahead of SpaceX acquisition is a bet that AI coding tools need geographic arbitrage to scale\u2014or it's just cheap labor optics.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "27f1571ac08c",
+    "joke_angle": "The Booker Prize longlist just dropped 13 'dynamite' novels\u2014which is exactly how many people will actually read them before the winner is announced."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "AMD just tanked 7.5% while Adobe soared 5.5%\u2014the AI trade is officially splitting into winners and wreckage.",
+    "fresh_take": "AMD tanked *harder* today at -7.9%, proving yesterday's split wasn't a blip\u2014it's the actual structure of the AI trade: infrastructure plays are collapsing while enterprise software (Accenture +6.6%) keeps climbing."
+  },
+  "sign_off": {
+    "callback_target": "AMD's agentic AI narrative"
+  }
+}
