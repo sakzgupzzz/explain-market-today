@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "AMD just lost 10.86% in a single day while the Fed decides whether to cut rates\u2014one's a company problem, one's a system problem."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.52%",
+      "Nasdaq -0.66%",
+      "VIX +3.54% to 19.33",
+      "AMD -10.86%",
+      "Adobe +3.92%"
+    ],
+    "macro_note": "Broad weakness ahead of Fed decision; tech volatility spiking while some software names hold gains."
+  },
+  "big_story": {
+    "story_id": "999504ab34cc",
+    "lead_host": "ALEX",
+    "story_title": "Investors are selling Meta as it heads to its earnings report",
+    "angle": "Meta's earnings call is a live stress-test of whether AI capex actually returns money or just burns it\u2014and the market is pricing in skepticism before the numbers even land.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "5d350c798b76",
+      "lead_host": "ALEX",
+      "angle": "Fed is genuinely torn on rate cuts today\u2014inflation data is softer but not soft enough to guarantee a move, so expect a hold and forward guidance theater.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "f384108c6b5a",
+      "lead_host": "MAYA",
+      "angle": "The U.S. is banning foreign robots\u2014which sounds like Cold War policy but is actually about supply-chain risk and labor politics colliding in a Boston Dynamics moment.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "7ea0627ecd43",
+      "lead_host": "ALEX",
+      "angle": "Procter & Gamble missed revenue because volume didn't budge\u2014consumers aren't buying more soap, just paying more for it, and that math breaks eventually.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "8fdd29e13b02",
+      "lead_host": "MAYA",
+      "angle": "Samsung's Galaxy Z Fold 8 is being called 'the future' again, which is what we say every 18 months about a phone that folds and costs $2K.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "5ecd646a3d91",
+    "joke_angle": "Oscar-winning songwriter Glen Hansard killed in a crash\u2014a genuine tragedy that reminds us that talent and fame don't come with a seatbelt upgrade."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "AMD crashed 7.9% while the Booker Prize just crowned 13 novels nobody's read yet\u2014two different kinds of AI hype, same day",
+    "fresh_take": "AMD is down another 3% today (10.86% total)\u2014the AI server CPU rally is officially over, and the Booker Prize still hasn't read its own books."
+  },
+  "sign_off": {
+    "callback_target": "AMD's 10.86% collapse\u2014the show opened on it, and we can close by asking whether the AI capex skepticism that's killing AMD is the same skepticism that's selling Meta into earnings."
+  }
+}

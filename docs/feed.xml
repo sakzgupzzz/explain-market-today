@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Jul 2026 14:15:47 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2026 14:19:32 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,68 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>AMD -10.9%, Investors are selling Meta as it — Jul 29</title>
+      <description>AMD just lost 10.86% in a single day while the Fed decides whether to cut rates—one's a company problem, one's a system problem. Today's lead: Investors are selling Meta as it heads to its earnings report. Meta's earnings call is a live stress-test of whether AI capex actually returns money or just burns it—and the market is pricing in skepticism before the numbers even land.
+
+Chapters:
+  00:00:00  Cold open
+  00:00:11  Markets
+  00:02:07  Big story
+  00:03:45  Quick hits
+  00:05:03  Odd thing of the day
+  00:06:17  Sign-off
+
+Stories covered:
+  • Fed is genuinely torn on rate cuts today—inflation data is softer but not soft enough to guarantee a move, so expect a hold and forward guidance theater. [real]
+  • The U.S. is banning foreign robots—which sounds like Cold War policy but is actually about supply-chain risk and labor politics colliding in a Boston Dynamics moment. [hype]
+  • Procter &amp; Gamble missed revenue because volume didn't budge—consumers aren't buying more soap, just paying more for it, and that math breaks eventually. [real]
+  • Samsung's Galaxy Z Fold 8 is being called 'the future' again, which is what we say every 18 months about a phone that folds and costs $2K. [noise]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] A M D cratered ten point eighty-six percent yesterday while the Fed's still deciding if rates go down—one's a chip company eating itself, the other's the entire financial system deciding whether to turn the faucet on.
+ALEX: [deadpan] S&amp;P down point five-two percent, Nasdaq down point six-six, and the V I X just spiked three point five-four points to nineteen thirty-three. So we're getting that classic setup where the broad market is quietly leaking while the fear gauge is waking up.
+JAMIE: [curious] And A M D's still in freefall—we talked about that yesterday, but now it's down ten point eighty-six total. Meanwhile Adobe's up nearly four percent. So you've got one chip company imploding and a design software company gaining ground on the same day—what's the actual story there?
+ALEX: [sarcastic] Adobe's up because they beat on earnings and they're not a data center play—they're not holding their breath waiting for the Fed. A M D's getting punished because the AI server CPU rally is deflating, and until we know if rates are coming down, nobody's confident enough to buy chips again. It's not that Adobe's suddenly genius. It's that A M D bet everything on a cycle that might not exist.
+MAYA: [rushed] So we're watching software names hold up—Accenture up three point eight-two, Adobe up three point nine-two—while hardware's getting demolished. It's like the entire market just decided to stop building the actual machines and only pay for the apps that run on machines that nobody's buying yet.
+ALEX: [deadpan] Energy's outperforming while growth is stalling. That's not a bull market thing. That's a recession-hedging portfolio. You're buying Exxon up two point eighty-seven percent and selling Nvidia down two point three-three because you're genuinely unsure what the next six months look like.
+ALEX: [deadpan] Meta's down ahead of earnings, which on any normal day would be noise, but the timing here is telling—investors are bailing before Zuckerberg gets on the call.
+MAYA: [rushed] That's not a capex plan, that's a bet that the entire AI compute market will suddenly exist in the shape Meta needs it to exist, and if it doesn't, they've just funded a data center graveyard.
+JAMIE: [curious] But Meta's been printing money on ads—like, their revenue's still up year-over-year, right? So what's the actual bear case here? That they're spending faster than they can earn?
+ALEX: [sarcastic] Worse. They're spending faster than the market believes they'll ever earn it back. The moment an analyst asks 'When does this spending become revenue?' and Zuckerberg doesn't have a number, the stock reprices.
+MAYA: [mischievously] And the thing is, we've got earnings from Nvidia, from OpenAI's compute partners, from everyone building the chips—and none of them are talking about Meta as a customer with clear R O I. They're just talking about 'demand.' So Meta's basically screaming into the void right now, betting that if they build enough capacity, someone will eventually want to rent it.
+JAMIE: [excited] So when Meta reports, the stock's already priced in the skepticism—investors are selling the story before they hear it.
+ALEX: [deadpan] Exactly. This is the market saying 'Show us the unit economics or we're out.'
+ALEX: [deadpan] The Fed's announcement is in about four hours, and inflation data came in softer this morning—but not soft enough to lock in a rate cut. This is the setup where they hold and we get forward guidance theater instead.
+JAMIE: [curious] So they're not going to move, but they're going to *sound* like they're thinking about moving?
+ALEX: [sarcastic] That's the bet. They'll say conditions are 'evolving' and 'data-dependent,' which is Fed-speak for 'we're scared of being wrong in either direction, so we're going to wait another six weeks and see if inflation decides to cooperate.'
+MAYA: [rushed] The U.S. is banning foreign robots now—which sounds like we're preparing for a robot invasion, but it's actually a supply-chain tariff dressed up in science fiction language.
+JAMIE: [excited] Wait, banning robots? Like, all robots?
+MAYA: [mischievously] Advanced robotic devices made outside the U.S.—so anything that looks like it could automate a factory job. It's ostensibly about supply-chain resilience, but really it's labor politics wrapped in a tariff. We're protecting American robots from foreign robots, which is peak protectionism.
+ALEX: [deadpan] Procter &amp; Gamble reported earnings that beat on the bottom line but missed on revenue—and the reason is that consumers aren't buying more soap, they're just paying more for the soap they already buy.
+JAMIE: [curious] So they've squeezed the price as far as it goes, and now volume's the problem.
+ALEX: [sarcastic] Exactly. Price increases work until they don't. Procter &amp; Gamble's been raising prices while volume stayed flat, which meant margins looked great on a spreadsheet. But once you hit the ceiling where consumers stop buying because the soap costs too much, you're out of levers. That's where they are now.
+MAYA: [rushed] Samsung's calling the Galaxy Z Fold 8 'the future of phones' again—which is what we say every eighteen months about a device that folds in half and breaks if you look at it wrong.
+JAMIE: [curious] Is it actually different this time, or is this just the same phone with a faster processor?
+MAYA: [mischievously] It's the same form factor with incremental durability improvements—thinner, slightly better hinge, same price. Samsung's betting that 'the future' is a marketing category they can refresh every cycle without anyone noticing that the actual innovation stopped two years ago.
+MAYA: [rushed] Oscar-winning songwriter Glen Hansard is dead—he was killed in a crash. He won best song at the Academy Awards for the film Once, this low-budget Irish musical that nobody expected to matter, and then it did, and he got a statue for it.
+JAMIE: [curious] Once was huge though—like, that movie had actual legs. Did he keep making music after that Oscar?
+ALEX: [deadpan] He did, but Once was the thing. That song, 'Falling Slowly,' won the Oscar, and that's the one that stays with you. He was still touring, still performing. You win the biggest award in your industry and somehow that becomes a ceiling instead of a launchpad.
+MAYA: [mischievously] It's weird because winning an Oscar should mean your career gets safer, right? More money, more security, more people want to work with you. Instead he's out there on the road, and a car crash ends it. The statue doesn't come with armor.
+JAMIE: [excited] On the tape tomorrow—we've got earnings rolling in, and the Fed's decision lands in four hours, so we're about to find out if the market's thesis holds or if we're walking into a wall.
+ALEX: [deadpan] The Fed announcement is the headline, but we're also watching payroll data from Automatic Data Processing on the twenty-ninth—A D P's numbers usually telegraph what the jobs report will say, and if hiring's slowing harder than the Fed's been told, that changes everything about rate cuts.
+MAYA: [rushed] And on the earnings side, Aon's reporting the twenty-ninth as well—they're the insurance broker that's been riding the commercial insurance cycle, so if they miss on premium growth, that tells you whether businesses are still confident enough to expand their risk exposure or if they're in full defensive mode.
+JAMIE: [laughs] So we're either getting confirmation that the slowdown is real, or we're getting the all-clear to buy the dip. No pressure on A D P and Aon to just casually move the market.
+ALEX: [deadpan] A M D's still underwater at ten point eighty-six percent—and if Meta reports with no R O I story, we're watching the same skepticism crater two different bets on the same delusion.
+MAYA: [mischievously] Except A M D's at least selling chips to someone. Meta's just hoping the chips they bought will eventually convince themselves to be profitable.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">e38402d1-e125-744c-a145-1d5068246b0c</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-29.mp3" length="6237479" type="audio/mpeg" />
+      <pubDate>Wed, 29 Jul 2026 14:18:54 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-29.jpg" />
+      <itunes:duration>00:06:29</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260729</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-29.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-29.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-07-29.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AMD -7.9%, Advanced Micro Devices (AMD) Surged on — Jul 28</title>
       <description>AMD crashed 7.9% while the Booker Prize just crowned 13 novels nobody's read yet—two different kinds of AI hype, same day. Today's lead: Advanced Micro Devices (AMD) Surged on an Agentic AI-Driven Server CPU Renaissance. AMD's agentic AI server play was supposed to be the narrative that saved the stock—instead it tanked 7.9% today, exposing how thin the conviction is on who actually wins the next chip cycle.

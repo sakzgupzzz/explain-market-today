@@ -1,0 +1,151 @@
+1
+00:00:00,000 --> 00:00:11,298
+JAMIE: A M D cratered ten point eighty-six percent yesterday while the Fed's still deciding if rates go down—one's a chip company eating itself, the other's the entire financial system deciding whether to turn the faucet on.
+
+2
+00:00:11,298 --> 00:00:24,733
+ALEX: S&P down point five-two percent, Nasdaq down point six-six, and the V I X just spiked three point five-four points to nineteen thirty-three. So we're getting that classic setup where the broad market is quietly leaking while the fear gauge is waking up.
+
+3
+00:00:24,733 --> 00:00:39,390
+JAMIE: And A M D's still in freefall—we talked about that yesterday, but now it's down ten point eighty-six total. Meanwhile Adobe's up nearly four percent. So you've got one chip company imploding and a design software company gaining ground on the same day—what's the actual story there?
+
+4
+00:00:39,390 --> 00:01:01,376
+ALEX: Adobe's up because they beat on earnings and they're not a data center play—they're not holding their breath waiting for the Fed. A M D's getting punished because the AI server CPU rally is deflating, and until we know if rates are coming down, nobody's confident enough to buy chips again. It's not that Adobe's suddenly genius. It's that A M D bet everything on a cycle that might not exist.
+
+5
+00:01:01,376 --> 00:01:15,728
+MAYA: So we're watching software names hold up—Accenture up three point eight-two, Adobe up three point nine-two—while hardware's getting demolished. It's like the entire market just decided to stop building the actual machines and only pay for the apps that run on machines that nobody's buying yet.
+
+6
+00:01:15,728 --> 00:01:28,858
+ALEX: Energy's outperforming while growth is stalling. That's not a bull market thing. That's a recession-hedging portfolio. You're buying Exxon up two point eighty-seven percent and selling Nvidia down two point three-three because you're genuinely unsure what the next six months look like.
+
+7
+00:01:28,858 --> 00:01:37,408
+ALEX: Meta's down ahead of earnings, which on any normal day would be noise, but the timing here is telling—investors are bailing before Zuckerberg gets on the call.
+
+8
+00:01:37,408 --> 00:01:48,706
+MAYA: That's not a capex plan, that's a bet that the entire AI compute market will suddenly exist in the shape Meta needs it to exist, and if it doesn't, they've just funded a data center graveyard.
+
+9
+00:01:48,706 --> 00:01:57,562
+JAMIE: But Meta's been printing money on ads—like, their revenue's still up year-over-year, right? So what's the actual bear case here? That they're spending faster than they can earn?
+
+10
+00:01:57,562 --> 00:02:07,944
+ALEX: Worse. They're spending faster than the market believes they'll ever earn it back. The moment an analyst asks 'When does this spending become revenue?' and Zuckerberg doesn't have a number, the stock reprices.
+
+11
+00:02:07,944 --> 00:02:26,876
+MAYA: And the thing is, we've got earnings from Nvidia, from OpenAI's compute partners, from everyone building the chips—and none of them are talking about Meta as a customer with clear R O I. They're just talking about 'demand.' So Meta's basically screaming into the void right now, betting that if they build enough capacity, someone will eventually want to rent it.
+
+12
+00:02:26,876 --> 00:02:32,983
+JAMIE: So when Meta reports, the stock's already priced in the skepticism—investors are selling the story before they hear it.
+  ↳ source: https://finance.yahoo.com/markets/article/investors-are-selling-meta-as-it-heads-to-its-earnings-report-131629707.html
+
+13
+00:02:32,983 --> 00:02:37,563
+ALEX: Exactly. This is the market saying 'Show us the unit economics or we're out.'
+
+14
+00:02:37,563 --> 00:02:49,777
+ALEX: The Fed's announcement is in about four hours, and inflation data came in softer this morning—but not soft enough to lock in a rate cut. This is the setup where they hold and we get forward guidance theater instead.
+
+15
+00:02:49,777 --> 00:02:54,969
+JAMIE: So they're not going to move, but they're going to *sound* like they're thinking about moving?
+
+16
+00:02:54,969 --> 00:03:06,572
+ALEX: That's the bet. They'll say conditions are 'evolving' and 'data-dependent,' which is Fed-speak for 'we're scared of being wrong in either direction, so we're going to wait another six weeks and see if inflation decides to cooperate.'
+
+17
+00:03:06,572 --> 00:03:15,122
+MAYA: The U.S. is banning foreign robots now—which sounds like we're preparing for a robot invasion, but it's actually a supply-chain tariff dressed up in science fiction language.
+  ↳ source: https://www.theverge.com/tech/972259/us-foreign-robots-power-inverter-ban
+
+18
+00:03:15,122 --> 00:03:17,260
+JAMIE: Wait, banning robots? Like, all robots?
+
+19
+00:03:17,260 --> 00:03:30,390
+MAYA: Advanced robotic devices made outside the U.S.—so anything that looks like it could automate a factory job. It's ostensibly about supply-chain resilience, but really it's labor politics wrapped in a tariff. We're protecting American robots from foreign robots, which is peak protectionism.
+
+20
+00:03:30,390 --> 00:03:41,077
+ALEX: Procter & Gamble reported earnings that beat on the bottom line but missed on revenue—and the reason is that consumers aren't buying more soap, they're just paying more for the soap they already buy.
+  ↳ source: https://www.cnbc.com/2026/07/29/procter-gamble-pg-q4-2026-earnings.html
+
+21
+00:03:41,077 --> 00:03:45,963
+JAMIE: So they've squeezed the price as far as it goes, and now volume's the problem.
+
+22
+00:03:45,963 --> 00:04:01,536
+ALEX: Exactly. Price increases work until they don't. Procter & Gamble's been raising prices while volume stayed flat, which meant margins looked great on a spreadsheet. But once you hit the ceiling where consumers stop buying because the soap costs too much, you're out of levers. That's where they are now.
+  ↳ source: https://www.cnbc.com/2026/07/29/procter-gamble-pg-q4-2026-earnings.html
+
+23
+00:04:01,536 --> 00:04:12,224
+MAYA: Samsung's calling the Galaxy Z Fold 8 'the future of phones' again—which is what we say every eighteen months about a device that folds in half and breaks if you look at it wrong.
+  ↳ source: https://www.theverge.com/tech/972387/samsung-galaxy-z-fold-8-review
+
+24
+00:04:12,224 --> 00:04:17,720
+JAMIE: Is it actually different this time, or is this just the same phone with a faster processor?
+
+25
+00:04:17,720 --> 00:04:29,934
+MAYA: It's the same form factor with incremental durability improvements—thinner, slightly better hinge, same price. Samsung's betting that 'the future' is a marketing category they can refresh every cycle without anyone noticing that the actual innovation stopped two years ago.
+
+26
+00:04:29,934 --> 00:04:43,370
+MAYA: Oscar-winning songwriter Glen Hansard is dead—he was killed in a crash. He won best song at the Academy Awards for the film Once, this low-budget Irish musical that nobody expected to matter, and then it did, and he got a statue for it.
+  ↳ source: https://www.bbc.co.uk/news/articles/c3ekn9d37qvo?at_medium=RSS&at_campaign=rss
+
+27
+00:04:43,370 --> 00:04:48,866
+JAMIE: Once was huge though—like, that movie had actual legs. Did he keep making music after that Oscar?
+
+28
+00:04:48,866 --> 00:05:03,218
+ALEX: He did, but Once was the thing. That song, 'Falling Slowly,' won the Oscar, and that's the one that stays with you. He was still touring, still performing. You win the biggest award in your industry and somehow that becomes a ceiling instead of a launchpad.
+  ↳ source: https://www.marketwatch.com/story/the-fed-isnt-your-biggest-worry-the-central-bank-decision-that-actually-impacts-your-401-k-lands-in-tokyo-fc9d22c8?mod=mw_rss_topstories
+
+29
+00:05:03,218 --> 00:05:16,654
+MAYA: It's weird because winning an Oscar should mean your career gets safer, right? More money, more security, more people want to work with you. Instead he's out there on the road, and a car crash ends it. The statue doesn't come with armor.
+  ↳ source: https://www.bbc.co.uk/news/articles/c3ekn9d37qvo?at_medium=RSS&at_campaign=rss
+
+30
+00:05:16,654 --> 00:05:27,341
+JAMIE: On the tape tomorrow—we've got earnings rolling in, and the Fed's decision lands in four hours, so we're about to find out if the market's thesis holds or if we're walking into a wall.
+
+31
+00:05:27,341 --> 00:05:41,693
+ALEX: The Fed announcement is the headline, but we're also watching payroll data from Automatic Data Processing on the twenty-ninth—A D P's numbers usually telegraph what the jobs report will say, and if hiring's slowing harder than the Fed's been told, that changes everything about rate cuts.
+
+32
+00:05:41,693 --> 00:05:56,961
+MAYA: And on the earnings side, Aon's reporting the twenty-ninth as well—they're the insurance broker that's been riding the commercial insurance cycle, so if they miss on premium growth, that tells you whether businesses are still confident enough to expand their risk exposure or if they're in full defensive mode.
+
+33
+00:05:56,961 --> 00:06:07,343
+JAMIE: So we're either getting confirmation that the slowdown is real, or we're getting the all-clear to buy the dip. No pressure on A D P and Aon to just casually move the market.
+
+34
+00:06:07,343 --> 00:06:17,420
+ALEX: A M D's still underwater at ten point eighty-six percent—and if Meta reports with no R O I story, we're watching the same skepticism crater two different bets on the same delusion.
+
+35
+00:06:17,420 --> 00:06:25,053
+MAYA: Except A M D's at least selling chips to someone. Meta's just hoping the chips they bought will eventually convince themselves to be profitable.
+
+36
+00:06:25,053 --> 00:06:29,328
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
