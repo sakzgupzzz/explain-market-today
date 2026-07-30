@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Meta down 9.65%, Microsoft up 15.33%\u2014the AI trade just split the market in half, and one side is getting left at the station."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +1.34%",
+      "Nasdaq +2.61%",
+      "Microsoft +15.33%",
+      "Meta -9.65%",
+      "VIX -10.70%"
+    ],
+    "macro_note": "Risk-on day with a sharp AI divergence: mega-cap AI winners running, Meta stumbling on enterprise messaging and regulatory headwinds."
+  },
+  "big_story": {
+    "story_id": "238d78f95c53",
+    "lead_host": "JAMIE",
+    "story_title": "Meta tanks 9%, continuing record losing streak, while Microsoft jumps 14% as AI trade splits",
+    "angle": "The market is no longer betting on Meta's AI future\u2014it's betting against it. Earnings miss, FTC lawsuit, and Zuckerberg's vague enterprise AI pitch left investors with no reason to stay.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "e01fc8099e23",
+      "lead_host": "MAYA",
+      "angle": "FTC sues Hims & Hers for selling patient medical data to Meta and Snap\u2014the telehealth unicorn learned that 'privacy' and 'ad targeting' are not compatible business models.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "26394e58d11d",
+      "lead_host": "MAYA",
+      "angle": "Zoox clears final federal hurdle for paid robotaxi service\u2014the Amazon-owned robo-taxi is now legal to operate, but still has to prove it can actually make money without crashing into a fire hydrant.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "7480629185ac",
+      "lead_host": "ALEX",
+      "angle": "Ferrari raises 2026 guidance after Q2 beat\u2014luxury goods holding up while tech implodes, because apparently billionaires still want fast cars even when the AI bubble deflates.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "11798fddf67d",
+      "lead_host": "ALEX",
+      "angle": "Robinhood's crypto trading revenue plunges 38%\u2014retail crypto enthusiasm is cooling faster than Elon's attention span, and the app that gamified stonks is feeling the pain.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "bcc209990fdc",
+    "joke_angle": "Holidaymakers warned about 'explosive diarrhoea' cyclospora parasite\u2014the parasite has better branding than most crypto projects and a more reliable user base."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Investors are selling Meta as it heads to its earnings report",
+    "fresh_take": "Yesterday we said they'd sell into earnings. Today they sold THROUGH earnings\u2014and kept selling. The stock is now in freefall, not just a pre-earnings hedge."
+  },
+  "sign_off": {
+    "callback_target": "Meta's record losing streak"
+  }
+}
