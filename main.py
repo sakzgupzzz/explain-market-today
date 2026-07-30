@@ -128,11 +128,19 @@ def _write_meta(mp3_path: Path, script: str, char_usage: int | None = None,
     mp3_path.with_suffix(".meta.json").write_text(json.dumps(meta, indent=2))
 
 
-def _extract_yesterday_topics() -> list[str]:
-    """Read the most recent plan.json sidecar (if any) and pull 1-3 short
-    topic strings suitable for the planner's yesterday-callback prompt.
-    Returns empty list when no prior plan exists or it's older than 4 days."""
-    plans = sorted(EPISODES_DIR.glob("*.plan.json"))
+def _extract_yesterday_topics(today: str | None = None) -> list[str]:
+    """Read the most recent PRIOR-day plan.json sidecar (if any) and pull 1-3
+    short topic strings suitable for the planner's yesterday-callback prompt.
+    Returns empty list when no prior plan exists or it's older than 4 days.
+
+    Today's own plan is excluded: a mid-run retry (or --force re-run) after
+    the plan sidecar was written would otherwise load today's plan as
+    "yesterday", make the duplicate guard match the episode against itself,
+    and silently skip the episode as "news unchanged"."""
+    if today is None:
+        today = datetime.now().strftime("%Y-%m-%d")
+    plans = [p for p in sorted(EPISODES_DIR.glob("*.plan.json"))
+             if today not in p.stem]
     if not plans:
         return []
     latest = plans[-1]
@@ -232,7 +240,7 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
     EPISODES_DIR.mkdir(parents=True, exist_ok=True)
 
     # ── yesterday-callback context (read previous plan.json sidecar) ───────
-    yesterday_topics = _extract_yesterday_topics()
+    yesterday_topics = _extract_yesterday_topics(today)
     if yesterday_topics:
         print(f"[{today}] yesterday topics for callback: {yesterday_topics}")
 

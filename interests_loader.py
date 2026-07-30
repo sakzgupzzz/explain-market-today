@@ -11,7 +11,9 @@ def load_interests() -> dict:
     try:
         import yaml  # type: ignore
         return yaml.safe_load(path.read_text()) or {}
-    except Exception:
+    except Exception as e:
+        # Non-fatal, but say so — a silent {} means default tone/watchlist.
+        print(f"[interests] failed to load {path.name} ({type(e).__name__}: {e}); using defaults")
         return {}
 
 

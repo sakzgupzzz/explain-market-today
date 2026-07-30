@@ -2,7 +2,7 @@
 
 A fully automated, three-host AI podcast on US markets, business, tech, world, and one weird thing. Generated every weekday afternoon and a 90-second express version every weekday morning.
 
-**Stack:** RSS + yfinance → cluster + score → Groq (`llama-3.3-70b`) for dialogue, `llama-3.1-8b-instant` for verification → ElevenLabs v3 Text-to-Dialogue (Sarah / Brian / Jessica voices) → ffmpeg mastering (-16 LUFS, sidechain music bed) → Podcasting 2.0 RSS on GitHub Pages.
+**Stack:** RSS + yfinance + civic intel (FRED / EDGAR / Congress) → cluster + score → contract-based script generation (structured plan + per-beat render, schema-constrained; Anthropic / Groq / Ollama dispatch — see `docs/RESTRUCTURE.md`) → third-pass fact verification → ElevenLabs v3 Text-to-Dialogue (custom Voice Design host voices via `ELEVEN_VOICE_{JAMIE,ALEX,MAYA}`) → ffmpeg mastering (-16 LUFS, sidechain music bed) → Podcasting 2.0 RSS on GitHub Pages.
 
 **Cost:** $0 LLM (Groq free tier) + $22/mo ElevenLabs Creator+ + $0 hosting (GitHub Pages, Actions).
 
@@ -11,12 +11,14 @@ A fully automated, three-host AI podcast on US markets, business, tech, world, a
 ## Pipeline
 
 ```
-fetch (RSS × 20 sources, yfinance × 60 tickers)
+fetch (RSS × 20 sources, yfinance × 60 tickers, civic intel: FRED/EDGAR/Congress)
   → cluster + score (interests-aware ranking)
   → memory annotate (skip stories covered in last 2 days)
-  → generate (Groq llama-3.3-70b)
-  → critique (2nd Groq pass, llama-3.3-70b @ temp 0.2)
-  → verify   (3rd Groq pass, llama-3.1-8b-instant)
+  → plan (schema-constrained story outline; orphan teasers + duplicate
+    segments structurally impossible; blinded semantic-dup gate)
+  → render beats (structured turns, one inline [tag] per line;
+    critique pass only on the legacy single-shot fallback path)
+  → verify   (fact-check pass, small model)
   → sanitize (regex: banned phrases, ticker spelling, $X / X% normalization)
   → synth (ElevenLabs v3 dialogue API, chunked, mastered, atempo +10%)
   → wrap (intro sting → bed lead-in → JAMIE intro → dialogue → MAYA outro → bed tail → outro sting)
@@ -63,6 +65,9 @@ ELEVENLABS_API_KEY=sk_…      # elevenlabs.io (Creator+ tier, 130k chars/mo)
 # 3. Optional secrets
 NTFY_TOPIC=your-private-topic    # ntfy.sh push notifications
 PODCAST_EMAIL=hello@example.com  # neutral inbox shown in RSS
+ELEVEN_VOICE_JAMIE=…             # custom Voice Design host voices
+ELEVEN_VOICE_ALEX=…              # (regenerate: python design_voices.py preview;
+ELEVEN_VOICE_MAYA=…              #  stock voices used if unset)
 
 # 4. One-off asset generation (intro sting, music bed, host bookends, etc.)
 python make_assets.py
@@ -106,9 +111,15 @@ cluster.py             — Jaccard title-similarity clustering
 score.py               — additive importance scoring with keyword cap
 state.py               — .state.json memory (with corruption recovery)
 calendar_events.py     — earnings (yfinance) + macro (FOMC/CPI/jobs hardcoded)
+civic_intel.py         — FRED + EDGAR + Congress lanes (civicledger)
 interests_loader.py    — interests.yaml loader
-generate_script.py     — show prompt + critique pass + Groq retry
-verify_facts.py        — third-pass fact verification (8b model)
+schemas.py             — plan/turns JSON schemas + semantic validators
+stage_pipeline.py      — contract path: plan → per-beat structured render
+generate_script.py     — LLM dispatch (Anthropic/Groq/Ollama), structured
+                         output + re-prompt loop; legacy single-shot fallback
+verify_facts.py        — third-pass fact verification (small model)
+design_voices.py       — ElevenLabs Voice Design host-voice generation
+eleven_budget.py       — char-budget pacing (auto-queries usage API)
 render_express.py      — single-narrator 90-sec render
 render_email.py        — markdown digest
 render_thread.py       — 5-tweet thread JSON
@@ -127,7 +138,7 @@ tools/ab_stats.py      — aggregate .meta.json by prompt_variant
 tools/audit_audio.py   — local whisper.cpp audit of a published episode
 ```
 
-55 unit tests (`pytest tests/`).
+Unit tests: `pytest tests/`.
 
 ---
 

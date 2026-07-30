@@ -51,7 +51,13 @@ def _find_font():
 
 def write_episode_cover(date_str: str, lead_title: str) -> Path | None:
     """Render and save a per-episode JPG. Returns path or None on failure."""
-    from PIL import Image, ImageDraw, ImageFont
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError:
+        # Missing Pillow must degrade to the base cover, not crash the run
+        # after the TTS money is already spent.
+        print("[cover] Pillow not installed; skipping per-episode cover")
+        return None
     base = _load_base()
     if base is None:
         return None

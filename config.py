@@ -85,9 +85,13 @@ HEADLINES_PER_CATEGORY = {
 }
 
 # LLM (Ollama local or Actions runner). Override via env.
-OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434/api/generate")
-OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL", "qwen3:14b")
-OLLAMA_CRITIC_MODEL = os.environ.get("OLLAMA_CRITIC_MODEL", OLLAMA_MODEL)
+# NOTE: env reads use `os.environ.get(var) or default` (not a .get default)
+# throughout — an unset GitHub secret arrives as an EMPTY string, and "" is
+# never a valid URL/model/voice ID. API keys keep .get(var, "") since empty
+# correctly means "not configured".
+OLLAMA_URL = os.environ.get("OLLAMA_URL") or "http://localhost:11434/api/generate"
+OLLAMA_MODEL = os.environ.get("OLLAMA_MODEL") or "qwen3:14b"
+OLLAMA_CRITIC_MODEL = os.environ.get("OLLAMA_CRITIC_MODEL") or OLLAMA_MODEL
 
 # Groq — fast hosted inference of open-weight models. Free tier covers
 # daily-podcast workload comfortably (30k tokens/min limit, we burn ~20k/run).
@@ -98,49 +102,37 @@ OLLAMA_CRITIC_MODEL = os.environ.get("OLLAMA_CRITIC_MODEL", OLLAMA_MODEL)
 # Monthly character budget on ElevenLabs (Creator+ tier = 130k by default).
 # Used by eleven_budget.py to size episodes dynamically when the API's
 # /v1/user/subscription endpoint isn't accessible (TTS-only key scope).
-ELEVENLABS_CHAR_BUDGET_MONTHLY = int(os.environ.get("ELEVENLABS_CHAR_BUDGET_MONTHLY", "130000"))
+ELEVENLABS_CHAR_BUDGET_MONTHLY = int(os.environ.get("ELEVENLABS_CHAR_BUDGET_MONTHLY") or "130000")
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
-ANTHROPIC_URL = os.environ.get("ANTHROPIC_URL", "https://api.anthropic.com/v1/messages")
-ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-haiku-4-5-20251001")
-ANTHROPIC_CRITIC_MODEL = os.environ.get("ANTHROPIC_CRITIC_MODEL", "claude-haiku-4-5-20251001")
-ANTHROPIC_VERSION = os.environ.get("ANTHROPIC_VERSION", "2023-06-01")
+ANTHROPIC_URL = os.environ.get("ANTHROPIC_URL") or "https://api.anthropic.com/v1/messages"
+ANTHROPIC_MODEL = os.environ.get("ANTHROPIC_MODEL") or "claude-haiku-4-5-20251001"
+ANTHROPIC_CRITIC_MODEL = os.environ.get("ANTHROPIC_CRITIC_MODEL") or "claude-haiku-4-5-20251001"
+ANTHROPIC_VERSION = os.environ.get("ANTHROPIC_VERSION") or "2023-06-01"
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
-GROQ_URL = os.environ.get("GROQ_URL", "https://api.groq.com/openai/v1/chat/completions")
-GROQ_MODEL = os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile")
+GROQ_URL = os.environ.get("GROQ_URL") or "https://api.groq.com/openai/v1/chat/completions"
+GROQ_MODEL = os.environ.get("GROQ_MODEL") or "llama-3.3-70b-versatile"
 # Critique runs on llama-3.1-8b-instant (separate TPM bucket from the 70b
 # generate model — 30k TPM vs 70b's 12k). Earlier we used 70b for critique
 # but ran into 413s when both calls fired within a 60-second window after
 # generate consumed most of the 70b budget. The compact source-facts block
 # (top_n=12, summaries dropped) fits 8b's 8k context comfortably.
-GROQ_CRITIC_MODEL = os.environ.get("GROQ_CRITIC_MODEL", "llama-3.1-8b-instant")
-OLLAMA_TIMEOUT = int(os.environ.get("OLLAMA_TIMEOUT", "1800"))
-
-# Script length: flexible. LLM picks based on news density.
-# Bumped from 400/1800 → 800/2200 after early v3-pipeline episodes felt
-# under-baked (16 turns ~60 words each). Higher floor + explicit minimum
-# turn count in the prompt gets the conversational density back.
-MIN_WORDS = 1000
-MAX_WORDS = 2700
-# Hard floor for retry trigger. Anything under this regenerates with a
-# stronger 'more turns' prompt. 30 leaves slack — first-pass scripts at
-# 32+ turns ship without retry; only the truly thin ones regenerate.
-MIN_TURNS = 30
+GROQ_CRITIC_MODEL = os.environ.get("GROQ_CRITIC_MODEL") or "llama-3.1-8b-instant"
+OLLAMA_TIMEOUT = int(os.environ.get("OLLAMA_TIMEOUT") or "1800")
 
 # ElevenLabs v3 default delivery is podcast-narration paced — about 15-20%
 # slower than what old Piper/macOS-say episodes felt like. Post-process
 # the mastered audio with ffmpeg atempo for a tighter feel without
 # pitch-shifting. 1.08 = 8% faster. Tune in [1.0, 1.20]; >1.15 starts
 # to sound rushed.
-AUDIO_SPEEDUP = float(os.environ.get("AUDIO_SPEEDUP", "1.10"))
+AUDIO_SPEEDUP = float(os.environ.get("AUDIO_SPEEDUP") or "1.10")
 
 # TTS — macOS `say` on Darwin, Piper on Linux
-TTS_VOICE = os.environ.get("TTS_VOICE", "Samantha")
-TTS_RATE = int(os.environ.get("TTS_RATE", "185"))
-PIPER_VOICE_PATH = os.environ.get(
-    "PIPER_VOICE_PATH",
-    str(Path.home() / ".local/share/piper-voices/en_US-libritts_r-medium.onnx"),
+TTS_VOICE = os.environ.get("TTS_VOICE") or "Samantha"
+TTS_RATE = int(os.environ.get("TTS_RATE") or "185")
+PIPER_VOICE_PATH = os.environ.get("PIPER_VOICE_PATH") or str(
+    Path.home() / ".local/share/piper-voices/en_US-libritts_r-medium.onnx"
 )
 # Multi-speaker cast. Speaker IDs index into the libritts_r model (900+ speakers).
 # Spread across the range so voices are distinct.
@@ -170,7 +162,7 @@ INTER_LINE_SILENCE_MS = 160  # natural breath between speaker swaps
 
 # TTS backend selection. "eleven" | "mac" | "piper" | "auto" (default).
 # auto = eleven if ELEVENLABS_API_KEY set, else mac on Darwin, else piper.
-TTS_BACKEND = os.environ.get("TTS_BACKEND", "auto").lower()
+TTS_BACKEND = (os.environ.get("TTS_BACKEND") or "auto").lower()
 
 # ElevenLabs config. Creator plan = 100k chars/mo (~10 hours of audio).
 ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
@@ -178,22 +170,24 @@ ELEVENLABS_API_KEY = os.environ.get("ELEVENLABS_API_KEY", "")
 # API and is pinned to eleven_v3 — the most expressive model, which is what
 # makes multi-host banter sound human. ELEVENLABS_MODEL below is used ONLY by
 # the per-turn v2 fallback that runs when the SDK lacks text_to_dialogue.
-ELEVENLABS_MODEL = os.environ.get("ELEVENLABS_MODEL", "eleven_turbo_v2_5")
-ELEVENLABS_OUTPUT_FORMAT = os.environ.get("ELEVENLABS_OUTPUT_FORMAT", "mp3_44100_128")
+ELEVENLABS_MODEL = os.environ.get("ELEVENLABS_MODEL") or "eleven_turbo_v2_5"
+ELEVENLABS_OUTPUT_FORMAT = os.environ.get("ELEVENLABS_OUTPUT_FORMAT") or "mp3_44100_128"
 # v3 dialogue stability mode (the only voice setting the dialogue API exposes):
 # 0.0 = Creative (most expressive + most tag-responsive, but can hallucinate),
 # 0.5 = Natural (balanced — recommended for an expressive news show),
 # 1.0 = Robust (steadiest, but suppresses audio-tag delivery → more monotone).
-ELEVEN_V3_STABILITY = float(os.environ.get("ELEVEN_V3_STABILITY", "0.5"))
+ELEVEN_V3_STABILITY = float(os.environ.get("ELEVEN_V3_STABILITY") or "0.5")
 # Per-character ElevenLabs voice IDs. Defaults are public premade voices on the
 # ElevenLabs platform. Override per host via env: ELEVEN_VOICE_<NAME>.
 # Browse voices at https://elevenlabs.io/app/voice-library to pick custom IDs.
+# `or` (not a .get default) so an unset GitHub secret (empty string) falls
+# through to the default instead of shipping "" as a voice ID.
 ELEVEN_CHARACTER_VOICES = {
     # 3-host cast: warm female host, deep male analyst, bright female tech.
     # Three distinct timbres listeners can identify within one syllable.
-    "JAMIE": os.environ.get("ELEVEN_VOICE_JAMIE", "EXAVITQu4vr4xnSDxMaL"),  # Sarah — confident, warm, professional host
-    "ALEX":  os.environ.get("ELEVEN_VOICE_ALEX",  "nPczCjzI2devNBz1zQrb"),  # Brian — deep, resonant analyst
-    "MAYA":  os.environ.get("ELEVEN_VOICE_MAYA",  "cgSgspJ2msm6clMCkdW9"),  # Jessica — playful, bright tech reporter
+    "JAMIE": os.environ.get("ELEVEN_VOICE_JAMIE") or "EXAVITQu4vr4xnSDxMaL",  # Sarah — confident, warm, professional host
+    "ALEX":  os.environ.get("ELEVEN_VOICE_ALEX")  or "nPczCjzI2devNBz1zQrb",  # Brian — deep, resonant analyst
+    "MAYA":  os.environ.get("ELEVEN_VOICE_MAYA")  or "cgSgspJ2msm6clMCkdW9",  # Jessica — playful, bright tech reporter
 }
 
 # Podcast metadata (edit these)
@@ -204,7 +198,7 @@ PODCAST_AUTHOR = "Markets Explained"
 # Email is required by Apple/Spotify for ownership verification AND appears in
 # the public RSS source. Anyone can curl the feed and see this. Use a neutral
 # inbox you control — a free Gmail/Proton alias works. Substitute below.
-PODCAST_EMAIL = os.environ.get("PODCAST_EMAIL", "hello@markets-explained.example")
+PODCAST_EMAIL = os.environ.get("PODCAST_EMAIL") or "hello@markets-explained.example"
 PODCAST_DESCRIPTION = (
     "Daily fast, funny roundtable on US markets, business, tech, world, and culture. "
     "Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing "
@@ -217,7 +211,7 @@ PODCAST_BASE_URL = "https://sakzgupzzz.github.io/explain-market-today"
 PODCAST_CATEGORY = "Business"
 PODCAST_SUBCATEGORY = "Investing"
 # Stable show identity for Podcasting 2.0. Random UUID generated once; never change.
-PODCAST_GUID = os.environ.get("PODCAST_GUID", "0d3b1a8e-3e8d-4f7a-a4b2-9e6d1f4a2c5b")
+PODCAST_GUID = os.environ.get("PODCAST_GUID") or "0d3b1a8e-3e8d-4f7a-a4b2-9e6d1f4a2c5b"
 
 # Legal disclaimer. Short version is read aloud in the outro by the LLM;
 # full version goes in feed + episode descriptions.

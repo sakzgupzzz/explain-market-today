@@ -46,12 +46,22 @@ _SOURCE_WEIGHTS = {
 }
 
 
+def _word_re(kw: str) -> re.Pattern:
+    """Word-boundary pattern so 'war' can't match inside 'software', 'ban'
+    inside 'bank', 'miss' inside 'commission'. Multi-word phrases still match
+    as phrases."""
+    return re.compile(rf"\b{re.escape(kw)}\b")
+
+
+_KEYWORD_RES = {kw: _word_re(kw) for kw in _KEYWORD_WEIGHTS}
+
+
 def _keyword_score(text: str) -> float:
     """Sum of keyword weights, capped at 6.0 so one story can't dominate the
     ranking just by hitting many news-pattern words (earnings + beat + miss
     + guidance + CEO would otherwise stack to 12+)."""
     text_l = text.lower()
-    raw = sum(w for kw, w in _KEYWORD_WEIGHTS.items() if kw in text_l)
+    raw = sum(w for kw, w in _KEYWORD_WEIGHTS.items() if _KEYWORD_RES[kw].search(text_l))
     return min(raw, 6.0)
 
 
@@ -142,8 +152,8 @@ def score_clusters(
     watchlist = interests.get("watchlist") or {}
     blocked = interests.get("blocked") or {}
     wl_tickers = {t.upper() for t in (watchlist.get("tickers") or [])}
-    wl_keywords = [k.lower() for k in (watchlist.get("keywords") or [])]
-    wl_sectors = [s.lower() for s in (watchlist.get("sectors") or [])]
+    wl_keyword_res = [_word_re(k.lower()) for k in (watchlist.get("keywords") or [])]
+    wl_sector_res = [_word_re(s.lower()) for s in (watchlist.get("sectors") or [])]
     bl_topics = [t.lower() for t in (blocked.get("topics") or [])]
     bl_sources = {s.lower() for s in (blocked.get("sources") or [])}
     civic_boosts = _civic_signal_tickers(civic)
@@ -164,8 +174,8 @@ def score_clusters(
         cluster_w = min(c.get("cluster_size", 1), 5) * 0.6
         mover_w = _ticker_mover_boost(c, market)
         wl_ticker_w = sum(3.0 for t in wl_tickers if _ticker_match(text_u, t))
-        wl_kw_w = sum(2.0 for k in wl_keywords if k in text_l)
-        wl_sec_w = sum(1.5 for s in wl_sectors if s in text_l)
+        wl_kw_w = sum(2.0 for r in wl_keyword_res if r.search(text_l))
+        wl_sec_w = sum(1.5 for r in wl_sector_res if r.search(text_l))
         civic_w = sum(b for sym, b in civic_boosts.items() if _ticker_match(text_u, sym))
 
         raw = kw + cluster_w + mover_w + wl_ticker_w + wl_kw_w + wl_sec_w + civic_w

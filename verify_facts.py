@@ -11,9 +11,8 @@ Fails open: on any error returns the input unchanged.
 from __future__ import annotations
 import re
 from config import (
-    GROQ_API_KEY, GROQ_URL, GROQ_MODEL, GROQ_CRITIC_MODEL,
-    ANTHROPIC_API_KEY,
-    OLLAMA_MODEL, OLLAMA_CRITIC_MODEL, BANNED_PHRASES, DISCLAIMER_SHORT, CHARACTERS,
+    GROQ_API_KEY, ANTHROPIC_API_KEY,
+    OLLAMA_CRITIC_MODEL, DISCLAIMER_SHORT, CHARACTERS,
 )
 from generate_script import (
     _llm_call, _fmt_section, _fmt_ranked_stories,
@@ -107,19 +106,68 @@ def _flag_unscheduled_macro_claims(script: str, civic: dict | None) -> None:
         pass
 
 
-def verify(script: str, market: dict, ranked: list[dict], civic: dict | None = None) -> str:
-    if not script.strip():
-        return script
-    _flag_unscheduled_macro_claims(script, civic)
+# Turn lines look like "JAMIE: ..." — only names from the configured cast count.
+_TURN_RE = re.compile(
+    rf"^(?:{'|'.join(re.escape(n) for n in CHARACTERS)}):", re.M
+)
+
+
+def _count_turns(text: str) -> int:
+    return len(_TURN_RE.findall(text))
+
+
+def _output_sane(inp: str, out: str) -> bool:
+    """Sanity-gate the verifier's output before letting it replace a finished
+    script. Rejects empty/truncated/preamble-only responses:
+      - output at least ~60% the length of the input
+      - a similar count of NAME: turns (verifier may legitimately drop a few)
+      - the disclaimer line survives if the input had it
+    """
+    if not out or not out.strip():
+        return False
+    if len(out) / max(len(inp), 1) < 0.6:
+        return False
+    in_turns = _count_turns(inp)
+    if in_turns and _count_turns(out) < in_turns * 0.6:
+        return False
+    if DISCLAIMER_SHORT in inp and DISCLAIMER_SHORT not in out:
+        return False
+    return True
+
+
+def _split_at_turn_boundary(script: str) -> tuple[str, str] | None:
+    """Split the script into two halves at the NAME: turn start closest to the
+    midpoint. Returns None if there's no interior turn boundary to split at."""
+    starts = [m.start() for m in _TURN_RE.finditer(script) if m.start() > 0]
+    if not starts:
+        return None
+    mid = len(script) // 2
+    cut = min(starts, key=lambda i: abs(i - mid))
+    return script[:cut], script[cut:]
+
+
+def _verify_once(script: str, market: dict, ranked: list[dict], civic: dict | None) -> str:
+    """One verification pass over `script`, sanity-checked. Fails open: any
+    error, oversized prompt, or insane output returns the input unchanged."""
     import time as _time
     prompt = _verify_prompt(script, market, ranked, civic)
     if GROQ_API_KEY and not ANTHROPIC_API_KEY and len(prompt) > VERIFY_MAX_PROMPT_CHARS:
-        print(f"[verify] script too large ({len(prompt)} chars > {VERIFY_MAX_PROMPT_CHARS} cap); skipping verify pass")
+        print(f"[verify] prompt still too large ({len(prompt)} chars > {VERIFY_MAX_PROMPT_CHARS} cap); skipping this chunk")
+        try:
+            from datetime import datetime as _dt
+            from notify import notify_warn
+            notify_warn(
+                _dt.now().strftime("%Y-%m-%d"),
+                "verify_facts",
+                f"script chunk too large to verify ({len(prompt)} chars); shipped unverified",
+            )
+        except Exception:
+            pass
         return script
     if GROQ_API_KEY and not ANTHROPIC_API_KEY:
         _time.sleep(8)
     try:
-        return _llm_call(prompt, OLLAMA_CRITIC_MODEL, VERIFY_MODEL, temperature=0.1)
+        out = _llm_call(prompt, OLLAMA_CRITIC_MODEL, VERIFY_MODEL, temperature=0.1)
     except Exception as e:
         print(f"[verify] failed, returning unverified script: {e}")
         try:
@@ -133,3 +181,25 @@ def verify(script: str, market: dict, ranked: list[dict], civic: dict | None = N
         except Exception:
             pass
         return script
+    if not _output_sane(script, out):
+        print(f"[verify] output failed sanity checks ({len(out or '')} chars vs {len(script)} input); keeping original")
+        return script
+    return out
+
+
+def verify(script: str, market: dict, ranked: list[dict], civic: dict | None = None) -> str:
+    if not script.strip():
+        return script
+    _flag_unscheduled_macro_claims(script, civic)
+    prompt = _verify_prompt(script, market, ranked, civic)
+    if GROQ_API_KEY and not ANTHROPIC_API_KEY and len(prompt) > VERIFY_MAX_PROMPT_CHARS:
+        # Longest scripts used to get zero checking. Split at a turn boundary
+        # near the midpoint and verify each half through the same sanity gates.
+        halves = _split_at_turn_boundary(script)
+        if halves:
+            print(f"[verify] prompt {len(prompt)} chars > {VERIFY_MAX_PROMPT_CHARS} cap; verifying in two halves")
+            first, second = halves
+            v1 = _verify_once(first, market, ranked, civic)
+            v2 = _verify_once(second, market, ranked, civic)
+            return v1.rstrip("\n") + "\n" + v2.lstrip("\n")
+    return _verify_once(script, market, ranked, civic)

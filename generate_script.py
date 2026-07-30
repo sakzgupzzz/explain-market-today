@@ -15,9 +15,16 @@ from config import (
     GROQ_API_KEY, GROQ_URL, GROQ_MODEL, GROQ_CRITIC_MODEL,
     ANTHROPIC_API_KEY, ANTHROPIC_URL, ANTHROPIC_MODEL,
     ANTHROPIC_CRITIC_MODEL, ANTHROPIC_VERSION,
-    MIN_WORDS, MAX_WORDS, MIN_TURNS, CHARACTERS, PODCAST_TITLE,
+    CHARACTERS, PODCAST_TITLE,
     BANNED_PHRASES, DISCLAIMER_SHORT,
 )
+from schemas import HARD_PREFIX
+
+
+class HardViolationError(RuntimeError):
+    """Raised by _llm_json when retries are exhausted and a HARD-tagged
+    semantic violation (cross-beat duplication, cross-day repeat) persists.
+    Callers must fall back to a deterministic plan — never ship these."""
 
 
 def _fmt_row(r: dict) -> str:
@@ -159,7 +166,7 @@ _TONE_FRAGMENTS = {
 # topic diversity per variant. Default 'A'. Add 'B' / 'C' branches inside
 # build_prompt as needed.
 PROMPT_VERSION = "v1.4"
-PROMPT_VARIANT = os.environ.get("PROMPT_VARIANT", "A").upper()
+PROMPT_VARIANT = (os.environ.get("PROMPT_VARIANT") or "A").upper()
 
 # Set by generate() so main.py can decide whether to run critique afterwards.
 # Multistage scripts have already been pruned per beat — running critique on
@@ -312,7 +319,10 @@ def _ollama_call(prompt: str, model: str, temperature: float = 0.75) -> str:
             "model": model,
             "prompt": prompt,
             "stream": False,
-            "options": {"temperature": temperature, "num_ctx": 8192},
+            # 32k ctx: multistage prompts carry up to a 20k-char prev-turns
+            # block (stage_pipeline._prev_turns_block) — at 8192 Ollama
+            # silently front-truncated the prompt on the local-first path.
+            "options": {"temperature": temperature, "num_ctx": 32768},
         },
         timeout=OLLAMA_TIMEOUT,
     )
@@ -416,17 +426,17 @@ def _anthropic_call(prompt: str, model: str, temperature: float = 0.75, retries:
     raise RuntimeError(f"anthropic exhausted {retries} retries: {last_err}")
 
 
-def _llm_call(prompt: str, ollama_model: str, groq_model: str, temperature: float = 0.75) -> str:
+def _llm_call(prompt: str, ollama_model: str, groq_model: str,
+              temperature: float = 0.75, role: str = "gen") -> str:
     """Dispatch order: Anthropic > Groq > Ollama. Anthropic preferred for
     quality + reliability when ANTHROPIC_API_KEY is set.
 
-    When dispatching to Anthropic we always use ANTHROPIC_MODEL for both
-    gen and critic passes — Haiku 4.5 is consistent enough that splitting
-    isn't needed. Override per-pass via ANTHROPIC_CRITIC_MODEL env if
-    desired (e.g. Sonnet for gen, Haiku for critic)."""
+    `role` is "gen" or "critic" and selects the Anthropic model explicitly
+    (ANTHROPIC_CRITIC_MODEL for critic passes). It used to be inferred from
+    temperature ≤ 0.21, which silently routed warm critic calls to the gen
+    model. Ollama/Groq models are already passed per-call by the caller."""
     if ANTHROPIC_API_KEY:
-        # critic-pass detection: critic runs use temperature ≤ 0.2
-        model = ANTHROPIC_CRITIC_MODEL if temperature <= 0.21 else ANTHROPIC_MODEL
+        model = ANTHROPIC_CRITIC_MODEL if role == "critic" else ANTHROPIC_MODEL
         return _anthropic_call(prompt, model, temperature)
     if GROQ_API_KEY:
         return _groq_call(prompt, groq_model, temperature)
@@ -569,7 +579,10 @@ def _ollama_json(prompt: str, schema: dict, model: str, temperature: float) -> d
         json={
             "model": model, "prompt": prompt, "stream": False,
             "format": schema,
-            "options": {"temperature": temperature, "num_ctx": 8192},
+            # 32k ctx: multistage prompts carry up to a 20k-char prev-turns
+            # block (stage_pipeline._prev_turns_block) — at 8192 Ollama
+            # silently front-truncated the prompt on the local-first path.
+            "options": {"temperature": temperature, "num_ctx": 32768},
         },
         timeout=OLLAMA_TIMEOUT,
     )
@@ -579,26 +592,35 @@ def _ollama_json(prompt: str, schema: dict, model: str, temperature: float) -> d
 
 def _llm_json(prompt: str, schema: dict, *, schema_name: str = "result",
               temperature: float = 0.4, extra_violations=None,
-              max_attempts: int = 3) -> dict:
+              max_attempts: int = 3, role: str = "gen") -> dict:
     """Structured-output dispatch (Anthropic > Groq > Ollama), with a local
     schema re-prompt loop. `extra_violations(obj) -> list[str]` injects the
     semantic validators (validate_plan / validate_turns) into the same loop, so
     schema AND semantic failures both re-prompt the model with a specific
-    message rather than being repaired downstream.
+    message rather than being repaired downstream. Violations prefixed with
+    schemas.HARD_PREFIX are hard plan defects that may never ship.
 
-    Raises RuntimeError if no valid object is produced within max_attempts;
-    callers fall back to the legacy text path.
+    `role` = "gen" | "critic" selects the per-backend critic model
+    (ANTHROPIC_CRITIC_MODEL / GROQ_CRITIC_MODEL / OLLAMA_CRITIC_MODEL) —
+    critic calls on a shared gen model re-invited Groq's 413 TPM cascade.
+
+    Raises HardViolationError when a hard violation persists after retries
+    (callers fall back to a deterministic plan), RuntimeError when no
+    schema-valid object is produced at all (callers fall back to the legacy
+    text path).
     """
     cur = prompt
     last_obj: dict = {}
     for attempt in range(max_attempts):
         if ANTHROPIC_API_KEY:
-            model = ANTHROPIC_CRITIC_MODEL if temperature <= 0.21 else ANTHROPIC_MODEL
+            model = ANTHROPIC_CRITIC_MODEL if role == "critic" else ANTHROPIC_MODEL
             obj = _anthropic_json(cur, schema, schema_name, model, temperature)
         elif GROQ_API_KEY:
-            obj = _groq_json(cur, schema, schema_name, GROQ_MODEL, temperature)
+            model = GROQ_CRITIC_MODEL if role == "critic" else GROQ_MODEL
+            obj = _groq_json(cur, schema, schema_name, model, temperature)
         else:
-            obj = _ollama_json(cur, schema, OLLAMA_MODEL, temperature)
+            model = OLLAMA_CRITIC_MODEL if role == "critic" else OLLAMA_MODEL
+            obj = _ollama_json(cur, schema, model, temperature)
         last_obj = obj
         problems = _schema_errors(obj, schema)
         if not problems and extra_violations:
@@ -610,19 +632,27 @@ def _llm_json(prompt: str, schema: dict, *, schema_name: str = "result",
         cur = (
             prompt
             + "\n\nYour previous response violated these constraints:\n"
-            + "\n".join(f"- {p}" for p in problems[:10])
+            + "\n".join(f"- {p.removeprefix(HARD_PREFIX)}" for p in problems[:10])
             + "\n\nReturn a corrected response that fixes every listed violation."
         )
-    # Exhausted re-prompts. If last_obj still satisfies the SCHEMA (the hard
-    # contract), ship it despite a residual SOFT violation (consecutive speaker
-    # / phrase echo). Raising here drops the beat to the legacy text path, which
-    # has no schema and can return 0 turns — losing a whole beat (quick_hits
-    # vanished this way). A schema-valid beat with one minor repeat beats nothing.
+    # Exhausted re-prompts. If last_obj still satisfies the SCHEMA and only
+    # SOFT semantic violations remain (consecutive speaker / phrase echo), ship
+    # it. Raising on soft leftovers drops the beat to the legacy text path,
+    # which has no schema and can return 0 turns — losing a whole beat
+    # (quick_hits vanished this way). But a HARD violation (cross-beat
+    # duplication, cross-day repeat) is the exact defect class the contract
+    # exists to stop — never ship it; raise so the caller degrades to the
+    # deterministic fallback plan instead.
     if last_obj and not _schema_errors(last_obj, schema):
         residual = (extra_violations(last_obj) if extra_violations else []) or []
-        print(f"[llm_json] max attempts reached; accepting last schema-valid "
-              f"response with {len(residual)} soft violation(s)")
-        return last_obj
+        hard = [v for v in residual if v.startswith(HARD_PREFIX)]
+        if not hard:
+            print(f"[llm_json] max attempts reached; accepting last schema-valid "
+                  f"response with {len(residual)} soft violation(s)")
+            return last_obj
+        raise HardViolationError(
+            f"_llm_json: hard violation(s) persist after {max_attempts} attempts: "
+            f"{[v.removeprefix(HARD_PREFIX) for v in hard[:3]]}")
     raise RuntimeError(f"_llm_json: no schema-valid response after {max_attempts}: "
                        f"{_schema_errors(last_obj, schema)[:4]}")
 
@@ -641,14 +671,12 @@ def generate(
     follow_ups: list[dict] | None = None,
     upcoming_events: str = "",
     interests: dict | None = None,
-    max_retries: int = 0,
     civic: dict | None = None,
     yesterday_topics: list[str] | None = None,
 ) -> str:
     """Generate the dialogue. Default path is multi-stage when Anthropic is
     available (better coherence, callbacks, beat budgets); single-shot legacy
     path otherwise. Override either way via USE_MULTISTAGE=0 / =1 env."""
-    import time
     global _LAST_USED_MULTISTAGE
     _LAST_USED_MULTISTAGE = False
     use_multistage_env = os.environ.get("USE_MULTISTAGE", "").strip()
@@ -664,40 +692,13 @@ def generate(
             return script
         except Exception as e:
             print(f"[generate] multistage failed ({e}); falling back to single-shot")
-    _, length_preset = _resolve_prefs(interests)
-    target_min_turns = length_preset["min_turns"]
     prompt = build_prompt(
         market, ranked_stories, date_str,
         follow_ups=follow_ups, upcoming_events=upcoming_events,
         interests=interests,
     )
     script = _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.75)
-    turns = _count_turns(script)
-    print(f"[generate] first pass (single-shot): {turns} turns")
-
-    attempts = 0
-    while turns < target_min_turns and attempts < max_retries:
-        attempts += 1
-        if GROQ_API_KEY:
-            print("[generate] sleeping 35s to clear Groq TPM window before retry…")
-            time.sleep(35)
-        addendum = (
-            f"\n\nYour previous draft had only {turns} turns. The minimum is "
-            f"{target_min_turns}. Rewrite the episode with MORE turns — break monologues "
-            f"into a long-turn-followed-by-short-reaction pattern, add reactions "
-            f"between every substantive turn, and use more hosts. Aim for {target_min_turns + 6}-{target_min_turns + 12} turns."
-        )
-        retry_prompt = prompt + addendum
-        try:
-            retried = _llm_call(retry_prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.85)
-            new_turns = _count_turns(retried)
-            print(f"[generate] retry {attempts}: {new_turns} turns")
-            if new_turns > turns:
-                script = retried
-                turns = new_turns
-        except Exception as e:
-            print(f"[generate] retry {attempts} failed ({e}); keeping first-pass script")
-            break
+    print(f"[generate] single-shot: {_count_turns(script)} turns")
     return script
 
 
@@ -765,7 +766,8 @@ def critique_revise(script: str, market: dict, ranked_stories: list[dict]) -> st
     if GROQ_API_KEY and not ANTHROPIC_API_KEY:
         _time.sleep(8)
     try:
-        return _llm_call(prompt, OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL, temperature=0.2)
+        return _llm_call(prompt, OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL,
+                         temperature=0.2, role="critic")
     except Exception as e:
         print(f"[critique] failed, returning unrevised script: {e}")
         return script

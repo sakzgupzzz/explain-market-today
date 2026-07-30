@@ -41,6 +41,13 @@ SPEAKERS: list[str] = list(CHARACTERS.keys())
 
 CONVICTIONS = ["real", "hype", "noise"]
 
+# Violations prefixed with this are HARD plan defects (cross-beat duplication,
+# cross-day repeats) — the exact failure class the contract exists to stop.
+# _llm_json's exhausted-retries fallback may ship residual SOFT violations
+# (consecutive speaker, phrase echo) but never a hard one. The prefix is
+# stripped before the message is shown to the model in a re-prompt.
+HARD_PREFIX = "[hard] "
+
 # ─────────── story signatures (cross-day identity) ───────────
 # Lowercased ≥5-letter tokens minus common news filler. Two stories with a
 # large token overlap are "the same story" for cross-day suppression.
@@ -287,8 +294,8 @@ def validate_plan(outline: dict, ranked_idx: dict[str, dict],
     for label, sid in beats.items():
         if sid in seen:
             violations.append(
-                f"story_id {sid} is used by both {seen[sid]} and {label}; "
-                f"every beat must cover a different story."
+                f"{HARD_PREFIX}story_id {sid} is used by both {seen[sid]} and "
+                f"{label}; every beat must cover a different story."
             )
         else:
             seen[sid] = label
@@ -311,9 +318,10 @@ def validate_plan(outline: dict, ranked_idx: dict[str, dict],
                     if callback_sig and signatures_overlap(sig, callback_sig):
                         break
                     violations.append(
-                        f"{label} (story {sid}) repeats a story already covered "
-                        f"in the last few days; pick a fresh story or declare it "
-                        f"as yesterday_callback with a genuinely new angle."
+                        f"{HARD_PREFIX}{label} (story {sid}) repeats a story "
+                        f"already covered in the last few days; pick a fresh "
+                        f"story or declare it as yesterday_callback with a "
+                        f"genuinely new angle."
                     )
                     break
 
@@ -330,9 +338,10 @@ def validate_plan(outline: dict, ranked_idx: dict[str, dict],
         if (bs_sig and signatures_overlap(cb_sig, bs_sig, min_shared=2)) or \
            (hook_sig and signatures_overlap(cb_sig, hook_sig, min_shared=2)):
             violations.append(
-                "yesterday_callback.topic repeats today's big_story / cold_open; "
-                "set use=false or point the callback at a DIFFERENT continuing "
-                "thread — don't cover the lead story three times."
+                f"{HARD_PREFIX}yesterday_callback.topic repeats today's "
+                f"big_story / cold_open; set use=false or point the callback at "
+                f"a DIFFERENT continuing thread — don't cover the lead story "
+                f"three times."
             )
 
     # 3. Cold-open hook substance: must carry a number or a proper noun + fact,
@@ -374,11 +383,20 @@ def validate_turns(payload: dict, prev_text: str = "") -> list[str]:
             )
         prev_speaker = spk
         # Self third-person: the speaker's own name appears in their own line.
-        if spk and re.search(rf"\b{re.escape(spk.title())}\b", text, re.IGNORECASE):
-            violations.append(
-                f"turns[{i}]: {spk} refers to themselves ('{spk.title()}') in "
-                f"their own line; speak in the first person."
-            )
+        # First-person self-identification ("I'm Jamie", "Jamie here") is the
+        # sanctioned cold-open intro (see stage_pipeline.render_cold_open) —
+        # strip those patterns before checking, or every episode burns all
+        # re-prompt attempts on its own opening line.
+        if spk:
+            name = re.escape(spk.title())
+            scrubbed = re.sub(
+                rf"\b(?:I'm\s+{name}|I\s+am\s+{name}|{name}\s+here)\b",
+                "", text, flags=re.IGNORECASE)
+            if re.search(rf"\b{name}\b", scrubbed, re.IGNORECASE):
+                violations.append(
+                    f"turns[{i}]: {spk} refers to themselves ('{spk.title()}') in "
+                    f"their own line; speak in the first person."
+                )
         # Inline audio tags belong in the `tag` field, not the text.
         if re.search(r"\[[^\]]+\]", text):
             violations.append(

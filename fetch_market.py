@@ -3,7 +3,8 @@ Retries on transient failures, returns empty list rather than crashing if all fa
 from __future__ import annotations
 import random
 import time
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
+from zoneinfo import ZoneInfo
 import yfinance as yf
 from config import INDICES, SECTOR_ETFS, MACRO, MOVERS_UNIVERSE
 
@@ -76,10 +77,26 @@ def fetch_movers(n: int = 8) -> tuple[list[dict], list[dict], str | None]:
     rows, last_trade = _snapshot(universe)
     if not rows:
         return [], [], last_trade
-    rows.sort(key=lambda r: r["pct"])
-    losers = rows[:n]
-    gainers = list(reversed(rows[-n:]))
+    # Sign filter: on a broad red (or green) day the top/bottom N would
+    # otherwise include wrong-direction names — a decliner announced as a
+    # "top gainer" — and the two lists could overlap.
+    gainers = sorted((r for r in rows if r["pct"] > 0), key=lambda r: r["pct"], reverse=True)[:n]
+    losers = sorted((r for r in rows if r["pct"] < 0), key=lambda r: r["pct"])[:n]
     return gainers, losers, last_trade
+
+
+def _last_expected_session(now: datetime | None = None) -> date:
+    """Most recent NYSE session date, weekday-aware: Sat/Sun roll back to
+    Friday, and before the 9:30 ET open we only expect the prior session's
+    bar. Holidays aren't modeled (rare one-day false negative, acceptable)."""
+    ny = ZoneInfo("America/New_York")
+    now_ny = (now or datetime.now(ny)).astimezone(ny)
+    d = now_ny.date()
+    if d.weekday() < 5 and (now_ny.hour, now_ny.minute) < (9, 30):
+        d -= timedelta(days=1)
+    while d.weekday() >= 5:  # Sat=5 / Sun=6 → Friday
+        d -= timedelta(days=1)
+    return d
 
 
 def fetch_all() -> dict:
@@ -90,8 +107,9 @@ def fetch_all() -> dict:
     # Use the most recent trade date we saw across any data slice.
     candidates = [d for d in (last_trade_movers, last_trade_indices) if d]
     as_of = max(candidates) if candidates else None
-    today = date.today().isoformat()
-    is_stale = bool(as_of and as_of < today)
+    # Stale only if we're missing the last *expected* session — comparing to
+    # the local calendar date flagged every weekend and pre-market run.
+    is_stale = bool(as_of and as_of < _last_expected_session().isoformat())
     return {
         "indices": indices,
         "sectors": sectors,

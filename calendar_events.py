@@ -11,6 +11,7 @@ Both feeds into the prompt as a small `UPCOMING_EVENTS` block so the LLM
 can frame today's coverage with anticipation context.
 """
 from __future__ import annotations
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, date, timezone, timedelta
 from config import MOVERS_UNIVERSE
 
@@ -55,6 +56,19 @@ MACRO_CALENDAR_2026: list[tuple[str, str]] = [
 def upcoming_macro(days_ahead: int = 5) -> list[tuple[str, str]]:
     """Return (date_str, name) tuples within `days_ahead` days from today."""
     today = date.today()
+    # The table is hardcoded per year — warn loudly instead of silently
+    # returning [] forever once the calendar rolls past its last entry.
+    if not any(d.startswith(str(today.year)) for d, _ in MACRO_CALENDAR_2026):
+        print(f"[calendar_events] macro calendar has no {today.year} entries — "
+              "update MACRO_CALENDAR_2026 (FOMC/CPI/jobs dates)")
+        try:
+            from notify import notify_warn
+            notify_warn(
+                today.isoformat(), "calendar_events",
+                f"Macro calendar has no {today.year} entries; episodes are missing FOMC/CPI/jobs anticipation context.",
+            )
+        except Exception:
+            pass
     cutoff = today + timedelta(days=days_ahead)
     out = []
     for date_s, name in MACRO_CALENDAR_2026:
@@ -67,46 +81,65 @@ def upcoming_macro(days_ahead: int = 5) -> list[tuple[str, str]]:
     return out
 
 
+MAX_EARNINGS_TICKERS = 40  # cap serial-API cost; universe + watchlist can grow
+
+
+def _earnings_date(sym: str) -> date | None:
+    """Next earnings date for one ticker via yfinance Ticker.calendar, or
+    None if unavailable/unparseable."""
+    import yfinance as yf
+    t = yf.Ticker(sym)
+    cal = t.calendar
+    if not cal:
+        return None
+    # cal can be a dict or a DataFrame depending on yfinance version
+    er_date = None
+    if isinstance(cal, dict):
+        er_date = cal.get("Earnings Date")
+    else:
+        try:
+            er_date = cal.loc["Earnings Date"]
+        except Exception:
+            pass
+    # er_date is sometimes a list of two timestamps (range)
+    if er_date is None:
+        return None
+    if isinstance(er_date, list) and er_date:
+        er_date = er_date[0]
+    try:
+        if hasattr(er_date, "date"):
+            return er_date.date()
+        return datetime.fromisoformat(str(er_date)[:10]).date()
+    except Exception:
+        return None
+
+
 def upcoming_earnings(tickers: list[str], days_ahead: int = 7) -> list[tuple[str, str]]:
     """Return (date_str, ticker) for each ticker reporting earnings within
-    days_ahead. Uses yfinance Ticker.calendar — free, no API key.
-    yfinance flakiness is silently absorbed: a ticker with no calendar
-    data just gets skipped."""
-    import yfinance as yf
+    days_ahead. Uses yfinance Ticker.calendar — free, no API key. Fetches in
+    a small thread pool (serial calls over the full universe took minutes)
+    and prints a fetched/skipped summary so silent yfinance decay is visible."""
     today = date.today()
     cutoff = today + timedelta(days=days_ahead)
-    out = []
-    for sym in tickers:
-        try:
-            t = yf.Ticker(sym)
-            cal = t.calendar
-            if not cal:
-                continue
-            # cal can be a dict or a DataFrame depending on yfinance version
-            er_date = None
-            if isinstance(cal, dict):
-                er_date = cal.get("Earnings Date")
-            else:
-                try:
-                    er_date = cal.loc["Earnings Date"]
-                except Exception:
-                    pass
-            # er_date is sometimes a list of two timestamps (range)
-            if er_date is None:
-                continue
-            if isinstance(er_date, list) and er_date:
-                er_date = er_date[0]
+    tickers = list(tickers)[:MAX_EARNINGS_TICKERS]
+    out: list[tuple[str, str]] = []
+    fetched = skipped = 0
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = {pool.submit(_earnings_date, sym): sym for sym in tickers}
+        for fut in as_completed(futures):
+            sym = futures[fut]
             try:
-                if hasattr(er_date, "date"):
-                    er = er_date.date()
-                else:
-                    er = datetime.fromisoformat(str(er_date)[:10]).date()
+                er = fut.result()
             except Exception:
+                er = None
+            if er is None:
+                skipped += 1
                 continue
+            fetched += 1
             if today <= er <= cutoff:
                 out.append((er.isoformat(), sym))
-        except Exception:
-            continue
+    print(f"[calendar_events] earnings: {fetched} fetched, {skipped} skipped of {len(tickers)} tickers")
+    out.sort()
     return out
 
 

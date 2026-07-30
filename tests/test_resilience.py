@@ -151,6 +151,59 @@ def test_eleven_budget_next_month_start():
     assert nxt.year == 2027 and nxt.month == 1
 
 
+def test_eleven_budget_live_api_beats_stale_env(monkeypatch):
+    # A stale manual env value must NOT shadow live subscription data.
+    monkeypatch.setenv("ELEVENLABS_REMAINING_CHARS", "120000")
+    import eleven_budget
+    with patch.object(eleven_budget, "fetch_subscription", return_value={
+        "tier": "creator", "character_count": 90_000,
+        "character_limit": 100_000, "next_reset_unix": 0,
+    }):
+        p = eleven_budget.compute_dynamic_preset()
+    assert p is not None
+    assert p["_source"] == "elevenlabs_api"
+    assert p["_remaining_chars"] == 10_000
+
+
+# ─── eleven_usage.py pre-spend guard ────────────────────────────────────────
+
+
+def test_prespend_guard_blocks_over_budget(monkeypatch):
+    monkeypatch.delenv("ELEVENLABS_REMAINING_CHARS", raising=False)
+    import eleven_usage
+    sub = {"tier": "creator", "character_count": 99_000,
+           "character_limit": 100_000, "next_reset_unix": 0}
+    with patch.object(eleven_usage, "fetch_subscription", return_value=sub):
+        ok, msg = eleven_usage.check_prespend("x" * 5000)  # est ~5250 > 1000 left
+    assert not ok
+    assert "aborting" in msg
+
+
+def test_prespend_guard_allows_within_budget(monkeypatch):
+    monkeypatch.delenv("ELEVENLABS_REMAINING_CHARS", raising=False)
+    import eleven_usage
+    sub = {"tier": "creator", "character_count": 10_000,
+           "character_limit": 100_000, "next_reset_unix": 0}
+    with patch.object(eleven_usage, "fetch_subscription", return_value=sub):
+        ok, _ = eleven_usage.check_prespend("x" * 5000)
+    assert ok
+
+
+def test_prespend_env_fallback_only_when_api_down(monkeypatch):
+    import eleven_usage
+    # API down + env fallback says 1000 left → est ~5250 blocks.
+    monkeypatch.setenv("ELEVENLABS_REMAINING_CHARS", "1000")
+    with patch.object(eleven_usage, "fetch_subscription", return_value=None):
+        ok, _ = eleven_usage.check_prespend("x" * 5000)
+    assert not ok
+    # API down + no env → unknown → fail-open (unattended pipeline).
+    monkeypatch.delenv("ELEVENLABS_REMAINING_CHARS", raising=False)
+    with patch.object(eleven_usage, "fetch_subscription", return_value=None):
+        ok, msg = eleven_usage.check_prespend("x" * 5000)
+    assert ok
+    assert "unknown" in msg
+
+
 # ─── verify_facts.py ────────────────────────────────────────────────────────
 
 

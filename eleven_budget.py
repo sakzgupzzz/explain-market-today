@@ -5,10 +5,12 @@ runs. If we have lots of headroom, episodes can run longer. If we're
 running low, episodes get tighter automatically.
 
 Three paths to compute used-chars-this-month, in priority order:
-  1. ELEVENLABS_REMAINING_CHARS env var — exact ground truth, set
-     manually from the dashboard at https://elevenlabs.io/app/usage
-     when the API key is TTS-only and can't query subscription.
-  2. ElevenLabs /v1/user/subscription — accurate, requires user_read scope
+  1. ElevenLabs /v1/user/subscription — live and accurate, requires
+     user_read scope. Always preferred when the query succeeds.
+  2. ELEVENLABS_REMAINING_CHARS env var — manual paste from the dashboard
+     at https://elevenlabs.io/app/usage. FALLBACK only, for TTS-only keys
+     that can't query subscription; a stale env value must never shadow
+     live API data.
   3. Aggregate .meta.json sidecars from docs/episodes/ + docs/express/
      — works with TTS-only keys but UNDERCOUNTS (audio-tag overhead,
      bed-mix billing, failed-call billing, etc.). Use only as last resort.
@@ -91,36 +93,37 @@ def compute_dynamic_preset() -> dict | None:
     preferences when None."""
     now = datetime.now(timezone.utc)
     limit = int(ELEVENLABS_CHAR_BUDGET_MONTHLY or 130_000)
+    used: int | None = None
+    reset_at = _next_month_start(now)
+    source = ""
 
-    # 1) Manual override — user pastes from dashboard.
-    manual_remaining = os.environ.get("ELEVENLABS_REMAINING_CHARS", "").strip()
-    if manual_remaining:
-        try:
-            remaining_override = int(manual_remaining.replace(",", ""))
-            used = max(0, limit - remaining_override)
-            reset_at = _next_month_start(now)
-            source = "manual_env"
-        except ValueError:
-            remaining_override = None
-    else:
-        remaining_override = None
+    # 1) Live subscription query — authoritative when the key can read it.
+    sub = fetch_subscription()
+    if sub and sub.get("character_limit"):
+        limit = int(sub["character_limit"])
+        used = int(sub.get("character_count", 0))
+        reset_unix = sub.get("next_reset_unix", 0)
+        if reset_unix:
+            reset_at = datetime.fromtimestamp(reset_unix, tz=timezone.utc)
+        source = "elevenlabs_api"
 
-    if remaining_override is None:
-        sub = fetch_subscription()
-        if sub and sub.get("character_limit"):
-            limit = int(sub["character_limit"])
-            used = int(sub.get("character_count", 0))
-            reset_unix = sub.get("next_reset_unix", 0)
-            if reset_unix:
-                reset_at = datetime.fromtimestamp(reset_unix, tz=timezone.utc)
-            else:
-                reset_at = _next_month_start(now)
-            source = "elevenlabs_api"
-        else:
-            # Fall back to local meta-sidecar tally
-            used = _used_chars_this_month_from_meta()
-            reset_at = _next_month_start(now)
-            source = "meta_sidecars"
+    # 2) Manual override — user pastes from dashboard. Fallback ONLY when
+    #    the API query fails (TTS-only key): a stale env value used to take
+    #    priority over live data and skew sizing for the whole month.
+    if used is None:
+        manual_remaining = os.environ.get("ELEVENLABS_REMAINING_CHARS", "").strip()
+        if manual_remaining:
+            try:
+                remaining_override = int(manual_remaining.replace(",", ""))
+                used = max(0, limit - remaining_override)
+                source = "manual_env"
+            except ValueError:
+                pass
+
+    # 3) Last resort: local meta-sidecar tally (undercounts).
+    if used is None:
+        used = _used_chars_this_month_from_meta()
+        source = "meta_sidecars"
 
     remaining = max(0, limit - used)
     weekdays_left = _weekdays_until(reset_at, now)

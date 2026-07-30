@@ -41,14 +41,15 @@ _SELF_INTRO_RE = re.compile(
 _PAREN_TICKER_RE = re.compile(r"\(([A-Z]{1,5})\)")
 
 # Standalone ticker — 2-5 caps as a whole word, not preceded by `[` (audio tag)
-# or another cap (avoids splitting acronyms inside larger words). Common
-# false-positives are filtered against an explicit allowlist below.
+# or another cap (avoids splitting acronyms inside larger words).
 _STANDALONE_TICKER_RE = re.compile(r"(?<![A-Z])(?<![\[\(])\b([A-Z]{2,5})\b(?![A-Z])")
 
 # Map of mega-cap tickers to their colloquial company name. Used to replace
 # standalone tickers in the script with names that read naturally aloud.
-# Add entries here as needed; if a ticker isn't in this map and isn't in
-# _TICKER_FALSE_POSITIVES, it falls through to the spaced-letter path.
+# Add entries here as needed. This map is the ONLY trigger for the
+# standalone pass — an unknown all-caps word passes through untouched
+# (the old default letter-spaced ANY unknown 2-5-cap word, mangling
+# ordinary acronyms: "NASA" → "N A S A", "OSHA" → "O S H A").
 _TICKER_TO_NAME = {
     "AAPL": "Apple",
     "MSFT": "Microsoft",
@@ -102,23 +103,11 @@ _TICKER_TO_NAME = {
     "ANTH": "Anthropic",
 }
 
-# Acronyms / words that look like tickers but aren't — never spell these out.
-_TICKER_FALSE_POSITIVES = {
-    "CEO", "CFO", "COO", "CTO", "CIO", "IPO", "ETF", "API", "AI", "GDP",
-    "PR", "OK", "USA", "US", "UK", "EU", "UN", "FDA", "FBI", "CIA", "NSA",
-    "SEC", "FTC", "DOJ", "EPA", "IRS", "FAA", "CDC", "NIH",
-    "CES", "CEO", "ESG", "VPN", "SaaS", "B2B", "B2C", "FYI", "TBD", "TLDR",
-    "USD", "EUR", "GBP", "JPY", "CNY", "GMT", "UTC", "EST", "EDT", "PST",
-    "GPU", "CPU", "RAM", "SSD", "HDD", "USB", "URL", "HTTP", "HTTPS",
-    "JSON", "XML", "HTML", "CSS", "SQL", "iOS", "macOS", "BBQ", "DIY",
-    "NEW", "OLD", "BIG", "TOP", "PER", "PRO", "AND", "FOR", "BUT", "NOT",
-    "ALL", "ANY", "ONE", "TWO", "OUR", "WAS", "ARE", "WHO", "HOW", "WHY",
-    # Geopolitical / org acronyms that read naturally and never need spacing
-    "OPEC", "NATO", "BRICS", "ASEAN", "G7", "G20", "WHO", "WTO", "IMF",
-    "OECD", "EBC", "ECB", "BOE", "BOJ", "PBOC",
-    # Commonly-mentioned non-listed names that look like tickers
-    "BYD", "SBNY", "DOGE", "XRP", "SOL", "ETH", "BTC",
-}
+# NOTE: the old _TICKER_FALSE_POSITIVES allowlist is gone. It existed to
+# stop the letter-spacing fallback from mangling acronyms, but the policy is
+# now inverted (only _TICKER_TO_NAME entries are rewritten) so the list was
+# dead weight — and several entries (SaaS/iOS/macOS) could never match the
+# all-caps regex anyway.
 
 # Dollar amount patterns: $5B, $5 billion, $5.2M, $100, etc.
 _DOLLAR_AMOUNT_RE = re.compile(
@@ -206,24 +195,21 @@ def _normalize_dollars_word(text: str) -> tuple[str, int]:
 
 
 def _space_standalone_tickers(text: str) -> tuple[str, int]:
-    """Standalone tickers get replaced with the company name when known
-    (NVDA → Nvidia, AVGO → Broadcom). Falls back to letter-spaced form
-    (AAPL → 'A A P L') for unknown tickers so TTS reads them clearly.
-    Skips known acronyms AND host names so dialogue isn't mangled."""
+    """Standalone tickers get replaced with the company name — ONLY for
+    symbols we positively know (_TICKER_TO_NAME: NVDA → Nvidia, AVGO →
+    Broadcom). Everything else passes through untouched: the old fallback
+    letter-spaced ANY unknown 2-5-letter uppercase word, which read
+    "NASA" as "N A S A" and "OSHA" as "O S H A" on air. Parenthesized
+    tickers (an explicit ticker signal) keep their spaced-letter fallback
+    in _space_tickers."""
     fixes = 0
-    char_names = {n.upper() for n in CHARACTERS.keys()}
     def repl(m: re.Match) -> str:
         nonlocal fixes
         tk = m.group(1)
-        if tk in _TICKER_FALSE_POSITIVES or tk in char_names:
-            return tk
-        if len(set(tk)) == 1:  # "II", "III", etc.
-            return tk
         if tk in _TICKER_TO_NAME:
             fixes += 1
             return _TICKER_TO_NAME[tk]
-        fixes += 1
-        return " ".join(tk)
+        return tk
     return _STANDALONE_TICKER_RE.sub(repl, text), fixes
 
 
@@ -373,10 +359,10 @@ def _scrub_banned_in_turns(turns: list[tuple[str, str]]) -> tuple[list[tuple[str
 
 
 def _disclaimer_signature(text: str) -> bool:
-    """Detect a disclaimer turn (verbatim or paraphrase). Requires a canonical
-    disclaimer fragment — NOT a bare 'investment advice', which appears in
-    ordinary markets talk ('the best investment advice is buy low') and would
-    cause _dedup_disclaimer to delete substantive turns."""
+    """Detect a disclaimer-flavored turn (verbatim or paraphrase). Loose by
+    design — 'not investment advice' matches casual mid-episode banter too,
+    so _dedup_disclaimer must NOT treat every match as a script-ending
+    anchor (see _is_canonical_disclaimer)."""
     t = text.lower()
     return (
         "entertainment and education only" in t
@@ -386,14 +372,36 @@ def _disclaimer_signature(text: str) -> bool:
     )
 
 
+# Fragments that only appear in the actual legal disclaimer, never in
+# ordinary markets banter. Only these (or near-end loose matches) may
+# anchor the destructive drop-everything-after behavior below.
+_CANONICAL_DISCLAIMER_FRAGMENTS = (
+    "entertainment and education only",
+    "nothing here is investment advice",
+)
+
+
+def _is_canonical_disclaimer(text: str) -> bool:
+    t = text.lower()
+    return any(f in t for f in _CANONICAL_DISCLAIMER_FRAGMENTS)
+
+
 def _dedup_disclaimer(turns: list[tuple[str, str]]) -> tuple[list[tuple[str, str]], int]:
     """Keep AT MOST ONE disclaimer turn, and only at the very end. Drop any
     earlier disclaimer turns and any non-disclaimer turns that follow the
-    last disclaimer (so the disclaimer is genuinely the closing line)."""
+    last disclaimer (so the disclaimer is genuinely the closing line).
+
+    Guardrail: the drop-everything-after behavior is destructive, so a turn
+    only counts as a disclaimer here if it contains a canonical fragment OR
+    sits in the last ~3 turns. A casual mid-episode "that's not investment
+    advice, anyway…" at turn 12/30 used to silently delete turns 13-30."""
     if not turns:
         return turns, 0
-    # Find indices of all disclaimer-flavored turns
-    discl_idxs = [i for i, (_, t) in enumerate(turns) if _disclaimer_signature(t)]
+    near_end = max(0, len(turns) - 3)
+    discl_idxs = [
+        i for i, (_, t) in enumerate(turns)
+        if _is_canonical_disclaimer(t) or (i >= near_end and _disclaimer_signature(t))
+    ]
     if not discl_idxs:
         return turns, 0
     keep_idx = discl_idxs[-1]

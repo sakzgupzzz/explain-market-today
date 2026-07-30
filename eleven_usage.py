@@ -46,6 +46,49 @@ def usage_pct(sub: dict | None) -> float | None:
     return sub.get("character_count", 0) / limit
 
 
+def remaining_chars() -> int | None:
+    """Actual chars left this month, or None if unknown. The live
+    /v1/user/subscription query is authoritative; the manually-set
+    ELEVENLABS_REMAINING_CHARS env var is only a FALLBACK for when the
+    API query fails (TTS-only key scope) — a stale env value must never
+    shadow live data."""
+    sub = fetch_subscription()
+    if sub and (sub.get("character_limit") or 0) > 0:
+        return max(0, sub["character_limit"] - sub.get("character_count", 0))
+    manual = os.environ.get("ELEVENLABS_REMAINING_CHARS", "").strip()
+    if manual:
+        try:
+            return max(0, int(manual.replace(",", "")))
+        except ValueError:
+            pass
+    return None
+
+
+# Dialogue text → billed chars is slightly above script length (audio tags,
+# normalization). Single source of truth lives in eleven_budget; imported
+# lazily inside check_prespend to avoid a module-level import cycle
+# (eleven_budget imports fetch_subscription from this module).
+
+def check_prespend(script_text: str) -> tuple[bool, str]:
+    """(ok_to_proceed, message) for THIS synthesis. Unlike check_budget —
+    which only looks at PAST usage and passes at 94.9% before billing a
+    full show — this estimates the upcoming spend and blocks it if it
+    would exceed the actual remaining budget. Called from tts.synth()
+    before any ElevenLabs API call. Fail-open only when neither the API
+    nor the env fallback can tell us what's remaining."""
+    from eleven_budget import CHAR_OVERHEAD_FACTOR  # lazy — see note above
+    est = int(len(script_text) * CHAR_OVERHEAD_FACTOR)
+    remaining = remaining_chars()
+    if remaining is None:
+        return True, f"[eleven] pre-spend: remaining unknown (restricted key, no env fallback); proceeding with est {est:,} chars"
+    if est > remaining:
+        return False, (
+            f"[eleven] pre-spend: est {est:,} chars > {remaining:,} remaining "
+            f"— aborting before any billing"
+        )
+    return True, f"[eleven] pre-spend: est {est:,} chars ≤ {remaining:,} remaining"
+
+
 def check_budget(threshold: float = 0.95) -> tuple[bool, str]:
     """(ok_to_proceed, message). Returns (True, '') if usage is unknown
     (restricted key) — fail-open so the pipeline still runs."""

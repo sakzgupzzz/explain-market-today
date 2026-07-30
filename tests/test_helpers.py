@@ -48,7 +48,12 @@ def test_chunk_turns_under_limit_one_chunk():
 
 
 def test_chunk_turns_splits_on_size():
-    big = "x " * 1000  # 2000 chars
+    from tts import V3_MAX_CHARS_PER_REQUEST
+    big = "x " * 1000  # 2000 chars — over the per-request limit on its own
     turns = [("JAMIE", big), ("ALEX", big)]
     chunks = _chunk_turns(turns)
-    assert len(chunks) == 2
+    # Oversized turns are now split, so we get MORE than one chunk and
+    # every chunk stays under the v3 request limit.
+    assert len(chunks) >= 2
+    for chunk in chunks:
+        assert sum(len(t) for _, t in chunk) <= V3_MAX_CHARS_PER_REQUEST

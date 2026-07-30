@@ -5,6 +5,7 @@ on continuing stories.
 Persisted as .state.json at the repo root (gitignored)."""
 from __future__ import annotations
 import json
+import os
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from config import STATE_PATH
@@ -49,30 +50,51 @@ def load_state() -> dict:
 
 
 def save_state(state: dict) -> None:
-    Path(STATE_PATH).write_text(json.dumps(state, indent=2, sort_keys=True))
+    """Atomic write: tmp file + os.replace so a crash mid-write can't leave a
+    truncated .state.json behind (load_state would rotate it and forget all
+    coverage memory)."""
+    p = Path(STATE_PATH)
+    tmp = p.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(state, indent=2, sort_keys=True))
+    os.replace(tmp, p)
+
+
+def _last_seen(c: dict) -> str:
+    """Most recent coverage timestamp; falls back to first_covered for state
+    files written before last_covered existed."""
+    return c.get("last_covered") or c.get("first_covered", "")
 
 
 def covered_within(state: dict, days: int = 3) -> set[str]:
-    """Cluster IDs covered within the last `days` days."""
+    """Cluster IDs covered within the last `days` days. Keyed on last_covered
+    so a continuing story that gets re-covered stays suppressed — keying on
+    first_covered let a day-1 story escape the 2-day window on day 3 even
+    though it ran again on day 2."""
     cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat()
     return {
         c["cluster_id"]
         for c in state.get("covered", [])
-        if c.get("first_covered", "") >= cutoff
+        if _last_seen(c) >= cutoff
     }
 
 
 def mark_covered(state: dict, cluster_ids: list[str]) -> dict:
-    """Add today's covered clusters and prune anything older than 14 days."""
-    seen = {c["cluster_id"] for c in state.get("covered", [])}
+    """Add today's covered clusters and prune anything older than 14 days.
+    EVERY hit — including an already-seen ID — refreshes last_covered, so the
+    suppression window tracks the latest mention, not the first."""
+    by_id = {c["cluster_id"]: c for c in state.get("covered", [])}
     state.setdefault("covered", [])
     now = _now_iso()
     for cid in cluster_ids:
-        if cid not in seen:
-            state["covered"].append({"cluster_id": cid, "first_covered": now})
+        if cid in by_id:
+            by_id[cid]["last_covered"] = now
+        else:
+            entry = {"cluster_id": cid, "first_covered": now, "last_covered": now}
+            state["covered"].append(entry)
+            by_id[cid] = entry
     cutoff = (datetime.now(timezone.utc) - timedelta(days=14)).isoformat()
     state["covered"] = [
-        c for c in state["covered"] if c.get("first_covered", "") >= cutoff
+        c for c in state["covered"] if _last_seen(c) >= cutoff
     ]
     return state
 

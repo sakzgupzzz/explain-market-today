@@ -25,6 +25,8 @@ except ImportError:
 
 from elevenlabs.client import ElevenLabs
 
+from config import ELEVEN_CHARACTER_VOICES
+
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 ASSETS.mkdir(exist_ok=True)
@@ -69,14 +71,17 @@ PROMPTS = [
 ]
 
 
+# Voice IDs come from config.ELEVEN_CHARACTER_VOICES so regenerated assets
+# always match the voices episodes are rendered with. Hardcoded stock IDs
+# (Sarah/Jessica) drifted after the cast moved to custom Voice Design voices.
 HOST_INTRO_TEXT = "Hey, this is Markets Explained, Daily."
-HOST_INTRO_VOICE = "EXAVITQu4vr4xnSDxMaL"  # Sarah — same voice as JAMIE in tts.py
+HOST_INTRO_VOICE = ELEVEN_CHARACTER_VOICES["JAMIE"]  # same voice as JAMIE in episodes
 
 HOST_OUTRO_TEXT = (
     "And that's all for today folks! Make sure to stay curious and keep "
     "asking about the Markets Explained, Daily."
 )
-HOST_OUTRO_VOICE = "cgSgspJ2msm6clMCkdW9"  # Jessica — same voice as MAYA in tts.py
+HOST_OUTRO_VOICE = ELEVEN_CHARACTER_VOICES["MAYA"]  # same voice as MAYA in episodes
 
 # Pre-recorded disclaimer — read once, appended to every episode.
 # Saves ~95 chars × 22 weekdays = ~2,100 chars/mo of Eleven budget.
@@ -84,7 +89,7 @@ HOST_DISCLAIMER_TEXT = (
     "This show is for entertainment and education only — "
     "nothing here is investment advice."
 )
-HOST_DISCLAIMER_VOICE = "cgSgspJ2msm6clMCkdW9"  # Jessica / MAYA — matches script attribution
+HOST_DISCLAIMER_VOICE = ELEVEN_CHARACTER_VOICES["MAYA"]  # MAYA — matches script attribution
 
 
 def _gen_sound_effect(name: str, dur: float, prompt: str) -> None:

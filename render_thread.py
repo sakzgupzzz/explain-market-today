@@ -52,9 +52,10 @@ def render_thread(market: dict, ranked: list[dict], date_str: str) -> list[str]:
         body = f"{title}\n\n— {sources}" if sources else title
         tweets.append(_truncate(body, TWEET_LIMIT))
 
-    # 5. Listen link
-    audio_url = f"{PODCAST_BASE_URL}/episodes/{date_str}.mp3"
-    tweets.append(_truncate(f"Full show + transcript: {PODCAST_BASE_URL}", TWEET_LIMIT))
+    # 5. Listen link — the episode page (player + transcript), not the site
+    # root, so the closing tweet actually lands people on today's show.
+    episode_url = f"{PODCAST_BASE_URL}/episodes/{date_str}.html"
+    tweets.append(_truncate(f"Full show + transcript: {episode_url}", TWEET_LIMIT))
 
     return tweets
 

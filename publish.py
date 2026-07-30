@@ -14,8 +14,13 @@ from config import (
     PODCAST_EMAIL, PODCAST_DESCRIPTION, PODCAST_LANGUAGE, PODCAST_BASE_URL,
     PODCAST_CATEGORY, PODCAST_SUBCATEGORY, PODCAST_GUID, ROOT,
     DISCLAIMER_FULL, CHARACTERS, BEATS, BEAT_TITLES, BANNED_PHRASES,
+    AUDIO_SPEEDUP,
 )
-from tts import audio_duration_seconds, parse_dialogue
+from tts import (
+    audio_duration_seconds, parse_dialogue,
+    INTRO_STING, OUTRO_STING, HOST_INTRO, MUSIC_BED,
+    STING_GAP_MS, HOST_INTRO_GAP_MS, BED_LEAD_MS,
+)
 
 PODCAST_NS = "https://podcastindex.org/namespace/1.0"
 
@@ -259,6 +264,41 @@ def _strip_audio_tags(text: str) -> str:
     return re.sub(r"\[[^\]]+\]\s*", "", text).strip()
 
 
+def _intro_wrap_offset_sec() -> float:
+    """Seconds of audio prepended before the first dialogue chunk in the
+    final mp3: intro sting + gap, then bed lead-in + host intro + gap.
+    Measured from the actual asset files (mirrors the conditions tts.synth
+    uses when wrapping) so chapter/caption timestamps line up with what
+    listeners hear instead of starting ~8-12s early."""
+    offset = 0.0
+    try:
+        if INTRO_STING.exists() and OUTRO_STING.exists():
+            offset += audio_duration_seconds(INTRO_STING) + STING_GAP_MS / 1000.0
+        if MUSIC_BED.exists() and HOST_INTRO.exists():
+            offset += (BED_LEAD_MS + HOST_INTRO_GAP_MS) / 1000.0
+            offset += audio_duration_seconds(HOST_INTRO)
+    except Exception:
+        pass  # unreadable asset → fall back to whatever we measured so far
+    return offset
+
+
+def _dialogue_window(total_sec: float, chunk_timings: list[dict] | None) -> tuple[float, float]:
+    """(start_offset_sec, dialogue_span_sec) of the dialogue inside the
+    final mp3. Chunk timings are measured on the raw pre-master chunks, so
+    the real on-air span is end_sec scaled down by the atempo AUDIO_SPEEDUP;
+    the intro wrap shifts everything right by _intro_wrap_offset_sec()."""
+    offset = _intro_wrap_offset_sec()
+    if offset >= total_sec:  # defensive — wrap longer than the file
+        return 0.0, total_sec
+    span = total_sec - offset
+    if chunk_timings:
+        speedup = max(0.5, min(2.0, AUDIO_SPEEDUP))
+        raw_end = max((float(c.get("end_sec", 0.0)) for c in chunk_timings), default=0.0)
+        if raw_end > 0:
+            span = min(raw_end / speedup, span)
+    return offset, span
+
+
 def _attach_citations(text: str, ranked: list[dict] | None) -> str:
     """If a turn references a story title from `ranked`, append the source
     link in a NOTE comment so VTT viewers (and grep) can find it. SRT-safe
@@ -284,16 +324,22 @@ def write_transcripts(
     chunk_timings: list[dict] | None = None,
     ranked_stories: list[dict] | None = None,
 ) -> tuple[Path, Path]:
-    """Write .srt and .vtt next to the mp3. Returns (srt_path, vtt_path)."""
+    """Write .srt and .vtt next to the mp3. Returns (srt_path, vtt_path).
+
+    Turn-level timing is still word-count-proportional (chunk timings are
+    per-chunk, not per-turn), but it's distributed over the REAL dialogue
+    window: offset by the measured intro wrap and scaled by AUDIO_SPEEDUP
+    via chunk timings when available."""
     turns = parse_dialogue(script)
     if not turns:
         return mp3_path.with_suffix(".srt"), mp3_path.with_suffix(".vtt")
     total = audio_duration_seconds(mp3_path)
-    durations = _line_durations(turns, total)
+    offset, span = _dialogue_window(total, chunk_timings)
+    durations = _line_durations(turns, span)
 
     srt_lines: list[str] = []
     vtt_lines: list[str] = ["WEBVTT", ""]
-    cum = 0.0
+    cum = offset
     for idx, ((name, text), dur) in enumerate(zip(turns, durations), start=1):
         start, end = cum, cum + dur
         cum = end
@@ -384,8 +430,11 @@ def write_chapters(
         out.write_text(json.dumps({"version": "1.2.0", "chapters": []}))
         return out
     total = audio_duration_seconds(mp3_path)
-    durations = _line_durations(turns, total)
-    cum_starts: list[float] = [0.0]
+    # Same dialogue-window correction as write_transcripts — chapter marks
+    # land inside the beat they name instead of ~8-12s before it.
+    offset, span = _dialogue_window(total, chunk_timings)
+    durations = _line_durations(turns, span)
+    cum_starts: list[float] = [offset]
     for d in durations:
         cum_starts.append(cum_starts[-1] + d)
 
@@ -831,7 +880,19 @@ def git_push(commit_msg: str) -> None:
             # starts from a sane state instead of half-rebased.
             print(f"rebase attempt {attempt + 1} failed; aborting…")
             subprocess.run(["git", "-C", str(ROOT), "rebase", "--abort"])
-            subprocess.run(["git", "-C", str(ROOT), "stash", "pop"])
+            # `rebase --abort` normally restores the autostash itself. Only
+            # pop if an autostash entry is actually parked in the stash list
+            # — an unconditional `stash pop` can dump an unrelated
+            # pre-existing stash into the working tree.
+            stash_list = subprocess.run(
+                ["git", "-C", str(ROOT), "stash", "list"],
+                capture_output=True, text=True,
+            ).stdout
+            for line in stash_list.splitlines():
+                if "autostash" in line.lower():
+                    ref = line.split(":", 1)[0]
+                    subprocess.run(["git", "-C", str(ROOT), "stash", "pop", ref])
+                    break
             continue
         push = subprocess.run(["git", "-C", str(ROOT), "push", "origin", "main"])
         if push.returncode == 0:

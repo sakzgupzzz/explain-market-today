@@ -1,10 +1,12 @@
 """Cluster near-identical headlines from different RSS sources into single
 story records. Pure-Python, no LLM, no network. Fast.
 
-Algorithm: Jaccard similarity on normalized title token sets. Greedy single-link
-clustering: each new headline joins the existing cluster with the highest
-overlap if that overlap exceeds the threshold; otherwise it seeds a new cluster.
-The threshold (default 0.5) is tuned to merge headlines like
+Algorithm: Jaccard similarity on normalized title token sets. Greedy
+clustering: each new headline is compared against the SEED headline of every
+existing cluster (never a growing union of member tokens — that produced
+single-link chaining into mega-clusters) and joins the best match above the
+threshold; otherwise it seeds a new cluster. The threshold (default 0.2, with
+min_shared=2 real tokens) is tuned to merge headlines like
 'Spirit Airlines shutting down' / 'Spirit ceases operations' / 'Spirit Airlines
 collapse leaves 4,200 jobless' into one story while keeping 'Spirit Halloween
 files for IPO' separate.
@@ -69,7 +71,9 @@ def cluster_headlines(headlines: list[dict], threshold: float = 0.2, min_shared:
             b["headlines"].append(h)
             b["sources"].add(h.get("source") or "unknown")
             b["categories"].add(h.get("category") or "unknown")
-            b["_tokens"] |= toks
+            # NOTE: _tokens stays the seed headline's set. Growing it with
+            # every member let unrelated stories chain in via tokens the seed
+            # never had.
         else:
             buckets.append({
                 "headlines": [h],

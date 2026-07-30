@@ -2,17 +2,20 @@
 Fetches feeds in parallel for speed. Tracks per-feed health in
 .feed_health.json so persistently-failing feeds get auto-skipped."""
 from __future__ import annotations
+import calendar
 import json
-import time
 import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 import feedparser
+import requests
 from config import ROOT, RSS_FEEDS_BY_CATEGORY, HEADLINES_PER_CATEGORY
 
 FEED_HEALTH_PATH = ROOT / ".feed_health.json"
 FAIL_THRESHOLD = 5  # consecutive failures before a feed is skipped
+FEED_TIMEOUT_SEC = 15  # per-feed HTTP timeout so one hung server can't stall the run
+RETRY_COOLDOWN_HOURS = 24  # disabled feeds get one retry attempt per cooldown window
 
 
 def _load_health() -> dict:
@@ -37,20 +40,39 @@ def _record_outcome(health: dict, url: str, ok: bool, err: str = "") -> None:
         rec["fail_streak"] = 0
         rec["last_seen"] = datetime.now(timezone.utc).isoformat()
         rec["last_error"] = ""
+        rec.pop("retry_after", None)
     else:
         rec["fail_streak"] = rec.get("fail_streak", 0) + 1
         rec["last_error"] = err[:200]
+        if rec["fail_streak"] >= FAIL_THRESHOLD:
+            # Cooldown rather than permanent kill: the feed gets one retry
+            # attempt per RETRY_COOLDOWN_HOURS so a flaky week can't disable
+            # it forever. Success resets the streak and clears the cooldown.
+            rec["retry_after"] = (
+                datetime.now(timezone.utc) + timedelta(hours=RETRY_COOLDOWN_HOURS)
+            ).isoformat()
 
 
 def _is_feed_disabled(health: dict, url: str) -> bool:
-    return health.get(url, {}).get("fail_streak", 0) >= FAIL_THRESHOLD
+    rec = health.get(url, {})
+    if rec.get("fail_streak", 0) < FAIL_THRESHOLD:
+        return False
+    retry_after = rec.get("retry_after")
+    if not retry_after:
+        return False  # legacy record without cooldown — allow the retry
+    try:
+        return datetime.now(timezone.utc) < datetime.fromisoformat(retry_after)
+    except ValueError:
+        return False
 
 
 def _entry_dt(e) -> datetime | None:
     for key in ("published_parsed", "updated_parsed"):
         v = getattr(e, key, None) or e.get(key)
         if v:
-            return datetime.fromtimestamp(time.mktime(v), tz=timezone.utc)
+            # feedparser normalizes struct_times to UTC; timegm reads them as
+            # UTC (time.mktime would apply the local offset and shift hours).
+            return datetime.fromtimestamp(calendar.timegm(v), tz=timezone.utc)
     return None
 
 
@@ -65,7 +87,14 @@ def _fetch_one_feed(url: str, cutoff: datetime, category: str, health: dict | No
     if health is not None and _is_feed_disabled(health, url):
         return []
     try:
-        feed = feedparser.parse(url)
+        # Fetch ourselves with a timeout — feedparser.parse(url) has no network
+        # timeout, so one hung server would block a worker thread forever.
+        resp = requests.get(
+            url, timeout=FEED_TIMEOUT_SEC,
+            headers={"User-Agent": "explain-market-today/1.0 (+rss aggregator)"},
+        )
+        resp.raise_for_status()
+        feed = feedparser.parse(resp.content)
         bozo = bool(getattr(feed, "bozo", False) and not feed.entries)
         if bozo:
             err = str(getattr(feed, "bozo_exception", "feedparser bozo"))
@@ -125,7 +154,8 @@ def fetch_headlines(hours: int = 24) -> dict[str, list[dict]]:
     """Return headlines grouped by category. Categories run in parallel too.
     Per-feed health is loaded from .feed_health.json, updated with this run's
     outcomes, and saved back. Feeds with FAIL_THRESHOLD consecutive failures
-    are skipped automatically until they recover."""
+    are skipped, then retried once per RETRY_COOLDOWN_HOURS; a success
+    re-enables the feed."""
     health = _load_health()
     disabled = [u for u in (health.keys()) if _is_feed_disabled(health, u)]
     if disabled:

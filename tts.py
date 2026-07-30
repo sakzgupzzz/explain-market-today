@@ -15,12 +15,14 @@ Returns (mp3_path, chunk_timings) where chunk_timings is a list of
 {"index", "start_sec", "end_sec", "speakers", "first_line"} for chapter generation.
 """
 from __future__ import annotations
+import hashlib
 import json
 import os
 import platform
 import re
 import subprocess
 import tempfile
+import time
 import shutil
 from pathlib import Path
 from config import (
@@ -38,6 +40,7 @@ HOST_DISCLAIMER = ROOT / "assets" / "host_disclaimer.mp3"
 MUSIC_BED = ROOT / "assets" / "bed.mp3"
 STING_GAP_MS = 350         # silence between sting and the next element
 HOST_INTRO_GAP_MS = 250    # gap between host intro/outro and dialogue
+BED_LEAD_MS = 2000         # bed-only lead-in before the host intro
 BED_TAIL_SEC = 1.6         # bed continues this long after host outro before fading out
 # Bed gain in dB applied before sidechain duck. -12 dB is audible in
 # voice pauses/transitions while still ducking under speech via the
@@ -122,6 +125,12 @@ def synth(text: str, out_mp3: Path) -> tuple[Path, list[dict]]:
                 print(f"[tts] stripped {before - len(turns)} disclaimer turn(s) from synth — using pre-recorded clip")
         else:
             print(f"[tts] script was only disclaimer ({before} turn(s)); keeping in dialogue path to avoid empty synth")
+    # All rendering + in-place mutation happens on a tmp path in the SAME
+    # directory; os.replace() to the final name is the very last step. A
+    # crash mid-render can no longer leave a truncated mp3 at the final
+    # path — which main.py treats as the episode's done-marker.
+    tmp_mp3 = out_mp3.with_name(out_mp3.name + ".tmp")
+    tmp_mp3.unlink(missing_ok=True)
     if not turns:
         # Defensive — shouldn't reach here after the guard above, but if a
         # caller passes an empty script, log and return without erroring.
@@ -129,30 +138,49 @@ def synth(text: str, out_mp3: Path) -> tuple[Path, list[dict]]:
         _silence_wav(1000, 44100, out_mp3.with_suffix(".tmp.wav"))
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error", "-i", str(out_mp3.with_suffix(".tmp.wav")),
-             "-c:a", "libmp3lame", "-b:a", "128k", str(out_mp3)],
+             "-c:a", "libmp3lame", "-b:a", "128k", "-f", "mp3", str(tmp_mp3)],
             check=True,
         )
         out_mp3.with_suffix(".tmp.wav").unlink(missing_ok=True)
+        os.replace(tmp_mp3, out_mp3)
         return out_mp3, []
     backend = _resolve_backend()
     print(f"[tts] backend={backend} turns={len(turns)}")
-    if backend in ("eleven", "eleven_v3"):
-        result = _synth_eleven_v3(turns, out_mp3)
-    elif backend == "eleven_v2":
-        result = _synth_eleven_v2(turns, out_mp3)
-    elif backend == "mac":
-        result = _synth_mac_dialogue(turns, out_mp3)
-    else:
-        result = _synth_piper_dialogue(turns, out_mp3)
 
-    # Build [2s_bed_lead + host_intro + 0.25s_bed_gap + dialogue] with bed
-    # sidechain-ducked underneath the whole thing. Falls back to plain
-    # bed-under-dialogue mix if host_intro asset is missing.
-    _add_host_intro_with_bed(out_mp3)
-    # Outer wrap: intro_sting + (bedded segment) + outro_sting. No bed under
-    # the chimes themselves.
-    _wrap_with_stings(out_mp3)
-    return result
+    # Pre-spend guard: estimate the bill for THIS synthesis against the
+    # actual remaining char budget BEFORE any ElevenLabs call. check_budget
+    # in main.py only looks at PAST usage — it happily passes at 94.9% and
+    # then bills a full show. This aborts cleanly instead.
+    if backend in ("eleven", "eleven_v3", "eleven_v2"):
+        from eleven_usage import check_prespend
+        ok, msg = check_prespend("\n".join(t for _, t in turns))
+        print(msg)
+        if not ok:
+            raise RuntimeError(msg)
+
+    try:
+        if backend in ("eleven", "eleven_v3"):
+            result = _synth_eleven_v3(turns, tmp_mp3)
+        elif backend == "eleven_v2":
+            result = _synth_eleven_v2(turns, tmp_mp3)
+        elif backend == "mac":
+            result = _synth_mac_dialogue(turns, tmp_mp3)
+        else:
+            result = _synth_piper_dialogue(turns, tmp_mp3)
+
+        # Build [2s_bed_lead + host_intro + 0.25s_bed_gap + dialogue] with bed
+        # sidechain-ducked underneath the whole thing. Falls back to plain
+        # bed-under-dialogue mix if host_intro asset is missing.
+        _add_host_intro_with_bed(tmp_mp3)
+        # Outer wrap: intro_sting + (bedded segment) + outro_sting. No bed under
+        # the chimes themselves.
+        _wrap_with_stings(tmp_mp3)
+        os.replace(tmp_mp3, out_mp3)
+    finally:
+        tmp_mp3.unlink(missing_ok=True)
+    # Final mp3 is atomically in place — billed-chunk cache no longer needed.
+    shutil.rmtree(_chunk_cache_dir(out_mp3), ignore_errors=True)
+    return out_mp3, result[1]
 
 
 def _add_host_intro_with_bed(in_out_mp3: Path) -> None:
@@ -183,7 +211,7 @@ def _add_host_intro_with_bed(in_out_mp3: Path) -> None:
         lead_sil = tmpdir / "lead.wav"
         gap_sil = tmpdir / "gap.wav"
         tail_sil = tmpdir / "tail.wav"
-        _silence_wav(2000, 44100, lead_sil)
+        _silence_wav(BED_LEAD_MS, 44100, lead_sil)
         _silence_wav(HOST_INTRO_GAP_MS, 44100, gap_sil)
         _silence_wav(int(BED_TAIL_SEC * 1000), 44100, tail_sil)
 
@@ -313,10 +341,11 @@ def _wrap_with_stings(in_out_mp3: Path) -> None:
         _silence_wav(STING_GAP_MS, 44100, gap_wav)
         combined = tmpdir / "combined.wav"
         _concat_wavs([intro_wav, gap_wav, content_wav, gap_wav, outro_wav], combined)
+        # -f mp3: in_out_mp3 is the .mp3.tmp render path, so force the format
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error", "-i", str(combined),
              "-c:a", "libmp3lame", "-b:a", "128k", "-ar", "44100", "-ac", "1",
-             str(in_out_mp3)],
+             "-f", "mp3", str(in_out_mp3)],
             check=True,
         )
         print(f"[stings] wrapped intro_sting + content + outro_sting")
@@ -342,8 +371,44 @@ def _import_eleven_dialogue():
     return None
 
 
+def _split_long_turn(text: str, limit: int) -> list[str]:
+    """Split a single oversized turn into pieces under `limit` chars, at
+    sentence boundaries when possible. A lone sentence longer than the limit
+    gets hard-split at a word boundary. Guarantees every piece ≤ limit."""
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    pieces: list[str] = []
+    current = ""
+    for s in sentences:
+        while len(s) > limit:  # pathological single sentence — word-boundary cut
+            if current:
+                pieces.append(current)
+                current = ""
+            cut = s.rfind(" ", 0, limit)
+            cut = cut if cut > 0 else limit
+            pieces.append(s[:cut].strip())
+            s = s[cut:].strip()
+        if current and len(current) + 1 + len(s) > limit:
+            pieces.append(current)
+            current = s
+        else:
+            current = f"{current} {s}".strip()
+    if current:
+        pieces.append(current)
+    return [p for p in pieces if p]
+
+
 def _chunk_turns(turns: list[tuple[str, str]]) -> list[list[tuple[str, str]]]:
     """Group turns into chunks under V3_MAX_CHARS_PER_REQUEST and ≤10 unique voices."""
+    # Pre-pass: a single turn over the request limit would previously become
+    # a chunk exceeding the v3 2000-char cap → API 400 mid-episode. Split it
+    # into consecutive same-speaker turns first.
+    split: list[tuple[str, str]] = []
+    for name, text in turns:
+        if len(text) > V3_MAX_CHARS_PER_REQUEST:
+            split.extend((name, part) for part in _split_long_turn(text, V3_MAX_CHARS_PER_REQUEST))
+        else:
+            split.append((name, text))
+    turns = split
     chunks: list[list[tuple[str, str]]] = []
     current: list[tuple[str, str]] = []
     current_chars = 0
@@ -364,6 +429,69 @@ def _chunk_turns(turns: list[tuple[str, str]]) -> list[list[tuple[str, str]]]:
     return chunks
 
 
+def _chunk_cache_dir(out_mp3: Path) -> Path:
+    """Stable per-date cache dir for billed chunk renders. Survives the run
+    so a crash after chunk N doesn't throw away N already-billed chunks —
+    the re-run reuses them by content hash instead of re-billing. Deleted by
+    synth() only after the final mp3 is atomically in place."""
+    stem = out_mp3.name
+    for suf in (".tmp", ".mp3"):  # "DATE.mp3.tmp" and "DATE.mp3" both → "DATE"
+        if stem.endswith(suf):
+            stem = stem[: -len(suf)]
+    return ROOT / ".tts_chunk_cache" / stem
+
+
+def _chunk_cache_key(chunk: list[tuple[str, str]]) -> str:
+    """Content hash of a chunk: speaker, resolved voice id, text. Voice-id in
+    the key means a cast change invalidates stale cached audio."""
+    payload = json.dumps([
+        [name, ELEVEN_CHARACTER_VOICES.get(name, ELEVEN_CHARACTER_VOICES[DEFAULT_CHARACTER]), text]
+        for name, text in chunk
+    ])
+    return hashlib.sha1(payload.encode()).hexdigest()[:16]
+
+
+_RETRYABLE_STATUS = {429, 500, 502, 503, 504}
+
+
+def _is_retryable_tts_error(e: Exception) -> bool:
+    """Transient network / 5xx / 429 only. Auth, quota and other 4xx errors
+    are NOT retryable — retrying those just re-fails (or re-bills)."""
+    status = getattr(e, "status_code", None)
+    if status is not None:
+        return status in _RETRYABLE_STATUS
+    if isinstance(e, (ConnectionError, TimeoutError, OSError)):
+        return True
+    # httpx transport errors carry no status_code; match on class name so we
+    # don't hard-depend on httpx being importable here.
+    name = type(e).__name__.lower()
+    return "timeout" in name or "connect" in name or "transport" in name
+
+
+def _convert_chunk_v3_with_retry(client, convert_kwargs: dict, out_path: Path, idx: int) -> None:
+    """One dialogue-API call with bounded retries on transient errors.
+    AttributeError (SDK lacks text_to_dialogue) propagates immediately so the
+    caller can take the v2 fallback path; non-retryable errors propagate too."""
+    delay = 2.0
+    attempts = 3
+    for attempt in range(attempts):
+        try:
+            audio_iter = client.text_to_dialogue.convert(**convert_kwargs)
+            with open(out_path, "wb") as f:
+                for piece in audio_iter:
+                    if piece:
+                        f.write(piece)
+            return
+        except AttributeError:
+            raise
+        except Exception as e:
+            if attempt == attempts - 1 or not _is_retryable_tts_error(e):
+                raise
+            print(f"[tts] chunk {idx} attempt {attempt + 1}/{attempts} failed ({e}); retrying in {delay:.0f}s")
+            time.sleep(delay)
+            delay *= 2
+
+
 def _synth_eleven_v3(turns: list[tuple[str, str]], out_mp3: Path) -> tuple[Path, list[dict]]:
     """Batched v3 dialogue API. One call per chunk. Outputs mastered mp3."""
     if not ELEVENLABS_API_KEY:
@@ -373,6 +501,8 @@ def _synth_eleven_v3(turns: list[tuple[str, str]], out_mp3: Path) -> tuple[Path,
     client = ElevenLabs(api_key=ELEVENLABS_API_KEY)
 
     chunks = _chunk_turns(turns)
+    cache_dir = _chunk_cache_dir(out_mp3)
+    cache_dir.mkdir(parents=True, exist_ok=True)
     tmpdir = Path(tempfile.mkdtemp(prefix="tts_eleven_v3_"))
     try:
         chunk_wavs: list[Path] = []
@@ -390,35 +520,40 @@ def _synth_eleven_v3(turns: list[tuple[str, str]], out_mp3: Path) -> tuple[Path,
                 else:
                     inputs.append({"text": text, "voice_id": voice_id})
 
-            chunk_mp3 = tmpdir / f"chunk_{idx:03d}.mp3"
-            convert_kwargs = dict(
-                inputs=inputs,
-                model_id="eleven_v3",
-                output_format="mp3_44100_128",
-                apply_text_normalization="auto",
-            )
-            # Naturalness lever: set the v3 stability mode (Natural by default).
-            # Guarded — older SDKs may not accept `settings`; degrade silently.
-            try:
-                from elevenlabs.types import ModelSettingsResponseModel
-                convert_kwargs["settings"] = ModelSettingsResponseModel(
-                    stability=ELEVEN_V3_STABILITY
-                )
-            except Exception:
-                pass
-            try:
-                audio_iter = client.text_to_dialogue.convert(**convert_kwargs)
-            except AttributeError as e:
-                # SDK doesn't have text_to_dialogue — fall back to per-turn v2.
-                # Narrowly only AttributeError: auth/quota errors must propagate
-                # so we don't double-bill by re-synthing the same chunk on v2.
-                print(f"[tts] v3 dialogue API unavailable ({e}); falling back to v2 per-turn for chunk {idx}")
-                _synth_chunk_v2_fallback(chunk, chunk_mp3, client)
+            # Chunk mp3s live in the stable per-date cache, keyed by content
+            # hash — a re-run after a mid-episode failure reuses the chunks
+            # that were already billed instead of re-billing all of them.
+            chunk_mp3 = cache_dir / f"{_chunk_cache_key(chunk)}.mp3"
+            if chunk_mp3.exists() and chunk_mp3.stat().st_size > 0:
+                print(f"[tts] chunk {idx}: reusing cached render ({chunk_mp3.name}) — no re-billing")
             else:
-                with open(chunk_mp3, "wb") as f:
-                    for piece in audio_iter:
-                        if piece:
-                            f.write(piece)
+                convert_kwargs = dict(
+                    inputs=inputs,
+                    model_id="eleven_v3",
+                    output_format="mp3_44100_128",
+                    apply_text_normalization="auto",
+                )
+                # Naturalness lever: set the v3 stability mode (Natural by default).
+                # Guarded — older SDKs may not accept `settings`; degrade silently.
+                try:
+                    from elevenlabs.types import ModelSettingsResponseModel
+                    convert_kwargs["settings"] = ModelSettingsResponseModel(
+                        stability=ELEVEN_V3_STABILITY
+                    )
+                except Exception:
+                    pass
+                # Write to a .part file, promote on success — a crash mid-write
+                # can't leave a truncated mp3 in the cache to be "reused".
+                chunk_part = chunk_mp3.with_suffix(".part")
+                try:
+                    _convert_chunk_v3_with_retry(client, convert_kwargs, chunk_part, idx)
+                except AttributeError as e:
+                    # SDK doesn't have text_to_dialogue — fall back to per-turn v2.
+                    # Narrowly only AttributeError: auth/quota errors must propagate
+                    # so we don't double-bill by re-synthing the same chunk on v2.
+                    print(f"[tts] v3 dialogue API unavailable ({e}); falling back to v2 per-turn for chunk {idx}")
+                    _synth_chunk_v2_fallback(chunk, chunk_part, client)
+                os.replace(chunk_part, chunk_mp3)
 
             chunk_wav = tmpdir / f"chunk_{idx:03d}.wav"
             subprocess.run(
@@ -484,9 +619,10 @@ def _synth_chunk_v2_fallback(chunk: list[tuple[str, str]], out_mp3: Path, client
             interleaved.append(w)
         combined = tmpdir / "combined.wav"
         _concat_wavs(interleaved, combined)
+        # -f mp3: output may be a .part cache file, so don't rely on extension
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error", "-i", str(combined),
-             "-codec:a", "libmp3lame", "-b:a", "128k", str(out_mp3)],
+             "-codec:a", "libmp3lame", "-b:a", "128k", "-f", "mp3", str(out_mp3)],
             check=True,
         )
     finally:
@@ -702,10 +838,11 @@ def _master_audio(in_wav: Path, out_mp3: Path) -> None:
             "alimiter=limit=0.95"
             f"{speedup_filter}"
         )
+        # -f mp3: out_mp3 is often the .mp3.tmp render path — force the format
         subprocess.run(
             ["ffmpeg", "-y", "-loglevel", "error", "-i", str(in_wav),
              "-af", chain, "-ar", "44100", "-ac", "1",
-             "-codec:a", "libmp3lame", "-b:a", "128k", str(out_mp3)],
+             "-codec:a", "libmp3lame", "-b:a", "128k", "-f", "mp3", str(out_mp3)],
             check=True,
         )
         print(f"[master] applied 2-pass loudnorm + atempo={speedup}: input_i={data['input_i']} → -16 LUFS")
@@ -716,7 +853,7 @@ def _master_audio(in_wav: Path, out_mp3: Path) -> None:
             ["ffmpeg", "-y", "-loglevel", "error", "-i", str(in_wav),
              "-af", chain,
              "-codec:a", "libmp3lame", "-b:a", "128k",
-             "-ar", "44100", "-ac", "1", str(out_mp3)],
+             "-ar", "44100", "-ac", "1", "-f", "mp3", str(out_mp3)],
             check=True,
         )
 

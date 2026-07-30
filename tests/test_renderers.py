@@ -63,3 +63,47 @@ def test_thread_tweets_under_280_chars():
 def test_thread_first_tweet_mentions_top_story():
     tweets = render_thread.render_thread(_market(), _ranked(), "2026-05-05")
     assert "Apple beats earnings" in tweets[0]
+
+
+def test_thread_closing_tweet_links_the_episode():
+    from config import PODCAST_BASE_URL
+    tweets = render_thread.render_thread(_market(), _ranked(), "2026-05-05")
+    # Closing tweet must link TODAY'S episode page, not just the site root.
+    assert f"{PODCAST_BASE_URL}/episodes/2026-05-05.html" in tweets[-1]
+
+
+# ─── build_feed smoke ───────────────────────────────────────────────────────
+
+
+def test_build_feed_smoke_with_and_without_meta_sidecars(tmp_path, monkeypatch):
+    import publish
+    docs = tmp_path / "docs"
+    eps = docs / "episodes"
+    eps.mkdir(parents=True)
+    # Episode WITH sidecars: meta (duration + pubDate source) and script.
+    (eps / "2026-07-01.mp3").write_bytes(b"\x00" * 256)
+    (eps / "2026-07-01.txt").write_text(
+        "JAMIE: Markets went up today because of vibes and momentum trades.\n"
+    )
+    (eps / "2026-07-01.meta.json").write_text(json.dumps({
+        "generated_at": "2026-07-01T21:05:00Z",
+        "duration_sec": 312.5,
+        "turns": 20,
+        "char_usage_estimate": 4000,
+    }))
+    # Episode WITHOUT any sidecars (bare mp3, unreadable by ffprobe) — feed
+    # build must degrade (duration 0) instead of crashing.
+    (eps / "2026-07-02.mp3").write_bytes(b"\x00" * 256)
+
+    monkeypatch.setattr(publish, "EPISODES_DIR", eps)
+    monkeypatch.setattr(publish, "FEED_PATH", docs / "feed.xml")
+    monkeypatch.setattr(publish, "DOCS", docs)
+    publish.build_feed()
+
+    feed = (docs / "feed.xml").read_text()
+    assert "2026-07-01.mp3" in feed
+    assert "2026-07-02.mp3" in feed
+    # duration came from the meta sidecar (312.5s → 00:05:12), no ffprobe
+    assert "00:05:12" in feed
+    # meta generated_at drives the pubDate for the sidecar'd episode
+    assert "1 Jul 2026 21:05:00" in feed

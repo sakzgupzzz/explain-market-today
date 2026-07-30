@@ -32,12 +32,12 @@ from config import (
 )
 from generate_script import (
     _llm_call, _llm_json, _resolve_prefs, _fmt_section, _join_natural,
-    _fmt_char_block, OLLAMA_MODEL, GROQ_MODEL,
+    _fmt_char_block, HardViolationError, OLLAMA_MODEL, GROQ_MODEL,
     OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL,
 )
 from schemas import (
-    ALLOWED_TAGS, build_plan_schema, build_turns_schema, story_signature,
-    signatures_overlap, validate_plan, validate_turns,
+    ALLOWED_TAGS, HARD_PREFIX, build_plan_schema, build_turns_schema,
+    story_signature, signatures_overlap, validate_plan, validate_turns,
 )
 
 # ─────────── helpers ───────────
@@ -219,7 +219,7 @@ def _semantic_dup_violations(outline: dict, idx: dict[str, dict]) -> list[str]:
     )
     try:
         verdict = _llm_call(critic_prompt, OLLAMA_CRITIC_MODEL, GROQ_CRITIC_MODEL,
-                            temperature=0.1).strip().lower()
+                            temperature=0.1, role="critic").strip().lower()
     except Exception as e:
         print(f"[plan] semantic-dup critic skipped ({e})")
         return []
@@ -228,8 +228,10 @@ def _semantic_dup_violations(outline: dict, idx: dict[str, dict]) -> list[str]:
         n = int(tok) - 1
         if 0 <= n < len(suspects):
             a_l, a_t, b_l, b_t = suspects[n]
+            # Duplication-class → HARD: never shippable via the exhausted-
+            # retries fallback (same class as validate_plan's dup checks).
             violations.append(
-                f"{a_l} and {b_l} are the same underlying story "
+                f"{HARD_PREFIX}{a_l} and {b_l} are the same underlying story "
                 f"(\"{a_t[:50]}\" / \"{b_t[:50]}\"); replace one with a different story."
             )
     return violations
@@ -318,6 +320,13 @@ def plan(ranked: list[dict], market: dict, interests: dict | None = None,
             temperature=0.3, extra_violations=_violations,
         )
         return outline
+    except HardViolationError as e:
+        # Hard plan defects (cross-beat dup / cross-day repeat) survived every
+        # re-prompt. The legacy text parse is unvalidated and would happily
+        # ship the same defect — return None so generate_multistage degrades
+        # to the deterministic _fallback_plan instead.
+        print(f"[plan] {e}; degrading to deterministic fallback plan")
+        return None
     except Exception as e:
         print(f"[plan] structured path failed ({e}); trying legacy text parse")
 
@@ -337,15 +346,44 @@ def plan(ranked: list[dict], market: dict, interests: dict | None = None,
     except json.JSONDecodeError as e:
         print(f"[plan] JSON parse failed: {e}")
         return None
-    # Minimal repair only: drop any story_id not in the ranked set so render
-    # stages don't KeyError. Everything else is left to the (now-blinded) critic.
+    # Minimal repair only: remap invalid story_ids so render stages don't
+    # KeyError. Everything else is left to the (now-blinded) critic.
+    return _repair_invalid_story_ids(outline, idx, story_ids)
+
+
+def _repair_invalid_story_ids(outline: dict, idx: dict[str, dict],
+                              story_ids: list[str]) -> dict:
+    """Remap each invalid story_id in a legacy-parsed outline to the
+    highest-ranked id NOT already assigned to another beat; drop the beat when
+    no unused id remains. (Mapping every invalid id to story_ids[0] covered
+    the top story 3× — cross-beat uniqueness must survive repair.)"""
+    used = {sid for sid in _beat_story_ids_local(outline).values() if sid in idx}
+
+    def _next_unused() -> str | None:
+        for sid in story_ids:
+            if sid not in used:
+                used.add(sid)
+                return sid
+        return None
+
     for beat in ("big_story", "odd_thing"):
         b = outline.get(beat) or {}
-        if b.get("story_id") and b["story_id"] not in idx and story_ids:
-            b["story_id"] = story_ids[0]
-    for qh in outline.get("quick_hits") or []:
-        if qh.get("story_id") and qh["story_id"] not in idx and story_ids:
-            qh["story_id"] = story_ids[0]
+        if b.get("story_id") and b["story_id"] not in idx:
+            sub = _next_unused()
+            if sub:
+                b["story_id"] = sub
+            else:
+                outline.pop(beat, None)
+    if outline.get("quick_hits"):
+        kept = []
+        for qh in outline["quick_hits"]:
+            if qh.get("story_id") and qh["story_id"] not in idx:
+                sub = _next_unused()
+                if sub is None:
+                    continue  # no unused story left — drop the beat
+                qh["story_id"] = sub
+            kept.append(qh)
+        outline["quick_hits"] = kept
     return outline
 
 

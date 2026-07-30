@@ -43,6 +43,55 @@ def test_disclaimer_signature_ignores_casual_investment_advice():
     assert _disclaimer_signature("This show is for entertainment and education only — nothing here is investment advice.")
 
 
+def test_dedup_disclaimer_mid_episode_casual_mention_preserved():
+    from sanitize import _dedup_disclaimer
+    # A casual "not investment advice" at turn 12 of 30 must NOT anchor the
+    # drop-everything-after behavior — that silently deleted turns 13-30.
+    hosts = ["JAMIE", "ALEX", "MAYA"]
+    turns = [
+        (hosts[i % 3], f"Turn {i} covers a distinct market story in real detail.")
+        for i in range(30)
+    ]
+    turns[12] = ("ALEX", "Look, that's not investment advice, anyway — the chart is just ugly.")
+    out, drops = _dedup_disclaimer(turns)
+    assert drops == 0
+    assert len(out) == 30
+    assert out[29][1] == "Turn 29 covers a distinct market story in real detail."
+    # And through the full pipeline: back half of the episode survives.
+    script = "\n".join(f"{n}: {t}" for n, t in turns)
+    sanitized = sanitize_script(script, verbose=False)
+    assert "Turn 29 covers" in sanitized
+
+
+def test_dedup_disclaimer_canonical_still_dedups_and_ends_script():
+    from sanitize import _dedup_disclaimer
+    from config import DISCLAIMER_SHORT
+    turns = [
+        ("JAMIE", "Cold open with substance."),
+        ("MAYA", "This show is for entertainment and education only — nothing here is investment advice."),
+        ("ALEX", "Markets stuff."),
+        ("JAMIE", "Not investment advice, folks."),  # near-end → allowed to anchor
+        ("MAYA", "Trailing chatter that should drop."),
+    ]
+    out, drops = _dedup_disclaimer(turns)
+    assert out[-1][1] == DISCLAIMER_SHORT
+    assert drops == 2  # early canonical dropped + trailing turn dropped
+    assert [n for n, _ in out] == ["JAMIE", "ALEX", "JAMIE"]
+
+
+def test_unknown_acronyms_pass_through_unspaced():
+    from sanitize import _space_standalone_tickers
+    # Unknown all-caps words must NOT be letter-spaced — old default read
+    # "NASA" as "N A S A" on air.
+    out, fixes = _space_standalone_tickers("NASA and OSHA both weighed in on the SPAC.")
+    assert out == "NASA and OSHA both weighed in on the SPAC."
+    assert fixes == 0
+    # Known map entries still resolve to company names.
+    out, fixes = _space_standalone_tickers("NVDA ripped again.")
+    assert out == "Nvidia ripped again."
+    assert fixes == 1
+
+
 def test_ambiguous_tickers_not_expanded():
     from sanitize import _space_standalone_tickers
     # NOW / MA / HD / KO collide with common words — must pass through untouched.
