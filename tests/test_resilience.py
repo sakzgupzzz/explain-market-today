@@ -109,7 +109,9 @@ def test_eleven_budget_manual_override(monkeypatch):
     import eleven_budget
     importlib.reload(config)
     importlib.reload(eleven_budget)
-    p = eleven_budget.compute_dynamic_preset()
+    # manual env is only consulted when the live API is unavailable
+    with patch.object(eleven_budget, "fetch_subscription", return_value=None):
+        p = eleven_budget.compute_dynamic_preset()
     assert p is not None
     assert p["_source"] == "manual_env"
     assert p["_remaining_chars"] == 50000
