@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Amazon just jumped 13.7% while Apple cratered 9.2%\u2014the market is literally choosing winners and losers in real time."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.27%",
+      "Nasdaq -0.13%",
+      "Amazon +13.70%",
+      "Apple -9.23%",
+      "VIX +3.39%"
+    ],
+    "macro_note": "Broad market flat but bifurcated: mega-cap earnings winners surge, losers crater; volatility ticking up on geopolitical premium."
+  },
+  "big_story": {
+    "story_id": "64d4266b2f84",
+    "lead_host": "JAMIE",
+    "story_title": "Apple heads for $460 billion wipeout with its stock seeing worst post-earnings drop in 13 years",
+    "angle": "Apple's worst post-earnings drop in 13 years isn't just a stock move\u2014it's a referendum on whether the iPhone is still a growth engine or a cash cow that's run out of runway, and what that means for the entire premium consumer tech narrative.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "925eddbf9fc7",
+      "lead_host": "ALEX",
+      "angle": "Amazon's 13.7% pop on earnings isn't just a beat\u2014it's validation that AWS + advertising + logistics moat is now genuinely unchallenged; the stock is pricing in a decade of margin expansion.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "a5def46c4a0a",
+      "lead_host": "MAYA",
+      "angle": "Tesla selling China operations ahead of a SpaceX merger is the kind of financial engineering that only works if you're Elon and the market is willing to suspend disbelief for another quarter.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "7f93e06d5abb",
+      "lead_host": "ALEX",
+      "angle": "Exxon and Chevron profits surge on Iran war oil spike\u2014the geopolitical risk premium is real money, and it's flowing to the one sector everyone said was dying.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "3293da4c29ff",
+      "lead_host": "MAYA",
+      "angle": "Sony ditching discs despite backlash is a bet that streaming + digital ownership is now inevitable; the last physical media holdouts are finally folding.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "c40fe73286c3",
+    "joke_angle": "Consumer companies staying private longer to avoid the IPO road\u2014turns out going public is now the financial equivalent of a bad Yelp review that never goes away."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Apple's $460 billion wipeout"
+  }
+}

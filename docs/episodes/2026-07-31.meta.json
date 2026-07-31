@@ -1,0 +1,51 @@
+{
+  "date": "2026-07-31",
+  "mp3": "2026-07-31.mp3",
+  "size_bytes": 7335719,
+  "duration_sec": 457.9,
+  "turns": 35,
+  "words": 1379,
+  "char_usage_estimate": 8961,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-07-31T14:16:28.537974Z",
+  "top_mover": {
+    "symbol": "AMZN",
+    "name": "AMZN",
+    "pct": 13.7
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7417.47021484375,
+        "pct": -0.27
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 52070.91015625,
+        "pct": -0.26
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 25088.90625,
+        "pct": -0.13
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2933.163330078125,
+        "pct": -0.44
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 17.670000076293945,
+        "pct": 3.39
+      }
+    ]
+  }
+}
