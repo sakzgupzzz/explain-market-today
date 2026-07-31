@@ -1,0 +1,31 @@
+JAMIE: [excited] Microsoft's up fifteen point five-one percent, and that's not even the headline—turns out the AI trade is splitting the market.
+ALEX: [deadpan] The tape closed with the S&P at seven thousand four hundred thirty-seven, up one point six-six percent. Dow up one point one-nine percent. Nasdaq took the lead with two point seven-eight percent—the Russell two thousand keeping pace at one point three-seven. Breadth is there. The VIX dropped seventeen point two-eight percent, which means volatility evaporated.
+JAMIE: [curious] So we're just... calm now? After the week we've had?
+ALEX: [sarcastic] You've got the classic risk-on setup: equities rallying, rates climbing, gold catching a bid because nobody's actually confident in anything.
+MAYA: [rushed] Gold's the only thing that's honest about this market right now. Everything else is pretending it knows what's happening.
+JAMIE: [excited] And we're watching this whole thing with Microsoft and AMD just running—fifteen point five-one percent and thirteen percent respectively. That's not a market move, that's a stampede.
+ALEX: Oracle up eight point three-four percent, Broadcom up four point seven-three. Amazon up three point nine. Meanwhile Meta's down seven point nine-five, Adobe's off five point nine, Accenture down five point seven-one. The tape's sorting itself: infrastructure and AI chips are in, consumer-facing software and consulting are out.
+JAMIE: [curious] So Meta's guidance missed—the market looked at that and said, 'Yeah, we're done.' Eight percent down on a day when basically everything else is up.
+ALEX: [deadpan] They also missed revenue guidance. That's the thing people aren't screaming about loud enough. Microsoft gets a beat and guidance raise, Meta gets a beat and guidance miss.
+MAYA: [rushed] And here's the problem—Meta's spending is still going up. They're burning cash on AI infrastructure while the cash flow's evaporating.
+JAMIE: [excited] But Azure and Copilot at Microsoft—those are actual revenue drivers right now. Satya's not just talking about AI, he's got paying customers. That's the split.
+ALEX: [sarcastic] The market's drawing a line: infrastructure plays that monetize AI get rewarded, consumer-facing platforms that are still figuring out how to turn AI into cash get punished.
+MAYA: [mischievously] Enough that people are actually counting. The streak matters because it means the narrative's shifted.
+JAMIE: And that's the thing—Microsoft gets to spend on AI and everyone cheers. Meta spends on AI and everyone asks for the exit sign.
+ALEX: [deadpan] The UK Supreme Court just gave Palestine Action's co-founder permission to appeal the government's proscription of the group under anti-terrorism legislation.
+JAMIE: [curious] That's not a small thing. The government already banned them, and now the court's saying, hold on, let's look at this again.
+MAYA: [rushed] Apple just posted iPhone sales up in the latest quarter, and here's the thing—they did it while the entire chip industry is drowning in RAM shortages.
+JAMIE: [curious] That's the inverse of what we usually see. Shortages hurt sales. Apple's defying the script.
+ALEX: [sarcastic] They've got the supply chain relationships and the pricing power to absorb the shortage.
+JAMIE: [excited] Meta's stock got hammered again. Down hard on a day when the rest of tech's flying.
+MAYA: [mischievously] They beat earnings. They beat revenue. But they guided down on future revenue and they're not showing a path to profitability in the areas where they're burning the most cash.
+ALEX: The market's not punishing them for missing—it's punishing them for missing while spending more.
+JAMIE: [excited] Tim Cook just said Apple's hybrid AI strategy is a competitive weapon. They're going to charge for artificial intelligence through iCloud.
+MAYA: [rushed] That's the same bet that worked for them with music and cloud storage.
+ALEX: [deadpan] The difference is Apple controls the device. You want Siri AI? You're already in the ecosystem. They don't need to compete on price—they compete on integration.
+MAYA: [rushed] Rivian just cut its spending plans and narrowed its losses for this year, which sounds like a win until you realize they're doing it because they're hemorrhaging cash.
+JAMIE: [curious] So they're pulling back on capital expenditure—that's the infrastructure spend, the factory buildout. What does that actually mean for production timelines?
+ALEX: [deadpan] It means they're slowing down the thing that was supposed to justify their valuation.
+MAYA: [mischievously] Meta's lost ground while Microsoft prints money on the same bet. The market's decided which company gets to gamble with shareholder cash and which one has to actually win.
+ALEX: [deadpan] One's building the infrastructure the other one needs. The other one's hoping the infrastructure eventually does something.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

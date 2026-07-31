@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "MSFT up 15.5 percent \u2014 and that's not even the headline."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +1.66 percent",
+      "Dow Jones +1.19 percent",
+      "Nasdaq +2.78 percent",
+      "Russell 2000 +1.37 percent"
+    ],
+    "macro_note": "Quick read on where the tape closed."
+  },
+  "big_story": {
+    "story_id": "3f27f60cf25c",
+    "lead_host": "JAMIE",
+    "story_title": "Meta sinks 8%, continuing record losing streak, while Microsoft jumps 15% as AI trade splits",
+    "angle": "Lead with the facts and why it matters.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "e72bdc819ba1",
+      "lead_host": "ALEX",
+      "angle": "Palestine Action ban to be reviewed by Supreme Court",
+      "conviction": "real"
+    },
+    {
+      "story_id": "298876c933fd",
+      "lead_host": "MAYA",
+      "angle": "Apple&#8217;s iPhone and Mac sales keep growing despite RAM shortages",
+      "conviction": "real"
+    },
+    {
+      "story_id": "b2e15fa16cbc",
+      "lead_host": "JAMIE",
+      "angle": "Meta\u2019s stock falls hard. Here\u2019s why the company is in Wall Street\u2019s doghouse.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "6921d5d67914",
+      "lead_host": "ALEX",
+      "angle": "Tim Cook sees Apple's hybrid AI strategy as a 'competitive weapon'",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "795d6974b430",
+    "joke_angle": "The lighter one to close on."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Meta sinks 8%, continuing record losing streak, while Micros"
+  }
+}
