@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jul 2026 14:17:03 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 14:45:51 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,60 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>ORCL +5.6%, SpaceX's post-IPO plunge sets tense backdrop — Aug 3</title>
+      <description>SpaceX stock down 18% since IPO—Elon's about to explain why that's actually fine in earnings. Today's lead: SpaceX's post-IPO plunge sets tense backdrop for first earnings report. SpaceX went public and immediately disappointed—now Elon has to convince investors the company is worth the hype when the stock is already in the red.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:31  Markets
+  00:02:03  Big story
+  00:03:41  Quick hits
+  00:05:12  Odd thing of the day
+  00:06:05  Sign-off
+
+Stories covered:
+  • US manufacturing at 4-year highs on AI capex, but employment gains aren't following—the boom is machines, not jobs. [real]
+  • Visa dropping $2.4B on a cybersecurity firm because AI-powered scams are now the cost of doing business in payments. [real]
+  • AstraZeneca and Bristol Myers Squibb merger would create a cancer-drug colossus, but analysts are already skeptical on price and synergies. [hype]
+  • Horizon3 hits $2B valuation on AI cybersecurity—another unicorn born in the panic cycle. [hype]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] SpaceX stock is down since going public, and Elon's earnings call today is basically a man explaining to shareholders why losing money is a feature, not a bug.
+ALEX: [deadpan] So while Elon's explaining why his rocket company burns through cash like a feature, the market pivoted hard—Oracle up five point five seven percent, Meta up five point one two, Amazon up five point zero five. Cloud and AI infrastructure are the only asset class investors still trust to show up to work.
+ALEX: [deadpan] The S&amp;P closed up one point one one percent to seven thousand five hundred seventy-two point nine nine, Nasdaq up one point five eight to twenty-five thousand seven hundred seventy-five point two one—and the entire move is basically tech's victory lap. Oracle jumped five point five seven percent, Meta five point one two, Amazon five point zero five, Microsoft four point six one. The VIX dropped one point one nine, which means nobody's afraid of anything right now.
+JAMIE: [curious] So we're in one of those markets where if you're not an AI infrastructure play, you're slowly being liquidated by a committee of algorithms that decided you're not the future.
+MAYA: [rushed] Pharma is getting annihilated though—Eli Lilly down two point three five, Merck down one point eight three, J&amp;J down one point six nine—and it's all because the second someone whispers 'merger,' the sector just assumes it's going to get bought for pennies by a PE firm that'll strip it for parts.
+ALEX: [sarcastic] It's not even merger chatter at this point—it's just the standing assumption that if you make pills and your stock isn't moving, you're either about to be acquired or you're irrelevant, and the market doesn't have time to figure out which.
+JAMIE: [curious] So the real problem here isn't just that the stock fell—it's that the timing made this a public referendum on whether SpaceX was ever worth the valuation in the first place. You go public at a peak, you're betting the company's fundamentals can at least tread water for the first quarter. Instead, we're watching an earnings call where half the room is already doing the math on whether they overpaid.
+ALEX: [deadpan] The thing that actually matters: SpaceX's revenue and margins. The question isn't whether the company's lying—it's whether investors bought into a growth story that depends on Starlink scaling faster than the laws of physics allow.
+MAYA: [rushed] And here's where it gets weird—the IPO itself was weird. A space company suddenly decides to go public right when the market's obsessed with AI infrastructure and completely bored with hard physics problems. It's like the timing was for the wrong audience. The people who wanted to own this company years ago are the ones who still get it. Wall Street just sees a company that burns cash on rockets.
+JAMIE: [laughs] So when the earnings call happens, what's actually being sold? Because if the stock's already down, the people who bought at the IPO are already underwater. The call isn't convincing them—it's trying to stop the bleeding before it spreads to the rest of the portfolio.
+ALEX: The company needs to show that subscriber growth is still accelerating and that launch cadence is hitting targets. Those are the two levers that make the valuation work. If either one stalls, then the market's right to be skeptical.
+ALEX: [deadpan] U.S. manufacturers hit a four-year growth high due to AI infrastructure spending, but employment gains are nowhere—the machines are doing the work, the people aren't getting hired.
+JAMIE: [curious] So we're printing factory output while the factory floor stays empty. That's the dream scenario for margin expansion if you're a shareholder, and a living nightmare if you're a town that used to make things.
+ALEX: Visa just spent two point four billion dollars buying BioCatch, a cybersecurity firm, because AI-powered fraud is now expensive enough that it's cheaper to acquire the defense than to keep absorbing the losses.
+MAYA: [rushed] Two point four billion for a company that didn't exist years ago, and Visa's treating it like a line item on the cost of operations. That's how you know the scam economy has matured—the payment companies are just budgeting for it now.
+ALEX: [sarcastic] AstraZeneca and Bristol Myers Squibb are in talks to merge and create a cancer drug powerhouse, but Wall Street's already calling it odd—analysts can't figure out why these two specifically need each other.
+JAMIE: [laughs] When a deal announcement makes analysts say 'odd' before they say 'synergies,' you've already lost the narrative. That's the sound of a merger where the bankers made the math work and nobody else believes it.
+MAYA: [excited] An AI cybersecurity startup just hit a two billion dollar valuation on a Series E raise—another unicorn born in the panic cycle, because apparently every company that touches 'AI' and 'security' in the same sentence gets a blank check.
+ALEX: [deadpan] Except this one's actually selling something—continuous AI-powered security validation instead of annual pentesting. The valuation's frothy, but the product isn't vaporware, which puts it ahead of most of the unicorns funded in the last two years.
+MAYA: [rushed] The Atlantic just published a report saying young kids shouldn't have screen time, and I'm reading the subheading like—okay, sure, everyone knows that. But then you get to the actual analysis and it's basically: the families who can afford to keep screens out of the nursery are the ones with money for live-in nannies, space to run around, and time for actual parenting. The families who can't are the ones working two jobs and using iPad as a babysitter because it's free and it doesn't require scheduling. So the real headline is 'Parenting Advice Remains Accessible Only to People With Assets.'
+JAMIE: [deadpan] So what you're saying is the hot take is 'have you tried being wealthy.' That's the entire article.
+ALEX: [sarcastic] I mean, there's a reason the parenting advice industry is a substantial market—it's all premium-tier guidance for people who can afford to ignore it, and then everyone else just does whatever keeps the house quiet. The Atlantic's basically saying the best parenting hack is the one your parents' parents could afford, which is just time and money, which is not a hack, it's just being born into the right tax bracket.
+JAMIE: On the tape tomorrow: we've got earnings from American Bitcoin Corp and Atkore, then a whole slate of smaller financials and specialty plays—CNA Financial, BCB Bancorp, Bowhead Specialty Holdings. Nothing that moves the market by itself, but it's the kind of calendar where you're watching to see if anyone admits things got worse.
+ALEX: [deadpan] The real question is whether these smaller-cap industrials and financials report margins that actually held up, or if they're about to spend the call explaining why they're the last ones to know inflation never actually left. CNA Financial's numbers matter because the insurance sector's been getting hammered—if they show underwriting discipline, the whole group catches a bid.
+MAYA: [rushed] American Bitcoin Corp reporting is its own kind of statement—like, we're so confident in our numbers we're just dropping it when everyone's checking their portfolio. That's either conviction or desperation, and the stock will tell you which one in about six seconds.
+MAYA: [mischievously] Elon's going to walk into that earnings call and find out the market treats an eighteen percent drop like a feature too.
+ALEX: [deadpan] Except the market doesn't get paid in equity if it believes hard enough.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">191c4929-cf45-beb5-013f-1a8802ee9dca</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-03.mp3" length="6236224" type="audio/mpeg" />
+      <pubDate>Mon, 03 Aug 2026 14:45:05 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-03.jpg" />
+      <itunes:duration>00:06:29</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260803</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-03.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-03.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-03.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AMZN +13.7%, Apple heads for $460 billion wipeout — Jul 31</title>
       <description>Amazon just jumped 13.7% while Apple cratered 9.2%—the market is literally choosing winners and losers in real time. Today's lead: Apple heads for $460 billion wipeout with its stock seeing worst post-earnings drop in 13 years. Apple's worst post-earnings drop in 13 years isn't just a stock move—it's a referendum on whether the iPhone is still a growth engine or a cash cow that's run out of runway, and what that means for the entire premium consumer tech narrative.

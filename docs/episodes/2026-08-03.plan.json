@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "SpaceX stock down 18% since IPO\u2014Elon's about to explain why that's actually fine in earnings."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +1.11% to 7573",
+      "Nasdaq +1.58% to 25775",
+      "Oracle +5.57%, Meta +5.12%",
+      "Eli Lilly -2.35%, Merck -1.83%"
+    ],
+    "macro_note": "Big tech rallying on AI momentum; pharma stumbling as merger chatter heats up."
+  },
+  "big_story": {
+    "story_id": "2584d268c8dc",
+    "lead_host": "JAMIE",
+    "story_title": "SpaceX's post-IPO plunge sets tense backdrop for first earnings report",
+    "angle": "SpaceX went public and immediately disappointed\u2014now Elon has to convince investors the company is worth the hype when the stock is already in the red.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "d1b359caac18",
+      "lead_host": "ALEX",
+      "angle": "US manufacturing at 4-year highs on AI capex, but employment gains aren't following\u2014the boom is machines, not jobs.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "c9fc9d51807c",
+      "lead_host": "ALEX",
+      "angle": "Visa dropping $2.4B on a cybersecurity firm because AI-powered scams are now the cost of doing business in payments.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "bc853063d8b4",
+      "lead_host": "ALEX",
+      "angle": "AstraZeneca and Bristol Myers Squibb merger would create a cancer-drug colossus, but analysts are already skeptical on price and synergies.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "1454768a3694",
+      "lead_host": "MAYA",
+      "angle": "Horizon3 hits $2B valuation on AI cybersecurity\u2014another unicorn born in the panic cycle.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "3488ac5e3df4",
+    "joke_angle": "The Atlantic's hot take: the best parenting hack is having money. Groundbreaking. Truly revolutionary."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Amazon just jumped 13.7% while Apple cratered 9.2%\u2014the market is literally choosing winners and losers in real time.",
+    "fresh_take": "Today's big tech rally (Oracle +5.5%, Meta +5.1%, Amazon +5%) shows the rotation is sticking\u2014cloud and AI infrastructure are the new safe havens."
+  },
+  "sign_off": {
+    "callback_target": "SpaceX's 18% post-IPO drop"
+  }
+}
