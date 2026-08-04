@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Caterpillar just dragged the Dow up 500 points on data-center demand\u2014but the real story is what's NOT in those factories."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.91% to 7669.86",
+      "Nasdaq +1.54% to 26312.11",
+      "AMD +6.40% (biggest chip gainer)",
+      "XOM -2.40% (energy weakness)"
+    ],
+    "macro_note": "Chip strength on AI capex optimism; energy selling off on demand concerns; rates holding steady."
+  },
+  "big_story": {
+    "story_id": "4d115919a92b",
+    "lead_host": "ALEX",
+    "story_title": "Caterpillar's stock gives the Dow a 500-point boost as data-center demand drives record revenue",
+    "angle": "Caterpillar is printing record revenue from data-center infrastructure, but the disconnect is stark: the company that built America's factories is now a pure-play AI capex bet, and nobody's talking about what happens when the build-out slows.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "8ea5779b0495",
+      "lead_host": "MAYA",
+      "angle": "Palantir's 20% jump on 'otherworldly' commercial revenue is the clearest sign yet that AI-for-enterprise is moving from hype to actual customer spend\u2014and it's not just defense contractors anymore.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "3793c20d8dbd",
+      "lead_host": "ALEX",
+      "angle": "AMD earnings tonight are the real test: if chips are truly in shortage and data-center demand is real, AMD's guidance will either confirm it or expose the capex cycle as front-loaded.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "44d7dfb06953",
+      "lead_host": "ALEX",
+      "angle": "Merck's revenue beat but profit miss is the pharma version of 'we're growing but we're also hemorrhaging money on deals'\u2014a pattern that's starting to feel less like strategy and more like desperation.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "3333a82c4a21",
+      "lead_host": "MAYA",
+      "angle": "Someone on Wall Street thinks SpaceX could triple this week\u2014which is either the most bullish take on Elon's earnings or the most delusional, and we're about 48 hours from finding out which.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "a8988fee20a5",
+    "joke_angle": "An Atlantic piece on 'getting used to high gas prices' is basically the financial equivalent of 'your new normal is worse, and you should stop complaining about it'\u2014the most depressing self-help article ever written."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "SpaceX's post-IPO plunge sets tense backdrop for first earnings report",
+    "fresh_take": "Wall Street's now pricing in a tripling by earnings\u2014a 180-degree swing from 'Elon's about to explain why the 18% drop is fine' to 'actually, maybe it's a screaming buy.' That's not conviction; that's panic-buying into volatility."
+  },
+  "sign_off": {
+    "callback_target": "Caterpillar's data-center bet\u2014will circle back to whether this is the new industrial story or just the old capex cycle with better PR."
+  }
+}

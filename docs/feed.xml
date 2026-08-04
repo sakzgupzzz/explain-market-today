@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Aug 2026 14:45:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 14:19:36 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,53 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>AMD +6.4%, Caterpillar's stock gives the Dow a — Aug 4</title>
+      <description>Caterpillar just dragged the Dow up 500 points on data-center demand—but the real story is what's NOT in those factories. Today's lead: Caterpillar's stock gives the Dow a 500-point boost as data-center demand drives record revenue. Caterpillar is printing record revenue from data-center infrastructure, but the disconnect is stark: the company that built America's factories is now a pure-play AI capex bet, and nobody's talking about what happens when the build-out slows.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:19  Markets
+  00:01:50  Big story
+  00:02:53  Quick hits
+  00:03:46  Odd thing of the day
+  00:04:37  Sign-off
+
+Stories covered:
+  • Palantir's 20% jump on 'otherworldly' commercial revenue is the clearest sign yet that AI-for-enterprise is moving from hype to actual customer spend—and it's not just defense contractors anymore. [real]
+  • AMD earnings tonight are the real test: if chips are truly in shortage and data-center demand is real, AMD's guidance will either confirm it or expose the capex cycle as front-loaded. [real]
+  • Merck's revenue beat but profit miss is the pharma version of 'we're growing but we're also hemorrhaging money on deals'—a pattern that's starting to feel less like strategy and more like desperation. [hype]
+  • Someone on Wall Street thinks SpaceX could triple this week—which is either the most bullish take on Elon's earnings or the most delusional, and we're about 48 hours from finding out which. [noise]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [curious] Caterpillar just hauled the Dow up five hundred points on data-center demand, but walk into those factories and you'll find more robots than humans—which means the company crushing it on AI infrastructure is barely hiring the people who build it.
+ALEX: [deadpan] Chips are having a moment—AMD up six point four percent, Broadcom up four point three, the whole semiconductor complex riding the coattails of data-center capex that's still somehow not priced in. Meanwhile the S&amp;P closes up zero point nine-one percent to seven-thousand-six-hundred-sixty-nine, Nasdaq up one point five-four percent to twenty-six thousand three-hundred-twelve. But here's the thing nobody wants to say out loud: oil is down, Exxon Mobil down two point four, Chevron down two point one-one. Energy's getting sold because the market is now convinced the world's power consumption is about to be solved by silicon instead of crude. That's a very specific bet.
+JAMIE: [curious] Wait—so the thesis is that AI data centers are going to be so efficient they'll just... not need electricity the way we thought?
+ALEX: [sarcastic] No. The thesis is that AI capex is so massive and so urgent that it's vacuuming up every dollar that would have gone into traditional infrastructure spending, including energy infrastructure. Investors are rotating out of the stuff that keeps the lights on and into the stuff that teaches a chatbot to write a poem. It's not that AI will use less power. It's that Wall Street has decided to price out the energy sector on the assumption that the future is just... different.
+MAYA: [rushed] So we're watching a multi-trillion-dollar energy industry get treated like a legacy business because the market collectively decided that the next five years belong to whoever can build the biggest GPU farm. That's not a correction. That's a regime change happening in real time, and nobody's even arguing about whether it's right—they're just moving the money.
+MAYA: [rushed] Palantir just jumped twenty percent on earnings—they called their commercial revenue 'otherworldly,' and this is the moment AI-for-enterprise stops being a pitch deck and becomes an actual line item on someone's budget.
+JAMIE: [curious] Wait—is this different from the last three times the market got excited about Palantir? What changed?
+MAYA: [rushed] The customer base. They're not just selling to the Pentagon anymore. Commercial revenue grew, and it's coming from healthcare, finance, energy—the kinds of industries that don't have a sole-source relationship with the government. They're actually competing for budget dollars now instead of just waiting for a defense contract to land.
+ALEX: [deadpan] AMD reports tonight after the bell, and this is where we find out if the chip shortage is real or if everyone just decided to panic-buy silicon because Nvidia's valuation got too scary to look at. Guidance is going to tell us whether capex stays elevated or if we're already at the top of the cycle.
+JAMIE: [curious] So if AMD's cautious tonight, the whole 'data centers are printing money' thesis gets a lot quieter?
+ALEX: [sarcastic] Not quieter. Repriced. The options market is already hedging for a miss. Investors are basically saying, 'We love the story, but we're not confident enough to hold through earnings.' That's the tell.
+MAYA: [mischievously] Merck beat revenue but cut profit guidance because they're still bleeding money on a deal—which is the pharmaceutical version of buying an expensive car and then realizing you can't afford the insurance.
+JAMIE: [laughs] And someone on the Street is calling for a triple on SpaceX from here—which is either the most bullish take on cash flow or the most delusional prediction we'll see this cycle.
+ALEX: [deadpan] We'll know soon. If margins are as strong as the stock's optimism, that call might not sound crazy. If they're not, it's going to be a very quiet close.
+MAYA: [rushed] Atlantic just published a piece called 'Get Used to High Gas Prices,' and the thesis is that even if geopolitical tensions ease, we're structurally locked into elevated fuel costs for years. Refinery capacity hasn't been built in decades, and demand keeps climbing. So the article's basically telling you to stop waiting for relief and accept higher prices as your baseline now.
+ALEX: [deadpan] The refinery point is the real one. The last new refinery built in the US came online in 1977. Since then we've just gotten better at squeezing more output from the same infrastructure, but there's a ceiling. You can drill more wells. You can't build a refinery in two years.
+JAMIE: [laughs] So Atlantic's running a self-help column for people to make peace with their gas pump bills, which is the financial equivalent of a therapist telling you to stop complaining about rent and just accept that your landlord won the negotiation. The actual takeaway is that Wall Street got a decade of cheap energy, and now the bill's come due—and instead of anyone fixing the infrastructure, we're just being told to adjust our expectations downward.
+JAMIE: [curious] On the tape tomorrow, we've got a bunch of earnings rolling in—AMETEK, Aptiv, some others—but the real question is whether any of them actually move the needle or if we're just watching the market ignore guidance again.
+ALEX: [deadpan] AMETEK reports August fourth, and they're a bellwether for industrial capex. If their orders guidance is soft, that's the market telling you data-center demand is starting to cannibalize the rest of the industrial cycle. We've been assuming Caterpillar's boom isn't crowding anyone else out, but AMETEK will either confirm that or blow it up.
+MAYA: [rushed] Arvinas also reports on the fourth—they're a drug discovery biotech, and if their pipeline numbers look solid, we might actually see some rotation out of the mega-cap pharma names and into the smaller players who can still surprise. Merck just cut guidance, so there's real appetite for a company that doesn't come with a large acquisition hangover.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">a863014d-a9c2-f197-7c5b-2371f1a9b6bd</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-04.mp3" length="5043431" type="audio/mpeg" />
+      <pubDate>Tue, 04 Aug 2026 14:18:58 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-04.jpg" />
+      <itunes:duration>00:05:14</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260804</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-04.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-04.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-04.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>ORCL +5.6%, SpaceX's post-IPO plunge sets tense backdrop — Aug 3</title>
       <description>SpaceX stock down 18% since IPO—Elon's about to explain why that's actually fine in earnings. Today's lead: SpaceX's post-IPO plunge sets tense backdrop for first earnings report. SpaceX went public and immediately disappointed—now Elon has to convince investors the company is worth the hype when the stock is already in the red.
