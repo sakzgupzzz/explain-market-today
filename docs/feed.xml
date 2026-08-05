@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Aug 2026 14:19:36 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2026 14:17:17 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,58 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>LLY +6.2%, AMD sinks 5% despite earnings beat — Aug 5</title>
+      <description>Eli Lilly up 6.2% on Zepbound sales that are basically printing money, but AMD just tanked 5% despite beating earnings—the market's officially broken. Today's lead: AMD sinks 5% despite earnings beat, strong data center revenue. AMD crushed guidance and data center revenue but the stock got punished anyway—the real story is that investors are pricing in a slowdown in AI capex, not AMD's actual performance.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:18  Markets
+  00:02:10  Big story
+  00:03:34  Quick hits
+  00:04:15  Odd thing of the day
+  00:05:02  Sign-off
+
+Stories covered:
+  • Eli Lilly's Zepbound and Mounjaro are now the company's growth engine; obesity drug revenue is outpacing traditional pharma and forcing a complete portfolio rebalance. [real]
+  • SpaceX's satellite internet is now a direct threat to telecom incumbents—Starlink's coverage map is becoming the real competitive moat, not the rockets. [hype]
+  • Uber's bookings miss signals demand is cooling faster than the company expected; third-quarter guidance is the canary in the coal mine for consumer spending. [real]
+  • Disney's parks and streaming both firing on cylinders—the real win is that streaming is finally profitable enough to matter, not just a loss-leader. [real]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] Eli Lilly's up six point one-seven percent on Zepbound sales, but AMD just got hammered five point zero-six percent after crushing their numbers—someone at the stock exchange is clearly not reading the same earnings reports.
+ALEX: [deadpan] S&amp;P up zero point six-five percent, Nasdaq up zero point four-seven—which sounds fine until you realize the Magnificent Seven are doing all the heavy lifting. Eli Lilly's up six point one-seven percent on Zepbound momentum, Nvidia's up four point six-three, Disney up two point two-nine. Meanwhile AMD just cratered five point zero-six percent after posting earnings that actually beat. The index is green because a handful of mega-cap stocks are having a party, but breadth is so weak that the Russell 2000 barely moved—up zero point two-three percent. And the VIX just popped two points to sixteen point eight-three because the market's starting to price in that rate cuts might not be the free money machine everyone was betting on.
+JAMIE: [laughs] So we're in that zone where the headlines say 'stocks up' but actually you're watching a concentrated bet on six companies trying to carry the entire market like a bouncer escorting three drunk friends out of a bar at closing time.
+MAYA: [rushed] AMD down five point zero-six percent after beating earnings is genuinely unhinged—like someone ordered a steak, the chef cooked it perfectly, and they sent it back anyway.
+ALEX: [deadpan] So here's the thing about AMD's call yesterday—they didn't just beat, they raised full-year guidance, and data center revenue is up significantly year-over-year. That's not a 'company treading water' signal. That's a company saying the AI capex train is still rolling. And the stock immediately got sold into.
+MAYA: [rushed] Right, but—and I want to be careful here because I'm not a chip person—but when you say 'the stock got sold into,' you mean institutions are looking at strong data center growth and going 'actually, no thanks'? Because that's insane.
+ALEX: [sarcastic] What they're pricing in is that the growth rate is about to decelerate. AMD's guidance assumes they're going to keep pulling share from Intel and Nvidia in cloud infrastructure. But if you're a fund manager looking at the capex intensity of hyperscalers right now—Microsoft, Google, Amazon all pulling back on spend relative to revenue—you start thinking, 'Maybe the growth doesn't accelerate next quarter.' And that's when you don't wait for the miss. You sell on the beat.
+JAMIE: [laughs] So the market's essentially saying 'congratulations on nailing the quarter we already knew was coming, now tell us why we should believe the next one.' And AMD showed up with a raise and got punched in the mouth anyway.
+MAYA: [excited] The thing that actually matters is whether Broadcom or other semiconductor equipment suppliers start guiding down in their next calls. Because if AMD's saying capex is still strong but nobody's ordering the gear to build the chips, that's when you know the narrative's really broken.
+ALEX: [deadpan] Eli Lilly just raised their full-year revenue guidance. Zepbound and Mounjaro are now the core growth story, and obesity drugs are out-earning their traditional pharma pipeline.
+JAMIE: [laughs] So Eli Lilly walked into earnings, showed up with a weight-loss drug that's printing money, and basically told their entire diabetes and cancer divisions 'thanks for the memories.'
+ALEX: The obesity market is bigger than the diabetes market now—Mounjaro's already doing significant revenue, and Zepbound's just getting started. They're going to have to completely rewrite their R&amp;D roadmap because the money's not in oncology anymore.
+MAYA: [rushed] SpaceX is building a terrestrial mobile network to directly compete with T-Mobile, AT&amp;T, and Verizon. They're coming for telecom's customer base with Starlink infrastructure.
+JAMIE: [excited] Wait, so Elon's strategy is: rockets weren't enough, so now he's going to disrupt the entire cellular industry by turning satellites into a phone company?
+MAYA: [mischievously] The coverage map becomes the moat. Traditional telecom has to build towers in every town. SpaceX already owns the sky. If you can hand off between satellite and terrestrial seamlessly, you've just made every existing network infrastructure look like a legacy problem.
+ALEX: [sarcastic] Uber's third-quarter guidance came in below expectations—bookings miss signals consumer spending is cooling faster than the company anticipated.
+JAMIE: [curious] So after months of 'ride-sharing is recession-proof,' Uber's saying actually, people are taking fewer trips and spending less per ride?
+MAYA: [excited] Disney's parks and streaming both accelerated this quarter. The real story is that streaming finally turned profitable—it's not a loss-leader anymore, it's actually contributing to the bottom line.
+JAMIE: [curious] Wait, so his own executives are on the call trying to set expectations, and there's tension between conservative guidance and more optimistic projections?
+ALEX: [deadpan] That's the move. You've got executives whose job is to be conservative enough that you beat guidance, and a founder whose entire brand is overdelivering on impossible promises. On a public call, those two instincts collide.
+JAMIE: On the tape tomorrow—we've got a handful of earnings rolling in, and some of them are in spaces where the market's already decided the narrative.
+ALEX: [deadpan] The bigger picture is we're still waiting on inflation data before the Fed decides whether rate cuts are actually happening or whether Jerome Powell's going to spend another month saying 'data-dependent' until everyone forgets what that means.
+MAYA: [rushed] But on the earnings side—Avnet on August fifth is the one to watch. They're a major semiconductor distributor, so if they're saying chip demand is slowing down, that's the confirmation that AMD's growth rate is about to hit a wall. And Adient's also reporting the same day, which is automotive supply chain health, which tells you whether the EV capex boom is actually translating into orders or just vibes.
+ALEX: [deadpan] AMD beat earnings, raised guidance, and got punished anyway—the market's pricing in the deceleration before AMD even feels it.
+MAYA: [rushed] So tomorrow when Avnet reports, we'll know if the market's clairvoyant or just paranoid.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">d73fd878-59a2-4f56-8618-71cccfb6b32d</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-05.mp3" length="5251783" type="audio/mpeg" />
+      <pubDate>Wed, 05 Aug 2026 14:16:39 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-05.jpg" />
+      <itunes:duration>00:05:27</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260805</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-05.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-05.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-05.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AMD +6.4%, Caterpillar's stock gives the Dow a — Aug 4</title>
       <description>Caterpillar just dragged the Dow up 500 points on data-center demand—but the real story is what's NOT in those factories. Today's lead: Caterpillar's stock gives the Dow a 500-point boost as data-center demand drives record revenue. Caterpillar is printing record revenue from data-center infrastructure, but the disconnect is stark: the company that built America's factories is now a pure-play AI capex bet, and nobody's talking about what happens when the build-out slows.

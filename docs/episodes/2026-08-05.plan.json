@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Eli Lilly up 6.2% on Zepbound sales that are basically printing money, but AMD just tanked 5% despite beating earnings\u2014the market's officially broken."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.65%",
+      "Nasdaq +0.47%",
+      "LLY +6.17%",
+      "AMD -5.06%"
+    ],
+    "macro_note": "Breadth weak despite index gains; VIX creeping up as rate-cut expectations fade."
+  },
+  "big_story": {
+    "story_id": "1537e54e38bb",
+    "lead_host": "ALEX",
+    "story_title": "AMD sinks 5% despite earnings beat, strong data center revenue",
+    "angle": "AMD crushed guidance and data center revenue but the stock got punished anyway\u2014the real story is that investors are pricing in a slowdown in AI capex, not AMD's actual performance.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "e4fc4dbd75f0",
+      "lead_host": "ALEX",
+      "angle": "Eli Lilly's Zepbound and Mounjaro are now the company's growth engine; obesity drug revenue is outpacing traditional pharma and forcing a complete portfolio rebalance.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "6ef62ee4d014",
+      "lead_host": "MAYA",
+      "angle": "SpaceX's satellite internet is now a direct threat to telecom incumbents\u2014Starlink's coverage map is becoming the real competitive moat, not the rockets.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "c34536128d9b",
+      "lead_host": "ALEX",
+      "angle": "Uber's bookings miss signals demand is cooling faster than the company expected; third-quarter guidance is the canary in the coal mine for consumer spending.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "4bbf07d561bb",
+      "lead_host": "MAYA",
+      "angle": "Disney's parks and streaming both firing on cylinders\u2014the real win is that streaming is finally profitable enough to matter, not just a loss-leader.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "e1490f8e849e",
+    "joke_angle": "Elon one-upping his own execs on the earnings call is peak founder energy\u2014like watching a CEO interrupt his CFO to explain why his company is better than his company."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Caterpillar's data-center demand story and what's NOT in those factories",
+    "fresh_take": "AMD's miss-despite-beat today proves the data-center capex cycle is already cooling\u2014Caterpillar's 500-point Dow bump yesterday was the peak of the hype, not the start of a new leg."
+  },
+  "sign_off": {
+    "callback_target": "AMD's earnings beat that nobody cared about"
+  }
+}

@@ -1,0 +1,104 @@
+1
+00:00:06,988 --> 00:00:18,204
+JAMIE: Eli Lilly's up six point one-seven percent on Zepbound sales, but AMD just got hammered five point zero-six percent after crushing their numbers—someone at the stock exchange is clearly not reading the same earnings reports.
+
+2
+00:00:18,204 --> 00:00:55,903
+ALEX: S&P up zero point six-five percent, Nasdaq up zero point four-seven—which sounds fine until you realize the Magnificent Seven are doing all the heavy lifting. Eli Lilly's up six point one-seven percent on Zepbound momentum, Nvidia's up four point six-three, Disney up two point two-nine. Meanwhile AMD just cratered five point zero-six percent after posting earnings that actually beat. The index is green because a handful of mega-cap stocks are having a party, but breadth is so weak that the Russell 2000 barely moved—up zero point two-three percent. And the VIX just popped two points to sixteen point eight-three because the market's starting to price in that rate cuts might not be the free money machine everyone was betting on.
+
+3
+00:00:55,903 --> 00:01:08,989
+JAMIE: So we're in that zone where the headlines say 'stocks up' but actually you're watching a concentrated bet on six companies trying to carry the entire market like a bouncer escorting three drunk friends out of a bar at closing time.
+
+4
+00:01:08,989 --> 00:01:17,712
+MAYA: AMD down five point zero-six percent after beating earnings is genuinely unhinged—like someone ordered a steak, the chef cooked it perfectly, and they sent it back anyway.
+
+5
+00:01:17,712 --> 00:01:32,979
+ALEX: So here's the thing about AMD's call yesterday—they didn't just beat, they raised full-year guidance, and data center revenue is up significantly year-over-year. That's not a 'company treading water' signal. That's a company saying the AI capex train is still rolling. And the stock immediately got sold into.
+
+6
+00:01:32,979 --> 00:01:45,753
+MAYA: Right, but—and I want to be careful here because I'm not a chip person—but when you say 'the stock got sold into,' you mean institutions are looking at strong data center growth and going 'actually, no thanks'? Because that's insane.
+
+7
+00:01:45,753 --> 00:02:10,055
+ALEX: What they're pricing in is that the growth rate is about to decelerate. AMD's guidance assumes they're going to keep pulling share from Intel and Nvidia in cloud infrastructure. But if you're a fund manager looking at the capex intensity of hyperscalers right now—Microsoft, Google, Amazon all pulling back on spend relative to revenue—you start thinking, 'Maybe the growth doesn't accelerate next quarter.' And that's when you don't wait for the miss. You sell on the beat.
+
+8
+00:02:10,055 --> 00:02:22,517
+JAMIE: So the market's essentially saying 'congratulations on nailing the quarter we already knew was coming, now tell us why we should believe the next one.' And AMD showed up with a raise and got punched in the mouth anyway.
+
+9
+00:02:22,517 --> 00:02:36,849
+MAYA: The thing that actually matters is whether Broadcom or other semiconductor equipment suppliers start guiding down in their next calls. Because if AMD's saying capex is still strong but nobody's ordering the gear to build the chips, that's when you know the narrative's really broken.
+
+10
+00:02:36,849 --> 00:02:45,261
+ALEX: Eli Lilly just raised their full-year revenue guidance. Zepbound and Mounjaro are now the core growth story, and obesity drugs are out-earning their traditional pharma pipeline.
+
+11
+00:02:45,261 --> 00:02:54,296
+JAMIE: So Eli Lilly walked into earnings, showed up with a weight-loss drug that's printing money, and basically told their entire diabetes and cancer divisions 'thanks for the memories.'
+
+12
+00:02:54,296 --> 00:03:05,513
+ALEX: The obesity market is bigger than the diabetes market now—Mounjaro's already doing significant revenue, and Zepbound's just getting started. They're going to have to completely rewrite their R&D roadmap because the money's not in oncology anymore.
+
+13
+00:03:05,513 --> 00:03:13,302
+MAYA: SpaceX is building a terrestrial mobile network to directly compete with T-Mobile, AT&T, and Verizon. They're coming for telecom's customer base with Starlink infrastructure.
+  ↳ source: https://www.theverge.com/science/975480/spacex-mobile-terrestrial-cellphone-company
+
+14
+00:03:13,302 --> 00:03:21,402
+JAMIE: Wait, so Elon's strategy is: rockets weren't enough, so now he's going to disrupt the entire cellular industry by turning satellites into a phone company?
+
+15
+00:03:21,402 --> 00:03:34,799
+MAYA: The coverage map becomes the moat. Traditional telecom has to build towers in every town. SpaceX already owns the sky. If you can hand off between satellite and terrestrial seamlessly, you've just made every existing network infrastructure look like a legacy problem.
+
+16
+00:03:34,799 --> 00:03:40,719
+ALEX: Uber's third-quarter guidance came in below expectations—bookings miss signals consumer spending is cooling faster than the company anticipated.
+
+17
+00:03:40,719 --> 00:03:47,262
+JAMIE: So after months of 'ride-sharing is recession-proof,' Uber's saying actually, people are taking fewer trips and spending less per ride?
+
+18
+00:03:47,262 --> 00:03:56,297
+MAYA: Disney's parks and streaming both accelerated this quarter. The real story is that streaming finally turned profitable—it's not a loss-leader anymore, it's actually contributing to the bottom line.
+
+19
+00:03:56,297 --> 00:04:03,774
+JAMIE: Wait, so his own executives are on the call trying to set expectations, and there's tension between conservative guidance and more optimistic projections?
+
+20
+00:04:03,774 --> 00:04:15,302
+ALEX: That's the move. You've got executives whose job is to be conservative enough that you beat guidance, and a founder whose entire brand is overdelivering on impossible promises. On a public call, those two instincts collide.
+
+21
+00:04:15,302 --> 00:04:23,091
+JAMIE: On the tape tomorrow—we've got a handful of earnings rolling in, and some of them are in spaces where the market's already decided the narrative.
+
+22
+00:04:23,091 --> 00:04:34,930
+ALEX: The bigger picture is we're still waiting on inflation data before the Fed decides whether rate cuts are actually happening or whether Jerome Powell's going to spend another month saying 'data-dependent' until everyone forgets what that means.
+
+23
+00:04:34,930 --> 00:04:56,740
+MAYA: But on the earnings side—Avnet on August fifth is the one to watch. They're a major semiconductor distributor, so if they're saying chip demand is slowing down, that's the confirmation that AMD's growth rate is about to hit a wall. And Adient's also reporting the same day, which is automotive supply chain health, which tells you whether the EV capex boom is actually translating into orders or just vibes.
+
+24
+00:04:56,740 --> 00:05:02,971
+ALEX: AMD beat earnings, raised guidance, and got punished anyway—the market's pricing in the deceleration before AMD even feels it.
+
+25
+00:05:02,971 --> 00:05:07,644
+MAYA: So tomorrow when Avnet reports, we'll know if the market's clairvoyant or just paranoid.
+
+26
+00:05:07,644 --> 00:05:12,006
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
