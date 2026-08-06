@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Burger King's U.S. business just soared\u2014and Restaurant Brands beat earnings so hard they're raising guidance. We're talking about a fast-food chain that actually made people want to eat there again."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.20% to 7739",
+      "Nasdaq +0.31% to 26445",
+      "LLY +2.05% to $1193",
+      "CRM -5.01% to $183"
+    ],
+    "macro_note": "Broad flatness masking divergence: mega-cap tech and pharma holding up, enterprise software getting hammered."
+  },
+  "big_story": {
+    "story_id": "20ca267462b3",
+    "lead_host": "JAMIE",
+    "story_title": "Restaurant Brands International earnings beat as Burger King's U.S. business soars",
+    "angle": "Burger King's turnaround is real\u2014not hype\u2014and it's forcing a reckoning on whether fast-food chains can actually innovate their way out of the value trap, or if this is just one quarter of tailwinds before the cycle turns.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "f9e1a50064a5",
+      "lead_host": "ALEX",
+      "angle": "Eli Lilly's obesity drug revenue is now so dominant it's making traditional pharma look like a legacy business\u2014Novo Nordisk's earnings show the gap widening, and that's a structural shift, not a quarterly blip.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "cfb9bdad2637",
+      "lead_host": "MAYA",
+      "angle": "SpaceX lockup expiry is hitting the stock because the market's realizing that Elon's IPO timing was peak hype\u2014shares unlocking while the narrative is already cooling.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "cb90865cf113",
+      "lead_host": "ALEX",
+      "angle": "Layoffs at the lowest level since the moon landing\u2014this is the labor market saying 'we're done cutting,' which means wage pressure and inflation risk are back on the table.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "90240fd51661",
+      "lead_host": "MAYA",
+      "angle": "SanDisk and Western Digital tanked on earnings while AI names rallied\u2014the market is saying 'we don't need your storage, we need your GPUs,' and that's a brutal reset for the chip hierarchy.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "6e9059a90f9b",
+    "joke_angle": "The Atlantic's 'Fed Up With Romance' is basically the magazine saying 'we've tried dating apps, we've tried therapy, we've tried everything except just being alone'\u2014and somehow that's the hot take of the summer."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Eli Lilly's Zepbound and Mounjaro are now the company's growth engine; obesity drug revenue is outpacing traditional pharma",
+    "fresh_take": "Today's earnings show Novo Nordisk is getting left behind\u2014the gap between Lilly's obesity franchise and traditional pharma is now a chasm, not a gap, and that's forcing a portfolio reckoning across the sector."
+  },
+  "sign_off": {
+    "callback_target": "Burger King's turnaround\u2014we'll see if this is the start of a real comeback or just a quarter where the value trap snapped shut."
+  }
+}
