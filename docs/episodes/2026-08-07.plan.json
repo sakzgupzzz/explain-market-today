@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Trump's asking the private sector to bail him out\u2014and they're actually showing up. Here's what that means."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7709.96 (-0.18%)",
+      "Nasdaq: 26348.35 (-0.06%)",
+      "Biggest gainer: DIS +2.87%",
+      "Biggest loser: CRM -3.22%"
+    ],
+    "macro_note": "Equities flat, VIX cooling, energy and tech mixed\u2014defensive posture ahead of policy clarity."
+  },
+  "big_story": {
+    "story_id": "c744a6b75add",
+    "lead_host": "JAMIE",
+    "story_title": "Trump Is Asking the Private Sector to Save Him",
+    "angle": "The transactional nature of Trump's ask: he's not building a coalition, he's running a protection racket where CEOs buy access and policy favors by funding his legal defense and political machinery.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "1362c29711d5",
+      "lead_host": "MAYA",
+      "angle": "Trade Desk earnings miss + weak guidance is a real test of whether ad-tech's AI pivot is real or just a rebranding of the same old CPM squeeze.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "8424480d50c8",
+      "lead_host": "ALEX",
+      "angle": "Airbnb crushes earnings and raises guidance\u2014the short-term rental market is still extracting value from supply constraints, not innovation.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "eb93a000962c",
+      "lead_host": "ALEX",
+      "angle": "Honeywell Aerospace tanks 23% on gloomy guidance; defense/aerospace is suddenly looking fragile despite the geopolitical tailwind everyone assumed was locked in.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "e3dfc5863ec9",
+      "lead_host": "MAYA",
+      "angle": "Trump's birthright citizenship and birth tourism orders are legally untested and likely to face immediate court challenges\u2014this is theater with real downstream costs.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "22f7759c4d33",
+    "joke_angle": "Sudan's war has created a generation of children with no legal identity\u2014they exist in a bureaucratic void that makes statelessness look like a feature, not a bug."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Restaurant Brands International earnings beat as Burger King's U.S. business soars",
+    "fresh_take": "Burger King's U.S. turnaround is real, but it's a one-brand story in a portfolio that's still struggling\u2014the beat masks deeper franchise fatigue."
+  },
+  "sign_off": {
+    "callback_target": "Trump's protection racket"
+  }
+}
