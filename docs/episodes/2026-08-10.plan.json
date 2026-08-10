@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Kevin Warsh is rewiring the Fed\u2014and Walmart's ex-CEO might be the one pulling the levers."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.62% to 7757.64",
+      "Nasdaq +1.30% to 26690.62",
+      "Visa and Mastercard both down over 2%",
+      "VIX spiked 3.56% to 15.43"
+    ],
+    "macro_note": "Tech leading, payment processors stumbling, volatility creeping up despite modest gains."
+  },
+  "big_story": {
+    "story_id": "97b5cbc026c4",
+    "lead_host": "ALEX",
+    "story_title": "How Kevin Warsh is rewiring the Fed",
+    "angle": "Warsh's appointment signals a structural shift in Fed philosophy\u2014from data-dependent gradualism to something faster and more reactive. What does that mean for rate cuts, inflation credibility, and the bond market's faith in the institution?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "36acd50b9b90",
+      "lead_host": "MAYA",
+      "angle": "Monday.com beat earnings but tanked on guidance\u2014a textbook case of the market punishing 'we're growing but not fast enough' in SaaS.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "405659f45873",
+      "lead_host": "ALEX",
+      "angle": "Berkshire Hathaway finally stopped the equity bloodbath after 14 straight quarters of selling\u2014either Buffett sees value again or he's just out of dry powder.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "a589b0ffd192",
+      "lead_host": "MAYA",
+      "angle": "Meta open-sourcing its flagship AI model is a calculated flex at OpenAI and Anthropic\u2014but open-source doesn't mean free from liability.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "67d66608536c",
+      "lead_host": "ALEX",
+      "angle": "Embraer is eating Boeing and Airbus's lunch on earnings and backlog\u2014regional jets are having a moment while the big boys stumble.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "7b05fbce823f",
+    "joke_angle": "Steam's hardware shipper got breached and leaked customer names and addresses\u2014so now your gaming PC peripherals come with a side of identity theft."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Kevin Warsh rewiring the Fed"
+  }
+}

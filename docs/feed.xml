@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Aug 2026 01:08:02 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 13:14:47 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,60 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>CRM +3.2%, How Kevin Warsh is rewiring the — Aug 10</title>
+      <description>Kevin Warsh is rewiring the Fed—and Walmart's ex-CEO might be the one pulling the levers. Today's lead: How Kevin Warsh is rewiring the Fed. Warsh's appointment signals a structural shift in Fed philosophy—from data-dependent gradualism to something faster and more reactive. What does that mean for rate cuts, inflation credibility, and the bond market's faith in the institution?.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:17  Markets
+  00:02:01  Big story
+  00:03:54  Quick hits
+  00:05:15  Odd thing of the day
+  00:06:11  Sign-off
+
+Stories covered:
+  • Monday.com beat earnings but tanked on guidance—a textbook case of the market punishing 'we're growing but not fast enough' in SaaS. [real]
+  • Berkshire Hathaway finally stopped the equity bloodbath after 14 straight quarters of selling—either Buffett sees value again or he's just out of dry powder. [hype]
+  • Meta open-sourcing its flagship AI model is a calculated flex at OpenAI and Anthropic—but open-source doesn't mean free from liability. [hype]
+  • Embraer is eating Boeing and Airbus's lunch on earnings and backlog—regional jets are having a moment while the big boys stumble. [real]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] The Federal Reserve just handed Kevin Warsh a seat on its board—and if you're wondering why Walmart's former CEO matters, it's because Trump wants someone inside the system who actually listens to Trump.
+ALEX: [deadpan] Tech had a day. Nasdaq up one point three percent to twenty-six thousand six hundred ninety, Salesforce up three point two, Tesla up two point eight three. Meanwhile the S&amp;P barely moved—up point six two percent to seventy-seven fifty-seven. Nasdaq's doing the heavy lifting while the rest of the market just kind of exists.
+JAMIE: [curious] So we're seeing that classic tech-carries-everything pattern again, but what's the actual story underneath? Why is the Nasdaq running while payment processors like Visa and Mastercard are both down over two percent?
+ALEX: [sarcastic] Because investors are apparently convinced that AI companies will eventually replace the need for actual money. Visa down two point one five, Mastercard down two point two six. The dollar itself is up, which means people are rotating out of payment infrastructure and into... whatever the opposite of that is. Also the VIX spiked three point five six percent to fifteen point four three, so volatility's creeping in despite the modest gains. It's like watching someone insist they're fine while their eye twitches.
+MAYA: [rushed] Wait, so you're saying the market's worried enough about something to jack up the fear gauge but not worried enough to actually sell? That's the weirdest hedging strategy I've heard all week, and I watched someone spend forty minutes pitching a blockchain solution to restaurant reservations yesterday.
+ALEX: [sighs] That's exactly what's happening. Everyone's buying safe stuff while tech stocks keep printing. It's not panic. It's just... hedging while you FOMO.
+ALEX: [deadpan] So here's what's actually shifted. Warsh is signaling the Fed might move faster on rate cuts than Powell's gradualist playbook allowed—not because inflation's solved, but because he's more willing to treat financial stability and growth as equally urgent constraints. The market got a taste of this last month when volatility spiked and the Fed didn't immediately soothe things with dovish language. That's a tell.
+JAMIE: [curious] Wait, so the market blowup we saw—that was Warsh testing whether he could let things get a little messy without the Fed rushing in? That seems like a weird way to build credibility.
+ALEX: [sarcastic] Not testing. More like signaling a philosophy shift. Warsh's track record at the Fed before—he was always skeptical of the balance sheet getting bloated, skeptical of zero rates for too long. Now he's back with an ear to Trump's priorities, which means growth and deregulation matter more than the old 'we'll smooth every bump' approach. Bond investors are pricing in fewer rate cuts this cycle than they were two months ago, and that's because they're reading the same signals.
+MAYA: [excited] So the bond market's basically saying, 'Okay, we believe you're serious about not cutting,' which is wild because usually when a Fed chair shifts to faster cuts, bonds rally. This is the opposite move. Warsh walks in and bonds sell off. That's the market saying it trusts him to do what he says he'll do—which is not what people expected from a Trump appointee.
+JAMIE: [laughs] That's the actual credibility play. He's not trying to be liked. He's trying to be believed. And the inflation hawks in the market are watching to see if he'll actually hold rates higher for longer, even if it costs growth.
+ALEX: Exactly. The risk is that if inflation stays sticky—and it probably will for another quarter or two—Warsh's faster-cut rhetoric collides with reality, and the Fed looks reactive instead of forward-thinking. That's when you see another volatility spike, because the market realizes the Fed chose a lane and can't swerve.
+MAYA: [rushed] Monday.com crushed earnings—beat on revenue, beat on earnings per share—but the stock tanked because guidance for next quarter came in lower than Wall Street wanted. Classic SaaS moment: you did great, but not great enough.
+JAMIE: [curious] So the market's saying 'congratulations on your success, now prove you can do it forever at an accelerating pace or we're out'?
+ALEX: [deadpan] That's the SaaS tax. Growth at thirty percent is fantastic until it's not. Monday.com's guidance implied a deceleration, and in software, deceleration reads as decay. Investors didn't come for steady—they came for expansion.
+MAYA: [excited] Meta's open-sourcing its flagship AI model—the one they're calling their answer to OpenAI and Anthropic. Zuckerberg's framing it as 'America needs open AI leadership,' which is a really clean way of saying 'we're going to undercut you by making it free.'
+JAMIE: [curious] But open-source doesn't mean liability-free, right? If someone uses Meta's model and it goes sideways, Meta's still exposed.
+ALEX: [sighs] Correct. Open-sourcing is a narrative move—it's 'we're the good guys'—but the legal framework is still murky. Meta gets the credibility play and the regulatory goodwill, but if someone weaponizes the weights, Meta's going to have a much harder time saying 'it wasn't us.' They're betting the goodwill's worth the risk.
+MAYA: [excited] Embraer's backlog just hit a record, earnings beat expectations, and they're eating into Boeing and Airbus's regional jet market. While the duopoly's stumbling on 737 Max delays and A320 supply chain chaos, Embraer's basically printing orders.
+MAYA: [rushed] Valve's Steam hardware shipper got breached—customer names, addresses, phone numbers, email addresses got leaked. So if you ordered a Steam Deck in the last year, congratulations, your shipping data's now in a spreadsheet somewhere alongside your home coordinates.
+JAMIE: [curious] Wait, so Valve's not even the one who got hit—it's the logistics partner. Does that change how much heat Valve takes for this, or is it still 'you picked the vendor so you own it'?
+ALEX: [deadpan] Valve's already in the 'we take this seriously' email phase, which means they own it whether they want to or not. The logistics partner's a third-party, so legally Valve might have some cover, but reputationally? You outsource shipping, you don't outsource accountability. The real joke is that Steam Deck customers ordered a gaming device and ended up in a breach notification database instead—which, to be fair, is a way more reliable way to reach gamers than any email marketing campaign.
+JAMIE: On the tape tomorrow, we've got some smaller-cap earnings rolling in—nothing that'll move the S&amp;P five hundred on its own, but let's see what the market's actually paying attention to.
+ALEX: [deadpan] AAON reports tomorrow morning—that's the HVAC and refrigeration play. They've been riding the data center cooling boom, which is real, but the question is whether guidance reflects the reality that every tech company in America is suddenly building their own AI infrastructure instead of renting from the cloud. If AAON's backlog softens, that's a signal the capex cycle's starting to crack.
+MAYA: [rushed] And then you've got Airsculpt Technologies tomorrow too—they do liposuction via laser, which sounds like something a venture capitalist would fund at two in the morning, but it's actually a real medical device company with real revenue. The thing is, cosmetic procedures tend to tank when people get nervous about the economy. If their guidance comes in weak, that's not a product problem—that's people deciding to keep their fat a little longer.
+ALEX: [deadpan] Warsh doesn't need to cut rates—he just needs to convince the market he won't flinch when it demands he does.
+MAYA: [mischievously] Which means the next volatility spike isn't a problem to solve, it's a feature he's installing.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">86ebb5b1-b8c5-9002-8043-1d272790936a</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-10.mp3" length="6362993" type="audio/mpeg" />
+      <pubDate>Mon, 10 Aug 2026 13:14:03 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-10.jpg" />
+      <itunes:duration>00:06:37</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260810</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-10.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-10.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-10.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>CRM -3.2%, Trump Is Asking the Private Sector — Aug 7</title>
       <description>Trump's asking the private sector to bail him out—and they're actually showing up. Here's what that means. Today's lead: Trump Is Asking the Private Sector to Save Him. The transactional nature of Trump's ask: he's not building a coalition, he's running a protection racket where CEOs buy access and policy favors by funding his legal defense and political machinery.

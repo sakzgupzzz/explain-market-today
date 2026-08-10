@@ -1,0 +1,116 @@
+1
+00:00:06,988 --> 00:00:17,371
+JAMIE: The Federal Reserve just handed Kevin Warsh a seat on its board—and if you're wondering why Walmart's former CEO matters, it's because Trump wants someone inside the system who actually listens to Trump.
+  ↳ source: https://www.axios.com/2026/08/10/kevin-warsh-fed-economy-rates-ai
+
+2
+00:00:17,371 --> 00:00:34,167
+ALEX: Tech had a day. Nasdaq up one point three percent to twenty-six thousand six hundred ninety, Salesforce up three point two, Tesla up two point eight three. Meanwhile the S&P barely moved—up point six two percent to seventy-seven fifty-seven. Nasdaq's doing the heavy lifting while the rest of the market just kind of exists.
+
+3
+00:00:34,167 --> 00:00:44,245
+JAMIE: So we're seeing that classic tech-carries-everything pattern again, but what's the actual story underneath? Why is the Nasdaq running while payment processors like Visa and Mastercard are both down over two percent?
+
+4
+00:00:44,245 --> 00:01:09,897
+ALEX: Because investors are apparently convinced that AI companies will eventually replace the need for actual money. Visa down two point one five, Mastercard down two point two six. The dollar itself is up, which means people are rotating out of payment infrastructure and into... whatever the opposite of that is. Also the VIX spiked three point five six percent to fifteen point four three, so volatility's creeping in despite the modest gains. It's like watching someone insist they're fine while their eye twitches.
+
+5
+00:01:09,897 --> 00:01:24,555
+MAYA: Wait, so you're saying the market's worried enough about something to jack up the fear gauge but not worried enough to actually sell? That's the weirdest hedging strategy I've heard all week, and I watched someone spend forty minutes pitching a blockchain solution to restaurant reservations yesterday.
+
+6
+00:01:24,555 --> 00:01:31,579
+ALEX: That's exactly what's happening. Everyone's buying safe stuff while tech stocks keep printing. It's not panic. It's just... hedging while you FOMO.
+
+7
+00:01:31,579 --> 00:01:51,429
+ALEX: So here's what's actually shifted. Warsh is signaling the Fed might move faster on rate cuts than Powell's gradualist playbook allowed—not because inflation's solved, but because he's more willing to treat financial stability and growth as equally urgent constraints. The market got a taste of this last month when volatility spiked and the Fed didn't immediately soothe things with dovish language. That's a tell.
+
+8
+00:01:51,429 --> 00:02:01,812
+JAMIE: Wait, so the market blowup we saw—that was Warsh testing whether he could let things get a little messy without the Fed rushing in? That seems like a weird way to build credibility.
+
+9
+00:02:01,812 --> 00:02:26,243
+ALEX: Not testing. More like signaling a philosophy shift. Warsh's track record at the Fed before—he was always skeptical of the balance sheet getting bloated, skeptical of zero rates for too long. Now he's back with an ear to Trump's priorities, which means growth and deregulation matter more than the old 'we'll smooth every bump' approach. Bond investors are pricing in fewer rate cuts this cycle than they were two months ago, and that's because they're reading the same signals.
+
+10
+00:02:26,243 --> 00:02:46,093
+MAYA: So the bond market's basically saying, 'Okay, we believe you're serious about not cutting,' which is wild because usually when a Fed chair shifts to faster cuts, bonds rally. This is the opposite move. Warsh walks in and bonds sell off. That's the market saying it trusts him to do what he says he'll do—which is not what people expected from a Trump appointee.
+
+11
+00:02:46,093 --> 00:02:58,614
+JAMIE: That's the actual credibility play. He's not trying to be liked. He's trying to be believed. And the inflation hawks in the market are watching to see if he'll actually hold rates higher for longer, even if it costs growth.
+
+12
+00:02:58,614 --> 00:03:13,577
+ALEX: Exactly. The risk is that if inflation stays sticky—and it probably will for another quarter or two—Warsh's faster-cut rhetoric collides with reality, and the Fed looks reactive instead of forward-thinking. That's when you see another volatility spike, because the market realizes the Fed chose a lane and can't swerve.
+
+13
+00:03:13,577 --> 00:03:24,571
+MAYA: Monday.com crushed earnings—beat on revenue, beat on earnings per share—but the stock tanked because guidance for next quarter came in lower than Wall Street wanted. Classic SaaS moment: you did great, but not great enough.
+
+14
+00:03:24,571 --> 00:03:31,595
+JAMIE: So the market's saying 'congratulations on your success, now prove you can do it forever at an accelerating pace or we're out'?
+
+15
+00:03:31,595 --> 00:03:41,978
+ALEX: That's the SaaS tax. Growth at thirty percent is fantastic until it's not. Monday.com's guidance implied a deceleration, and in software, deceleration reads as decay. Investors didn't come for steady—they came for expansion.
+
+16
+00:03:41,978 --> 00:03:54,804
+MAYA: Meta's open-sourcing its flagship AI model—the one they're calling their answer to OpenAI and Anthropic. Zuckerberg's framing it as 'America needs open AI leadership,' which is a really clean way of saying 'we're going to undercut you by making it free.'
+  ↳ source: https://www.investors.com/news/technology/meta-stock-muse-glimmer-zuckerberg-ai/?src=A00220&yptr=yahoo
+
+17
+00:03:54,804 --> 00:04:00,606
+JAMIE: But open-source doesn't mean liability-free, right? If someone uses Meta's model and it goes sideways, Meta's still exposed.
+  ↳ source: https://www.investors.com/news/technology/meta-stock-muse-glimmer-zuckerberg-ai/?src=A00220&yptr=yahoo
+
+18
+00:04:00,606 --> 00:04:16,181
+ALEX: Correct. Open-sourcing is a narrative move—it's 'we're the good guys'—but the legal framework is still murky. Meta gets the credibility play and the regulatory goodwill, but if someone weaponizes the weights, Meta's going to have a much harder time saying 'it wasn't us.' They're betting the goodwill's worth the risk.
+  ↳ source: https://www.investors.com/news/technology/meta-stock-muse-glimmer-zuckerberg-ai/?src=A00220&yptr=yahoo
+
+19
+00:04:16,181 --> 00:04:27,480
+MAYA: Embraer's backlog just hit a record, earnings beat expectations, and they're eating into Boeing and Airbus's regional jet market. While the duopoly's stumbling on 737 Max delays and A320 supply chain chaos, Embraer's basically printing orders.
+
+20
+00:04:27,480 --> 00:04:39,390
+MAYA: Valve's Steam hardware shipper got breached—customer names, addresses, phone numbers, email addresses got leaked. So if you ordered a Steam Deck in the last year, congratulations, your shipping data's now in a spreadsheet somewhere alongside your home coordinates.
+  ↳ source: https://www.theverge.com/games/977314/valve-steam-hardware-shipping-data-breach
+
+21
+00:04:39,390 --> 00:04:50,384
+JAMIE: Wait, so Valve's not even the one who got hit—it's the logistics partner. Does that change how much heat Valve takes for this, or is it still 'you picked the vendor so you own it'?
+
+22
+00:04:50,384 --> 00:05:15,120
+ALEX: Valve's already in the 'we take this seriously' email phase, which means they own it whether they want to or not. The logistics partner's a third-party, so legally Valve might have some cover, but reputationally? You outsource shipping, you don't outsource accountability. The real joke is that Steam Deck customers ordered a gaming device and ended up in a breach notification database instead—which, to be fair, is a way more reliable way to reach gamers than any email marketing campaign.
+
+23
+00:05:15,120 --> 00:05:24,281
+JAMIE: On the tape tomorrow, we've got some smaller-cap earnings rolling in—nothing that'll move the S&P five hundred on its own, but let's see what the market's actually paying attention to.
+
+24
+00:05:24,281 --> 00:05:43,215
+ALEX: AAON reports tomorrow morning—that's the HVAC and refrigeration play. They've been riding the data center cooling boom, which is real, but the question is whether guidance reflects the reality that every tech company in America is suddenly building their own AI infrastructure instead of renting from the cloud. If AAON's backlog softens, that's a signal the capex cycle's starting to crack.
+
+25
+00:05:43,215 --> 00:06:05,508
+MAYA: And then you've got Airsculpt Technologies tomorrow too—they do liposuction via laser, which sounds like something a venture capitalist would fund at two in the morning, but it's actually a real medical device company with real revenue. The thing is, cosmetic procedures tend to tank when people get nervous about the economy. If their guidance comes in weak, that's not a product problem—that's people deciding to keep their fat a little longer.
+
+26
+00:06:05,508 --> 00:06:11,921
+ALEX: Warsh doesn't need to cut rates—he just needs to convince the market he won't flinch when it demands he does.
+
+27
+00:06:11,921 --> 00:06:17,113
+MAYA: Which means the next volatility spike isn't a problem to solve, it's a feature he's installing.
+
+28
+00:06:17,113 --> 00:06:21,388
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
