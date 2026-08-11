@@ -1,0 +1,51 @@
+{
+  "date": "2026-08-11",
+  "mp3": "2026-08-11.mp3",
+  "size_bytes": 1478365,
+  "duration_sec": 92.37,
+  "turns": 9,
+  "words": 208,
+  "char_usage_estimate": 1420,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-08-11T13:14:42.892500Z",
+  "top_mover": {
+    "symbol": "CVX",
+    "name": "CVX",
+    "pct": 4.48
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7753.10986328125,
+        "pct": -0.06
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 53975.98046875,
+        "pct": -0.11
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26605.359375,
+        "pct": -0.32
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 3017.39990234375,
+        "pct": -0.56
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 15.539999961853027,
+        "pct": 0.52
+      }
+    ]
+  }
+}

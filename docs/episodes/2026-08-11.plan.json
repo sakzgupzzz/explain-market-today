@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Israeli defense contractor crushes earnings, stock tanks anyway\u2014welcome to the Iran premium."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: -0.06%",
+      "Nasdaq: -0.32%",
+      "CVX +4.48%, XOM +4.41%",
+      "NVDA -2.86%, AMD -2.86%"
+    ],
+    "macro_note": "Energy surges on geopolitical risk; tech rolls over as rate expectations shift."
+  },
+  "big_story": {
+    "story_id": "9b7d6126a208",
+    "lead_host": "JAMIE",
+    "story_title": "Israeli Defense Contractor Beats Earnings; Stock Sinks Over Iran War Renewal",
+    "angle": "The market is pricing in perpetual conflict as a feature, not a bug\u2014earnings don't matter when the business model is 'hope it stays tense.'",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "041a72811c1f",
+      "lead_host": "ALEX",
+      "angle": "Warsh's forward guidance experiment already has a test case\u2014and the Fed's own trial run shows the risks of signaling too hard.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "84634b3322dc",
+      "lead_host": "MAYA",
+      "angle": "Zuckerberg's AI manifesto reads like a tech CEO explaining why his product is good\u2014which is exactly the problem people have with AI.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "45f26cbd450f",
+      "lead_host": "ALEX",
+      "angle": "Lilly's weight-loss drug goes global while Novo Nordisk watches\u2014the $100B market is about to get a lot more crowded.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "c2b2e9d29300",
+      "lead_host": "MAYA",
+      "angle": "Homicides down 17% in big cities as the post-pandemic crime decline keeps rolling\u2014the story nobody's talking about because it's good news.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "4ab6e3ee3271",
+    "joke_angle": "France bans unsolicited telemarketing calls while America's still figuring out how to spell 'privacy'\u2014one continent's baseline is another's fantasy."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "How Kevin Warsh is rewiring the Fed",
+    "fresh_take": "Warsh's forward guidance playbook has a live case study now\u2014one central bank tried it and the market's reaction shows why the Fed's been cautious."
+  },
+  "sign_off": {
+    "callback_target": "Israeli defense contractor's earnings beat that nobody cared about"
+  }
+}
