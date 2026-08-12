@@ -497,6 +497,10 @@ def _enforce_jamie_cap(turns: list[tuple[str, str]], cap_ratio: float = 1 / 3) -
     if not turns:
         return turns, 0
     counts = Counter(name for name, _ in turns)
+    # Single-narrator script (express) — the cap is a 3-host show concept;
+    # applying it here just deletes short lines from a solo brief.
+    if len(counts) == 1:
+        return turns, 0
     total = sum(counts.values())
     target = max(1, int(total * cap_ratio))
     if counts.get(DEFAULT_CHARACTER, 0) <= target:

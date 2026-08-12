@@ -335,8 +335,10 @@ def run(push: bool = True, force: bool = False, mode: str = "show") -> Path:
             print(f"[{today}] express already published — skipping express render")
         else:
             try:
-                print(f"[{today}] generating express script…")
-                ex_script = render_express(market, fresh, date_pretty)
+                from render_express import pick_express_narrator
+                narrator = pick_express_narrator(today)
+                print(f"[{today}] generating express script… (narrator: {narrator})")
+                ex_script = render_express(market, fresh, date_pretty, narrator=narrator)
                 ex_script = sanitize_script(ex_script, verbose=False)
                 # Guard: don't synth a script that's just the disclaimer.
                 # parse_dialogue would return ≤1 turn → synth'd to silence.

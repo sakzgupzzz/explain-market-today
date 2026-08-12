@@ -76,6 +76,37 @@ VOICE_PROMPTS: dict[str, dict[str, str]] = {
             "to say the word bubble out loud."
         ),
     },
+    # Guest correspondents — occasional appearances, deliberately contrasting
+    # with the core cast (JAMIE warm F/30s, ALEX deep M/40s, MAYA quick F/20s).
+    "TESS": {
+        "description": (
+            "A wry British female economics editor in her early fifties with a "
+            "polished Received Pronunciation accent. Dry wit, unhurried, quietly "
+            "authoritative — decades of covering central banks. Warm but never "
+            "breathless. Clean studio recording, no background noise."
+        ),
+        "text": (
+            "The Bank raised rates again, which surprised precisely no one who "
+            "reads the minutes and absolutely everyone who trades on them. "
+            "Markets threw their customary tantrum, then thought better of it "
+            "by lunch. Plus ça change, as we say on the desk."
+        ),
+    },
+    "RUSS": {
+        "description": (
+            "A gravelly, laconic American male commodities and energy reporter "
+            "in his late fifties with a faint Texas drawl. Slow, plainspoken, "
+            "no-nonsense delivery with understated humor — sounds like he's "
+            "seen five oil cycles and is impressed by none of them. Clean "
+            "studio recording, no background noise."
+        ),
+        "text": (
+            "Crude's back over ninety and everybody's acting brand new about "
+            "it. Same story every time — inventories draw down, somebody's "
+            "pipeline hiccups, and suddenly the whole desk remembers oil "
+            "exists. Natural gas, meanwhile, can't catch a bid to save its life."
+        ),
+    },
     "MAYA": {
         "description": (
             "A bright, fast-talking female tech and culture reporter in her late "

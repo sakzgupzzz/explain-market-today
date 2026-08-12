@@ -1,7 +1,9 @@
 """Express render: 60-90 second single-narrator headline brief.
 
 Same source data as the show (ranked stories + market summary), tighter prompt,
-single voice (JAMIE). Targets ~200-260 words for ~90 sec audio after speedup.
+single voice. The narrator rotates daily through the host cast (see
+EXPRESS_NARRATORS + pick_express_narrator) so the express doesn't always sound
+like JAMIE. Targets ~200-260 words for ~90 sec audio after speedup.
 """
 from __future__ import annotations
 import requests
@@ -18,14 +20,35 @@ from generate_script import (
 _EXPRESS_TARGET_WORDS = 240
 _EXPRESS_MAX_STORIES = 8
 
+# Daily narrator rotation. Deterministic by calendar date so a same-day
+# re-run (crash retry, --force) picks the same narrator.
+EXPRESS_NARRATORS = ["JAMIE", "ALEX", "MAYA"]
 
-def build_express_prompt(market: dict, ranked: list[dict], date_str: str) -> str:
+# Per-narrator delivery note — the express prompt is otherwise neutral, and
+# without this every host reads the brief in the same register.
+_NARRATOR_STYLE = {
+    "JAMIE": "Warm, confident anchor read. Bright but never breathless.",
+    "ALEX": "Dry, measured desk-strategist read. Precise, a hint of deadpan.",
+    "MAYA": "Quick, crisp reporter read. Energetic but clipped — no hype.",
+}
+
+
+def pick_express_narrator(date_iso: str) -> str:
+    """Rotate through the cast by calendar date (ISO YYYY-MM-DD)."""
+    from datetime import date
+    return EXPRESS_NARRATORS[date.fromisoformat(date_iso).toordinal() % len(EXPRESS_NARRATORS)]
+
+
+def build_express_prompt(market: dict, ranked: list[dict], date_str: str,
+                         narrator: str = "JAMIE") -> str:
     indices = _fmt_section(market.get("indices", []))
     movers_g = _fmt_section(market.get("gainers", [])[:5])
     movers_l = _fmt_section(market.get("losers", [])[:5])
     stories = _fmt_ranked_stories(ranked, top_n=_EXPRESS_MAX_STORIES)
 
-    return f"""You write a 90-second daily news briefing read by a single host (JAMIE). It is the express version of MARKET TODAY, EXPLAINED — for listeners who want the substance with no banter.
+    return f"""You write a 90-second daily news briefing read by a single host ({narrator}). It is the express version of MARKET TODAY, EXPLAINED — for listeners who want the substance with no banter.
+
+Narrator delivery: {_NARRATOR_STYLE.get(narrator, _NARRATOR_STYLE["JAMIE"])}
 
 Date: {date_str}
 
@@ -44,10 +67,10 @@ TOP LOSERS:
 
 ==== WRITE THE BRIEFING ====
 
-Format every line as `JAMIE: text` on its own line. Single host, no other names. Aim for {_EXPRESS_TARGET_WORDS} words total across 8-12 turns.
+Format every line as `{narrator}: text` on its own line. Single host, no other names. Aim for {_EXPRESS_TARGET_WORDS} words total across 8-12 turns.
 
 Structure:
-1. Cold open: one specific headline, JAMIE's name, no greeting.
+1. Cold open: one specific headline, {narrator}'s name, no greeting.
 2. Markets: one or two sentences on indices + biggest mover + reason.
 3. 4-6 single-sentence story beats — most important first. One concrete fact each (number, name, place).
 4. Sign-off line, then disclaimer verbatim: "{DISCLAIMER_SHORT}"
@@ -60,13 +83,14 @@ Hard rules:
 - Each story sentence ≤ 25 words. Front-load the fact. The point first, the color last.
 - Do NOT invent quotes. If a story is on the list but you can't say something specific from the title/summary, skip it.
 
-Output ONLY the JAMIE: lines. First line starts with `JAMIE:`. Last line is the disclaimer.
+Output ONLY the {narrator}: lines. First line starts with `{narrator}:`. Last line is the disclaimer.
 """
 
 
-def render_express(market: dict, ranked: list[dict], date_str: str) -> str:
+def render_express(market: dict, ranked: list[dict], date_str: str,
+                   narrator: str = "JAMIE") -> str:
     """Single LLM call, no critique pass — express is short enough to trust."""
-    prompt = build_express_prompt(market, ranked, date_str)
+    prompt = build_express_prompt(market, ranked, date_str, narrator=narrator)
     return _llm_call(prompt, OLLAMA_MODEL, GROQ_MODEL, temperature=0.5)
 
 
@@ -81,4 +105,5 @@ if __name__ == "__main__":
     h = fetch_headlines()
     clusters = cluster_headlines(flatten(h))
     ranked = score_clusters(clusters, m, load_interests())
-    print(render_express(m, ranked, datetime.now().strftime("%A, %B %d, %Y")))
+    narrator = pick_express_narrator(datetime.now().strftime("%Y-%m-%d"))
+    print(render_express(m, ranked, datetime.now().strftime("%A, %B %d, %Y"), narrator=narrator))

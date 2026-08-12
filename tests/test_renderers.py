@@ -107,3 +107,32 @@ def test_build_feed_smoke_with_and_without_meta_sidecars(tmp_path, monkeypatch):
     assert "00:05:12" in feed
     # meta generated_at drives the pubDate for the sidecar'd episode
     assert "1 Jul 2026 21:05:00" in feed
+
+
+# ── express narrator rotation ────────────────────────────────────────────────
+
+def test_express_narrator_rotation_deterministic():
+    from render_express import pick_express_narrator, EXPRESS_NARRATORS
+    # Same date → same narrator (resume/--force safe)
+    assert pick_express_narrator("2026-08-12") == pick_express_narrator("2026-08-12")
+    # Three consecutive days cover all three hosts
+    got = {pick_express_narrator(d) for d in ("2026-08-10", "2026-08-11", "2026-08-12")}
+    assert got == set(EXPRESS_NARRATORS)
+
+
+def test_express_prompt_uses_narrator_name():
+    from render_express import build_express_prompt
+    market = {"indices": [], "gainers": [], "losers": []}
+    prompt = build_express_prompt(market, [], "Wednesday, August 12, 2026", narrator="ALEX")
+    assert "`ALEX: text`" in prompt
+    assert "`JAMIE: text`" not in prompt
+    assert "starts with `ALEX:`" in prompt
+
+
+def test_jamie_cap_skipped_for_single_narrator():
+    from sanitize import _enforce_jamie_cap
+    # 10 solo JAMIE turns incl. short ones — cap must not delete any
+    turns = [("JAMIE", f"line {i} ok")for i in range(10)]
+    out, dropped = _enforce_jamie_cap(turns)
+    assert dropped == 0
+    assert len(out) == 10
