@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "CPI just cooled to 2.9%, and the market's response is: sell Google, Oracle, and Adobe. Make it make sense."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.32%",
+      "Nasdaq -0.60%",
+      "Google -3.84%",
+      "AMD +1.01%"
+    ],
+    "macro_note": "Inflation softer than expected, but big tech gets hammered\u2014the 'good news is bad news' trade is alive and well."
+  },
+  "big_story": {
+    "story_id": "aefb93d63d59",
+    "lead_host": "ALEX",
+    "story_title": "CPI Inflation Data Cools As Expected, May Keep Fed Rate Hikes On Hold",
+    "angle": "CPI prints cooler than forecast, which should be a win for equities\u2014but instead the market's selling its most crowded trades. The real story is what happens to rate expectations and whether this kills the 'Fed pivot' narrative that's been propping up mega-cap tech.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "129d7324d9f7",
+      "lead_host": "ALEX",
+      "angle": "Dow up on CPI, but Nvidia's supplier CoreWeave is the actual winner\u2014a sign that the AI capex cycle is still real even if the mega-cap narrative is cracking.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "4c4b21ad15ac",
+      "lead_host": "MAYA",
+      "angle": "Tencent beats on games and AI-driven ads while U.S. tech tanks\u2014a reminder that the AI hype cycle is global, and China's not waiting for American regulatory theater.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "7ddebfdc0c08",
+      "lead_host": "MAYA",
+      "angle": "Sonos is leaking new headphones via FCC filing\u2014the company that nearly imploded its own app is betting on hardware again. Confidence or desperation?",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "25c7021e6d62",
+      "lead_host": "MAYA",
+      "angle": "Europe's nuclear plants are running out of cooling water because it's too hot. The energy transition just met the climate crisis in real time.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "c1d319da5373",
+    "joke_angle": "The UK is considering banning disposable BBQs. Not because of climate\u2014because people keep leaving them on beaches and burning things. Regulatory capture, but for charcoal."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Israeli defense contractor crushes earnings, stock tanks anyway\u2014welcome to the Iran premium.",
+    "fresh_take": "Today's broader pattern: good news (CPI cool, earnings beat) is getting sold into because the market's repricing geopolitical risk and rate expectations simultaneously. The Iran premium isn't just a defense-stock thing anymore."
+  },
+  "sign_off": {
+    "callback_target": "Google's -3.84% drop\u2014the biggest loser of the day despite inflation cooling, which is the exact opposite of what the market's supposed to do."
+  }
+}
