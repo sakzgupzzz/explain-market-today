@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Dow flat, Nasdaq up 0.54%, but Meta and Microsoft are down 3.38% and 2.26%\u2014inflation cooled, so why are the mega-cap AI names getting punished?"
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: +0.26%",
+      "Nasdaq: +0.54%",
+      "Oracle +5.36%, Nvidia +3.03%",
+      "Meta -3.38%, Microsoft -2.26%"
+    ],
+    "macro_note": "Inflation easing, but mega-cap AI names selling off\u2014rotation away from the most expensive bets."
+  },
+  "big_story": {
+    "story_id": "e8d507332fcb",
+    "lead_host": "ALEX",
+    "story_title": "Stock Market Today: Dow Rises On Surprise Inflation Data; Cisco, AI Name Cerebras Plunge On Earnings",
+    "angle": "Cerebras and Cisco earnings misses are exposing the gap between AI hype and actual unit economics\u2014what does it mean when the infrastructure play can't deliver?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "6b263b415258",
+      "lead_host": "MAYA",
+      "angle": "Musk and Zuckerberg both launching new AI models simultaneously\u2014less about technical breakthrough, more about who gets to claim 'we're still in the race' before the market moves on.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "cf803a166739",
+      "lead_host": "MAYA",
+      "angle": "Fermi Energy finally hired a CEO after months of limbo\u2014nuclear power for AI is the story, but the real question is whether a new leader can actually move the needle or just manage the burn.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "77acfb716e12",
+      "lead_host": "ALEX",
+      "angle": "Wholesale prices flat in July, below the 0.2% expected increase\u2014the deflation narrative is quietly building, and nobody's talking about what that means for rate cuts.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "6cd87de2bc12",
+      "lead_host": "MAYA",
+      "angle": "AI boom is moving currency markets now\u2014when your story is big enough to shift FX, you've either found something real or you're in a bubble that's about to get very expensive.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "df06a3314e68",
+    "joke_angle": "UK water bills rising because firms need more funding\u2014the one utility that literally falls from the sky is somehow becoming a luxury good."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Dow up on CPI, but Nvidia's supplier CoreWeave is the actual winner\u2014a sign that the AI capex cycle is still real even if",
+    "fresh_take": "Today's Cerebras and Cisco misses suggest the capex cycle is hitting a wall\u2014suppliers are selling off, which means the infrastructure bet is finally facing real unit economics questions."
+  },
+  "sign_off": {
+    "callback_target": "Cerebras\u2014the AI infrastructure play that couldn't deliver on earnings, the punchline to the whole 'capex cycle is unstoppable' narrative."
+  }
+}

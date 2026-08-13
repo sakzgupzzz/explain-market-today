@@ -1,0 +1,51 @@
+{
+  "date": "2026-08-13",
+  "mp3": "2026-08-13.mp3",
+  "size_bytes": 1196661,
+  "duration_sec": 74.76,
+  "turns": 8,
+  "words": 175,
+  "char_usage_estimate": 1081,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-08-13T13:19:59.078538Z",
+  "top_mover": {
+    "symbol": "ORCL",
+    "name": "ORCL",
+    "pct": 5.36
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7748.5,
+        "pct": 0.26
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 53770.26953125,
+        "pct": -0.04
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26588.490234375,
+        "pct": 0.54
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 3045.47998046875,
+        "pct": 0.61
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 14.460000038146973,
+        "pct": -0.62
+      }
+    ]
+  }
+}
