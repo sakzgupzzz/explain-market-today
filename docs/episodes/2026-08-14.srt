@@ -1,0 +1,112 @@
+1
+00:00:06,988 --> 00:00:18,524
+JAMIE: OpenAI's dumping senior executives right before going public—Cisco just tanked eight point four percent, and I'm starting to think the difference between a pre-IPO exodus and a pre-IPO refresh is just whether your PR team gets there first.
+
+2
+00:00:18,524 --> 00:00:46,920
+ALEX: So OpenAI's senior people are heading for the exits while the company's supposedly about to hit the public markets, and meanwhile Musk and Zuckerberg are both cranking out AI models like they're in a race to see who can announce something first—and the real tell is that none of them seem worried about whether their teams will still be there to maintain the thing. It's the difference between building a product and building a narrative, and right now the narrative is winning so hard that losing your chief research officer feels like a scheduling conflict.
+
+3
+00:00:46,920 --> 00:01:13,542
+ALEX: Markets are up across the board today—S&P at seventy-seven ninety-eight point ninety-nine, up zero point six-five percent, Nasdaq at twenty-six thousand eight hundred and three point zero-three, up zero point eight-one percent. Broad sentiment is softer inflation expectations finally getting some traction. But here's the thing: it's not actually broad. Mega-cap tech is split. Netflix is up five point four-three percent, Adobe up four point five-four, Salesforce up four point one-six. Meanwhile Cisco just got obliterated—down eight point four percent—and that's not a market thing, that's a Cisco thing.
+
+4
+00:01:13,542 --> 00:01:25,965
+JAMIE: Wait, so the same day we're watching senior talent bail on OpenAI before the IPO, Cisco's getting taken apart? Is there a pattern here where the market's just saying 'prove to us you have people who actually know what they're doing'?
+
+5
+00:01:25,965 --> 00:01:48,446
+ALEX: Cisco's decline is specific to them—earnings miss, guidance down, the usual execution story. But your instinct isn't wrong. What's happening is the market is separating the 'we have a narrative' companies from the 'we have a product and a functioning team' companies. Netflix is executing on password-sharing monetization. Adobe's got real AI tools people are paying for. Salesforce is still the default Salesforce. Cisco announced a bunch of things and apparently that's not enough anymore.
+
+6
+00:01:48,446 --> 00:02:14,476
+MAYA: This is wild because Cisco used to be the company that just had to exist and collect checks. Now they're down eight point four percent and nobody's even talking about it like it's a scandal—it's just, oh, Cisco had a bad quarter, moving on. Meanwhile Tesla's up three point eight percent, Meta's up two point seven-eight, and everyone's acting like the AI race is still the only thing that matters, but the real story is that boring old software and streaming are the ones actually making money.
+
+7
+00:02:14,476 --> 00:02:24,237
+JAMIE: So the market's basically saying: if you're going to tell us you're revolutionizing things, you'd better have the team and the results to back it up. Narrative alone doesn't cut it anymore.
+
+8
+00:02:24,237 --> 00:02:34,886
+ALEX: That's the read. And the macro picture is stable enough that the market can actually focus on who's real and who's just noise. Cisco's down because Cisco didn't deliver. Netflix is up because Netflix did.
+
+9
+00:02:34,886 --> 00:02:50,859
+MAYA: The board had to know this would look catastrophic, right? Like, you don't announce an IPO roadshow and then have your revenue person walk out the door unless something broke internally. And everyone's just treating it like normal attrition—oh, they're getting a refresh—but the timing is screaming that someone pulled the eject handle.
+
+10
+00:02:50,859 --> 00:03:08,015
+ALEX: The board that fired him, rehired him, and apparently has spent the last year getting out of his way? They're not the spine-growing type. This looks like Altman deciding the people around him were slowing him down. Which means the IPO roadshow is going to be explaining why the company's stronger without the people who just left.
+
+11
+00:03:08,015 --> 00:03:22,213
+MAYA: And investors are going to sit there nodding and writing checks while internally thinking, 'So the guy running this place was so confident in his team that he replaced half of them a month ago.' That's the energy going into the roadshow. That's what they're betting on.
+
+12
+00:03:22,213 --> 00:03:35,228
+JAMIE: The company's walking into the IPO equivalent of showing up to a first date after you've already told people you're not sure about your partner. At some point the narrative breaks and the market just asks: who actually knows what they're doing here?
+
+13
+00:03:35,228 --> 00:03:44,694
+MAYA: Investors are suing Selena Gomez over her mental health startup—they're alleging she never actually built or marketed the company. A mental health company getting sued for fraud is peak irony, right?
+  ↳ source: https://techcrunch.com/2026/08/13/investors-sue-selena-gomez-alleging-fraud-tied-to-her-mental-health-startup/
+
+14
+00:03:44,694 --> 00:03:53,272
+JAMIE: So they invested in a mental health startup and the mental health outcome for the investors was financial trauma. That's not a business model, that's a case study.
+
+15
+00:03:53,272 --> 00:04:04,808
+ALEX: Data breaches have already blown past last year's total, and AI is now the new attack vector. Companies are shipping features faster than they can patch vulnerabilities, which means the security team's job is just apologizing in advance.
+  ↳ source: https://www.cnbc.com/2026/08/14/data-breaches-surge-2026-ai-cyberattacks.html
+
+16
+00:04:04,808 --> 00:04:20,189
+MAYA: Malicious insider incidents are up too, so we've got the full stack—external hackers, AI-powered attacks, and people on your own payroll deciding today's the day they cash out. It's like the breach is coming from inside the house, and the house is on fire, and the fire is also a hacker.
+
+17
+00:04:20,189 --> 00:04:25,513
+JAMIE: China built robots that can do backflips. Engineering theater at its finest—incredible to film, impossible to sell.
+  ↳ source: https://www.cnbc.com/2026/08/14/china-humanoid-robots-unitree-ipo-tesla-optimus.html
+
+18
+00:04:25,513 --> 00:04:36,162
+ALEX: The company's going public on the premise that a robot doing a backflip is a business. Investors are going to watch the demo reel and ask the only question that matters: who's paying for this?
+
+19
+00:04:36,162 --> 00:04:47,106
+MAYA: And that's before we factor in the geopolitical angle—U.S. export restrictions, supply chain paranoia, the whole thing. So the IPO is betting that a backflipping robot with a shrinking addressable market is somehow worth the friction.
+
+20
+00:04:47,106 --> 00:05:03,079
+MAYA: There's a Cold War movie that critics are saying gives too much credit to Ronald Reagan. Which is genuinely wild because every other Reagan movie spends two hours explaining why he was either a genius or a disaster—this one's the one that actually makes him look competent, and apparently that's the controversial take.
+  ↳ source: https://www.theatlantic.com/ideas/2026/08/brink-of-war-reykjavik-summit/688279/?utm_source=feed
+
+21
+00:05:03,079 --> 00:05:16,390
+ALEX: A Cold War movie that rehabilitates Reagan is the opposite of how Hollywood usually works. You get either the hagiography or the takedown. The middle ground—where he's just a person who happened to be president during something important—that's somehow the one that upsets everyone.
+  ↳ source: https://www.theatlantic.com/ideas/2026/08/brink-of-war-reykjavik-summit/688279/?utm_source=feed
+
+22
+00:05:16,390 --> 00:05:37,983
+JAMIE: So the film actually credits Reagan with something, and now it's getting hit from both sides—the people who think he walks on water are mad he's not portrayed as a god, and the people who think he was a disaster are mad he's portrayed as anything other than a villain. The film managed to make the most controversial choice possible by just treating him like a historical figure instead of a symbol.
+
+23
+00:05:37,983 --> 00:05:44,195
+JAMIE: On the tape tomorrow and beyond: we've got a small-cap earnings calendar that looks like a venture capitalist's reject pile.
+
+24
+00:05:44,195 --> 00:05:57,210
+ALEX: Earnings start rolling in on August fourteenth—BK Technologies, Clene, Creative Media and Community Trust, a few others. The macro side is quiet for the moment, so the market's going to actually have to look at whether these companies can explain why they exist.
+
+25
+00:05:57,210 --> 00:06:10,816
+MAYA: Aptevo Therapeutics reporting on the same day—that's a biotech play, and biotech's been getting absolutely wrecked because everyone's betting on AI to replace the entire drug discovery process. So Aptevo's walking in on August fourteenth having to convince investors that humans with pipelines still matter.
+
+26
+00:06:10,816 --> 00:06:21,465
+JAMIE: So we're watching a therapeutics company argue for its own relevance on the same day five other companies are trying to do the same thing. That's not an earnings calendar, that's a fight for oxygen.
+
+27
+00:06:21,465 --> 00:06:25,606
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

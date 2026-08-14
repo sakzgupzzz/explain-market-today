@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "OpenAI's losing senior execs right before going public\u2014the company's basically doing a pre-IPO refresh that looks less like strategy and more like musical chairs."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.65% to 7799",
+      "Nasdaq +0.81% to 26,803",
+      "Netflix +5.43%",
+      "Cisco -8.40%"
+    ],
+    "macro_note": "Broad rally on softer inflation expectations; mega-cap tech mixed, but streaming and software outperforming."
+  },
+  "big_story": {
+    "story_id": "154cb1d6dcb4",
+    "lead_host": "JAMIE",
+    "story_title": "OpenAI sheds senior execs in pre-IPO refresh",
+    "angle": "OpenAI is hemorrhaging senior talent weeks before a potential IPO\u2014not a sign of confidence. What does it say about the company's actual governance and whether Altman has real control, or if the board is finally pushing back?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "896ef8478174",
+      "lead_host": "MAYA",
+      "angle": "Investors suing Selena Gomez's mental health startup for fraud\u2014the irony of a mental health company allegedly lying to its backers is almost too on-the-nose.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "f7e0ff8c3427",
+      "lead_host": "ALEX",
+      "angle": "Data breaches already past last year's total with AI accelerating the problem\u2014companies are building faster than they can secure, and AI is the new vector.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "e4ebf54f3580",
+      "lead_host": "MAYA",
+      "angle": "China's backflip robots are impressive engineering theater\u2014cool to watch, impossible to monetize, and that's the entire Chinese robotics story right now.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "c4061659bbf7",
+      "lead_host": "ALEX",
+      "angle": "Tesla bought out its Swedish strikers instead of negotiating\u2014Musk's labor strategy is 'if you won't work for me, I'll just buy you off,' which works until it doesn't.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "e67c39733110",
+    "joke_angle": "A Cold War movie that gives Reagan too much credit\u2014basically the opposite problem every other Reagan movie has, which means someone finally made the contrarian take that nobody asked for."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Musk and Zuckerberg both launching new AI models simultaneously\u2014less about technical breakthrough, more about who gets the narrative",
+    "fresh_take": "OpenAI's exec exodus suggests the AI model wars aren't just about who ships first\u2014they're about who can actually keep a team together long enough to ship anything."
+  },
+  "sign_off": {
+    "callback_target": "OpenAI's pre-IPO refresh"
+  }
+}
