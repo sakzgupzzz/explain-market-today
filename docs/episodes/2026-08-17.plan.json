@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Paramount's asking state AGs for $1.88 billion to fix a merger that's already broken\u2014basically asking the government to co-sign a bad decision."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 down 0.52% to 7745",
+      "Nasdaq down 0.32% to 26644",
+      "VIX up 6.60% to 15.19",
+      "Meta down 3.54%, Microsoft down 3.04%"
+    ],
+    "macro_note": "Tech selling, rates holding firm, energy stocks catching a bid on geopolitical risk."
+  },
+  "big_story": {
+    "story_id": "3e129d5d98ae",
+    "lead_host": "ALEX",
+    "story_title": "Paramount seeks $1.88 billion bond from state AGs to cover costs of WBD merger delay",
+    "angle": "Paramount is essentially asking regulators to bail out a deal that's already toxic\u2014the real story is whether state AGs will become deal-financing arms of Hollywood, and what it says about a merger that needs government life support to survive.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "87a62d255b9e",
+      "lead_host": "ALEX",
+      "angle": "Prediction markets now pricing a 1-in-4 shot the Paramount-WBD deal dies entirely\u2014that's not 'could happen,' that's 'serious money thinks this fails.'",
+      "conviction": "real"
+    },
+    {
+      "story_id": "faef93cd0952",
+      "lead_host": "ALEX",
+      "angle": "30-year Treasury yields hit 5.31%, highest in 19 years\u2014the long end is screaming that inflation or deficits (or both) aren't going away.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "2f446a510ac0",
+      "lead_host": "JAMIE",
+      "angle": "Trump's administration is fracturing in real time\u2014his own people are contradicting him on policy, which is either chaos or a feature depending on your view of executive discipline.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "6f7d779a0b33",
+      "lead_host": "MAYA",
+      "angle": "A smart pet feeder company is getting roasted for gaslighting users about an outage\u2014turns out the IoT device that monitors your cat's lunch is also monitoring your patience.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "8bfe8583f345",
+    "joke_angle": "A UK politician got catfished by someone pretending to be Trump's chief of staff\u2014the bar for 'plausible Trump staffer impersonation' is apparently just 'can type.'"
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Paramount's $1.88 billion ask\u2014the merger that needs a government co-signer"
+  }
+}
