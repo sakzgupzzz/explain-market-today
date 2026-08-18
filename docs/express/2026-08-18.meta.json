@@ -1,0 +1,51 @@
+{
+  "date": "2026-08-18",
+  "mp3": "2026-08-18.mp3",
+  "size_bytes": 1209617,
+  "duration_sec": 75.57,
+  "turns": 9,
+  "words": 174,
+  "char_usage_estimate": 1161,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-08-18T12:50:18.267621Z",
+  "top_mover": {
+    "symbol": "AMD",
+    "name": "AMD",
+    "pct": 6.5
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7785.759765625,
+        "pct": -0.17
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 53732.41015625,
+        "pct": -0.2
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26729.16015625,
+        "pct": -0.28
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 3068.419921875,
+        "pct": 0.51
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 15.729999542236328,
+        "pct": 10.39
+      }
+    ]
+  }
+}
