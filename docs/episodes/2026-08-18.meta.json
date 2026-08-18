@@ -1,0 +1,51 @@
+{
+  "date": "2026-08-18",
+  "mp3": "2026-08-18.mp3",
+  "size_bytes": 4704546,
+  "duration_sec": 293.62,
+  "turns": 25,
+  "words": 906,
+  "char_usage_estimate": 5948,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-08-18T21:44:05.137587Z",
+  "top_mover": {
+    "symbol": "META",
+    "name": "META",
+    "pct": -4.45
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7691.759765625,
+        "pct": -0.69
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 53343.3984375,
+        "pct": -0.22
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26289.7109375,
+        "pct": -1.33
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 3017.886962890625,
+        "pct": -1.3
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 15.84000015258789,
+        "pct": 4.28
+      }
+    ]
+  }
+}

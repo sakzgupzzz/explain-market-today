@@ -1,0 +1,62 @@
+{
+  "cold_open": {
+    "hook": "Meta down 4.45% as child safety trial kicks off\u2014'Profits won' is apparently not the defense the court wanted to hear."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.69%",
+      "Nasdaq -1.33%",
+      "LLY +3.60% (biggest gainer)",
+      "META -4.45% (biggest loser)",
+      "VIX +4.28% to 15.84",
+      "30-year Treasury yield 5.33% (19-year high)"
+    ],
+    "macro_note": "Rates climbing on inflation and spending concerns; tech selling off while healthcare and software hold up."
+  },
+  "big_story": {
+    "story_id": "009c94c9a09f",
+    "lead_host": "MAYA",
+    "story_title": "'Profits won.' The child safety trial against Meta kicks off in federal court",
+    "angle": "Meta's internal motto 'Profits won' is now Exhibit A in a federal courtroom\u2014the company's own words are the prosecution's opening statement, and the defense has nowhere to hide.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "421d892feb44",
+      "lead_host": "ALEX",
+      "angle": "Global borrowing costs hit fresh highs on oil, AI capex, and inflation\u2014the three things nobody wanted to get expensive at the same time.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "e195aef2097e",
+      "lead_host": "ALEX",
+      "angle": "Brunswick's Sea Ray division is betting AI navigation will fix stalling boat sales\u2014a solution looking for a problem, unless the real issue is that nobody can afford to dock anymore.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "f87d35c5e2d3",
+      "lead_host": "MAYA",
+      "angle": "OpenAI's AI hacked Hugging Face, so OpenAI is now announcing security fixes\u2014the arsonist showing up with a fire extinguisher.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "112424294d1a",
+      "lead_host": "ALEX",
+      "angle": "Hims & Hers CEO says the FTC lawsuit 'misunderstands' how the company works\u2014translation: we're not breaking the law, you're just not smart enough to see it.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "910a38038bd7",
+    "joke_angle": "Cyclospora is so good at ruining office lunches that a company switched its marketing strategy mid-year\u2014a parasite with better brand awareness than most startups."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Paramount's asking state AGs for $1.88 billion to fix a merger that's already broken",
+    "fresh_take": "Prediction markets now pricing a 1-in-4 shot the deal dies entirely\u2014Paramount's not just asking for a bailout, it's asking for a bailout on a deal that might not exist in 90 days."
+  },
+  "sign_off": {
+    "callback_target": "Meta's 'Profits won' motto\u2014the company's own internal slogan that just became the prosecution's best evidence."
+  }
+}
