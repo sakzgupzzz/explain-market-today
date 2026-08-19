@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Merck up 12.6% on a cancer vaccine that actually works\u2014and the Fed's about to make everything else more expensive."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.21%",
+      "Nasdaq +0.16%",
+      "Merck +12.6%",
+      "Broadcom -4.61%",
+      "VIX -6.00%"
+    ],
+    "macro_note": "Volatility collapsing, rates holding firm, healthcare outperforming as AI capex concerns weigh on semiconductors."
+  },
+  "big_story": {
+    "story_id": "487d43219f08",
+    "lead_host": "ALEX",
+    "story_title": "Moderna's experimental vaccine prevents cancer recurrence, in 'historic' win for personalized medicine",
+    "angle": "A real biotech breakthrough that actually moves the needle on patient outcomes\u2014not hype, not a press release, actual efficacy data that justifies the stock move and raises the bar for what 'personalized medicine' actually means.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "3f599b2ef04a",
+      "lead_host": "ALEX",
+      "angle": "Bessent's yield-suppression play is a direct counter to Trump's rate complaints\u2014Treasury Secretary vs. Fed chair via bond market, and the market's already pricing in who wins.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "9e56bd837be3",
+      "lead_host": "MAYA",
+      "angle": "T-Mobile literally severed the cable to Chinese hackers like they were unplugging a bad WiFi router\u2014the 'chopped a cable' framing is doing a lot of work to make network security sound like a home improvement project.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "6071989f8b7c",
+      "lead_host": "MAYA",
+      "angle": "OpenAI's CFO says 2027 IPO 'or sooner'\u2014which is the corporate equivalent of 'we'll text you when we're on the way' and means absolutely nothing until there's a date.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "24da4a39d471",
+      "lead_host": "ALEX",
+      "angle": "Target's turnaround is being propped up by a tariff refund\u2014so the real story is that retail margins are so thin that government accounting adjustments now move the needle on 'momentum.'",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "69ed1840b9e6",
+    "joke_angle": "A whistleblower named Arturo B\u00e9jar is testifying against Meta in a child safety trial while Meta's stock is already down 4.45%\u2014the company's defense strategy appears to be 'we made money, so what's the problem,' which is not landing in federal court."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Meta down 4.45% as child safety trial kicks off\u2014'Profits won' is apparently not the defense the court wanted to hear.",
+    "fresh_take": "Today Arturo B\u00e9jar takes the stand with specifics on how Meta's algorithm amplifies harmful content to minors\u2014the trial moves from opening arguments to actual testimony, and the market's already priced in that 'we made money' doesn't work as a legal defense."
+  },
+  "sign_off": {
+    "callback_target": "Merck's 12.6% pop on the cancer vaccine\u2014the one real win in a market where everything else is either rate anxiety or hype."
+  }
+}
