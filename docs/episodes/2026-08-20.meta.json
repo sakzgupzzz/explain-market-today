@@ -1,0 +1,51 @@
+{
+  "date": "2026-08-20",
+  "mp3": "2026-08-20.mp3",
+  "size_bytes": 6544986,
+  "duration_sec": 408.53,
+  "turns": 31,
+  "words": 1279,
+  "char_usage_estimate": 8340,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-08-20T21:50:27.989511Z",
+  "top_mover": {
+    "symbol": "WMT",
+    "name": "WMT",
+    "pct": -9.15
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7641.16015625,
+        "pct": -0.87
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 52759.2109375,
+        "pct": -1.32
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26067.166015625,
+        "pct": -1.0
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2992.43359375,
+        "pct": -1.34
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 16.010000228881836,
+        "pct": 7.52
+      }
+    ]
+  }
+}

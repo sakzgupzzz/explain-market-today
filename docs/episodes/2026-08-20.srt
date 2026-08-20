@@ -1,0 +1,127 @@
+1
+00:00:06,988 --> 00:00:15,554
+JAMIE: Walmart stock just tanked nine percent, and the problem isn't that they've run out of things to mark down—it's that their forecast is worse than their clearance section.
+  ↳ source: https://www.cnbc.com/2026/08/20/walmart-wmt-q2-2027-earnings.html
+
+2
+00:00:15,554 --> 00:00:39,478
+ALEX: S&P down zero point eight seven percent, Nasdaq off one percent, but the real story is the VIX jumped seven point five two points to sixteen point zero one. Retail's getting hammered. Walmart cratered nine point one five percent on that guidance miss, Home Depot's down two point eight five, Lilly down two point eight one. Costco off two point four five. The consumer's either tapped or spooked, and investors are treating earnings forecasts like they're written in disappearing ink.
+
+3
+00:00:39,478 --> 00:00:48,339
+JAMIE: Wait—so the VIX spikes, and the only things that go up are like Thermo Fisher and Exxon? What's the trade here, just buy oil and hope for a recession?
+
+4
+00:00:48,339 --> 00:01:16,103
+ALEX: Thermo Fisher's up two point two eight percent on defensive positioning—healthcare holds when everything else looks uncertain. Exxon's up zero point eight four on crude strength. It's not a recession trade yet, it's a 'I don't know what's happening so I'll buy what I know works' trade. Broadcom's barely hanging on at plus zero point four three, AMD's creeping up zero point six five. Tech's not collapsing, but it's not leading either. The rotation is into anything that has a moat and cash flow, away from anything that depends on the consumer feeling generous.
+
+5
+00:01:16,103 --> 00:01:28,804
+MAYA: So Walmart just got obliterated because their customers are shopping like they're trying to get out of a lease agreement—grab what you need and run. And meanwhile Exxon's up because we're all apparently going to need more gas for the anxiety driving.
+
+6
+00:01:28,804 --> 00:01:43,572
+ALEX: It's moving on the rate narrative—lower for longer versus higher for longer. Gold's up one point nine one percent, which tells you the hedging instinct is alive. When you're buying both gold and other assets, you're not trading a thesis, you're buying insurance against not knowing what happens next.
+
+7
+00:01:43,572 --> 00:01:52,728
+JAMIE: Insurance against confusion. That's the market thesis now. Just buy the stuff that doesn't require you to believe in anything—commodities, healthcare, energy—and hope the Fed blinks before the earnings do.
+
+8
+00:01:52,728 --> 00:02:06,906
+ALEX: Walmart's guidance miss is the canary in the coal mine for margin compression across retail. They're not losing customers—foot traffic is still there—but the mix is ugly. More budget shoppers, fewer high-margin categories, and pricing power that evaporated the moment people stopped reflexively accepting markups on groceries.
+
+9
+00:02:06,906 --> 00:02:20,493
+MAYA: So they're saying the customer's not dead, just cheap. Which sounds like corporate speak until you realize Walmart is the cheap option. If Walmart's customer is trading down from Walmart, where are they even going—making their own pasta from wheat they grew in their apartment?
+
+10
+00:02:20,493 --> 00:02:33,193
+JAMIE: That's actually the question though. Target's down this morning. Costco's down two and a half. So it's not like people are just moving to a different retailer—they're buying less stuff overall, or they're buying the same stuff and paying less for it.
+
+11
+00:02:33,193 --> 00:02:54,459
+ALEX: Exactly. Walmart's operating margin is getting squeezed from both ends. Inventory's healthier than it was two years ago, so they're not forced to discount as aggressively on apparel or home goods. But grocery—which is half their business—operates on thin margins. You can't cut prices there without bleeding out. They're choosing to take the hit on guidance rather than crater profitability, and the market's punishing them for actually being honest about it.
+
+12
+00:02:54,459 --> 00:03:08,046
+MAYA: Which is wild because honesty usually gets rewarded, and instead they're down nine percent. Meanwhile you've got companies that haven't guided at all this quarter just floating on hopes and prayers, and they're fine. Walmart said 'we can't grow margins' and the stock got deleted.
+  ↳ source: https://www.cnbc.com/2026/08/20/walmart-wmt-q2-2027-earnings.html
+
+13
+00:03:08,046 --> 00:03:23,110
+JAMIE: So here's the Fed question: if Walmart can't raise prices anymore, and they're eating the margin hit, where does that leave the inflation narrative? Everyone's been betting on services inflation staying sticky and goods inflation staying dead. But if the biggest retailer in America just admitted pricing power is gone—
+
+14
+00:03:23,110 --> 00:03:37,287
+ALEX: Then the Fed gets cover to cut. That's what the bond market just priced. Walmart's miss is actually a green light for rate cuts. The consumer isn't crashing yet, but the company that knows the consumer best just said the game has changed. That's worth paying attention to.
+
+15
+00:03:37,287 --> 00:03:47,330
+ALEX: Employer health costs are spiking again. So the structural cost of US labor just got more expensive, and it's not showing up in wage growth. Workers are getting squeezed from the inside out.
+  ↳ source: https://www.axios.com/2026/08/20/health-care-costs-employers-rising
+
+16
+00:03:47,330 --> 00:03:55,304
+JAMIE: Wait, so companies are paying more for health insurance but not raising salaries to match? That's not a benefit—that's a pay cut wrapped in a deductible.
+
+17
+00:03:55,304 --> 00:04:08,005
+ALEX: Right. Health costs eat margin. Wages don't. The company absorbs the insurance bill, the worker absorbs the copay, and the Fed gets to pretend labor costs aren't accelerating because they're looking at the W-two number instead of the total cost per hire.
+
+18
+00:04:08,005 --> 00:04:15,685
+MAYA: So we're back to the thing nobody wanted to admit after the wage growth narrative fell apart—the paychecks look fine, but your out-of-pocket is climbing.
+
+19
+00:04:15,685 --> 00:04:22,773
+JAMIE: Australia's online safety regulator just said Roblox still hasn't fixed its child predator problem—and this is after the company promised they were handling it.
+
+20
+00:04:22,773 --> 00:04:33,406
+MAYA: Yeah, the regulator did testing and found that Roblox's safety features are still theater. The company keeps saying they're improving, but when regulators actually look, the vulnerabilities are still there. This is the real story.
+
+21
+00:04:33,406 --> 00:04:44,926
+ALEX: And it matters because Roblox went public promising they'd solved the safety problem. If regulators are finding gaps, other countries will too. This is the kind of liability that doesn't show up in quarterly earnings until it does.
+
+22
+00:04:44,926 --> 00:04:52,605
+JAMIE: Last one—the bull market survived higher rates before. But this time the consumer is actually showing cracks. Walmart proved that yesterday. So what's different now?
+
+23
+00:04:52,605 --> 00:05:05,010
+ALEX: Valuations and rates are no longer aligned. Previous rate cycles, the consumer held. This time you've got health costs rising, wage growth flat, and retail margins collapsing. The rate itself isn't the killer—it's the rate plus the consumer actually being tapped.
+  ↳ source: https://www.marketwatch.com/story/if-rising-rates-were-enough-to-end-a-bull-market-wed-have-entered-a-bear-market-long-ago-0c6790a0?mod=mw_rss_topstories
+
+24
+00:05:05,010 --> 00:05:10,622
+MAYA: So the playbook that worked three times before doesn't work when the person running the playbook is broke.
+
+25
+00:05:10,622 --> 00:05:20,369
+JAMIE: On the tape tomorrow: Deere reports earnings on August twentieth, and this one matters because farm equipment's been a proxy for whether the rural economy is actually holding up or just pretending.
+
+26
+00:05:20,369 --> 00:05:41,931
+ALEX: Deere's margins have been under pressure from inventory normalization—they built too much during the commodity boom, and now they're working through excess. If they guide down on dealer demand or farm equipment utilization, that's a signal the agricultural sector is softening faster than the headline data suggests. We're also watching for any commentary on credit conditions for farmers, because land values are still elevated and debt service is eating into cash flow.
+
+27
+00:05:41,931 --> 00:06:04,674
+MAYA: And the same day we get Flowers Foods earnings—that's the bread company—which is going to tell us whether grocery inflation is actually dead or if they're just eating margin to stay on shelf. If Flowers comes in and says they're still holding price, that contradicts everything Walmart just told us. If they say they're taking it on the chin, then the entire food supply chain just admitted pricing power evaporated in the span of seventy-two hours.
+
+28
+00:06:04,674 --> 00:06:16,489
+JAMIE: So Deere tells us if farms are broke, Flowers tells us if groceries are broken, and both report the same day the market's still pricing in rate cuts. That's either going to confirm the thesis or blow it up.
+
+29
+00:06:16,489 --> 00:06:24,168
+ALEX: Walmart proved the consumer's out of room to absorb margin hits. Now we watch if Deere and Flowers admit the same thing on the twentieth.
+
+30
+00:06:24,168 --> 00:06:28,598
+MAYA: Three companies, one day, all about to tell us whether the playbook still works.
+
+31
+00:06:28,598 --> 00:06:32,734
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

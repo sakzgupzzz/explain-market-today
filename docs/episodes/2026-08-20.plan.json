@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Walmart just tanked 9%\u2014and it's not because they ran out of rollback prices."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.87%",
+      "Nasdaq -1.00%",
+      "VIX +7.52% to 16.01",
+      "Walmart -9.15%",
+      "TMO +2.28%"
+    ],
+    "macro_note": "Broad selloff on rate anxiety; VIX spiking; mega-cap retail cracking under consumer pressure."
+  },
+  "big_story": {
+    "story_id": "d6a10f68fd7b",
+    "lead_host": "ALEX",
+    "story_title": "Walmart stock tumbles 9% after outlook disappoints Wall Street",
+    "angle": "The consumer isn't broke\u2014Walmart's guidance collapse signals margin compression and the end of the easy pricing-power era; what does this mean for inflation narrative and Fed cuts?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "d258a45a678d",
+      "lead_host": "ALEX",
+      "angle": "Employer health costs are spiking again\u2014the structural cost of US labor just got more expensive, and it's not showing up in wage growth.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "66541a0bb6ed",
+      "lead_host": "MAYA",
+      "angle": "Mark Zuckerberg bought an Irish castle\u2014because apparently the metaverse wasn't enough of an escape from reality.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "9ae91aa18b5e",
+      "lead_host": "MAYA",
+      "angle": "Australia says Roblox still hasn't fixed its child predator problem\u2014the platform's safety theater is collapsing in real time.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "5c2d59d81e57",
+      "lead_host": "ALEX",
+      "angle": "The bull market survived higher rates before\u2014but this time the consumer is actually showing cracks, which is different.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "d34308ca9744",
+    "joke_angle": "A cyclosporiasis outbreak is testing a 'weakened' health system\u2014which is a polite way of saying the system is held together with duct tape and prayers."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Walmart's margin squeeze\u2014the moment pricing power met actual consumer resistance"
+  }
+}
