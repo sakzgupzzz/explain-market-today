@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Tesla up 5%, Apple down 0.6%\u2014and the Supreme Court just green-lit Trump's ballroom renovation."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.43%",
+      "Dow +0.98%",
+      "Tesla +5.14%",
+      "Nvidia -0.98%",
+      "VIX -5.50%"
+    ],
+    "macro_note": "Risk appetite back on, volatility collapsing, small caps outrunning mega-cap tech."
+  },
+  "big_story": {
+    "story_id": "4efdf8d62db2",
+    "lead_host": "JAMIE",
+    "story_title": "Supreme Court allows Trump to continue White House ballroom construction for now",
+    "angle": "The Court's decision to let Trump keep building mid-litigation is a signal about how the judiciary is handling executive power during his second term\u2014and what it means for the speed of legal challenges to come.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "32279d632eaa",
+      "lead_host": "ALEX",
+      "angle": "Bessent's Treasury is openly signaling it will override Fed policy on rates and the dollar\u2014the first real institutional conflict of the new term.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "f0c357990b35",
+      "lead_host": "MAYA",
+      "angle": "China ordering Tesla to fix 3 million cars is a regulatory flex that shows Beijing isn't cowed by tariff threats\u2014and Tesla's margin story just got messier.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "bdd3f3e28487",
+      "lead_host": "JAMIE",
+      "angle": "Trump says U.S. and Canada 'should be able' to reach a trade deal\u2014the word 'should' doing a lot of heavy lifting before the deadline.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "d57bd8dd1a85",
+      "lead_host": "MAYA",
+      "angle": "TikTok pays $400 million to settle kids' privacy\u2014a rounding error for ByteDance, but a signal that DOJ is moving fast on enforcement.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "e76dc34ee401",
+    "joke_angle": "Liberal families are looking traditional\u2014turns out the culture war was just a phase, and everyone wants a mortgage and a minivan."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Tesla's 5% pop"
+  }
+}

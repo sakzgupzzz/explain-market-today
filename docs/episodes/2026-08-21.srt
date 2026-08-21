@@ -1,0 +1,106 @@
+1
+00:00:06,988 --> 00:00:13,569
+JAMIE: Tesla's up five point one four percent, Apple's down point six three, and the Supreme Court just handed Trump a ballroom renovation.
+  ↳ source: https://www.axios.com/2026/08/21/trump-ballroom-construction-supreme-court
+
+2
+00:00:13,569 --> 00:00:27,877
+ALEX: S&P up zero point four three percent, Dow up zero point nine eight. Small caps running circles around the big boys—Russell 2000 at three thousand seventeen, up zero point eight five. And the VIX just collapsed five point five percent, which means everyone suddenly remembered that fear is optional.
+
+3
+00:00:27,877 --> 00:00:35,603
+JAMIE: So we're pretending Nvidia's drop doesn't matter. Down zero point nine eight percent while Oracle jumps three point one and Merck pops two point three nine.
+
+4
+00:00:35,603 --> 00:00:47,907
+MAYA: Oracle crushing it while the AI chip darling stumbles is like watching the accountant show up the rock star at karaoke—and honestly, I'm here for it. The market's basically saying 'we'll take actual earnings over moonshot vibes for one news cycle, thanks.'
+
+5
+00:00:47,907 --> 00:00:53,057
+JAMIE: Tesla's still the one that matters, apparently—up five point one four percent. Everything else is just noise.
+
+6
+00:00:53,057 --> 00:01:07,079
+JAMIE: So the Supreme Court didn't just let Trump keep building—they did it in a one-sentence order with no written reasoning. That's the real move here. A lower court had actually halted the whole thing. This is the Court saying, 'We're not even going to pretend this needs explanation.'
+  ↳ source: https://www.axios.com/2026/08/21/trump-ballroom-construction-supreme-court
+
+7
+00:01:07,079 --> 00:01:21,958
+ALEX: Right, and that matters because it sets a procedural precedent for how fast these get resolved. If every executive action challenge hits the Supreme Court and gets a one-liner back, you're looking at a fundamentally different speed of judicial review than the last administration faced. We're talking weeks instead of months.
+  ↳ source: https://www.axios.com/2026/08/21/trump-ballroom-construction-supreme-court
+
+8
+00:01:21,958 --> 00:01:36,838
+JAMIE: So the question becomes whether the Court's willingness to greenlight this mid-litigation—without explanation—signals something about how they're going to handle the next thirty environmental challenges, labor suits, or immigration orders that hit them. Are we in a new era where the stay gets denied first and the merits get debated never?
+
+9
+00:01:36,838 --> 00:01:53,148
+ALEX: The lower court did find serious questions on the merits—that's in the record. But the Supreme Court didn't engage with any of it. They just said go ahead. That's not a ruling, that's a green light, and it tells every federal judge below them that if the administration really wants something, the stay request is theater.
+  ↳ source: https://www.axios.com/2026/08/21/trump-ballroom-construction-supreme-court
+
+10
+00:01:53,148 --> 00:02:04,880
+JAMIE: The real test is what happens the next time a challenger appeals to the Supreme Court on something that actually matters—healthcare, voting rights, environmental regs. If the pattern holds, you get silence and a thumbs-up. That's the ballroom's second act.
+  ↳ source: https://www.axios.com/2026/08/21/trump-ballroom-construction-supreme-court
+
+11
+00:02:04,880 --> 00:02:18,042
+JAMIE: China just ordered Tesla to fix nearly three million cars for door latch issues that could prevent them from opening in a crash. This is not a software update—this is a safety recall of the size Tesla used to say only happened to other automakers.
+
+12
+00:02:18,042 --> 00:02:28,916
+ALEX: Three million units is roughly a third of all Teslas ever sold. The recall costs money, the repair logistics are a nightmare, and it signals Beijing is willing to flex on safety even while tariff threats are flying.
+
+13
+00:02:28,916 --> 00:02:39,789
+MAYA: The timing is the message. China could have done this quietly six months ago, but they're doing it now, mid-trade-war, to show they're not intimidated by tariff posturing. Tesla's margin story just got a lot more complicated.
+
+14
+00:02:39,789 --> 00:02:48,374
+JAMIE: Trump said the U.S. and Canada 'should be able' to reach a trade deal before the tariff deadline. That word 'should' is carrying the weight of the entire negotiation.
+
+15
+00:02:48,374 --> 00:02:56,100
+ALEX: He already postponed the tariffs once. 'Should be able' means either the deal is close or he's buying time before he has to actually implement them.
+
+16
+00:02:56,100 --> 00:03:15,844
+MAYA: There's a piece out about liberal families in deep-blue neighborhoods, and the headline is basically 'we're all buying houses and driving minivans now.' The writer's in this progressive enclave, everyone votes Democrat, and yet the actual lived reality is: two-point-five kids, a mortgage, and a Honda Odyssey parked in the driveway. The culture war turned out to be something people do until they need a good school district.
+  ↳ source: https://www.theatlantic.com/ideas/2026/08/democrat-liberal-conservative-traditional-family/688369/?utm_source=feed
+
+17
+00:03:15,844 --> 00:03:22,997
+ALEX: So the ideological commitment lasts until the first property tax bill arrives. That's not a contradiction—that's just what happens when you run the numbers.
+
+18
+00:03:22,997 --> 00:03:45,031
+JAMIE: The real story is that nobody's talking about it. These are the same people who spent the last decade arguing about representation and systemic change, and now they're just... quietly doing the exact same thing their parents did. The minivan isn't ironic. It's not a statement. It's a vehicle that fits three car seats and a costco run. The culture war had a really good ten-year run, but it turns out mortgages are just more compelling.
+
+19
+00:03:45,031 --> 00:03:58,479
+JAMIE: On the tape tomorrow: we've got earnings from BJ's Wholesale Club and the Buckle coming in on Thursday, and some smaller plays in energy trusts. But the real question is whether the consumer's still buying in bulk or if wholesale margins are about to get squeezed.
+
+20
+00:03:58,479 --> 00:04:08,781
+ALEX: The macro calendar's thin this week. That's actually the story. We're in a holding pattern. Treasury yields are already climbing toward four point seventy-four, and without fresh data, the market's just guessing what happens next.
+
+21
+00:04:08,781 --> 00:04:23,946
+MAYA: BJ's on Thursday is the one to watch because wholesale clubs are basically the canary in the coal mine for whether people still have money to spend on things they don't immediately need. If they're packed, the consumer's fine. If the aisles are quiet, we're looking at a very different third quarter.
+
+22
+00:04:23,946 --> 00:04:32,531
+JAMIE: So by Friday morning we'll know if the bulk-buying optimism holds or if we're about to get a very clear signal that the spending binge has hit a wall.
+
+23
+00:04:32,531 --> 00:04:39,112
+MAYA: Tesla up five percent while China's forcing three million recalls—that's like watching someone win the lottery and get audited the same morning.
+  ↳ source: https://www.cnbc.com/2026/08/21/tesla-recalls-cars-in-china-over-doorhandle-safety-driver-monitoring.html
+
+24
+00:04:39,112 --> 00:04:42,546
+ALEX: Margin pressure meets momentum. The market's not pricing that collision yet.
+
+25
+00:04:42,546 --> 00:04:46,552
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

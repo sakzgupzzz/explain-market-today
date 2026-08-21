@@ -1,0 +1,51 @@
+{
+  "date": "2026-08-21",
+  "mp3": "2026-08-21.mp3",
+  "size_bytes": 4844283,
+  "duration_sec": 302.34,
+  "turns": 25,
+  "words": 954,
+  "char_usage_estimate": 6176,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-08-21T21:44:01.001166Z",
+  "top_mover": {
+    "symbol": "TSLA",
+    "name": "TSLA",
+    "pct": 5.14
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7674.3701171875,
+        "pct": 0.43
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 53277.01171875,
+        "pct": 0.98
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26180.455078125,
+        "pct": 0.43
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 3017.870849609375,
+        "pct": 0.85
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 15.130000114440918,
+        "pct": -5.5
+      }
+    ]
+  }
+}
