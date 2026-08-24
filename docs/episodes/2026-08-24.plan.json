@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Trump threatens tariff hike on Canadian autos after Carney vows retaliation\u2014Ford's $3B bet just became a hostage situation."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.28%",
+      "Nasdaq -0.76%",
+      "Mastercard +3.31%",
+      "Tesla -3.83%"
+    ],
+    "macro_note": "Chip stocks bleeding, payment networks rallying\u2014tariff anxiety is reshuffling the deck."
+  },
+  "big_story": {
+    "story_id": "68751ea9f3bb",
+    "lead_host": "JAMIE",
+    "story_title": "US-Canada trade war escalates as Trump threatens tariff hike on autos after Carney vows to retaliate",
+    "angle": "This isn't posturing\u2014Ford's $3 billion Canadian manufacturing bet is now collateral damage in a real-time tariff escalation. What's the actual breaking point before auto supply chains crack?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "cb98fc94f5ce",
+      "lead_host": "MAYA",
+      "angle": "Trump bought SpaceX shares two weeks after the IPO\u2014the timing and scale matter for conflict-of-interest optics, not just the fact he owns it.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "6717947c0c70",
+      "lead_host": "ALEX",
+      "angle": "Zillow and Redfin settle FTC antitrust case\u2014the rental listings cartel is broken, but the real estate data moat just got smaller for both.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "a904e8d3a5d5",
+      "lead_host": "MAYA",
+      "angle": "Alabama investigating OpenAI for hacking Hugging Face\u2014the irony of an AI safety story that's actually about corporate espionage, not alignment.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "2211ddd6901e",
+      "lead_host": "ALEX",
+      "angle": "Trump admin's Iran sanctions plan signals China isn't exempt\u2014this is the real tariff escalation, not just auto posturing.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "f3eb7ab22979",
+    "joke_angle": "Videos of dangerous driving are 'easily found' on social media\u2014as if the algorithm is just casually recommending vehicular manslaughter compilations between cat videos."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Ford's $3 billion Canadian bet"
+  }
+}
