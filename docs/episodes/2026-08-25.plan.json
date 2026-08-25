@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "AMD just jumped 4.91% on a claim it can beat Nvidia at its own game\u2014but the real story is whether anyone actually believes it."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.32%",
+      "Nasdaq +0.66%",
+      "AMD +4.91%",
+      "XOM -2.08%",
+      "VIX down 2.52%"
+    ],
+    "macro_note": "Tech leading, energy bleeding on Iran pivot, volatility collapsing\u2014the market is pricing in a softer geopolitical backdrop."
+  },
+  "big_story": {
+    "story_id": "59a3e6ab7fcb",
+    "lead_host": "ALEX",
+    "story_title": "Why AMD can beat rivals Intel and Nvidia in the market for data-center CPUs",
+    "angle": "AMD's pitch is credible on paper but execution is the graveyard\u2014walk through the actual technical moat claim and whether the market is pricing in reality or hope.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "128238408e94",
+      "lead_host": "MAYA",
+      "angle": "Meta's 50% upside thesis hinges on an 'overlooked AI wild card'\u2014which is investor-speak for 'we don't know what it is yet but it sounds good.'",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "da4a6202f3ac",
+      "lead_host": "ALEX",
+      "angle": "Oil down 3% on U.S. shifting from strikes to sanctions on Iran\u2014markets are betting the admin just chose the slower, less explosive path to the same outcome.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "9dabcd41875d",
+      "lead_host": "MAYA",
+      "angle": "Dick's Sporting Goods stock craters 30% because footwear is 'challenging'\u2014which is retail code for 'we have no idea what people want to wear on their feet anymore.'",
+      "conviction": "real"
+    },
+    {
+      "story_id": "db57df46d789",
+      "lead_host": "JAMIE",
+      "angle": "Paramount CEO Ellison is stuck at the final hurdle on the WBD deal\u2014antitrust theater is now the only thing standing between him and a $15B bet.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "bd7664f1a88c",
+    "joke_angle": "Dolly Parton, one of the most singular performers in country music history, has died at 80\u2014and the internet will spend the next week discovering she was also a philanthropist, a businesswoman, and somehow more interesting than any of us."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "AMD's 4.91% jump and whether anyone actually believes it can beat Nvidia"
+  }
+}
