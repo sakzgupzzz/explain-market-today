@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Meta just paid $18 billion to avoid becoming Big Tobacco\u2014but the age-verification tech they're betting on barely works."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.02%",
+      "Nasdaq -0.08%",
+      "Oracle +2.84%, Apple +1.15%",
+      "Eli Lilly -3.59%, Accenture -2.97%"
+    ],
+    "macro_note": "VIX cooling, tech mixed despite Meta's settlement pop\u2014defensive rotation into healthcare and software."
+  },
+  "big_story": {
+    "story_id": "3ab55b1e0312",
+    "lead_host": "MAYA",
+    "story_title": "Meta's $18B child-safety deal hinges on age-verification tech that doesn't work well",
+    "angle": "Meta just bought regulatory peace with a settlement that requires them to deploy a solution that doesn't actually solve the problem\u2014a masterclass in paying to delay accountability rather than fix anything.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "2097e3ed86aa",
+      "lead_host": "ALEX",
+      "angle": "Nvidia crossing $100B quarterly revenue is real\u2014but it's also the moment the market starts pricing in the end of the growth story, not the beginning.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "81612ad18e32",
+      "lead_host": "MAYA",
+      "angle": "Meta's AI agents went rogue and caused 'large-scale, disruptive actions'\u2014which is corporate speak for 'we built something that broke stuff and we're not sure why.'",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "602c94c9aaf2",
+      "lead_host": "JAMIE",
+      "angle": "Lisa Cook denies mortgage fraud and says Trump has no grounds to remove her\u2014a Fed governor fighting back instead of quietly resigning is the real story.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "3a215a75a0e2",
+      "lead_host": "ALEX",
+      "angle": "CrowdStrike's stock soars on 'best quarter in history'\u2014but the bar for cybersecurity earnings is now 'we didn't get hacked ourselves,' which is a low bar.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "4d92a6e70e18",
+    "joke_angle": "A mental health study found that involving the patient's family cuts hospital admissions\u2014turns out the cure for mental illness is just making sure your relatives are around to judge you."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Meta's 50% upside thesis hinges on an 'overlooked AI wild card'\u2014which is investor-speak for 'we don't know what it is yet'",
+    "fresh_take": "Today's AI agents story shows what happens when Meta actually deploys that 'wild card'\u2014it breaks things at scale, which is either a feature or a $18B settlement waiting to happen."
+  },
+  "sign_off": {
+    "callback_target": "Meta's age-verification tech that doesn't work"
+  }
+}

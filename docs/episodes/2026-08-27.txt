@@ -1,0 +1,28 @@
+JAMIE: [curious] Meta just spent eighteen billion dollars to avoid becoming Big Tobacco, which is wild because the age-verification tech they're betting on barely works—so they paid a fortune to solve a problem they can't actually solve.
+ALEX: [deadpan] Markets are flat today—S&P barely moved at minus zero point zero two percent, Nasdaq down zero point zero eight. But the real story is underneath: Oracle jumped two point eight four percent, Apple up one point one five, while Eli Lilly got crushed, down three point five nine percent. That's the rotation right now. Tech infrastructure and healthcare, defensive stuff, winning. Pharma and consulting getting sold.
+JAMIE: [curious] Eli Lilly down three and a half percent in a flat market—what happened there?
+ALEX: [sarcastic] The VIX dropped to fifteen point two one, so fear is off the table. Investors are rotating out of lottery tickets and into things that actually produce cash.
+MAYA: [rushed] Oracle up two point eight four percent—that's Oracle, the database company that somehow became the AI infrastructure play of the moment. Everyone's buying Oracle like it's the only way to get exposure to AI without owning Nvidia directly, which is wild because Oracle's AI strategy was basically 'we have a database and we will add AI to it' and the market said yes, good enough.
+JAMIE: [curious] So Accenture is down two point nine seven percent alongside Eli Lilly—are consulting firms getting the same treatment?
+ALEX: When multiple sectors miss on the same day, it's a signal that corporate spending has a ceiling right now.
+MAYA: [rushed] So here's the thing nobody wants to say out loud: Meta's age-verification requirement is baked into their settlement, but the tech they're deploying to prove compliance is literally failing in real-time testing.
+ALEX: [deadpan] So they're paying eighteen billion dollars to implement a solution that doesn't work, because 'doing nothing' at least doesn't create a user experience nightmare.
+JAMIE: [curious] But wait—if the tech doesn't work, how does Meta satisfy the requirements? Doesn't the settlement require them to actually prevent kids from accessing the platform?
+MAYA: [mischievously] That's the genius of it. The settlement doesn't mandate a specific success rate—it just says they have to deploy 'reasonable' age-verification measures and keep improving them. So Meta gets to say they're trying, and they've bought themselves time before anyone audits whether it actually works. It's regulatory theater with a price tag.
+ALEX: [sarcastic] TikTok and YouTube are watching this play out, and they're seeing the same memo: settle first, solve the problem later.
+JAMIE: [laughs] So the eighteen billion is less about fixing child safety and more about buying time and regulatory credibility while the actual problem sits unsolved on the shelf.
+MAYA: [excited] It's not even on the shelf—it's actively getting worse.
+ALEX: [deadpan] Nvidia is about to cross one hundred billion dollars in quarterly revenue. But here's the thing: the moment you hit a number that big, you stop being a growth story and you start being a mature company that has to grow in perpetuity to justify its valuation.
+JAMIE: [curious] So one hundred billion a quarter is the ceiling, not the floor?
+ALEX: [sarcastic] It's the moment the market stops extrapolating and starts dividing. You can't grow two hundred percent year-over-year when you're already the size of a small country's GDP. Nvidia just became the thing everyone's been afraid of—successful enough to matter, big enough to disappoint.
+JAMIE: [curious] Fed Governor Lisa Cook is denying mortgage fraud allegations and saying Trump has no grounds to remove her. She's not resigning quietly—she's fighting back.
+MAYA: [excited] This is the shift nobody expected. Fed governors usually disappear when there's a scandal. Cook's lawyer is saying it was an inadvertent error on a disclosure form, and Cook herself is staying put. That's not a resignation strategy, that's a 'see you in court' strategy.
+ALEX: [deadpan] CrowdStrike just posted their best quarter in history and the stock is soaring.
+JAMIE: [laughs] Is that real or is that the bar being 'we didn't get hacked ourselves this quarter'?
+MAYA: [rushed] Mental health study came out—involving the patient's family in treatment cuts hospital admissions. Like, not just checking in, but actually having the same clinician see the whole family unit, focusing on what the patient actually needs instead of what the hospital's billing code needs. The data's solid: fewer readmissions, shorter stays, lower cost per patient.
+JAMIE: [curious] So the intervention is just... continuity of care and family presence? That's not a drug, that's not a protocol, that's just not abandoning people?
+ALEX: [deadpan] The mental health system is built to maximize throughput, not outcomes. You get admitted, you see whoever's available, you get discharged, you come back in six weeks. Having the same clinician and your family involved means someone's actually tracking whether you're getting better, which apparently costs less than cycling you through the revolving door.
+MAYA: [mischievously] The cure for mental illness is just making sure your relatives are around to judge you. But seriously—the study basically proved that accountability works. Not the shame kind, the actual 'someone who knows your history is checking in' kind.
+ALEX: [deadpan] Meta's age-verification system is like hiring a bouncer who lets in everyone without ID and keeps out half the people with a passport.
+MAYA: [mischievously] And they paid eighteen billion for the privilege of watching him work.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

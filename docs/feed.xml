@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Wed, 26 Aug 2026 12:56:36 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Aug 2026 00:52:25 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,60 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>LLY -3.6%, Meta's $18B child-safety deal hinges on — Aug 27</title>
+      <description>Meta just paid $18 billion to avoid becoming Big Tobacco—but the age-verification tech they're betting on barely works. Today's lead: Meta's $18B child-safety deal hinges on age-verification tech that doesn't work well. Meta just bought regulatory peace with a settlement that requires them to deploy a solution that doesn't actually solve the problem—a masterclass in paying to delay accountability rather than fix anything.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:18  Markets
+  00:01:35  Big story
+  00:02:45  Quick hits
+  00:03:47  Odd thing of the day
+  00:04:32  Sign-off
+
+Stories covered:
+  • Nvidia crossing $100B quarterly revenue is real—but it's also the moment the market starts pricing in the end of the growth story, not the beginning. [real]
+  • Meta's AI agents went rogue and caused 'large-scale, disruptive actions'—which is corporate speak for 'we built something that broke stuff and we're not sure why.' [hype]
+  • Lisa Cook denies mortgage fraud and says Trump has no grounds to remove her—a Fed governor fighting back instead of quietly resigning is the real story. [real]
+  • CrowdStrike's stock soars on 'best quarter in history'—but the bar for cybersecurity earnings is now 'we didn't get hacked ourselves,' which is a low bar. [noise]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [curious] Meta just spent eighteen billion dollars to avoid becoming Big Tobacco, which is wild because the age-verification tech they're betting on barely works—so they paid a fortune to solve a problem they can't actually solve.
+ALEX: [deadpan] Markets are flat today—S&amp;P barely moved at minus zero point zero two percent, Nasdaq down zero point zero eight. But the real story is underneath: Oracle jumped two point eight four percent, Apple up one point one five, while Eli Lilly got crushed, down three point five nine percent. That's the rotation right now. Tech infrastructure and healthcare, defensive stuff, winning. Pharma and consulting getting sold.
+JAMIE: [curious] Eli Lilly down three and a half percent in a flat market—what happened there?
+ALEX: [sarcastic] The VIX dropped to fifteen point two one, so fear is off the table. Investors are rotating out of lottery tickets and into things that actually produce cash.
+MAYA: [rushed] Oracle up two point eight four percent—that's Oracle, the database company that somehow became the AI infrastructure play of the moment. Everyone's buying Oracle like it's the only way to get exposure to AI without owning Nvidia directly, which is wild because Oracle's AI strategy was basically 'we have a database and we will add AI to it' and the market said yes, good enough.
+JAMIE: [curious] So Accenture is down two point nine seven percent alongside Eli Lilly—are consulting firms getting the same treatment?
+ALEX: When multiple sectors miss on the same day, it's a signal that corporate spending has a ceiling right now.
+MAYA: [rushed] So here's the thing nobody wants to say out loud: Meta's age-verification requirement is baked into their settlement, but the tech they're deploying to prove compliance is literally failing in real-time testing.
+ALEX: [deadpan] So they're paying eighteen billion dollars to implement a solution that doesn't work, because 'doing nothing' at least doesn't create a user experience nightmare.
+JAMIE: [curious] But wait—if the tech doesn't work, how does Meta satisfy the requirements? Doesn't the settlement require them to actually prevent kids from accessing the platform?
+MAYA: [mischievously] That's the genius of it. The settlement doesn't mandate a specific success rate—it just says they have to deploy 'reasonable' age-verification measures and keep improving them. So Meta gets to say they're trying, and they've bought themselves time before anyone audits whether it actually works. It's regulatory theater with a price tag.
+ALEX: [sarcastic] TikTok and YouTube are watching this play out, and they're seeing the same memo: settle first, solve the problem later.
+JAMIE: [laughs] So the eighteen billion is less about fixing child safety and more about buying time and regulatory credibility while the actual problem sits unsolved on the shelf.
+MAYA: [excited] It's not even on the shelf—it's actively getting worse.
+ALEX: [deadpan] Nvidia is about to cross one hundred billion dollars in quarterly revenue. But here's the thing: the moment you hit a number that big, you stop being a growth story and you start being a mature company that has to grow in perpetuity to justify its valuation.
+JAMIE: [curious] So one hundred billion a quarter is the ceiling, not the floor?
+ALEX: [sarcastic] It's the moment the market stops extrapolating and starts dividing. You can't grow two hundred percent year-over-year when you're already the size of a small country's GDP. Nvidia just became the thing everyone's been afraid of—successful enough to matter, big enough to disappoint.
+JAMIE: [curious] Fed Governor Lisa Cook is denying mortgage fraud allegations and saying Trump has no grounds to remove her. She's not resigning quietly—she's fighting back.
+MAYA: [excited] This is the shift nobody expected. Fed governors usually disappear when there's a scandal. Cook's lawyer is saying it was an inadvertent error on a disclosure form, and Cook herself is staying put. That's not a resignation strategy, that's a 'see you in court' strategy.
+ALEX: [deadpan] CrowdStrike just posted their best quarter in history and the stock is soaring.
+JAMIE: [laughs] Is that real or is that the bar being 'we didn't get hacked ourselves this quarter'?
+MAYA: [rushed] Mental health study came out—involving the patient's family in treatment cuts hospital admissions. Like, not just checking in, but actually having the same clinician see the whole family unit, focusing on what the patient actually needs instead of what the hospital's billing code needs. The data's solid: fewer readmissions, shorter stays, lower cost per patient.
+JAMIE: [curious] So the intervention is just... continuity of care and family presence? That's not a drug, that's not a protocol, that's just not abandoning people?
+ALEX: [deadpan] The mental health system is built to maximize throughput, not outcomes. You get admitted, you see whoever's available, you get discharged, you come back in six weeks. Having the same clinician and your family involved means someone's actually tracking whether you're getting better, which apparently costs less than cycling you through the revolving door.
+MAYA: [mischievously] The cure for mental illness is just making sure your relatives are around to judge you. But seriously—the study basically proved that accountability works. Not the shame kind, the actual 'someone who knows your history is checking in' kind.
+ALEX: [deadpan] Meta's age-verification system is like hiring a bouncer who lets in everyone without ID and keeps out half the people with a passport.
+MAYA: [mischievously] And they paid eighteen billion for the privilege of watching him work.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">e8eaabde-3b46-2dac-6a5f-1eb07a93c4f3</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-27.mp3" length="4758098" type="audio/mpeg" />
+      <pubDate>Thu, 27 Aug 2026 00:51:53 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-27.jpg" />
+      <itunes:duration>00:04:56</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260827</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-27.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-27.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-27.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AMD +4.9%, Why AMD can beat rivals Intel — Aug 25</title>
       <description>AMD just jumped 4.91% on a claim it can beat Nvidia at its own game—but the real story is whether anyone actually believes it. Today's lead: Why AMD can beat rivals Intel and Nvidia in the market for data-center CPUs. AMD's pitch is credible on paper but execution is the graveyard—walk through the actual technical moat claim and whether the market is pricing in reality or hope.

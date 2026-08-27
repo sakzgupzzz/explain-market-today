@@ -1,0 +1,115 @@
+1
+00:00:06,988 --> 00:00:18,192
+JAMIE: Meta just spent eighteen billion dollars to avoid becoming Big Tobacco, which is wild because the age-verification tech they're betting on barely works—so they paid a fortune to solve a problem they can't actually solve.
+
+2
+00:00:18,192 --> 00:00:39,043
+ALEX: Markets are flat today—S&P barely moved at minus zero point zero two percent, Nasdaq down zero point zero eight. But the real story is underneath: Oracle jumped two point eight four percent, Apple up one point one five, while Eli Lilly got crushed, down three point five nine percent. That's the rotation right now. Tech infrastructure and healthcare, defensive stuff, winning. Pharma and consulting getting sold.
+
+3
+00:00:39,043 --> 00:00:43,712
+JAMIE: Eli Lilly down three and a half percent in a flat market—what happened there?
+
+4
+00:00:43,712 --> 00:00:52,737
+ALEX: The VIX dropped to fifteen point two one, so fear is off the table. Investors are rotating out of lottery tickets and into things that actually produce cash.
+
+5
+00:00:52,737 --> 00:01:13,277
+MAYA: Oracle up two point eight four percent—that's Oracle, the database company that somehow became the AI infrastructure play of the moment. Everyone's buying Oracle like it's the only way to get exposure to AI without owning Nvidia directly, which is wild because Oracle's AI strategy was basically 'we have a database and we will add AI to it' and the market said yes, good enough.
+
+6
+00:01:13,277 --> 00:01:19,190
+JAMIE: So Accenture is down two point nine seven percent alongside Eli Lilly—are consulting firms getting the same treatment?
+
+7
+00:01:19,190 --> 00:01:25,103
+ALEX: When multiple sectors miss on the same day, it's a signal that corporate spending has a ceiling right now.
+
+8
+00:01:25,103 --> 00:01:35,374
+MAYA: So here's the thing nobody wants to say out loud: Meta's age-verification requirement is baked into their settlement, but the tech they're deploying to prove compliance is literally failing in real-time testing.
+
+9
+00:01:35,374 --> 00:01:43,154
+ALEX: So they're paying eighteen billion dollars to implement a solution that doesn't work, because 'doing nothing' at least doesn't create a user experience nightmare.
+
+10
+00:01:43,154 --> 00:01:51,246
+JAMIE: But wait—if the tech doesn't work, how does Meta satisfy the requirements? Doesn't the settlement require them to actually prevent kids from accessing the platform?
+
+11
+00:01:51,246 --> 00:02:07,740
+MAYA: That's the genius of it. The settlement doesn't mandate a specific success rate—it just says they have to deploy 'reasonable' age-verification measures and keep improving them. So Meta gets to say they're trying, and they've bought themselves time before anyone audits whether it actually works. It's regulatory theater with a price tag.
+
+12
+00:02:07,740 --> 00:02:14,276
+ALEX: TikTok and YouTube are watching this play out, and they're seeing the same memo: settle first, solve the problem later.
+
+13
+00:02:14,276 --> 00:02:22,990
+JAMIE: So the eighteen billion is less about fixing child safety and more about buying time and regulatory credibility while the actual problem sits unsolved on the shelf.
+
+14
+00:02:22,990 --> 00:02:26,102
+MAYA: It's not even on the shelf—it's actively getting worse.
+
+15
+00:02:26,102 --> 00:02:41,040
+ALEX: Nvidia is about to cross one hundred billion dollars in quarterly revenue. But here's the thing: the moment you hit a number that big, you stop being a growth story and you start being a mature company that has to grow in perpetuity to justify its valuation.
+  ↳ source: https://www.theverge.com/tech/985387/nvidia-hundred-billion-dollar-quarterly-revenue
+
+16
+00:02:41,040 --> 00:02:45,086
+JAMIE: So one hundred billion a quarter is the ceiling, not the floor?
+
+17
+00:02:45,086 --> 00:02:58,780
+ALEX: It's the moment the market stops extrapolating and starts dividing. You can't grow two hundred percent year-over-year when you're already the size of a small country's GDP. Nvidia just became the thing everyone's been afraid of—successful enough to matter, big enough to disappoint.
+
+18
+00:02:58,780 --> 00:03:06,560
+JAMIE: Fed Governor Lisa Cook is denying mortgage fraud allegations and saying Trump has no grounds to remove her. She's not resigning quietly—she's fighting back.
+  ↳ source: https://www.marketwatch.com/story/feds-lisa-cook-denies-committing-mortgage-fraud-says-trump-has-no-grounds-to-remove-her-from-office-4ea60c9d?mod=mw_rss_topstories
+
+19
+00:03:06,560 --> 00:03:20,876
+MAYA: This is the shift nobody expected. Fed governors usually disappear when there's a scandal. Cook's lawyer is saying it was an inadvertent error on a disclosure form, and Cook herself is staying put. That's not a resignation strategy, that's a 'see you in court' strategy.
+
+20
+00:03:20,876 --> 00:03:25,233
+ALEX: CrowdStrike just posted their best quarter in history and the stock is soaring.
+  ↳ source: https://www.marketwatch.com/story/crowdstrikes-stock-soars-after-ai-fuels-the-cybersecurity-companys-best-quarter-ever-6aeae1d5?mod=mw_rss_topstories
+
+21
+00:03:25,233 --> 00:03:30,524
+JAMIE: Is that real or is that the bar being 'we didn't get hacked ourselves this quarter'?
+
+22
+00:03:30,524 --> 00:03:47,952
+MAYA: Mental health study came out—involving the patient's family in treatment cuts hospital admissions. Like, not just checking in, but actually having the same clinician see the whole family unit, focusing on what the patient actually needs instead of what the hospital's billing code needs. The data's solid: fewer readmissions, shorter stays, lower cost per patient.
+  ↳ source: https://www.bbc.co.uk/news/articles/cvgydk0vvpyo?at_medium=RSS&at_campaign=rss
+
+23
+00:03:47,952 --> 00:03:55,732
+JAMIE: So the intervention is just... continuity of care and family presence? That's not a drug, that's not a protocol, that's just not abandoning people?
+
+24
+00:03:55,732 --> 00:04:12,849
+ALEX: The mental health system is built to maximize throughput, not outcomes. You get admitted, you see whoever's available, you get discharged, you come back in six weeks. Having the same clinician and your family involved means someone's actually tracking whether you're getting better, which apparently costs less than cycling you through the revolving door.
+
+25
+00:04:12,849 --> 00:04:25,298
+MAYA: The cure for mental illness is just making sure your relatives are around to judge you. But seriously—the study basically proved that accountability works. Not the shame kind, the actual 'someone who knows your history is checking in' kind.
+
+26
+00:04:25,298 --> 00:04:32,767
+ALEX: Meta's age-verification system is like hiring a bouncer who lets in everyone without ID and keeps out half the people with a passport.
+
+27
+00:04:32,767 --> 00:04:36,813
+MAYA: And they paid eighteen billion for the privilege of watching him work.
+
+28
+00:04:36,813 --> 00:04:41,170
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
