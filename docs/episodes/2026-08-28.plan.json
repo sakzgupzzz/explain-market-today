@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Salesforce just jumped 22.5%\u2014and it's not because they finally fixed their UI."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.72%",
+      "Nasdaq +1.57%",
+      "CRM +22.58%",
+      "VIX -4.60%"
+    ],
+    "macro_note": "Risk-on day: equities climb, volatility collapses, software sector leads the charge."
+  },
+  "big_story": {
+    "story_id": "fbf2d3f7cb4b",
+    "lead_host": "ALEX",
+    "story_title": "Salesforce's stock rockets 20% and gives the software sector a major lift",
+    "angle": "Salesforce's earnings beat isn't just a single-stock pop\u2014it's a signal that enterprise software is finally escaping the AI-hype-without-revenue trap and actually printing money again. What changed, and does it hold?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "c774df466d32",
+      "lead_host": "MAYA",
+      "angle": "Nvidia hitting $1T annual revenue isn't a forecast\u2014it's a bet that AI capex never stops accelerating, which is either visionary or the most expensive assumption in markets.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "4bba3e825fa9",
+      "lead_host": "JAMIE",
+      "angle": "Both parties are squeezing local TV stations on ad rates, which means the real loser isn't the networks\u2014it's the local news that can't afford to exist anymore.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "5aa4eb4577e4",
+      "lead_host": "ALEX",
+      "angle": "CrowdStrike's stock jumps after record earnings\u2014a year after the outage that crashed the world. Market memory is shorter than a security patch cycle.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "7eb0d52277ac",
+      "lead_host": "MAYA",
+      "angle": "Meta's fixing the 'pervert glasses' reputation with privacy features, which is like a casino installing better locks on the bathroom\u2014the core business model hasn't changed.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "d82e020891c3",
+    "joke_angle": "DeepSeek's founder is navigating China's IPO market while running a quant empire\u2014basically trying to go public while the government is still deciding if you're allowed to exist."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Meta's $18B child-safety deal hinges on age-verification tech that doesn't work well",
+    "fresh_take": "Today Meta's rolling out privacy fixes for the glasses themselves, but yesterday's settlement tech problem is still unsolved\u2014they're treating the symptom, not the disease."
+  },
+  "sign_off": {
+    "callback_target": "Salesforce's 22.5% jump"
+  }
+}

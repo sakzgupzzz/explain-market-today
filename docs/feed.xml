@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Aug 2026 00:52:25 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Aug 2026 05:31:48 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,65 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>CRM +22.6%, Salesforce's stock rockets 20% and gives — Aug 28</title>
+      <description>Salesforce just jumped 22.5%—and it's not because they finally fixed their UI. Today's lead: Salesforce's stock rockets 20% and gives the software sector a major lift. Salesforce's earnings beat isn't just a single-stock pop—it's a signal that enterprise software is finally escaping the AI-hype-without-revenue trap and actually printing money again. What changed, and does it hold?.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:14  Markets
+  00:02:44  Big story
+  00:05:02  Quick hits
+  00:06:26  Odd thing of the day
+  00:07:30  Sign-off
+
+Stories covered:
+  • Nvidia hitting $1T annual revenue isn't a forecast—it's a bet that AI capex never stops accelerating, which is either visionary or the most expensive assumption in markets. [hype]
+  • Both parties are squeezing local TV stations on ad rates, which means the real loser isn't the networks—it's the local news that can't afford to exist anymore. [real]
+  • CrowdStrike's stock jumps after record earnings—a year after the outage that crashed the world. Market memory is shorter than a security patch cycle. [real]
+  • Meta's fixing the 'pervert glasses' reputation with privacy features, which is like a casino installing better locks on the bathroom—the core business model hasn't changed. [noise]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] Salesforce stock just vaulted 22 point five percent this morning—turns out the secret to enterprise software success is pretending Marc Benioff was never CEO.
+MAYA: [mischievously] So Meta's out here shipping privacy controls for Ray-Bans today, which is hilarious timing—yesterday they settled an eighteen-billion-dollar lawsuit because their age-verification tech can't tell a twelve-year-old from a twenty-year-old, and now they're like, 'Here, have better controls on what your glasses record.' It's like getting sued for a broken seatbelt, paying a fortune, then installing a cup holder and calling it a safety upgrade. The glasses aren't the problem; the company that's supposed to keep kids off the platform is. TikTok's already banned in some states for this exact issue, and Meta just committed to a tech solution they know doesn't work.
+ALEX: [deadpan] S&amp;P up zero point seven two percent, Nasdaq up one point five seven—software is having a day. Salesforce alone is up twenty-two point five eight percent. Adobe's up five point seven three. Broadcom up four point four nine. Meanwhile the VIX dropped four point six zero, which means nobody's worried about anything anymore.
+JAMIE: [curious] Hold on—the VIX is collapsing and Salesforce is exploding on the same day we just watched Marc Benioff get air-gapped out of the company narrative. Is the market just relieved he's not there anymore, or is this actually about something else?
+ALEX: [sarcastic] Risk-on. Rates are up seventeen basis points on the ten-year, so the bond market's not panicking. The dollar's basically flat. Gold's up half a percent. Bitcoin's up zero point seven. The entire tone is 'money's flowing back into equities, especially tech.' Salesforce got caught up in that tide, but the real story is Nvidia—up eight point seven four percent. That's the actual gravity well today.
+MAYA: [rushed] So we've got losers too though—Netflix down one point nine nine, Disney down two point five six, McDonald's down two point five seven, Costco down two point two four. These aren't small moves. It's like the market looked at mega-cap consumer stocks and went 'actually, no, we're done with you right now.' What's the thread there?
+ALEX: Rotation. When the VIX dies that fast and software stocks surge, it's because money that was hiding in defensive positions is sprinting toward growth. Disney, Netflix, Costco—those are the 'if the world ends I still own this' trades. Today the world's not ending, so that capital is hunting for returns instead. It's not that these companies got worse; it's that the risk-reward calculation flipped.
+JAMIE: [laughs] So the market just decided—in one morning—that fear is off the menu and we're back to chasing the thing that goes up fastest. Which, given that we're rewarding Salesforce for successfully erasing its own CEO from the historical record, is sending a very specific message about what investors think drives value.
+ALEX: [deadpan] Here's the thing that actually matters: Salesforce's operating margin just hit thirty-one percent. That's up from twenty-six point five percent a year ago. They're not just selling more software—they're keeping more of it, which means they've finally cracked the math on AI. They're embedding it into their platform without it cannibalizing their core revenue model.
+MAYA: [rushed] Wait, so they're making AI work inside their product instead of having to rebuild from scratch like every other company? That's actually the boring answer, isn't it?
+ALEX: [sarcastic] It is. And that's why the stock jumped. The market spent two years convinced that ChatGPT was going to evaporate every software vendor that didn't reinvent itself overnight. Salesforce just proved that's not how enterprise software works. You don't need to burn down your customer base and rebuild. You bolt AI onto what already makes money.
+JAMIE: [curious] But that means every other legacy software company should see this as permission to stop panicking. SAP, Oracle, ServiceNow—they all have the same playbook now. Why isn't the whole sector up twenty percent?
+MAYA: [excited] Because Salesforce's guidance for next quarter is twelve to thirteen percent revenue growth, and they're saying AI is actually driving net new customer wins, not just upsells to existing ones. That's the part nobody expected. Everyone thought AI would be a feature that existing customers get for free. Salesforce is selling it as a reason to sign new deals.
+ALEX: Which means the partnerships with the big model operators—they mentioned working closer with OpenAI and others—those aren't just PR. They're actual distribution channels. Salesforce becomes the enterprise wrapper that makes ChatGPT useful to a corporation, and that's a defensible moat.
+JAMIE: [laughs] So the real story isn't that Salesforce is winning—it's that the whole 'software is dead, AI is eating the world' narrative was written by people who'd never actually sold software to a Fortune Five Hundred company. Those places don't rip and replace. They integrate.
+MAYA: [rushed] Nvidia just hit a trillion-dollar annual revenue run rate—one analyst is now saying they could actually get there, which is either the most bullish call on AI infrastructure spending or the most expensive assumption that capex budgets never learn to say no.
+ALEX: [deadpan] The math is simple: they're at nine hundred and twenty-six billion right now, growing at forty-one percent year-over-year. If that holds, they hit it in Q4. If it doesn't, they don't. The analyst is betting that every Fortune Five Hundred company, every government, every startup that touches AI decides that this is the year they finally stop deferring the capex and just commit.
+JAMIE: [curious] But the growth rate has to stay at forty-one percent for that to work, right? Or does it slow to thirty, and then what—do we all pretend the trillion-dollar moment still matters?
+MAYA: [mischievously] It's the difference between 'we're in a genuine cycle where compute is the bottleneck and everyone's willing to pay' and 'we've already priced in two years of growth and now we're just waiting for the bill to come due.' The stock's acting like the first one is true.
+JAMIE: [excited] National Democrats and Republicans are both squeezing local TV stations over ad rates right now—there's a federal court ruling that's opened the door, and both parties are pulling in opposite directions to get what they want.
+ALEX: [sarcastic] The real casualty here isn't the networks—it's local news. If national campaigns are demanding lower rates and local stations can't raise rates elsewhere to compensate, the budget for actual reporting in your city gets thinner. You end up with fewer reporters, less investigation, more wire copy. The political machine gets cheaper ad placement, and your town's accountability infrastructure just evaporates.
+JAMIE: [laughs] So both sides are essentially competing to make local journalism unprofitable. That's the kind of bipartisan agreement nobody celebrates.
+ALEX: [deadpan] CrowdStrike posted record earnings this quarter, and Wall Street's raising price targets across the board. This is the same company that crashed the entire Windows ecosystem fourteen months ago.
+MAYA: [excited] But they also have a hundred and twenty-nine thousand customers now, up from ninety-six thousand a year ago, and they're signing enterprise deals faster than they can patch their code. The market's decided the outage was a feature—proof that everyone needs them.
+JAMIE: [curious] So they caused a global incident and got more customers out of it. That's a business model that breaks every rule I thought I understood.
+MAYA: [rushed] Meta's pushing privacy controls on Ray-Ban glasses now—you can cover the LED and it stops recording, which is their answer to the 'pervert glasses' headline from last week. But the core thing hasn't changed: they're still selling a surveillance device with a better camera than a phone, and now they're just making sure you know when it's watching.
+ALEX: [sighs] That's the beat.
+MAYA: [rushed] DeepSeek's founder is trying to take his quant empire public right now while also running the AI company that just made everyone panic about Chinese AI catching up. High-Flyer Quant is pushing into IPOs across China's market, which sounds great until you remember that China's IPO window opens and closes based on whatever the government decides on a Tuesday morning.
+ALEX: [deadpan] The timing's the actual problem. DeepSeek got global attention because their model costs way less to run than OpenAI's, which made Western investors nervous and Chinese regulators attentive. Now the founder's trying to raise capital for High-Flyer Quant while the government's still figuring out whether AI companies are strategic assets or a regulatory headache. It's like applying for a mortgage while the bank's deciding if mortgages are legal.
+JAMIE: [laughs] So he's got one foot in the global AI arms race and one foot in a domestic capital market that could freeze overnight. And the only way to fix that is to go public in the exact moment when going public might make the government decide you're too important to let private investors touch.
+MAYA: [rushed] Salesforce went from 'the CEO's company' to 'the company that works' in one earnings call. That's the speed of institutional amnesia.
+ALEX: [deadpan] Wall Street rewrites the founding narrative the moment the balance sheet improves.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">e44d0bb6-230d-3abb-a123-49d4934278de</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-28.mp3" length="7594277" type="audio/mpeg" />
+      <pubDate>Fri, 28 Aug 2026 05:31:12 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-28.jpg" />
+      <itunes:duration>00:07:54</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260828</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-28.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-28.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-08-28.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>LLY -3.6%, Meta's $18B child-safety deal hinges on — Aug 27</title>
       <description>Meta just paid $18 billion to avoid becoming Big Tobacco—but the age-verification tech they're betting on barely works. Today's lead: Meta's $18B child-safety deal hinges on age-verification tech that doesn't work well. Meta just bought regulatory peace with a settlement that requires them to deploy a solution that doesn't actually solve the problem—a masterclass in paying to delay accountability rather than fix anything.
