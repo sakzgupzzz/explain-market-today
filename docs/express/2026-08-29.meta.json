@@ -1,0 +1,51 @@
+{
+  "date": "2026-08-29",
+  "mp3": "2026-08-29.mp3",
+  "size_bytes": 1456631,
+  "duration_sec": 91.01,
+  "turns": 9,
+  "words": 221,
+  "char_usage_estimate": 1422,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-08-29T03:17:40.320276Z",
+  "top_mover": {
+    "symbol": "NVDA",
+    "name": "NVDA",
+    "pct": -4.57
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7711.759765625,
+        "pct": -0.25
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 53560.0,
+        "pct": -0.02
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 26402.423828125,
+        "pct": -0.52
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2972.3701171875,
+        "pct": -1.39
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 14.430000305175781,
+        "pct": -0.55
+      }
+    ]
+  }
+}

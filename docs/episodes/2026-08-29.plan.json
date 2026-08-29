@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Kevin Warsh just told Jackson Hole the Fed might have more rate hikes coming\u2014and the bond market actually believed him."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.25%",
+      "Nasdaq -0.52%",
+      "NVDA -4.57%",
+      "AMZN +3.97%"
+    ],
+    "macro_note": "Tech selling into Fed hawkishness; mega-cap resilience masking breadth weakness; Russell 2000 down 1.39%."
+  },
+  "big_story": {
+    "story_id": "01f33d62bd9d",
+    "lead_host": "ALEX",
+    "story_title": "Analysis: Kevin Warsh sharpens inflation warning at Jackson Hole, signaling possible rate hike",
+    "angle": "Warsh is the only Fed voice with real credibility on inflation right now\u2014and he just signaled the hiking cycle isn't over, which means the bond market's 'soft landing' narrative is about to get tested hard.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "06ed28a19495",
+      "lead_host": "MAYA",
+      "angle": "Open-weight AI models are becoming the new acquisition currency\u2014startups that can't compete on closed-source scale are getting bought for their weights, not their revenue.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "3ba2667ddc79",
+      "lead_host": "ALEX",
+      "angle": "Oil futures fell because Persian Gulf exports recovered to two-thirds pre-war levels\u2014the US-Iran conflict is already pricing in a ceiling, not a floor.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "2c258a6f179a",
+      "lead_host": "JAMIE",
+      "angle": "Trump's bid to move the New York hush money case to federal court just got rejected\u2014state courts are holding the line.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "f3b12a8c0631",
+      "lead_host": "MAYA",
+      "angle": "Trump claims a deal to control Venezuela's 65 billion barrel oil reserve\u2014if true, it's a geopolitical wildcard; if not, it's theater.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "f708c4e24442",
+    "joke_angle": "Sweetcorn ice cream is the 'swavoury' trend taking over\u2014which means someone finally cracked the code on how to make dessert taste like a failed harvest."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Kevin Warsh's credibility on inflation"
+  }
+}

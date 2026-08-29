@@ -1,0 +1,127 @@
+1
+00:00:06,988 --> 00:00:19,328
+JAMIE: Kevin Warsh just told Jackson Hole the Fed might hike rates again, and the bond market responded by going, 'Yeah, sure, we believe you this time,' which is wild because that same market spent six months betting he was lying.
+  ↳ source: https://www.marketwatch.com/story/kevin-warsh-gets-what-every-fed-chair-hopes-for-a-bond-market-that-trust-his-words-5103dad5?mod=mw_rss_topstories
+
+2
+00:00:19,328 --> 00:00:39,493
+ALEX: Tech is getting hammered into the Fed's new hawkishness. Nvidia down four point five-seven percent, AMD down two point three-three, and the Nasdaq overall off zero point five-two. But here's the asymmetry: Amazon up three point nine-seven, Netflix up two point three-five, Google up one point seven-four. So you've got this weird split where the chip makers are bleeding and the big narrative plays are rallying.
+
+3
+00:00:39,493 --> 00:00:49,726
+JAMIE: Wait—so the market's saying 'rate hikes are coming' and the response from the mega-caps is 'yeah, but have you *seen* our ad networks?' That's not confidence, that's just a different kind of hedging.
+
+4
+00:00:49,726 --> 00:01:06,580
+MAYA: It's like the market's built a lifeboat out of streaming subscriptions and cloud advertising, and everyone else is swimming. The Russell 2000 is down one point three-nine percent—that's your actual breadth problem right there. Small caps are drowning while the seven Magnificent stocks are throwing them a rope made of cash flow and market cap.
+  ↳ source: https://www.bbc.co.uk/news/articles/cj06jgq62v9o?at_medium=RSS&at_campaign=rss
+
+5
+00:01:06,580 --> 00:01:22,531
+ALEX: The dollar's up zero point five-two percent, gold's down two point two-nine, Bitcoin down three point one-nine. When you've got that rotation—away from hedges, toward the currency itself—it tells you the market's pricing in real rate duration now, not just theater. Kevin Warsh said 'hike,' and suddenly the bond market's actually listening.
+  ↳ source: https://www.marketwatch.com/story/kevin-warsh-gets-what-every-fed-chair-hopes-for-a-bond-market-that-trust-his-words-5103dad5?mod=mw_rss_topstories
+
+6
+00:01:22,531 --> 00:01:30,658
+JAMIE: So the lifeboat metaphor was right, except now we know the rope's attached to the dollar, not the companies. That's a much worse metaphor in hindsight.
+
+7
+00:01:30,658 --> 00:01:51,726
+ALEX: The thing that makes Warsh different from the rest of the Fed right now is he's actually been right about inflation. He called the persistence problem in late twenty-twenty-three when Powell was still talking transitory, and he's maintained that view. So when he steps up at Jackson Hole and says the hiking cycle might not be finished, the market has to take it seriously—because he's got a track record.
+
+8
+00:01:51,726 --> 00:02:06,473
+MAYA: But here's what's wild: the market's been pricing in rate cuts by spring. Literally betting that the Fed chickens out. And Warsh just showed up and said, 'No, we might be going the other direction.' That's not a small recalibration—that's the entire soft-landing thesis getting its tires slashed.
+
+9
+00:02:06,473 --> 00:02:18,813
+JAMIE: So the bond market's been running on this assumption that inflation's solved, and Warsh is like, 'Yeah, about that—what if it's not?' And because he's the Fed governor people actually listen to, suddenly everyone has to rethink their whole playbook.
+
+10
+00:02:18,813 --> 00:02:32,055
+ALEX: The two-year yield jumped twenty-two basis points after his remarks. That's not a twitch—that's a repricing of near-term rate expectations. Warsh's credibility on inflation means the market's now treating his Jackson Hole speech like it's the actual Fed guidance, not just one guy's opinion.
+
+11
+00:02:32,055 --> 00:02:49,813
+MAYA: And the cruel part? The mega-cap stocks that rallied today because they thought rates were done—they're the ones most exposed to the opposite outcome. Amazon and Netflix are priced for a world where the Fed's done tightening and growth comes roaring back. If Warsh is right and we're hiking again, that narrative collapses faster than it built up.
+
+12
+00:02:49,813 --> 00:02:59,444
+JAMIE: So the lifeboat we talked about earlier? The one made of streaming and ads? Warsh just poked a hole in it, and the market's only now realizing the water's coming in.
+
+13
+00:02:59,444 --> 00:03:09,677
+MAYA: Open-weight AI is now the acquisition currency of the Valley. Startups with no revenue path are getting bought for their model weights—the actual code, not the company. It's pure commoditization of the research.
+  ↳ source: https://techcrunch.com/2026/08/28/open-weight-ai-companies-are-the-valleys-hottest-acquisition-targets/
+
+14
+00:03:09,677 --> 00:03:19,007
+ALEX: So the business model is 'we built something and gave it away for free, and that made us worth acquiring.' That's like being hired because you're really good at quitting.
+
+15
+00:03:19,007 --> 00:03:27,735
+MAYA: Except the acquirers are the Metas and the Microsofts—they're buying the weights because they can't build them at scale. It's not a pivot, it's a surrender. Closed-source lost.
+
+16
+00:03:27,735 --> 00:03:37,366
+ALEX: Oil futures fell because Persian Gulf exports just recovered to two-thirds of their pre-war levels. The market's pricing in that the conflict has a ceiling, not a floor—supply's coming back online.
+
+17
+00:03:37,366 --> 00:03:45,492
+JAMIE: So all that risk premium we priced in when the conflict started—that's evaporating because the actual damage to infrastructure was less catastrophic than the headlines suggested?
+
+18
+00:03:45,492 --> 00:03:56,327
+ALEX: Exactly. The market bet on a supply shock that didn't materialize. Two-thirds recovery means the worst-case scenario already priced in was wrong. Futures don't care about the geopolitical drama—they care about barrels in the water.
+
+19
+00:03:56,327 --> 00:04:04,453
+JAMIE: Trump's bid to move the New York hush money case to federal court just got rejected. State courts are holding the line—the case stays in Manhattan.
+
+20
+00:04:04,453 --> 00:04:14,084
+MAYA: So the 'I'm the president, this is federal' argument didn't work. Judge just said, 'No, this is about conduct from before you were president—state's got jurisdiction,' and that door closed hard.
+
+21
+00:04:14,084 --> 00:04:25,521
+JAMIE: Trump claims the U.S. just struck a deal with Venezuela to take majority control of their sixty-five billion barrel oil reserve. If that's real, it's a geopolitical earthquake. If it's not, it's just noise on a Tuesday.
+
+22
+00:04:25,521 --> 00:04:38,162
+MAYA: Here's the thing—Venezuela's been sanctioned into the ground, Maduro's regime is isolated, and suddenly there's a deal to hand over their entire strategic reserve? That doesn't pass the sniff test unless something massive just shifted behind closed doors. Or it's theater.
+
+23
+00:04:38,162 --> 00:04:50,201
+ALEX: The oil market hasn't moved on it, which tells you traders don't believe it. If the U.S. actually controlled sixty-five billion barrels, oil futures would crater. They haven't. So either the deal's fake or it's so conditional it's meaningless.
+
+24
+00:04:50,201 --> 00:04:58,026
+JAMIE: So we're watching to see if this actually materializes into signed documents, or if it stays a social media claim that vanishes by next week.
+
+25
+00:04:58,026 --> 00:05:08,861
+MAYA: Sweetcorn ice cream is now a legitimate trend in the UK. We're talking corn-flavored gelato, sweetcorn and mascarpone pastries, corn lattes—the whole savory-sweet playbook, except corn is the lead ingredient and nobody's apologizing for it.
+
+26
+00:05:08,861 --> 00:05:23,307
+JAMIE: Wait, so this is the same sweetcorn that sits next to the hot dog roller at a gas station, and now it's getting the artisanal treatment? Who looked at corn season ending and thought, 'I know what this needs—to be frozen and served at a dessert shop'?
+
+27
+00:05:23,307 --> 00:05:36,851
+ALEX: It's the natural end state of the trend cycle. Avocado toast exhausted itself, matcha lattes got boring, and oat milk hit saturation. The algorithm needs something new to feed, so someone in London put sweetcorn in a churner and suddenly it's a lifestyle choice.
+
+28
+00:05:36,851 --> 00:05:52,501
+MAYA: The genius part is the branding—they call it 'swavoury,' which is just 'savory' spelled by someone who got tired halfway through and decided it was a marketing hook. And it worked. People are posting it. Sweetcorn ice cream tastes like a corn cob learned to be dessert and nailed the interview.
+
+29
+00:05:52,501 --> 00:05:59,123
+ALEX: Warsh walked into Jackson Hole with a track record, and the bond market finally decided to listen instead of scroll past.
+
+30
+00:05:59,123 --> 00:06:03,938
+MAYA: Which means the mega-cap lifeboat's got a real leak now, not just a theoretical one.
+
+31
+00:06:03,938 --> 00:06:08,152
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
