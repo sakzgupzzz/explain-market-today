@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Tesla up 4.94% while the rest of the market flatlines\u2014and it's not about cars anymore."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.52%",
+      "Nasdaq -0.49%",
+      "Tesla +4.94%",
+      "Amazon -2.95%",
+      "VIX +4.78%"
+    ],
+    "macro_note": "Rates creeping higher, oil pushing mortgage costs up, equity breadth deteriorating while mega-cap tech sells off."
+  },
+  "big_story": {
+    "story_id": "be8ef91d8438",
+    "lead_host": "ALEX",
+    "story_title": "Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up",
+    "angle": "Mortgage rates are now a geopolitical hostage\u2014every time the Middle East sneezes, your 30-year fixed gets more expensive. This is the hidden tax on the housing market that nobody talks about until it's too late.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "e3ef30b2f789",
+      "lead_host": "ALEX",
+      "angle": "Meta's valuation has compressed so much that analysts are now betting on a Google-style re-rating\u2014the market is pricing in zero upside, which is exactly when the upside shows up.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "91275750e084",
+      "lead_host": "ALEX",
+      "angle": "Retailers are treating tariff refunds like a choose-your-own-adventure book\u2014some pass it to consumers, some pocket it, some pretend it never happened. Earnings will tell you which ones are lying.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "7339a5076892",
+      "lead_host": "MAYA",
+      "angle": "Car owners want tech that doesn't spy on them, doesn't nag them, and doesn't require a software update to turn on the windshield wipers\u2014basically, they want a car, not a subscription service with wheels.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "1f2989003d82",
+      "lead_host": "MAYA",
+      "angle": "McKesson data breach: millions of patient records stolen, and the healthcare industry's response will be a strongly-worded statement and a $50 credit to your HSA.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "f6fb3535f888",
+    "joke_angle": "Harvard Law dropout raises $6M to build 'Harvey for police officers'\u2014so we're now AI-enabling the profession that already has qualified immunity. What could go wrong?"
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Kevin Warsh just told Jackson Hole the Fed might have more rate hikes coming\u2014and the bond market actually believed him.",
+    "fresh_take": "Today's mortgage rate surge proves Warsh wasn't bluffing\u2014the bond market is pricing in persistent rates, and homebuyers are the ones paying the bill."
+  },
+  "sign_off": {
+    "callback_target": "Middle East geopolitical risk as a hidden mortgage tax"
+  }
+}

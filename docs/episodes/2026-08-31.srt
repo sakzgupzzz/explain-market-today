@@ -1,0 +1,110 @@
+1
+00:00:06,988 --> 00:00:16,263
+JAMIE: Tesla's up four point nine-four percent while the S&P 500 basically shrugged, and I'm starting to think the stock is running on pure CEO Instagram energy at this point.
+
+2
+00:00:16,263 --> 00:00:34,504
+ALEX: The S&P 500 dropped zero point five-two percent, Nasdaq fell zero point four-nine percent, and the VIX spiked four point seven-eight percent—so we're in that fun zone where nothing is crashing but everything is nervous. Meanwhile Tesla's up four point nine-four percent on its own island, Amazon's down two point nine-five percent, and the real story is oil.
+
+3
+00:00:34,504 --> 00:00:58,001
+MAYA: And while that's happening, all the mega-cap tech stocks are just bleeding—Google down two point four percent, Apple down one point three-five percent, Meta down one point one-eight percent. They're getting punished for the exact thing that was supposed to save them. AI was supposed to be the narrative that kept them untouchable, but now higher rates mean those future profits are worth less today, so the math that worked last week doesn't work anymore.
+  ↳ source: https://www.marketwatch.com/story/metas-stock-looks-too-cheap-analysts-say-why-its-now-set-up-for-a-google-style-rally-1935f056?mod=mw_rss_topstories
+
+4
+00:00:58,001 --> 00:01:21,189
+ALEX: Exactly. Exxon and Chevron are up because oil is moving, Walmart's up one point five-three percent because people are shopping defensively, but the growth stocks that needed zero-rate-forever to justify their valuations are getting repriced in real time. Breadth is collapsing—Russell two thousand down zero point eight-seven percent, which is the canary in the coal mine for whether this market actually has legs or if it's just Tesla and energy keeping the headlines alive.
+
+5
+00:01:21,189 --> 00:01:47,468
+JAMIE: So we're back to the thing we've been dancing around since yesterday: if rates are actually going up and staying up, then the entire playbook changes. Salesforce is up one point nine-one percent, which is weird until you remember it's boring and profitable and doesn't need to promise you the moon in five years. The market's starting to price in a world where that means what it said, and that world looks a lot different from the one we were living in on Monday.
+
+6
+00:01:47,468 --> 00:01:57,980
+ALEX: Meta's stock has fallen so far that analysts are now positioning it as a Google-style re-rating candidate—the market's priced in zero upside, which means the moment the company stops bleeding credibility, it rips.
+  ↳ source: https://www.marketwatch.com/story/metas-stock-looks-too-cheap-analysts-say-why-its-now-set-up-for-a-google-style-rally-1935f056?mod=mw_rss_topstories
+
+7
+00:01:57,980 --> 00:02:09,110
+JAMIE: So Alphabet got a legal settlement and the stock took off. Are we saying Meta's sitting in the same setup right now, or is this analysts just desperate to find a narrative that makes sense?
+  ↳ source: https://www.marketwatch.com/story/metas-stock-looks-too-cheap-analysts-say-why-its-now-set-up-for-a-google-style-rally-1935f056?mod=mw_rss_topstories
+
+8
+00:02:09,110 --> 00:02:25,496
+ALEX: The difference is Alphabet had a clear catalyst—the antitrust case closed and investors realized the company still prints money. Meta doesn't have that luxury. The company has to prove that the metaverse isn't a seventy-billion-dollar mistake and that AI spending actually moves the revenue needle. The legal settlement thing is aspirational thinking.
+
+9
+00:02:25,496 --> 00:02:44,355
+MAYA: But here's the thing—when a stock gets this cheap, the only people left holding it are the ones who believe, and the moment a single analyst upgrades and says 'actually, the margins look stable,' it becomes a momentum trade. That's how re-ratings work. It's not about fundamentals changing overnight; it's about the short-term traders deciding the long-term traders already left.
+
+10
+00:02:44,355 --> 00:02:56,413
+ALEX: Retailers are handling their tariff refunds like a choose-your-own-adventure book—some are passing them to consumers, some are pocketing them, and some are pretending the refunds never happened. Earnings this quarter are going to be the lie detector test.
+  ↳ source: https://www.cnbc.com/2026/08/30/trump-tariff-refunds-walmart-home-depot-target.html
+
+11
+00:02:56,413 --> 00:03:06,306
+JAMIE: So we're going to watch one retailer say 'we lowered prices,' another say 'margins expanded,' and a third say 'supply chain headwinds,' and they're all talking about the same tariff refund?
+
+12
+00:03:06,306 --> 00:03:26,402
+ALEX: Exactly. The ones that pass refunds to consumers are betting on volume and loyalty. The ones that keep it are betting that no one's paying attention. And the ones that bury it in operating expenses are just hoping the analyst call doesn't ask the right question. By May, we'll know which retailers actually believe in their pricing power and which ones are just scared.
+
+13
+00:03:26,402 --> 00:03:39,078
+MAYA: Car owners want technology that doesn't require a PhD to operate and doesn't spy on them. Instead, automakers keep shipping vehicles with screens the size of a dashboard and software that needs an update every time you start the engine.
+  ↳ source: https://www.theverge.com/news/986721/car-tech-survey-jd-power-smart-ignition
+
+14
+00:03:39,078 --> 00:03:49,281
+JAMIE: So the market research is saying 'we want a car that just drives,' and the response from Detroit is 'here's a car that also requires a subscription to unlock the climate control'?
+
+15
+00:03:49,281 --> 00:04:08,450
+MAYA: Yes. The features people actually want—reliable steering, a radio that works, windshield wipers that don't need a software patch—those are table stakes now. But instead of stopping there, manufacturers are adding subscription services, data collection, and interfaces that look like they were designed by someone who's never sat in a car. Consumers are rejecting it. They want tech they can ignore.
+
+16
+00:04:08,450 --> 00:04:18,961
+ALEX: McKesson got hacked. Millions of patient records are gone. The healthcare industry's response will be a press release about 'enhanced security protocols' and a fifty-dollar HSA credit that doesn't come for eight months.
+
+17
+00:04:18,961 --> 00:04:30,710
+JAMIE: McKesson distributes medicines and medical devices to hospitals across the country, so this isn't some fintech startup losing customer data—this is the supply chain for healthcare itself getting breached. How is this not the lead story everywhere?
+
+18
+00:04:30,710 --> 00:04:38,439
+MAYA: A Harvard Law dropout just raised six million dollars for an app called Blue Voice that gives police officers real-time legal and policy guidance.
+  ↳ source: https://techcrunch.com/2026/08/31/harvard-law-dropout-raises-6m-for-blue-voice-to-build-a-harvey-for-police-officers/
+
+19
+00:04:38,439 --> 00:04:57,608
+JAMIE: So we're AI-enabling the profession that already has qualified immunity. What could go wrong? The whole thing is built on the premise that officers need instant access to policy interpretation, which sounds reasonable until you realize it's a Harvard Law dropout—not a police trainer, not a civil rights lawyer, just someone who left law school—deciding what guidance those officers actually get.
+  ↳ source: https://techcrunch.com/2026/08/31/harvard-law-dropout-raises-6m-for-blue-voice-to-build-a-harvey-for-police-officers/
+
+20
+00:04:57,608 --> 00:05:18,013
+ALEX: Six million dollars is real money for a B-to-B SaaS play in civic tech. The business model has to be departments buying it as an enterprise license, which means the revenue depends on police budgets adopting it. And if departments start using it as a liability shield—'our officers were following Blue Voice guidance'—then this thing becomes a legal defense tool disguised as a training app.
+
+21
+00:05:18,013 --> 00:05:24,505
+JAMIE: On the tape tomorrow—we've got earnings rolling in, and some of these companies are going to have to explain themselves.
+
+22
+00:05:24,505 --> 00:05:34,708
+ALEX: Malibu Boats reports on August thirty-first. Luxury boat sales are a direct thermometer for whether discretionary spending is actually holding up or if the wealth effect is just fumes at this point.
+
+23
+00:05:34,708 --> 00:05:46,765
+MAYA: And Science Applications International—SAIC—also on the thirty-first. They're a defense contractor, so if there's any geopolitical premium still in the market, their guidance is going to tell us whether that premium is real or just a one-week blip.
+
+24
+00:05:46,765 --> 00:05:56,659
+JAMIE: So we get a read on whether people with money are still buying toys, and whether the defense budget is actually moving because the world got scarier—all on the same day.
+
+25
+00:05:56,659 --> 00:05:59,751
+MAYA: And the realtor's commission stays the same either way.
+
+26
+00:05:59,751 --> 00:06:04,079
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
