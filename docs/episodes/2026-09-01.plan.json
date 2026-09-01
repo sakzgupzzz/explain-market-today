@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Army Secretary just quit mid-Pentagon civil war while Tesla's up 5.5% and the rest of the market's basically asleep."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.33%",
+      "Nasdaq -0.12%",
+      "Tesla +5.51%",
+      "Amazon -2.50%",
+      "VIX +3.40%"
+    ],
+    "macro_note": "Oil-driven rate spike, equity breadth collapsing, energy stocks carry the load while tech stumbles."
+  },
+  "big_story": {
+    "story_id": "a513e2949c35",
+    "lead_host": "JAMIE",
+    "story_title": "U.S. Army Secretary Driscoll resigns after Pentagon leadership rift",
+    "angle": "This isn't a policy disagreement\u2014it's a structural collapse of the civilian-military chain of command during an active geopolitical crisis, and nobody's explaining what actually broke.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "0826e72a3d8d",
+      "lead_host": "ALEX",
+      "angle": "Trump's 20% growth claim has happened once since WWII\u2014in 1951, during Korean War mobilization; peacetime math doesn't work.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "606ea5ebe811",
+      "lead_host": "MAYA",
+      "angle": "FTC alleges Amazon's been running a hidden ad surcharge scheme\u2014the company that invented 'hidden fees' is now accused of hiding fees on the thing it invented to hide fees.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "be8ef91d8438",
+      "lead_host": "ALEX",
+      "angle": "Mortgage rates hit highest since June 2025 on Middle East oil shock; housing market's now hostage to geopolitics.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "91275750e084",
+      "lead_host": "MAYA",
+      "angle": "Retailers are handling tariff refunds like a choose-your-own-adventure book\u2014some passing savings, some pocketing it; consumer gets the surprise ending.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "815975f0fa66",
+    "joke_angle": "BBC's running a 'beat the back-to-work blues' piece in August\u2014the most British way to acknowledge that summer's over is to ask if you're feeling nostalgic for it while you're still in it."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Mortgage rates surge to the highest since June 2025 as new Middle East attacks push oil prices up",
+    "fresh_take": "Yesterday we flagged the rate spike; today it's official\u2014housing is now a geopolitical asset class, and the Fed's no longer the only thing moving the dial."
+  },
+  "sign_off": {
+    "callback_target": "Tesla's 5.5% pop while the market flatlines\u2014the one stock that doesn't care what the Pentagon's doing."
+  }
+}
