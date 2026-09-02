@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Palo Alto Networks just beat earnings on AI demand while Oracle tanked 5.23%\u2014the market's decided who wins the AI infrastructure race."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.71%",
+      "Nasdaq -1.03%",
+      "VIX +9.52% to 16.34",
+      "AAPL +2.61%, ORCL -5.23%"
+    ],
+    "macro_note": "Broad selloff masks a sharp AI infrastructure divergence; oil strength pushing yields higher, inflation concerns creeping back."
+  },
+  "big_story": {
+    "story_id": "718584296611",
+    "lead_host": "ALEX",
+    "story_title": "Palo Alto Networks beats quarterly estimates on AI demand, continues acquisition spree",
+    "angle": "Palo Alto is using AI-driven security demand as a license to print cash and buy competitors\u2014the question is whether they're building a moat or just buying market share at peak valuations.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "1d907ea6e9e6",
+      "lead_host": "ALEX",
+      "angle": "A major casual dining chain filing Chapter 11 while Denny's stays afloat\u2014labor costs and supply chain pressure are culling the herd, not just consumer weakness.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "b1f129be6ee1",
+      "lead_host": "MAYA",
+      "angle": "Google's negotiating with Hollywood studios because AI can't generate original IP yet\u2014the studios have leverage, and Google knows it.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "039091c00d80",
+      "lead_host": "ALEX",
+      "angle": "10-year yield hits highest since January as oil prices stoke inflation fears\u2014the Fed's rate-cut narrative just got a lot shakier.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "1fb260f95355",
+      "lead_host": "MAYA",
+      "angle": "New Apple CEO John Ternus hyping a 'huge launch next week' in his first memo\u2014setting expectations sky-high on day one is either confidence or a trap.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "7c33e2946b7c",
+    "joke_angle": "Larry Page's flying car company loses its CEO\u2014turns out the hard part isn't the flying, it's keeping someone in the seat long enough to actually build it."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Oracle's 5.23% crater\u2014the punchline to Palo Alto's AI win."
+  }
+}

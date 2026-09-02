@@ -1,0 +1,134 @@
+1
+00:00:06,988 --> 00:00:17,845
+JAMIE: Palo Alto Networks just crushed earnings on AI demand while Oracle got clobbered down five point two-three percent—the market's basically declared a winner in the infrastructure war, and it's not the guy who invented SQL.
+  ↳ source: https://www.marketwatch.com/story/palo-alto-networks-stock-climbs-as-demand-for-ai-cybersecurity-powers-an-earnings-beat-4b39578c?mod=mw_rss_topstories
+
+2
+00:00:17,845 --> 00:00:39,257
+ALEX: S&P down zero point seven-one percent, Nasdaq down one point zero-three percent, but the VIX just spiked nine point five-two percent to sixteen point three-four—which is the part where you remember that Apple is up two point six-one percent while Oracle got absolutely demolished at minus five point two-three percent. The ten-year yield jumped, and somehow gold is down. The market is not confused. It knows exactly what it's doing.
+  ↳ source: https://www.cnbc.com/2026/09/01/bonds-treasury-yields-middle-east-tensions.html
+
+3
+00:00:39,257 --> 00:00:44,685
+JAMIE: That move on the ten-year—that's not a drift, that's a sprint. What's actually moving yields that hard?
+  ↳ source: https://www.cnbc.com/2026/09/01/bonds-treasury-yields-middle-east-tensions.html
+
+4
+00:00:44,685 --> 00:00:52,828
+ALEX: Oil. When crude moves that fast, bond traders start pricing in either demand shock or supply tightness, and they start asking whether the Fed's done cutting.
+
+5
+00:00:52,828 --> 00:01:18,161
+MAYA: So the Magnificent Seven—or what's left of them—they're holding the line because they're the only game in town when everything else is selling, but the moment you zoom out, Tesla is down three point two-two percent, AMD down two point three-six, Thermo Fisher down two point six-nine—the infrastructure and biotech guys are getting hammered because nobody wants to pay for optionality when rates are climbing. The Russell 2000 is down one point two-three percent, which means small-cap investors are panicking about refinancing costs.
+
+6
+00:01:18,161 --> 00:01:33,240
+JAMIE: That's the thing nobody wants to say out loud: the AI trade only works if rates stay low and capital is cheap. The second you flip that switch, you're not paying for growth anymore, you're paying for cash flow. And a lot of these companies don't have it yet.
+
+7
+00:01:33,240 --> 00:01:51,033
+ALEX: Palo Alto beat on earnings and raised full-year guidance, but here's the mechanism: they're deploying every dollar of that AI tailwind into acquisitions. They're not done. The cash conversion is working, but the question is whether they're actually consolidating a fragmented market or just buying their way into market share at the exact moment when multiples are inflated.
+  ↳ source: https://www.marketwatch.com/story/palo-alto-networks-stock-climbs-as-demand-for-ai-cybersecurity-powers-an-earnings-beat-4b39578c?mod=mw_rss_topstories
+
+8
+00:01:51,033 --> 00:02:04,302
+JAMIE: So they're taking AI demand—which is real—and using it as cover to go on a shopping spree. That's not a moat, that's a sugar rush. How much runway do they actually have before someone asks why they're not just building these things internally?
+
+9
+00:02:04,302 --> 00:02:18,778
+MAYA: Right, but the market isn't asking that yet because enterprise security is a graveyard of half-finished point solutions. Palo Alto's pitch is basically 'stop managing seventeen vendors, we'll be your one throat to choke.' The acquisitions aren't random—they're stitching together the things that actually matter right now.
+  ↳ source: https://www.marketwatch.com/story/palo-alto-networks-stock-climbs-as-demand-for-ai-cybersecurity-powers-an-earnings-beat-4b39578c?mod=mw_rss_topstories
+
+10
+00:02:18,778 --> 00:02:26,619
+ALEX: Except there are leaner competitors growing faster. So Palo Alto is spending like they're winning when the actual share-of-wallet numbers suggest they're still losing ground.
+  ↳ source: https://www.marketwatch.com/story/palo-alto-networks-stock-climbs-as-demand-for-ai-cybersecurity-powers-an-earnings-beat-4b39578c?mod=mw_rss_topstories
+
+11
+00:02:26,619 --> 00:02:32,952
+JAMIE: Wait, so they're buying their way into a category where they're already losing ground. That's—that's the opposite of a moat.
+
+12
+00:02:32,952 --> 00:02:41,095
+MAYA: The stock still retreated after earnings, which tells you the market knows this too. They're spending aggressively to stay in the conversation, not to win it.
+
+13
+00:02:41,095 --> 00:02:51,952
+ALEX: They're essentially betting that enterprise inertia and platform consolidation will eventually pay off, but they're paying acquisition prices today for a payoff that assumes competitors stumble. That's not a margin of safety—that's a margin of hope.
+
+14
+00:02:51,952 --> 00:03:01,602
+ALEX: A rival dining chain just filed Chapter Eleven while Denny's is somehow still standing—we're watching labor costs and supply chain pressure actually cull the casual dining herd, not just consumer weakness.
+  ↳ source: https://finance.yahoo.com/small-business/articles/denny-rival-dining-chain-files-153300154.html
+
+15
+00:03:01,602 --> 00:03:14,269
+JAMIE: So the chain that made it cool to order a twenty-dollar appetizer platter is going under while Denny's—a place where the coffee is older than some of the waitstaff—stays solvent. What does that tell you about who actually has pricing power?
+
+16
+00:03:14,269 --> 00:03:29,046
+MAYA: Denny's has already squeezed labor to the bone and locked in supplier contracts years ago, so when input costs spike, they just pass it through to a customer base that's not going anywhere. The other chain was still trying to maintain 'experience' margins while their labor bill climbed.
+
+17
+00:03:29,046 --> 00:03:36,887
+ALEX: Google is now negotiating licensing deals with Hollywood studios because their AI still can't generate original IP—studios have the leverage here, and they know it.
+
+18
+00:03:36,887 --> 00:03:47,141
+JAMIE: Wait, so the company that spent a decade telling everyone AI would replace creative work is now begging studios for permission to use their back catalog. That's not a pivot, that's a confession.
+
+19
+00:03:47,141 --> 00:04:00,712
+MAYA: The studios aren't stupid either—they're licensing old content, not current releases. Google gets the training data, studios get a revenue stream on assets that were already paid for. But the real tell is that Google came asking instead of studios knocking on Google's door.
+
+20
+00:04:00,712 --> 00:04:10,061
+ALEX: The ten-year yield just hit its highest level since January—oil is up, and bond traders are pricing in the possibility that the Fed's rate-cut story just got a lot shorter.
+  ↳ source: https://www.cnbc.com/2026/09/01/bonds-treasury-yields-middle-east-tensions.html
+
+21
+00:04:10,061 --> 00:04:19,410
+JAMIE: So we went from 'inflation is transitory' to 'inflation is back in the building' because crude spiked. How much runway does the Fed actually have before they have to pause?
+
+22
+00:04:19,410 --> 00:04:30,267
+MAYA: If oil stays elevated, the Fed's basically done cutting. They'll hold and wait to see if demand actually rolls over. Right now it looks like the Middle East is doing the Fed's job for them.
+
+23
+00:04:30,267 --> 00:04:42,028
+JAMIE: John Ternus just took over as Apple CEO and his first memo hyped a 'huge launch next week.' Setting expectations that high on day one is either genuine confidence or the most expensive trap he could walk into.
+  ↳ source: https://techcrunch.com/2026/09/01/john-ternus-hypes-huge-launch-next-week-in-first-memo-as-apple-ceo/
+
+24
+00:04:42,028 --> 00:04:56,202
+ALEX: Steve Jobs never promised anything before the keynote. Ternus just told the entire market that Apple's big swing is happening in seven days. If it lands, he's a genius. If it doesn't, he spent his credibility before he even had a full week on the job.
+
+25
+00:04:56,202 --> 00:05:05,551
+MAYA: The stock is already priced for something massive—if it's just a normal product with a new feature, the disappointment is going to be visible in real time during the event.
+
+26
+00:05:05,551 --> 00:05:18,519
+MAYA: Larry Page's flying car company Pivotal just lost its CEO—the announcement was basically 'he's pursuing new endeavors,' which is the press release equivalent of ghosting. You hire someone to run a flying car startup, and they bail before you've even cleared regulatory.
+  ↳ source: https://techcrunch.com/2026/09/01/larry-pages-flying-car-company-pivotal-loses-its-ceo/
+
+27
+00:05:18,519 --> 00:05:28,471
+JAMIE: So the company that's supposed to solve the problem of traffic is solving the problem of keeping a CEO by making him disappear. That's not innovation, that's just skipping the commute entirely.
+
+28
+00:05:28,471 --> 00:05:46,868
+ALEX: Pivotal has been operating for years—that's a long time to get a prototype off the ground. The CEO lasted long enough to realize that 'flying car' sounds great in a pitch deck and sounds like bankruptcy in a balance sheet. Turns out the hard part isn't the flying, it's keeping someone in the seat long enough to actually build it.
+
+29
+00:05:46,868 --> 00:05:54,106
+MAYA: Oracle's crater is what happens when you show up to an AI fight with a SQL manual and a hope that nobody notices.
+
+30
+00:05:54,106 --> 00:06:00,439
+ALEX: Palo Alto's shopping spree just got a lot more expensive now that the credit card company's in the penalty box.
+  ↳ source: https://www.marketwatch.com/story/palo-alto-networks-stock-climbs-as-demand-for-ai-cybersecurity-powers-an-earnings-beat-4b39578c?mod=mw_rss_topstories
+
+31
+00:06:00,439 --> 00:06:04,661
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
