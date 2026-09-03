@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Oracle just got obliterated\u2014down 5.23%\u2014while Palo Alto Networks keeps crushing it on AI. The market's finally picking winners."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.46% to 7666.60",
+      "Nasdaq +0.45% to 26217.83",
+      "Apple +2.61%, Oracle -5.23%",
+      "VIX down 6.98% to 15.20"
+    ],
+    "macro_note": "Equities steady, volatility collapsing, but rates creeping higher\u201410-year Treasury at 18-month highs."
+  },
+  "big_story": {
+    "story_id": "8e07ff9cedeb",
+    "lead_host": "MAYA",
+    "story_title": "Palo Alto Networks paid $500M for Thrive-backed Console, sources say",
+    "angle": "Palo Alto is spending half a billion on a startup that barely existed two years ago\u2014what does Console actually do, and is this the AI security arms race or just FOMO with a price tag?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "4553d09f814a",
+      "lead_host": "ALEX",
+      "angle": "HPE beats earnings riding the exact same AI server wave Dell surfed\u2014but the real question is whether this boom has legs or we're watching a repeat of the GPU shortage playbook.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "56022c32cf90",
+      "lead_host": "ALEX",
+      "angle": "Snowflake stock soars on FY2027 guidance\u2014$6.07B revenue target with 14.5% operating margin. That's the margin story nobody's talking about: they're finally proving data platforms can actually be profitable.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "58860265b276",
+      "lead_host": "MAYA",
+      "angle": "Uber's UK robotaxis still have a human driver in the seat\u2014so it's not robotaxis, it's just a car with a guy watching another guy drive. The regulatory theater is the actual product here.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "107808bdd773",
+      "lead_host": "MAYA",
+      "angle": "Rented a car, driver's license was for sale within hours\u2014the data broker ecosystem is so frictionless it makes the rental company look like the security hole.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "780b372b3f8a",
+    "joke_angle": "New Jersey is asking the Supreme Court to settle a fight over Kalshi's prediction market\u2014because nothing says 'we trust the free market' like asking nine robes to decide if you can bet on elections."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Palo Alto Networks beats quarterly estimates on AI demand, continues acquisition spree",
+    "fresh_take": "Yesterday we noted the acquisition spree; today we've got the $500M Console deal\u2014this isn't just M&A momentum, it's Palo Alto burning cash to own the AI security stack before someone else does."
+  },
+  "sign_off": {
+    "callback_target": "Oracle's 5.23% crater\u2014the cold open's punchline that the market's finally picking AI winners, and Oracle's not one of them."
+  }
+}
