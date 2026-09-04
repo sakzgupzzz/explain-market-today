@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Fox fired Maria Bartiromo and Steve Ballmer got suspended by the NBA\u2014turns out 2024 is the year institutions finally said 'enough.'"
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +1.06% to 7747.71",
+      "Nasdaq +1.40% to 26584.06",
+      "NVDA +3.21%, ORCL +3.13%",
+      "ADBE -2.20% on CEO transition"
+    ],
+    "macro_note": "VIX crushed to 14.32, risk-on mood, but mega-cap tech leading\u2014AI winners, legacy software losers."
+  },
+  "big_story": {
+    "story_id": "1c012b7ebe25",
+    "lead_host": "JAMIE",
+    "story_title": "Maria Bartiromo fired by Fox",
+    "angle": "Fox News finally cut loose one of its longest-serving on-air personalities\u2014what does it say about the network's reckoning with its own credibility crisis, and why now?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "d14dc7c36b4e",
+      "lead_host": "ALEX",
+      "angle": "Adobe replaces Shantanu Narayen with Anil Chakravarthy\u2014stock down 2.2%\u2014because apparently AI-powered creativity tools still need a human to explain why they're worth the subscription.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "1ffd2d15704a",
+      "lead_host": "MAYA",
+      "angle": "Steve Ballmer got NBA-suspended over a podcast rant and jumbotron corruption\u2014the guy who yelled 'developers developers developers' finally met a mic he shouldn't have used.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "a59e74e9f93d",
+      "lead_host": "ALEX",
+      "angle": "Zscaler beats earnings and raises guidance\u2014cybersecurity is the one sector that doesn't need to pretend AI is the answer to everything.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "8cd6f574743e",
+      "lead_host": "MAYA",
+      "angle": "ChargePoint CEO says 70% stock surge 'is the beginning of the momentum'\u2014a sentence that means absolutely nothing and somehow still convinced the market.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "ba5688ff236e",
+    "joke_angle": "Oura is IPO-ing on the back of Americans' obsession with tracking sleep, steps, and heart rate\u2014we've finally found a way to monetize anxiety about not sleeping enough."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Maria Bartiromo's firing\u2014tie back to the cold open and frame it as the through-line of the show: institutions finally holding their own accountable."
+  }
+}
