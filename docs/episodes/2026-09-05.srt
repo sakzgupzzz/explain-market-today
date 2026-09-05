@@ -1,0 +1,89 @@
+1
+00:00:06,988 --> 00:00:15,712
+JAMIE: Oracle just jumped five point seven percent while the S&P went nowhere—and it's not because they crushed earnings, it's because Nvidia's CEO said Oracle's going to be fine.
+
+2
+00:00:15,712 --> 00:00:39,478
+MAYA: So Maria Bartiromo says she wasn't actually fired—she's disputing the firing itself. Fox fired her, she's denying it happened, and now Fox News is arguing with itself about whether Fox News exists. Which is wild because her contract was through 2027, and Murdoch's people just decided three years early was a good time to end that conversation. The only person winning here is the Fox legal team, who finally gets to bill for something that isn't a settlement.
+
+3
+00:00:39,478 --> 00:01:03,544
+ALEX: Markets were flat to slightly red today. S&P down zero point three eight percent, Nasdaq down zero point two nine percent, Russell 2000 actually up a quarter percent. But the real story is the bifurcation in mega-cap tech. Tesla up five point four two percent, Meta up three percent, while Broadcom got hit for two point seven four percent. Yields are climbing—ten-year Treasury at four point seven eight—and that's on hot jobs data. Fed rate-cut bets are cooling fast.
+  ↳ source: https://www.cnbc.com/2026/09/04/treasurys-bonds-nonfarm-payrolls-unemployment-data.html
+
+4
+00:01:03,544 --> 00:01:11,366
+JAMIE: So the market's basically saying some tech companies can handle higher rates and some absolutely cannot. What's the difference between who's winning and who's bleeding?
+
+5
+00:01:11,366 --> 00:01:27,310
+ALEX: Tesla and Meta are companies that can actually make money at higher rates. Broadcom manufactures semiconductors—their customers are startups and data centers that are drowning in debt right now trying to build AI infrastructure. When the cost of borrowing goes up, the people who buy chips stop buying chips. It's not complicated.
+
+6
+00:01:27,310 --> 00:01:44,457
+ALEX: Trump's now saying he'll slash trade with any country that runs a deficit with us unless the Fed cuts rates. So he's taken the nuclear option on tariffs and wired it directly to Jerome Powell's desk. The Fed's supposed to be independent—it's literally in the statute—but he's just announced that independence has a price tag attached.
+
+7
+00:01:44,457 --> 00:01:51,677
+JAMIE: Wait, so he's holding trade hostage to force a monetary policy outcome. That's—that's not how any of this is supposed to work, right?
+
+8
+00:01:51,677 --> 00:02:07,621
+MAYA: It's absolutely not, but here's what's insane: the market is already pricing it in as a real threat. Fed funds futures have shifted. Traders are genuinely hedging for the scenario where Trump cuts off trade with Japan, Canada, Mexico unless Powell folds. That's not theater pricing—that's 'he might actually do this' pricing.
+
+9
+00:02:07,621 --> 00:02:25,671
+ALEX: And if he follows through, we're looking at tariffs on everything from semiconductors to auto parts to pharmaceuticals. That's not a rate-cut problem—that's stagflation. You get inflation from the tariffs and growth slows from the trade shock. The Fed can't cut its way out of that. So Trump's threat is either a bluff or it breaks the entire policy framework.
+
+10
+00:02:25,671 --> 00:02:35,598
+ALEX: Two-year Treasury just hit its highest level since January. Hot jobs report spooked the market into pricing in a rate hike instead of the cuts everyone was betting on three weeks ago.
+
+11
+00:02:35,598 --> 00:02:41,915
+JAMIE: So the Fed's 'patient' pivot just got impatient. What changed between 'we're taking our time' and 'actually we might tighten'?
+
+12
+00:02:41,915 --> 00:02:59,664
+ALEX: Jobs came in hot, wage growth is still sticky, and inflation hasn't rolled over the way the Fed needed it to. They can't cut into that without looking like they're just capitulating to market pressure. So now they're signaling they might hold or even hike, which is the opposite of what traders were pricing in two weeks ago.
+
+13
+00:02:59,664 --> 00:03:13,202
+MAYA: Nscale is hunting three point five billion dollars in pre-IPO financing. This is the AI infrastructure play that's supposed to be boring, but it's the only thing moving because everyone finally realized you can't run an AI company without someone actually owning the servers.
+
+14
+00:03:13,202 --> 00:03:20,422
+JAMIE: They just cut that Anthropic deal for forty-five billion. Why do they need another three point five billion before they even go public?
+
+15
+00:03:20,422 --> 00:03:36,667
+MAYA: Because the Anthropic deal is revenue—it's not cash upfront, it's a commitment to buy compute over time. Nscale needs capital now to build the actual infrastructure that Anthropic and everyone else is going to rent from them. It's like signing a ten-year lease and then realizing you need money for the down payment.
+
+16
+00:03:36,667 --> 00:03:42,984
+JAMIE: Witkoff and Kushner are heading to Moscow and Kyiv this weekend. Trump's personal envoys are now the actual State Department.
+  ↳ source: https://www.axios.com/2026/09/04/trump-witkoff-kushner-moscow-kyiv
+
+17
+00:03:42,984 --> 00:04:01,335
+ALEX: Trump's holding tariffs hostage to force Fed policy, and now he's sending his son-in-law and a former hotel executive to negotiate an end to a war that's been running for three years. This is either the boldest move or the most chaotic thing that's happened since the tariff threat—and we just said the tariff threat might break the policy framework.
+
+18
+00:04:01,335 --> 00:04:18,783
+MAYA: GoPro's CEO Nick Woodman just sent a letter to customers saying the company is still committed to—and I'm reading this directly—your collective stoke. This is after Starman announced a two-hundred-eighty-five million dollar acquisition this week, and Woodman's basically saying, don't worry, we're still a camera company, this deal actually helps us make better cameras for your adventures.
+
+19
+00:04:18,783 --> 00:04:35,028
+JAMIE: Okay, hold on. He wrote 'your collective stoke' in a letter to customers. That's not corporate communication, that's a man who realized his entire business model depends on people thinking he's one of them. He's not reassuring shareholders—he's reassuring the person who strapped a GoPro to their helmet in 2009 and never stopped.
+
+20
+00:04:35,028 --> 00:04:42,247
+ALEX: Trump's wired the tariff button to the Fed's office, so Powell's either cutting rates or watching the entire supply chain implode by March.
+
+21
+00:04:42,247 --> 00:04:49,467
+MAYA: Which means every trader on Earth is now a geopolitician, and every geopolitician is a Fed watcher, and nobody's actually watching the companies.
+
+22
+00:04:49,467 --> 00:04:53,679
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

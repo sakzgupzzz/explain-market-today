@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Oracle just jumped 5.7% while the S&P flatlined\u2014and it's not because of earnings."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 down 0.38%",
+      "Nasdaq down 0.29%",
+      "Oracle up 5.69%",
+      "Tesla up 5.42%",
+      "Broadcom down 2.74%"
+    ],
+    "macro_note": "Yields rising on hot jobs data; Fed rate-cut bets cooling; mega-cap tech bifurcating."
+  },
+  "big_story": {
+    "story_id": "837515c6a3c0",
+    "lead_host": "ALEX",
+    "story_title": "Trump doubles down on threat to halt trade with top partners unless Fed cuts rates",
+    "angle": "Trump is now openly conditioning trade policy on Fed decisions\u2014a direct inversion of central bank independence that markets are pricing in as real leverage, not theater.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "662f89ca84e8",
+      "lead_host": "ALEX",
+      "angle": "2-year yield hits highest since January after hot jobs report; the Fed's 'patient' pivot just got a lot less patient.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "24176655f20d",
+      "lead_host": "MAYA",
+      "angle": "Nscale hunting $3.5B for AI compute\u2014the infrastructure play that's supposed to be unsexy is now the only thing that moves.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "dbe9afb66b4e",
+      "lead_host": "JAMIE",
+      "angle": "Witkoff and Kushner heading to Moscow and Kyiv this weekend; Trump's personal envoys are now the de facto State Department.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "e49bfb689bdd",
+      "lead_host": "MAYA",
+      "angle": "Maria Bartiromo disputes her own termination\u2014Fox News is now in the business of denying its own firings.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "4c6348824655",
+    "joke_angle": "GoPro's commitment to 'your collective stoke' is what happens when a camera company realizes it's actually a lifestyle brand that just happens to sell cameras."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Maria Bartiromo fired by Fox",
+    "fresh_take": "Now she's disputing the firing itself\u2014so Fox fired her, she's denying it happened, and we're all watching Fox News argue with itself about whether Fox News exists."
+  },
+  "sign_off": {
+    "callback_target": "Trump conditioning trade policy on Fed cuts"
+  }
+}

@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Sep 2026 00:21:50 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Sep 2026 00:21:58 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,54 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>ORCL +5.7%, Trump doubles down on threat to — Sep 5</title>
+      <description>Oracle just jumped 5.7% while the S&amp;P flatlined—and it's not because of earnings. Today's lead: Trump doubles down on threat to halt trade with top partners unless Fed cuts rates. Trump is now openly conditioning trade policy on Fed decisions—a direct inversion of central bank independence that markets are pricing in as real leverage, not theater.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:39  Markets
+  00:01:44  Big story
+  00:03:13  Quick hits
+  00:04:01  Odd thing of the day
+  00:04:42  Sign-off
+
+Stories covered:
+  • 2-year yield hits highest since January after hot jobs report; the Fed's 'patient' pivot just got a lot less patient. [real]
+  • Nscale hunting $3.5B for AI compute—the infrastructure play that's supposed to be unsexy is now the only thing that moves. [hype]
+  • Witkoff and Kushner heading to Moscow and Kyiv this weekend; Trump's personal envoys are now the de facto State Department. [real]
+  • Maria Bartiromo disputes her own termination—Fox News is now in the business of denying its own firings. [noise]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [curious] Oracle just jumped five point seven percent while the S&amp;P went nowhere—and it's not because they crushed earnings, it's because Nvidia's CEO said Oracle's going to be fine.
+MAYA: [mischievously] So Maria Bartiromo says she wasn't actually fired—she's disputing the firing itself. Fox fired her, she's denying it happened, and now Fox News is arguing with itself about whether Fox News exists. Which is wild because her contract was through 2027, and Murdoch's people just decided three years early was a good time to end that conversation. The only person winning here is the Fox legal team, who finally gets to bill for something that isn't a settlement.
+ALEX: [deadpan] Markets were flat to slightly red today. S&amp;P down zero point three eight percent, Nasdaq down zero point two nine percent, Russell 2000 actually up a quarter percent. But the real story is the bifurcation in mega-cap tech. Tesla up five point four two percent, Meta up three percent, while Broadcom got hit for two point seven four percent. Yields are climbing—ten-year Treasury at four point seven eight—and that's on hot jobs data. Fed rate-cut bets are cooling fast.
+JAMIE: [curious] So the market's basically saying some tech companies can handle higher rates and some absolutely cannot. What's the difference between who's winning and who's bleeding?
+ALEX: [sarcastic] Tesla and Meta are companies that can actually make money at higher rates. Broadcom manufactures semiconductors—their customers are startups and data centers that are drowning in debt right now trying to build AI infrastructure. When the cost of borrowing goes up, the people who buy chips stop buying chips. It's not complicated.
+ALEX: [deadpan] Trump's now saying he'll slash trade with any country that runs a deficit with us unless the Fed cuts rates. So he's taken the nuclear option on tariffs and wired it directly to Jerome Powell's desk. The Fed's supposed to be independent—it's literally in the statute—but he's just announced that independence has a price tag attached.
+JAMIE: [curious] Wait, so he's holding trade hostage to force a monetary policy outcome. That's—that's not how any of this is supposed to work, right?
+MAYA: [rushed] It's absolutely not, but here's what's insane: the market is already pricing it in as a real threat. Fed funds futures have shifted. Traders are genuinely hedging for the scenario where Trump cuts off trade with Japan, Canada, Mexico unless Powell folds. That's not theater pricing—that's 'he might actually do this' pricing.
+ALEX: And if he follows through, we're looking at tariffs on everything from semiconductors to auto parts to pharmaceuticals. That's not a rate-cut problem—that's stagflation. You get inflation from the tariffs and growth slows from the trade shock. The Fed can't cut its way out of that. So Trump's threat is either a bluff or it breaks the entire policy framework.
+ALEX: [deadpan] Two-year Treasury just hit its highest level since January. Hot jobs report spooked the market into pricing in a rate hike instead of the cuts everyone was betting on three weeks ago.
+JAMIE: [curious] So the Fed's 'patient' pivot just got impatient. What changed between 'we're taking our time' and 'actually we might tighten'?
+ALEX: [sarcastic] Jobs came in hot, wage growth is still sticky, and inflation hasn't rolled over the way the Fed needed it to. They can't cut into that without looking like they're just capitulating to market pressure. So now they're signaling they might hold or even hike, which is the opposite of what traders were pricing in two weeks ago.
+MAYA: [rushed] Nscale is hunting three point five billion dollars in pre-IPO financing. This is the AI infrastructure play that's supposed to be boring, but it's the only thing moving because everyone finally realized you can't run an AI company without someone actually owning the servers.
+JAMIE: [curious] They just cut that Anthropic deal for forty-five billion. Why do they need another three point five billion before they even go public?
+MAYA: [excited] Because the Anthropic deal is revenue—it's not cash upfront, it's a commitment to buy compute over time. Nscale needs capital now to build the actual infrastructure that Anthropic and everyone else is going to rent from them. It's like signing a ten-year lease and then realizing you need money for the down payment.
+JAMIE: [curious] Witkoff and Kushner are heading to Moscow and Kyiv this weekend. Trump's personal envoys are now the actual State Department.
+ALEX: [deadpan] Trump's holding tariffs hostage to force Fed policy, and now he's sending his son-in-law and a former hotel executive to negotiate an end to a war that's been running for three years. This is either the boldest move or the most chaotic thing that's happened since the tariff threat—and we just said the tariff threat might break the policy framework.
+MAYA: [rushed] GoPro's CEO Nick Woodman just sent a letter to customers saying the company is still committed to—and I'm reading this directly—your collective stoke. This is after Starman announced a two-hundred-eighty-five million dollar acquisition this week, and Woodman's basically saying, don't worry, we're still a camera company, this deal actually helps us make better cameras for your adventures.
+JAMIE: [laughs] Okay, hold on. He wrote 'your collective stoke' in a letter to customers. That's not corporate communication, that's a man who realized his entire business model depends on people thinking he's one of them. He's not reassuring shareholders—he's reassuring the person who strapped a GoPro to their helmet in 2009 and never stopped.
+ALEX: [deadpan] Trump's wired the tariff button to the Fed's office, so Powell's either cutting rates or watching the entire supply chain implode by March.
+MAYA: [rushed] Which means every trader on Earth is now a geopolitician, and every geopolitician is a Fed watcher, and nobody's actually watching the companies.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">1678bf24-9ad7-baea-aa2a-ec05f9c73984</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-09-05.mp3" length="4958501" type="audio/mpeg" />
+      <pubDate>Sat, 05 Sep 2026 00:21:23 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-09-05.jpg" />
+      <itunes:duration>00:05:09</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260905</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-09-05.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-09-05.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-09-05.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>NVDA +3.2%, Maria Bartiromo fired by Fox — Sep 4</title>
       <description>Fox fired Maria Bartiromo and Steve Ballmer got suspended by the NBA—turns out 2024 is the year institutions finally said 'enough.'. Today's lead: Maria Bartiromo fired by Fox. Fox News finally cut loose one of its longest-serving on-air personalities—what does it say about the network's reckoning with its own credibility crisis, and why now?.
