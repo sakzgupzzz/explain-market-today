@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Iran tensions just cost Americans $100 billion in energy bills\u2014and the Fed's about to make it worse."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: 7718.60 (-0.38%)",
+      "Nasdaq: 26506.99 (-0.29%)",
+      "AMD +4.69%, TSLA -5.92%",
+      "VIX: 15.30 (+5.30%)"
+    ],
+    "macro_note": "Broad market flatline masks divergence: AI chips rally, consumer discretionary stumbles, volatility creeping up ahead of inflation data."
+  },
+  "big_story": {
+    "story_id": "567ec8a467c0",
+    "lead_host": "JAMIE",
+    "story_title": "Iran war drives $100 billion in extra energy costs for U.S. consumers",
+    "angle": "The geopolitical risk premium is now a household bill\u2014Americans are paying for Middle East escalation at the pump and in their heating bills, and the Fed's inflation fight just got a lot more complicated because this isn't demand-side.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "10d5e4e21e52",
+      "lead_host": "ALEX",
+      "angle": "August inflation data drops this week; if it's hot, the Fed's 'patient' pivot evaporates and rate cuts get pushed into 2025\u2014which means the energy shock hits consumers with higher borrowing costs on top.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "195bbdff753f",
+      "lead_host": "MAYA",
+      "angle": "Nvidia's earnings reinforce the long-term AI thesis, but the stock barely moved\u2014the market's already priced in perfection, so even 'strong' is just 'not disappointing.'",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "ac8588d1fc7b",
+      "lead_host": "ALEX",
+      "angle": "A beverage brand just filed Chapter 11 after losing a Costco deal\u2014a reminder that even scale doesn't protect you if your customer concentration is a single warehouse club.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "76c959acf29e",
+      "lead_host": "MAYA",
+      "angle": "The 'Temu Range Rover' is becoming a genuine competitive threat to Jaguar Land Rover\u2014fast-fashion car culture is now a thing, and legacy automakers are watching their brand equity get Shein'd.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "7752103998ed",
+    "joke_angle": "Thousands showed up to the funeral of a war crimes architect\u2014a reminder that 'legacy' and 'infamy' are sometimes the same thing, and the internet's ability to turn anything into a pilgrimage is genuinely undefeated."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "the $100 billion energy bill Iran just handed America"
+  }
+}
