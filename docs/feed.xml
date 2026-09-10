@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Sep 2026 17:26:53 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Sep 2026 00:33:54 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,42 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>AMD +5.9%, Oil's surge back above $100 fuels — Sep 10</title>
+      <description>Oil just blew past $100 a barrel—and the Energy Department says diesel's about to get 33 cents worse by 2027. Today's lead: Oil's surge back above $100 fuels fresh inflation fears at a crucial time for interest rates. Oil above $100 is the inflation canary the Fed swore it killed—and it's singing again right when Powell needs rate cuts to look inevitable, not reckless.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:34  Big story
+  00:01:10  Quick hits
+  00:01:30  Odd thing of the day
+  00:01:37  Sign-off
+
+Stories covered:
+  • Energy Department's 33-cent diesel bump by 2027 isn't a forecast—it's a confession that Iran risk is now priced into the baseline, not the tail. [real]
+  • Apple's new CEO dusting off a 25-year-old Jobs playbook signals the company's out of new ideas and back to remixing the hits. [hype]
+  • Automattic's board forcing Mullenweg on leave is what happens when a founder's ego and a company's governance finally collide—and the board wins. [real]
+  • AI-generated deepfakes are now good enough that voters can't trust their own eyes—which means the election just became a trust exercise in institutions nobody trusts. [real]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [curious] Oil just cracked one hundred dollars a barrel, and the Energy Department's projecting diesel prices jump thirty-three cents by twenty twenty-seven—which means your supply chain's about to get a masterclass in inflation it didn't sign up for.
+ALEX: [deadpan] The Energy Department publishes their forecast through twenty twenty-seven, and diesel up another thirty-three cents by then—that's not a prediction, that's a surrender.
+JAMIE: [curious] So the government's basically saying energy risk is no longer a tail event, it's the structural cost of doing business in America for the next three years.
+MAYA: [excited] Apple's new CEO just dusted off a twenty-five-year-old Steve Jobs playbook—the one where you stand on stage and tell people the iPhone is still the thing, and somehow that counts as innovation. We've gone from inventing the future to reminding people the past still works.
+MAYA: [laughs] Automattic's board finally did what boards are supposed to do—they told Matt Mullenweg to take a leave of absence. Against his will. That's the sentence that kills the founder-worship narrative: when the board wins, the founder loses.
+ALEX: [deadpan] Mullenweg announced it on Slack like it was his choice, but governance doesn't work that way. The board forced him out. That's not a sabbatical, that's a legal ejection.
+MAYA: [rushed] AI deepfakes are now good enough that voters can't tell what's real anymore—which means the election just became a trust exercise in institutions we've already stopped trusting.
+JAMIE: [laughs] So we've gone from 'fake news' as a political slur to actual fake videos flooding the airwaves, and the only thing standing between democracy and total epistemic collapse is your ability to spot a deepfake.
+ALEX: [deadpan] Three years from now, when that diesel bill hits your door, you'll remember we all saw it coming and did nothing.
+MAYA: [rushed] The forecast was the surrender—we just didn't call it that until it was too late.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">4087e164-8e01-b1e1-2af8-a012a8a5c22e</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-09-10.mp3" length="1961600" type="audio/mpeg" />
+      <pubDate>Thu, 10 Sep 2026 00:33:14 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-09-10.jpg" />
+      <itunes:duration>00:02:02</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20260910</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-09-10.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-09-10.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-09-10.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>ADBE -6.7%, Iran war drives $100 billion in — Sep 7</title>
       <description>Iran tensions just cost Americans $100 billion in energy bills—and the Fed's about to make it worse. Today's lead: Iran war drives $100 billion in extra energy costs for U.S. consumers. The geopolitical risk premium is now a household bill—Americans are paying for Middle East escalation at the pump and in their heating bills, and the Fed's inflation fight just got a lot more complicated because this isn't demand-side.

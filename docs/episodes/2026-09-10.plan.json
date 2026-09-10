@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Oil just blew past $100 a barrel\u2014and the Energy Department says diesel's about to get 33 cents worse by 2027."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.48%",
+      "Nasdaq -0.64%",
+      "Russell 2000 -1.32%",
+      "VIX +4.71% to 16.46",
+      "AMD +5.90%, TSLA +3.98%"
+    ],
+    "macro_note": "Small caps bleeding, volatility creeping up, energy and semiconductors diverging as inflation fears resurface."
+  },
+  "big_story": {
+    "story_id": "daa32a9f8d12",
+    "lead_host": "ALEX",
+    "story_title": "Oil's surge back above $100 fuels fresh inflation fears at a crucial time for interest rates",
+    "angle": "Oil above $100 is the inflation canary the Fed swore it killed\u2014and it's singing again right when Powell needs rate cuts to look inevitable, not reckless.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "6b6d0f8173a7",
+      "lead_host": "ALEX",
+      "angle": "Energy Department's 33-cent diesel bump by 2027 isn't a forecast\u2014it's a confession that Iran risk is now priced into the baseline, not the tail.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "83f6899808cc",
+      "lead_host": "MAYA",
+      "angle": "Apple's new CEO dusting off a 25-year-old Jobs playbook signals the company's out of new ideas and back to remixing the hits.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "5efe5e292047",
+      "lead_host": "MAYA",
+      "angle": "Automattic's board forcing Mullenweg on leave is what happens when a founder's ego and a company's governance finally collide\u2014and the board wins.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "1d574fe4167e",
+      "lead_host": "MAYA",
+      "angle": "AI-generated deepfakes are now good enough that voters can't trust their own eyes\u2014which means the election just became a trust exercise in institutions nobody trusts.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "afd552418732",
+    "joke_angle": "Farage is simultaneously facing a Met inquiry AND being asked 'Ready for departure?'\u2014which is either a scandal or a very aggressive travel agent."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Iran war drives $100 billion in extra energy costs for U.S. consumers",
+    "fresh_take": "Yesterday we said Iran cost Americans $100B; today the Energy Department just locked in that pain through 2027\u2014this isn't a spike anymore, it's the new floor."
+  },
+  "sign_off": {
+    "callback_target": "the Energy Department's 33-cent diesel forecast"
+  }
+}
