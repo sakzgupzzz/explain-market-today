@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Russian gold is flooding Hong Kong. Western sanctions just rewrote the entire bullion playbook."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.66% to 7773.95",
+      "Nasdaq +1.05% to 27477.31",
+      "TMO +3.35%, V +2.51%, MA +2.23%",
+      "MRK -3.30%, CRM -2.09%"
+    ],
+    "macro_note": "Tech leads, financials mixed, yields holding steady as equities defy gravity."
+  },
+  "big_story": {
+    "story_id": "5d7772c086d1",
+    "lead_host": "ALEX",
+    "story_title": "Russian gold floods Hong Kong as Western sanctions redraw bullion trade",
+    "angle": "Sanctions meant to isolate Russia are instead creating a parallel bullion infrastructure centered in Hong Kong\u2014a real-time case study in how capital finds the cracks in the global financial system.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "8f69463dddb5",
+      "lead_host": "ALEX",
+      "angle": "Narrow market breadth (mega-cap tech vs. everything else) is a classic setup for violent repricing\u2014either a melt-up or a washout.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "f8f40240823f",
+      "lead_host": "MAYA",
+      "angle": "Lucid cuts production to match demand\u2014which is a polite way of saying demand is still nowhere near the hype.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "179efab38c8a",
+      "lead_host": "MAYA",
+      "angle": "A robovac got an FCC waiver for something it doesn't need\u2014the regulatory theater is the actual story.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "43853a011a46",
+      "lead_host": "ALEX",
+      "angle": "Brazilian stocks surge on Bolsonaro odds\u2014emerging market volatility tied to one man's electoral prospects is a reminder that political risk is still the biggest risk.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "8c4576738edd",
+    "joke_angle": "OpenAI's 'rogue' bots may have crashed Wikipedia\u2014the irony of AI trained on Wikipedia now potentially breaking Wikipedia is almost too perfect."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Russian gold in Hong Kong\u2014the sanctions loophole that nobody wanted to talk about until it was already happening."
+  }
+}
