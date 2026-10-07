@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "AMD just hit fresh highs on AI agent hype\u2014but the real story is Meta's Muse is eating everyone's lunch."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.58% to 7818.93",
+      "Nasdaq +0.45% to 27599.89",
+      "AMD +2.80% to $649.42",
+      "TMO -2.98% to $656.58"
+    ],
+    "macro_note": "Breadth narrowing\u2014mega-cap tech and AI plays running while small-caps and healthcare stumble; VIX compression suggests complacency."
+  },
+  "big_story": {
+    "story_id": "f9b27fbda5da",
+    "lead_host": "MAYA",
+    "story_title": "Meta Muse popularity lifts AMD stock to fresh highs as AI agents juice CPU sales",
+    "angle": "Meta's Muse is the first AI agent product that's actually moving hardware\u2014not just hype\u2014and it's reshaping the CPU market in real time; the question is whether this is a genuine shift in AI workload or just the latest cycle of 'this time is different.'",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "55450d764bf8",
+      "lead_host": "MAYA",
+      "angle": "Lambda's $4B pre-IPO raise is the largest AI compute startup funding round ever\u2014but it's happening in a market where compute is already commoditizing; the real question is whether they're raising at peak hype or if they've actually solved a problem no one else can.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "bc452d87d6f7",
+      "lead_host": "ALEX",
+      "angle": "Winter heating bills are about to spike hard for millions\u2014this is a real cost-of-living shock that doesn't show up in CPI the way it should, and it's coming right as rate cuts stall.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "840ccf1d9435",
+      "lead_host": "JAMIE",
+      "angle": "Emmer's 'you suck' to Senate Republicans is the kind of intra-party scorched-earth that usually signals a power vacuum or a leadership challenge brewing.",
+      "conviction": "noise"
+    },
+    {
+      "story_id": "35ff7a4bf1de",
+      "lead_host": "MAYA",
+      "angle": "Tesla's Model 3 and Y can now act as home batteries\u2014which sounds cool until you realize it's solving a problem most owners don't have while creating a new one: grid operators managing millions of car batteries as a distributed power plant.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "843733134cd7",
+    "joke_angle": "A Trump rally stuck in time is just a Trump rally\u2014the real oddity is that someone at The Atlantic thought this was news and not just a description of every Trump rally ever."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Meta's Muse actually moving hardware\u2014the one AI product that isn't just a chatbot in a trench coat."
+  }
+}

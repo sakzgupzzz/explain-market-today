@@ -1,0 +1,79 @@
+1
+00:00:06,988 --> 00:00:17,363
+JAMIE: AMD's hitting fresh highs on AI agent hype, but Meta's Muse is actually the one taking market share—and Cisco just popped four point five percent because apparently routers are having a moment.
+  ↳ source: https://www.cnbc.com/2026/10/06/meta-muse-gives-amd-a-boost-as-ai-momentum-shifts-to-personal-agents-.html
+
+2
+00:00:17,363 --> 00:00:34,340
+ALEX: S&P up zero point five-eight percent to seven thousand eight hundred eighteen, Nasdaq up zero point four-five to twenty-seven thousand five ninety-nine. But look at the Russell two thousand—down zero point five-nine. That's your real story: mega-cap tech and AI is carrying the whole market while small-caps are getting left at the station.
+
+3
+00:00:34,340 --> 00:00:49,745
+MAYA: AMD's up two point eight percent to six forty-nine on the agent hype we talked about. Broadcom's up three point six-seven. But Thermo Fisher down almost three percent—two point nine-eight—and that's a company that usually holds up when everything else is screaming. When biotech stops working, something's off.
+
+4
+00:00:49,745 --> 00:01:02,006
+JAMIE: So the VIX is at fifteen point zero-one, down three point two-nine—which sounds calm except we're getting this calm while breadth is actually narrowing. That's like being told the plane's flying smooth while the wings are different sizes.
+
+5
+00:01:02,006 --> 00:01:15,525
+MAYA: Here's what's wild: Muse isn't just getting downloaded—it's actually driving CPU sales. When was the last time a software product moved semiconductor inventory? This isn't generative AI, which lives on GPUs. Agents need constant inference, lower latency, and that's a CPU play.
+
+6
+00:01:15,525 --> 00:01:30,930
+ALEX: Right, but we need to separate the installed base from the actual margin impact. If Muse users are running on existing devices—laptops people already own—then Meta's just shifting workload distribution, not creating new chip demand. The real question is whether enterprises are buying new hardware for agent infrastructure.
+  ↳ source: https://www.cnbc.com/2026/10/06/meta-muse-gives-amd-a-boost-as-ai-momentum-shifts-to-personal-agents-.html
+
+7
+00:01:30,930 --> 00:01:39,733
+JAMIE: So you're saying AMD's run might be software theater? The stock's up because the narrative is that agents eat CPUs, but if nobody's actually replacing their fleet—
+
+8
+00:01:39,733 --> 00:01:59,540
+MAYA: Except Meta's already said they're building out data centers specifically for Muse inference. That's capex. That's real. Intel and AMD are both bidding on that contract right now, and whoever wins doesn't just get one quarter—they get locked in for years. This is the first time an AI product has created a hardware refresh cycle instead of just optimizing what's already there.
+  ↳ source: https://www.cnbc.com/2026/10/06/meta-muse-gives-amd-a-boost-as-ai-momentum-shifts-to-personal-agents-.html
+
+9
+00:01:59,540 --> 00:02:08,971
+MAYA: Lambda's raising four billion dollars ahead of a planned IPO, which puts them at a significant valuation—largest AI compute startup round ever—and it's Nvidia-backed, with major investors leading it.
+
+10
+00:02:08,971 --> 00:02:22,176
+ALEX: So they're raising at peak hype to solve a problem that's already being solved by Nvidia selling chips directly. The venture capital version of opening a pizza place across from an existing pizza place, except the existing place manufactures the ovens.
+
+11
+00:02:22,176 --> 00:02:32,236
+JAMIE: Compute commoditizes faster than any other infrastructure layer—it's not like they own a unique algorithm or locked-in customers. What does Lambda actually have that justifies the valuation before they've gone public?
+
+12
+00:02:32,236 --> 00:02:40,725
+ALEX: A compelling narrative about being the alternative to Nvidia, which apparently is worth billions of dollars to people whose job is to deploy billions of dollars.
+
+13
+00:02:40,725 --> 00:02:52,986
+MAYA: Winter heating bills are about to crater household budgets—oil heating costs could spike hard this year, and this is a real cost-of-living shock that barely shows up in inflation data because the CPI treats energy like it's optional.
+
+14
+00:02:52,986 --> 00:03:03,046
+JAMIE: Millions of people in the Northeast are about to learn that the Federal Reserve's rate cuts don't keep you warm when your furnace runs on oil and geopolitical tensions affect supply.
+
+15
+00:03:03,046 --> 00:03:17,823
+ALEX: Exactly—the energy market's volatile, supply's tight, and this hits the people least able to absorb it right as we're supposed to be in the relief phase of monetary policy. The disconnect between headline inflation and what people actually pay to survive is about to get real.
+
+16
+00:03:17,823 --> 00:03:29,769
+JAMIE: Tom Emmer just told Senate Republicans 'you suck' out loud—House Majority Whip, publicly unloading on the other chamber, which usually means either he's lost his filter or there's a leadership fight brewing that nobody's talking about yet.
+  ↳ source: https://www.axios.com/2026/10/06/tom-emmer-senate-republicans-frustration-save-act
+
+17
+00:03:29,769 --> 00:03:36,372
+MAYA: Muse just proved infrastructure moves when software actually does something nobody else is doing—not just predicting text, but predicting *work*.
+
+18
+00:03:36,372 --> 00:03:42,659
+ALEX: Which means the next company to claim it's 'AI-native' better show up with hardware orders, not a chatbot update.
+
+19
+00:03:42,659 --> 00:03:47,061
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
