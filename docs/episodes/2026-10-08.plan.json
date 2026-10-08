@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Levi Strauss just hiked profit guidance on tariff refunds, but sales are tanking\u2014the jeans company is now a macro hedge fund."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.22%",
+      "Nasdaq -0.22%",
+      "Cisco +4.54% (biggest gainer)",
+      "Thermo Fisher -2.98% (biggest loser)"
+    ],
+    "macro_note": "Rates softer, Fed signals no rate hike series coming, small caps bleeding out."
+  },
+  "big_story": {
+    "story_id": "8b86a0876807",
+    "lead_host": "ALEX",
+    "story_title": "Levi Strauss hikes profit guidance after tariff refunds, but its sales outlook is less optimistic",
+    "angle": "Levi's profit beat is entirely a tariff accounting gift, not operational strength\u2014the company is guiding down on actual demand, which is the real story buried under the headline.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "69a18b283096",
+      "lead_host": "ALEX",
+      "angle": "Fed minutes show zero appetite for rate hikes despite inflation noise\u2014this is the permission slip for equities to keep grinding higher.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "0e722f67b004",
+      "lead_host": "MAYA",
+      "angle": "Anthropic's IPO is being pre-hyped as 'most ridiculous' of the year by analysts who are basically admitting they have no idea how to value it.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "51b04ef0b527",
+      "lead_host": "ALEX",
+      "angle": "Modelo owner Constellation is getting creative to bring back beer drinkers\u2014when your fix is 'creativity' instead of product, demand is actually broken.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "c3aca542aa5c",
+      "lead_host": "MAYA",
+      "angle": "Teenage Engineering's CEO says it'll stop making synths\u2014a boutique hardware maker admitting the economics don't work is a quiet signal that niche manufacturing is dead.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "56a350fe329f",
+    "joke_angle": "A supertanker just chartered for $76M to haul stuff from the Gulf to China\u2014that's 10x pre-war rates, which means someone's betting the shipping market is now a geopolitical hostage situation."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Meta Muse popularity lifts AMD stock to fresh highs as AI agents juice CPU sales",
+    "fresh_take": "AMD is up 2.8% today on chip demand, but the real move is Cisco +4.54%\u2014the networking gear play on AI infrastructure is outrunning the chip itself, suggesting the margin is in the plumbing, not the silicon."
+  },
+  "sign_off": {
+    "callback_target": "Levi Strauss tariff refund windfall"
+  }
+}
