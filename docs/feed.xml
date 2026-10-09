@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Thu, 08 Oct 2026 01:03:18 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 02:31:59 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,52 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>ACN +6.0%, Trump Mobile hack and apparent lack — Oct 9</title>
+      <description>Trump Mobile got hacked—and the FCC apparently never authorized it in the first place. Today's lead: Trump Mobile hack and apparent lack of FCC authorization raise security alarms. A telecom service literally branded after the president got breached and nobody checked if it was even legal—the intersection of vanity product, regulatory theater, and actual security failure.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:37  Markets
+  00:01:43  Big story
+  00:02:48  Quick hits
+  00:03:16  Odd thing of the day
+  00:03:39  Sign-off
+
+Stories covered:
+  • Levi Strauss beats profit guidance on tariff refunds but cuts sales outlook—the jeans company is now a macro hedge, not a retailer. [real]
+  • PepsiCo slashes earnings forecast; North American turnaround stalling—consumer staples hitting a wall. [real]
+  • Fired OpenAI safety researchers dispute misconduct claims and warn of chilling effect—the internal reckoning at the AI house that moves markets. [hype]
+  • Nvidia-backed Aussie AI firm Firmus pulls historic IPO citing market volatility—even Nvidia's bets are getting cold feet. [noise]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [curious] Trump Mobile got hacked—and the FCC never actually authorized it to operate, so the agency that's supposed to regulate this thing is now playing catch-up on a network that's already been compromised.
+ALEX: [deadpan] So Levi Strauss reported hiking profit guidance after tariff refunds—stock up, the whole narrative was there. PepsiCo just cut earnings forecast this morning. Turns out when you're selling snacks and jeans to people whose grocery bills haven't actually gotten cheaper, the tariff-relief bounce doesn't stick around. Levi's guidance hike is starting to look like the moment before everyone realizes the sugar rush was the tariff money, not the business improving.
+ALEX: [deadpan] Tech got shoved today. Nvidia down two point nine four percent, AMD off three point nine—and that's against a Nasdaq that fell one point two five overall. The S&amp;P barely held at minus zero point four seven, but chip stocks are getting their own private recession. Meanwhile Accenture jumped five point nine six percent, Home Depot up three point three nine—so the market's basically saying 'we're over the AI dream, give us the people who fix the plumbing.'
+JAMIE: [curious] So Accenture and Home Depot are the new growth stocks now? That's the rotation we're doing?
+MAYA: [rushed] It's not even that wild when you think about it—like, we spent all of 2024 convinced every company needed to be an AI company, and now the market's remembering that Accenture literally helps you *implement* the stuff nobody can figure out how to use, and Home Depot sells you the materials to build the actual office where the AI people sit. It's the deflation after the hype bubble hits the infrastructure layer.
+ALEX: [deadpan] The FCC issue is almost secondary to that. They filed for authorization, got told no or got stuck in review, and then just... launched anyway. Which means every customer on that network is technically operating on an unauthorized carrier. The company's been running for months on a service that shouldn't exist.
+JAMIE: [curious] Wait—so when the hack happened, were they even obligated to notify anyone? Like, if you're not a licensed carrier, do you have to follow carrier breach protocols?
+MAYA: [mischievously] That's the gap nobody's filled yet. Carriers have to notify within 30 days under FCC rules. But if you're operating without authorization, you're in this legal no-man's-land where you might not be subject to those rules, which means you could theoretically sit on a breach longer and nobody catches you until a senator asks questions. It's like running a speakeasy and then arguing the health inspector has no jurisdiction because you never got a liquor license.
+ALEX: [deadpan] PepsiCo just cut its earnings forecast. North American turnaround is taking longer than expected, and the company's basically signaling that the consumer still isn't there.
+JAMIE: [curious] So the tariff narrative was supposed to be this broad relief valve for consumer spending. Turns out it was a one-time check that hit the balance sheet, not the wallet.
+MAYA: [rushed] Three safety researchers at OpenAI just fired back at the company's misconduct allegations in an open letter, saying their dismissals are designed to scare anyone from raising concerns about how the company handles sensitive AI safety data.
+JAMIE: [curious] So OpenAI fires them, calls it misconduct, and they're saying the real misconduct is the retaliation itself.
+ALEX: [deadpan] This is the part that matters for the market: OpenAI's board is now the story instead of the product roadmap. Investors bought into the vision. Now they're reading internal memos about safety teams getting purged.
+MAYA: [rushed] Nvidia-backed Firmus, an Australian AI firm, just pulled its IPO citing market volatility. So even Nvidia's own bets on AI infrastructure aren't confident enough to go public right now.
+JAMIE: [excited] That's the signal. When the hype machine's own money gets cold feet, the hype machine's broken.
+MAYA: [rushed] The USS Lincoln just pulled into San Diego after a long deployment.
+JAMIE: [laughs] So the one institution that actually finishes what it starts is the one where people are eating MREs and sleeping in shifts. Congress can't pass a budget, the Fed keeps changing its mind every other meeting, but the Navy's like 'we committed to this deployment and we will see it through.'
+MAYA: [rushed] Trump Mobile's still operating on borrowed time—the FCC's basically running an audit on a house someone's already living in while it's actively on fire.
+ALEX: [deadpan] And the fire department's only now checking if they were supposed to issue a permit for the house in the first place.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">c771ee26-38a9-95e0-2cbd-95529b8ac40b</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-10-09.mp3" length="3949793" type="audio/mpeg" />
+      <pubDate>Fri, 09 Oct 2026 02:31:34 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-10-09.jpg" />
+      <itunes:duration>00:04:06</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20261009</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-10-09.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-10-09.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-10-09.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>CSCO +4.5%, Levi Strauss hikes profit guidance after — Oct 8</title>
       <description>Levi Strauss just hiked profit guidance on tariff refunds, but sales are tanking—the jeans company is now a macro hedge fund. Today's lead: Levi Strauss hikes profit guidance after tariff refunds, but its sales outlook is less optimistic. Levi's profit beat is entirely a tariff accounting gift, not operational strength—the company is guiding down on actual demand, which is the real story buried under the headline.

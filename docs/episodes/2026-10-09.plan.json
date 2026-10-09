@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Trump Mobile got hacked\u2014and the FCC apparently never authorized it in the first place."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.47%",
+      "Nasdaq -1.25%",
+      "NVDA -2.94%",
+      "AMD -3.90%",
+      "ACN +5.96%"
+    ],
+    "macro_note": "Tech selloff on AI chip concerns; VIX creeping up; defensive plays and industrials holding ground."
+  },
+  "big_story": {
+    "story_id": "a412032ed738",
+    "lead_host": "MAYA",
+    "story_title": "Trump Mobile hack and apparent lack of FCC authorization raise security alarms",
+    "angle": "A telecom service literally branded after the president got breached and nobody checked if it was even legal\u2014the intersection of vanity product, regulatory theater, and actual security failure.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "8b86a0876807",
+      "lead_host": "ALEX",
+      "angle": "Levi Strauss beats profit guidance on tariff refunds but cuts sales outlook\u2014the jeans company is now a macro hedge, not a retailer.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "8e511ede7096",
+      "lead_host": "ALEX",
+      "angle": "PepsiCo slashes earnings forecast; North American turnaround stalling\u2014consumer staples hitting a wall.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "d883f097e1d6",
+      "lead_host": "MAYA",
+      "angle": "Fired OpenAI safety researchers dispute misconduct claims and warn of chilling effect\u2014the internal reckoning at the AI house that moves markets.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "02cec5481e21",
+      "lead_host": "MAYA",
+      "angle": "Nvidia-backed Aussie AI firm Firmus pulls historic IPO citing market volatility\u2014even Nvidia's bets are getting cold feet.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "4d3045276691",
+    "joke_angle": "USS Lincoln returns home after long deployment\u2014the one institution that actually finishes what it starts."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Levi Strauss just hiked profit guidance on tariff refunds, but sales are tanking\u2014the jeans company is now a macro hedge",
+    "fresh_take": "Today's earnings cut from PepsiCo shows the tariff-refund sugar rush is wearing off across consumer\u2014Levi's profit beat is looking like a one-quarter anomaly, not a trend."
+  },
+  "sign_off": {
+    "callback_target": "Trump Mobile's FCC authorization gap"
+  }
+}

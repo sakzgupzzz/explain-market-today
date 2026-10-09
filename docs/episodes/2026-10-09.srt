@@ -1,0 +1,84 @@
+1
+00:00:06,988 --> 00:00:16,792
+JAMIE: Trump Mobile got hacked—and the FCC never actually authorized it to operate, so the agency that's supposed to regulate this thing is now playing catch-up on a network that's already been compromised.
+  ↳ source: https://arstechnica.com/tech-policy/2026/10/trump-mobile-doesnt-seem-to-have-fcc-authorization-for-phone-service-senator-says/
+
+2
+00:00:16,792 --> 00:00:37,885
+ALEX: So Levi Strauss reported hiking profit guidance after tariff refunds—stock up, the whole narrative was there. PepsiCo just cut earnings forecast this morning. Turns out when you're selling snacks and jeans to people whose grocery bills haven't actually gotten cheaper, the tariff-relief bounce doesn't stick around. Levi's guidance hike is starting to look like the moment before everyone realizes the sugar rush was the tariff money, not the business improving.
+  ↳ source: https://www.cnbc.com/2026/10/07/levi-strauss-levi-q3-2026-earnings.html
+
+3
+00:00:37,885 --> 00:01:01,356
+ALEX: Tech got shoved today. Nvidia down two point nine four percent, AMD off three point nine—and that's against a Nasdaq that fell one point two five overall. The S&P barely held at minus zero point four seven, but chip stocks are getting their own private recession. Meanwhile Accenture jumped five point nine six percent, Home Depot up three point three nine—so the market's basically saying 'we're over the AI dream, give us the people who fix the plumbing.'
+
+4
+00:01:01,356 --> 00:01:06,406
+JAMIE: So Accenture and Home Depot are the new growth stocks now? That's the rotation we're doing?
+
+5
+00:01:06,406 --> 00:01:28,094
+MAYA: It's not even that wild when you think about it—like, we spent all of 2024 convinced every company needed to be an AI company, and now the market's remembering that Accenture literally helps you *implement* the stuff nobody can figure out how to use, and Home Depot sells you the materials to build the actual office where the AI people sit. It's the deflation after the hype bubble hits the infrastructure layer.
+
+6
+00:01:28,094 --> 00:01:43,542
+ALEX: The FCC issue is almost secondary to that. They filed for authorization, got told no or got stuck in review, and then just... launched anyway. Which means every customer on that network is technically operating on an unauthorized carrier. The company's been running for months on a service that shouldn't exist.
+
+7
+00:01:43,542 --> 00:01:51,861
+JAMIE: Wait—so when the hack happened, were they even obligated to notify anyone? Like, if you're not a licensed carrier, do you have to follow carrier breach protocols?
+
+8
+00:01:51,861 --> 00:02:14,737
+MAYA: That's the gap nobody's filled yet. Carriers have to notify within 30 days under FCC rules. But if you're operating without authorization, you're in this legal no-man's-land where you might not be subject to those rules, which means you could theoretically sit on a breach longer and nobody catches you until a senator asks questions. It's like running a speakeasy and then arguing the health inspector has no jurisdiction because you never got a liquor license.
+
+9
+00:02:14,737 --> 00:02:22,461
+ALEX: PepsiCo just cut its earnings forecast. North American turnaround is taking longer than expected, and the company's basically signaling that the consumer still isn't there.
+
+10
+00:02:22,461 --> 00:02:31,671
+JAMIE: So the tariff narrative was supposed to be this broad relief valve for consumer spending. Turns out it was a one-time check that hit the balance sheet, not the wallet.
+
+11
+00:02:31,671 --> 00:02:42,961
+MAYA: Three safety researchers at OpenAI just fired back at the company's misconduct allegations in an open letter, saying their dismissals are designed to scare anyone from raising concerns about how the company handles sensitive AI safety data.
+  ↳ source: https://techcrunch.com/2026/10/08/fired-openai-safety-researchers-dispute-misconduct-claims-warn-of-chilling-effect/
+
+12
+00:02:42,961 --> 00:02:48,308
+JAMIE: So OpenAI fires them, calls it misconduct, and they're saying the real misconduct is the retaliation itself.
+
+13
+00:02:48,308 --> 00:02:59,003
+ALEX: This is the part that matters for the market: OpenAI's board is now the story instead of the product roadmap. Investors bought into the vision. Now they're reading internal memos about safety teams getting purged.
+
+14
+00:02:59,003 --> 00:03:07,916
+MAYA: Nvidia-backed Firmus, an Australian AI firm, just pulled its IPO citing market volatility. So even Nvidia's own bets on AI infrastructure aren't confident enough to go public right now.
+  ↳ source: https://www.cnbc.com/2026/10/09/nvidia-ai-firmus-ipo-.html
+
+15
+00:03:07,916 --> 00:03:12,967
+JAMIE: That's the signal. When the hype machine's own money gets cold feet, the hype machine's broken.
+
+16
+00:03:12,967 --> 00:03:16,829
+MAYA: The USS Lincoln just pulled into San Diego after a long deployment.
+
+17
+00:03:16,829 --> 00:03:32,278
+JAMIE: So the one institution that actually finishes what it starts is the one where people are eating MREs and sleeping in shifts. Congress can't pass a budget, the Fed keeps changing its mind every other meeting, but the Navy's like 'we committed to this deployment and we will see it through.'
+
+18
+00:03:32,278 --> 00:03:39,705
+MAYA: Trump Mobile's still operating on borrowed time—the FCC's basically running an audit on a house someone's already living in while it's actively on fire.
+  ↳ source: https://arstechnica.com/tech-policy/2026/10/trump-mobile-doesnt-seem-to-have-fcc-authorization-for-phone-service-senator-says/
+
+19
+00:03:39,705 --> 00:03:46,538
+ALEX: And the fire department's only now checking if they were supposed to issue a permit for the house in the first place.
+
+20
+00:03:46,538 --> 00:03:50,697
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
