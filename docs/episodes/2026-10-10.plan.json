@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Trump's Fed committee just opened a file on Lisa Cook\u2014and the dollar's up 0.59% on the day."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.59%",
+      "Nasdaq +0.64%",
+      "VIX -3.70%",
+      "ACN +5.96% (biggest gainer)",
+      "ORCL -5.48% (biggest loser)"
+    ],
+    "macro_note": "Equities steady, volatility collapsing, tech mixed\u2014Oracle's stumble dragging chip sector."
+  },
+  "big_story": {
+    "story_id": "3aa11886f1a8",
+    "lead_host": "JAMIE",
+    "story_title": "Trump created a committee to dig into the Fed's Lisa Cook. What is it and what comes next?",
+    "angle": "This is not a policy debate\u2014it's a political pressure play on the Fed's independence, and the market is already pricing in what happens if the Fed blinks on rates.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "461b32689c00",
+      "lead_host": "ALEX",
+      "angle": "Delta CEO says demand is 'still strong' while cutting 2026 guidance on fuel\u2014the classic move of pretending the plane isn't losing altitude while you're already reaching for the oxygen mask.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "857c1309052b",
+      "lead_host": "MAYA",
+      "angle": "Tesla ditched 'Full Self-Driving' in Europe because regulators won't let you call it that\u2014turns out 'Full' and 'Self-Driving' are words with meanings, who knew.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "975e2c9219e8",
+      "lead_host": "MAYA",
+      "angle": "Fired OpenAI employees are now publicly questioning the company's safety commitment\u2014the people who built the thing are saying the emperor has no clothes, and Sam Altman is still in the room.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "7a715efe2f55",
+      "lead_host": "ALEX",
+      "angle": "Earnings season kicks off with banks and chipmakers facing 'big tests'\u2014translation: we have no idea if the Fed pivot holds or if the AI rally was just a sugar rush.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "dbfbec6b8d45",
+    "joke_angle": "Decade-old RAM is making a comeback because new RAM is too expensive\u2014we've officially entered the era where your 2015 laptop is a luxury good."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Lisa Cook and the Fed's independence"
+  }
+}

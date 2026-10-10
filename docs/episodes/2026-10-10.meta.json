@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-10",
+  "mp3": "2026-10-10.mp3",
+  "size_bytes": 1834479,
+  "duration_sec": 114.42,
+  "turns": 8,
+  "words": 295,
+  "char_usage_estimate": 1951,
+  "prompt_version": "v1.4",
+  "prompt_variant": "A",
+  "generated_at": "2026-10-10T00:51:50.155948Z",
+  "top_mover": {
+    "symbol": "ACN",
+    "name": "ACN",
+    "pct": 5.96
+  },
+  "market_snapshot": {
+    "indices": [
+      {
+        "symbol": "^GSPC",
+        "name": "S&P 500",
+        "close": 7811.5400390625,
+        "pct": 0.59
+      },
+      {
+        "symbol": "^DJI",
+        "name": "Dow Jones",
+        "close": 51654.94921875,
+        "pct": 0.83
+      },
+      {
+        "symbol": "^IXIC",
+        "name": "Nasdaq",
+        "close": 27366.169921875,
+        "pct": 0.64
+      },
+      {
+        "symbol": "^RUT",
+        "name": "Russell 2000",
+        "close": 2806.9814453125,
+        "pct": 0.46
+      },
+      {
+        "symbol": "^VIX",
+        "name": "VIX",
+        "close": 14.84000015258789,
+        "pct": -3.7
+      }
+    ]
+  }
+}
