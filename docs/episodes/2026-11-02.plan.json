@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Oracle down 8.76%, AMD down 7.52%\u2014the AI chip party just got a lot quieter."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.51%",
+      "Nasdaq -1.07%",
+      "VIX +8.91% to 21.15",
+      "Oracle -8.76%, AMD -7.52%"
+    ],
+    "macro_note": "Tech selloff amid AI reality check; defensive plays (retail, payments) holding up."
+  },
+  "big_story": {
+    "story_id": "8e3be1926802",
+    "lead_host": "ALEX",
+    "story_title": "Palantir earnings reveal a major AI turning point",
+    "angle": "Palantir's beat signals the market is finally separating actual AI revenue from pure hype\u2014and today's tech rout is the hangover from that separation.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "1aea2ccd54ea",
+      "lead_host": "JAMIE",
+      "angle": "A 20-year-old copilot in a deadly Florida jet crash raises hard questions about certification, experience, and who's really flying these planes.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "26efa1c42fb6",
+      "lead_host": "MAYA",
+      "angle": "Senate GOP betting big on streaming as a political weapon\u2014the infrastructure play nobody saw coming.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "a062b4a9161a",
+      "lead_host": "ALEX",
+      "angle": "Fed voting on rates less often could mean longer stretches of uncertainty for borrowers\u2014the opposite of what rate-cut cheerleaders promised.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "1de36f2e5a88",
+      "lead_host": "MAYA",
+      "angle": "Snap settles teen mental health lawsuit\u2014the social media reckoning is now a line item on the P&L.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "f09c1009ff76",
+    "joke_angle": "Trump's final pre-midterm speech focused on the Reflecting Pool\u2014a literal puddle in DC got more airtime than policy."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Oracle's 8.76% drop\u2014the AI reality check that started the day"
+  }
+}
