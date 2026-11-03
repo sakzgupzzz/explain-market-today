@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "ORCL down 8.8 percent \u2014 and that's not even the headline."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.51 percent",
+      "Dow Jones +0.41 percent",
+      "Nasdaq -1.07 percent",
+      "Russell 2000 -0.21 percent"
+    ],
+    "macro_note": "Quick read on where the tape closed."
+  },
+  "big_story": {
+    "story_id": "5f6691628506",
+    "lead_host": "JAMIE",
+    "story_title": "Supreme Court rejects DOJ's bid to block California from counting disputed ballots",
+    "angle": "Lead with the facts and why it matters.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "6ec633d41173",
+      "lead_host": "ALEX",
+      "angle": "Apple\u2019s iPhone business is booming. Here\u2019s why the stock is falling anyway.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "c7a9e4e5b6f0",
+      "lead_host": "MAYA",
+      "angle": "Apple may try to increase revenue by doing\u2026something with third-party AI apps",
+      "conviction": "real"
+    },
+    {
+      "story_id": "ebff9eb1d68d",
+      "lead_host": "JAMIE",
+      "angle": "Apple set an iPhone sales record even without a new standard iPhone",
+      "conviction": "real"
+    },
+    {
+      "story_id": "b3fb061c1f93",
+      "lead_host": "ALEX",
+      "angle": "Plane may have broken apart ahead of deadly Florida jet crash, say investigators",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "600bf245d83a",
+    "joke_angle": "The lighter one to close on."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Supreme Court rejects DOJ's bid to block California from cou"
+  }
+}

@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Nov 2026 21:31:52 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 02:58:11 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,50 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>ORCL -8.8%, Supreme Court rejects DOJ's bid to — Nov 3</title>
+      <description>ORCL down 8.8 percent — and that's not even the headline. Today's lead: Supreme Court rejects DOJ's bid to block California from counting disputed ballots. Lead with the facts and why it matters.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:10  Markets
+  00:00:59  Big story
+  00:01:49  Quick hits
+  00:02:20  Odd thing of the day
+  00:02:32  Sign-off
+
+Stories covered:
+  • Apple’s iPhone business is booming. Here’s why the stock is falling anyway. [real]
+  • Apple may try to increase revenue by doing…something with third-party AI apps [real]
+  • Apple set an iPhone sales record even without a new standard iPhone [real]
+  • Plane may have broken apart ahead of deadly Florida jet crash, say investigators [real]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] Oracle down eight point seven six percent — and that's not even the headline.
+ALEX: [deadpan] So the S&amp;P ended down zero point five one percent, the Dow actually squeaked out a gain of zero point four one percent, but the Nasdaq got hit with one point zero seven percent down, and the Russell 2000 just sort of existed at minus zero point two one percent. The VIX spiked eight point nine one percent, so volatility came back like someone's ex at a grocery store you didn't expect.
+JAMIE: [laughs] The Dow is up while everything else is struggling — that's the move of someone who just bought a house in a neighborhood they're pretty sure is fine.
+MAYA: [rushed] Home Depot up three point six three percent, Walmart up three point three eight percent — so everyone's buying tools and groceries while the tech sector is getting liquidated. That's the portfolio of a person who's decided to become a prepper but only halfway committed.
+JAMIE: [curious] So the Supreme Court just rejected the DOJ's emergency request to block California from counting those disputed ballots. This is the federal government trying to intervene in a state's election process, and they got shut down.
+MAYA: [mischievously] Wait, so the federal government is basically showing up to state election offices like a parent trying to override a referee's call at their kid's soccer game, and the Supreme Court is just handing them a whistle and telling them to sit down.
+JAMIE: [excited] That's exactly it — and this sets a pretty clear precedent that even in urgent circumstances, the Court isn't going to let DOJ overrule how states process their own ballots. That's the real story here.
+ALEX: [deadpan] Apple's iPhone business just set a record — we're talking a quarter where they sold more iPhones than they ever have — but the stock is down anyway because Wall Street is worried about growth slowing.
+JAMIE: [laughs] So the thing that's supposed to make money is making more money than it ever has, and the market response is to sell it. That's the move of someone who ordered the expensive steak and then complained it was too filling.
+MAYA: [rushed] But here's the thing — Apple didn't even release a standard iPhone model this cycle. They just put out the Pro and Pro Max, and people still bought more of them than any iPhone ever.
+ALEX: Which means the entire growth story is being driven by people trading up to more expensive hardware. That's sustainable until it isn't, and Wall Street's already pricing in the 'isn't' part.
+MAYA: [mischievously] So Apple's also hinting at new revenue streams through third-party AI app opportunities — basically admitting that the iPhone itself is maxed out and they need to start monetizing the ecosystem around it.
+JAMIE: [curious] Translation: we've squeezed the hardware, now we're going to charge you rent for the software that runs on it.
+ALEX: [sighs] A plane that crashed in Florida may have broken apart in mid-air before impact, and weather could have been a contributing factor — but investigators are still early in the investigation.
+JAMIE: [laughs] So the plane either fell apart because of the weather, or it fell apart and then the weather was there, and we won't know which one for a while.
+MAYA: [mischievously] So the Supreme Court basically told the DOJ: you can't call the ref, the ref is calling you.
+ALEX: [deadpan] And next time they try this, they'll know the answer before they even pick up the phone.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">9b0edf3e-97ce-ad14-e00e-8632cd4b57d6</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-03.mp3" length="2837328" type="audio/mpeg" />
+      <pubDate>Tue, 03 Nov 2026 02:57:39 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-03.jpg" />
+      <itunes:duration>00:02:57</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20261103</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-03.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-03.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-03.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>ORCL -8.8%, Palantir earnings reveal a major AI — Nov 2</title>
       <description>Oracle down 8.76%, AMD down 7.52%—the AI chip party just got a lot quieter. Today's lead: Palantir earnings reveal a major AI turning point. Palantir's beat signals the market is finally separating actual AI revenue from pure hype—and today's tech rout is the hangover from that separation.
