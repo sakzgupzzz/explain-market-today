@@ -1,0 +1,64 @@
+1
+00:00:06,988 --> 00:00:16,943
+JAMIE: AMD just posted its biggest quarter ever—then immediately tanked seven point five two percent, and I'm sitting here wondering if the market's way of saying congratulations is just a swift kick in the teeth.
+
+2
+00:00:16,943 --> 00:00:34,292
+ALEX: Oracle down eight point seven six percent today, and that's not even the headline. AMD tanked seven point five two percent, and now we're looking at two of the biggest AI infrastructure plays getting sold simultaneously—which is the market's way of saying it finally noticed that Nvidia's dominance isn't a shared experience, it's a solo act. The spreadsheet is adjusting.
+
+3
+00:00:34,292 --> 00:01:03,871
+ALEX: The S&P is up point three six percent, Nasdaq up point eight three, but the story underneath is a complete fracture—AMD down seven point five two percent, Oracle down eight point seven six percent. Your mega-cap AI plays are getting eviscerated while Home Depot is up three point six three percent and Walmart up three point three eight percent. The VIX dropped one point five one, which usually signals calm, except the calm is happening because money is sprinting out of the chip sector and into toilet paper and credit card payments. That's not a rotation, that's a rout with a shopping cart.
+
+4
+00:01:03,871 --> 00:01:16,385
+JAMIE: So the market's saying 'congratulations on your record quarter, AMD, now get out of my portfolio.' And Oracle just got hit harder—eight point seven six percent—which is wild because that's the company that's supposed to be selling the shovels to the gold rush.
+
+5
+00:01:16,385 --> 00:01:35,441
+MAYA: Except the shovels are apparently made of sand. Broadcom, Nvidia, all of them are suddenly expensive when you're actually trying to deploy the things instead of just talking about deploying them. Meanwhile Mastercard up three point one five, Visa up two point eight eight—the payment networks are having the day of their lives because apparently the only thing people trust to grow right now is fees.
+
+6
+00:01:35,441 --> 00:01:45,965
+ALEX: AMD's calling for more than eighty percent revenue growth next year, and data center is going to hit more than eighty percent of total revenue. The company is essentially a single-customer business wearing a diversified suit.
+
+7
+00:01:45,965 --> 00:01:52,222
+JAMIE: So if data center stops accelerating, AMD doesn't have a fallback position—it's just a freefall with a quarterly earnings call attached.
+
+8
+00:01:52,222 --> 00:02:03,598
+MAYA: Right, and the thing is they've already told Wall Street this is the plan, so there's zero room to miss. They've basically painted a target on their own chest and handed the marker to every short seller in Manhattan.
+
+9
+00:02:03,598 --> 00:02:14,122
+ALEX: Disney is laying off several thousand people and asking managers to cut costs by up to twenty percent. Iger's back, the spreadsheet is angry, and somehow streaming profitability still requires you to fire your way there.
+
+10
+00:02:14,122 --> 00:02:20,379
+JAMIE: That's the part that gets me—streaming was supposed to be the future, and the future apparently runs on layoffs and cost targets.
+
+11
+00:02:20,379 --> 00:02:26,352
+MAYA: Canva just announced they're cutting twenty-two percent of staff. Turns out frictionless adoption doesn't actually translate to a business model.
+
+12
+00:02:26,352 --> 00:02:35,737
+ALEX: Yum Brands beat earnings, but Taco Bell's same-store sales are down because of a cyclospora outbreak tied to lettuce. A literal foodborne illness is now a line item in the earnings narrative.
+  ↳ source: https://www.cnbc.com/2026/11/03/yum-brands-yum-q3-2026-earnings.html
+
+13
+00:02:35,737 --> 00:02:44,554
+JAMIE: So the company nailed the numbers, and Wall Street's celebrating, except there's a parasite in the salad bar. That's the kind of asterisk that doesn't fit on a slide deck.
+
+14
+00:02:44,554 --> 00:02:52,518
+ALEX: AMD's been handed a loaded gun and told it's a pen—more than eighty percent growth means they've got one shot before the market decides they're just expensive.
+
+15
+00:02:52,518 --> 00:02:58,206
+MAYA: And if they miss, investors are going to act shocked, like they didn't read the memo they literally wrote.
+
+16
+00:02:58,206 --> 00:03:02,188
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.

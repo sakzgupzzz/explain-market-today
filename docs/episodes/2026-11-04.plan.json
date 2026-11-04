@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "AMD just posted its biggest quarter ever\u2014then immediately tanked 7.5 percent. We're talking about the company that's supposed to be winning."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +0.36%",
+      "Nasdaq +0.83%",
+      "AMD -7.52%",
+      "Oracle -8.76%",
+      "Retail strength: HD +3.63%, WMT +3.38%"
+    ],
+    "macro_note": "Mega-cap tech rolling over; VIX down but breadth narrowing\u2014rotation into consumer staples and payments."
+  },
+  "big_story": {
+    "story_id": "04c332da17ea",
+    "lead_host": "ALEX",
+    "story_title": "AMD rides data center riches to 'largest and most profitable' quarter in history",
+    "angle": "AMD crushed earnings and raised 2027 guidance to 80%+ revenue growth with data center as the core engine\u2014but the stock is punished anyway, exposing the gap between AI narrative and actual investor conviction.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "5c72e2605541",
+      "lead_host": "ALEX",
+      "angle": "AMD forecasts 80%+ revenue growth in 2027 with data center hitting 80% of total revenue\u2014the company is basically betting its entire future on one customer segment not imploding.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "b7f04858e1a9",
+      "lead_host": "ALEX",
+      "angle": "Disney is cutting thousands and asking managers to slash costs by 20%\u2014Iger's cost-cutting theater is back, and it's happening right as streaming is supposed to be profitable.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "51788fe841e6",
+      "lead_host": "MAYA",
+      "angle": "Canva is laying off 22 percent of staff after a massive valuation run\u2014the design-tool darling is discovering that viral adoption doesn't automatically print money.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "8ede4a01e35e",
+      "lead_host": "ALEX",
+      "angle": "Yum Brands beat earnings but Taco Bell is getting hammered by a cyclospora outbreak\u2014a literal foodborne illness is now a line item in the earnings call.",
+      "conviction": "noise"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "49464010cf00",
+    "joke_angle": "People are leaving 'I Voted' stickers at ICE memorials\u2014the most American way to turn a civic duty into a grief ritual."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "ORCL down 8.8 percent \u2014 and that's not even the headline.",
+    "fresh_take": "Oracle is down 8.76% today, but AMD's 7.5% drop is the real story\u2014both mega-cap AI plays are getting sold, suggesting the market is finally pricing in that not every company can be the next Nvidia."
+  },
+  "sign_off": {
+    "callback_target": "AMD's 80% data center bet\u2014the company that's supposed to be winning but the stock is punished anyway"
+  }
+}
