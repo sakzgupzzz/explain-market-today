@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "Dow up 3%, but Nvidia's down 3%\u2014the post-election rally is already sorting winners and losers, and chip stocks are getting crushed."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 +1.58% to 7688.62",
+      "Dow +3.03% to 53356.12",
+      "Nasdaq +1.44% to 25736.51",
+      "MSFT +6.68%, MCD +6.53%, AMZN +6.12%",
+      "NVDA -3.17%, XOM -4.62%, TSLA -3.34%"
+    ],
+    "macro_note": "Post-election relief rally favors old-economy and mega-cap tech, but data-center euphoria is cracking under election uncertainty."
+  },
+  "big_story": {
+    "story_id": "544de896a831",
+    "lead_host": "ALEX",
+    "story_title": "Micron and other chip stocks slip as election results strike at the core of data-center optimism",
+    "angle": "The data-center AI boom was priced on a specific policy outcome\u2014tariffs, China restrictions, capex certainty. Election results just scrambled that bet, and chip stocks are repricing in real time.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "f576607a50a7",
+      "lead_host": "MAYA",
+      "angle": "Figma beat earnings but stock tanked\u2014company is pivoting to AI-first product roadmap and investors hate long-term bets that don't print money next quarter.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "112d052bb578",
+      "lead_host": "ALEX",
+      "angle": "McDonald's crushed earnings and stock up 6.5%\u2014U.S. consumer still spending, but franchisees are sweating labor costs and the margin math is tightening.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "6c4a88f22a1b",
+      "lead_host": "ALEX",
+      "angle": "CVS spinning off drugstore business, stock down 10%\u2014the healthcare conglomerate bet is officially dead; market wants pure-play exposure, not bundled complexity.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "135d2ea673c4",
+      "lead_host": "MAYA",
+      "angle": "OpenAI is already laying groundwork for 2028 election influence\u2014the speed at which AI labs moved from 'we're neutral' to 'we're shaping policy' is the actual story.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "b4b141d2f806",
+    "joke_angle": "AI PACs spent millions trying to shape Congress and mostly lost\u2014turns out you can't buy an election with a chatbot and venture capital, who knew."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "AMD rides data center riches to 'largest and most profitable' quarter in history",
+    "fresh_take": "AMD's data-center bet is now under pressure as the entire chip sector reprices on election uncertainty\u2014yesterday's 'largest quarter ever' is today's 'we're all exposed to the same policy risk.'"
+  },
+  "sign_off": {
+    "callback_target": "Nvidia's 3% drop\u2014the stock that was supposed to be recession-proof is now recession-adjacent."
+  }
+}

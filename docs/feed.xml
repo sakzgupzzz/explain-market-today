@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Nov 2026 01:23:02 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 02:44:31 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,52 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>MSFT +6.7%, Micron and other chip stocks slip — Nov 5</title>
+      <description>Dow up 3%, but Nvidia's down 3%—the post-election rally is already sorting winners and losers, and chip stocks are getting crushed. Today's lead: Micron and other chip stocks slip as election results strike at the core of data-center optimism. The data-center AI boom was priced on a specific policy outcome—tariffs, China restrictions, capex certainty. Election results just scrambled that bet, and chip stocks are repricing in real time.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:18  Markets
+  00:01:38  Big story
+  00:02:39  Quick hits
+  00:03:24  Odd thing of the day
+  00:03:41  Sign-off
+
+Stories covered:
+  • Figma beat earnings but stock tanked—company is pivoting to AI-first product roadmap and investors hate long-term bets that don't print money next quarter. [real]
+  • McDonald's crushed earnings and stock up 6.5%—U.S. consumer still spending, but franchisees are sweating labor costs and the margin math is tightening. [real]
+  • CVS spinning off drugstore business, stock down 10%—the healthcare conglomerate bet is officially dead; market wants pure-play exposure, not bundled complexity. [real]
+  • OpenAI is already laying groundwork for 2028 election influence—the speed at which AI labs moved from 'we're neutral' to 'we're shaping policy' is the actual story. [hype]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] Dow's up three point zero three percent this morning, but Nvidia just dropped three point one seven—turns out the post-election rally wants to celebrate everything except the company that actually builds the chips everyone's been obsessed with.
+ALEX: [deadpan] The entire chip sector's repricing on election uncertainty. Broadcom down two percent, and the irony is that exposure to cloud infrastructure and AI spending is exactly what made some chips the hero yesterday, and it's exactly what makes them vulnerable today.
+ALEX: [deadpan] So the breadth of today's rally is genuinely strange. S&amp;P up one point five eight percent to 7688.62, Dow up three point zero three to 53356.12, but the Nasdaq only up one point four four. Microsoft, McDonald's, Home Depot all up six point five percent or better. Amazon up six point one two. Those are old-economy wins—things you can touch, eat, or renovate. Meanwhile, oil stocks are getting hammered—Exxon down four point six two, Chevron down three point six nine—and the energy complex is basically pricing in recession or a trade war that kills demand. Or both.
+JAMIE: [curious] So it's like the market is hedging itself by celebrating the companies that won't care if the economy slows, but absolutely terrified of what happens to the commodity chain if tariffs actually kick in.
+MAYA: [mischievously] And Tesla's down three point three four percent. Bitcoin up though, so at least the people who thought the election would cause chaos have a hedge that's actually working.
+ALEX: [deadpan] The boom is real. The projects already funded are real. But chip makers priced in a tailwind where they're the only suppliers that can be trusted, and they get to price accordingly. If tariffs don't materialize, if restrictions soften, if the capex keeps flowing but at lower margins because you're competing on price again instead of geopolitics—that's a very different business.
+JAMIE: [excited] So it's not that chip demand dies—it's that the chip makers priced in a protection racket that might not happen. And now they're trading on fundamentals instead of policy fantasy, which is apparently a three to six percent haircut.
+MAYA: [rushed] Figma beat earnings, stock dropped anyway—the company's shifting the entire product toward AI features, same subscription price, and Wall Street's response was basically 'we wanted you to charge more for that, not give it away.'
+JAMIE: [deadpan] So they're saying 'here's more value' and the market heard 'here's less margin' and just walked out of the room.
+MAYA: [mischievously] Exactly. Investors want to see the AI tax immediately. They want to see a new tier, a new button, a new price point. Giving it to existing customers is like showing up to a negotiation with a better offer and watching the other side just leave because you didn't ask for more money first.
+ALEX: [deadpan] McDonald's crushed earnings—same-store sales up, franchisees are still complaining about labor costs eating into margins, but the stock's up six point five three percent because the U.S. consumer is apparently still showing up.
+JAMIE: [curious] Wait, so the stock's celebrating that people are still poor enough to need discounts?
+ALEX: [sarcastic] The stock's celebrating that they found a way to pack restaurants without raising prices, which means volumes are up and the company's making more money per location even though the franchisees are squeezing every cost center they can find. It's a beautiful separation of incentives—corporate wins, franchisees get tighter.
+MAYA: [excited] CVS is spinning off the drugstore business entirely, stock down ten percent, and the entire thesis of 'vertically integrated healthcare conglomerate' just got reversed.
+JAMIE: [laughs] So they paid billions to learn that Wall Street doesn't want complexity, it wants a stock that does one thing really well and doesn't require a flowchart to explain it.
+MAYA: [rushed] AI PACs spent millions trying to shape Congress and mostly lost—like, they had venture capital, they had polling data, they had every tech CEO's personal vendetta wrapped up in a donation vehicle, and Congress still went the direction Congress wanted to go anyway.
+JAMIE: [deadpan] So they learned that money doesn't actually buy elections, it just buys the privilege of losing more publicly and having to explain it to your LP deck.
+ALEX: [deadpan] Nvidia's three point one seven percent down is what happens when you're priced as the country's industrial policy, and policy just got a lot more complicated.
+MAYA: [rushed] So they went from 'inevitable' to 'depends on what Congress does next' in one trading day.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">0058a732-de81-2e2b-f697-efeb763b3aef</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-05.mp3" length="3945189" type="audio/mpeg" />
+      <pubDate>Thu, 05 Nov 2026 02:44:04 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-05.jpg" />
+      <itunes:duration>00:04:06</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20261105</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-05.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-05.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-05.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>ORCL -8.8%, AMD rides data center riches to — Nov 4</title>
       <description>AMD just posted its biggest quarter ever—then immediately tanked 7.5 percent. We're talking about the company that's supposed to be winning. Today's lead: AMD rides data center riches to 'largest and most profitable' quarter in history. AMD crushed earnings and raised 2027 guidance to 80%+ revenue growth with data center as the core engine—but the stock is punished anyway, exposing the gap between AI narrative and actual investor conviction.
