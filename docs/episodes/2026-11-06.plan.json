@@ -1,0 +1,62 @@
+{
+  "cold_open": {
+    "hook": "Nasdaq down 5.52%, AMD cratering 17%\u2014chip stocks are getting obliterated and nobody's pretending it's temporary anymore."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -4.36%",
+      "Nasdaq -5.52%",
+      "VIX +69.66%",
+      "AMD -17.26%",
+      "NVDA -9.26%",
+      "TSLA -10.77%"
+    ],
+    "macro_note": "Tech rout accelerating; chip stocks in freefall while defensive plays (COST, PEP) barely hold ground."
+  },
+  "big_story": {
+    "story_id": "7c368df52791",
+    "lead_host": "ALEX",
+    "story_title": "Cloudflare's stock mounts a big comeback after fastest sales surge in nearly 4 years",
+    "angle": "One company actually executing in the wreckage\u2014Cloudflare's sales acceleration is proof that growth still matters if you can actually deliver it, not just promise AI magic.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "4fae4d33a54c",
+      "lead_host": "MAYA",
+      "angle": "Five9 betting 75% of 2026 revenue on AI while buying Level AI\u2014either visionary or the most expensive way to say 'we panicked.'",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "b965ba4b2056",
+      "lead_host": "MAYA",
+      "angle": "T-Mobile CEO's 'welcome to the party' on Elon's wireless play is the corporate equivalent of a smile before the knife fight.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "aab885e8b472",
+      "lead_host": "MAYA",
+      "angle": "Meta, Google, TikTok suing California AG over teen social media law\u2014three companies that profit from teen engagement suddenly discovering child welfare.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "bcee4a08d2f3",
+      "lead_host": "MAYA",
+      "angle": "Airbnb's AI travel agent launching mid-2027 is either the future of booking or a very expensive way to say 'we're scared of ChatGPT.'",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "1238c47b52ff",
+    "joke_angle": "Melania brokered a Russia-Ukraine agreement\u2014the one person nobody was asking for geopolitical input just casually solved what the State Department couldn't."
+  },
+  "yesterday_callback": {
+    "use": true,
+    "topic": "Figma beat earnings but stock tanked\u2014company is pivoting to AI-first product roadmap and investors hate long-term bets",
+    "fresh_take": "Today's chip rout proves yesterday's thesis: investors are punishing any company that says 'we're investing in AI' instead of 'we're already printing AI money.' Cloudflare gets a pass because it's actually growing revenue\u2014not just the roadmap."
+  },
+  "sign_off": {
+    "callback_target": "Cloudflare's sales surge\u2014the one stock that didn't need to promise AI magic to move."
+  }
+}

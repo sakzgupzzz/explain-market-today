@@ -1,0 +1,65 @@
+1
+00:00:06,919 --> 00:00:15,371
+JAMIE: Nasdaq's down five point five-two percent, AMD just fell seventeen point two-six percent—chip stocks are getting obliterated and the industry's stopped pretending this is a speed bump.
+
+2
+00:00:15,371 --> 00:00:35,896
+ALEX: The S&P's down four point three-six percent, the Nasdaq got hit for five point five-two, and the VIX spiked sixty-nine point sixty-six percent—which is the kind of move you see when someone realizes the party they've been funding isn't actually a party. Nvidia down nine point two-six, Tesla down ten point seventy-seven, AMD down seventeen point two-six. The chip sector is just eating itself at this point.
+
+3
+00:00:35,896 --> 00:00:39,518
+JAMIE: So it's not just a sector rotation anymore. This is panic.
+
+4
+00:00:39,518 --> 00:01:03,363
+ALEX: It's the logical conclusion of spending eighteen months promising that AI will fix everything and then watching the actual earnings show up and go 'yeah, about that.' Broadcom's down ten point forty-three percent. Cisco down seven point sixty-two. The only things holding up are the things that don't require you to believe in a future—Costco up one point eighty-three, Pepsi barely moving at plus zero point twenty. The market's decided to stop renting faith and start paying cash.
+
+5
+00:01:03,363 --> 00:01:11,815
+ALEX: Here's what's wild about Cloudflare though—while everyone else is getting punished for missing the AI punchline, they're actually showing the math on how this stuff gets monetized.
+
+6
+00:01:11,815 --> 00:01:22,983
+MAYA: Five9 just told investors they're expecting at least seventy-five percent of their two thousand twenty-six revenue to come from AI, and they're backing that conviction with a three hundred twenty-five million dollar acquisition of Level AI.
+
+7
+00:01:22,983 --> 00:01:32,943
+JAMIE: Seventy-five percent of revenue in one year is not a forecast, that's a hostage situation. Either they've genuinely solved something or they just spent three hundred million dollars on a panic button.
+
+8
+00:01:32,943 --> 00:01:42,602
+MAYA: T-Mobile's parent company CEO just responded to Elon's wireless carrier plans by saying 'welcome to the party'—which is the exact tone you use right before explaining why someone's not actually invited.
+
+9
+00:01:42,602 --> 00:01:50,450
+ALEX: The 'welcome' is him watching someone walk into a room full of people who've spent years building something and saying they'll do it in two.
+
+10
+00:01:50,450 --> 00:02:01,920
+MAYA: Meta, Google, and TikTok are suing California over the teen social media law—three companies that have spent the last decade optimizing for teen engagement suddenly discovering that child welfare is a hill they're willing to fight on.
+  ↳ source: https://techcrunch.com/2026/11/05/meta-google-and-tiktok-sue-california-ag-over-teen-social-media-law/
+
+11
+00:02:01,920 --> 00:02:08,259
+JAMIE: So they're not suing to protect teens—they're suing to keep selling to them. That's the kind of consistency you admire.
+
+12
+00:02:08,259 --> 00:02:20,030
+MAYA: Airbnb's launching an AI travel agent in the first half of twenty twenty-seven, which is either the future of how you book a vacation or the most expensive way to admit they're terrified of ChatGPT eating their lunch.
+
+13
+00:02:20,030 --> 00:02:34,217
+ALEX: A travel agent that's trained on Airbnb's own inventory and pricing is actually useful—it's not a chatbot pretending to think. Whether it matters depends on whether people trust it to not just steer them toward the highest margin property, which, given Airbnb's history, is a real question.
+
+14
+00:02:34,217 --> 00:02:40,555
+MAYA: Cloudflare's basically the only stock in the room that showed up with receipts instead of PowerPoint slides—and the market noticed.
+  ↳ source: https://www.marketwatch.com/story/cloudflares-stock-mounts-a-big-comeback-after-fastest-sales-surge-in-nearly-4-years-d80d994d?mod=mw_rss_topstories
+
+15
+00:02:40,555 --> 00:02:45,385
+ALEX: Meanwhile everyone else is still trying to sell us the dream before the invoice arrives.
+
+16
+00:02:45,385 --> 00:02:49,610
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.
