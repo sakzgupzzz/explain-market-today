@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Nov 2026 02:47:30 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Nov 2026 01:17:57 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,47 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>AMD +13.3%, 10-year Treasury yield races back to — Nov 11</title>
+      <description>Treasury yields just hit 5% again—and the Fed's about to make it worse. Today's lead: 10-year Treasury yield races back to 5% as inflation data, Waller comments drive rate hike expectation. The bond market is pricing in rate hikes that the Fed hasn't signaled yet—and it's not because inflation is actually accelerating, it's because Waller's rhetoric gave traders permission to front-run the narrative.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:15  Markets
+  00:01:03  Big story
+  00:01:53  Quick hits
+  00:02:22  Odd thing of the day
+  00:02:28  Sign-off
+
+Stories covered:
+  • CoreWeave's beat and raise proves there's real AI infrastructure demand underneath the hype—not just token-buying by LLM labs trying to justify their valuations. [real]
+  • All seven Anthropic founders cashing out $250M each in the IPO is the most honest signal yet: they built something, they're taking chips off the table, and they're not pretending this is a 50-year mission. [real]
+  • Sony killing Fairgames is the live-service graveyard getting another headstone—turns out you can't just throw $200M at a multiplayer shooter and expect it to compete with free-to-play incumbents. [hype]
+  • Credit card debt at record highs while rates stay elevated means consumers are borrowing to tread water, not to spend—that's the recession signal nobody wants to name. [real]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] Treasury yields just hit five percent again, and the Fed's about to make it worse—which means your mortgage just got a new hobby: getting more expensive.
+ALEX: [deadpan] Markets had a quiet day—S&amp;P down point three-eight percent, Nasdaq down point seven-four—but the real story is happening inside the chip sector. AMD jumped thirteen point two-six percent while Nvidia dropped four point two-seven percent. Rates are up on the ten-year, and suddenly the trade is: own the companies that actually make things instead of the ones that just say they'll think about it.
+JAMIE: [curious] So we're rotating out of the pure AI hype plays into companies with, what, actual revenue streams? Broadcom's up eight point seven-eight percent too—is this the moment the market remembers that chips have to exist before you can run your model on them?
+MAYA: [rushed] Yes, and the timing is wild because everyone's been treating Nvidia like a vending machine that dispenses earnings, but AMD and Broadcom are like, 'Hey, we also sell to people who aren't just training ChatGPT derivatives'—Meta's up five point one-two, Tesla up five point five-four, so the broadening out is real.
+MAYA: [rushed] CoreWeave just beat on revenue and raised guidance, which is the first real signal that AI infrastructure demand isn't just a story LLM labs are telling to justify their burn rates.
+ALEX: [deadpan] When the company selling the shovels reports actual customer demand instead of theoretical TAM, the market notices. That's CoreWeave's beat—it means the infrastructure layer isn't vaporware.
+MAYA: [excited] All seven Anthropic founders are each cashing out about two hundred fifty million dollars in the IPO, and they're doing it in lockstep—same number of shares, same price, same 'we built this and we're taking it off the table' energy. That's not founder ego, that's founder clarity.
+JAMIE: [curious] So they're not doing the thing where one founder sells a hundred million and another holds for the long-term mission statement?
+MAYA: [mischievously] Nope. Seven founders, seven identical exits. It reads like a press release from people who've already decided the narrative—'We made something real, we're getting paid, and we're not pretending this is a fifty-year crusade.'
+JAMIE: [excited] Sony just killed Fairgames, their live-service shooter. It's dead. The live-service graveyard gets another headstone.
+ALEX: [sarcastic] Turns out you can't just fund a game to compete with free-to-play incumbents that already have millions of players. Sony learned what every other publisher keeps learning: capital alone doesn't move the needle when the audience has already chosen.
+ALEX: [deadpan] Credit card debt hit a record high, and rates are still elevated, which means Americans are borrowing just to keep pace with the cost of living—not to spend on anything new. That's the recession signal the market keeps ignoring.
+ALEX: [deadpan] Five percent yields mean every dollar borrowed today costs more tomorrow—and the Fed's got the gas pedal pinned.
+MAYA: [rushed] Your mortgage isn't getting expensive. It's getting *expensive* expensive.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">9c9fb8d7-3f1d-7c99-dfa2-b2352adb633f</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-11.mp3" length="2744028" type="audio/mpeg" />
+      <pubDate>Wed, 11 Nov 2026 01:17:34 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-11.jpg" />
+      <itunes:duration>00:02:51</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20261111</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-11.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-11.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-11.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AMD -17.3%, Cloudflare's stock mounts a big comeback — Nov 6</title>
       <description>Nasdaq down 5.52%, AMD cratering 17%—chip stocks are getting obliterated and nobody's pretending it's temporary anymore. Today's lead: Cloudflare's stock mounts a big comeback after fastest sales surge in nearly 4 years. One company actually executing in the wreckage—Cloudflare's sales acceleration is proof that growth still matters if you can actually deliver it, not just promise AI magic.

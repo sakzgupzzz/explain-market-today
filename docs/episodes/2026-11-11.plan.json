@@ -1,0 +1,60 @@
+{
+  "cold_open": {
+    "hook": "Treasury yields just hit 5% again\u2014and the Fed's about to make it worse."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500 -0.38%",
+      "Nasdaq -0.74%",
+      "AMD +13.26%",
+      "NVDA -4.27%"
+    ],
+    "macro_note": "Rates climbing on inflation fears and Waller hawkishness; tech rotation away from mega-cap AI plays into chipmakers with actual revenue."
+  },
+  "big_story": {
+    "story_id": "e9ee87c08567",
+    "lead_host": "ALEX",
+    "story_title": "10-year Treasury yield races back to 5% as inflation data, Waller comments drive rate hike expectation",
+    "angle": "The bond market is pricing in rate hikes that the Fed hasn't signaled yet\u2014and it's not because inflation is actually accelerating, it's because Waller's rhetoric gave traders permission to front-run the narrative.",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "7c904b181c0a",
+      "lead_host": "MAYA",
+      "angle": "CoreWeave's beat and raise proves there's real AI infrastructure demand underneath the hype\u2014not just token-buying by LLM labs trying to justify their valuations.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "162085017b9b",
+      "lead_host": "MAYA",
+      "angle": "All seven Anthropic founders cashing out $250M each in the IPO is the most honest signal yet: they built something, they're taking chips off the table, and they're not pretending this is a 50-year mission.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "552535e17867",
+      "lead_host": "MAYA",
+      "angle": "Sony killing Fairgames is the live-service graveyard getting another headstone\u2014turns out you can't just throw $200M at a multiplayer shooter and expect it to compete with free-to-play incumbents.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "e7d23c2fed62",
+      "lead_host": "ALEX",
+      "angle": "Credit card debt at record highs while rates stay elevated means consumers are borrowing to tread water, not to spend\u2014that's the recession signal nobody wants to name.",
+      "conviction": "real"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "ffe91f8b2f5e",
+    "joke_angle": "Children's Place is filing for bankruptcy because there aren't enough children\u2014which is either the most honest retail obituary ever written or the setup to a genuinely dark joke about demographics."
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Treasury yields hitting 5% and the Fed's about to make it worse"
+  }
+}
