@@ -15,7 +15,7 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <link>https://sakzgupzzz.github.io/explain-market-today</link>
     </image>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Nov 2026 01:17:57 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 02:41:44 +0000</lastBuildDate>
     <itunes:author>Markets Explained</itunes:author>
     <itunes:category text="Business">
       <itunes:category text="Investing" />
@@ -27,6 +27,46 @@ Market Today, Explained is for entertainment and educational purposes only. Noth
       <itunes:email>hello@markets-explained.example</itunes:email>
     </itunes:owner>
     <itunes:summary>Daily fast, funny roundtable on US markets, business, tech, world, and culture. Three hosts riff on the day's news in 5–9 minutes, plus a 90-second express briefing pre-market. AI-generated, four-stage grounding pipeline. Not investment advice — see disclaimer.</itunes:summary>
+    <item>
+      <title>AMD -8.8%, Jensen Huang's departure blasts big hole — Nov 14</title>
+      <description>AMD down 8.75% as Wall Street suddenly remembers Jensen Huang's absence might actually matter. Today's lead: Jensen Huang's departure blasts big hole in AI startup funding, VCs and founders say. Huang wasn't just Nvidia's CEO—he was the entire venture ecosystem's confidence anchor. Without him, the AI funding spigot doesn't just slow; it stops. What happens to the 200+ startups betting their Series B on his next move?.
+
+Chapters:
+  00:00:06  Cold open
+  00:00:16  Markets
+  00:01:03  Big story
+  00:01:49  Quick hits
+  00:02:28  Odd thing of the day
+  00:02:35  Sign-off
+
+Stories covered:
+  • Chip stocks cratering on the theory that Huang's departure means Nvidia's moat just got thinner—AMD, Broadcom, Avago all down hard. But the real question: is this repricing AI infrastructure as a commodity, or just panic selling? [real]
+  • FAA ground stop lifted after four hours, but the cancellation ripple will stretch into the weekend—travel chaos is the tax on whatever system failure just happened. [real]
+  • Lutnick's sons run a firm with deep Nvidia ties while he's Treasury Secretary—the optics are a minefield, and the Huang scandal just made it radioactive. [hype]
+  • Fed survey says AI risks are now the top threat to financial stability—not rates, not inflation, not geopolitics. The system is officially spooked by something it doesn't fully understand. [hype]
+
+Market Today, Explained is for entertainment and educational purposes only. Nothing in this podcast is investment, financial, legal, or tax advice. Hosts are AI-generated voices, not licensed financial advisors, and have no fiduciary relationship with listeners. Market data may be delayed or inaccurate. Some segments are dramatized for comedic effect; references to real companies and people are made for commentary and satire. Always consult a licensed professional before making investment decisions.</description>
+      <ns2:encoded>JAMIE: [excited] AMD just tanked eight point seven five percent because Wall Street suddenly woke up to the fact that Jensen Huang might actually be irreplaceable, and that scares the living hell out of everyone.
+ALEX: [deadpan] S&amp;P down zero point four, Nasdaq off zero point nine one percent, and the VIX climbed three point two one points—which is the kind of move that happens when everyone realizes the same person can't be both the architect of the entire AI infrastructure AND the guy who shows up to your quarterly earnings call. Nvidia itself is down two point zero one percent, but the real damage is upstream: Broadcom cratered four point seven six percent, and Cisco dropped six point two four.
+JAMIE: [curious] So it's not that the chips stopped working, it's that we stopped working out what happens if Huang gets hit by a bus.
+ALEX: [sarcastic] Exactly. AMD's down eight point seven five—worse than Broadcom—because the entire sector just got re-priced on succession risk. The market is doing what it does best: pricing in a scenario nobody wants to think about by immediately punishing the stock that benefits most from the status quo staying intact.
+MAYA: [rushed] Meanwhile Meta's up two point nine, Pepsi up two point two four, Coca-Cola up one point eight six—the defensive names that have nothing to do with whether one person wakes up tomorrow are the ones actually moving. It's like everyone suddenly remembered that you can just sell sugar water and snacks to people and nobody needs a single innovation meeting to make that work.
+JAMIE: [laughs] So the AI trade got a reality check, and the market's response was to buy things that don't need a visionary to keep them alive.
+MAYA: [rushed] So here's the thing nobody's saying out loud yet: Nvidia didn't just back AI startups with money. Huang's personal credibility was the collateral. When a Series B founder could say 'Nvidia's betting on us,' that meant something. Now VCs are getting calls from founders asking if the funding window just slammed shut.
+ALEX: [curious] How much are we talking about in terms of actual capital flow?
+MAYA: [excited] Nvidia's venture arm has deployed significant capital into the ecosystem—and that's not counting the co-investment gravity it created. When Huang shows up in your cap table, other LPs follow. Without that anchor, founders are looking at smaller checks and VCs are suddenly asking harder questions about unit economics instead of just 'will this be the next big thing.'
+JAMIE: [deadpan] So it's not that Nvidia stops writing checks tomorrow. It's that the entire confidence mechanism around early-stage AI companies just lost its gravity well.
+ALEX: Exactly. Startups are sitting in Series B conversations right now probably getting lower valuations and tighter terms because the person who made it okay to bet on speculative infrastructure plays just disappeared from the equation. That's not a market correction—that's a repricing of risk across the entire cohort.
+MAYA: [rushed] Huang's credibility was the only currency that mattered, and now every founder's wondering if their cap table just got marked to market.
+ALEX: [deadpan] The gravity well didn't just collapse—it's still collapsing, and nobody knows where the bottom is.
+JAMIE: This show is for entertainment and education only — nothing here is investment advice.</ns2:encoded>
+      <guid isPermaLink="false">0e207c60-f1cd-c768-2aec-57383d9c295b</guid>
+      <enclosure url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-14.mp3" length="2886276" type="audio/mpeg" />
+      <pubDate>Sat, 14 Nov 2026 02:41:01 +0000</pubDate>
+      <itunes:author>Markets Explained</itunes:author>
+      <itunes:image href="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-14.jpg" />
+      <itunes:duration>00:03:00</itunes:duration>
+    <podcast:season>2026</podcast:season><podcast:episode>20261114</podcast:episode><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-14.srt" type="application/x-subrip" /><podcast:transcript url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-14.vtt" type="text/vtt" /><podcast:chapters url="https://sakzgupzzz.github.io/explain-market-today/episodes/2026-11-14.chapters.json" type="application/json+chapters" /></item>
     <item>
       <title>AMD +13.3%, 10-year Treasury yield races back to — Nov 11</title>
       <description>Treasury yields just hit 5% again—and the Fed's about to make it worse. Today's lead: 10-year Treasury yield races back to 5% as inflation data, Waller comments drive rate hike expectation. The bond market is pricing in rate hikes that the Fed hasn't signaled yet—and it's not because inflation is actually accelerating, it's because Waller's rhetoric gave traders permission to front-run the narrative.

@@ -1,0 +1,61 @@
+{
+  "cold_open": {
+    "hook": "AMD down 8.75% as Wall Street suddenly remembers Jensen Huang's absence might actually matter."
+  },
+  "markets": {
+    "lead_host": "ALEX",
+    "key_numbers": [
+      "S&P 500: -0.40%",
+      "Nasdaq: -0.91%",
+      "AMD: -8.75%",
+      "META: +2.90%",
+      "VIX: +3.21%"
+    ],
+    "macro_note": "Tech rotation away from chip plays; defensive names (META, PEP, KO) holding up as AI trade gets a reality check."
+  },
+  "big_story": {
+    "story_id": "a32b1d84b770",
+    "lead_host": "MAYA",
+    "story_title": "Jensen Huang's departure blasts big hole in AI startup funding, VCs and founders say",
+    "angle": "Huang wasn't just Nvidia's CEO\u2014he was the entire venture ecosystem's confidence anchor. Without him, the AI funding spigot doesn't just slow; it stops. What happens to the 200+ startups betting their Series B on his next move?",
+    "depth_turns": 6
+  },
+  "quick_hits": [
+    {
+      "story_id": "9a8fbee78654",
+      "lead_host": "ALEX",
+      "angle": "Chip stocks cratering on the theory that Huang's departure means Nvidia's moat just got thinner\u2014AMD, Broadcom, Avago all down hard. But the real question: is this repricing AI infrastructure as a commodity, or just panic selling?",
+      "conviction": "real"
+    },
+    {
+      "story_id": "aefb75ca6a8e",
+      "lead_host": "JAMIE",
+      "angle": "FAA ground stop lifted after four hours, but the cancellation ripple will stretch into the weekend\u2014travel chaos is the tax on whatever system failure just happened.",
+      "conviction": "real"
+    },
+    {
+      "story_id": "d40cba24e295",
+      "lead_host": "ALEX",
+      "angle": "Lutnick's sons run a firm with deep Nvidia ties while he's Treasury Secretary\u2014the optics are a minefield, and the Huang scandal just made it radioactive.",
+      "conviction": "hype"
+    },
+    {
+      "story_id": "30a25886b9e4",
+      "lead_host": "MAYA",
+      "angle": "Fed survey says AI risks are now the top threat to financial stability\u2014not rates, not inflation, not geopolitics. The system is officially spooked by something it doesn't fully understand.",
+      "conviction": "hype"
+    }
+  ],
+  "odd_thing": {
+    "story_id": "02eeb6340bf3",
+    "joke_angle": "Kalshi's CEO ditched Trump Jr. as an advisor because the 'optics weren't good'\u2014which is the most polite way to say 'we hired a political celebrity and it immediately became a liability.'"
+  },
+  "yesterday_callback": {
+    "use": false,
+    "topic": "",
+    "fresh_take": ""
+  },
+  "sign_off": {
+    "callback_target": "Jensen Huang's absence"
+  }
+}
